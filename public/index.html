@@ -120,30 +120,25 @@
           <a href="#" class="nav-link active" onclick="closeProductModal()" data-i18n="navHome">الرئيسية</a>
         </li>
         <li class="nav-item">
-          <a href="#catalog" class="nav-link">
+          <a href="#catalog" class="nav-link" id="navHousesLink" onclick="if(activeModalPerfume) closeProductModal();">
             <span data-i18n="navHouses">العطور الملكية</span>
             <span class="nav-chevron">▼</span>
           </a>
-          <div class="dropdown-menu">
-            <a href="#catalog" class="dropdown-item" data-i18n="brandGhalati">🌟 دار غلاتي (Ghalati)</a>
-            <a href="#catalog" class="dropdown-item" data-i18n="brandAssaf">👑 دار عساف (Assaf)</a>
-            <a href="#catalog" class="dropdown-item" data-i18n="brandLaverne">⚜️ عطور لافيرن (Laverne)</a>
-            <a href="#catalog" class="dropdown-item" data-i18n="brandArabianOud">✨ العربية للعود (Arabian Oud)</a>
-            <a href="#catalog" class="dropdown-item" data-i18n="brandDokhoun">💎 دخون الإماراتية (Dokhoun)</a>
-            <a href="#catalog" class="dropdown-item" data-i18n="brandAlDakheel">🌿 الدخيل للعود (Al Dakheel Oud)</a>
+          <div class="dropdown-menu mega-brand-dropdown" id="housesDropdownMenu">
+            <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
           </div>
         </li>
         <li class="nav-item">
-          <a href="#catalog" class="nav-link" data-i18n="navMen">عطور رجالية</a>
+          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('men');" data-i18n="navMen">عطور رجالية</a>
         </li>
         <li class="nav-item">
-          <a href="#catalog" class="nav-link" data-i18n="navWomen">عطور نسائية</a>
+          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('women');" data-i18n="navWomen">عطور نسائية</a>
         </li>
         <li class="nav-item">
-          <a href="#catalog" class="nav-link" data-i18n="navUnisex">للجنسين</a>
+          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('unisex');" data-i18n="navUnisex">للجنسين</a>
         </li>
         <li class="nav-item">
-          <a href="#catalog" class="nav-link" data-i18n="navSets">أطقم ومجموعات الهدايا</a>
+          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('bundles');" data-i18n="navSets">أطقم ومجموعات الهدايا</a>
         </li>
         <li class="nav-item">
           <a href="javascript:void(0)" onclick="openShippingModal()" class="nav-link" data-i18n="navShipping">التوصيل والشحن</a>
@@ -170,24 +165,29 @@
         مجموعات حصرية مختارة بعناية فائقة من أرقى الدور الخليجية والعربية المعتمدة، مع ضمان الأصالة 100% والتوصيل الملكي الفاخر لكافة أنحاء العالم.
       </p>
 
-      <!-- شريط دور العطور المعتمدة للتصفية السريعة -->
-      <div class="houses-strip">
-        <button class="house-chip active-house" data-i18n="brandGhalati">🌟 دار غلاتي (Ghalati)</button>
-        <button class="house-chip" data-i18n="brandAssaf">👑 عطور عساف (Assaf)</button>
-        <button class="house-chip" data-i18n="brandLaverne">⚜️ عطور لافيرن (Laverne)</button>
-        <button class="house-chip" data-i18n="brandArabianOud">✨ العربية للعود (Arabian Oud)</button>
-        <button class="house-chip" data-i18n="brandDokhoun">💎 دخون الإماراتية (Dokhoun)</button>
-        <button class="house-chip" data-i18n="brandAlDakheel">🌿 الدخيل للعود (Al Dakheel Oud)</button>
+      <!-- شريط دور العطور والشركات المعتمدة للتصفية السريعة (24 داراً ملكية) -->
+      <div class="houses-strip-wrapper">
+        <div class="houses-strip-header">
+          <span class="houses-strip-title" data-i18n="housesSectionTitle">دور العطور والشركات المعتمدة في زهرة بيسان (24 داراً ملكية)</span>
+        </div>
+        <div class="houses-strip" id="housesStrip">
+          <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
+        </div>
       </div>
     </section>
 
     <!-- شبكة المنتجات الرسمية (تبدأ بدار غلاتي مع القالب المعتمد المتقن) -->
     <section class="catalog-section" id="catalog">
-      <div class="catalog-header">
+      <div class="catalog-header" id="catalogHeaderGroup">
         <div class="catalog-title-group">
-          <h2 data-i18n="catalogTitle">التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)</h2>
-          <p data-i18n="catalogSubtitle">عطور أصلية مستوردة مباشرة من المصدر الرسمي بأوصافها ومكوناتها الأصلية 100%</p>
+          <h2 id="catalogTitleText" data-i18n="catalogTitle">التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)</h2>
+          <p id="catalogSubtitleText" data-i18n="catalogSubtitle">عطور أصلية مستوردة مباشرة من المصدر الرسمي بأوصافها ومكوناتها الأصلية 100%</p>
         </div>
+      </div>
+
+      <!-- بطاقة عرض الدار الخاصة (تظهر عند اختيار أي دار أخرى من الـ 24 داراً) -->
+      <div class="brand-showcase-panel" id="brandShowcasePanel" style="display: none;">
+        <!-- Rendered dynamically by app.js -->
       </div>
 
       <!-- أزرار التصفية السريعة لتشكيلة غلاتي مرتبة بالأولويات الملكية -->
@@ -343,14 +343,9 @@
 
       <!-- العمود 3: دور العطور المعتمدة -->
       <div class="footer-col">
-        <h4 data-i18n="footerHousesTitle">دور العطور والتشكيلات</h4>
-        <ul class="footer-links">
-          <li><a href="#catalog" data-i18n="brandGhalati">دار غلاتي (Ghalati)</a></li>
-          <li><a href="#catalog" data-i18n="brandAssaf">دار عساف (Assaf)</a></li>
-          <li><a href="#catalog" data-i18n="brandLaverne">دار لافيرن (Laverne)</a></li>
-          <li><a href="#catalog" data-i18n="brandArabianOud">العربية للعود (Arabian Oud)</a></li>
-          <li><a href="#catalog" data-i18n="brandDokhoun">دخون الإماراتية (Dokhoun)</a></li>
-          <li><a href="#catalog" data-i18n="brandAlDakheel">الدخيل للعود (Al Dakheel Oud)</a></li>
+        <h4 data-i18n="footerHousesTitle">دور العطور والشركات (24 داراً)</h4>
+        <ul class="footer-links" id="footerHousesList">
+          <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
         </ul>
       </div>
 
@@ -457,6 +452,7 @@
   </div>
 
   <script src="js/translations.js"></script>
+  <script src="js/houses.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

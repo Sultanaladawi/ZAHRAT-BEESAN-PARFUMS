@@ -23,6 +23,7 @@ let perfumesData = [];
 let currentFilter = 'all';
 let currentSearch = '';
 let activeModalPerfume = null;
+let activeHouse = 'ghalati';
 
 function getFlagUrl(iso) {
   if (!iso) return 'https://flagcdn.com/24x18/jo.png';
@@ -77,6 +78,14 @@ function setLanguage(lang) {
 
   updateCurrencyUI();
   renderCatalog(currentFilter, currentSearch);
+  renderHousesDropdown();
+  renderHousesStrip();
+  renderFooterHouses();
+
+  if (activeHouse !== 'ghalati') {
+    const house = typeof getHouseById === 'function' ? getHouseById(activeHouse) : (typeof FRAGRANCE_HOUSES !== 'undefined' ? FRAGRANCE_HOUSES.find(h => h.id === activeHouse) : null);
+    if (house) renderBrandShowcase(house);
+  }
 
   if (activeModalPerfume) {
     renderProductModalContent(activeModalPerfume);
@@ -123,6 +132,183 @@ function updateCurrencyUI() {
     const baseJod = parseFloat(el.getAttribute('data-base-jod')) || 30;
     el.textContent = getFormattedPrice(baseJod);
   });
+}
+
+// ══════════════════════════════════════════════════════════
+// 🏛️ Fragrance Houses Controller (24 Royal Fragrance Houses)
+// ══════════════════════════════════════════════════════════
+function renderHousesDropdown() {
+  const container = document.getElementById('housesDropdownMenu');
+  if (!container || typeof FRAGRANCE_HOUSES === 'undefined') return;
+
+  const isAr = currentLang === 'ar';
+  const t = translations[currentLang] || translations.ar;
+
+  container.innerHTML = `
+    <div class="mega-brand-header">
+      <span class="mega-brand-title">🏛️ ${t.housesSectionTitle || 'دور العطور المعتمدة'}</span>
+      <span class="mega-brand-count">${FRAGRANCE_HOUSES.length} ${isAr ? 'داراً' : 'Houses'}</span>
+    </div>
+    <div class="mega-brand-grid">
+      ${FRAGRANCE_HOUSES.map(h => `
+        <a href="#catalog" class="mega-brand-item" onclick="selectHouse('${h.id}')" title="${isAr ? h.nameAr : h.nameEn}">
+          <span class="mega-brand-item-badge">${h.badge}</span>
+          <span class="mega-brand-item-name">${isAr ? h.nameAr : h.nameEn}</span>
+          <span class="mega-brand-item-country">${h.region === 'sa' ? '🇸🇦' : (h.region === 'ae' ? '🇦🇪' : '🇰🇼')}</span>
+        </a>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderHousesStrip() {
+  const container = document.getElementById('housesStrip');
+  if (!container || typeof FRAGRANCE_HOUSES === 'undefined') return;
+
+  const isAr = currentLang === 'ar';
+
+  container.innerHTML = FRAGRANCE_HOUSES.map(h => {
+    const isActive = h.id === activeHouse;
+    const name = isAr ? h.nameAr : h.nameEn;
+    const countTag = h.count ? ` (${h.count} ${isAr ? 'عطر' : 'Items'})` : '';
+    return `
+      <button type="button" class="house-chip ${isActive ? 'active-house' : ''}" 
+        data-house-id="${h.id}" 
+        onclick="selectHouse('${h.id}')"
+        title="${name}">
+        <span>${h.badge}</span>
+        <span>${name}${countTag}</span>
+      </button>
+    `;
+  }).join('');
+}
+
+function renderFooterHouses() {
+  const container = document.getElementById('footerHousesList');
+  if (!container || typeof FRAGRANCE_HOUSES === 'undefined') return;
+
+  const isAr = currentLang === 'ar';
+  const featured = FRAGRANCE_HOUSES.slice(0, 10);
+
+  container.innerHTML = `
+    ${featured.map(h => `
+      <li>
+        <a href="#catalog" onclick="selectHouse('${h.id}')">
+          ${h.badge} ${isAr ? h.nameAr : h.nameEn}
+        </a>
+      </li>
+    `).join('')}
+    <li>
+      <a href="#catalog" onclick="selectHouse('ghalati')" style="color: var(--gold-dim); font-weight: 800;">
+        ✨ ${isAr ? 'عرض كافة الـ 24 داراً معتمدة...' : 'Browse all 24 Houses...'}
+      </a>
+    </li>
+  `;
+}
+
+function selectHouse(houseId) {
+  if (activeModalPerfume) {
+    closeProductModal();
+  }
+
+  activeHouse = houseId;
+
+  // Update active state in houses strip
+  document.querySelectorAll('.house-chip').forEach(chip => {
+    if (chip.getAttribute('data-house-id') === houseId) {
+      chip.classList.add('active-house');
+    } else {
+      chip.classList.remove('active-house');
+    }
+  });
+
+  const panel = document.getElementById('brandShowcasePanel');
+  const filters = document.getElementById('catalogFilters');
+  const grid = document.getElementById('catalogGrid');
+  const titleText = document.getElementById('catalogTitleText');
+  const subtitleText = document.getElementById('catalogSubtitleText');
+  const isAr = currentLang === 'ar';
+
+  if (houseId === 'ghalati') {
+    if (panel) panel.style.display = 'none';
+    if (filters) filters.style.display = 'flex';
+    if (grid) grid.style.display = 'grid';
+    if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)' : 'Official Launch Collection — Ghalati House';
+    if (subtitleText) subtitleText.textContent = isAr ? 'عطور أصلية مستوردة مباشرة من المصدر الرسمي بأوصافها ومكوناتها الأصلية 100%' : '100% authentic perfumes imported directly with verified notes and specifications';
+    renderCatalog(currentFilter, currentSearch);
+  } else {
+    const house = typeof getHouseById === 'function' ? getHouseById(houseId) : (typeof FRAGRANCE_HOUSES !== 'undefined' ? FRAGRANCE_HOUSES.find(h => h.id === houseId) : null);
+    if (house) {
+      if (filters) filters.style.display = 'none';
+      if (grid) grid.style.display = 'none';
+      if (panel) {
+        panel.style.display = 'block';
+        renderBrandShowcase(house);
+      }
+      if (titleText) titleText.textContent = `${house.badge} ${isAr ? house.nameAr : house.nameEn}`;
+      if (subtitleText) subtitleText.textContent = isAr ? 'إصدارات رسمية مستوردة بضمان أصالة زهرة بيسان 100%' : 'Official luxury collection backed by 100% authenticity guarantee';
+    }
+  }
+
+  // Smooth scroll down to catalog section
+  const catEl = document.getElementById('catalog');
+  if (catEl) {
+    catEl.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function renderBrandShowcase(h) {
+  const panel = document.getElementById('brandShowcasePanel');
+  if (!panel) return;
+
+  const t = translations[currentLang] || translations.ar;
+  const isAr = currentLang === 'ar';
+  const name = isAr ? h.nameAr : h.nameEn;
+  const country = isAr ? h.countryAr : h.countryEn;
+  const specialty = isAr ? h.specialtyAr : h.specialtyEn;
+  const desc = isAr ? h.descAr : h.descEn;
+
+  const waText = encodeURIComponent(
+    isAr
+      ? `مرحباً، أود الاستفسار والطلب من عطور وإصدارات دار "${h.nameAr}" عبر متجر زهرة بيسان`
+      : `Hello, I would like to inquire & order official perfumes from "${h.nameEn}" via Zahrat Beesan`
+  );
+  const waLink = `https://wa.me/962796697413?text=${waText}`;
+
+  panel.innerHTML = `
+    <div class="brand-showcase-crest">${h.badge}</div>
+    <h2 class="brand-showcase-title-ar">${h.nameAr}</h2>
+    <span class="brand-showcase-title-en">${h.nameEn}</span>
+
+    <div class="brand-showcase-badges">
+      <span class="brand-country-badge">${country}</span>
+      <span class="brand-guarantee-badge">${t.brandAvailabilityBadge || '✨ متوفر للطلب الفوري والاستيراد المباشر بضمان الأصالة 100%'}</span>
+    </div>
+
+    <div class="brand-specialty-box">
+      <span class="brand-specialty-title">✨ ${isAr ? 'التخصص وأبرز الإصدارات الملكية:' : 'Specialty & Signature Editions:'}</span>
+      <p class="brand-specialty-text">${specialty}</p>
+    </div>
+
+    <p class="brand-desc-text">
+      ${desc}
+      <br>
+      <strong style="color: var(--gold-dim); display: block; margin-top: 8px;">
+        ${isAr ? '🛡️ استيراد رسمي ومضمون 100% مع أختام المصنع وسولوفان التغليف الأصلي وتوصيل سريع لكافة المحافظات ودول الخليج.' : '🛡️ 100% direct official import with factory cellophane seal and fast express delivery.'}
+      </strong>
+    </p>
+
+    <div class="brand-actions-row">
+      <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-brand-whatsapp">
+        <span>💬</span>
+        <span>${t.btnOrderBrandWhatsApp || 'طلب مباشر من هذه الدار عبر واتساب'}</span>
+      </a>
+      <button type="button" class="btn-return-ghalati" onclick="selectHouse('ghalati')">
+        <span>🌟</span>
+        <span>${t.btnBackToGhalatiCatalog || 'عرض منتجات دار غلاتي المتوفرة فورياً (120 عطراً)'}</span>
+      </button>
+    </div>
+  `;
 }
 
 // ── Catalog Data & Rendering ──
