@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-ard-al-zaafaran" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241407" />
+      <stop offset="100%" stop-color="#0D0702" />
+    </linearGradient>
+    <radialGradient id="glow-ard-al-zaafaran" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E6A122" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E6A122" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-ard-al-zaafaran)" stroke="#E6A122" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#E6A122" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-ard-al-zaafaran)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- Saffron Blossom & Golden Petals -->
+      <circle cx="50" cy="46" r="18" fill="none" stroke="#E6A122" stroke-width="1.8" stroke-dasharray="3 2"/>
+      <path d="M50 32 C46 40 46 48 50 54 C54 48 54 40 50 32 Z" fill="#E6A122"/>
+      <path d="M37 40 C43 44 48 48 50 54 C44 53 38 48 37 40 Z" fill="#FED984"/>
+      <path d="M63 40 C57 44 52 48 50 54 C56 53 62 48 63 40 Z" fill="#FED984"/>
+      <circle cx="50" cy="58" r="3" fill="#E6A122"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="6.8" font-weight="900" fill="#E6A122" text-anchor="middle" letter-spacing="1">ARD AL ZAAFARAN</text>
+</svg>

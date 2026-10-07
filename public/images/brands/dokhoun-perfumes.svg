@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-dokhoun-perfumes" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B18" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-dokhoun-perfumes" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-dokhoun-perfumes)" stroke="#D4AF37" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-dokhoun-perfumes)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- Dkhoon Crown & Incense Flame -->
+      <path d="M36 54 C36 44 42 36 50 32 C58 36 64 44 64 54 C64 63 58 67 50 67 C42 67 36 63 36 54 Z" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
+      <path d="M44 48 C44 42 50 38 50 38 C50 38 56 42 56 48 C56 53 50 55 50 55 C50 55 44 53 44 48 Z" fill="#D4AF37"/>
+      <circle cx="50" cy="27" r="3" fill="#F3E5AB"/>
+      <path d="M32 68 H68" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#D4AF37" text-anchor="middle" letter-spacing="1">DKHOON</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-al-haramain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B291A" />
+      <stop offset="100%" stop-color="#03120A" />
+    </linearGradient>
+    <radialGradient id="glow-al-haramain" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D6A848" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D6A848" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-al-haramain)" stroke="#D6A848" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D6A848" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-al-haramain)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- Al Haramain Twin Minarets & Dome -->
+      <path d="M35 60 V38 L38 32 L41 38 V60" stroke="#D6A848" stroke-width="2.2" fill="none"/>
+      <path d="M59 60 V38 L62 32 L65 38 V60" stroke="#D6A848" stroke-width="2.2" fill="none"/>
+      <path d="M42 60 C42 48 50 42 50 42 C50 42 58 48 58 60 Z" fill="#D6A848" opacity="0.8"/>
+      <circle cx="50" cy="38" r="2.5" fill="#F7DC94"/>
+      <line x1="32" y1="62" x2="68" y2="62" stroke="#D6A848" stroke-width="2.5" stroke-linecap="round"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="6.8" font-weight="900" fill="#D6A848" text-anchor="middle" letter-spacing="1">AL HARAMAIN</text>
+</svg>

@@ -208,7 +208,7 @@ function renderFooterHouses() {
     <li>
       <a href="#catalog" onclick="selectHouse('ghalati')" class="footer-brand-all">
         <img src="images/brands/ghalati.svg" class="footer-brand-logo" alt="Ghalati" loading="lazy">
-        <span>${isAr ? 'عرض كافة الـ 26 داراً معتمدة...' : 'Browse all 26 Houses...'}</span>
+        <span>${isAr ? `عرض كافة الـ ${FRAGRANCE_HOUSES.length} داراً معتمدة...` : `Browse all ${FRAGRANCE_HOUSES.length} Houses...`}</span>
       </a>
     </li>
   `;

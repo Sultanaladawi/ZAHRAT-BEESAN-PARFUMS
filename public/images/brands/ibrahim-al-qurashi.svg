@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-ibrahim-al-qurashi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B0E14" />
+      <stop offset="100%" stop-color="#0F0406" />
+    </linearGradient>
+    <radialGradient id="glow-ibrahim-al-qurashi" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E5C158" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E5C158" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-ibrahim-al-qurashi)" stroke="#E5C158" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#E5C158" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-ibrahim-al-qurashi)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- IAQ Royal Heraldic Crest & Crown -->
+      <path d="M35 34 L40 44 L50 32 L60 44 L65 34 L68 50 H32 Z" fill="none" stroke="#E5C158" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="35" cy="30" r="2.2" fill="#FFF0B3"/>
+      <circle cx="50" cy="28" r="2.5" fill="#FFF0B3"/>
+      <circle cx="65" cy="30" r="2.2" fill="#FFF0B3"/>
+      <circle cx="50" cy="58" r="9" fill="none" stroke="#E5C158" stroke-width="2"/>
+      <text x="50" y="61.5" font-family="'Cinzel', serif" font-size="8" font-weight="900" fill="#FFF0B3" text-anchor="middle">IAQ</text>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="6" font-weight="900" fill="#E5C158" text-anchor="middle" letter-spacing="1">IBRAHIM AL QURASHI</text>
+</svg>

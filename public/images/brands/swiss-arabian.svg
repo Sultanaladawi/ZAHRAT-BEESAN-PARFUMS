@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-swiss-arabian" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2130" />
+      <stop offset="100%" stop-color="#0A0D14" />
+    </linearGradient>
+    <radialGradient id="glow-swiss-arabian" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C99D42" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C99D42" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-swiss-arabian)" stroke="#C99D42" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#C99D42" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-swiss-arabian)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- Swiss-Arabian Cross & Wings Crest -->
+      <circle cx="50" cy="47" r="19" fill="none" stroke="#C99D42" stroke-width="2"/>
+      <path d="M47 38 H53 V44 H59 V50 H53 V56 H47 V50 H41 V44 H47 Z" fill="#C99D42"/>
+      <path d="M30 47 C34 38 40 34 50 34 C60 34 66 38 70 47" fill="none" stroke="#FCE7A6" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="50" cy="27" r="2.5" fill="#C99D42"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="6.8" font-weight="900" fill="#C99D42" text-anchor="middle" letter-spacing="1">SWISS ARABIAN</text>
+</svg>

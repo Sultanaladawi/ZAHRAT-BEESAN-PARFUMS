@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-atyab-al-marshoud" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D2B24" />
+      <stop offset="100%" stop-color="#04120F" />
+    </linearGradient>
+    <radialGradient id="glow-atyab-al-marshoud" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D1AC00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D1AC00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-atyab-al-marshoud)" stroke="#D1AC00" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D1AC00" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-atyab-al-marshoud)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -3)">
+    
+      <!-- Marshoud Historic 1925 Heritage Crest -->
+      <circle cx="50" cy="46" r="20" fill="none" stroke="#D1AC00" stroke-width="1.8" stroke-dasharray="2 3"/>
+      <path d="M36 46 C36 38 43 32 50 32 C57 32 64 38 64 46 C64 54 57 60 50 60 C43 60 36 54 36 46 Z" fill="none" stroke="#D1AC00" stroke-width="2.5"/>
+      <circle cx="50" cy="46" r="6" fill="#D1AC00"/>
+      <circle cx="50" cy="46" r="2.5" fill="#FBE885"/>
+      <text x="50" y="27" font-family="'Cinzel', serif" font-size="5.5" font-weight="800" fill="#FBE885" text-anchor="middle" letter-spacing="1">SINCE 1925</text>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="6" font-weight="900" fill="#D1AC00" text-anchor="middle" letter-spacing="1">ATYAB AL MARSHOUD</text>
+</svg>
