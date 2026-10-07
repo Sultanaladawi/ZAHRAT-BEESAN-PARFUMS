@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-khadlaj" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#042F2E" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-khadlaj" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-khadlaj)" stroke="#2DD4BF" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#2DD4BF" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-khadlaj)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Khadlaj Signature Leaf & Drop -->
+      <path d="M50 26 C36 40 36 60 50 70 C64 60 64 40 50 26 Z" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+      <line x1="50" y1="36" x2="50" y2="64" stroke="#2DD4BF" stroke-width="2"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#2DD4BF" text-anchor="middle" letter-spacing="1">KHADLAJ</text>
+</svg>

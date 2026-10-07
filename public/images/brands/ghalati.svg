@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-ghalati" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-ghalati" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C5A880" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C5A880" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-ghalati)" stroke="#C5A880" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#C5A880" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-ghalati)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Royal Crown -->
+      <path d="M28 58 L32 38 L42 48 L50 32 L58 48 L68 38 L72 58 Z" fill="#C5A880"/>
+      <circle cx="32" cy="36" r="3" fill="#FFE5B4"/>
+      <circle cx="50" cy="30" r="3.5" fill="#FFE5B4"/>
+      <circle cx="68" cy="36" r="3" fill="#FFE5B4"/>
+      <rect x="28" y="60" width="44" height="4" rx="2" fill="#C5A880"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#C5A880" text-anchor="middle" letter-spacing="1">GHALATI</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-reef" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-reef" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E4D5B7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E4D5B7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-reef)" stroke="#E4D5B7" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#E4D5B7" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-reef)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Reef Minimalist Luxury Monogram -->
+      <path d="M36 34 H54 C60 34 64 38 64 44 C64 50 60 54 54 54 H44 V66 H36 Z" fill="#E4D5B7"/>
+      <line x1="52" y1="54" x2="64" y2="66" stroke="#E4D5B7" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="50" cy="24" r="2.5" fill="#E4D5B7"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#E4D5B7" text-anchor="middle" letter-spacing="1">REEF</text>
+</svg>

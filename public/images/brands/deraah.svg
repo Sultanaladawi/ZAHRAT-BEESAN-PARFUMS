@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-deraah" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-deraah" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-deraah)" stroke="#D4AF37" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-deraah)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Deraah Shield & Stylized D -->
+      <path d="M50 24 L72 32 V52 C72 65 50 76 50 76 C50 76 28 65 28 52 V32 Z" fill="none" stroke="#D4AF37" stroke-width="3"/>
+      <path d="M42 38 H52 C58 38 62 42 62 50 C62 58 58 62 52 62 H42 Z" fill="none" stroke="#FFE5B4" stroke-width="3"/>
+      <line x1="42" y1="38" x2="42" y2="62" stroke="#FFE5B4" stroke-width="4" stroke-linecap="round"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#D4AF37" text-anchor="middle" letter-spacing="1">DERAAH</text>
+</svg>

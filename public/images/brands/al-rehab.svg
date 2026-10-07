@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-al-rehab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-al-rehab" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-al-rehab)" stroke="#34D399" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#34D399" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-al-rehab)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Al Rehab Pure Drop & Leaves -->
+      <path d="M50 26 C50 26 34 46 34 56 C34 66 42 72 50 72 C58 72 66 66 66 56 C66 46 50 26 50 26 Z" fill="#34D399"/>
+      <path d="M50 36 C50 36 42 50 42 56 C42 62 46 64 50 64 C54 64 58 62 58 56 C58 50 50 36 50 36 Z" fill="#064E3B"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#34D399" text-anchor="middle" letter-spacing="1">AL REHAB</text>
+</svg>

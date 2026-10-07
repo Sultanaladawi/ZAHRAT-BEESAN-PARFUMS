@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-al-ezz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#292524" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-al-ezz" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-al-ezz)" stroke="#D97706" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D97706" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-al-ezz)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Al Ezz Agarwood Scent Waves -->
+      <path d="M40 64 C40 50 60 48 60 34 M50 64 C50 54 62 50 62 40 M34 50 C38 42 46 40 46 32" stroke="#D97706" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <circle cx="50" cy="24" r="3" fill="#FCD34D"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="1">AL EZZ</text>
+</svg>

@@ -600,6 +600,15 @@ body[dir="ltr"] .mega-brand-item:hover {
   transform: translateX(2px);
 }
 
+.mega-brand-item-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
 .mega-brand-item-badge {
   font-size: 1.15rem;
 }
@@ -744,7 +753,16 @@ body[dir="ltr"] .mega-brand-item:hover {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+.house-chip-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .house-chip:hover, .house-chip.active-house {
@@ -755,7 +773,7 @@ body[dir="ltr"] .mega-brand-item:hover {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* Brand Showcase Card (تظهر عند اختيار أي دار أخرى من الـ 24) */
+/* Brand Showcase Card (تظهر عند اختيار أي دار أخرى من الـ 26) */
 .brand-showcase-panel {
   background: #ffffff;
   border: 1.5px solid rgba(197, 168, 128, 0.45);
@@ -768,6 +786,27 @@ body[dir="ltr"] .mega-brand-item:hover {
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
   animation: fadeIn 0.3s ease;
+}
+
+.brand-showcase-logo-box {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  padding: 5px;
+  background: #ffffff;
+  border: 2px solid rgba(197, 168, 128, 0.55);
+  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-showcase-main-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
 .brand-showcase-crest {
@@ -907,6 +946,14 @@ body[dir="ltr"] .mega-brand-item:hover {
   color: var(--cream);
   border-color: var(--espresso);
   transform: translateY(-2px);
+}
+
+.btn-return-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1336,6 +1383,27 @@ body[dir="ltr"] .mega-brand-item:hover {
 .footer-links a:hover {
   color: var(--gold-dim);
   padding-right: 6px;
+}
+
+.footer-brand-item,
+.footer-brand-all {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.footer-brand-all {
+  color: var(--gold-dim) !important;
+  font-weight: 800 !important;
 }
 
 .online-badge {

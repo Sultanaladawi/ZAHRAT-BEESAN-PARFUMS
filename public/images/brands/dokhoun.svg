@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-dokhoun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312E81" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-dokhoun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-dokhoun)" stroke="#F59E0B" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#F59E0B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-dokhoun)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Royal Mabkhara (Incense Burner) -->
+      <path d="M38 66 H62 L58 48 H42 Z" fill="#F59E0B"/>
+      <path d="M42 48 L36 34 H64 L58 48 Z" fill="#FBBF24"/>
+      <path d="M46 30 C46 22 50 20 50 20 C50 20 54 22 54 30" stroke="#FFE5B4" stroke-width="2" fill="none"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="1">DOKHOUN</text>
+</svg>

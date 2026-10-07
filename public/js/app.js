@@ -150,13 +150,16 @@ function renderHousesDropdown() {
       <span class="mega-brand-count">${FRAGRANCE_HOUSES.length} ${isAr ? 'داراً' : 'Houses'}</span>
     </div>
     <div class="mega-brand-grid">
-      ${FRAGRANCE_HOUSES.map(h => `
-        <a href="#catalog" class="mega-brand-item" onclick="selectHouse('${h.id}')" title="${isAr ? h.nameAr : h.nameEn}">
-          <span class="mega-brand-item-badge">${h.badge}</span>
-          <span class="mega-brand-item-name">${isAr ? h.nameAr : h.nameEn}</span>
-          <span class="mega-brand-item-country">${h.region === 'sa' ? '🇸🇦' : (h.region === 'ae' ? '🇦🇪' : '🇰🇼')}</span>
-        </a>
-      `).join('')}
+      ${FRAGRANCE_HOUSES.map(h => {
+        const name = isAr ? h.nameAr : h.nameEn;
+        return `
+          <a href="#catalog" class="mega-brand-item" onclick="selectHouse('${h.id}')" title="${name}">
+            <img src="${h.logo}" class="mega-brand-item-logo" alt="${name}" loading="lazy">
+            <span class="mega-brand-item-name">${name}</span>
+            <span class="mega-brand-item-country">${h.region === 'sa' ? '🇸🇦' : (h.region === 'ae' ? '🇦🇪' : '🇰🇼')}</span>
+          </a>
+        `;
+      }).join('')}
     </div>
   `;
 }
@@ -176,7 +179,7 @@ function renderHousesStrip() {
         data-house-id="${h.id}" 
         onclick="selectHouse('${h.id}')"
         title="${name}">
-        <span>${h.badge}</span>
+        <img src="${h.logo}" class="house-chip-logo" alt="${name}" loading="lazy">
         <span>${name}${countTag}</span>
       </button>
     `;
@@ -191,16 +194,21 @@ function renderFooterHouses() {
   const featured = FRAGRANCE_HOUSES.slice(0, 10);
 
   container.innerHTML = `
-    ${featured.map(h => `
-      <li>
-        <a href="#catalog" onclick="selectHouse('${h.id}')">
-          ${h.badge} ${isAr ? h.nameAr : h.nameEn}
-        </a>
-      </li>
-    `).join('')}
+    ${featured.map(h => {
+      const name = isAr ? h.nameAr : h.nameEn;
+      return `
+        <li>
+          <a href="#catalog" onclick="selectHouse('${h.id}')" class="footer-brand-item">
+            <img src="${h.logo}" class="footer-brand-logo" alt="${name}" loading="lazy">
+            <span>${name}</span>
+          </a>
+        </li>
+      `;
+    }).join('')}
     <li>
-      <a href="#catalog" onclick="selectHouse('ghalati')" style="color: var(--gold-dim); font-weight: 800;">
-        ✨ ${isAr ? 'عرض كافة الـ 24 داراً معتمدة...' : 'Browse all 24 Houses...'}
+      <a href="#catalog" onclick="selectHouse('ghalati')" class="footer-brand-all">
+        <img src="images/brands/ghalati.svg" class="footer-brand-logo" alt="Ghalati" loading="lazy">
+        <span>${isAr ? 'عرض كافة الـ 26 داراً معتمدة...' : 'Browse all 26 Houses...'}</span>
       </a>
     </li>
   `;
@@ -245,7 +253,7 @@ function selectHouse(houseId) {
         panel.style.display = 'block';
         renderBrandShowcase(house);
       }
-      if (titleText) titleText.textContent = `${house.badge} ${isAr ? house.nameAr : house.nameEn}`;
+      if (titleText) titleText.textContent = isAr ? house.nameAr : house.nameEn;
       if (subtitleText) subtitleText.textContent = isAr ? 'إصدارات رسمية مستوردة بضمان أصالة زهرة بيسان 100%' : 'Official luxury collection backed by 100% authenticity guarantee';
     }
   }
@@ -276,7 +284,9 @@ function renderBrandShowcase(h) {
   const waLink = `https://wa.me/962796697413?text=${waText}`;
 
   panel.innerHTML = `
-    <div class="brand-showcase-crest">${h.badge}</div>
+    <div class="brand-showcase-logo-box">
+      <img src="${h.logo}" class="brand-showcase-main-logo" alt="${name}">
+    </div>
     <h2 class="brand-showcase-title-ar">${h.nameAr}</h2>
     <span class="brand-showcase-title-en">${h.nameEn}</span>
 
@@ -304,7 +314,7 @@ function renderBrandShowcase(h) {
         <span>${t.btnOrderBrandWhatsApp || 'طلب مباشر من هذه الدار عبر واتساب'}</span>
       </a>
       <button type="button" class="btn-return-ghalati" onclick="selectHouse('ghalati')">
-        <span>🌟</span>
+        <img src="images/brands/ghalati.svg" class="btn-return-logo" alt="Ghalati">
         <span>${t.btnBackToGhalatiCatalog || 'عرض منتجات دار غلاتي المتوفرة فورياً (120 عطراً)'}</span>
       </button>
     </div>

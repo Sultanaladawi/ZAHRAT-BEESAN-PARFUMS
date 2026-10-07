@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-sadr-al-khaleej" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#083344" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-sadr-al-khaleej" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-sadr-al-khaleej)" stroke="#38BDF8" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#38BDF8" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-sadr-al-khaleej)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Gulf Pearl Waves -->
+      <path d="M32 54 C38 48 44 60 50 54 C56 48 62 60 68 54" stroke="#38BDF8" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="50" cy="38" r="8" fill="#F0F9FF"/>
+      <circle cx="50" cy="38" r="4" fill="#38BDF8"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#38BDF8" text-anchor="middle" letter-spacing="1">SADR AL KHALEEJ</text>
+</svg>

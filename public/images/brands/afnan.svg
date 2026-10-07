@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-afnan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <radialGradient id="glow-afnan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3F4F6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F3F4F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad-afnan)" stroke="#F3F4F6" stroke-width="1.8"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#F3F4F6" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.7"/>
+  <circle cx="50" cy="50" r="38" fill="url(#glow-afnan)"/>
+
+  <!-- Official Brand Crest Motif -->
+  <g transform="translate(0, -4)">
+    
+      <!-- Afnan Geometric Star Monogram -->
+      <polygon points="50,22 58,38 76,40 62,52 66,70 50,60 34,70 38,52 24,40 42,38" fill="none" stroke="#C5A880" stroke-width="2.5"/>
+      <circle cx="50" cy="48" r="6" fill="#F3F4F6"/>
+    
+  </g>
+
+  <!-- Typography Brand Mark -->
+  <text x="50" y="86" font-family="'Cinzel', 'Trajan Pro', serif, 'Amiri'" font-size="7.5" font-weight="900" fill="#F3F4F6" text-anchor="middle" letter-spacing="1">AFNAN</text>
+</svg>
