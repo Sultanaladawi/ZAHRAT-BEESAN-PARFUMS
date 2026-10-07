@@ -815,11 +815,11 @@
     "finalJod": 30,
     "url": "https://ghalati.com/ar/%D8%B9%D8%B7%D8%B1-%D8%B1%D8%B3%D8%A7%D8%A6%D9%84-%D8%AD%D9%86%D9%8A%D9%86/p1089182563",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/36e5830d-6cb9-4153-8b85-c1bc6df6fab4-1000x1000-ePLIem4e83On0kDlykE9Qh9b33qeZogYnwCEBAY1.png",
-    "overview": "رسائل حنين عطر منعش يتحدى الجاذبية فتراقصها نسمة هواء محملة بعبير الازهار و الياسمين لخلق أثر عطري رائع التي تذهب بحواسك بعيدا إلى عالم مليء بالجمال وفرحا منعشا للروح .",
-    "opening": "البرغموت",
-    "heart": "البرتقال",
-    "base": "الباتشولي و التفاح",
-    "prominent": "البرغموت و البرتقال",
+    "overview": "رسائل حنين عطر منعش يتحدى الجاذبية فتراقصها نسمة هواء محملة بعبير الازهار والياسمين لخلق أثر عطري رائع يذهب بحواسك بعيداً إلى عالم مليء بالجمال وفرحاً منعشاً للروح.",
+    "opening": "برغموت ونفحات حمضية منعشة",
+    "heart": "زهر البرتقال وعبير الياسمين والزهور",
+    "base": "التفاح الأخضر والباتشولي",
+    "prominent": "البرغموت وزهر البرتقال والتفاح والباتشولي",
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
@@ -841,9 +841,12 @@
     },
     "image": "images/ghalati_rasayil-haneen.jpg",
     "originalImage": "images/original_rasayil-haneen.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_rasayil-haneen_presentation.jpg"
+    ],
     "categoryType": "perfume",
-    "boxImage": null
+    "boxImage": "images/box_rasayil-haneen.jpg",
+    "fragranticaCard": "images/pyramid_rasayil-haneen.jpg"
   },
   {
     "id": "rasayil-shawq",
@@ -856,11 +859,11 @@
     "finalJod": 30,
     "url": "https://ghalati.com/ar/عطر-رسائل-شوق/p113450693",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/Byh5gUTRlQeTUkZ4ddJrUN5AAY2wU4o8fSX0cbbj.png",
-    "overview": "يأخذك عطر رسائل شوق في رحلة مدهشة من الأحاسيس العميقة والمشاعر الصادقة. يتميز بمزيج ساحر من الفواكه، الكراميل، والزهور ليعكس لحظات الحب الصادق والعواطف العميقة. عطر فريد يلائم الجنسين، مثالي لإضفاء لمسة من الجمال والسحر على يومك.",
-    "opening": "فراولة، كراميل، خوخ",
-    "heart": "زعفران، عنبر، ورد",
-    "base": "باتشولي، فانيليا، ليذر",
-    "prominent": "فراولة، فانيليا، عنبر، خوخ",
+    "overview": "عطر رسائل شوق: رحلة عاطفية تنبض بالمشاعر. يأخذك عطر رسائل شوق في رحلة مدهشة من الأحاسيس العميقة والمشاعر الصادقة، يتميز بمزيج ساحر من الفواكه، الكراميل، والزهور الفاتنة مع قاعدة دافئة من الجلد والباتشولي.",
+    "opening": "خوخ وكراميل وفراولة برية",
+    "heart": "زعفران وعنبر وورد فاتن",
+    "base": "باتشولي وجلد فاخر (ليذر)",
+    "prominent": "الكراميل والخوخ والزعفران والجلد الفاخر",
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين، يناسب كافة الأوقات والمناسبات",
@@ -869,7 +872,9 @@
     },
     "image": "images/ghalati_rasayil-shawq.jpg",
     "originalImage": "images/original_rasayil-shawq.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_rasayil-shawq_presentation.jpg"
+    ],
     "overviewEn": "Rasayil Shawq takes you on an emotional journey of deep affection and authentic passion. Featuring an enchanting blend of luscious fruits, golden caramel, and exquisite florals.",
     "openingEn": "Strawberry, Caramel, Peach",
     "heartEn": "Saffron, Amber, Rose",
@@ -881,7 +886,8 @@
       "size": "100 مل",
       "type": "Eau De Parfum"
     },
-    "boxImage": null
+    "boxImage": "images/box_rasayil-shawq.jpg",
+    "fragranticaCard": "images/pyramid_rasayil-shawq.jpg"
   },
   {
     "id": "just-oud",
