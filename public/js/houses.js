@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════════════════════
 // 🏛️ دليل دور وشركات العطور الملكية المعتمدة — زهرة بيسان
 // Official Fragrance Houses Directory — Zahrat Beesan Parfums
-// 37 Authorized Royal Perfume Houses with Vector Brand Logos
+// 41 Authorized Royal Perfume Houses with Vector Brand Logos
 // ══════════════════════════════════════════════════════════
 
 const FRAGRANCE_HOUSES = [
@@ -559,6 +559,66 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Makkah's Oldest Perfumery Since 1929: Royal White Musk, Amber Surrati, Dehn Oud & Concentrated Oils",
     descAr: "تأسست في مكة المكرمة بجوار الحرم الشريف عام 1929. منبع الزيوت العطرية والمسك الأبيض والخلطات التراثية النقية في العالم الإسلامي.",
     descEn: "Founded in Makkah next to the Holy Mosque in 1929. The historic cradle of pure perfume oils, white musk, and traditional blends.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "amouage",
+    nameAr: "دار أمواج الملكية",
+    nameEn: "Amouage",
+    logo: "images/brands/amouage.svg",
+    badge: "👑",
+    region: "om",
+    countryAr: "سلطنة عمان 🇴🇲",
+    countryEn: "Sultanate of Oman 🇴🇲",
+    specialtyAr: "قمة النيش الملكي العالمي وتراث اللبان العماني الحوجري النادر (إنترلود Interlude، ريفلكشن Reflection، جبر Jubilation، ديا Dia، إيبيك Epic)",
+    specialtyEn: "The Gift of Kings & Rare Omani Frankincense: Interlude, Reflection, Jubilation XXV, Dia & Epic",
+    descAr: "تأسست بمرسوم سلطاني في سلطنة عمان عام 1983 كـ 'هدية الملوك'. أرقى وأفخم دار نيش شرقية تحظى باعتراف وتقدير نخبوي عالمي.",
+    descEn: "Founded in 1983 in Oman by royal decree, known as 'The Gift of Kings', renowned for supreme craftsmanship and precious royal frankincense.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "arabiyat",
+    nameAr: "عربيات للعطور",
+    nameEn: "Arabiyat Perfumes",
+    logo: "images/brands/arabiyat.svg",
+    badge: "🐎",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "روائع العطور التراثية والحديثة بالفروسية العربية (عربيات خمرة، عود الريان، غزال، مسك الحرير، سلطان العرب)",
+    specialtyEn: "Heritage Elegance & Arabian Equestrian Blends: Oud Al Rayan, Ghazal, Silk Musk & Sultan Al Arab",
+    descAr: "العلامة الشهيرة برمز الخيل العربي من مجموعة ماي بيرفيومز، المتخصصة في تقديم أروع التوليفات الشرقية بفوحان أصيل وثبات فائق.",
+    descEn: "The distinguished Arabian brand celebrated for its equestrian emblem, crafting rich traditional and modern oriental scents.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "armaf",
+    nameAr: "عطور أرماف",
+    nameEn: "Armaf Perfumes",
+    logo: "images/brands/armaf.svg",
+    badge: "✨",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "الظاهرة العالمية الأشهر في عالم البدائل والنيش (كلوب دي نوي إنتنس مان Club de Nuit Intense Man، مايلستون Milestone، سيلاج Sillage، أيكونيك Iconic)",
+    specialtyEn: "Global Powerhouse: Club de Nuit Intense Man, Milestone, Sillage, Untold & Iconic",
+    descAr: "العلامة التي حققت انتشاراً عالمياً غير مسبوق في أكثر من 100 دولة عبر سلسلة كلوب دي نوي التي أذهلت عشاق العطور بثباتها الفتاك.",
+    descEn: "World-renowned titan famous for the groundbreaking Club de Nuit saga, dominating international charts with powerhouse performance.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "french-avenue",
+    nameAr: "فرنش أفينيو",
+    nameEn: "French Avenue",
+    logo: "images/brands/french-avenue.svg",
+    badge: "⚜️",
+    region: "ae",
+    countryAr: "الإمارات 🇦🇪 / فرنسا 🇫🇷",
+    countryEn: "UAE 🇦🇪 / France 🇫🇷",
+    specialtyAr: "خط النيش الفاخر الأعلى لدار فراجرانس وورلد (رويال بليند Royal Blend، ليكويد برون Liquid Brun، أفتر إفكت After Effect، بينك روز Pink Rose)",
+    specialtyEn: "Haute Niche Luxury Line: Royal Blend, Liquid Brun, After Effect & Sovereign Blends",
+    descAr: "الخط النيش الحصري والمترف من فراجرانس وورلد، يتميز بزجاجات ديزاينر ثقيلة فاخرة ومكونات نيش فرنسية بالغة النقاء والفوحان.",
+    descEn: "The prestige luxury division of Fragrance World, creating ultra-refined haute niche masterworks with lavish presentations.",
     hasActiveCatalog: false
   }
 ];
