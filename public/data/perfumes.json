@@ -287,7 +287,9 @@
     "finalJod": 30,
     "image": "images/ghalati_moudhi.jpg",
     "originalImage": "images/original_moudhi.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_moudhi_presentation.jpg"
+    ],
     "overviewEn": "A royal oriental fragrance honoring majestic Arabian heritage. A decadent symphony of frankincense, precious oud, and Damask rose, crafted for grand occasions and distinguished evenings.",
     "openingEn": "Peach, Lemon, Bergamot, Mandarin, Grapefruit",
     "heartEn": "Clove, Gardenia, Rose, Jasmine, Violet",
@@ -301,7 +303,8 @@
       "perfumer": "شادي سمرة"
     },
     "categoryType": "perfume",
-    "boxImage": null
+    "boxImage": "images/box_moudhi.jpg",
+    "fragranticaCard": "images/pyramid_moudhi.jpg"
   },
   {
     "id": "rozana",
@@ -345,7 +348,7 @@
     "fragranticaId": "79253",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.79253.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79253.jpg",
-    "boxImage": null
+    "boxImage": "images/box_rozana.jpg"
   },
   {
     "id": "emotion",
