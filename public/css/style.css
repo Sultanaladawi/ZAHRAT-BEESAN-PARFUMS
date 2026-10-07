@@ -1454,31 +1454,162 @@ img {
 }
 
 /* ══════════════════════════════════════════════════════════
-   PRODUCT DETAILS MODAL (LUXURY HAUTE PARFUMERIE SPEC SHEET)
+   FULL-PAGE LUXURY PRODUCT VIEW (صفحة كاملة لتفاصيل العطر)
    ══════════════════════════════════════════════════════════ */
-.product-modal-card {
+.product-page-view {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   background: var(--cream);
-  border-radius: var(--radius-lg);
-  max-width: 1040px;
-  width: 95%;
-  max-height: 92vh;
+  z-index: 999999;
+  display: none;
+  flex-direction: column;
   overflow-y: auto;
-  position: relative;
-  box-shadow: var(--shadow-lg), 0 25px 50px rgba(0, 0, 0, 0.35);
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Sticky Luxury Top Navigation Bar */
+.product-page-topbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.5px solid rgba(197, 168, 128, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  padding: 12px 28px;
+}
+
+.product-page-topbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product-page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid rgba(197, 168, 128, 0.45);
+  color: var(--espresso);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.product-page-back-btn:hover {
+  background: var(--espresso);
+  color: var(--cream);
+  border-color: var(--espresso);
+  transform: translateX(-3px);
+}
+
+body[dir="ltr"] .product-page-back-btn:hover {
+  transform: translateX(3px);
+}
+
+.back-btn-arrow {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold-dim);
+  transition: transform 0.25s ease;
+}
+
+.product-page-back-btn:hover .back-btn-arrow {
+  color: var(--gold);
+}
+
+.product-page-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-page-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-page-brand-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-dim);
+  letter-spacing: 0.5px;
+}
+
+.product-page-close-x {
+  background: #fff;
   border: 1.5px solid rgba(197, 168, 128, 0.4);
-  padding: 34px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--espresso);
+  transition: all 0.25s ease;
+}
+
+.product-page-close-x:hover {
+  background: #e53e3e;
+  border-color: #e53e3e;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Full Page Body */
+.product-page-body {
+  flex: 1;
+  width: 100%;
+}
+
+.product-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 32px 90px;
+  width: 100%;
+}
+
+.product-modal-card {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .product-modal-grid {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 34px;
+  grid-template-columns: minmax(460px, 520px) 1fr;
+  gap: 56px;
+  align-items: start;
 }
 
 .modal-gallery-pane {
+  position: sticky;
+  top: 90px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .modal-main-img-box {
@@ -1781,12 +1912,25 @@ img {
 /* ══════════════════════════════════════════════════════════
    RESPONSIVE DESIGN
    ══════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .product-modal-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .modal-gallery-pane {
+    position: static;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .product-page-container {
+    padding: 24px 18px 60px;
+  }
+  .modal-title-ar {
+    font-size: 2.1rem;
   }
   .modal-main-img-box {
-    max-width: 360px;
+    max-width: 100%;
     margin: 0 auto;
   }
 }

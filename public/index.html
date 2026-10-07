@@ -427,14 +427,31 @@
     </div>
   </div>
 
-  <!-- مودال تفاصيل العطر والهرم العطري الملكي -->
-  <div class="modal-overlay" id="productModal" style="display: none;">
-    <div class="product-modal-card">
-      <button class="modal-close-btn" onclick="closeProductModal()">&times;</button>
-      <div id="productModalContent">
+  <!-- صفحة تفاصيل العطر الكاملة الفاخرة والهرم العطري الملكي -->
+  <div class="product-page-view" id="productModal" style="display: none;">
+    <!-- الشريط العلوي الفاخر لصفحة العطر -->
+    <header class="product-page-topbar">
+      <div class="product-page-topbar-inner">
+        <button type="button" class="product-page-back-btn" onclick="closeProductModal()">
+          <span class="back-btn-arrow">&#8594;</span>
+          <span class="back-btn-text" id="productPageBackText">العودة إلى الكتالوج</span>
+        </button>
+        <div class="product-page-brand-badge">
+          <img src="logo.png" alt="Zahrat Beesan" class="product-page-logo">
+          <span class="product-page-brand-title">زهرة بيسان للعطور</span>
+        </div>
+        <button type="button" class="product-page-close-x" onclick="closeProductModal()" aria-label="Close" title="إغلاق">
+          &times;
+        </button>
+      </div>
+    </header>
+
+    <!-- جسم الصفحة الكاملة -->
+    <main class="product-page-body">
+      <div class="product-page-container" id="productModalContent">
         <!-- Rendered dynamically by app.js -->
       </div>
-    </div>
+    </main>
   </div>
 
   <script src="js/translations.js"></script>

@@ -135,6 +135,14 @@ async function loadCatalog() {
   }
 
   renderCatalog(currentFilter, currentSearch);
+
+  // If URL has a product hash on direct load/refresh, open its full page immediately
+  if (window.location.hash.startsWith('#product/')) {
+    const prodId = window.location.hash.replace('#product/', '');
+    if (prodId) {
+      setTimeout(() => openProductModal(prodId), 150);
+    }
+  }
 }
 
 function filterCatalog(category, btnElement) {
@@ -396,6 +404,16 @@ function openProductModal(id) {
   if (modal) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // prevent background scrolling
+    modal.scrollTop = 0; // start at top of full product page
+  }
+
+  const backText = document.getElementById('productPageBackText');
+  if (backText) {
+    backText.textContent = currentLang === 'ar' ? 'العودة إلى الكتالوج' : 'Back to Catalog';
+  }
+
+  if (window.location.hash !== `#product/${id}`) {
+    history.pushState({ productId: id }, '', `#product/${id}`);
   }
 }
 
@@ -406,6 +424,9 @@ function closeProductModal() {
     document.body.style.overflow = '';
   }
   activeModalPerfume = null;
+  if (window.location.hash.startsWith('#product')) {
+    history.pushState(null, '', '#catalog');
+  }
 }
 
 function renderProductModalContent(p) {
@@ -437,6 +458,8 @@ function renderProductModalContent(p) {
 
   const addGalleryItem = (src, label, isFlacon = false) => {
     if (!src || seenUrls.has(src)) return;
+    // Strict purge of duplicate bottle images with the red bird watermark
+    if (src.includes('social.') || src.includes('/perfume/social')) return;
     seenUrls.add(src);
     galleryItems.push({ src, label, isFlacon });
   };
@@ -622,6 +645,14 @@ function renderProductModalContent(p) {
           <span>${t.modalOfficialSource}</span>
         </a>
 
+        <!-- زر العودة للكتالوج في أسفل الصفحة -->
+        <div style="margin-top: 16px;">
+          <button type="button" class="product-page-back-btn" onclick="closeProductModal()" style="width: 100%; justify-content: center; padding: 12px 24px; font-size: 0.95rem;">
+            <span class="back-btn-arrow">&#8594;</span>
+            <span>${currentLang === 'ar' ? 'العودة إلى تصفح باقي العطور في الكتالوج' : 'Back to Browse Full Catalog'}</span>
+          </button>
+        </div>
+
       </div>
 
     </div>
@@ -636,7 +667,8 @@ function switchModalImage(src, isFlacon, label, btnEl) {
     const isContain = isFlacon || 
                       src.includes('secundar') || 
                       src.includes('perfume-social-cards') || 
-                      src.includes('social.') || 
+                      src.includes('pyramid_') || 
+                      src.includes('card_') || 
                       src.endsWith('.png') ||
                       src.includes('800.0') ||
                       src.includes('1000x1000');
@@ -703,11 +735,6 @@ window.addEventListener('click', (e) => {
   if (currencyModal && e.target === currencyModal) {
     closeCurrencyModal();
   }
-
-  const productModal = document.getElementById('productModal');
-  if (productModal && e.target === productModal) {
-    closeProductModal();
-  }
 });
 
 window.addEventListener('keydown', (e) => {
@@ -715,6 +742,20 @@ window.addEventListener('keydown', (e) => {
     closeProductModal();
     closeCurrencyModal();
     closeShippingModal();
+  }
+});
+
+// Browser Back / Forward History support for full product page
+window.addEventListener('popstate', (e) => {
+  const hash = window.location.hash;
+  if (hash.startsWith('#product/')) {
+    const id = hash.replace('#product/', '');
+    if (id) {
+      const p = perfumesData.find(item => item.id === id);
+      if (p) openProductModal(id);
+    }
+  } else if (activeModalPerfume) {
+    closeProductModal();
   }
 });
 
