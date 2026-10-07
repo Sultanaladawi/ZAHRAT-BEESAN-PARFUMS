@@ -85,7 +85,7 @@
     "fragranticaId": "79249",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.79249.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79249.jpg",
-    "boxImage": null
+    "boxImage": "images/box_majestic-wood.jpg"
   },
   {
     "id": "oud-argent",
@@ -261,7 +261,7 @@
     "fragranticaId": "79250",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.79250.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79250.jpg",
-    "boxImage": null
+    "boxImage": "images/box_nowara.jpg"
   },
   {
     "id": "moudhi",
@@ -2485,6 +2485,50 @@
     "fragranticaCard": "images/pyramid_ancestry-oud.jpg",
     "fragranticaBottle": null,
     "boxImage": "images/box_ancestry-oud.png"
+  },
+  {
+    "id": "layana",
+    "title": "عطر ليانا",
+    "titleEn": "Layana Eau De Parfum",
+    "brand": "دار غلاتي (Ghalati)",
+    "sarPrice": 95,
+    "url": "https://www.boutiqaat.com/ar-sa/men/layana-edp-100ml-unisex-by-ghalati-orl-00005450-1/p/",
+    "bottleUrl": "images/original_layana.png",
+    "overview": "عطر ليانا النسائي الفاخر، توليفة شرقية ساحرة تجمع بين حلاوة الفواكه المخملية ودفء الجلود والبخور. يفتتح العطر بلمسات منعشة وشهية من الخوخ وتوت العليق مع إشراقة البرغموت، ثم يتعمق في قلب غني ومغري من الشوكولاتة الداكنة والبخور الشرقي، ليرتكز على قاعدة آسرة من الجلود الفخمة والفانيليا الدافئة تدوم طويلاً.",
+    "opening": "الخوخ، توت العليق، والبرغموت",
+    "heart": "الشوكولاتة الداكنة، والبخور الشرقي",
+    "base": "الجلود الفاخرة، والفانيليا الدافئة",
+    "prominent": "الخوخ، الجلود، توت العليق، الشوكولاتة الداكنة، والبخور",
+    "specs": {
+      "origin": "المملكة العربية السعودية",
+      "category": "نسائي، عطر شرقي فاكهي جلدي حلو وفخم",
+      "size": "100 مل",
+      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "perfumer": "دار غلاتي للعطور"
+    },
+    "baseJod": 18,
+    "finalJod": 30,
+    "image": "images/ghalati_layana.jpg",
+    "originalImage": "images/original_layana.png",
+    "galleryImages": [],
+    "overviewEn": "Layana Eau De Parfum for women is an enchanting blend combining velvety sweet fruits with rich leather and smoky incense. It opens with luscious peach, raspberry, and bergamot, evolves into an alluring heart of dark chocolate and incense, resting on an opulent, long-lasting foundation of leather and warm vanilla.",
+    "openingEn": "Peach, Raspberry, Bergamot",
+    "heartEn": "Dark Chocolate, Incense",
+    "baseEn": "Leather, Vanilla",
+    "prominentEn": "Peach, Leather, Raspberry, Dark Chocolate, Incense",
+    "specsEn": {
+      "origin": "Kingdom of Saudi Arabia",
+      "category": "Women's Luxury Fruity Leather",
+      "size": "100 مل",
+      "type": "Eau De Parfum",
+      "perfumer": "Maison Ghalati"
+    },
+    "categoryType": "perfume",
+    "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Layana-79187.html",
+    "fragranticaId": "79187",
+    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79187.jpeg",
+    "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79187.jpg",
+    "boxImage": "images/box_layana.jpg"
   },
   {
     "id": "bundle-musk-collection",
