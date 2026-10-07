@@ -764,7 +764,7 @@
     },
     "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Utopia-Platinum-89826.html",
     "fragranticaId": "89826",
-    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_89826.jpeg",
+    "fragranticaCard": "images/card_utopia-platinum.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.89826.jpg",
     "boxImage": null
   },
@@ -1835,9 +1835,9 @@
     },
     "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Utopia-Gist-79192.html",
     "fragranticaId": "79192",
-    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79192.jpeg",
+    "fragranticaCard": "images/card_utopia-gist.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79192.jpg",
-    "boxImage": "https://fimgs.net/mdimg/secundar/o.99675.jpg"
+    "boxImage": "images/box_utopia-gist.jpg"
   },
   {
     "id": "utopia-ideal",
@@ -1878,7 +1878,7 @@
       "perfumer": "Ghalati Parfums R&D"
     },
     "fragranticaCard": "images/pyramid_utopia-ideal.jpg",
-    "boxImage": null
+    "boxImage": "images/box_utopia-ideal.jpg"
   },
   {
     "id": "eternal-passion",
