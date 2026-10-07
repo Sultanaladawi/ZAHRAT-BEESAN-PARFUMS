@@ -330,7 +330,9 @@
     "finalJod": 30,
     "image": "images/ghalati_rozana.jpg",
     "originalImage": "images/original_rozana.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/rozana_notes.jpg"
+    ],
     "overviewEn": "An ode to delicate grace and feminine tenderness. A captivating tapestry of Bulgarian rose, velvety powdery notes, and pure musk, leaving an aura of irresistible tranquility and beauty.",
     "openingEn": "Berries, Violet, Apple, Orange",
     "heartEn": "Rose, Jasmine",
@@ -392,7 +394,7 @@
     "fragranticaId": "79252",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.79252.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79252.jpg",
-    "boxImage": null
+    "boxImage": "images/box_emotion.jpg"
   },
   {
     "id": "attraction",
@@ -594,7 +596,7 @@
       "type": "Eau De Parfum",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "boxImage": null
+    "boxImage": "images/box_bois-noir.jpg"
   },
   {
     "id": "shades",
@@ -637,7 +639,7 @@
     "fragranticaId": "79254",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.79254.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79254.jpg",
-    "boxImage": null
+    "boxImage": "images/box_shades.jpg"
   },
   {
     "id": "oud-absolute",
@@ -1459,7 +1461,7 @@
     "fragranticaId": "84781",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume/social.84781.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.84781.jpg",
-    "boxImage": null
+    "boxImage": "images/box_dama.jpg"
   },
   {
     "id": "utopia-essence",
@@ -1499,7 +1501,7 @@
       "type": "Eau De Parfum",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "boxImage": null
+    "boxImage": "images/box_utopia-essence.jpg"
   },
   {
     "id": "exotic-wood",
@@ -1539,7 +1541,7 @@
       "type": "Eau De Parfum",
       "perfumer": "كريس موريس"
     },
-    "boxImage": null
+    "boxImage": "images/box_exotic-wood.jpg"
   },
   {
     "id": "rose-intense",
@@ -2355,7 +2357,7 @@
       "type": "Eau De Parfum",
       "perfumer": "ميروسلاف بيتكوف"
     },
-    "boxImage": null
+    "boxImage": "images/box_honest.jpg"
   },
   {
     "id": "varna-single",
