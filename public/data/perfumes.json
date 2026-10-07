@@ -1140,7 +1140,7 @@
     "fragranticaId": "84783",
     "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_84783.jpeg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.84783.jpg",
-    "boxImage": null
+    "boxImage": "images/box_sublime-woods.jpg"
   },
   {
     "id": "perfume-1985",
@@ -1193,10 +1193,10 @@
     "url": "https://ghalati.com/ar/عطر-ابسيليوت-مسك/p2033535089",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/PxSmob8s1y0Dlt9DmPA4TdKYazdFKKI2j0cUyZni.png",
     "overview": "عطر ابسيليوت مسك مستوحى من قلب الصحراء العربية، غير متوقع، غني بقاعدة نظيفة من خلاصة المسك الأبيض ناعم وحسي، كنز ساحر ورائحة جريئة ومغرية .",
-    "opening": "برغموت وألدهيد وكمثرى",
-    "heart": "زنبق الوادي وياسمين وسوسن وورد ويلانغ يلانغ",
-    "base": "مسك وعنبر وبرقوق وخشب الأرز وطحلب",
-    "prominent": "المسك الأبيض",
+    "opening": "البرغموت والكمثرى النضرة",
+    "heart": "ياسمين وأزهار السوسن (الآيريس) واليلانغ يلانغ",
+    "base": "المسك الأبيض الصافي والعنبر والأخشاب",
+    "prominent": "المسك الأبيض والسوسن والكمثرى",
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
@@ -1206,7 +1206,9 @@
     },
     "image": "images/ghalati_absolute-musk.jpg",
     "originalImage": "images/original_absolute-musk.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_absolute-musk_detail.jpg"
+    ],
     "overviewEn": "A pure, crystalline cloud of immaculate white musk, elevated by subtle hints of powdery iris and creamy cotton blossoms.",
     "openingEn": "Bergamot, Aldehydes, Pear",
     "heartEn": "Lily of the Valley, Jasmine, Iris, Rose, Ylang-Ylang",
@@ -1219,7 +1221,8 @@
       "type": "Eau De Parfum",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "boxImage": null
+    "boxImage": "images/box_absolute-musk.jpg",
+    "fragranticaCard": "images/pyramid_absolute-musk.jpg"
   },
   {
     "id": "sublime-flowers",
@@ -1305,7 +1308,7 @@
     },
     "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Eloquent-79248.html",
     "fragranticaId": "79248",
-    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79248.jpeg",
+    "fragranticaCard": "images/card_eloquent.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79248.jpg",
     "boxImage": null
   },
