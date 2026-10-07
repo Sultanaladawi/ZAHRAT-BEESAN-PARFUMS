@@ -2532,7 +2532,7 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين، عطر شرقي خشبي ملكي فاخر",
-      "size": "200 مل",
+      "size": "100 مل / 200 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار غلاتي للعطور"
     },
@@ -2540,7 +2540,9 @@
     "finalJod": 36,
     "image": "images/ghalati_ancestry-oud.jpg",
     "originalImage": "images/original_ancestry-oud.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/original_ancestry-oud_200ml.png"
+    ],
     "overviewEn": "Ancestry Oud (200ml Luxury Edition) is a majestic oriental fragrance embodying timeless heritage and royal sophistication. It opens with aromatic rosemary, transitions into noble saffron, and settles onto a profound base of precious oud and woody amber.",
     "openingEn": "Aromatic Rosemary",
     "heartEn": "Noble Saffron",
@@ -2549,7 +2551,7 @@
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex Luxury Oud",
-      "size": "200 مل",
+      "size": "100ml / 200ml",
       "type": "Eau De Parfum",
       "perfumer": "Maison Ghalati"
     },
