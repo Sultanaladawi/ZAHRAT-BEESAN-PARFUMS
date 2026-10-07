@@ -779,10 +779,10 @@
     "url": "https://ghalati.com/ar/%D8%B9%D8%B7%D8%B1-%D8%B1%D8%B3%D8%A7%D8%A6%D9%84-%D9%88%D8%AF/p1291527951",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/36e5830d-6cb9-4153-8b85-c1bc6df6fab4-1000x1000-ePLIem4e83On0kDlykE9Qh9b33qeZogYnwCEBAY1.png",
     "overview": "رسائل ود يحمل بين طياته مشاعر عطرية تتغير مع تغير مكوناته فهو يبدأ بنفحات فاكهية من التوت وحمضية من البرتقال مع خليط من جوز الهند قبل أن ينتقل لمرحلة أكثر قوة تتمثل بخليط من خشب الصندل مع براعم زهرة البرتقال والكثير من الزهور البيضاء مضاف إليها لمسات من الورد والباتشولي، كل ذلك ليخبرنا العطر عن طبيعة المشاعر على شكل قاعدة دافئة من الفانيلا، المسك والعنبر .",
-    "opening": "التوت و البرتقال و جوز الهند",
-    "heart": "خشب الصندل و زهرة البرتقال و زهور بيضاء",
-    "base": "فانيلا و المسك و العنبر",
-    "prominent": "الخشب و الفانيلا و الزهور البيضاء",
+    "opening": "التوت البري والبرتقال وجوز الهند",
+    "heart": "خشب الصندل وزهرة البرتقال وزهور بيضاء",
+    "base": "العنبر والمسك والعود والفانيلا",
+    "prominent": "التوت وخشب الصندل والعنبر والعود",
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
@@ -791,7 +791,9 @@
     },
     "image": "images/ghalati_rasayil-wudd.jpg",
     "originalImage": "images/original_rasayil-wudd.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_rasayil-wudd_presentation.jpg"
+    ],
     "categoryType": "perfume",
     "openingEn": "Berries, Orange, Coconut",
     "heartEn": "Sandalwood, Orange, White Flowers",
@@ -803,7 +805,8 @@
       "size": "100 مل",
       "type": "Eau De Parfum"
     },
-    "boxImage": null
+    "boxImage": "images/box_rasayil-wudd.jpg",
+    "fragranticaCard": "images/pyramid_rasayil-wudd.jpg"
   },
   {
     "id": "rasayil-haneen",
@@ -1009,7 +1012,8 @@
       "size": "100 مل",
       "type": "Eau De Parfum"
     },
-    "boxImage": null
+    "boxImage": "images/box_mountain-leather.jpg",
+    "fragranticaCard": "images/pyramid_mountain-leather.jpg"
   },
   {
     "id": "perfume-2016",
