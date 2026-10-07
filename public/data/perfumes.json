@@ -747,7 +747,9 @@
     },
     "image": "images/ghalati_utopia-platinum.jpg",
     "originalImage": "images/original_utopia-platinum.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/utopia-platinum_notes.jpg"
+    ],
     "categoryType": "perfume",
     "openingEn": "Amber,  , Spices",
     "heartEn": "",
@@ -1816,7 +1818,9 @@
     },
     "image": "images/ghalati_utopia-gist.jpg",
     "originalImage": "images/original_utopia-gist.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/utopia-gist_notes.jpg"
+    ],
     "overviewEn": "The essence of pure luxury, combining sparkling pineapple and bergamot with noble oakmoss and smoky dry woods.",
     "openingEn": "Bergamot, Grapefruit, Apple, Pineapple, Rose, Juniper,  Blackcurrant",
     "heartEn": "Jasmine, Patchouli,  Cedarwood",
@@ -1834,6 +1838,47 @@
     "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79192.jpeg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79192.jpg",
     "boxImage": "https://fimgs.net/mdimg/secundar/o.99675.jpg"
+  },
+  {
+    "id": "utopia-ideal",
+    "title": "عطر يوتوبيا ايديال",
+    "titleEn": "Utopia Ideal Eau De Parfum",
+    "brand": "دار غلاتي (Ghalati)",
+    "categoryType": "perfume",
+    "sarPrice": 95,
+    "baseJod": 18,
+    "finalJod": 30,
+    "url": "https://ghalati.com/ar/%D8%B9%D8%B7%D8%B1-%D9%8A%D9%88%D8%AA%D9%88%D8%A8%D9%8A%D8%A7-%D8%A7%D9%8A%D8%AF%D9%8A%D8%A7%D9%84/p1177605477",
+    "bottleUrl": "https://cdn.salla.sa/Dqvgy/zlqJxA2ptXlpBirFArOt16fv8Ox2yTzw4SFwRhVv.png",
+    "overview": "عطر يوتوبيا ايديال مستوحى من قوة رياح الصحراء عند غروب الشمس. من الصحراء في لحظة الغسق السحرية لحظة زرقاء عميقة، تمتزج خلالها نضارة الليل وحرارة الصحراء معًا لإنتاج عطور كثيفة وإفساح المجال أمام أعنف النبضات بتركيبة قوية من المكونات المنعشة والنفحات الخشبية الترابية الداكنة، رائحة منعشة قوية مميزة مستوحاة من قوة الرياح كقصيدة للحرية الذكورية يتم التعبير عنها في عطر خشبي عطري ذو أثر آسر ورائحة خالدة في زجاجة من اللون الأسود الغامض.",
+    "opening": "البرغموت الإيطالي والفلفل الأسود",
+    "heart": "الخزامى (اللافندر) وأوراق الباتشولي",
+    "base": "العنبر الفاخر وخشب الأرز والمسك",
+    "prominent": "البرغموت، الفلفل، اللافندر، الباتشولي، وخشب الأرز",
+    "specs": {
+      "origin": "المملكة العربية السعودية",
+      "category": "رجالي",
+      "size": "100 مل",
+      "type": "عطر خشبي أروماتي",
+      "perfumer": "دار غلاتي للعطور"
+    },
+    "image": "images/ghalati_utopia-ideal.jpg",
+    "originalImage": "images/original_utopia-ideal.png",
+    "galleryImages": [],
+    "overviewEn": "Inspired by the raw strength of desert winds at dusk. A magnetic fusion of cool night air and desert heat, bursting with refreshing citrus, fiery pepper, noble lavender, and dark earthy woods in an enigmatic black bottle.",
+    "openingEn": "Italian Bergamot, Black Pepper",
+    "heartEn": "Lavender, Patchouli Leaves",
+    "baseEn": "Precious Amber, Cedarwood, Musk",
+    "prominentEn": "Bergamot, Black Pepper, Lavender, Patchouli, Cedarwood",
+    "specsEn": {
+      "origin": "Kingdom of Saudi Arabia",
+      "category": "Men",
+      "size": "100 مل",
+      "type": "Eau De Parfum",
+      "perfumer": "Ghalati Parfums R&D"
+    },
+    "fragranticaCard": "images/pyramid_utopia-ideal.jpg",
+    "boxImage": null
   },
   {
     "id": "eternal-passion",
