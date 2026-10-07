@@ -111,7 +111,10 @@
     "finalJod": 30,
     "image": "images/ghalati_oud-argent.jpg",
     "originalImage": "images/original_oud-argent.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_oud-argent_presentation.jpg",
+      "images/oud-argent_notes.jpg"
+    ],
     "overviewEn": "A luxurious, pure, confident, and invincible fragrance with irresistible poise and alluring charisma. Its shimmering opening of lemon and saffron unfolds into a sensual floral heart of rose, cardamom, and jasmine, settling upon exquisite royal oud and patchouli.",
     "openingEn": "Bergamot, Lemon, Grapefruit, Saffron, Berries, Roasted Accords",
     "heartEn": "Jasmine.",
@@ -127,9 +130,9 @@
     "categoryType": "perfume",
     "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Oud-Argent-79185.html",
     "fragranticaId": "79185",
-    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79185.jpeg",
+    "fragranticaCard": "images/card_oud-argent.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79185.jpg",
-    "boxImage": "https://fimgs.net/mdimg/secundar/o.99669.jpg"
+    "boxImage": "images/box_oud-argent.jpg"
   },
   {
     "id": "amber-cashmere",
@@ -1337,7 +1340,9 @@
     },
     "image": "images/ghalati_peach-musk.jpg",
     "originalImage": "images/original_peach-musk.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_peach-musk_detail.jpg"
+    ],
     "overviewEn": "A delightful fusion of sun-drenched golden peaches and silky white musk, creating a playful yet luxurious aura of sweetness and purity.",
     "openingEn": "",
     "heartEn": "Lily of the Valley, Jasmine, Rose,  ,  Iris",
@@ -1350,7 +1355,8 @@
       "type": "Eau De Parfum",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "boxImage": null
+    "boxImage": "images/box_peach-musk.jpg",
+    "fragranticaCard": "images/pyramid_peach-musk.jpg"
   },
   {
     "id": "just-amber",
@@ -1743,7 +1749,9 @@
     },
     "image": "images/ghalati_iris-musk.jpg",
     "originalImage": "images/original_iris-musk.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/iris-musk_notes.jpg"
+    ],
     "overviewEn": "A powdery, royal masterpiece celebrating noble Tuscan iris wrapped in whisper-soft white musk and subtle vanilla.",
     "openingEn": "Bergamot, Rose",
     "heartEn": "Freesia, Ylang-Ylang, Orris Root Butter",
@@ -1758,9 +1766,9 @@
     },
     "fragranticaUrl": "https://www.fragranticarabia.com/perfumes/Ghalati/Iris-Musk-79255.html",
     "fragranticaId": "79255",
-    "fragranticaCard": "https://fimgs.net/mdimg/perfume-social-cards/ar-p_c_79255.jpeg",
+    "fragranticaCard": "images/card_iris-musk.jpg",
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79255.jpg",
-    "boxImage": "https://cdn.salla.sa/Dqvgy/c920896f-16c5-440d-b46f-3b8309171ab4-1000x1000-QYYsk7MyEvHwtgsApvNeBLtuxpIQ5XUEhRsxc7x2.jpg"
+    "boxImage": "images/box_iris-musk.jpg"
   },
   {
     "id": "serenade",
