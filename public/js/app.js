@@ -80,6 +80,10 @@ function setLanguage(lang) {
 
   if (activeModalPerfume) {
     renderProductModalContent(activeModalPerfume);
+    const breadcrumbTitle = document.getElementById('productBreadcrumbTitle');
+    if (breadcrumbTitle) {
+      breadcrumbTitle.textContent = lang === 'ar' ? activeModalPerfume.title : activeModalPerfume.titleEn;
+    }
   }
 
   localStorage.setItem('zb_perfumes_lang', lang);
@@ -146,6 +150,18 @@ async function loadCatalog() {
 }
 
 function filterCatalog(category, btnElement) {
+  if (activeModalPerfume) {
+    const hero = document.getElementById('heroSection');
+    const catalog = document.getElementById('catalog');
+    const prodSection = document.getElementById('productPageSection');
+    if (prodSection) prodSection.style.display = 'none';
+    if (hero) hero.style.display = '';
+    if (catalog) catalog.style.display = '';
+    activeModalPerfume = null;
+    if (window.location.hash.startsWith('#product')) {
+      history.pushState(null, '', '#catalog');
+    }
+  }
   currentFilter = category;
   if (btnElement) {
     document.querySelectorAll('.catalog-filter-btn').forEach(btn => btn.classList.remove('active-filter'));
@@ -392,7 +408,7 @@ function getCategoryBadgeText(p) {
   return t.badgeUnisex || 'للجنسين';
 }
 
-// ── Ultra-Luxury Product Details Modal ──
+// ── Native Luxury Product Page View ──
 function openProductModal(id) {
   const p = perfumesData.find(item => item.id === id);
   if (!p) return;
@@ -400,17 +416,27 @@ function openProductModal(id) {
   activeModalPerfume = p;
   renderProductModalContent(p);
 
-  const modal = document.getElementById('productModal');
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // prevent background scrolling
-    modal.scrollTop = 0; // start at top of full product page
+  const hero = document.getElementById('heroSection');
+  const catalog = document.getElementById('catalog');
+  const prodSection = document.getElementById('productPageSection');
+
+  if (hero) hero.style.display = 'none';
+  if (catalog) catalog.style.display = 'none';
+  if (prodSection) prodSection.style.display = 'block';
+
+  const breadcrumbTitle = document.getElementById('productBreadcrumbTitle');
+  if (breadcrumbTitle) {
+    breadcrumbTitle.textContent = currentLang === 'ar' ? p.title : p.titleEn;
   }
 
   const backText = document.getElementById('productPageBackText');
   if (backText) {
-    backText.textContent = currentLang === 'ar' ? 'العودة إلى الكتالوج' : 'Back to Catalog';
+    const t = translations[currentLang] || translations.ar;
+    backText.textContent = t.backToCatalog || (currentLang === 'ar' ? 'الرجوع للكتالوج' : 'Back to Catalog');
   }
+
+  // Smooth scroll to top of window so standard store header and navbar are visible at top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   if (window.location.hash !== `#product/${id}`) {
     history.pushState({ productId: id }, '', `#product/${id}`);
@@ -418,14 +444,31 @@ function openProductModal(id) {
 }
 
 function closeProductModal() {
-  const modal = document.getElementById('productModal');
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
+  const hero = document.getElementById('heroSection');
+  const catalog = document.getElementById('catalog');
+  const prodSection = document.getElementById('productPageSection');
+
+  if (prodSection) prodSection.style.display = 'none';
+  if (hero) hero.style.display = '';
+  if (catalog) catalog.style.display = '';
+
+  const prevPerfumeId = activeModalPerfume ? activeModalPerfume.id : null;
   activeModalPerfume = null;
+
   if (window.location.hash.startsWith('#product')) {
     history.pushState(null, '', '#catalog');
+  }
+
+  if (prevPerfumeId) {
+    const card = document.querySelector(`.product-card[data-id="${prevPerfumeId}"]`);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+  }
+  const catalogEl = document.getElementById('catalog');
+  if (catalogEl) {
+    catalogEl.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -645,11 +688,11 @@ function renderProductModalContent(p) {
           <span>${t.modalOfficialSource}</span>
         </a>
 
-        <!-- زر العودة للكتالوج في أسفل الصفحة -->
-        <div style="margin-top: 16px;">
-          <button type="button" class="product-page-back-btn" onclick="closeProductModal()" style="width: 100%; justify-content: center; padding: 12px 24px; font-size: 0.95rem;">
+        <!-- زر الرجوع للكتالوج في أسفل الصفحة -->
+        <div style="margin-top: 20px;">
+          <button type="button" class="btn-back-to-catalog" onclick="closeProductModal()" style="width: 100%; justify-content: center; padding: 13px 26px; font-size: 0.96rem;">
             <span class="back-btn-arrow">&#8594;</span>
-            <span>${currentLang === 'ar' ? 'العودة إلى تصفح باقي العطور في الكتالوج' : 'Back to Browse Full Catalog'}</span>
+            <span data-i18n="backToCatalog">${t.backToCatalog || (currentLang === 'ar' ? 'الرجوع للكتالوج' : 'Back to Catalog')}</span>
           </button>
         </div>
 
@@ -805,6 +848,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('mainSearchInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
+      if (activeModalPerfume) {
+        closeProductModal();
+      }
       currentSearch = e.target.value.trim();
       renderCatalog(currentFilter, currentSearch);
     });

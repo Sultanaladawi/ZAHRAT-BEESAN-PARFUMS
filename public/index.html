@@ -78,7 +78,7 @@
     <div class="header-container">
       
       <!-- اللوجو وهوية المتجر المعتمدة (الخيار 2 المعتمد) -->
-      <a href="#" class="brand-identity">
+      <a href="#catalog" class="brand-identity" onclick="closeProductModal()">
         <img src="images/logo.jpg" alt="زهرة بيسان للعطور" class="brand-logo-img">
         <div class="brand-text-block">
           <h1 class="brand-title-ar"><span data-i18n="brandTitleAr">زهرة بيسان</span> <span data-i18n="brandTitleSuffix">للعطور</span></h1>
@@ -117,7 +117,7 @@
     <div class="nav-container">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="#" class="nav-link active" data-i18n="navHome">الرئيسية</a>
+          <a href="#" class="nav-link active" onclick="closeProductModal()" data-i18n="navHome">الرئيسية</a>
         </li>
         <li class="nav-item">
           <a href="#catalog" class="nav-link">
@@ -159,7 +159,7 @@
   <main>
 
     <!-- واجهة الترحيب الفاخرة (Hero Parfumerie) -->
-    <section class="hero-parfumerie">
+    <section class="hero-parfumerie" id="heroSection">
       <div class="hero-pill-badge" data-i18n="heroPill">
         ⚜️ دار العطور الملكية الفاخرة | HAUTE PARFUMERIE
       </div>
@@ -204,6 +204,35 @@
 
       <!-- شبكة المنتجات الديناميكية (يتم توليد كافة العطور العشرة بواسطة app.js) -->
       <div class="catalog-grid" id="catalogGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ── صفحة تفاصيل العطر المستقلة الكاملة (مع بقاء الهيدر والنافبار والفووتر كأي متجر حقيقي) ── -->
+    <section class="product-page-section" id="productPageSection" style="display: none;">
+      <!-- شريط المسار والرجوع للكتالوج -->
+      <div class="product-breadcrumb-bar">
+        <div class="product-breadcrumb-inner">
+          <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+            <a href="javascript:void(0)" onclick="closeProductModal()" class="breadcrumb-link">
+              <span class="breadcrumb-home-icon">🏠</span>
+              <span data-i18n="breadcrumbHome">الرئيسية</span>
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="javascript:void(0)" onclick="closeProductModal()" class="breadcrumb-link" data-i18n="breadcrumbCatalog">الكتالوج</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current" id="productBreadcrumbTitle">اسم العطر</span>
+          </nav>
+
+          <button type="button" class="btn-back-to-catalog" onclick="closeProductModal()" id="btnBackToCatalogTop">
+            <span class="back-btn-arrow">&#8594;</span>
+            <span class="back-btn-text" id="productPageBackText" data-i18n="backToCatalog">الرجوع للكتالوج</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- محتوى العطر وتفاصيله الكاملة -->
+      <div class="product-page-container" id="productModalContent">
         <!-- Rendered dynamically by app.js -->
       </div>
     </section>
@@ -425,33 +454,6 @@
         </button>
       </div>
     </div>
-  </div>
-
-  <!-- صفحة تفاصيل العطر الكاملة الفاخرة والهرم العطري الملكي -->
-  <div class="product-page-view" id="productModal" style="display: none;">
-    <!-- الشريط العلوي الفاخر لصفحة العطر -->
-    <header class="product-page-topbar">
-      <div class="product-page-topbar-inner">
-        <button type="button" class="product-page-back-btn" onclick="closeProductModal()">
-          <span class="back-btn-arrow">&#8594;</span>
-          <span class="back-btn-text" id="productPageBackText">العودة إلى الكتالوج</span>
-        </button>
-        <div class="product-page-brand-badge">
-          <img src="logo.png" alt="Zahrat Beesan" class="product-page-logo">
-          <span class="product-page-brand-title">زهرة بيسان للعطور</span>
-        </div>
-        <button type="button" class="product-page-close-x" onclick="closeProductModal()" aria-label="Close" title="إغلاق">
-          &times;
-        </button>
-      </div>
-    </header>
-
-    <!-- جسم الصفحة الكاملة -->
-    <main class="product-page-body">
-      <div class="product-page-container" id="productModalContent">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </main>
   </div>
 
   <script src="js/translations.js"></script>

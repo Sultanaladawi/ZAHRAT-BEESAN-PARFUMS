@@ -96,6 +96,9 @@ const translations = {
     badgeUnisex: "للجنسين",
     badgeWomen: "نسائي",
     badgeMen: "رجالي / للجنسين",
+    backToCatalog: "الرجوع للكتالوج",
+    breadcrumbHome: "الرئيسية",
+    breadcrumbCatalog: "الكتالوج",
 
     // Royal Assurances Banner (أعلى الفوتر)
     royalCraftsmanshipTitle: "عطور أصلية ومختومة 100%",
@@ -234,6 +237,9 @@ const translations = {
     badgeUnisex: "Unisex",
     badgeWomen: "Women",
     badgeMen: "Men / Unisex",
+    backToCatalog: "Back to Catalog",
+    breadcrumbHome: "Home",
+    breadcrumbCatalog: "Catalog",
 
     // Royal Assurances Banner
     royalCraftsmanshipTitle: "100% Authentic & Sealed",
