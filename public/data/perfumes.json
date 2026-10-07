@@ -2410,7 +2410,9 @@
     },
     "image": "images/ghalati_honest.jpg",
     "originalImage": "images/original_honest.png",
-    "galleryImages": [],
+    "galleryImages": [
+      "images/box_honest_straight.jpg"
+    ],
     "overviewEn": "Crafted by master perfumer Miroslav Petkov, Honest is an intoxicating warm spicy leather perfume balancing feminine sensuality with masculine charisma, driven by leather, warm spices, amber, and patchouli.",
     "openingEn": "Mandarin, Grapefruit, Black Pepper, Rose, Cinnamon",
     "heartEn": "Cypress, Spanish Labdanum,  Violet, Marjoram",
@@ -2423,7 +2425,8 @@
       "type": "Eau De Parfum",
       "perfumer": "ميروسلاف بيتكوف"
     },
-    "boxImage": "images/box_honest.jpg"
+    "boxImage": "images/box_honest.jpg",
+    "fragranticaCard": "images/pyramid_honest.jpg"
   },
   {
     "id": "varna-single",
