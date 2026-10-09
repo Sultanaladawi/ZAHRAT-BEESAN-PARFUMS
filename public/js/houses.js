@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════════════════════
 // 🏛️ دليل دور وشركات العطور الملكية المعتمدة — زهرة بيسان
 // Official Fragrance Houses Directory — Zahrat Beesan Parfums
-// 41 Authorized Royal Perfume Houses with Vector Brand Logos
+// 45 Authorized Royal Perfume Houses with Vector Brand Logos
 // ══════════════════════════════════════════════════════════
 
 const FRAGRANCE_HOUSES = [
@@ -619,6 +619,66 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Haute Niche Luxury Line: Royal Blend, Liquid Brun, After Effect & Sovereign Blends",
     descAr: "الخط النيش الحصري والمترف من فراجرانس وورلد، يتميز بزجاجات ديزاينر ثقيلة فاخرة ومكونات نيش فرنسية بالغة النقاء والفوحان.",
     descEn: "The prestige luxury division of Fragrance World, creating ultra-refined haute niche masterworks with lavish presentations.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "kayali",
+    nameAr: "عطور خيالي (Kayali)",
+    nameEn: "Kayali Fragrances",
+    logo: "images/brands/kayali.svg",
+    badge: "✨",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "أشهر عطور النيش العصرية وفن مزج العطور (فانيلا 28 Vanilla، يم بيستاشيو جيلاتو Yum Pistachio Gelato، إيدن جوسي آبل، عود يوتوبيا)",
+    specialtyEn: "Global Niche Sensation by Mona Kattan: Vanilla 28, Yum Pistachio Gelato 33, Eden Juicy Apple & Utopia Vanilla Coco",
+    descAr: "دار النيش العالمية التي أسستها منى قطان في دبي، أحدثت ثورة في فن مزج العطور (Layering) وتتصدر قوائم النيش الأكثر طلباً حول العالم.",
+    descEn: "Founded in Dubai by Mona Kattan, Kayali celebrates the rich heritage of Middle Eastern layering with modern addictive compositions.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "maison-alhambra",
+    nameAr: "ميسون الحمراء (Maison Alhambra)",
+    nameEn: "Maison Alhambra",
+    logo: "images/brands/maison-alhambra.svg",
+    badge: "🦌",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "روائع البدائل الفاخرة المتقنة لعطور النيش العالمية (توباكو تتش Tobacco Touch، وودي عود Woody Oud، كزمت Kismet، بورتو نيرولي، فيلوفت عود)",
+    specialtyEn: "Supreme Artisanal Interpretations: Tobacco Touch, Woody Oud, Kismet Angel, Porto Neroli & Amber & Leather",
+    descAr: "الخط النخبوي التابع لدار لطافة، اشتهر بتقديم بدائل تحاكي كبرى دور النيش العالمية بدقة مذهلة وثبات ممتاز وزجاجات ثقيلة راقية.",
+    descEn: "The prestige sister division of Lattafa, celebrated internationally for phenomenal interpretations of high-end niche fragrances.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "maison-asrar",
+    nameAr: "ميسون أسرار (Maison Asrar)",
+    nameEn: "Maison Asrar",
+    logo: "images/brands/maison-asrar.svg",
+    badge: "⭐",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "توليفات نيش شرقية وأوروبية ساحرة (سلسلة أسرار، فلفيت، فيرست لوف، رويال ليدر، عنبر فانتاسي)",
+    specialtyEn: "Captivating Oriental-European Niche: Asrar Collection, Velvet, Royal Leather & Amber Fantasy",
+    descAr: "دار إماراتية متميزة تمزج بين الغموض الشرقي وسحر البساطة الأوروبية الحديثة بتوليفات مركزة عالية الأناقة والجاذبية.",
+    descEn: "Emirati luxury house fusing oriental mystery with European elegance, presenting sophisticated long-lasting compositions.",
+    hasActiveCatalog: false
+  },
+  {
+    id: "riiffs",
+    nameAr: "ريفز للعطور (RiiFFS Parfums)",
+    nameEn: "RiiFFS Parfums",
+    logo: "images/brands/riiffs.svg",
+    badge: "⚜️",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "فخامة دبي والأناقة العصرية الفواحة (إمبريال ريفز، كافيه نوار Cafe Noir، ميموار، أوبولنت Opulent، ديزاير)",
+    specialtyEn: "Dubai Luxury Modern Scents: Imperial Rouge, Cafe Noir, Opulence, Bella Rouge & Portofino Noir",
+    descAr: "علامة عطور فاخرة من دبي تتميز بزجاجاتها المنحوتة المذهبة وروائحها النفاذة التي تجمع بين الشياكة الفرنسية والدفء الشرقي.",
+    descEn: "Luxury Dubai fragrance house famous for sculpted flacons and intoxicating blends blending French chic with Arabian warmth.",
     hasActiveCatalog: false
   }
 ];
