@@ -48,7 +48,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "majestic-wood",
@@ -99,7 +100,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oud-argent",
@@ -153,7 +155,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "amber-cashmere",
@@ -204,7 +207,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "layana",
@@ -257,7 +261,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "nowara",
@@ -308,7 +313,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "moudhi",
@@ -358,7 +364,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rozana",
@@ -411,7 +418,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "emotion",
@@ -462,7 +470,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "attraction",
@@ -515,7 +524,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "spring",
@@ -561,7 +571,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "sparkle",
@@ -607,7 +618,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "sunrise",
@@ -653,7 +665,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bois-noir",
@@ -699,7 +712,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "shades",
@@ -749,7 +763,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oud-absolute",
@@ -795,7 +810,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rica",
@@ -845,7 +861,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "utopia-platinum",
@@ -897,7 +914,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rasayil-wudd",
@@ -944,7 +962,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rasayil-haneen",
@@ -994,7 +1013,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rasayil-shawq",
@@ -1042,7 +1062,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "just-oud",
@@ -1095,7 +1116,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "perfume-1932",
@@ -1140,7 +1162,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mountain-leather",
@@ -1186,7 +1209,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "perfume-2016",
@@ -1232,7 +1256,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "ambitious",
@@ -1283,7 +1308,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "sublime-woods",
@@ -1334,7 +1360,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "perfume-1985",
@@ -1380,7 +1407,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "absolute-musk",
@@ -1430,7 +1458,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "sublime-flowers",
@@ -1481,7 +1510,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "eloquent",
@@ -1532,7 +1562,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "peach-musk",
@@ -1582,7 +1613,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "just-amber",
@@ -1633,7 +1665,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "carmine-soul",
@@ -1678,7 +1711,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "dama",
@@ -1729,7 +1763,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "utopia-essence",
@@ -1776,7 +1811,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "exotic-wood",
@@ -1823,7 +1859,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "rose-intense",
@@ -1870,7 +1907,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "raspberry-musk",
@@ -1915,7 +1953,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "cherry-musk",
@@ -1962,7 +2001,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "vintage",
@@ -2011,7 +2051,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "iris-musk",
@@ -2064,7 +2105,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "يتوفر قريباً",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "serenade",
@@ -2115,7 +2157,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "utopia-gist",
@@ -2168,7 +2211,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "utopia-ideal",
@@ -2216,7 +2260,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "eternal-passion",
@@ -2267,7 +2312,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mont-dor",
@@ -2318,7 +2364,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "boudoir",
@@ -2369,7 +2416,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "first-impression",
@@ -2420,7 +2468,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "seraj",
@@ -2471,7 +2520,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "cartage-velours",
@@ -2522,7 +2572,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "most-wanted",
@@ -2573,7 +2624,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "cartage-etoile",
@@ -2624,7 +2676,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "silk-essence",
@@ -2675,7 +2728,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "amber-oud",
@@ -2726,7 +2780,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "cartage-noble",
@@ -2777,7 +2832,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "honest",
@@ -2827,7 +2883,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "varna-single",
@@ -2878,7 +2935,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "heroic",
@@ -2929,7 +2987,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "ancestry-oud",
@@ -2982,7 +3041,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bundle-exceptional-offer",
@@ -2993,8 +3053,8 @@
     "sarPrice": 333.01,
     "origSarPrice": 1053,
     "baseJod": 63,
-    "finalJod": 99,
-    "origJod": 235,
+    "finalJod": 93,
+    "origJod": 229,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
@@ -3033,7 +3093,8 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-last-hours",
@@ -3044,8 +3105,8 @@
     "sarPrice": 333.01,
     "origSarPrice": 1137,
     "baseJod": 63,
-    "finalJod": 99,
-    "origJod": 251,
+    "finalJod": 93,
+    "origJod": 245,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
@@ -3084,7 +3145,8 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-fantasy-offer",
@@ -3095,8 +3157,8 @@
     "sarPrice": 380.01,
     "origSarPrice": 1140,
     "baseJod": 72,
-    "finalJod": 108,
-    "origJod": 252,
+    "finalJod": 102,
+    "origJod": 246,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
@@ -3135,7 +3197,8 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-summer-pkg",
@@ -3146,8 +3209,8 @@
     "sarPrice": 149.01,
     "origSarPrice": 165,
     "baseJod": 28,
-    "finalJod": 64,
-    "origJod": 67,
+    "finalJod": 58,
+    "origJod": 61,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
@@ -3186,7 +3249,8 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-summer-2026",
@@ -3197,8 +3261,8 @@
     "sarPrice": 333.01,
     "origSarPrice": 928,
     "baseJod": 63,
-    "finalJod": 99,
-    "origJod": 211,
+    "finalJod": 93,
+    "origJod": 205,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
@@ -3237,7 +3301,55 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
+  },
+  {
+    "id": "bundle-varna-trio",
+    "sallaId": "227587094",
+    "title": "ثلاثية فارنا 2+1 مجاناً",
+    "titleEn": "Varna Trio 2+1 Free",
+    "brand": "Ghalati",
+    "sarPrice": 380.01,
+    "origSarPrice": 1140,
+    "baseJod": 72,
+    "finalJod": 102,
+    "origJod": 246,
+    "bottleCount": 3,
+    "feeJod": 30,
+    "isAvailable": true,
+    "status": "sale",
+    "promotionTitle": "عرض لفترة محدودة",
+    "url": "https://ghalati.com/ar/ثلاثية-فارنا-21-مجاناً/p227587094",
+    "bottleUrl": "https://cdn.salla.sa/Dqvgy/7N4mD9rC208xU8p03jNAn3zZCEpY41Hca3mC84x1.jpg",
+    "image": "images/ghalati_bundle-varna-trio.jpg",
+    "originalImage": "https://cdn.salla.sa/Dqvgy/7N4mD9rC208xU8p03jNAn3zZCEpY41Hca3mC84x1.jpg",
+    "galleryImages": [
+      "images/ghalati_bundle-varna-trio.jpg"
+    ],
+    "overview": "عرض ثلاثية فارنا الملكية: عطران من إصدرات فارنا الفاخرة + العطر الثالث مجاناً، بحجم 120 مل لكل زجاجة وتركيز عالٍ وثبات يدوم طويلاً.",
+    "overviewEn": "Royal Varna Trio Offer: Buy 2 luxury Varna collection perfumes and get the 3rd free (3 × 120ml).",
+    "opening": "البرغموت، الخوخ، الماندرين، الليتشي، الليمون",
+    "openingEn": "Bergamot, Peach, Mandarin, Lychee, Lemon",
+    "heart": "الياسمين، زهر البرتقال، القرفة، التفاح، الفاوانيا",
+    "heartEn": "Jasmine, Orange Blossom, Cinnamon, Apple, Peony",
+    "base": "المسك، الفانيليا، الكراميل، خشب الصندل، العنبر، الأواكموس",
+    "baseEn": "Musk, Vanilla, Caramel, Sandalwood, Amber, Oakmoss",
+    "prominent": "ثلاثية فارنا الملكية • 3 × 120 مل (2 + 1 مجاناً)",
+    "prominentEn": "Royal Varna Trio • 3 × 120ml (2 + 1 Free)",
+    "specs": {
+      "size": "3 × 120 مل (2 + 1 مجاناً)",
+      "category": "للجنسين",
+      "origin": "المملكة العربية السعودية",
+      "type": "ثلاثية فارنا الملكية (3 عطور)"
+    },
+    "specsEn": {
+      "size": "3 × 120 ml (2 + 1 Free)",
+      "category": "Unisex",
+      "origin": "Saudi Arabia",
+      "type": "Royal Varna Trio (3 Bottles)"
+    },
+    "categoryType": "bundle"
   },
   {
     "id": "bundle-varna-montdor",
@@ -3282,7 +3394,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "bundle-lak-walaha",
@@ -3327,7 +3440,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "bundle-modern",
@@ -3337,7 +3451,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-مودرن/p368258849",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/7Kq1aNVUE1MhQKAujcG6mxrfX4fmvbshjcnI6WFI.png",
     "overview": "تحتوي المجموعة على : 1- عطر فارنا 100 مل : الروائح البارزة: الصندل و خشب الارز و الباتشولي 2- عطر يوتوبيا جيست 100 مل : الروائح البارزة: الأناناس، البرغموت، طحلب السنديان، والأخشاب. 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3368,11 +3482,12 @@
     "boxImage": null,
     "sallaId": "368258849",
     "origSarPrice": 933,
-    "origJod": 212,
+    "origJod": 206,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-daraa",
@@ -3382,7 +3497,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-دراعة/p2116848990",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/UUvbUXp7Z5yJWLFSafcOl8JbP0pufZjPQXx7ZU6y.png",
     "overview": "تحتوي المجموعة على : 1- عطر بودوار 120 مل : الروائح البارزة : الكركم , الخوخ , المارشميلو ، الياسمين, مسك الروم، الصندل الكريمي , الفانيليا. 2- عطر شيدز 100 مل : الروائح البارزة: التوتيات الحمراء ومسك الروم والورد والفانيليا والأخشاب 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3413,11 +3528,12 @@
     "boxImage": null,
     "sallaId": "2116848990",
     "origSarPrice": 930,
-    "origJod": 212,
+    "origJod": 206,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-tuwaiq",
@@ -3427,7 +3543,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-طويق/p858995777",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/oxZ4uYrQOeyioIz4YkebuNaXedpYsNzO4cvcGHVH.jpg",
     "overview": "تحتوي المجموعة على : 1- عطر عنبر كاشمير 100 مل : الروائح البارزة: العنبر و زبدة السوسن و خشب الكشمير و الفانيليا 2- عطر مون دو 100 مل : الروائح البارزة : الكراميل و جوز الهند و الفانيليا 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3458,11 +3574,12 @@
     "boxImage": null,
     "sallaId": "858995777",
     "origSarPrice": 883,
-    "origJod": 203,
+    "origJod": 197,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-rawshan",
@@ -3472,7 +3589,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-الروشن/p251012433",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/Xvo3ONSQx2n83XUqC7zYS1ejY7AL1TWN63JxDw9d.jpg",
     "overview": "تحتوي المجموعة على : 1- عطر سلك ايسينس 120 مل : الروائح البارزة : البرغموت, الماندرين، الأناناس, السيبريول, البنزوين, الجلود. , العود, خشب الصندل. 2- عطر اترنال باشن 120 مل : الروائح البارزة : فاكهة الباشن, الزعفران, التوت, الجريب فروت. العود, السوسن , الجلد, الباتشولي. 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3503,11 +3620,12 @@
     "boxImage": null,
     "sallaId": "251012433",
     "origSarPrice": 1008,
-    "origJod": 227,
+    "origJod": 221,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-sadu",
@@ -3517,7 +3635,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-سدو/p1321299142",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/4jyjXEtDiKI7lcbFwLbGpIYvLrtJV8CGcgkwB0my.jpg",
     "overview": "تحتوي المجموعة على : 1- عطر فارنا 100 مل : الروائح البارزة: الصندل و خشب الارز و الباتشولي 2- عطر مون دو 100 مل : الروائح البارزة : الكراميل و جوز الهند و الفانيليا 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3548,11 +3666,12 @@
     "boxImage": null,
     "sallaId": "1321299142",
     "origSarPrice": 1014,
-    "origJod": 228,
+    "origJod": 222,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "bundle-yamama",
@@ -3562,7 +3681,7 @@
     "categoryType": "bundle",
     "sarPrice": 296,
     "baseJod": 56,
-    "finalJod": 92,
+    "finalJod": 86,
     "url": "https://ghalati.com/ar/باقة-اليمامة/p351777291",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/O7VCABB7TrAKSf6B4PwE1xHxgM4UdAbhXGfsQElH.png",
     "overview": "تحتوي المجموعة على : 1- عطر فارنا 100 مل : الروائح البارزة: الصندل و خشب الارز و الباتشولي 2- عطر فينتاج 100 مل : الروائح البارزة : البرغموت الحمضي , زبدة السوسن , الباتشولي 3- صندوق البرقاء ( عطر سيرينيد ) 120 مل : الروائح البارزة : التفاح , الجيرانيوم , اللافندر , الباتشولي , خشب الأرز ملاحظة: • لا يمكن استرجاع أحد عناصر المجموعة إلا بحالة كان المنتج تعرض لخلل/عيب مصنعي • ⁠يتم الاستبدال او الاسترجاع خلال ٤٨ ساعة من استلام الطلب فقط.",
@@ -3593,11 +3712,12 @@
     "boxImage": null,
     "sallaId": "351777291",
     "origSarPrice": 1014,
-    "origJod": 228,
+    "origJod": 222,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "package-air-fresheners",
@@ -3607,7 +3727,7 @@
     "categoryType": "bundle",
     "sarPrice": 95,
     "baseJod": 18,
-    "finalJod": 54,
+    "finalJod": 38,
     "url": "https://ghalati.com/ar/بكج-معطرات-الجو/p1943659770",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/LRInlOisSiIGR2txKDlWRu3I655qnuEJdESYp9iQ.jpg",
     "overview": "لا توجد تفاصيل لهذا المنتج",
@@ -3616,10 +3736,10 @@
     "base": "قاعدة عميقة وثابتة من المسك الملكي، العنبر الدافئ وخشب الصندل",
     "prominent": "نفحات عطرية متناغمة تجمع بين الفخامة والتميز",
     "specs": {
+      "size": "3 × 300 مل (معطرات جو)",
+      "category": "معطرات جو ومفارش",
       "origin": "المملكة العربية السعودية",
-      "category": "للجنسين",
-      "size": "مجموعة متكاملة فاخرة",
-      "type": "باقة إهداء فاخرة"
+      "type": "بكج معطرات الجو الملكي"
     },
     "image": "images/ghalati_package-air-fresheners.jpg",
     "originalImage": "images/original_package-air-fresheners.png",
@@ -3630,19 +3750,20 @@
     "baseEn": "Gentle Amber, Pure White Musk, Sandalwood",
     "prominentEn": "Trio of Luxury Home & Linen Ambient Sprays",
     "specsEn": {
-      "origin": "Kingdom of Saudi Arabia",
-      "category": "Unisex",
-      "size": "Luxury Complete Collection",
-      "type": "Exclusive Gift Set"
+      "size": "3 × 300 ml (Air Fresheners)",
+      "category": "Home & Linen Mist",
+      "origin": "Saudi Arabia",
+      "type": "Luxury Air Fresheners Package"
     },
     "boxImage": null,
     "sallaId": "1943659770",
     "origSarPrice": 149,
-    "origJod": 64,
+    "origJod": 48,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 20
   },
   {
     "id": "bundle-musk-collection",
@@ -3652,7 +3773,7 @@
     "categoryType": "bundle",
     "sarPrice": 199,
     "baseJod": 38,
-    "finalJod": 74,
+    "finalJod": 68,
     "url": "https://ghalati.com/ar/%D8%A8%D8%A7%D9%82%D8%A9-%D8%B9%D8%B7%D9%88%D8%B1-%D8%A7%D9%84%D9%85%D8%B3%D9%83/p342037118",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/JeOrcZXS1lcHRPFTGpyaAStiaoypmlUKOvq0T79k.png",
     "overview": "امنح نفسك لمسة من الفخامة مع باقة عطور المسك تحتوي المجموعة على : ايريس مسك :",
@@ -3679,11 +3800,12 @@
     "boxImage": null,
     "sallaId": "342037118",
     "origSarPrice": 199,
-    "origJod": 74,
+    "origJod": 68,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "",
-    "bottleCount": 3
+    "bottleCount": 3,
+    "feeJod": 30
   },
   {
     "id": "set-varna",
@@ -3723,7 +3845,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "bundle-altarikh",
@@ -3733,7 +3856,7 @@
     "categoryType": "bundle",
     "sarPrice": 95,
     "baseJod": 18,
-    "finalJod": 54,
+    "finalJod": 30,
     "url": "https://ghalati.com/ar/%D8%A8%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/p1575237133",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/JfLJAoxscHA0WqVIKJlR9eZAhOURfNvXI1RY7mAb.jpg",
     "overview": "باقة التاريخ عبارة عن تشكيلة مذهلة من العطور التي تجسد روائح وتاريخ مختلف الحضارات والثقافات ومن هنا جاءت باقة التاريخ لتجسد هذه الفلسفة بتركيباتها المتنوعة والتي تحمل في طياتها قصصاً عريقة. تحتوي المجموعة على :",
@@ -3742,29 +3865,30 @@
     "base": "أخشاب العود، عنبر كلاسيكي، ومسك أصيل",
     "prominent": "عطر 2016 : مكونات عطر 2016 : الافتتاحية: الزهور البيضاء القلب: عنبر وحمضيات القاعدة: فانيلا ونوتات خشبية عطر 1985 : مكونات عطر 1985 : الافتتاحية: ريحان و فتيفير القلب: خشب الأرز وأخشاب مدخنة القاعدة: الباتشولي والعود والعنبر عطر 1932 : مكونات عطر 1932 : الافتتاحية : الماندرين و الهيل و جوزه الطيب القلب : العنبر و اللبان و اللابدانوم القاعدة : العود و المر و البنزوين عطر 1727 : مكونات عطر 1727 : الافتتاحبة : الزعفران و الخزامى و البرغموت القلب : خشب الارز و اخشاب الكشمير و الياسمين القاعدة : الباتشولي و خشب الصندل و الجلود الحجم : 30 مل",
     "specs": {
-      "size": "3 × 100 مل",
+      "size": "4 × 30 مل (ميني)",
       "category": "للجنسين",
       "origin": "المملكة العربية السعودية",
-      "type": "باقة التاريخ الملكية (3 عطور)"
+      "type": "باقة التاريخ التراثية (ميني)"
     },
     "image": "images/ghalati_bundle-altarikh.jpg",
     "originalImage": "images/original_bundle-altarikh.png",
     "galleryImages": [],
     "prominentEn": "2016 :, 2016 : :, : Amber, : Vanilla,  1985 :, 1985 : : Basil, : Cedarwood, Precious Woods  : Patchouli, Oud, Amber  1932 :, 1932 :  : Mandarin,  , : Amber, Frankincense, Spanish Labdanum  : Oud,  Benzoin  1727 :, 1727 :  : Saffron,  Bergamot  : Cedarwood,  Jasmine  : Patchouli, Sandalwood, Leather  : 30",
     "specsEn": {
-      "size": "3 × 100 ml",
+      "size": "4 × 30 ml (Mini Set)",
       "category": "Unisex",
       "origin": "Saudi Arabia",
-      "type": "Al Tarikh Bundle (3 Bottles)"
+      "type": "Al Tarikh Heritage Mini Set"
     },
     "boxImage": null,
     "sallaId": "1575237133",
     "origSarPrice": 299,
-    "origJod": 93,
+    "origJod": 69,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "set-alfakhamah",
@@ -3804,7 +3928,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "sandouq-albarqa",
@@ -3851,7 +3976,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "package-cartage-noble",
@@ -3896,7 +4022,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "package-cartage-etoile",
@@ -3941,7 +4068,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "package-cartage-velours",
@@ -3986,7 +4114,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 2
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "bundle-body-musk",
@@ -4031,7 +4160,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bundle-al-saada",
@@ -4076,7 +4206,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bundle-discovery",
@@ -4121,7 +4252,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "luxury-edition",
@@ -4166,7 +4298,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bundle-heritage-collection",
@@ -4176,7 +4309,7 @@
     "categoryType": "bundle",
     "sarPrice": 95,
     "baseJod": 18,
-    "finalJod": 54,
+    "finalJod": 30,
     "url": "https://ghalati.com/ar/%D8%A8%D8%A7%D9%82%D8%A9-%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AB/p1251043721",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/99655155-7cf9-4c30-adc7-eb5f4d8a1a2a-1000x1000-MhhNHTYd7xG5THxIkknqee6AWgzKV3tGmV4A515u.jpg",
     "overview": "باقة مجموعة التراث تكون تجسيداً فريداُ للتراث الثقافي والتاريخي . تحتوي المجموعة على :",
@@ -4185,10 +4318,10 @@
     "base": "باتشولي، عنبر ملكي دافئ، ومسك نقي",
     "prominent": "عطر روز انتنيس : الافتتاحية: الماغنوليا والزهور القلب: شوكولاتة داكنة وتونكا وقرفة القاعدة: العود وخشب الصندل الروائح البارزة: الورد والعود والتونكا والقرفة والماغنوليا عطر ايكسوتك وود : الافتتاحية: برغموت إيطالي وماندرين وجريب فروت القلب: ياسمين القاعدة: خشب الصندل الأسترالي والمسك الروائح البارزة: البرغموت والعنبر والصندل والمسك الحجم : 75 مل",
     "specs": {
-      "size": "3 × 100 مل",
+      "size": "مجموعة التراث (تُعامل كعطر واحد)",
       "category": "للجنسين",
       "origin": "المملكة العربية السعودية",
-      "type": "باقة مجموعة التراث (3 عطور)"
+      "type": "باقة مجموعة التراث الفاخرة"
     },
     "image": "images/ghalati_bundle-heritage-collection.jpg",
     "originalImage": "images/original_bundle-heritage-collection.png",
@@ -4201,19 +4334,20 @@
     "baseEn": "Patchouli, Royal Amber, Pure Musk",
     "prominentEn": ": :,  , : Chocolate, Tonka Bean, Cinnamon : Oud, Sandalwood, : Rose, Oud, Tonka Bean, Cinnamon,  ,  , : : Bergamot, Mandarin, Grapefruit : Jasmine : Australian Sandalwood, Musk, : Bergamot, Amber, Sandalwood, Musk  : 75",
     "specsEn": {
-      "size": "3 × 100 ml",
+      "size": "Heritage Set",
       "category": "Unisex",
       "origin": "Saudi Arabia",
-      "type": "Heritage Collection Bundle (3 Bottles)"
+      "type": "Heritage Collection Gift Set"
     },
     "boxImage": null,
     "sallaId": "1251043721",
     "origSarPrice": 329,
-    "origJod": 98,
+    "origJod": 74,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 3
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "freshener-ancestry-oud",
@@ -4264,7 +4398,8 @@
     "fragranticaCard": null,
     "fragranticaBottle": null,
     "boxImage": null,
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-wasaef",
@@ -4304,7 +4439,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-oud-azraq",
@@ -4344,7 +4480,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-dar-alkaram",
@@ -4384,7 +4521,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-rajwa",
@@ -4424,7 +4562,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-jazi",
@@ -4464,7 +4603,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-alanoud",
@@ -4504,7 +4644,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-waad",
@@ -4544,7 +4685,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-oud-ghalati",
@@ -4584,7 +4726,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-mabthooth-aljoud",
@@ -4624,7 +4767,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-oud-fakher",
@@ -4664,7 +4808,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-asrar-aloud",
@@ -4704,7 +4849,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "mamool-khas-ghalati",
@@ -4744,7 +4890,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-oud-alsamou",
@@ -4784,7 +4931,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "bakhoor-dokhoon-almajales",
@@ -4824,7 +4972,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oud-aldar",
@@ -4864,7 +5013,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-tom-ford-oud-wood",
@@ -4904,7 +5054,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-oud-sayoufi",
@@ -4944,7 +5095,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-musk-mubakhar",
@@ -4984,7 +5136,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-alyaa",
@@ -5024,7 +5177,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-zuhour-alrabeea",
@@ -5064,7 +5218,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-rosetta",
@@ -5104,7 +5259,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-mashaer",
@@ -5144,7 +5300,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-rose-vanilla-montale",
@@ -5184,7 +5341,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-muhjah",
@@ -5224,7 +5382,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-ghalyah",
@@ -5264,7 +5423,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-sukoon",
@@ -5304,7 +5464,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-oud-vanilla",
@@ -5344,7 +5505,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-musk-abyad-moutsaleq",
@@ -5384,7 +5546,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-mukhallat-najd-aldhahabi",
@@ -5424,7 +5587,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-lemon-hask",
@@ -5464,7 +5628,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-rose-heart",
@@ -5504,7 +5669,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-musk-altoot",
@@ -5544,7 +5710,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-believer",
@@ -5584,7 +5751,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-sweet-musk",
@@ -5624,7 +5792,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-musk-alrumman",
@@ -5664,7 +5833,8 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-pink-musk",
@@ -5704,7 +5874,8 @@
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   },
   {
     "id": "oil-tayf-alemarat",
@@ -5744,6 +5915,7 @@
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1
+    "bottleCount": 1,
+    "feeJod": 12
   }
 ]

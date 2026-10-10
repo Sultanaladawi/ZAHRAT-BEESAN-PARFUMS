@@ -457,17 +457,29 @@ function renderBrandShowcase(h) {
 }
 
 // ── Catalog Data & Live Synchronization ──
-const CLIENT_EXCLUDED_SALLA_IDS = new Set(['1180808215', '227587094']);
+const CLIENT_EXCLUDED_SALLA_IDS = new Set(['1180808215']);
 
 function getClientBottleCount(item) {
   if (item && Number(item.bottleCount) >= 1) return Number(item.bottleCount);
   const catType = item?.categoryType || 'perfume';
   if (catType !== 'bundle') return 1;
   const text = `${item?.title || ''} ${item?.overview || ''}`;
-  if (/15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
+  if (/مجموعة التراث|باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
   if (/عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
   if (/ثلاث|3\s*عطور|3\s*×|باقة|بكج|العرض/i.test(text)) return 3;
   return 1;
+}
+
+function getClientDeliveryFeeJod(item) {
+  if (item && Number(item.feeJod) > 0) return Number(item.feeJod);
+  const id = item?.id || '';
+  const text = `${item?.title || ''} ${item?.overview || ''}`;
+  if (id === 'package-air-fresheners' || /بكج معطرات|معطرات الجو/i.test(item?.title || '')) return 20;
+  if (id === 'bundle-heritage-collection' || id === 'bundle-altarikh' || /مجموعة التراث|باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري/i.test(text)) return 12;
+  const count = getClientBottleCount(item);
+  if (count === 3) return 30;
+  if (count === 2) return 24;
+  return 12;
 }
 
 async function syncClientSideWithSalla(list) {
@@ -475,7 +487,7 @@ async function syncClientSideWithSalla(list) {
     if (!Array.isArray(list) || list.length === 0) return list;
     const filteredList = list.filter(p => {
       const sid = String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '');
-      return !CLIENT_EXCLUDED_SALLA_IDS.has(sid) && p.id !== 'bundle-varna-trio';
+      return !CLIENT_EXCLUDED_SALLA_IDS.has(sid);
     });
     const headers = {
       'Accept': 'application/json, text/plain, */*',
@@ -535,9 +547,9 @@ async function syncClientSideWithSalla(list) {
         : (/تولة|زيت عطري/i.test(live.name || '') ? 'oil' : (/بخور|معمول|معطر جو/i.test(live.name || '') ? 'bakhoor' : 'perfume'));
       const rawImg = live.image?.url || '';
       const origImg = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
-      const tempItem = { title: live.name, overview: cleanDesc, categoryType: catType };
+      const tempItem = { id: `ghalati-${sid}`, title: live.name, overview: cleanDesc, categoryType: catType };
       const bottleCount = getClientBottleCount(tempItem);
-      const feeJod = bottleCount * 12;
+      const feeJod = getClientDeliveryFeeJod(tempItem);
       const baseJod = Math.round(livePrice / 5.29);
 
       return {
@@ -547,6 +559,7 @@ async function syncClientSideWithSalla(list) {
         titleEn: live.name,
         brand: 'Ghalati',
         bottleCount,
+        feeJod,
         sarPrice: livePrice,
         origSarPrice: liveReg,
         baseJod,
@@ -595,7 +608,7 @@ async function syncClientSideWithSalla(list) {
       if (!live) continue; // Deleted from source store -> remove from our store
 
       const bottleCount = getClientBottleCount(item);
-      const feeJod = bottleCount * 12;
+      const feeJod = getClientDeliveryFeeJod(item);
       const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || item.sarPrice;
       const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
       const liveReg = Math.round(liveRegRaw);
@@ -606,6 +619,7 @@ async function syncClientSideWithSalla(list) {
         ...item,
         sallaId,
         bottleCount,
+        feeJod,
         sarPrice: livePrice,
         origSarPrice: liveReg,
         baseJod,
