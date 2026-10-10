@@ -2,17 +2,24 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const compression = require('compression');
+let sharp = null;
+try {
+  sharp = require('sharp');
+} catch (e) {
+  // Optional fallback if sharp is unavailable in a minimal environment
+}
 
 const app = express();
 const PORT = process.env.PORT || 5005;
 
 const PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'perfumes.json');
 const ARCHIVE_PATH = path.join(__dirname, 'data', 'perfumes_master_archive.json');
+const MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'ghalati_master_bg.jpg');
 
 app.use(compression());
 app.use(express.json());
 
-// ── Live Direct Sync Engine with Official Ghalati Store (Salla API) ──
+// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati Store (Salla API) ──
 let cachedCatalog = null;
 let lastSyncTime = 0;
 let isSyncing = false;
@@ -32,6 +39,70 @@ function getMasterCatalog() {
     console.error('Error reading master catalog:', err.message);
     return [];
   }
+}
+
+function detectCategoryType(name = '', desc = '') {
+  const text = `${name} ${desc}`;
+  if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة/i.test(name)) return 'bundle';
+  if (/تولة|زيت عطري|مسك.*15\s*مل/i.test(text)) return 'oil';
+  if (/بخور|معمول|معطر جو|دخون|مبثوث|لبان/i.test(name)) return 'bakhoor';
+  return 'perfume';
+}
+
+async function generateAutoProductImage(idSlug, rawImgUrl, categoryType) {
+  const relImg = `images/ghalati_${idSlug}.jpg`;
+  const absImg = path.join(__dirname, 'public', 'images', `ghalati_${idSlug}.jpg`);
+  if (fs.existsSync(absImg)) return relImg;
+  if (!sharp || !rawImgUrl) return rawImgUrl || 'images/ghalati_master_bg.jpg';
+
+  try {
+    const origUrl = rawImgUrl.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
+    let res = await fetch(origUrl);
+    if (!res.ok) res = await fetch(rawImgUrl);
+    if (!res.ok) return rawImgUrl;
+    const buf = Buffer.from(await res.arrayBuffer());
+
+    if (categoryType === 'bundle') {
+      const inner = await sharp(buf)
+        .resize({ width: 940, height: 940, fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
+        .toBuffer();
+      await sharp({
+        create: {
+          width: 1024,
+          height: 1024,
+          channels: 4,
+          background: { r: 247, g: 245, b: 240, alpha: 1 }
+        }
+      })
+        .composite([{ input: inner, gravity: 'center' }])
+        .jpeg({ quality: 95 })
+        .toFile(absImg);
+      return relImg;
+    }
+
+    if (fs.existsSync(MASTER_BG_PATH)) {
+      const { data, info } = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i + 1], b = data[i + 2];
+        if (r >= 240 && g >= 240 && b >= 240) data[i + 3] = 0;
+      }
+      const cleaned = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer();
+      const trimmed = await sharp(cleaned).trim().toBuffer();
+      const resized = await sharp(trimmed).resize({ height: 515, kernel: 'lanczos3' }).toBuffer({ resolveWithObject: true });
+      const bW = resized.info.width, bH = resized.info.height;
+      const left = Math.round((1024 - bW) / 2);
+      const baseContactY = 746;
+      const top = baseContactY - bH;
+      await sharp(MASTER_BG_PATH)
+        .composite([{ input: resized.data, left, top }])
+        .jpeg({ quality: 95 })
+        .toFile(absImg);
+      return relImg;
+    }
+  } catch (e) {
+    console.warn('Auto image generation fallback:', e.message);
+  }
+  return rawImgUrl;
 }
 
 async function syncWithGhalatiStore(force = false) {
@@ -60,10 +131,31 @@ async function syncWithGhalatiStore(force = false) {
       'Accept': 'application/json, text/plain, */*'
     };
 
-    const allIds = masterList
-      .map(p => p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1])
-      .filter(Boolean);
+    const knownIds = new Set(
+      masterList
+        .map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || ''))
+        .filter(Boolean)
+    );
 
+    // 1. Discover any brand-new products from Ghalati's latest releases & homepage sliders
+    const discoveredNewItems = [];
+    try {
+      const latestRes = await fetch('https://api.salla.dev/store/v1/products?source=latest&limit=30', { headers });
+      if (latestRes.ok) {
+        const latestJson = await latestRes.json();
+        for (const it of (latestJson.data || [])) {
+          const sid = String(it.id);
+          if (!knownIds.has(sid) && sid !== '1180808215') {
+            knownIds.add(sid);
+            discoveredNewItems.push(it);
+          }
+        }
+      }
+    } catch (e) {
+      // Ignore discovery network hiccup
+    }
+
+    const allIds = [...knownIds];
     const chunks = [];
     for (let i = 0; i < allIds.length; i += 20) {
       chunks.push(allIds.slice(i, i + 20));
@@ -83,12 +175,71 @@ async function syncWithGhalatiStore(force = false) {
       })
     );
 
-    // If Salla API responded with data, sync prices, availability, and filter out deleted products
+    // If Salla API responded with data, sync prices, availability, auto-add new products, and filter out deleted products
     if (liveById.size > 0) {
       const syncedCatalog = [];
       let changesDetected = false;
 
-      for (const item of masterList) {
+      // Auto-build newly discovered products from Ghalati
+      const newBuiltItems = [];
+      for (const rawNew of discoveredNewItems) {
+        const live = liveById.get(String(rawNew.id)) || rawNew;
+        const sid = String(live.id);
+        const idSlug = `ghalati-${sid}`;
+        const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || 95;
+        const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+        const liveReg = Math.round(liveRegRaw);
+        const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+        const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
+        const cleanDesc = (live.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        const catType = detectCategoryType(live.name, cleanDesc);
+        const rawImg = live.image?.url || '';
+        const origImgUrl = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
+        const genImage = await generateAutoProductImage(idSlug, rawImg, catType);
+
+        const baseJod = Math.round(livePrice / 5.29);
+        const finalJod = baseJod + 12;
+        const origJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : finalJod;
+
+        newBuiltItems.push({
+          id: idSlug,
+          sallaId: sid,
+          title: live.name,
+          titleEn: live.name,
+          brand: 'Ghalati',
+          sarPrice: livePrice,
+          origSarPrice: liveReg,
+          baseJod,
+          finalJod,
+          origJod,
+          isAvailable: liveAvail,
+          status: liveStatus,
+          promotionTitle: live.promotion_title || '',
+          url: live.url || `https://ghalati.com/ar/p${sid}`,
+          bottleUrl: origImgUrl || rawImg,
+          image: genImage,
+          originalImage: origImgUrl || rawImg,
+          galleryImages: [genImage],
+          overview: cleanDesc || `${live.name} من دار غلاتي للعطور.`,
+          overviewEn: cleanDesc || `${live.name} by Ghalati Perfumes.`,
+          opening: 'نغمات عطرية فاخرة من دار غلاتي',
+          openingEn: 'Luxury opening notes by Ghalati',
+          heart: 'قلب عطري غني ومتناغم',
+          heartEn: 'Rich harmonious heart notes',
+          base: 'قاعدة عطرية أصيلة وثابتة',
+          baseEn: 'Long-lasting authentic base notes',
+          prominent: 'خلطة غلاتي الملكية الخاصة',
+          prominentEn: 'Ghalati Royal Signature Blend',
+          specs: catType === 'bundle' ? 'مجموعة فاخرة • Eau de Parfum' : 'Eau de Parfum • 100ml',
+          specsEn: catType === 'bundle' ? 'Luxury Bundle • Eau de Parfum' : 'Eau de Parfum • 100ml',
+          categoryType: catType
+        });
+        changesDetected = true;
+      }
+
+      const combinedMaster = [...newBuiltItems, ...masterList];
+
+      for (const item of combinedMaster) {
         const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
         const live = liveById.get(sallaId);
 
@@ -133,6 +284,9 @@ async function syncWithGhalatiStore(force = false) {
 
       if (changesDetected) {
         fs.writeFileSync(PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        if (newBuiltItems.length > 0) {
+          fs.writeFileSync(ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        }
       }
     } else if (!cachedCatalog) {
       cachedCatalog = JSON.parse(fs.readFileSync(PERFUMES_PATH, 'utf8'));
@@ -167,7 +321,7 @@ app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
     store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
-    version: '0.2.0-live-sync',
+    version: '0.3.0-live-auto-discovery',
     lastSync: lastSyncTime ? new Date(lastSyncTime).toISOString() : null,
     totalActiveProducts: cachedCatalog ? cachedCatalog.length : null
   });

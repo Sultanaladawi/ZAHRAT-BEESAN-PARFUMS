@@ -461,9 +461,29 @@ async function syncClientSideWithSalla(list) {
   try {
     if (!Array.isArray(list) || list.length === 0) return list;
     const headers = {
-      'Accept': 'application/json, text/plain, */*'
+      'Accept': 'application/json, text/plain, */*',
+      'Store-Identifier': '1939633486'
     };
-    const allIds = list.map(p => p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1]).filter(Boolean);
+    const knownIds = new Set(
+      list.map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '')).filter(Boolean)
+    );
+
+    const discoveredNew = [];
+    try {
+      const latestRes = await fetch('https://api.salla.dev/store/v1/products?source=latest&limit=30', { headers }).catch(() => null);
+      if (latestRes && latestRes.ok) {
+        const latestJson = await latestRes.json();
+        for (const it of (latestJson.data || [])) {
+          const sid = String(it.id);
+          if (!knownIds.has(sid) && sid !== '1180808215') {
+            knownIds.add(sid);
+            discoveredNew.push(it);
+          }
+        }
+      }
+    } catch (e) {}
+
+    const allIds = [...knownIds];
     const chunks = [];
     for (let i = 0; i < allIds.length; i += 20) {
       chunks.push(allIds.slice(i, i + 20));
@@ -485,8 +505,58 @@ async function syncClientSideWithSalla(list) {
 
     if (liveById.size === 0) return list;
 
+    const newBuilt = discoveredNew.map(raw => {
+      const live = liveById.get(String(raw.id)) || raw;
+      const sid = String(live.id);
+      const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || 95;
+      const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+      const liveReg = Math.round(liveRegRaw);
+      const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+      const cleanDesc = (live.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      const catType = /باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية/i.test(live.name || '')
+        ? 'bundle'
+        : (/تولة|زيت عطري/i.test(live.name || '') ? 'oil' : (/بخور|معمول|معطر جو/i.test(live.name || '') ? 'bakhoor' : 'perfume'));
+      const rawImg = live.image?.url || '';
+      const origImg = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
+
+      return {
+        id: `ghalati-${sid}`,
+        sallaId: sid,
+        title: live.name,
+        titleEn: live.name,
+        brand: 'Ghalati',
+        sarPrice: livePrice,
+        origSarPrice: liveReg,
+        baseJod: Math.round(livePrice / 5.29),
+        finalJod: Math.round(livePrice / 5.29) + 12,
+        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : (Math.round(livePrice / 5.29) + 12),
+        isAvailable: liveAvail,
+        status: live.status || (liveAvail ? 'sale' : 'out'),
+        promotionTitle: live.promotion_title || '',
+        url: live.url || `https://ghalati.com/ar/p${sid}`,
+        bottleUrl: origImg || rawImg,
+        image: origImg || rawImg,
+        originalImage: origImg || rawImg,
+        galleryImages: [origImg || rawImg],
+        overview: cleanDesc || `${live.name} من دار غلاتي للعطور.`,
+        overviewEn: cleanDesc || `${live.name} by Ghalati Perfumes.`,
+        opening: 'نغمات عطرية فاخرة من دار غلاتي',
+        openingEn: 'Luxury opening notes by Ghalati',
+        heart: 'قلب عطري غني ومتناغم',
+        heartEn: 'Rich harmonious heart notes',
+        base: 'قاعدة عطرية أصيلة وثابتة',
+        baseEn: 'Long-lasting authentic base notes',
+        prominent: 'خلطة غلاتي الملكية الخاصة',
+        prominentEn: 'Ghalati Royal Signature Blend',
+        specs: catType === 'bundle' ? 'مجموعة فاخرة • Eau de Parfum' : 'Eau de Parfum • 100ml',
+        specsEn: catType === 'bundle' ? 'Luxury Bundle • Eau de Parfum' : 'Eau de Parfum • 100ml',
+        categoryType: catType
+      };
+    });
+
+    const combined = [...newBuilt, ...list];
     const synced = [];
-    for (const item of list) {
+    for (const item of combined) {
       const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
       const live = liveById.get(sallaId);
       if (!live) continue; // Deleted from source store -> remove from our store
