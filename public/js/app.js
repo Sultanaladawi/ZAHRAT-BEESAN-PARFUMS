@@ -457,15 +457,32 @@ function renderBrandShowcase(h) {
 }
 
 // ── Catalog Data & Live Synchronization ──
+const CLIENT_EXCLUDED_SALLA_IDS = new Set(['1180808215', '227587094']);
+
+function getClientBottleCount(item) {
+  if (item && Number(item.bottleCount) >= 1) return Number(item.bottleCount);
+  const catType = item?.categoryType || 'perfume';
+  if (catType !== 'bundle') return 1;
+  const text = `${item?.title || ''} ${item?.overview || ''}`;
+  if (/15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
+  if (/عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
+  if (/ثلاث|3\s*عطور|3\s*×|باقة|بكج|العرض/i.test(text)) return 3;
+  return 1;
+}
+
 async function syncClientSideWithSalla(list) {
   try {
     if (!Array.isArray(list) || list.length === 0) return list;
+    const filteredList = list.filter(p => {
+      const sid = String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '');
+      return !CLIENT_EXCLUDED_SALLA_IDS.has(sid) && p.id !== 'bundle-varna-trio';
+    });
     const headers = {
       'Accept': 'application/json, text/plain, */*',
       'Store-Identifier': '1939633486'
     };
     const knownIds = new Set(
-      list.map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '')).filter(Boolean)
+      filteredList.map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '')).filter(Boolean)
     );
 
     const discoveredNew = [];
@@ -475,7 +492,7 @@ async function syncClientSideWithSalla(list) {
         const latestJson = await latestRes.json();
         for (const it of (latestJson.data || [])) {
           const sid = String(it.id);
-          if (!knownIds.has(sid) && sid !== '1180808215') {
+          if (!knownIds.has(sid) && !CLIENT_EXCLUDED_SALLA_IDS.has(sid)) {
             knownIds.add(sid);
             discoveredNew.push(it);
           }
@@ -503,7 +520,7 @@ async function syncClientSideWithSalla(list) {
       })
     );
 
-    if (liveById.size === 0) return list;
+    if (liveById.size === 0) return filteredList;
 
     const newBuilt = discoveredNew.map(raw => {
       const live = liveById.get(String(raw.id)) || raw;
@@ -518,6 +535,10 @@ async function syncClientSideWithSalla(list) {
         : (/تولة|زيت عطري/i.test(live.name || '') ? 'oil' : (/بخور|معمول|معطر جو/i.test(live.name || '') ? 'bakhoor' : 'perfume'));
       const rawImg = live.image?.url || '';
       const origImg = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
+      const tempItem = { title: live.name, overview: cleanDesc, categoryType: catType };
+      const bottleCount = getClientBottleCount(tempItem);
+      const feeJod = bottleCount * 12;
+      const baseJod = Math.round(livePrice / 5.29);
 
       return {
         id: `ghalati-${sid}`,
@@ -525,11 +546,12 @@ async function syncClientSideWithSalla(list) {
         title: live.name,
         titleEn: live.name,
         brand: 'Ghalati',
+        bottleCount,
         sarPrice: livePrice,
         origSarPrice: liveReg,
-        baseJod: Math.round(livePrice / 5.29),
-        finalJod: Math.round(livePrice / 5.29) + 12,
-        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : (Math.round(livePrice / 5.29) + 12),
+        baseJod,
+        finalJod: baseJod + feeJod,
+        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : (baseJod + feeJod),
         isAvailable: liveAvail,
         status: live.status || (liveAvail ? 'sale' : 'out'),
         promotionTitle: live.promotion_title || '',
@@ -548,32 +570,47 @@ async function syncClientSideWithSalla(list) {
         baseEn: 'Long-lasting authentic base notes',
         prominent: 'خلطة غلاتي الملكية الخاصة',
         prominentEn: 'Ghalati Royal Signature Blend',
-        specs: catType === 'bundle' ? 'مجموعة فاخرة • Eau de Parfum' : 'Eau de Parfum • 100ml',
-        specsEn: catType === 'bundle' ? 'Luxury Bundle • Eau de Parfum' : 'Eau de Parfum • 100ml',
+        specs: {
+          size: catType === 'bundle' ? `${bottleCount > 1 ? `${bottleCount} × 100 مل` : 'مجموعة فاخرة'}` : '100 مل',
+          category: 'للجنسين',
+          origin: 'المملكة العربية السعودية',
+          type: catType === 'bundle' ? 'باقة عطور ملكية' : 'عطر أو دو بارفيوم'
+        },
+        specsEn: {
+          size: catType === 'bundle' ? `${bottleCount > 1 ? `${bottleCount} × 100 ml` : 'Luxury Set'}` : '100 ml',
+          category: 'Unisex',
+          origin: 'Saudi Arabia',
+          type: catType === 'bundle' ? 'Royal Perfume Bundle' : 'Eau de Parfum'
+        },
         categoryType: catType
       };
     });
 
-    const combined = [...newBuilt, ...list];
+    const combined = [...newBuilt, ...filteredList];
     const synced = [];
     for (const item of combined) {
       const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+      if (CLIENT_EXCLUDED_SALLA_IDS.has(sallaId)) continue;
       const live = liveById.get(sallaId);
       if (!live) continue; // Deleted from source store -> remove from our store
 
+      const bottleCount = getClientBottleCount(item);
+      const feeJod = bottleCount * 12;
       const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || item.sarPrice;
       const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
       const liveReg = Math.round(liveRegRaw);
       const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+      const baseJod = Math.round(livePrice / 5.29);
 
       synced.push({
         ...item,
         sallaId,
+        bottleCount,
         sarPrice: livePrice,
         origSarPrice: liveReg,
-        baseJod: Math.round(livePrice / 5.29),
-        finalJod: Math.round(livePrice / 5.29) + 12,
-        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : (Math.round(livePrice / 5.29) + 12),
+        baseJod,
+        finalJod: baseJod + feeJod,
+        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : (baseJod + feeJod),
         isAvailable: liveAvail,
         status: live.status || (liveAvail ? 'sale' : 'out'),
         promotionTitle: live.promotion_title || ''
@@ -1106,6 +1143,11 @@ function renderProductModalContent(p) {
     });
   }
 
+  // Save gallery items for Fullscreen Studio Lightbox & Inline Zoom
+  window.__activeGalleryItems = galleryItems;
+  window.__activeGalleryIndex = 0;
+  window.__activeGalleryTitle = title;
+
   // Helper for chip tags
   const renderChips = (text, isProminent = false) => {
     if (!text) return '';
@@ -1114,20 +1156,37 @@ function renderProductModalContent(p) {
     `).join('');
   };
 
+  const zoomHintText = currentLang === 'ar' ? 'اضغط لتكبير الصورة بملء الشاشة' : 'Click to open Fullscreen HD Zoom';
+  const openStandaloneText = currentLang === 'ar' ? 'فتح الصورة لحالها' : 'Open Image Alone';
+
   container.innerHTML = `
     <div class="product-modal-grid">
       
-      <!-- العمود الأيسر: معرض الصور التفاعلي بالزجاجة الأصلية الصافية وقالب العرض الملكي -->
+      <!-- العمود الأيسر: معرض الصور التفاعلي مع التكبير الفائق وعارض ملء الشاشة الملكي -->
       <div class="modal-gallery-pane">
-        <div class="modal-main-img-box" id="modalMainImageBox">
-          <img src="${p.image}" alt="${title}" id="modalMainImg" loading="lazy">
+        <div class="modal-main-img-box" id="modalMainImageBox" title="${zoomHintText}">
+          <img src="${p.image}" alt="${title}" id="modalMainImg" loading="lazy" draggable="false">
           <span class="modal-gallery-badge" id="modalGalleryBadge">${t.quickViewShowcase}</span>
+
+          <!-- شريط أدوات التكبير الملكي المباشر وفتح الصورة المستقلة -->
+          <div class="modal-zoom-floating-bar" onclick="event.stopPropagation()">
+            <button type="button" class="modal-zoom-pill-btn" onclick="openLuxuryLightbox(window.__activeGalleryIndex || 0)" title="${zoomHintText}">
+              <span>🔍</span>
+              <span>${currentLang === 'ar' ? 'تكبير وفحص الصورة' : 'HD Zoom Studio'}</span>
+            </button>
+            <div class="modal-inline-zoom-controls">
+              <button type="button" class="inline-zoom-icon-btn" onclick="inlineZoomStep(0.45)" title="${currentLang === 'ar' ? 'تكبير +' : 'Zoom In +'}">＋</button>
+              <button type="button" class="inline-zoom-icon-btn inline-zoom-pct" id="inlineZoomPctBtn" onclick="inlineZoomReset()" title="${currentLang === 'ar' ? 'إعادة الضبط 100%' : 'Reset 100%'}">100%</button>
+              <button type="button" class="inline-zoom-icon-btn" onclick="inlineZoomStep(-0.45)" title="${currentLang === 'ar' ? 'تصغير −' : 'Zoom Out −'}">－</button>
+              <a href="${p.image}" target="_blank" rel="noopener noreferrer" class="inline-zoom-icon-btn" id="inlineOpenRawImgLink" title="${openStandaloneText}">↗</a>
+            </div>
+          </div>
         </div>
 
         <div class="modal-thumbs-row">
           ${galleryItems.map((item, idx) => `
             <button type="button" class="modal-thumb-btn ${idx === 0 ? 'active-thumb' : ''}" 
-              onclick="switchModalImage('${item.src}', ${item.isFlacon}, '${item.label}', this)"
+              onclick="switchModalImage('${item.src}', ${item.isFlacon}, '${item.label}', this, ${idx})"
               title="${item.label}">
               <img src="${item.src}" alt="${item.label}">
             </button>
@@ -1218,21 +1277,21 @@ function renderProductModalContent(p) {
         <div class="modal-specs-table">
           <div class="modal-spec-row">
             <span class="modal-spec-label">${t.modalSize}:</span>
-            <strong class="modal-spec-val">${specs.size || '100 مل'}</strong>
+            <strong class="modal-spec-val">${specs?.size || '100 مل'}</strong>
           </div>
           <div class="modal-spec-row">
             <span class="modal-spec-label">${t.modalCategory}:</span>
-            <strong class="modal-spec-val">${specs.category || 'للجنسين'}</strong>
+            <strong class="modal-spec-val">${specs?.category || 'للجنسين'}</strong>
           </div>
           <div class="modal-spec-row">
             <span class="modal-spec-label">${t.modalOrigin}:</span>
-            <strong class="modal-spec-val">${specs.origin || 'المملكة العربية السعودية'}</strong>
+            <strong class="modal-spec-val">${specs?.origin || 'المملكة العربية السعودية'}</strong>
           </div>
           <div class="modal-spec-row">
             <span class="modal-spec-label">${t.modalType}:</span>
-            <strong class="modal-spec-val">${specs.type || 'عطر فاخر'}</strong>
+            <strong class="modal-spec-val">${specs?.type || 'عطر فاخر'}</strong>
           </div>
-          ${specs.perfumer ? `
+          ${specs?.perfumer ? `
             <div class="modal-spec-row">
               <span class="modal-spec-label">${t.modalPerfumer}:</span>
               <strong class="modal-spec-val">${specs.perfumer}</strong>
@@ -1277,11 +1336,17 @@ function renderProductModalContent(p) {
 
     </div>
   `;
+
+  initInlineImageZoomInteractions();
 }
 
-function switchModalImage(src, isFlacon, label, btnEl) {
+function switchModalImage(src, isFlacon, label, btnEl, idx = 0) {
+  window.__activeGalleryIndex = idx;
+  inlineZoomReset();
   const mainImg = document.getElementById('modalMainImg');
   const badge = document.getElementById('modalGalleryBadge');
+  const rawLink = document.getElementById('inlineOpenRawImgLink');
+  if (rawLink) rawLink.href = src;
   if (mainImg) {
     mainImg.src = src;
     const isContain = isFlacon || 
@@ -1303,6 +1368,370 @@ function switchModalImage(src, isFlacon, label, btnEl) {
   }
   document.querySelectorAll('.modal-thumb-btn').forEach(b => b.classList.remove('active-thumb'));
   if (btnEl) btnEl.classList.add('active-thumb');
+}
+
+// ── Royal Inline Zoom & Fullscreen Studio Lightbox Controller ──
+let inlineZoomState = { scale: 1, x: 0, y: 0, isDragging: false, startX: 0, startY: 0, moved: false };
+let lightboxState = { isOpen: false, index: 0, scale: 1, x: 0, y: 0, isDragging: false, startX: 0, startY: 0, moved: false, pinchStartDist: 0, pinchStartScale: 1 };
+
+function applyInlineZoomTransform() {
+  const img = document.getElementById('modalMainImg');
+  const box = document.getElementById('modalMainImageBox');
+  const pctBtn = document.getElementById('inlineZoomPctBtn');
+  if (!img) return;
+  if (inlineZoomState.scale <= 1.01) {
+    inlineZoomState.scale = 1;
+    inlineZoomState.x = 0;
+    inlineZoomState.y = 0;
+  }
+  img.style.transform = `translate3d(${inlineZoomState.x}px, ${inlineZoomState.y}px, 0) scale(${inlineZoomState.scale})`;
+  if (box) {
+    box.classList.toggle('is-inline-zoomed', inlineZoomState.scale > 1);
+  }
+  if (pctBtn) {
+    pctBtn.textContent = `${Math.round(inlineZoomState.scale * 100)}%`;
+  }
+}
+
+function inlineZoomStep(delta) {
+  const next = Math.min(3.5, Math.max(1, +(inlineZoomState.scale + delta).toFixed(2)));
+  inlineZoomState.scale = next;
+  if (next === 1) {
+    inlineZoomState.x = 0;
+    inlineZoomState.y = 0;
+  }
+  applyInlineZoomTransform();
+}
+
+function inlineZoomReset() {
+  inlineZoomState.scale = 1;
+  inlineZoomState.x = 0;
+  inlineZoomState.y = 0;
+  applyInlineZoomTransform();
+}
+
+function initInlineImageZoomInteractions() {
+  inlineZoomReset();
+  const box = document.getElementById('modalMainImageBox');
+  const img = document.getElementById('modalMainImg');
+  if (!box || !img) return;
+
+  box.addEventListener('wheel', (e) => {
+    if (!e.ctrlKey && inlineZoomState.scale === 1) return; // Allow normal page scroll unless already zoomed or Ctrl+wheel
+    e.preventDefault();
+    const delta = e.deltaY < 0 ? 0.3 : -0.3;
+    inlineZoomStep(delta);
+  }, { passive: false });
+
+  box.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.modal-zoom-floating-bar')) return;
+    inlineZoomState.isDragging = true;
+    inlineZoomState.moved = false;
+    inlineZoomState.startX = e.clientX - inlineZoomState.x;
+    inlineZoomState.startY = e.clientY - inlineZoomState.y;
+    if (inlineZoomState.scale > 1) {
+      box.setPointerCapture?.(e.pointerId);
+      img.style.transition = 'none';
+    }
+  });
+
+  box.addEventListener('pointermove', (e) => {
+    if (!inlineZoomState.isDragging) return;
+    const dx = e.clientX - (inlineZoomState.startX + inlineZoomState.x);
+    const dy = e.clientY - (inlineZoomState.startY + inlineZoomState.y);
+    if (Math.hypot(dx, dy) > 6) {
+      inlineZoomState.moved = true;
+    }
+    if (inlineZoomState.scale > 1) {
+      const maxPan = 180 * (inlineZoomState.scale - 1);
+      inlineZoomState.x = Math.max(-maxPan, Math.min(maxPan, e.clientX - inlineZoomState.startX));
+      inlineZoomState.y = Math.max(-maxPan, Math.min(maxPan, e.clientY - inlineZoomState.startY));
+      applyInlineZoomTransform();
+    }
+  });
+
+  const endInlinePointer = () => {
+    if (!inlineZoomState.isDragging) return;
+    inlineZoomState.isDragging = false;
+    img.style.transition = 'transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)';
+  };
+  box.addEventListener('pointerup', (e) => {
+    const wasMoved = inlineZoomState.moved;
+    endInlinePointer();
+    if (!e.target.closest('.modal-zoom-floating-bar') && !wasMoved) {
+      openLuxuryLightbox(window.__activeGalleryIndex || 0);
+    }
+  });
+  box.addEventListener('pointercancel', endInlinePointer);
+}
+
+function ensureLuxuryLightboxDOM() {
+  let lb = document.getElementById('luxuryImageLightbox');
+  if (lb) return lb;
+
+  lb = document.createElement('div');
+  lb.id = 'luxuryImageLightbox';
+  lb.className = 'luxury-lightbox-overlay';
+  lb.style.display = 'none';
+  lb.innerHTML = `
+    <div class="luxury-lightbox-topbar" onclick="event.stopPropagation()">
+      <div class="luxury-lightbox-title-wrap">
+        <span class="luxury-lightbox-crown">👑</span>
+        <div>
+          <strong class="luxury-lightbox-title" id="luxuryLightboxTitle"></strong>
+          <span class="luxury-lightbox-sub" id="luxuryLightboxBadge"></span>
+        </div>
+      </div>
+
+      <div class="luxury-lightbox-controls">
+        <button type="button" class="lb-ctrl-btn" onclick="lightboxZoomStep(0.5)" title="تكبير (+)">
+          <span>＋</span>
+          <span class="lb-ctrl-label" id="lbZoomInLabel">تكبير</span>
+        </button>
+        <button type="button" class="lb-ctrl-btn lb-pct-badge" id="luxuryLightboxPct" onclick="lightboxResetZoom()" title="إعادة الضبط (100%)">
+          100%
+        </button>
+        <button type="button" class="lb-ctrl-btn" onclick="lightboxZoomStep(-0.5)" title="تصغير (−)">
+          <span>－</span>
+          <span class="lb-ctrl-label" id="lbZoomOutLabel">تصغير</span>
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="lb-ctrl-btn lb-open-raw-btn" id="luxuryLightboxRawLink" title="فتح الصورة الأصلية في تبويب مستقل">
+          <span>↗</span>
+          <span class="lb-ctrl-label" id="lbRawLinkLabel">فتح الصورة لحالها</span>
+        </a>
+        <button type="button" class="lb-ctrl-btn lb-close-btn" onclick="closeLuxuryLightbox()" title="إغلاق (Esc)">
+          <span>✕</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="luxury-lightbox-stage" id="luxuryLightboxStage">
+      <button type="button" class="lb-nav-arrow lb-nav-prev" id="luxuryLightboxPrev" onclick="event.stopPropagation(); lightboxStepImage(-1)" title="السابق">
+        &#10094;
+      </button>
+
+      <div class="luxury-lightbox-img-wrapper" id="luxuryLightboxImgWrap">
+        <img src="" alt="" id="luxuryLightboxImg" draggable="false">
+      </div>
+
+      <button type="button" class="lb-nav-arrow lb-nav-next" id="luxuryLightboxNext" onclick="event.stopPropagation(); lightboxStepImage(1)" title="التالي">
+        &#10095;
+      </button>
+    </div>
+
+    <div class="luxury-lightbox-bottombar" onclick="event.stopPropagation()">
+      <div class="luxury-lightbox-thumbs" id="luxuryLightboxThumbs"></div>
+      <div class="luxury-lightbox-hint" id="luxuryLightboxHint"></div>
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  const stage = lb.querySelector('#luxuryLightboxStage');
+  const img = lb.querySelector('#luxuryLightboxImg');
+
+  // Wheel zoom inside fullscreen studio
+  stage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY < 0 ? 0.35 : -0.35;
+    lightboxZoomStep(delta);
+  }, { passive: false });
+
+  // Double-click to toggle 1x <-> 2.4x zoom
+  stage.addEventListener('dblclick', (e) => {
+    if (e.target.closest('.lb-nav-arrow')) return;
+    e.preventDefault();
+    if (lightboxState.scale > 1.1) {
+      lightboxResetZoom();
+    } else {
+      lightboxState.scale = 2.4;
+      applyLightboxTransform();
+    }
+  });
+
+  // Pointer drag / pan & backdrop click to close
+  stage.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.lb-nav-arrow')) return;
+    lightboxState.isDragging = true;
+    lightboxState.moved = false;
+    lightboxState.startX = e.clientX - lightboxState.x;
+    lightboxState.startY = e.clientY - lightboxState.y;
+    img.style.transition = 'none';
+  });
+
+  stage.addEventListener('pointermove', (e) => {
+    if (!lightboxState.isDragging) return;
+    const dx = e.clientX - (lightboxState.startX + lightboxState.x);
+    const dy = e.clientY - (lightboxState.startY + lightboxState.y);
+    if (Math.hypot(dx, dy) > 6) {
+      lightboxState.moved = true;
+    }
+    if (lightboxState.scale > 1) {
+      const maxPanX = window.innerWidth * 0.45 * (lightboxState.scale - 1);
+      const maxPanY = window.innerHeight * 0.45 * (lightboxState.scale - 1);
+      lightboxState.x = Math.max(-maxPanX, Math.min(maxPanX, e.clientX - lightboxState.startX));
+      lightboxState.y = Math.max(-maxPanY, Math.min(maxPanY, e.clientY - lightboxState.startY));
+      applyLightboxTransform();
+    }
+  });
+
+  stage.addEventListener('pointerup', (e) => {
+    if (!lightboxState.isDragging) return;
+    const wasMoved = lightboxState.moved;
+    lightboxState.isDragging = false;
+    img.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+    // If clicked directly on empty stage background (not the image) without dragging, close lightbox
+    if (!wasMoved && (e.target === stage || e.target.id === 'luxuryLightboxImgWrap')) {
+      closeLuxuryLightbox();
+    }
+  });
+
+  // Touch Pinch-to-Zoom support for mobile
+  stage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      lightboxState.isDragging = false;
+      const d = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      lightboxState.pinchStartDist = d;
+      lightboxState.pinchStartScale = lightboxState.scale;
+    }
+  }, { passive: true });
+
+  stage.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && lightboxState.pinchStartDist > 0) {
+      e.preventDefault();
+      const d = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const ratio = d / lightboxState.pinchStartDist;
+      lightboxState.scale = Math.min(4.5, Math.max(1, +(lightboxState.pinchStartScale * ratio).toFixed(2)));
+      if (lightboxState.scale === 1) {
+        lightboxState.x = 0;
+        lightboxState.y = 0;
+      }
+      applyLightboxTransform();
+    }
+  }, { passive: false });
+
+  return lb;
+}
+
+function applyLightboxTransform() {
+  const img = document.getElementById('luxuryLightboxImg');
+  const pct = document.getElementById('luxuryLightboxPct');
+  const stage = document.getElementById('luxuryLightboxStage');
+  if (!img) return;
+  if (lightboxState.scale <= 1.01) {
+    lightboxState.scale = 1;
+    lightboxState.x = 0;
+    lightboxState.y = 0;
+  }
+  img.style.transform = `translate3d(${lightboxState.x}px, ${lightboxState.y}px, 0) scale(${lightboxState.scale})`;
+  if (pct) pct.textContent = `${Math.round(lightboxState.scale * 100)}%`;
+  if (stage) stage.classList.toggle('is-zoomed', lightboxState.scale > 1);
+}
+
+function lightboxZoomStep(delta) {
+  lightboxState.scale = Math.min(4.5, Math.max(1, +(lightboxState.scale + delta).toFixed(2)));
+  if (lightboxState.scale === 1) {
+    lightboxState.x = 0;
+    lightboxState.y = 0;
+  }
+  applyLightboxTransform();
+}
+
+function lightboxResetZoom() {
+  lightboxState.scale = 1;
+  lightboxState.x = 0;
+  lightboxState.y = 0;
+  applyLightboxTransform();
+}
+
+function renderLightboxView() {
+  const items = window.__activeGalleryItems || [];
+  if (!items.length) return;
+  const idx = ((lightboxState.index % items.length) + items.length) % items.length;
+  lightboxState.index = idx;
+  const item = items[idx];
+
+  const titleEl = document.getElementById('luxuryLightboxTitle');
+  const badgeEl = document.getElementById('luxuryLightboxBadge');
+  const imgEl = document.getElementById('luxuryLightboxImg');
+  const rawLink = document.getElementById('luxuryLightboxRawLink');
+  const thumbsEl = document.getElementById('luxuryLightboxThumbs');
+  const prevBtn = document.getElementById('luxuryLightboxPrev');
+  const nextBtn = document.getElementById('luxuryLightboxNext');
+  const hintEl = document.getElementById('luxuryLightboxHint');
+
+  if (titleEl) titleEl.textContent = window.__activeGalleryTitle || '';
+  if (badgeEl) badgeEl.textContent = `${item.label} (${idx + 1} / ${items.length})`;
+  if (imgEl) {
+    imgEl.src = item.src;
+    imgEl.alt = item.label || '';
+  }
+  if (rawLink) rawLink.href = item.src;
+
+  const zoomInLbl = document.getElementById('lbZoomInLabel');
+  const zoomOutLbl = document.getElementById('lbZoomOutLabel');
+  const rawLbl = document.getElementById('lbRawLinkLabel');
+  if (zoomInLbl) zoomInLbl.textContent = currentLang === 'ar' ? 'تكبير' : 'Zoom In';
+  if (zoomOutLbl) zoomOutLbl.textContent = currentLang === 'ar' ? 'تصغير' : 'Zoom Out';
+  if (rawLbl) rawLbl.textContent = currentLang === 'ar' ? 'فتح الصورة لحالها' : 'Open Raw Image';
+  if (hintEl) {
+    hintEl.textContent = currentLang === 'ar'
+      ? '💡 نصيحة: استخدم عجلة الماوس أو النقر المزدوج أو أزرار (＋ / －) لتكبير أدق تفاصيل الزجاجة، واسحب الصورة للتحريك بحرية'
+      : '💡 Tip: Use mouse wheel, double-click, or (＋ / －) buttons to zoom up to 450%, and drag to pan freely';
+  }
+
+  if (prevBtn) prevBtn.style.display = items.length > 1 ? 'flex' : 'none';
+  if (nextBtn) nextBtn.style.display = items.length > 1 ? 'flex' : 'none';
+
+  if (thumbsEl) {
+    thumbsEl.innerHTML = items.map((it, i) => `
+      <button type="button" class="lb-thumb-btn ${i === idx ? 'active-lb-thumb' : ''}" onclick="lightboxSelectImage(${i})" title="${it.label}">
+        <img src="${it.src}" alt="${it.label}">
+      </button>
+    `).join('');
+  }
+
+  lightboxResetZoom();
+}
+
+function openLuxuryLightbox(index = 0) {
+  const lb = ensureLuxuryLightboxDOM();
+  lightboxState.isOpen = true;
+  lightboxState.index = index;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderLightboxView();
+}
+
+function closeLuxuryLightbox() {
+  const lb = document.getElementById('luxuryImageLightbox');
+  if (lb) lb.style.display = 'none';
+  lightboxState.isOpen = false;
+  document.body.style.overflow = '';
+}
+
+function lightboxSelectImage(index) {
+  lightboxState.index = index;
+  renderLightboxView();
+  // Also sync the underlying product page gallery thumbnail
+  const items = window.__activeGalleryItems || [];
+  const item = items[lightboxState.index];
+  const thumbs = document.querySelectorAll('.modal-thumb-btn');
+  if (item && thumbs[lightboxState.index]) {
+    switchModalImage(item.src, item.isFlacon, item.label, thumbs[lightboxState.index], lightboxState.index);
+  }
+}
+
+function lightboxStepImage(dir) {
+  const items = window.__activeGalleryItems || [];
+  if (items.length <= 1) return;
+  const nextIdx = ((lightboxState.index + dir) % items.length + items.length) % items.length;
+  lightboxSelectImage(nextIdx);
 }
 
 // ── Modals Controller ──
@@ -1358,6 +1787,32 @@ window.addEventListener('click', (e) => {
 });
 
 window.addEventListener('keydown', (e) => {
+  if (lightboxState.isOpen) {
+    if (e.key === 'Escape') {
+      closeLuxuryLightbox();
+      return;
+    }
+    if (e.key === '+' || e.key === '=') {
+      lightboxZoomStep(0.45);
+      return;
+    }
+    if (e.key === '-' || e.key === '_') {
+      lightboxZoomStep(-0.45);
+      return;
+    }
+    if (e.key === '0') {
+      lightboxResetZoom();
+      return;
+    }
+    if (e.key === 'ArrowRight') {
+      lightboxStepImage(currentLang === 'ar' ? -1 : 1);
+      return;
+    }
+    if (e.key === 'ArrowLeft') {
+      lightboxStepImage(currentLang === 'ar' ? 1 : -1);
+      return;
+    }
+  }
   if (e.key === 'Escape') {
     closeProductModal();
     closeCurrencyModal();

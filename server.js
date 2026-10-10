@@ -41,12 +41,32 @@ function getMasterCatalog() {
   }
 }
 
+const EXCLUDED_SALLA_IDS = new Set([
+  '1180808215', // Duplicate old Liana
+  '227587094'   // Excluded bundle: ثلاثية فارنا 2+1 مجاناً
+]);
+
 function detectCategoryType(name = '', desc = '') {
   const text = `${name} ${desc}`;
   if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة/i.test(name)) return 'bundle';
   if (/تولة|زيت عطري|مسك.*15\s*مل/i.test(text)) return 'oil';
   if (/بخور|معمول|معطر جو|دخون|مبثوث|لبان/i.test(name)) return 'bakhoor';
   return 'perfume';
+}
+
+function inferBottleCount(name = '', desc = '', catType = 'perfume') {
+  if (catType !== 'bundle') return 1;
+  const text = `${name} ${desc}`;
+  // Mini sets (15ml / 30ml / discovery) are treated as a single perfume (+12 JOD)
+  if (/15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
+  if (/عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
+  if (/ثلاث|3\s*عطور|3\s*×|باقة|بكج|العرض/i.test(text)) return 3;
+  return 1;
+}
+
+function getBottleCount(item) {
+  if (item && Number(item.bottleCount) >= 1) return Number(item.bottleCount);
+  return inferBottleCount(item?.title || '', item?.overview || '', item?.categoryType || 'perfume');
 }
 
 async function generateAutoProductImage(idSlug, rawImgUrl, categoryType) {
@@ -116,7 +136,10 @@ async function syncWithGhalatiStore(force = false) {
 
   isSyncing = true;
   try {
-    const masterList = getMasterCatalog();
+    const masterList = getMasterCatalog().filter(p => {
+      const sid = String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '');
+      return !EXCLUDED_SALLA_IDS.has(sid) && p.id !== 'bundle-varna-trio';
+    });
     if (!masterList.length) {
       isSyncing = false;
       return [];
@@ -145,7 +168,7 @@ async function syncWithGhalatiStore(force = false) {
         const latestJson = await latestRes.json();
         for (const it of (latestJson.data || [])) {
           const sid = String(it.id);
-          if (!knownIds.has(sid) && sid !== '1180808215') {
+          if (!knownIds.has(sid) && !EXCLUDED_SALLA_IDS.has(sid)) {
             knownIds.add(sid);
             discoveredNewItems.push(it);
           }
@@ -185,6 +208,7 @@ async function syncWithGhalatiStore(force = false) {
       for (const rawNew of discoveredNewItems) {
         const live = liveById.get(String(rawNew.id)) || rawNew;
         const sid = String(live.id);
+        if (EXCLUDED_SALLA_IDS.has(sid)) continue;
         const idSlug = `ghalati-${sid}`;
         const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || 95;
         const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
@@ -193,13 +217,15 @@ async function syncWithGhalatiStore(force = false) {
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
         const cleanDesc = (live.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
         const catType = detectCategoryType(live.name, cleanDesc);
+        const bottleCount = inferBottleCount(live.name, cleanDesc, catType);
+        const feeJod = bottleCount * 12;
         const rawImg = live.image?.url || '';
         const origImgUrl = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
         const genImage = await generateAutoProductImage(idSlug, rawImg, catType);
 
         const baseJod = Math.round(livePrice / 5.29);
-        const finalJod = baseJod + 12;
-        const origJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : finalJod;
+        const finalJod = baseJod + feeJod;
+        const origJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : finalJod;
 
         newBuiltItems.push({
           id: idSlug,
@@ -207,6 +233,7 @@ async function syncWithGhalatiStore(force = false) {
           title: live.name,
           titleEn: live.name,
           brand: 'Ghalati',
+          bottleCount,
           sarPrice: livePrice,
           origSarPrice: liveReg,
           baseJod,
@@ -230,8 +257,18 @@ async function syncWithGhalatiStore(force = false) {
           baseEn: 'Long-lasting authentic base notes',
           prominent: 'خلطة غلاتي الملكية الخاصة',
           prominentEn: 'Ghalati Royal Signature Blend',
-          specs: catType === 'bundle' ? 'مجموعة فاخرة • Eau de Parfum' : 'Eau de Parfum • 100ml',
-          specsEn: catType === 'bundle' ? 'Luxury Bundle • Eau de Parfum' : 'Eau de Parfum • 100ml',
+          specs: {
+            size: catType === 'bundle' ? `${bottleCount > 1 ? `${bottleCount} × 100 مل` : 'مجموعة فاخرة'}` : '100 مل',
+            category: 'للجنسين',
+            origin: 'المملكة العربية السعودية',
+            type: catType === 'bundle' ? 'باقة عطور ملكية' : 'عطر أو دو بارفيوم'
+          },
+          specsEn: {
+            size: catType === 'bundle' ? `${bottleCount > 1 ? `${bottleCount} × 100 ml` : 'Luxury Set'}` : '100 ml',
+            category: 'Unisex',
+            origin: 'Saudi Arabia',
+            type: catType === 'bundle' ? 'Royal Perfume Bundle' : 'Eau de Parfum'
+          },
           categoryType: catType
         });
         changesDetected = true;
@@ -241,6 +278,7 @@ async function syncWithGhalatiStore(force = false) {
 
       for (const item of combinedMaster) {
         const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+        if (EXCLUDED_SALLA_IDS.has(sallaId)) continue;
         const live = liveById.get(sallaId);
 
         // If product was deleted from Ghalati's store, exclude it from our store automatically
@@ -250,6 +288,10 @@ async function syncWithGhalatiStore(force = false) {
         }
 
         const p = { ...item, sallaId };
+        const bottleCount = getBottleCount(p);
+        p.bottleCount = bottleCount;
+        const feeJod = bottleCount * 12;
+
         const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
         const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
         const liveReg = Math.round(liveRegRaw);
@@ -257,9 +299,15 @@ async function syncWithGhalatiStore(force = false) {
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
         const livePromo = live.promotion_title || '';
 
+        const newBaseJod = Math.round(livePrice / 5.29);
+        const newFinalJod = newBaseJod + feeJod;
+        const newOrigJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : newFinalJod;
+
         if (
           p.sarPrice !== livePrice ||
           p.origSarPrice !== liveReg ||
+          p.finalJod !== newFinalJod ||
+          p.origJod !== newOrigJod ||
           p.isAvailable !== liveAvail ||
           p.status !== liveStatus ||
           p.promotionTitle !== livePromo
@@ -269,9 +317,9 @@ async function syncWithGhalatiStore(force = false) {
 
         p.sarPrice = livePrice;
         p.origSarPrice = liveReg;
-        p.baseJod = Math.round(livePrice / 5.29);
-        p.finalJod = p.baseJod + 12;
-        p.origJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : p.finalJod;
+        p.baseJod = newBaseJod;
+        p.finalJod = newFinalJod;
+        p.origJod = newOrigJod;
         p.isAvailable = liveAvail;
         p.status = liveStatus;
         p.promotionTitle = livePromo;
