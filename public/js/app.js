@@ -135,6 +135,48 @@ function isInWishlist(perfumeId) {
   }
 }
 
+function isInNotifyList(perfumeId) {
+  try {
+    const list = JSON.parse(localStorage.getItem('zb_notify_available') || '[]');
+    return list.includes(perfumeId);
+  } catch(e) {
+    return false;
+  }
+}
+
+function toggleNotifyWhenAvailable(perfumeId, btnEl) {
+  let list = [];
+  try {
+    list = JSON.parse(localStorage.getItem('zb_notify_available') || '[]');
+  } catch(e) {}
+
+  const idx = list.indexOf(perfumeId);
+  const isAr = currentLang === 'ar';
+  const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === perfumeId);
+  const name = p ? (isAr ? p.title : p.titleEn) : '';
+
+  if (idx > -1) {
+    list.splice(idx, 1);
+    localStorage.setItem('zb_notify_available', JSON.stringify(list));
+    showNotification(
+      isAr ? `تم إلغاء تنبيه توفر "${name}"` : `Availability alert removed for "${name}"`,
+      '🔕'
+    );
+  } else {
+    list.push(perfumeId);
+    localStorage.setItem('zb_notify_available', JSON.stringify(list));
+    showNotification(
+      isAr ? `تم تسجيل طلبك! سنبلغك فور توفر "${name}" 🔔` : `We will notify you as soon as "${name}" is back in stock! 🔔`,
+      '🔔'
+    );
+  }
+
+  renderCatalog(currentFilter, currentSearch);
+  if (activeModalPerfume && activeModalPerfume.id === perfumeId) {
+    renderProductModalContent(activeModalPerfume);
+  }
+}
+
 // ── Language Controller ──
 function setLanguage(lang) {
   currentLang = lang;
@@ -752,13 +794,26 @@ function renderProductCard(p, t) {
   const imgSrc = p.image || p.originalImage;
   const isWishlisted = isInWishlist(p.id);
   const isOut = p.isAvailable === false || p.status === 'out';
+  const isNotified = isOut && isInNotifyList(p.id);
 
   let badgeHtml = '';
+  let outSashHtml = '';
+
   if (isOut) {
     const outLabel = p.promotionTitle === 'يتوفر قريباً'
-      ? (isAr ? 'يتوفر قريباً' : 'Coming Soon')
+      ? (isAr ? '⏳ يتوفر قريباً' : '⏳ Coming Soon')
       : (isAr ? 'نفذت الكمية' : 'Out of Stock');
-    badgeHtml = `<span class="product-badge-offer badge-out-of-stock">${outLabel}</span>`;
+    badgeHtml = `
+      <span class="product-badge-offer badge-out-of-stock">
+        <span class="badge-out-dot"></span>
+        <span>${outLabel}</span>
+      </span>
+    `;
+    outSashHtml = `
+      <div class="product-out-sash">
+        <span>${isAr ? 'غير متوفر حالياً' : 'Currently Unavailable'}</span>
+      </div>
+    `;
   } else if (p.promotionTitle || prices.hasDiscount) {
     const promoLabel = isAr
       ? (p.promotionTitle || t.limitedTimeOffer || 'عرض لفترة محدودة')
@@ -768,8 +823,19 @@ function renderProductCard(p, t) {
 
   const actionBtnHtml = isOut
     ? `
-      <button type="button" class="product-card-add-btn btn-out-of-stock" disabled>
-        <span>${isAr ? 'نفذت الكمية' : 'Out of Stock'}</span>
+      <button type="button" class="product-card-add-btn btn-notify-available ${isNotified ? 'notified-active' : ''}" onclick="event.stopPropagation(); toggleNotifyWhenAvailable('${p.id}', this)">
+        ${isNotified ? `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>${isAr ? 'سنبلغك فور التوفر' : 'Alert Activated'}</span>
+        ` : `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span>${isAr ? 'أبلغني عند التوفر' : 'Notify When Available'}</span>
+        `}
       </button>
     `
     : `
@@ -787,6 +853,7 @@ function renderProductCard(p, t) {
     <article class="product-card ${isOut ? 'product-card-out' : ''}" data-id="${p.id}">
       <div class="product-card-image-wrap" onclick="openProductModal('${p.id}')" title="${isAr ? 'عرض تفاصيل وهرم العطر' : 'View perfume details & notes'}">
         ${badgeHtml}
+        ${outSashHtml}
 
         <!-- صورة القالب الملكي للعطر -->
         <img src="${imgSrc}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy">
@@ -816,6 +883,7 @@ function renderProductCard(p, t) {
           <span class="product-price-sale">${prices.saleStr}</span>
           ${prices.hasDiscount ? `<span class="product-price-old">${prices.origStr}</span>` : ''}
         </div>
+        ${isOut ? `<span class="product-info-out-tag">${isAr ? '● غير متوفر حالياً' : '● Out of Stock'}</span>` : ''}
       </div>
     </article>
   `;
@@ -1115,9 +1183,9 @@ function renderProductModalContent(p) {
             <span>${t.btnInstantWhatsApp}</span>
           </a>
           ${(p.isAvailable === false || p.status === 'out') ? `
-            <button type="button" class="btn-add-cart" disabled style="padding: 12px 18px; font-size: 0.9rem; opacity: 0.6; cursor: not-allowed; background: #eee;">
-              <span>🚫</span>
-              <span>${currentLang === 'ar' ? 'نفذت الكمية حالياً' : 'Out of Stock'}</span>
+            <button type="button" class="btn-add-cart" onclick="toggleNotifyWhenAvailable('${p.id}', this)" style="padding: 12px 18px; font-size: 0.9rem; background: ${isInNotifyList(p.id) ? '#2e5a44' : '#3a3232'}; color: #fff; border-color: transparent;">
+              <span>${isInNotifyList(p.id) ? '✅' : '🔔'}</span>
+              <span>${isInNotifyList(p.id) ? (currentLang === 'ar' ? 'سنبلغك فور التوفر' : 'Alert Activated') : (currentLang === 'ar' ? 'أبلغني عند التوفر' : 'Notify When Available')}</span>
             </button>
           ` : `
             <button type="button" class="btn-add-cart" onclick="addToCart('${p.title}')" style="padding: 12px 18px; font-size: 0.9rem;">
