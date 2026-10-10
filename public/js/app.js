@@ -464,8 +464,8 @@ function getClientBottleCount(item) {
   const catType = item?.categoryType || 'perfume';
   if (catType !== 'bundle') return 1;
   const text = `${item?.title || ''} ${item?.overview || ''}`;
-  if (/مجموعة التراث|باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
-  if (/عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
+  if (/باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري|عينات/i.test(text)) return 1;
+  if (/مجموعة التراث|عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
   if (/ثلاث|3\s*عطور|3\s*×|باقة|بكج|العرض/i.test(text)) return 3;
   return 1;
 }
@@ -475,7 +475,8 @@ function getClientDeliveryFeeJod(item) {
   const id = item?.id || '';
   const text = `${item?.title || ''} ${item?.overview || ''}`;
   if (id === 'package-air-fresheners' || /بكج معطرات|معطرات الجو/i.test(item?.title || '')) return 20;
-  if (id === 'bundle-heritage-collection' || id === 'bundle-altarikh' || /مجموعة التراث|باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري/i.test(text)) return 12;
+  if (id === 'bundle-heritage-collection' || /مجموعة التراث/i.test(text)) return 24;
+  if (id === 'bundle-altarikh' || /باقة التاريخ|15\s*مل|15\s*ml|30\s*مل|30\s*ml|ميني|ديسكفري/i.test(text)) return 12;
   const count = getClientBottleCount(item);
   if (count === 3) return 30;
   if (count === 2) return 24;

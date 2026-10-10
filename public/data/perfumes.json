@@ -4309,7 +4309,7 @@
     "categoryType": "bundle",
     "sarPrice": 95,
     "baseJod": 18,
-    "finalJod": 30,
+    "finalJod": 42,
     "url": "https://ghalati.com/ar/%D8%A8%D8%A7%D9%82%D8%A9-%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AB/p1251043721",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/99655155-7cf9-4c30-adc7-eb5f4d8a1a2a-1000x1000-MhhNHTYd7xG5THxIkknqee6AWgzKV3tGmV4A515u.jpg",
     "overview": "باقة مجموعة التراث تكون تجسيداً فريداُ للتراث الثقافي والتاريخي . تحتوي المجموعة على :",
@@ -4342,12 +4342,12 @@
     "boxImage": null,
     "sallaId": "1251043721",
     "origSarPrice": 329,
-    "origJod": 74,
+    "origJod": 86,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
-    "bottleCount": 1,
-    "feeJod": 12
+    "bottleCount": 2,
+    "feeJod": 24
   },
   {
     "id": "freshener-ancestry-oud",
