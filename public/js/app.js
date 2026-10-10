@@ -684,15 +684,9 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     return;
   }
 
-  // Consistent category ordering: Perfumes -> Bundles -> Bakhoor -> Oils (with available items prioritized first in each category)
+  // Consistent category ordering: Perfumes -> Bundles -> Bakhoor -> Oils (preserving original catalog order)
   const catPriority = { 'perfume': 1, 'bundle': 2, 'bakhoor': 3, 'oil': 4 };
-  filtered.sort((a, b) => {
-    const catDiff = (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99);
-    if (catDiff !== 0) return catDiff;
-    const availA = (a.isAvailable === false || a.status === 'out') ? 1 : 0;
-    const availB = (b.isAvailable === false || b.status === 'out') ? 1 : 0;
-    return availA - availB;
-  });
+  filtered.sort((a, b) => (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99));
 
   // Category section definitions
   const SECTION_CONFIGS = [
