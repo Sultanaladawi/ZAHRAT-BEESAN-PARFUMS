@@ -627,7 +627,7 @@ function renderProductCard(p, t) {
   const isAr = currentLang === 'ar';
   const title = isAr ? p.title : p.titleEn;
   const prices = getProductPrices(p);
-  const imgSrc = p.originalImage || p.image;
+  const imgSrc = p.image || p.originalImage;
   const isWishlisted = isInWishlist(p.id);
 
   return `
@@ -636,8 +636,8 @@ function renderProductCard(p, t) {
         <!-- شارة عرض لفترة محدودة (نفس متجر غلاتي تماماً) -->
         <span class="product-badge-offer">${t.limitedTimeOffer || (isAr ? 'عرض لفترة محدودة' : 'Limited Time Offer')}</span>
 
-        <!-- صورة العطر النقية في المنتصف -->
-        <img src="${imgSrc}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy" onerror="this.onerror=null;this.src='${p.image}'">
+        <!-- صورة القالب الملكي للعطر -->
+        <img src="${imgSrc}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy">
 
         <!-- أزرار المعاينة السريعة والمفضلة بالمنتصف عند التحويم -->
         <div class="product-card-hover-actions">
