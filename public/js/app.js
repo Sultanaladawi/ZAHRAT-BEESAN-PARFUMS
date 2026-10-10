@@ -43,6 +43,91 @@ function getFormattedPrice(baseJod) {
   return `${converted} ${symbol}`;
 }
 
+function getProductPrices(p) {
+  let origPriceVal, salePriceVal;
+  const isAr = currentLang === 'ar';
+  let symbol = isAr ? activeCurrency.symbol : activeCurrency.symbolEn;
+
+  if (activeCurrency.code === 'SAR') {
+    salePriceVal = p.sarPrice || 95;
+    origPriceVal = p.origSarPrice || (p.id === 'attraction' ? 249 : (salePriceVal === 95 ? 299 : (salePriceVal <= 35 ? 75 : Math.round((salePriceVal * 2.6) / 10) * 10 - 1)));
+    if (isAr) symbol = '﷼';
+  } else if (activeCurrency.code === 'JOD') {
+    salePriceVal = p.finalJod || 30;
+    origPriceVal = p.id === 'attraction' ? 65 : (salePriceVal === 30 ? 75 : Math.round(salePriceVal * 2.45));
+  } else {
+    salePriceVal = Math.round((p.finalJod || 30) * activeCurrency.rate);
+    origPriceVal = Math.round(salePriceVal * 2.45);
+  }
+
+  const formatVal = (v) => Number.isInteger(v) ? v : Number(v.toFixed(1));
+
+  const saleStr = `${formatVal(salePriceVal)} ${symbol}`;
+  const origStr = `${formatVal(origPriceVal)} ${symbol}`;
+
+  return { saleStr, origStr };
+}
+
+function showNotification(message, icon = '🛍️') {
+  let toast = document.getElementById('zbToastNotification');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'zbToastNotification';
+    toast.className = 'zb-toast-notification';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `
+    <span class="zb-toast-icon">${icon}</span>
+    <span class="zb-toast-text">${message}</span>
+  `;
+  toast.classList.add('show-toast');
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => {
+    toast.classList.remove('show-toast');
+  }, 2600);
+}
+
+function toggleWishlist(perfumeId, btnEl) {
+  let wishlist = [];
+  try {
+    wishlist = JSON.parse(localStorage.getItem('zb_wishlist') || '[]');
+  } catch(e){}
+
+  const idx = wishlist.indexOf(perfumeId);
+  const isAr = currentLang === 'ar';
+  const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === perfumeId);
+  const name = p ? (isAr ? p.title : p.titleEn) : '';
+
+  if (idx > -1) {
+    wishlist.splice(idx, 1);
+    if (btnEl) {
+      btnEl.classList.remove('active');
+      const svg = btnEl.querySelector('svg');
+      if (svg) svg.setAttribute('fill', 'none');
+    }
+    showNotification(isAr ? `تمت إزالة "${name}" من المفضلة` : `"${name}" removed from wishlist`, '🤍');
+  } else {
+    wishlist.push(perfumeId);
+    if (btnEl) {
+      btnEl.classList.add('active');
+      const svg = btnEl.querySelector('svg');
+      if (svg) svg.setAttribute('fill', '#e53935');
+    }
+    showNotification(isAr ? `تمت إضافة "${name}" إلى قائمة المفضلة ❤️` : `"${name}" added to wishlist ❤️`, '❤️');
+  }
+
+  localStorage.setItem('zb_wishlist', JSON.stringify(wishlist));
+}
+
+function isInWishlist(perfumeId) {
+  try {
+    const list = JSON.parse(localStorage.getItem('zb_wishlist') || '[]');
+    return list.includes(perfumeId);
+  } catch(e) {
+    return false;
+  }
+}
+
 // ── Language Controller ──
 function setLanguage(lang) {
   currentLang = lang;
@@ -105,6 +190,7 @@ function setCurrency(code) {
     activeCurrency = found;
     localStorage.setItem('zb_perfumes_currency', code);
     updateCurrencyUI();
+    renderCatalog(currentFilter, currentSearch);
     closeCurrencyModal();
 
     if (activeModalPerfume) {
@@ -496,13 +582,14 @@ function renderCatalog(filter = 'all', searchQuery = '') {
 
       sectionsHtml += `
         <div class="category-section-block" id="section-${sec.key}" style="grid-column: 1 / -1; width: 100%;">
-          <div class="category-section-header">
-            <div class="category-section-title-wrap">
-              <span class="category-section-icon">${sec.icon}</span>
-              <h2 class="category-section-title">${sec.title}</h2>
-              <span class="category-section-count">${secItems.length} ${unit}</span>
+          <div class="ghalati-section-header">
+            <h2 class="ghalati-section-title">${sec.title}</h2>
+            <div class="ghalati-title-divider">
+              <span class="ghalati-divider-line"></span>
+              <span class="ghalati-divider-box"></span>
+              <span class="ghalati-divider-line"></span>
             </div>
-            <p class="category-section-subtitle">${sec.desc}</p>
+            <p class="ghalati-section-desc">${sec.desc} (${secItems.length} ${unit})</p>
           </div>
           <div class="catalog-grid">
             ${secItems.map(p => renderProductCard(p, t)).join('')}
@@ -520,13 +607,14 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     if (activeSec) {
       const unit = currentLang === 'ar' ? activeSec.unitAr : activeSec.unitEn;
       headerHtml = `
-        <div class="category-section-header" style="grid-column: 1 / -1; width: 100%;">
-          <div class="category-section-title-wrap">
-            <span class="category-section-icon">${activeSec.icon}</span>
-            <h2 class="category-section-title">${activeSec.title}</h2>
-            <span class="category-section-count">${filtered.length} ${unit}</span>
+        <div class="ghalati-section-header" style="grid-column: 1 / -1; width: 100%;">
+          <h2 class="ghalati-section-title">${activeSec.title}</h2>
+          <div class="ghalati-title-divider">
+            <span class="ghalati-divider-line"></span>
+            <span class="ghalati-divider-box"></span>
+            <span class="ghalati-divider-line"></span>
           </div>
-          <p class="category-section-subtitle">${activeSec.desc}</p>
+          <p class="ghalati-section-desc">${activeSec.desc} (${filtered.length} ${unit})</p>
         </div>
       `;
     }
@@ -536,51 +624,53 @@ function renderCatalog(filter = 'all', searchQuery = '') {
 }
 
 function renderProductCard(p, t) {
-  const title = currentLang === 'ar' ? p.title : p.titleEn;
-  const overview = currentLang === 'ar' ? p.overview : (p.overviewEn || p.overview);
-  const catLabel = getCategoryBadgeText(p);
-  const convertedPrice = (p.finalJod * activeCurrency.rate).toFixed(2);
-  const currSymbol = currentLang === 'ar' ? activeCurrency.symbol : activeCurrency.symbolEn;
-  const waText = encodeURIComponent(
-    currentLang === 'ar'
-      ? `مرحبا، أرغب بطلب ${p.title} من دار غلاتي بسعر ${convertedPrice} ${currSymbol} المتوفر عبر زهرة بيسان`
-      : `Hello, I would like to order ${p.titleEn} by Ghalati House at ${convertedPrice} ${currSymbol} from Zahrat Beesan`
-  );
-  const waLink = `https://wa.me/962796697413?text=${waText}`;
+  const isAr = currentLang === 'ar';
+  const title = isAr ? p.title : p.titleEn;
+  const prices = getProductPrices(p);
+  const imgSrc = p.originalImage || p.image;
+  const isWishlisted = isInWishlist(p.id);
 
   return `
     <article class="product-card" data-id="${p.id}">
-      <div class="product-card-image-wrap" onclick="openProductModal('${p.id}')" title="${currentLang === 'ar' ? 'انقر لعرض تفاصيل وهرم العطر' : 'Click to view perfume details & notes'}">
-        <img src="${p.image}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy">
-        <span class="product-badge-top">${t.originalPurityBadge}</span>
-        <span class="product-badge-house">GHALATI</span>
-        <span class="product-badge-cat">${catLabel}</span>
-      </div>
-      <div class="product-card-body">
-        <span class="product-card-house-name">دار غلاتي • Ghalati Parfums</span>
-        <h3 class="product-card-title" onclick="openProductModal('${p.id}')">${title}</h3>
-        <p class="product-card-desc">
-          ${overview}
-        </p>
-        <div class="product-card-price-row">
-          <span class="product-price-orig">${t.retailPrice}</span>
-          <strong class="product-price-main" data-base-jod="${p.finalJod}">${getFormattedPrice(p.finalJod)}</strong>
-        </div>
-        <div class="product-card-actions">
-          <button type="button" class="btn-view-details" onclick="openProductModal('${p.id}')">
-            <span>🔍</span>
-            <span>${t.btnViewDetails}</span>
+      <div class="product-card-image-wrap" onclick="openProductModal('${p.id}')" title="${isAr ? 'عرض تفاصيل وهرم العطر' : 'View perfume details & notes'}">
+        <!-- شارة عرض لفترة محدودة (نفس متجر غلاتي تماماً) -->
+        <span class="product-badge-offer">${t.limitedTimeOffer || (isAr ? 'عرض لفترة محدودة' : 'Limited Time Offer')}</span>
+
+        <!-- صورة العطر النقية في المنتصف -->
+        <img src="${imgSrc}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy" onerror="this.onerror=null;this.src='${p.image}'">
+
+        <!-- أزرار المعاينة السريعة والمفضلة بالمنتصف عند التحويم -->
+        <div class="product-card-hover-actions">
+          <button type="button" class="btn-hover-action btn-hover-quickview" onclick="event.stopPropagation(); openProductModal('${p.id}')" title="${t.quickViewText || (isAr ? 'عرض التفاصيل' : 'Quick View')}" aria-label="${t.quickViewText || (isAr ? 'عرض التفاصيل' : 'Quick View')}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
           </button>
-          <div class="product-card-actions-sub">
-            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-order-whatsapp">
-              <span>💬</span>
-              <span>${t.btnInstantWhatsApp}</span>
-            </a>
-            <button type="button" class="btn-add-cart" onclick="addToCart('${p.title}')">
-              <span>🛍️</span>
-              <span>${t.btnAddToCart}</span>
-            </button>
-          </div>
+          <button type="button" class="btn-hover-action btn-hover-wishlist ${isWishlisted ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist('${p.id}', this)" title="${t.wishlistText || (isAr ? 'إضافة للمفضلة' : 'Wishlist')}" aria-label="${t.wishlistText || (isAr ? 'إضافة للمفضلة' : 'Wishlist')}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isWishlisted ? '#e53935' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- زر أضف إلى السلة الأنيق في أسفل الصورة عند التحويم -->
+        <button type="button" class="product-card-add-btn" onclick="event.stopPropagation(); addToCart('${p.id}')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>${t.addToCartText || (isAr ? 'أضف إلى السلة' : 'Add to Cart')}</span>
+        </button>
+      </div>
+
+      <!-- معلومات وسعر العطر بالمنتصف بدقة وتناسق -->
+      <div class="product-card-info">
+        <h3 class="product-card-title" onclick="openProductModal('${p.id}')">${title}</h3>
+        <div class="product-card-prices">
+          <span class="product-price-sale">${prices.saleStr}</span>
+          <span class="product-price-old">${prices.origStr}</span>
         </div>
       </div>
     </article>
@@ -999,7 +1089,7 @@ window.addEventListener('popstate', (e) => {
 });
 
 // ── Cart & Direct Actions ──
-function addToCart(perfumeName) {
+function addToCart(idOrName) {
   cartItemsCount++;
   const badge = document.getElementById('cartCountBadge');
   if (badge) {
@@ -1008,10 +1098,15 @@ function addToCart(perfumeName) {
     setTimeout(() => badge.style.transform = 'scale(1)', 250);
   }
 
+  const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(
+    item => item.id === idOrName || item.title === idOrName || item.titleEn === idOrName
+  );
+  const displayName = p ? (currentLang === 'ar' ? p.title : p.titleEn) : idOrName;
+
   const msg = currentLang === 'ar'
-    ? `✨ تم إضافة "${perfumeName}" إلى حقيبة التسوق بنجاح!`
-    : `✨ "${perfumeName}" was added to your shopping cart!`;
-  alert(msg);
+    ? `تم إضافة "${displayName}" إلى السلة بنجاح`
+    : `"${displayName}" was added to your shopping cart`;
+  showNotification(msg, '🛍️');
 }
 
 function handleNewsletter(e) {
@@ -1020,9 +1115,9 @@ function handleNewsletter(e) {
   if (!input || !input.value.trim()) return;
 
   const msg = currentLang === 'ar'
-    ? '👑 شكراً لاشتراكك في النشرة الملكية لدار زهرة بيسان! ستصلك أحدث الإصدارات الحصرية.'
-    : '👑 Thank you for subscribing to Zahrat Beesan Royal Newsletter! You will receive exclusive releases.';
-  alert(msg);
+    ? 'شكراً لاشتراكك في النشرة الملكية لدار زهرة بيسان!'
+    : 'Thank you for subscribing to Zahrat Beesan Royal Newsletter!';
+  showNotification(msg, '👑');
   input.value = '';
 }
 
