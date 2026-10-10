@@ -22,6 +22,22 @@ const FRAGRANCE_HOUSES = [
     count: 120
   },
   {
+    id: "assaf",
+    nameAr: "عطور عساف",
+    nameEn: "Assaf Perfumes",
+    logo: "images/brands/assaf.svg",
+    badge: "👑",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "عطور استثنائية ومجموعات نيش عالمية فواحة (أروقيت، فرانكل، وايلد كولت، بيقاسوس، مس ساكورا، ريسك)",
+    specialtyEn: "Iconic Arabian Scents & Global Best-Sellers (Arrogate, Frankel, Wild Colt, Pegasus, Risk)",
+    descAr: "التشكيلة الرسمية المعتمدة لعطور ومجموعات عساف في زهرة بيسان مع توفير فوري لـ 140 عطراً وبوكس إهداء مختوماً بختم المصنع الأصلي.",
+    descEn: "Official authorized Assaf Perfumes collection at Zahrat Beesan with 140 authentic factory-sealed perfumes and luxury gift sets.",
+    hasActiveCatalog: true,
+    count: 140
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -334,21 +350,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Refined Gulf Creations Blending Freshness & Oriental Depth",
     descAr: "عطور خليجية راقية بتوليفات متوازنة تمنحك إحساساً ملكياً فريداً طوال اليوم.",
     descEn: "Exquisite compositions offering an all-day majestic aura of elegance and freshness.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "assaf",
-    nameAr: "عطور عساف",
-    nameEn: "Assaf Perfumes",
-    logo: "images/brands/assaf.svg",
-    badge: "👑",
-    region: "sa",
-    countryAr: "المملكة العربية السعودية 🇸🇦",
-    countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "عطور استثنائية وبدائل النيش العالمية الأكثر شهرة (فرانكلين، وايلد كولت، مس بيل)",
-    specialtyEn: "Iconic Arabian Scents & Global Best-Sellers (Wild Colt, Franklin)",
-    descAr: "إحدى كبرى دور العطور السعودية الشهيرة بإصداراتها الفواحة التي نالت شهرة واسعة.",
-    descEn: "Famous Saudi perfume house celebrated for monumental sillage and beloved hits.",
     hasActiveCatalog: false
   },
   {
