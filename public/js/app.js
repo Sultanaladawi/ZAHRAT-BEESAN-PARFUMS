@@ -1130,8 +1130,9 @@ function renderProductModalContent(p) {
     addGalleryItem(p.boxImage, t.quickViewBox || 'العطر مع العلبة الفاخرة', false);
   }
 
-  // 3. Pure Flacon Cutout (Rendered strictly ONCE - no duplicate bottles)
-  const flaconSrc = p.originalImage || p.bottleUrl || p.fragranticaBottle;
+  // 3. Pure Flacon Official Studio Image (High-res Ghalati white-background bottle)
+  const cleanBottleUrl = p.bottleUrl ? p.bottleUrl.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/') : '';
+  const flaconSrc = cleanBottleUrl || p.originalImage || p.fragranticaBottle;
   if (flaconSrc && flaconSrc !== p.image && flaconSrc !== p.boxImage) {
     addGalleryItem(flaconSrc, t.quickViewFlacon || 'الزجاجة الصافية', true);
   }
@@ -1157,10 +1158,11 @@ function renderProductModalContent(p) {
     });
   }
 
-  // Save gallery items for Fullscreen Studio Lightbox & Inline Zoom
+  // Save gallery items & official clean white-background bottle URL for Ghalati-style Lightbox
   window.__activeGalleryItems = galleryItems;
   window.__activeGalleryIndex = 0;
   window.__activeGalleryTitle = title;
+  window.__activeCleanBottleUrl = cleanBottleUrl || p.image;
 
   // Helper for chip tags
   const renderChips = (text, isProminent = false) => {
@@ -1170,31 +1172,14 @@ function renderProductModalContent(p) {
     `).join('');
   };
 
-  const zoomHintText = currentLang === 'ar' ? 'اضغط لتكبير الصورة بملء الشاشة' : 'Click to open Fullscreen HD Zoom';
-  const openStandaloneText = currentLang === 'ar' ? 'فتح الصورة لحالها' : 'Open Image Alone';
-
   container.innerHTML = `
     <div class="product-modal-grid">
       
-      <!-- العمود الأيسر: معرض الصور التفاعلي مع التكبير الفائق وعارض ملء الشاشة الملكي -->
+      <!-- العمود الأيسر: معرض الصور التفاعلي -->
       <div class="modal-gallery-pane">
-        <div class="modal-main-img-box" id="modalMainImageBox" title="${zoomHintText}">
+        <div class="modal-main-img-box" id="modalMainImageBox" onclick="openLuxuryLightbox(window.__activeGalleryIndex || 0)">
           <img src="${p.image}" alt="${title}" id="modalMainImg" loading="lazy" draggable="false">
           <span class="modal-gallery-badge" id="modalGalleryBadge">${t.quickViewShowcase}</span>
-
-          <!-- شريط أدوات التكبير الملكي المباشر وفتح الصورة المستقلة -->
-          <div class="modal-zoom-floating-bar" onclick="event.stopPropagation()">
-            <button type="button" class="modal-zoom-pill-btn" onclick="openLuxuryLightbox(window.__activeGalleryIndex || 0)" title="${zoomHintText}">
-              <span>🔍</span>
-              <span>${currentLang === 'ar' ? 'تكبير وفحص الصورة' : 'HD Zoom Studio'}</span>
-            </button>
-            <div class="modal-inline-zoom-controls">
-              <button type="button" class="inline-zoom-icon-btn" onclick="inlineZoomStep(0.45)" title="${currentLang === 'ar' ? 'تكبير +' : 'Zoom In +'}">＋</button>
-              <button type="button" class="inline-zoom-icon-btn inline-zoom-pct" id="inlineZoomPctBtn" onclick="inlineZoomReset()" title="${currentLang === 'ar' ? 'إعادة الضبط 100%' : 'Reset 100%'}">100%</button>
-              <button type="button" class="inline-zoom-icon-btn" onclick="inlineZoomStep(-0.45)" title="${currentLang === 'ar' ? 'تصغير −' : 'Zoom Out −'}">－</button>
-              <a href="${p.image}" target="_blank" rel="noopener noreferrer" class="inline-zoom-icon-btn" id="inlineOpenRawImgLink" title="${openStandaloneText}">↗</a>
-            </div>
-          </div>
         </div>
 
         <div class="modal-thumbs-row">
@@ -1350,17 +1335,12 @@ function renderProductModalContent(p) {
 
     </div>
   `;
-
-  initInlineImageZoomInteractions();
 }
 
 function switchModalImage(src, isFlacon, label, btnEl, idx = 0) {
   window.__activeGalleryIndex = idx;
-  inlineZoomReset();
   const mainImg = document.getElementById('modalMainImg');
   const badge = document.getElementById('modalGalleryBadge');
-  const rawLink = document.getElementById('inlineOpenRawImgLink');
-  if (rawLink) rawLink.href = src;
   if (mainImg) {
     mainImg.src = src;
     const isContain = isFlacon || 
@@ -1384,100 +1364,8 @@ function switchModalImage(src, isFlacon, label, btnEl, idx = 0) {
   if (btnEl) btnEl.classList.add('active-thumb');
 }
 
-// ── Royal Inline Zoom & Fullscreen Studio Lightbox Controller ──
-let inlineZoomState = { scale: 1, x: 0, y: 0, isDragging: false, startX: 0, startY: 0, moved: false };
+// ── Clean Ghalati Lightbox Controller (Exact Match to Official Store) ──
 let lightboxState = { isOpen: false, index: 0, scale: 1, x: 0, y: 0, isDragging: false, startX: 0, startY: 0, moved: false, pinchStartDist: 0, pinchStartScale: 1 };
-
-function applyInlineZoomTransform() {
-  const img = document.getElementById('modalMainImg');
-  const box = document.getElementById('modalMainImageBox');
-  const pctBtn = document.getElementById('inlineZoomPctBtn');
-  if (!img) return;
-  if (inlineZoomState.scale <= 1.01) {
-    inlineZoomState.scale = 1;
-    inlineZoomState.x = 0;
-    inlineZoomState.y = 0;
-  }
-  img.style.transform = `translate3d(${inlineZoomState.x}px, ${inlineZoomState.y}px, 0) scale(${inlineZoomState.scale})`;
-  if (box) {
-    box.classList.toggle('is-inline-zoomed', inlineZoomState.scale > 1);
-  }
-  if (pctBtn) {
-    pctBtn.textContent = `${Math.round(inlineZoomState.scale * 100)}%`;
-  }
-}
-
-function inlineZoomStep(delta) {
-  const next = Math.min(3.5, Math.max(1, +(inlineZoomState.scale + delta).toFixed(2)));
-  inlineZoomState.scale = next;
-  if (next === 1) {
-    inlineZoomState.x = 0;
-    inlineZoomState.y = 0;
-  }
-  applyInlineZoomTransform();
-}
-
-function inlineZoomReset() {
-  inlineZoomState.scale = 1;
-  inlineZoomState.x = 0;
-  inlineZoomState.y = 0;
-  applyInlineZoomTransform();
-}
-
-function initInlineImageZoomInteractions() {
-  inlineZoomReset();
-  const box = document.getElementById('modalMainImageBox');
-  const img = document.getElementById('modalMainImg');
-  if (!box || !img) return;
-
-  box.addEventListener('wheel', (e) => {
-    if (!e.ctrlKey && inlineZoomState.scale === 1) return; // Allow normal page scroll unless already zoomed or Ctrl+wheel
-    e.preventDefault();
-    const delta = e.deltaY < 0 ? 0.3 : -0.3;
-    inlineZoomStep(delta);
-  }, { passive: false });
-
-  box.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.modal-zoom-floating-bar')) return;
-    inlineZoomState.isDragging = true;
-    inlineZoomState.moved = false;
-    inlineZoomState.startX = e.clientX - inlineZoomState.x;
-    inlineZoomState.startY = e.clientY - inlineZoomState.y;
-    if (inlineZoomState.scale > 1) {
-      box.setPointerCapture?.(e.pointerId);
-      img.style.transition = 'none';
-    }
-  });
-
-  box.addEventListener('pointermove', (e) => {
-    if (!inlineZoomState.isDragging) return;
-    const dx = e.clientX - (inlineZoomState.startX + inlineZoomState.x);
-    const dy = e.clientY - (inlineZoomState.startY + inlineZoomState.y);
-    if (Math.hypot(dx, dy) > 6) {
-      inlineZoomState.moved = true;
-    }
-    if (inlineZoomState.scale > 1) {
-      const maxPan = 180 * (inlineZoomState.scale - 1);
-      inlineZoomState.x = Math.max(-maxPan, Math.min(maxPan, e.clientX - inlineZoomState.startX));
-      inlineZoomState.y = Math.max(-maxPan, Math.min(maxPan, e.clientY - inlineZoomState.startY));
-      applyInlineZoomTransform();
-    }
-  });
-
-  const endInlinePointer = () => {
-    if (!inlineZoomState.isDragging) return;
-    inlineZoomState.isDragging = false;
-    img.style.transition = 'transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)';
-  };
-  box.addEventListener('pointerup', (e) => {
-    const wasMoved = inlineZoomState.moved;
-    endInlinePointer();
-    if (!e.target.closest('.modal-zoom-floating-bar') && !wasMoved) {
-      openLuxuryLightbox(window.__activeGalleryIndex || 0);
-    }
-  });
-  box.addEventListener('pointercancel', endInlinePointer);
-}
 
 function ensureLuxuryLightboxDOM() {
   let lb = document.getElementById('luxuryImageLightbox');
@@ -1485,91 +1373,49 @@ function ensureLuxuryLightboxDOM() {
 
   lb = document.createElement('div');
   lb.id = 'luxuryImageLightbox';
-  lb.className = 'luxury-lightbox-overlay';
+  lb.className = 'ghalati-clean-lightbox';
   lb.style.display = 'none';
   lb.innerHTML = `
-    <div class="luxury-lightbox-topbar" onclick="event.stopPropagation()">
-      <div class="luxury-lightbox-title-wrap">
-        <span class="luxury-lightbox-crown">👑</span>
-        <div>
-          <strong class="luxury-lightbox-title" id="luxuryLightboxTitle"></strong>
-          <span class="luxury-lightbox-sub" id="luxuryLightboxBadge"></span>
-        </div>
-      </div>
-
-      <div class="luxury-lightbox-controls">
-        <button type="button" class="lb-ctrl-btn" onclick="lightboxZoomStep(0.5)" title="تكبير (+)">
-          <span>＋</span>
-          <span class="lb-ctrl-label" id="lbZoomInLabel">تكبير</span>
-        </button>
-        <button type="button" class="lb-ctrl-btn lb-pct-badge" id="luxuryLightboxPct" onclick="lightboxResetZoom()" title="إعادة الضبط (100%)">
-          100%
-        </button>
-        <button type="button" class="lb-ctrl-btn" onclick="lightboxZoomStep(-0.5)" title="تصغير (−)">
-          <span>－</span>
-          <span class="lb-ctrl-label" id="lbZoomOutLabel">تصغير</span>
-        </button>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="lb-ctrl-btn lb-open-raw-btn" id="luxuryLightboxRawLink" title="فتح الصورة الأصلية في تبويب مستقل">
-          <span>↗</span>
-          <span class="lb-ctrl-label" id="lbRawLinkLabel">فتح الصورة لحالها</span>
-        </a>
-        <button type="button" class="lb-ctrl-btn lb-close-btn" onclick="closeLuxuryLightbox()" title="إغلاق (Esc)">
-          <span>✕</span>
-        </button>
-      </div>
+    <div class="ghalati-lb-top-actions" onclick="event.stopPropagation()">
+      <button type="button" class="ghalati-lb-icon-btn" onclick="closeLuxuryLightbox()" title="إغلاق" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <button type="button" class="ghalati-lb-icon-btn" onclick="toggleLightboxFullscreen()" title="ملء الشاشة" aria-label="Fullscreen">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+      </button>
     </div>
 
-    <div class="luxury-lightbox-stage" id="luxuryLightboxStage">
-      <button type="button" class="lb-nav-arrow lb-nav-prev" id="luxuryLightboxPrev" onclick="event.stopPropagation(); lightboxStepImage(-1)" title="السابق">
-        &#10094;
-      </button>
-
-      <div class="luxury-lightbox-img-wrapper" id="luxuryLightboxImgWrap">
+    <div class="ghalati-lb-stage" id="luxuryLightboxStage">
+      <div class="ghalati-lb-card" id="luxuryLightboxImgWrap">
         <img src="" alt="" id="luxuryLightboxImg" draggable="false">
       </div>
-
-      <button type="button" class="lb-nav-arrow lb-nav-next" id="luxuryLightboxNext" onclick="event.stopPropagation(); lightboxStepImage(1)" title="التالي">
-        &#10095;
-      </button>
-    </div>
-
-    <div class="luxury-lightbox-bottombar" onclick="event.stopPropagation()">
-      <div class="luxury-lightbox-thumbs" id="luxuryLightboxThumbs"></div>
-      <div class="luxury-lightbox-hint" id="luxuryLightboxHint"></div>
     </div>
   `;
   document.body.appendChild(lb);
 
   const stage = lb.querySelector('#luxuryLightboxStage');
+  const card = lb.querySelector('#luxuryLightboxImgWrap');
   const img = lb.querySelector('#luxuryLightboxImg');
 
-  // Wheel zoom inside fullscreen studio
+  // Wheel zoom
   stage.addEventListener('wheel', (e) => {
     e.preventDefault();
     const delta = e.deltaY < 0 ? 0.35 : -0.35;
     lightboxZoomStep(delta);
   }, { passive: false });
 
-  // Double-click to toggle 1x <-> 2.4x zoom
-  stage.addEventListener('dblclick', (e) => {
-    if (e.target.closest('.lb-nav-arrow')) return;
-    e.preventDefault();
-    if (lightboxState.scale > 1.1) {
-      lightboxResetZoom();
-    } else {
-      lightboxState.scale = 2.4;
-      applyLightboxTransform();
-    }
-  });
-
-  // Pointer drag / pan & backdrop click to close
+  // Pointer down / drag / click-to-zoom / click-backdrop-to-close
   stage.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.lb-nav-arrow')) return;
     lightboxState.isDragging = true;
     lightboxState.moved = false;
     lightboxState.startX = e.clientX - lightboxState.x;
     lightboxState.startY = e.clientY - lightboxState.y;
-    img.style.transition = 'none';
+    card.style.transition = 'none';
   });
 
   stage.addEventListener('pointermove', (e) => {
@@ -1580,8 +1426,8 @@ function ensureLuxuryLightboxDOM() {
       lightboxState.moved = true;
     }
     if (lightboxState.scale > 1) {
-      const maxPanX = window.innerWidth * 0.45 * (lightboxState.scale - 1);
-      const maxPanY = window.innerHeight * 0.45 * (lightboxState.scale - 1);
+      const maxPanX = window.innerWidth * 0.4 * (lightboxState.scale - 1);
+      const maxPanY = window.innerHeight * 0.4 * (lightboxState.scale - 1);
       lightboxState.x = Math.max(-maxPanX, Math.min(maxPanX, e.clientX - lightboxState.startX));
       lightboxState.y = Math.max(-maxPanY, Math.min(maxPanY, e.clientY - lightboxState.startY));
       applyLightboxTransform();
@@ -1592,22 +1438,32 @@ function ensureLuxuryLightboxDOM() {
     if (!lightboxState.isDragging) return;
     const wasMoved = lightboxState.moved;
     lightboxState.isDragging = false;
-    img.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
-    // If clicked directly on empty stage background (not the image) without dragging, close lightbox
-    if (!wasMoved && (e.target === stage || e.target.id === 'luxuryLightboxImgWrap')) {
-      closeLuxuryLightbox();
+    card.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+
+    if (!wasMoved) {
+      // Clicked outside the white card -> close lightbox
+      if (e.target === stage) {
+        closeLuxuryLightbox();
+      } else {
+        // Clicked on the image card -> toggle clean zoom (1x <-> 2x)
+        if (lightboxState.scale > 1.05) {
+          lightboxResetZoom();
+        } else {
+          lightboxState.scale = 2;
+          applyLightboxTransform();
+        }
+      }
     }
   });
 
-  // Touch Pinch-to-Zoom support for mobile
+  // Touch Pinch-to-Zoom for mobile
   stage.addEventListener('touchstart', (e) => {
     if (e.touches.length === 2) {
       lightboxState.isDragging = false;
-      const d = Math.hypot(
+      lightboxState.pinchStartDist = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
       );
-      lightboxState.pinchStartDist = d;
       lightboxState.pinchStartScale = lightboxState.scale;
     }
   }, { passive: true });
@@ -1620,7 +1476,7 @@ function ensureLuxuryLightboxDOM() {
         e.touches[0].clientY - e.touches[1].clientY
       );
       const ratio = d / lightboxState.pinchStartDist;
-      lightboxState.scale = Math.min(4.5, Math.max(1, +(lightboxState.pinchStartScale * ratio).toFixed(2)));
+      lightboxState.scale = Math.min(4, Math.max(1, +(lightboxState.pinchStartScale * ratio).toFixed(2)));
       if (lightboxState.scale === 1) {
         lightboxState.x = 0;
         lightboxState.y = 0;
@@ -1632,23 +1488,31 @@ function ensureLuxuryLightboxDOM() {
   return lb;
 }
 
+function toggleLightboxFullscreen() {
+  const lb = document.getElementById('luxuryImageLightbox');
+  if (!lb) return;
+  if (!document.fullscreenElement) {
+    lb.requestFullscreen?.().catch(() => {});
+  } else {
+    document.exitFullscreen?.().catch(() => {});
+  }
+}
+
 function applyLightboxTransform() {
-  const img = document.getElementById('luxuryLightboxImg');
-  const pct = document.getElementById('luxuryLightboxPct');
+  const card = document.getElementById('luxuryLightboxImgWrap');
   const stage = document.getElementById('luxuryLightboxStage');
-  if (!img) return;
+  if (!card) return;
   if (lightboxState.scale <= 1.01) {
     lightboxState.scale = 1;
     lightboxState.x = 0;
     lightboxState.y = 0;
   }
-  img.style.transform = `translate3d(${lightboxState.x}px, ${lightboxState.y}px, 0) scale(${lightboxState.scale})`;
-  if (pct) pct.textContent = `${Math.round(lightboxState.scale * 100)}%`;
+  card.style.transform = `translate3d(${lightboxState.x}px, ${lightboxState.y}px, 0) scale(${lightboxState.scale})`;
   if (stage) stage.classList.toggle('is-zoomed', lightboxState.scale > 1);
 }
 
 function lightboxZoomStep(delta) {
-  lightboxState.scale = Math.min(4.5, Math.max(1, +(lightboxState.scale + delta).toFixed(2)));
+  lightboxState.scale = Math.min(4, Math.max(1, +(lightboxState.scale + delta).toFixed(2)));
   if (lightboxState.scale === 1) {
     lightboxState.x = 0;
     lightboxState.y = 0;
@@ -1670,46 +1534,14 @@ function renderLightboxView() {
   lightboxState.index = idx;
   const item = items[idx];
 
-  const titleEl = document.getElementById('luxuryLightboxTitle');
-  const badgeEl = document.getElementById('luxuryLightboxBadge');
-  const imgEl = document.getElementById('luxuryLightboxImg');
-  const rawLink = document.getElementById('luxuryLightboxRawLink');
-  const thumbsEl = document.getElementById('luxuryLightboxThumbs');
-  const prevBtn = document.getElementById('luxuryLightboxPrev');
-  const nextBtn = document.getElementById('luxuryLightboxNext');
-  const hintEl = document.getElementById('luxuryLightboxHint');
+  // When clicking the main showcase image (idx === 0), display the official pure bottle on white background (exact match to Ghalati)
+  const displaySrc = (idx === 0 && window.__activeCleanBottleUrl) ? window.__activeCleanBottleUrl : item.src;
 
-  if (titleEl) titleEl.textContent = window.__activeGalleryTitle || '';
-  if (badgeEl) badgeEl.textContent = `${item.label} (${idx + 1} / ${items.length})`;
+  const imgEl = document.getElementById('luxuryLightboxImg');
   if (imgEl) {
-    imgEl.src = item.src;
+    imgEl.src = displaySrc;
     imgEl.alt = item.label || '';
   }
-  if (rawLink) rawLink.href = item.src;
-
-  const zoomInLbl = document.getElementById('lbZoomInLabel');
-  const zoomOutLbl = document.getElementById('lbZoomOutLabel');
-  const rawLbl = document.getElementById('lbRawLinkLabel');
-  if (zoomInLbl) zoomInLbl.textContent = currentLang === 'ar' ? 'تكبير' : 'Zoom In';
-  if (zoomOutLbl) zoomOutLbl.textContent = currentLang === 'ar' ? 'تصغير' : 'Zoom Out';
-  if (rawLbl) rawLbl.textContent = currentLang === 'ar' ? 'فتح الصورة لحالها' : 'Open Raw Image';
-  if (hintEl) {
-    hintEl.textContent = currentLang === 'ar'
-      ? '💡 نصيحة: استخدم عجلة الماوس أو النقر المزدوج أو أزرار (＋ / －) لتكبير أدق تفاصيل الزجاجة، واسحب الصورة للتحريك بحرية'
-      : '💡 Tip: Use mouse wheel, double-click, or (＋ / －) buttons to zoom up to 450%, and drag to pan freely';
-  }
-
-  if (prevBtn) prevBtn.style.display = items.length > 1 ? 'flex' : 'none';
-  if (nextBtn) nextBtn.style.display = items.length > 1 ? 'flex' : 'none';
-
-  if (thumbsEl) {
-    thumbsEl.innerHTML = items.map((it, i) => `
-      <button type="button" class="lb-thumb-btn ${i === idx ? 'active-lb-thumb' : ''}" onclick="lightboxSelectImage(${i})" title="${it.label}">
-        <img src="${it.src}" alt="${it.label}">
-      </button>
-    `).join('');
-  }
-
   lightboxResetZoom();
 }
 
@@ -1723,29 +1555,20 @@ function openLuxuryLightbox(index = 0) {
 }
 
 function closeLuxuryLightbox() {
+  if (document.fullscreenElement) {
+    document.exitFullscreen?.().catch(() => {});
+  }
   const lb = document.getElementById('luxuryImageLightbox');
   if (lb) lb.style.display = 'none';
   lightboxState.isOpen = false;
   document.body.style.overflow = '';
 }
 
-function lightboxSelectImage(index) {
-  lightboxState.index = index;
-  renderLightboxView();
-  // Also sync the underlying product page gallery thumbnail
-  const items = window.__activeGalleryItems || [];
-  const item = items[lightboxState.index];
-  const thumbs = document.querySelectorAll('.modal-thumb-btn');
-  if (item && thumbs[lightboxState.index]) {
-    switchModalImage(item.src, item.isFlacon, item.label, thumbs[lightboxState.index], lightboxState.index);
-  }
-}
-
 function lightboxStepImage(dir) {
   const items = window.__activeGalleryItems || [];
   if (items.length <= 1) return;
-  const nextIdx = ((lightboxState.index + dir) % items.length + items.length) % items.length;
-  lightboxSelectImage(nextIdx);
+  lightboxState.index = ((lightboxState.index + dir) % items.length + items.length) % items.length;
+  renderLightboxView();
 }
 
 // ── Modals Controller ──
