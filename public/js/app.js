@@ -44,28 +44,35 @@ function getFormattedPrice(baseJod) {
 }
 
 function getProductPrices(p) {
-  let origPriceVal, salePriceVal;
   const isAr = currentLang === 'ar';
   let symbol = isAr ? activeCurrency.symbol : activeCurrency.symbolEn;
 
+  const sarSale = Number(p.sarPrice) || 95;
+  const sarOrig = Number(p.origSarPrice) || sarSale;
+  const jodSale = Number(p.finalJod) || (Math.round(sarSale / 5.29) + 12);
+  const jodOrig = Number(p.origJod) || (sarOrig > sarSale ? (Math.round(sarOrig / 5.29) + 12) : jodSale);
+
+  let salePriceVal, origPriceVal;
+
   if (activeCurrency.code === 'SAR') {
-    salePriceVal = p.sarPrice || 95;
-    origPriceVal = p.origSarPrice || (p.id === 'attraction' ? 249 : (salePriceVal === 95 ? 299 : (salePriceVal <= 35 ? 75 : Math.round((salePriceVal * 2.6) / 10) * 10 - 1)));
+    salePriceVal = sarSale;
+    origPriceVal = sarOrig;
     if (isAr) symbol = '﷼';
   } else if (activeCurrency.code === 'JOD') {
-    salePriceVal = p.finalJod || 30;
-    origPriceVal = p.id === 'attraction' ? 65 : (salePriceVal === 30 ? 75 : Math.round(salePriceVal * 2.45));
+    salePriceVal = jodSale;
+    origPriceVal = jodOrig;
   } else {
-    salePriceVal = Math.round((p.finalJod || 30) * activeCurrency.rate);
-    origPriceVal = Math.round(salePriceVal * 2.45);
+    salePriceVal = Math.round(jodSale * activeCurrency.rate);
+    origPriceVal = Math.round(jodOrig * activeCurrency.rate);
   }
 
   const formatVal = (v) => Number.isInteger(v) ? v : Number(v.toFixed(1));
+  const hasDiscount = origPriceVal > salePriceVal;
 
   const saleStr = `${formatVal(salePriceVal)} ${symbol}`;
-  const origStr = `${formatVal(origPriceVal)} ${symbol}`;
+  const origStr = hasDiscount ? `${formatVal(origPriceVal)} ${symbol}` : '';
 
-  return { saleStr, origStr };
+  return { saleStr, origStr, hasDiscount };
 }
 
 function showNotification(message, icon = '🛍️') {
@@ -407,20 +414,94 @@ function renderBrandShowcase(h) {
   `;
 }
 
-// ── Catalog Data & Rendering ──
+// ── Catalog Data & Live Synchronization ──
+async function syncClientSideWithSalla(list) {
+  try {
+    if (!Array.isArray(list) || list.length === 0) return list;
+    const headers = {
+      'Accept': 'application/json, text/plain, */*'
+    };
+    const allIds = list.map(p => p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1]).filter(Boolean);
+    const chunks = [];
+    for (let i = 0; i < allIds.length; i += 20) {
+      chunks.push(allIds.slice(i, i + 20));
+    }
+
+    const liveById = new Map();
+    await Promise.all(
+      chunks.map(async (chunk) => {
+        const q = 'source=selected&limit=30&' + chunk.map(id => `source_value[]=${id}`).join('&');
+        const res = await fetch(`https://api.salla.dev/store/v1/products?${q}`, { headers }).catch(() => null);
+        if (res && res.ok) {
+          const json = await res.json();
+          for (const it of (json.data || [])) {
+            liveById.set(String(it.id), it);
+          }
+        }
+      })
+    );
+
+    if (liveById.size === 0) return list;
+
+    const synced = [];
+    for (const item of list) {
+      const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+      const live = liveById.get(sallaId);
+      if (!live) continue; // Deleted from source store -> remove from our store
+
+      const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || item.sarPrice;
+      const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+      const liveReg = Math.round(liveRegRaw);
+      const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+
+      synced.push({
+        ...item,
+        sallaId,
+        sarPrice: livePrice,
+        origSarPrice: liveReg,
+        baseJod: Math.round(livePrice / 5.29),
+        finalJod: Math.round(livePrice / 5.29) + 12,
+        origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + 12) : (Math.round(livePrice / 5.29) + 12),
+        isAvailable: liveAvail,
+        status: live.status || (liveAvail ? 'sale' : 'out'),
+        promotionTitle: live.promotion_title || ''
+      });
+    }
+    return synced;
+  } catch (e) {
+    return list;
+  }
+}
+
 async function loadCatalog() {
   try {
-    const res = await fetch('data/perfumes.json');
-    if (res.ok) {
-      perfumesData = await res.json();
+    let loadedFromLiveEndpoint = false;
+    const apiRes = await fetch('/api/catalog').catch(() => null);
+    if (apiRes && apiRes.ok) {
+      perfumesData = await apiRes.json();
+      loadedFromLiveEndpoint = true;
     } else {
-      console.warn('Failed to load perfumes.json via fetch, using fallback.');
+      const res = await fetch('data/perfumes.json');
+      if (res.ok) {
+        perfumesData = await res.json();
+      }
+    }
+
+    renderCatalog(currentFilter, currentSearch);
+
+    // If loaded from static file (e.g. static host), also run direct client-side Salla sync
+    if (!loadedFromLiveEndpoint && perfumesData.length > 0) {
+      syncClientSideWithSalla(perfumesData).then(fresh => {
+        if (fresh && fresh.length > 0) {
+          perfumesData = fresh;
+          renderCatalog(currentFilter, currentSearch);
+        }
+      });
     }
   } catch (err) {
     console.error('Error fetching perfumes catalog:', err);
+    renderCatalog(currentFilter, currentSearch);
   }
-
-  renderCatalog(currentFilter, currentSearch);
 
   // If URL has a product hash on direct load/refresh, open its full page immediately
   if (window.location.hash.startsWith('#product/')) {
@@ -428,6 +509,41 @@ async function loadCatalog() {
     if (prodId) {
       setTimeout(() => openProductModal(prodId), 150);
     }
+  }
+
+  // Periodic live sync every 90 seconds so price/stock/deletion changes appear automatically
+  setInterval(refreshLiveCatalogSilently, 90 * 1000);
+}
+
+async function refreshLiveCatalogSilently() {
+  try {
+    const res = await fetch('/api/catalog?force=1').catch(() => null);
+    let freshData = null;
+    if (res && res.ok) {
+      freshData = await res.json();
+    } else if (perfumesData.length > 0) {
+      freshData = await syncClientSideWithSalla(perfumesData);
+    }
+
+    if (Array.isArray(freshData) && freshData.length > 0) {
+      const oldSig = JSON.stringify(perfumesData.map(p => `${p.id}:${p.sarPrice}:${p.origSarPrice}:${p.isAvailable}`));
+      const newSig = JSON.stringify(freshData.map(p => `${p.id}:${p.sarPrice}:${p.origSarPrice}:${p.isAvailable}`));
+      if (oldSig !== newSig) {
+        perfumesData = freshData;
+        renderCatalog(currentFilter, currentSearch);
+        if (activeModalPerfume) {
+          const updatedCurrent = perfumesData.find(x => x.id === activeModalPerfume.id);
+          if (updatedCurrent) {
+            activeModalPerfume = updatedCurrent;
+            renderProductModalContent(updatedCurrent);
+          } else {
+            closeProductModal();
+          }
+        }
+      }
+    }
+  } catch (e) {
+    // Silent background check
   }
 }
 
@@ -526,9 +642,15 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     return;
   }
 
-  // Consistent category ordering: Perfumes -> Bundles -> Bakhoor -> Oils
+  // Consistent category ordering: Perfumes -> Bundles -> Bakhoor -> Oils (with available items prioritized first in each category)
   const catPriority = { 'perfume': 1, 'bundle': 2, 'bakhoor': 3, 'oil': 4 };
-  filtered.sort((a, b) => (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99));
+  filtered.sort((a, b) => {
+    const catDiff = (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99);
+    if (catDiff !== 0) return catDiff;
+    const availA = (a.isAvailable === false || a.status === 'out') ? 1 : 0;
+    const availB = (b.isAvailable === false || b.status === 'out') ? 1 : 0;
+    return availA - availB;
+  });
 
   // Category section definitions
   const SECTION_CONFIGS = [
@@ -629,12 +751,42 @@ function renderProductCard(p, t) {
   const prices = getProductPrices(p);
   const imgSrc = p.image || p.originalImage;
   const isWishlisted = isInWishlist(p.id);
+  const isOut = p.isAvailable === false || p.status === 'out';
+
+  let badgeHtml = '';
+  if (isOut) {
+    const outLabel = p.promotionTitle === 'يتوفر قريباً'
+      ? (isAr ? 'يتوفر قريباً' : 'Coming Soon')
+      : (isAr ? 'نفذت الكمية' : 'Out of Stock');
+    badgeHtml = `<span class="product-badge-offer badge-out-of-stock">${outLabel}</span>`;
+  } else if (p.promotionTitle || prices.hasDiscount) {
+    const promoLabel = isAr
+      ? (p.promotionTitle || t.limitedTimeOffer || 'عرض لفترة محدودة')
+      : (t.limitedTimeOffer || 'Limited Time Offer');
+    badgeHtml = `<span class="product-badge-offer">${promoLabel}</span>`;
+  }
+
+  const actionBtnHtml = isOut
+    ? `
+      <button type="button" class="product-card-add-btn btn-out-of-stock" disabled>
+        <span>${isAr ? 'نفذت الكمية' : 'Out of Stock'}</span>
+      </button>
+    `
+    : `
+      <button type="button" class="product-card-add-btn" onclick="event.stopPropagation(); addToCart('${p.id}')">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span>${t.addToCartText || (isAr ? 'أضف إلى السلة' : 'Add to Cart')}</span>
+      </button>
+    `;
 
   return `
-    <article class="product-card" data-id="${p.id}">
+    <article class="product-card ${isOut ? 'product-card-out' : ''}" data-id="${p.id}">
       <div class="product-card-image-wrap" onclick="openProductModal('${p.id}')" title="${isAr ? 'عرض تفاصيل وهرم العطر' : 'View perfume details & notes'}">
-        <!-- شارة عرض لفترة محدودة (نفس متجر غلاتي تماماً) -->
-        <span class="product-badge-offer">${t.limitedTimeOffer || (isAr ? 'عرض لفترة محدودة' : 'Limited Time Offer')}</span>
+        ${badgeHtml}
 
         <!-- صورة القالب الملكي للعطر -->
         <img src="${imgSrc}" alt="${title} - دار غلاتي" class="product-card-image" loading="lazy">
@@ -654,15 +806,7 @@ function renderProductCard(p, t) {
           </button>
         </div>
 
-        <!-- زر أضف إلى السلة الأنيق في أسفل الصورة عند التحويم -->
-        <button type="button" class="product-card-add-btn" onclick="event.stopPropagation(); addToCart('${p.id}')">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span>${t.addToCartText || (isAr ? 'أضف إلى السلة' : 'Add to Cart')}</span>
-        </button>
+        ${actionBtnHtml}
       </div>
 
       <!-- معلومات وسعر العطر بالمنتصف بدقة وتناسق -->
@@ -670,7 +814,7 @@ function renderProductCard(p, t) {
         <h3 class="product-card-title" onclick="openProductModal('${p.id}')">${title}</h3>
         <div class="product-card-prices">
           <span class="product-price-sale">${prices.saleStr}</span>
-          <span class="product-price-old">${prices.origStr}</span>
+          ${prices.hasDiscount ? `<span class="product-price-old">${prices.origStr}</span>` : ''}
         </div>
       </div>
     </article>
@@ -886,15 +1030,23 @@ function renderProductModalContent(p) {
         <h2 class="modal-title-ar">${p.title}</h2>
         <span class="modal-title-en">${p.titleEn}</span>
 
-        <!-- بطاقة السعر المحول بالمعادلة المعتمدة -->
+        <!-- بطاقة السعر المحول بالمعادلة المعتمدة والمحدثة لحظياً -->
         <div class="modal-price-box">
           <div>
-            <span style="font-size: 0.82rem; color: var(--espresso-dim); display: block;">${t.retailPrice}</span>
-            <strong class="modal-price-val" data-base-jod="${p.finalJod}">${getFormattedPrice(p.finalJod)}</strong>
+            <span style="font-size: 0.82rem; color: var(--espresso-dim); display: block; margin-bottom: 4px;">${t.retailPrice}</span>
+            <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+              <strong class="modal-price-val" style="color: #d32f2f;">${getProductPrices(p).saleStr}</strong>
+              ${getProductPrices(p).hasDiscount ? `<span style="font-size: 1.1rem; color: #666; text-decoration: line-through; font-weight: 600;">${getProductPrices(p).origStr}</span>` : ''}
+            </div>
           </div>
-          <span style="background: rgba(197, 168, 128, 0.18); border: 1px solid rgba(197, 168, 128, 0.4); padding: 5px 12px; border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 800; color: var(--gold-dim);">
-            ${getCategoryBadgeText(p)}
-          </span>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+            <span style="background: rgba(197, 168, 128, 0.18); border: 1px solid rgba(197, 168, 128, 0.4); padding: 5px 12px; border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 800; color: var(--gold-dim);">
+              ${getCategoryBadgeText(p)}
+            </span>
+            <span style="font-size: 0.76rem; font-weight: 800; padding: 3px 10px; border-radius: var(--radius-full); ${(p.isAvailable === false || p.status === 'out') ? 'background: rgba(211,47,47,0.12); color: #d32f2f;' : 'background: rgba(22,163,74,0.12); color: #16a34a;'}">
+              ${(p.isAvailable === false || p.status === 'out') ? (currentLang === 'ar' ? '🔴 نفذت الكمية' : '🔴 Out of Stock') : (currentLang === 'ar' ? '🟢 متوفر الآن' : '🟢 In Stock')}
+            </span>
+          </div>
         </div>
 
         <!-- قصة ووصف العطر الرسمية بالملي -->
@@ -962,10 +1114,17 @@ function renderProductModalContent(p) {
             <span>💬</span>
             <span>${t.btnInstantWhatsApp}</span>
           </a>
-          <button type="button" class="btn-add-cart" onclick="addToCart('${p.title}')" style="padding: 12px 18px; font-size: 0.9rem;">
-            <span>🛍️</span>
-            <span>${t.btnAddToCart}</span>
-          </button>
+          ${(p.isAvailable === false || p.status === 'out') ? `
+            <button type="button" class="btn-add-cart" disabled style="padding: 12px 18px; font-size: 0.9rem; opacity: 0.6; cursor: not-allowed; background: #eee;">
+              <span>🚫</span>
+              <span>${currentLang === 'ar' ? 'نفذت الكمية حالياً' : 'Out of Stock'}</span>
+            </button>
+          ` : `
+            <button type="button" class="btn-add-cart" onclick="addToCart('${p.title}')" style="padding: 12px 18px; font-size: 0.9rem;">
+              <span>🛍️</span>
+              <span>${t.btnAddToCart}</span>
+            </button>
+          `}
         </div>
 
         <!-- رابط التحقق في المصدر الأصلي -->

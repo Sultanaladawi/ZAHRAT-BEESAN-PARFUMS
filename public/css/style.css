@@ -1162,6 +1162,11 @@ body[dir="ltr"] .mega-brand-item:hover {
   box-shadow: 0 2px 6px rgba(158, 127, 122, 0.25);
 }
 
+.product-badge-offer.badge-out-of-stock {
+  background-color: #555555;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 /* Center Floating Quick-View (Eye) & Wishlist (Heart) Buttons */
 .product-card-hover-actions {
   position: absolute;
@@ -1239,6 +1244,15 @@ body[dir="ltr"] .mega-brand-item:hover {
 
 .product-card-add-btn:hover {
   background-color: #5E4848;
+}
+
+.product-card-add-btn.btn-out-of-stock {
+  background-color: #888888;
+  cursor: not-allowed;
+}
+
+.product-card-add-btn.btn-out-of-stock:hover {
+  background-color: #888888;
 }
 
 /* Centered Product Info: Title + Red Sale Price & Crossed-Out Old Price */
