@@ -501,9 +501,11 @@ async function syncWithAssafStore(force = false) {
         const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
         const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
         const liveReg = Math.round(liveRegRaw);
-        const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
-        const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
-        const livePromo = live.promotion_title || live.subtitle || '';
+        const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''}`;
+        const isCancelledPerfume = /الغاء|إلغاء|ملغي/.test(rawPromoText);
+        const liveAvail = !isCancelledPerfume && live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+        const liveStatus = isCancelledPerfume ? 'out' : (live.status || (liveAvail ? 'sale' : 'out'));
+        const livePromo = isCancelledPerfume ? 'غير متوفر حالياً' : (live.promotion_title || live.subtitle || '');
 
         const newBaseJod = Math.round(livePrice / 5.29);
         const newFinalJod = newBaseJod + feeJod;

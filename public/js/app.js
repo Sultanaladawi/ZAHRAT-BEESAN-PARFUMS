@@ -633,7 +633,9 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
       const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || item.sarPrice;
       const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
       const liveReg = Math.round(liveRegRaw);
-      const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+      const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''}`;
+      const isCancelledPerfume = /الغاء|إلغاء|ملغي/.test(rawPromoText);
+      const liveAvail = !isCancelledPerfume && live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
       const baseJod = Math.round(livePrice / 5.29);
 
       synced.push({
@@ -648,8 +650,8 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         finalJod: baseJod + feeJod,
         origJod: liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : (baseJod + feeJod),
         isAvailable: liveAvail,
-        status: live.status || (liveAvail ? 'sale' : 'out'),
-        promotionTitle: live.promotion_title || live.subtitle || ''
+        status: isCancelledPerfume ? 'out' : (live.status || (liveAvail ? 'sale' : 'out')),
+        promotionTitle: isCancelledPerfume ? 'غير متوفر حالياً' : (live.promotion_title || live.subtitle || '')
       });
     }
     return synced;
