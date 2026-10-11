@@ -482,6 +482,11 @@ async function syncWithAssafStore(force = false) {
       const syncedCatalog = [];
       let changesDetected = false;
 
+      const CANCELLED_ASSAF_SALLA_IDS = new Set([
+        '1377403295', '1370415483', '459292912', '1844930091', '1880252117',
+        '2133186596', '1427471029', '1608754458', '1043675783', '698153490'
+      ]);
+
       for (const item of masterList) {
         const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
         if (EXCLUDED_ASSAF_SALLA_IDS.has(sallaId)) continue;
@@ -493,6 +498,15 @@ async function syncWithAssafStore(force = false) {
         }
 
         const p = { ...item, sallaId, house: 'assaf' };
+        if (p.categoryType === 'bakhoor') {
+          p.categoryType = 'perfume';
+          if (p.specs) p.specs.type = 'أو دو بارفيوم (Eau De Parfum)';
+          if (p.specsEn) p.specsEn.type = 'Eau De Parfum';
+          changesDetected = true;
+        }
+        p.title = (p.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim();
+        p.titleEn = (p.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim();
+
         const bottleCount = getBottleCount(p);
         const feeJod = getDeliveryFeeJod(p);
         p.bottleCount = bottleCount;
@@ -501,8 +515,8 @@ async function syncWithAssafStore(force = false) {
         const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
         const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
         const liveReg = Math.round(liveRegRaw);
-        const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''}`;
-        const isCancelledPerfume = /الغاء|إلغاء|ملغي/.test(rawPromoText);
+        const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''} ${item.title || ''} ${item.promotionTitle || ''}`;
+        const isCancelledPerfume = CANCELLED_ASSAF_SALLA_IDS.has(sallaId) || /الغاء|إلغاء|ملغي/.test(rawPromoText);
         const liveAvail = !isCancelledPerfume && live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = isCancelledPerfume ? 'out' : (live.status || (liveAvail ? 'sale' : 'out'));
         const livePromo = isCancelledPerfume ? 'غير متوفر حالياً' : (live.promotion_title || live.subtitle || '');
@@ -540,6 +554,7 @@ async function syncWithAssafStore(force = false) {
 
       if (changesDetected) {
         fs.writeFileSync(ASSAF_PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        fs.writeFileSync(ASSAF_ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
       }
     } else if (!cachedAssafCatalog) {
       cachedAssafCatalog = JSON.parse(fs.readFileSync(ASSAF_PERFUMES_PATH, 'utf8'));

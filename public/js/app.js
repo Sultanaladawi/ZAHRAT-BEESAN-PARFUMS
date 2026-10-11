@@ -377,10 +377,19 @@ async function selectHouse(houseId) {
     if (panel) panel.style.display = 'none';
     if (filters) filters.style.display = 'flex';
     if (grid) grid.style.display = 'grid';
+    const bakhoorFilterBtn = document.querySelector('.catalog-filter-btn[data-filter="bakhoor"]');
     if (houseId === 'assaf') {
+      if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = 'none';
+      if (currentFilter === 'bakhoor') {
+        currentFilter = 'all';
+        document.querySelectorAll('.catalog-filter-btn').forEach(btn => btn.classList.remove('active-filter'));
+        const allBtn = document.getElementById('filterAllBtn');
+        if (allBtn) allBtn.classList.add('active-filter');
+      }
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور عساف (Assaf Perfumes)' : 'Complete Official Collection — Assaf Perfumes';
       if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 250 عطراً ومجموعة وبكج وعرض خاص من عساف أصلية 100% مستوردة مباشرة من المصدر' : 'All 250 authentic Assaf perfumes, luxury gift sets, hidden releases & special offers';
     } else {
+      if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)' : 'Official Launch Collection — Ghalati House';
       if (subtitleText) subtitleText.textContent = isAr ? 'عطور أصلية مستوردة مباشرة من المصدر الرسمي بأوصافها ومكوناتها الأصلية 100%' : '100% authentic perfumes imported directly with verified notes and specifications';
     }
@@ -470,6 +479,11 @@ const CLIENT_EXCLUDED_SALLA_IDS = new Set([
   '829997380', '1610044117', '1809319445', '648178010',
   '1403084485', '2077147024', '415811600', '1517236607',
   '6165769', '1354027755', '1405771318', '505077860'
+]);
+
+const CLIENT_CANCELLED_SALLA_IDS = new Set([
+  '1377403295', '1370415483', '459292912', '1844930091', '1880252117',
+  '2133186596', '1427471029', '1608754458', '1043675783', '698153490'
 ]);
 
 function getClientBottleCount(item) {
@@ -633,8 +647,8 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
       const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || item.sarPrice;
       const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
       const liveReg = Math.round(liveRegRaw);
-      const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''}`;
-      const isCancelledPerfume = /الغاء|إلغاء|ملغي/.test(rawPromoText);
+      const rawPromoText = `${live.name || ''} ${live.promotion_title || ''} ${live.subtitle || ''} ${item.title || ''} ${item.promotionTitle || ''}`;
+      const isCancelledPerfume = CLIENT_CANCELLED_SALLA_IDS.has(sallaId) || /الغاء|إلغاء|ملغي/.test(rawPromoText);
       const liveAvail = !isCancelledPerfume && live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
       const baseJod = Math.round(livePrice / 5.29);
 
@@ -642,6 +656,9 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         ...item,
         sallaId,
         house,
+        title: (item.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
+        titleEn: (item.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
+        categoryType: (house === 'assaf' && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
         bottleCount,
         feeJod,
         sarPrice: livePrice,
@@ -811,7 +828,8 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       const isOil = p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.title || '').includes('تولة');
       if (!isOil) return false;
     } else if (filter === 'bakhoor') {
-      const isBakhoor = p.categoryType === 'bakhoor' || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول') || (p.title || '').includes('بخور') || (p.title || '').includes('معمول');
+      if (p.house === 'assaf' || String(p.id || '').startsWith('assaf-')) return false;
+      const isBakhoor = p.categoryType === 'bakhoor';
       if (!isBakhoor) return false;
     } else if (filter === 'bundles') {
       const isBundle = p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.title || '').includes('باقة') || (p.title || '').includes('مجموعة');
@@ -1078,10 +1096,11 @@ function renderProductCard(p, t) {
 
 function getCategoryBadgeText(p) {
   const t = translations[currentLang] || translations.ar;
+  const isAssaf = p.house === 'assaf' || String(p.id || '').startsWith('assaf-');
   if (p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة')) {
     return currentLang === 'ar' ? 'تولة زيت عطري' : 'Perfume Oil';
   }
-  if (p.categoryType === 'bakhoor' || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول')) {
+  if (!isAssaf && (p.categoryType === 'bakhoor' || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول'))) {
     return currentLang === 'ar' ? 'بخور ومعمول' : 'Bakhoor';
   }
   if (p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة')) {
