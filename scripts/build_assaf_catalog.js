@@ -75,7 +75,7 @@ function getAssafCategoryType(item) {
   if (
     FEE_30_IDS.has(String(item.id)) ||
     FEE_24_IDS.has(String(item.id)) ||
-    /مجموعة|صندوق|بوكس|مليونية|ثلاثيه|ثلاثية|كراون ونوبل|هير قرايس|Collection/i.test(name) ||
+    /مجموعة|صندوق|بوكس|مليونية|ثلاثيه|ثلاثية|كراون ونوبل|هير قرايس|Collection|كولكشن|ديسكفري|وباودر/i.test(name) ||
     /بوكسات|مجموعات|الإهداء/i.test(catName)
   ) {
     return 'bundle';
@@ -272,8 +272,9 @@ async function extractCutoutSpotless(rawBuf, sid, isBundle = false) {
       }
     }
 
-    if (maxY > minY + 50) {
-      const objH = maxY - minY;
+    const objW = maxX - minX;
+    const objH = maxY - minY;
+    if (objH > 50 && objW <= objH * 0.52) {
       // Measure top of cap (top 1% to 5%) where leftward studio shadow hasn't started
       let sumCapCenter = 0, capRows = 0;
       const cStart = minY + Math.max(2, Math.round(objH * 0.01));
@@ -329,32 +330,34 @@ async function extractCutoutSpotless(rawBuf, sid, isBundle = false) {
       if (rightMaxY < minY + objH * 0.7) rightMaxY = maxY;
 
       // Enforce right-to-left bottle symmetry to slice off any leftward studio shadow
-      for (let y = 0; y < h; y++) {
-        if (y > rightMaxY) {
-          for (let x = 0; x < w; x++) outData[(y * w + x) * 4 + 3] = 0;
-          continue;
-        }
-        let rX = -1;
-        for (let x = w - 1; x >= capCenterX; x--) {
-          if (outData[(y * w + x) * 4 + 3] >= 180) {
-            rX = x;
-            break;
+      if (Math.abs(capCenterX - (minX + maxX) / 2) <= objW * 0.16) {
+        for (let y = 0; y < h; y++) {
+          if (y > rightMaxY) {
+            for (let x = 0; x < w; x++) outData[(y * w + x) * 4 + 3] = 0;
+            continue;
+          }
+          let rX = -1;
+          for (let x = w - 1; x >= capCenterX; x--) {
+            if (outData[(y * w + x) * 4 + 3] >= 180) {
+              rX = x;
+              break;
+            }
+          }
+          if (rX <= capCenterX) {
+            for (let x = 0; x < w; x++) outData[(y * w + x) * 4 + 3] = 0;
+            continue;
+          }
+          const halfW = rX - capCenterX;
+          const symLeftX = capCenterX - halfW;
+          for (let x = 0; x < symLeftX; x++) {
+            outData[(y * w + x) * 4 + 3] = 0;
           }
         }
-        if (rX <= capCenterX) {
-          for (let x = 0; x < w; x++) outData[(y * w + x) * 4 + 3] = 0;
-          continue;
-        }
-        const halfW = rX - capCenterX;
-        const symLeftX = capCenterX - halfW;
-        for (let x = 0; x < symLeftX; x++) {
-          outData[(y * w + x) * 4 + 3] = 0;
-        }
       }
-
-      // Fill any interior holes (e.g. white labels on bottle)
-      fillInteriorHoles(outData, w, h);
     }
+
+    // Fill any interior holes (e.g. white labels on bottle)
+    fillInteriorHoles(outData, w, h);
   } else {
     // BUNDLE / PACKAGE:
     // Preserve light-colored boxes at 100% solid opacity while removing outer background & bottom floor shadows

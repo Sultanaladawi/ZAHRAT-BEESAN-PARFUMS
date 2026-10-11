@@ -733,8 +733,8 @@
     "baseJod": 24,
     "finalJod": 36,
     "origJod": 36,
-    "isAvailable": true,
-    "status": "sale",
+    "isAvailable": false,
+    "status": "out",
     "promotionTitle": "125 مل",
     "url": "https://3saf.com/ar/oud-bakhur/p1014260708",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/GYxciPUUk3pQCSRRwy8QglnoZBZqyU5vccA3vcXS.png",
@@ -2109,7 +2109,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-2035627978",
@@ -4029,7 +4029,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-1378257751",
@@ -4750,54 +4750,6 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume"
-  },
-  {
-    "id": "assaf-1788666212",
-    "sallaId": "1788666212",
-    "house": "assaf",
-    "title": "مجموعة بينك باودر",
-    "titleEn": "مجموعة بينك باودر",
-    "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 24,
-    "sarPrice": 199,
-    "origSarPrice": 799,
-    "baseJod": 38,
-    "finalJod": 62,
-    "origJod": 175,
-    "isAvailable": true,
-    "status": "sale",
-    "promotionTitle": "",
-    "url": "https://3saf.com/ar/مجموعة-بينك-باودر/p1788666212",
-    "bottleUrl": "https://cdn.files.salla.network/products/935113581/66cc0db9-a953-4ade-8a7b-114117088bea-original.webp",
-    "image": "images/assaf_1788666212.jpg",
-    "originalImage": "https://cdn.files.salla.network/products/935113581/66cc0db9-a953-4ade-8a7b-114117088bea-original.webp",
-    "galleryImages": [],
-    "overview": "مجموعة بينك باودر من عطور عساف الملكية — تركيبة عطرية فاخرة ذات ثبات وفوحان استثنائي.",
-    "overviewEn": "مجموعة بينك باودر by Assaf Perfumes — A high-projection luxury fragrance crafted for lasting distinction.",
-    "opening": "البرغموت، الفلفل الوردي، ونفحات حمضية منعشة",
-    "openingEn": "البرغموت، الفلفل الوردي، ونفحات حمضية منعشة",
-    "heart": "الورد الدمشقي، الياسمين، والأخشاب العطرية",
-    "heartEn": "الورد الدمشقي، الياسمين، والأخشاب العطرية",
-    "base": "العنبر الفاخر، المسك، خشب الصندل، والعود",
-    "baseEn": "العنبر الفاخر، المسك، خشب الصندل، والعود",
-    "prominent": "البرغموت، الورد الدمشقي، العنبر الفاخر",
-    "prominentEn": "البرغموت، الورد الدمشقي، العنبر الفاخر",
-    "specs": {
-      "origin": "المملكة العربية السعودية",
-      "category": "نسائي",
-      "size": "مجموعة ثنائية فاخرة",
-      "type": "مجموعة إهداء ملكية",
-      "perfumer": "دار عطور عساف (Assaf Perfumes)"
-    },
-    "specsEn": {
-      "origin": "Kingdom of Saudi Arabia",
-      "category": "Women",
-      "size": "Luxury Duo Set",
-      "type": "Luxury Gift Set",
-      "perfumer": "House of Assaf"
-    },
-    "categoryType": "bundle"
   },
   {
     "id": "assaf-1282475013",
@@ -5949,7 +5901,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-1585724817",
@@ -5997,7 +5949,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-934263228",
@@ -6045,7 +5997,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-904825037",
