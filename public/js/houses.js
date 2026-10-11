@@ -54,6 +54,22 @@ const FRAGRANCE_HOUSES = [
     count: 79
   },
   {
+    id: "rasasi",
+    nameAr: "شركة الرصاصي",
+    nameEn: "Rasasi Perfumes",
+    logo: "images/brands/rasasi.svg",
+    badge: "🦅",
+    region: "ae",
+    countryAr: "الإمارات العربية المتحدة 🇦🇪",
+    countryEn: "United Arab Emirates 🇦🇪",
+    specialtyAr: "أعرق بيوت العطور الشرقية والفرنسية منذ 1979 (هوس، هوس آيس، لا يقاوم، شهرة، بروج، الخلطة الخاصة، دهن العود والبخور الملكي)",
+    specialtyEn: "Pioneering Perfumery Since 1979: Hawas, Hawas Ice, La Yuqawam, Shuhrah, Boruzz, Dehn Al Oud & Royal Bakhoor",
+    descAr: "التشكيلة الرسمية الشاملة لدار الرصاصي للعطور في زهرة بيسان مع توفير شامل لـ 261 عطراً ودهن عود وبخوراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Rasasi Perfumes collection at Zahrat Beesan with 261 authentic factory-sealed perfumes, oud oils, bakhoor, and luxury gift sets.",
+    hasActiveCatalog: true,
+    count: 261
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -141,21 +157,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Masters of Royal Scents, Rare Dehn El Oud & Heritage Musk",
     descAr: "إرث مكي عريق يمتد لأكثر من 160 عاماً في صناعة العود الملكي وأندر أنواع المسك والعنبر الصافي.",
     descEn: "Over 160 years of Makkan royal heritage in the world's most prestigious agarwoods and pure musks.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "rasasi",
-    nameAr: "شركة الرصاصي",
-    nameEn: "Rasasi Perfumes",
-    logo: "images/brands/rasasi.svg",
-    badge: "🦅",
-    region: "ae",
-    countryAr: "الإمارات العربية المتحدة 🇦🇪",
-    countryEn: "United Arab Emirates 🇦🇪",
-    specialtyAr: "أعرق بيوت العطور الشرقية منذ 1979 (هواس، شهرة، لا يقاوم، الخلطة السرية)",
-    specialtyEn: "Pioneering Perfumery Since 1979: Hawas, Shuhrah & La Yuqawam",
-    descAr: "رائدة العطور الإماراتية الفاخرة ذات الشهرة الواسعة. نوفر عطر هواس الأصلي وكافة إصدارات الدار الحصرية.",
-    descEn: "Pioneering luxury UAE house famous worldwide for Hawas and opulent Oriental masterpieces.",
     hasActiveCatalog: false
   },
   {

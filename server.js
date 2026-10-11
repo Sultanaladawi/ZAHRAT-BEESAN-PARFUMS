@@ -24,10 +24,14 @@ const THNYAN_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'thnyan_perf
 const THNYAN_ARCHIVE_PATH = path.join(__dirname, 'data', 'thnyan_master_archive.json');
 const THNYAN_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'thnyan_master_bg.jpg');
 
+const RASASI_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'rasasi_perfumes.json');
+const RASASI_ARCHIVE_PATH = path.join(__dirname, 'data', 'rasasi_master_archive.json');
+const RASASI_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'rasasi_master_bg.jpg');
+
 app.use(compression());
 app.use(express.json());
 
-// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf & Thnyan Stores (Salla API) ──
+// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan & Rasasi Stores (Salla API) ──
 let cachedCatalog = null;
 let lastSyncTime = 0;
 let isSyncing = false;
@@ -39,6 +43,10 @@ let isSyncingAssaf = false;
 let cachedThnyanCatalog = null;
 let lastThnyanSyncTime = 0;
 let isSyncingThnyan = false;
+
+let cachedRasasiCatalog = null;
+let lastRasasiSyncTime = 0;
+let isSyncingRasasi = false;
 
 const SYNC_TTL_MS = 60 * 1000; // Refresh live data every 60 seconds
 
@@ -100,6 +108,10 @@ const BOTTLE_COUNTS_BY_SALLA_ID = {
   '672922291': 6,
   '1584823409': 7,
   '87154374': 8,
+  // === Rasasi ===
+  '666775809': 3, '511280757': 3, '1249242694': 3,
+  '1531373346': 3, '685465028': 3, '967753483': 3,
+  '2107910455': 2, '622114828': 2, '209082392': 2,
   // === Assaf ===
   '369088822': 2, '2075831998': 2, '1436733170': 2, '1955253099': 2,
   '1036243994': 2, '615644271': 2, '1788666212': 2, '780287822': 2, '1492041621': 2,
@@ -127,9 +139,9 @@ const BOTTLE_COUNTS_BY_SALLA_ID = {
 
 function detectCategoryType(name = '', desc = '') {
   const text = `${name} ${desc}`;
-  if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة/i.test(name)) return 'bundle';
-  if (/تولة|زيت عطري|مسك.*15\s*مل/i.test(text)) return 'oil';
-  if (/بخور|معمول|معطر جو|دخون|مبثوث|لبان/i.test(name)) return 'bakhoor';
+  if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة/i.test(name) && !/من مجموعة/i.test(name)) return 'bundle';
+  if (/تولة|زيت عطري|مسك.*15\s*مل|دهن عود|دهن العود/i.test(text) && !/بخاخ/i.test(text)) return 'oil';
+  if (/بخور|معمول|معطر جو|معطر للمنزل|عود معطر|دخون|مبثوث|لبان/i.test(name)) return 'bakhoor';
   return 'perfume';
 }
 
@@ -142,8 +154,8 @@ function inferBottleCount(name = '', desc = '', catType = 'perfume') {
   if (/6\s*عطور|ستة\s*عطور/i.test(text)) return 6;
   if (/5\s*عطور|خمسة\s*عطور|خمس\s*عطور/i.test(text)) return 5;
   if (/4\s*عطور|أربع\s*عطور|اربع\s*عطور|4\s*×/i.test(text)) return 4;
-  if (/مجموعة التراث|عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين/i.test(text)) return 2;
-  if (/ثلاث|3\s*عطور|3\s*×|باقة|بكج|العرض/i.test(text)) return 3;
+  if (/مجموعة التراث|عطرين|عطران|ثنائية|لك ولها|2\s*×|قطعتين|2 في 1/i.test(text)) return 2;
+  if (/ثلاث|3\s*عطور|3\s*×|3 في 1|باقة|بكج|العرض/i.test(text)) return 3;
   return 1;
 }
 
@@ -163,11 +175,17 @@ function getDeliveryFeeJod(item) {
 async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house = 'ghalati') {
   const prefix = house === 'assaf'
     ? `assaf_${idSlug.replace(/^assaf-/, '')}`
-    : (house === 'thunayan' ? `thnyan_${idSlug.replace(/^thnyan-/, '')}` : `ghalati_${idSlug}`);
+    : (house === 'thunayan'
+      ? `thnyan_${idSlug.replace(/^thnyan-/, '')}`
+      : (house === 'rasasi' ? `rasasi_${idSlug.replace(/^rasasi-/, '')}` : `ghalati_${idSlug}`));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
-  const bgPath = house === 'assaf' ? ASSAF_MASTER_BG_PATH : (house === 'thunayan' ? THNYAN_MASTER_BG_PATH : MASTER_BG_PATH);
+  const bgPath = house === 'assaf'
+    ? ASSAF_MASTER_BG_PATH
+    : (house === 'thunayan'
+      ? THNYAN_MASTER_BG_PATH
+      : (house === 'rasasi' ? RASASI_MASTER_BG_PATH : MASTER_BG_PATH));
   if (!sharp || !rawImgUrl) return rawImgUrl || `images/${house}_master_bg.jpg`;
 
   try {
@@ -746,7 +764,138 @@ async function syncWithThnyanStore(force = false) {
   return cachedThnyanCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan)
+async function syncWithRasasiStore(force = false) {
+  const now = Date.now();
+  if (!force && cachedRasasiCatalog && (now - lastRasasiSyncTime < SYNC_TTL_MS)) {
+    return cachedRasasiCatalog;
+  }
+  if (isSyncingRasasi && cachedRasasiCatalog) {
+    return cachedRasasiCatalog;
+  }
+
+  isSyncingRasasi = true;
+  try {
+    const masterList = getMasterCatalog(RASASI_ARCHIVE_PATH, RASASI_PERFUMES_PATH);
+    if (!masterList.length) {
+      isSyncingRasasi = false;
+      return [];
+    }
+
+    const headers = {
+      'Origin': 'https://store.rasasi.com.sa',
+      'Referer': 'https://store.rasasi.com.sa/ar',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'App-Store-Id': '1903977862',
+      'Store-Identifier': '1903977862',
+      'Accept': 'application/json, text/plain, */*'
+    };
+
+    const knownIds = new Set(
+      masterList
+        .map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || ''))
+        .filter(Boolean)
+    );
+
+    const allIds = [...knownIds];
+    const chunks = [];
+    for (let i = 0; i < allIds.length; i += 20) {
+      chunks.push(allIds.slice(i, i + 20));
+    }
+
+    const liveById = new Map();
+    await Promise.all(
+      chunks.map(async (chunk) => {
+        const q = 'source=selected&limit=30&' + chunk.map(id => `source_value[]=${id}`).join('&');
+        const res = await fetch(`https://api.salla.dev/store/v1/products?${q}`, { headers });
+        if (res.ok) {
+          const json = await res.json();
+          for (const it of (json.data || [])) {
+            liveById.set(String(it.id), it);
+          }
+        }
+      })
+    );
+
+    if (liveById.size > 0) {
+      const syncedCatalog = [];
+      let changesDetected = false;
+
+      for (const item of masterList) {
+        const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+        const live = liveById.get(sallaId);
+
+        if (!live) {
+          syncedCatalog.push({ ...item, sallaId, house: 'rasasi' });
+          continue;
+        }
+
+        const p = { ...item, sallaId, house: 'rasasi' };
+        const bottleCount = getBottleCount(p);
+        const feeJod = getDeliveryFeeJod(p);
+        p.bottleCount = bottleCount;
+        p.feeJod = feeJod;
+
+        const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
+        const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+        const liveReg = liveRegRaw > livePrice ? liveRegRaw : livePrice;
+        const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+        const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
+        const livePromo = live.promotion_title || '';
+
+        const newBaseJod = Math.round(livePrice / 5.29);
+        const newFinalJod = newBaseJod + feeJod;
+        const newOrigJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : newFinalJod;
+
+        if (
+          p.sarPrice !== livePrice ||
+          p.origSarPrice !== liveReg ||
+          p.finalJod !== newFinalJod ||
+          p.origJod !== newOrigJod ||
+          p.isAvailable !== liveAvail ||
+          p.status !== liveStatus
+        ) {
+          changesDetected = true;
+        }
+
+        p.sarPrice = livePrice;
+        p.origSarPrice = liveReg;
+        p.baseJod = newBaseJod;
+        p.finalJod = newFinalJod;
+        p.origJod = newOrigJod;
+        p.isAvailable = liveAvail;
+        p.status = liveStatus;
+        p.promotionTitle = livePromo;
+
+        syncedCatalog.push(p);
+      }
+
+      cachedRasasiCatalog = syncedCatalog;
+      lastRasasiSyncTime = Date.now();
+
+      if (changesDetected) {
+        fs.writeFileSync(RASASI_PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        fs.writeFileSync(RASASI_ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+      }
+    } else if (!cachedRasasiCatalog) {
+      cachedRasasiCatalog = JSON.parse(fs.readFileSync(RASASI_PERFUMES_PATH, 'utf8'));
+    }
+  } catch (err) {
+    console.error('Live Rasasi sync warning (using local fallback):', err.message);
+    if (!cachedRasasiCatalog) {
+      try {
+        cachedRasasiCatalog = JSON.parse(fs.readFileSync(RASASI_PERFUMES_PATH, 'utf8'));
+      } catch (e) {
+        cachedRasasiCatalog = [];
+      }
+    }
+  } finally {
+    isSyncingRasasi = false;
+  }
+
+  return cachedRasasiCatalog;
+}
+
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi)
 app.get('/api/catalog', async (req, res) => {
   const force = req.query.force === '1';
   const house = (req.query.house || 'ghalati').toLowerCase();
@@ -754,7 +903,9 @@ app.get('/api/catalog', async (req, res) => {
     ? await syncWithAssafStore(force)
     : (house === 'thunayan' || house === 'thnyan')
       ? await syncWithThnyanStore(force)
-      : await syncWithGhalatiStore(force);
+      : house === 'rasasi'
+        ? await syncWithRasasiStore(force)
+        : await syncWithGhalatiStore(force);
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(data);
 });
@@ -765,13 +916,15 @@ app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
     store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
-    version: '0.5.0-multi-house-live-sync',
+    version: '0.6.0-multi-house-live-sync',
     lastGhalatiSync: lastSyncTime ? new Date(lastSyncTime).toISOString() : null,
     totalGhalatiProducts: cachedCatalog ? cachedCatalog.length : null,
     lastAssafSync: lastAssafSyncTime ? new Date(lastAssafSyncTime).toISOString() : null,
     totalAssafProducts: cachedAssafCatalog ? cachedAssafCatalog.length : null,
     lastThnyanSync: lastThnyanSyncTime ? new Date(lastThnyanSyncTime).toISOString() : null,
-    totalThnyanProducts: cachedThnyanCatalog ? cachedThnyanCatalog.length : null
+    totalThnyanProducts: cachedThnyanCatalog ? cachedThnyanCatalog.length : null,
+    lastRasasiSync: lastRasasiSyncTime ? new Date(lastRasasiSyncTime).toISOString() : null,
+    totalRasasiProducts: cachedRasasiCatalog ? cachedRasasiCatalog.length : null
   });
 });
 
@@ -780,6 +933,7 @@ setInterval(() => {
   syncWithGhalatiStore(true).catch(() => {});
   syncWithAssafStore(true).catch(() => {});
   syncWithThnyanStore(true).catch(() => {});
+  syncWithRasasiStore(true).catch(() => {});
 }, 2 * 60 * 1000);
 
 app.listen(PORT, () => {
@@ -792,5 +946,8 @@ app.listen(PORT, () => {
   });
   syncWithThnyanStore(true).then(list => {
     console.log(`🔄 Initial Live Thnyan Sync Complete: ${list.length} active products.`);
+  });
+  syncWithRasasiStore(true).then(list => {
+    console.log(`🔄 Initial Live Rasasi Sync Complete: ${list.length} active products.`);
   });
 });
