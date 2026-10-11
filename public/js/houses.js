@@ -32,10 +32,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور استثنائية ومجموعات نيش عالمية فواحة (أروقيت، فرانكل، وايلد كولت، بيقاسوس، مس ساكورا، ريسك)",
     specialtyEn: "Iconic Arabian Scents & Global Best-Sellers (Arrogate, Frankel, Wild Colt, Pegasus, Risk)",
-    descAr: "التشكيلة الرسمية المعتمدة لعطور ومجموعات عساف في زهرة بيسان مع توفير فوري لـ 140 عطراً وبوكس إهداء مختوماً بختم المصنع الأصلي.",
-    descEn: "Official authorized Assaf Perfumes collection at Zahrat Beesan with 140 authentic factory-sealed perfumes and luxury gift sets.",
+    descAr: "التشكيلة الرسمية المعتمدة لعطور ومجموعات وعروض عساف في زهرة بيسان مع توفير شامل لـ 250 عطراً وبوكس إهداء وعرض خاص مختوماً بختم المصنع الأصلي.",
+    descEn: "Official authorized Assaf Perfumes collection at Zahrat Beesan with 250 authentic factory-sealed perfumes, luxury gift sets, and special offers.",
     hasActiveCatalog: true,
-    count: 140
+    count: 250
   },
   {
     id: "almajed",
