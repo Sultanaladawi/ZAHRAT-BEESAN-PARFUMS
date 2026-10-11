@@ -373,29 +373,21 @@ async function selectHouse(houseId) {
   const subtitleText = document.getElementById('catalogSubtitleText');
   const isAr = currentLang === 'ar';
 
-  const assafPromo = document.getElementById('assafPromoBanner');
-
   if (houseId === 'ghalati' || houseId === 'assaf') {
     if (panel) panel.style.display = 'none';
     if (filters) filters.style.display = 'flex';
     if (grid) grid.style.display = 'grid';
     if (houseId === 'assaf') {
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور عساف (Assaf Perfumes)' : 'Complete Official Collection — Assaf Perfumes';
-      if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 250 عطراً ومجموعة وبكج وعرض خاص وكودات خصم عساف الرسمية 100% مستوردة مباشرة من المصدر' : 'All 250 authentic Assaf perfumes, luxury gift sets, hidden releases, special offers & discount codes';
-      if (assafPromo) {
-        assafPromo.style.display = 'block';
-        renderAssafPromoBanner();
-      }
+      if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 250 عطراً ومجموعة وبكج وعرض خاص من عساف أصلية 100% مستوردة مباشرة من المصدر' : 'All 250 authentic Assaf perfumes, luxury gift sets, hidden releases & special offers';
     } else {
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)' : 'Official Launch Collection — Ghalati House';
       if (subtitleText) subtitleText.textContent = isAr ? 'عطور أصلية مستوردة مباشرة من المصدر الرسمي بأوصافها ومكوناتها الأصلية 100%' : '100% authentic perfumes imported directly with verified notes and specifications';
-      if (assafPromo) assafPromo.style.display = 'none';
     }
     await ensureHouseCatalogLoaded(houseId);
     perfumesData = catalogByHouse[houseId] || [];
     renderCatalog(currentFilter, currentSearch);
   } else {
-    if (assafPromo) assafPromo.style.display = 'none';
     const house = typeof getHouseById === 'function' ? getHouseById(houseId) : (typeof FRAGRANCE_HOUSES !== 'undefined' ? FRAGRANCE_HOUSES.find(h => h.id === houseId) : null);
     if (house) {
       if (filters) filters.style.display = 'none';
@@ -468,92 +460,6 @@ function renderBrandShowcase(h) {
         <img src="images/brands/ghalati.svg" class="btn-return-logo" alt="Ghalati">
         <span>${t.btnBackToGhalatiCatalog || 'عرض منتجات دار غلاتي المتوفرة فورياً (120 عطراً)'}</span>
       </button>
-    </div>
-  `;
-}
-
-function copyAssafCoupon(code, btnEl) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(code).catch(() => {});
-  }
-  const origHtml = btnEl.innerHTML;
-  btnEl.innerHTML = `<span style="color:#4ade80;font-weight:800;">✓ تم نسخ الكود (${code})</span>`;
-  setTimeout(() => {
-    btnEl.innerHTML = origHtml;
-  }, 1800);
-}
-
-function renderAssafPromoBanner() {
-  const el = document.getElementById('assafPromoBanner');
-  if (!el) return;
-  const isAr = currentLang === 'ar';
-  const codes = [
-    { code: 'WAFY', descAr: 'خصم يصل إلى 20% على العطور', descEn: 'Up to 20% OFF Perfumes' },
-    { code: 'A9', descAr: 'خصم خاص يصل إلى 50% على المختارات', descEn: 'Up to 50% OFF Selected Items' },
-    { code: 'AF', descAr: 'خصم 10% شامل العطور والعود والبخور', descEn: '10% OFF Perfumes, Oud & Bakhoor' },
-    { code: '90s', descAr: 'خصم 10% على العطور ومستحضرات العناية', descEn: '10% OFF Perfumes & Care' },
-    { code: 'A10', descAr: 'خصم 10% إضافي على المنتجات', descEn: 'Extra 10% OFF Products' },
-    { code: 'MAA', descAr: 'خصم 10% على كافة الطلبات', descEn: '10% OFF All Orders' }
-  ];
-
-  el.innerHTML = `
-    <div style="background: linear-gradient(135deg, #1b130d 0%, #2c1e13 55%, #160f0a 100%); border: 1px solid rgba(212, 175, 55, 0.45); border-radius: 16px; padding: 20px 22px; color: #f9f3e5; box-shadow: 0 12px 30px rgba(20, 12, 6, 0.18);">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; border-bottom: 1px solid rgba(212, 175, 55, 0.22); padding-bottom: 12px;">
-        <div>
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.16); border: 1px solid rgba(212, 175, 55, 0.4); color: #f3d266; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 6px;">
-            <span>👑</span>
-            <span>${isAr ? 'دليل عروض وكودات خصم متجر عساف الرسمي (3saf.com)' : 'Official Assaf Store Offers & Discount Codes (3saf.com)'}</span>
-          </div>
-          <h3 style="margin: 0; font-size: 1.15rem; color: #fff; font-weight: 800;">
-            ${isAr ? 'كافة العطور، البكيجات، الإصدارات المخفية، العروض الحصرية، وكودات الخصم المعتمدة' : 'All Perfumes, Gift Bundles, Hidden Releases, Exclusive Offers & Active Discount Codes'}
-          </h3>
-        </div>
-        <div style="font-size: 0.82rem; color: #e2c986; background: rgba(255,255,255,0.06); padding: 6px 12px; border-radius: 10px; border: 1px dashed rgba(212, 175, 55, 0.4);">
-          ${isAr ? '✨ إجمالي الكتالوج: <strong>250 منتجاً وبكج وعرض</strong> (شامل العطور المخفية بالبحث)' : '✨ Total Catalog: <strong>250 Products, Bundles & Offers</strong>'}
-        </div>
-      </div>
-
-      <!-- كودات الخصم -->
-      <div style="margin-bottom: 14px;">
-        <div style="font-size: 0.83rem; color: #f3d266; font-weight: 700; margin-bottom: 8px;">
-          🎟️ ${isAr ? 'كودات خصم متجر عساف الفعالة (اضغط على أي كود لنسخه):' : 'Active Assaf Discount Codes (Click any code to copy):'}
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px;">
-          ${codes.map(c => `
-            <button type="button" onclick="copyAssafCoupon('${c.code}', this)" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 10px; padding: 8px 12px; color: #fff; cursor: pointer; text-align: right; transition: all 0.2s;">
-              <span style="font-size: 0.78rem; color: #e5dec9;">${isAr ? c.descAr : c.descEn}</span>
-              <span style="background: linear-gradient(135deg, #d4af37, #b58922); color: #160f0a; font-weight: 900; font-family: monospace; font-size: 0.86rem; padding: 3px 9px; border-radius: 6px; letter-spacing: 0.5px; flex-shrink: 0;">${c.code}</span>
-            </button>
-          `).join('')}
-        </div>
-      </div>
-
-      <!-- أقسام العروض السريعة في عساف -->
-      <div>
-        <div style="font-size: 0.83rem; color: #f3d266; font-weight: 700; margin-bottom: 8px;">
-          🔥 ${isAr ? 'تصفح عروض متجر عساف الحصرية مباشرة:' : 'Browse Official Assaf Store Promotions:'}
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <button type="button" onclick="filterCatalog('all')" style="background: rgba(212, 175, 55, 0.18); border: 1px solid rgba(212, 175, 55, 0.5); color: #fff; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 700; cursor: pointer;">
-            ✨ ${isAr ? 'كل منتجات عساف (250)' : 'All Assaf Items (250)'}
-          </button>
-          <button type="button" onclick="filterCatalog('offers')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212, 175, 55, 0.35); color: #f9f3e5; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-            🔥 ${isAr ? 'عروض اليوم الوطني و 2+1 مجاناً' : 'National Day & 2+1 Free Offers'}
-          </button>
-          <button type="button" onclick="filterCatalog('assaf-96')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212, 175, 55, 0.35); color: #f9f3e5; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-            🇸🇦 ${isAr ? 'عروض الـ 96 ريال (عطرين / عطر + باودر)' : '96 SAR Deals (2 Perfumes / Perfume + Powder)'}
-          </button>
-          <button type="button" onclick="filterCatalog('assaf-gifts')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212, 175, 55, 0.35); color: #f9f3e5; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-            🎁 ${isAr ? 'بكجات العطور مع الهدايا (نظارة / ساعة / باودر)' : 'Perfume + Gift Bundles (Sunglasses / Watch / Powder)'}
-          </button>
-          <button type="button" onclick="filterCatalog('assaf-under100')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212, 175, 55, 0.35); color: #f9f3e5; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-            💎 ${isAr ? 'عطور أقل من 100 ريال' : 'Perfumes Under 100 SAR'}
-          </button>
-          <button type="button" onclick="filterCatalog('oils')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212, 175, 55, 0.35); color: #f9f3e5; border-radius: 999px; padding: 6px 13px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-            💧 ${isAr ? 'دهن العود الملكي (طويق وعبيه)' : 'Royal Oud Oils (Tuwaiq & Abiyah)'}
-          </button>
-        </div>
-      </div>
     </div>
   `;
 }
