@@ -555,7 +555,24 @@ async function buildAll() {
         }
 
         if (imgBuf) {
-          await renderAssafProductImage(imgBuf, sid, absImage, isBundle);
+          const KEEP_ORIGINAL_PACKAGE_IMAGE_IDS = new Set([
+            '369088822', '462253457', '2075831998', '1436733170', '1715267935',
+            '1923830727', '176251001', '1014260708', '1822349968', '1955253099',
+            '1668518142', '1131719368', '1502527852', '2136754339', '1970190686',
+            '1731158495', '2059790339', '2035627978', '527229526', '615644271',
+            '1310869051', '612456968', '1844930091', '158079522', '928196953',
+            '757538292', '630468184', '1122310076', '1011090491', '1585724817',
+            '934263228', '904825037', '1968936567', '2091596128', '2053809509'
+          ]);
+          if (KEEP_ORIGINAL_PACKAGE_IMAGE_IDS.has(sid)) {
+            await sharp(imgBuf)
+              .flatten({ background: '#ffffff' })
+              .resize({ width: 1024, height: 1024, fit: 'contain', background: '#ffffff', withoutEnlargement: false })
+              .jpeg({ quality: 96, chromaSubsampling: '4:4:4' })
+              .toFile(absImage);
+          } else {
+            await renderAssafProductImage(imgBuf, sid, absImage, isBundle);
+          }
         }
       } catch (e) {
         console.warn(`  [!] Warning rendering image for ${sid} (${item.name}): ${e.message}`);
