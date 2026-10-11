@@ -38,6 +38,22 @@ const FRAGRANCE_HOUSES = [
     count: 250
   },
   {
+    id: "thunayan",
+    nameAr: "عطور ثنيان",
+    nameEn: "Thnyan Perfumes",
+    logo: "images/brands/thunayan.svg",
+    badge: "👑",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "عطور نيش ومجموعات ملكية فاخرة (ديكتاتور، أول أوف يو، ليدي أوف ذا سين، ديكتاتور ميدنايت، أستون، تشارجر، ريفيرا)",
+    specialtyEn: "Luxury Niche Perfumes & Signature Collections (Dictator, All Of You, Lady Of The Scene, Aston, Charger, Riviera)",
+    descAr: "التشكيلة الرسمية الشاملة لعطور ومجموعات وبوكسات ثنيان في زهرة بيسان مع توفير شامل لـ 79 عطراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Thnyan Perfumes collection at Zahrat Beesan with 79 authentic factory-sealed perfumes and luxury gift sets.",
+    hasActiveCatalog: true,
+    count: 79
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -290,21 +306,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Modern Chic Scents & Distinctive Sillage Signatures",
     descAr: "دار عصرية تقدم تركيبات عطرية فاخرة وجريئة ترضي أذواق النخبة الباحثة عن التميز.",
     descEn: "Modern luxury perfumery crafting bold French-oriental compositions for connoisseurs.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "thunayan",
-    nameAr: "شركة ثنيان",
-    nameEn: "Thunayan Perfumes",
-    logo: "images/brands/thunayan.svg",
-    badge: "👑",
-    region: "kw",
-    countryAr: "الكويت / السعودية 🇰🇼🇸🇦",
-    countryEn: "Kuwait & Saudi Arabia 🇰🇼🇸🇦",
-    specialtyAr: "عطور نيش كويتية وخليجية راقية جداً بتوقيع عطري حصري",
-    specialtyEn: "Prestigious Kuwaiti & Gulf Niche Perfumery",
-    descAr: "إحدى أرقى دور النيش في الكويت والخليج العربي بخلطات سرية وأناقة استثنائية.",
-    descEn: "Elite Kuwaiti niche fragrance house celebrated for bespoke luxury blends.",
     hasActiveCatalog: false
   },
   {
