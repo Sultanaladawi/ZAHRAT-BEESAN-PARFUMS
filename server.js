@@ -32,10 +32,14 @@ const ALREHAB_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'alrehab_pe
 const ALREHAB_ARCHIVE_PATH = path.join(__dirname, 'data', 'alrehab_master_archive.json');
 const ALREHAB_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'alrehab_master_bg.jpg');
 
+const LEBONHEUR_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'lebonheur_perfumes.json');
+const LEBONHEUR_ARCHIVE_PATH = path.join(__dirname, 'data', 'lebonheur_master_archive.json');
+const LEBONHEUR_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'lebonheur_master_bg.jpg');
+
 app.use(compression());
 app.use(express.json());
 
-// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan, Rasasi & Al-Rehab Stores (Salla API) ──
+// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan, Rasasi, Al-Rehab & Le Bonheur Stores (Salla API) ──
 let cachedCatalog = null;
 let lastSyncTime = 0;
 let isSyncing = false;
@@ -55,6 +59,10 @@ let isSyncingRasasi = false;
 let cachedAlrehabCatalog = null;
 let lastAlrehabSyncTime = 0;
 let isSyncingAlrehab = false;
+
+let cachedLebonheurCatalog = null;
+let lastLebonheurSyncTime = 0;
+let isSyncingLebonheur = false;
 
 const SYNC_TTL_MS = 60 * 1000; // Refresh live data every 60 seconds
 
@@ -197,7 +205,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
       ? `thnyan_${idSlug.replace(/^thnyan-/, '')}`
       : (house === 'rasasi'
         ? `rasasi_${idSlug.replace(/^rasasi-/, '')}`
-        : (house === 'al-rehab' ? `alrehab_${idSlug.replace(/^alrehab-/, '')}` : `ghalati_${idSlug}`)));
+        : (house === 'al-rehab'
+          ? `alrehab_${idSlug.replace(/^alrehab-/, '')}`
+          : (house === 'labonair' ? `lebonheur_${idSlug.replace(/^lebonheur-/, '')}` : `ghalati_${idSlug}`))));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
@@ -207,7 +217,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
       ? THNYAN_MASTER_BG_PATH
       : (house === 'rasasi'
         ? RASASI_MASTER_BG_PATH
-        : (house === 'al-rehab' ? ALREHAB_MASTER_BG_PATH : MASTER_BG_PATH)));
+        : (house === 'al-rehab'
+          ? ALREHAB_MASTER_BG_PATH
+          : (house === 'labonair' ? LEBONHEUR_MASTER_BG_PATH : MASTER_BG_PATH))));
   if (!sharp || !rawImgUrl) return rawImgUrl || `images/${house}_master_bg.jpg`;
 
   try {
@@ -1049,7 +1061,138 @@ async function syncWithAlrehabStore(force = false) {
   return cachedAlrehabCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab)
+async function syncWithLebonheurStore(force = false) {
+  const now = Date.now();
+  if (!force && cachedLebonheurCatalog && (now - lastLebonheurSyncTime < SYNC_TTL_MS)) {
+    return cachedLebonheurCatalog;
+  }
+  if (isSyncingLebonheur && cachedLebonheurCatalog) {
+    return cachedLebonheurCatalog;
+  }
+
+  isSyncingLebonheur = true;
+  try {
+    const masterList = getMasterCatalog(LEBONHEUR_ARCHIVE_PATH, LEBONHEUR_PERFUMES_PATH);
+    if (!masterList.length) {
+      isSyncingLebonheur = false;
+      return [];
+    }
+
+    const headers = {
+      'Origin': 'https://lebonheurperfumes.com',
+      'Referer': 'https://lebonheurperfumes.com/ar',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'App-Store-Id': '673065613',
+      'Store-Identifier': '673065613',
+      'Accept': 'application/json, text/plain, */*'
+    };
+
+    const knownIds = new Set(
+      masterList
+        .map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || ''))
+        .filter(Boolean)
+    );
+
+    const allIds = [...knownIds];
+    const chunks = [];
+    for (let i = 0; i < allIds.length; i += 25) {
+      chunks.push(allIds.slice(i, i + 25));
+    }
+
+    const liveById = new Map();
+    await Promise.all(
+      chunks.map(async (chunk) => {
+        const q = 'source=selected&limit=30&' + chunk.map(id => `source_value[]=${id}`).join('&');
+        const res = await fetch(`https://api.salla.dev/store/v1/products?${q}`, { headers });
+        if (res.ok) {
+          const json = await res.json();
+          for (const it of (json.data || [])) {
+            liveById.set(String(it.id), it);
+          }
+        }
+      })
+    );
+
+    if (liveById.size > 0) {
+      const syncedCatalog = [];
+      let changesDetected = false;
+
+      for (const item of masterList) {
+        const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+        const live = liveById.get(sallaId);
+
+        if (!live) {
+          syncedCatalog.push({ ...item, sallaId, house: 'labonair' });
+          continue;
+        }
+
+        const p = { ...item, sallaId, house: 'labonair' };
+        const bottleCount = getBottleCount(p);
+        const feeJod = getDeliveryFeeJod(p);
+        p.bottleCount = bottleCount;
+        p.feeJod = feeJod;
+
+        const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
+        const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+        const liveReg = liveRegRaw > livePrice ? Math.round(liveRegRaw) : livePrice;
+        const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+        const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
+        const livePromo = live.promotion_title || live.subtitle || '';
+
+        const newBaseJod = Math.round(livePrice / 5.29);
+        const newFinalJod = newBaseJod + feeJod;
+        const newOrigJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : newFinalJod;
+
+        if (
+          p.sarPrice !== livePrice ||
+          p.origSarPrice !== liveReg ||
+          p.finalJod !== newFinalJod ||
+          p.origJod !== newOrigJod ||
+          p.isAvailable !== liveAvail ||
+          p.status !== liveStatus
+        ) {
+          changesDetected = true;
+        }
+
+        p.sarPrice = livePrice;
+        p.origSarPrice = liveReg;
+        p.baseJod = newBaseJod;
+        p.finalJod = newFinalJod;
+        p.origJod = newOrigJod;
+        p.isAvailable = liveAvail;
+        p.status = liveStatus;
+        p.promotionTitle = livePromo;
+
+        syncedCatalog.push(p);
+      }
+
+      cachedLebonheurCatalog = syncedCatalog;
+      lastLebonheurSyncTime = Date.now();
+
+      if (changesDetected) {
+        fs.writeFileSync(LEBONHEUR_PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        fs.writeFileSync(LEBONHEUR_ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+      }
+    } else if (!cachedLebonheurCatalog) {
+      cachedLebonheurCatalog = JSON.parse(fs.readFileSync(LEBONHEUR_PERFUMES_PATH, 'utf8'));
+    }
+  } catch (err) {
+    console.error('Live Le Bonheur sync warning (using local fallback):', err.message);
+    if (!cachedLebonheurCatalog) {
+      try {
+        cachedLebonheurCatalog = JSON.parse(fs.readFileSync(LEBONHEUR_PERFUMES_PATH, 'utf8'));
+      } catch (e) {
+        cachedLebonheurCatalog = [];
+      }
+    }
+  } finally {
+    isSyncingLebonheur = false;
+  }
+
+  return cachedLebonheurCatalog;
+}
+
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair)
 app.get('/api/catalog', async (req, res) => {
   const force = req.query.force === '1';
   const house = (req.query.house || 'ghalati').toLowerCase();
@@ -1061,7 +1204,9 @@ app.get('/api/catalog', async (req, res) => {
         ? await syncWithRasasiStore(force)
         : (house === 'al-rehab' || house === 'alrehab')
           ? await syncWithAlrehabStore(force)
-          : await syncWithGhalatiStore(force);
+          : (house === 'labonair' || house === 'lebonheur' || house === 'le-bonheur')
+            ? await syncWithLebonheurStore(force)
+            : await syncWithGhalatiStore(force);
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(data);
 });
@@ -1072,7 +1217,7 @@ app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
     store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
-    version: '0.7.0-multi-house-live-sync',
+    version: '0.8.0-multi-house-live-sync',
     lastGhalatiSync: lastSyncTime ? new Date(lastSyncTime).toISOString() : null,
     totalGhalatiProducts: cachedCatalog ? cachedCatalog.length : null,
     lastAssafSync: lastAssafSyncTime ? new Date(lastAssafSyncTime).toISOString() : null,
@@ -1082,7 +1227,9 @@ app.get('/api/status', (req, res) => {
     lastRasasiSync: lastRasasiSyncTime ? new Date(lastRasasiSyncTime).toISOString() : null,
     totalRasasiProducts: cachedRasasiCatalog ? cachedRasasiCatalog.length : null,
     lastAlrehabSync: lastAlrehabSyncTime ? new Date(lastAlrehabSyncTime).toISOString() : null,
-    totalAlrehabProducts: cachedAlrehabCatalog ? cachedAlrehabCatalog.length : null
+    totalAlrehabProducts: cachedAlrehabCatalog ? cachedAlrehabCatalog.length : null,
+    lastLebonheurSync: lastLebonheurSyncTime ? new Date(lastLebonheurSyncTime).toISOString() : null,
+    totalLebonheurProducts: cachedLebonheurCatalog ? cachedLebonheurCatalog.length : null
   });
 });
 
@@ -1093,6 +1240,7 @@ setInterval(() => {
   syncWithThnyanStore(true).catch(() => {});
   syncWithRasasiStore(true).catch(() => {});
   syncWithAlrehabStore(true).catch(() => {});
+  syncWithLebonheurStore(true).catch(() => {});
 }, 2 * 60 * 1000);
 
 app.listen(PORT, () => {
@@ -1111,5 +1259,8 @@ app.listen(PORT, () => {
   });
   syncWithAlrehabStore(true).then(list => {
     console.log(`🔄 Initial Live Al-Rehab Sync Complete: ${list.length} active products.`);
+  });
+  syncWithLebonheurStore(true).then(list => {
+    console.log(`🔄 Initial Live Le Bonheur Sync Complete: ${list.length} active products.`);
   });
 });

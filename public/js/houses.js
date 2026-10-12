@@ -86,6 +86,22 @@ const FRAGRANCE_HOUSES = [
     count: 625
   },
   {
+    id: "labonair",
+    nameAr: "شركة لابونير",
+    nameEn: "Le Bonheur Perfumes",
+    logo: "images/brands/labonair.svg",
+    badge: "✨",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "عطور نيش فرنسية شرقية فاخرة (بلاك كافالير Black Cavalier، سفاير روج وأونكس، ديليشز مانجو وتشوكو، برايم 25 و26، قمرة، سيليست، ذا ستوري)",
+    specialtyEn: "Luxury French-Oriental Niche Perfumes: Black Cavalier, Sapphire Rouge & Onyx, Delicious Collection, Prime 25 & 26, Qumra & Celeste",
+    descAr: "التشكيلة الرسمية الشاملة لشركة لابونير (لو بونور للعطور) في زهرة بيسان مع توفير شامل لـ 38 عطراً وبكج إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Le Bonheur Perfumes collection at Zahrat Beesan with 38 authentic factory-sealed perfumes and luxury gift sets.",
+    hasActiveCatalog: true,
+    count: 38
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -293,21 +309,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "East-Meets-West Signature Perfumes & Concentrated Oils",
     descAr: "أكثر من ربع قرن من الإبداع العطري بالزيوت النقية والعطور الشرقية ذات الطابع الأنيق.",
     descEn: "Over 25 years of passionate perfumery blending oriental tradition and modern elegance.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "labonair",
-    nameAr: "شركة لابونير",
-    nameEn: "Labonair Perfumes",
-    logo: "images/brands/labonair.svg",
-    badge: "✨",
-    region: "sa",
-    countryAr: "المملكة العربية السعودية 🇸🇦",
-    countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "عطور عصرية مبتكرة بطابع فرنسي شرقي جريء وفوحان يدوم طويلاً",
-    specialtyEn: "Modern Chic Scents & Distinctive Sillage Signatures",
-    descAr: "دار عصرية تقدم تركيبات عطرية فاخرة وجريئة ترضي أذواق النخبة الباحثة عن التميز.",
-    descEn: "Modern luxury perfumery crafting bold French-oriental compositions for connoisseurs.",
     hasActiveCatalog: false
   },
   {
