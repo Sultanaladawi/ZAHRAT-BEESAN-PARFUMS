@@ -3,10 +3,14 @@ const path = require('path');
 const fs = require('fs');
 const compression = require('compression');
 let sharp = null;
+let removeBackground = null;
+let refineCutout = null;
 try {
   sharp = require('sharp');
+  ({ removeBackground } = require('@imgly/background-removal-node'));
+  ({ refineCutout } = require('./scripts/lib/refine_cutout'));
 } catch (e) {
-  // Optional fallback if sharp is unavailable in a minimal environment
+  // Optional fallback if sharp/imgly is unavailable in a minimal environment
 }
 
 const app = express();
@@ -248,26 +252,54 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
     }
 
     if (fs.existsSync(bgPath)) {
-      const { data, info } = await sharp(buf)
-        .resize({ width: 1100, height: 1100, fit: 'inside', withoutEnlargement: true })
-        .ensureAlpha()
-        .raw()
-        .toBuffer({ resolveWithObject: true });
-      for (let i = 0; i < data.length; i += 4) {
-        const r = data[i], g = data[i + 1], b = data[i + 2];
-        if (r >= 244 && g >= 244 && b >= 244) data[i + 3] = 0;
+      let cleaned;
+      if (removeBackground && refineCutout) {
+        const normPng = await sharp(buf)
+          .resize({ width: 1100, height: 1100, fit: 'inside', withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        const blob = new Blob([normPng], { type: 'image/png' });
+        const cut = Buffer.from(await (await removeBackground(blob)).arrayBuffer());
+        cleaned = await refineCutout(cut, { erode: 1, feather: 0.8 });
+      } else {
+        const { data, info } = await sharp(buf)
+          .resize({ width: 1100, height: 1100, fit: 'inside', withoutEnlargement: true })
+          .ensureAlpha()
+          .raw()
+          .toBuffer({ resolveWithObject: true });
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i], g = data[i + 1], b = data[i + 2];
+          if (r >= 244 && g >= 244 && b >= 244) data[i + 3] = 0;
+        }
+        cleaned = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer();
       }
-      const cleaned = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer();
       const trimmed = await sharp(cleaned).trim().toBuffer();
       const resized = await sharp(trimmed)
         .resize({ width: categoryType === 'bundle' ? 640 : 480, height: categoryType === 'bundle' ? 490 : 515, fit: 'inside', kernel: 'lanczos3' })
         .toBuffer({ resolveWithObject: true });
       const bW = resized.info.width, bH = resized.info.height;
       const left = Math.round((1024 - bW) / 2);
-      const baseContactY = 746;
+      const baseContactY = (house === 'ghalati' || house === 'assaf') ? 746 : 752;
       const top = baseContactY - bH;
+
+      const shadowW = bW + 50;
+      const shadowSvg = `
+      <svg width="${shadowW}" height="30" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="f1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5" /></filter>
+          <filter id="f2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.5" /></filter>
+        </defs>
+        <ellipse cx="${shadowW / 2}" cy="15" rx="${bW * 0.42}" ry="8" fill="#1b1209" opacity="0.65" filter="url(#f1)" />
+        <ellipse cx="${shadowW / 2}" cy="15" rx="${bW * 0.28}" ry="4" fill="#080503" opacity="0.9" filter="url(#f2)" />
+      </svg>
+      `;
+      const shadowBuf = await sharp(Buffer.from(shadowSvg)).png().toBuffer();
+
       await sharp(bgPath)
-        .composite([{ input: resized.data, left, top }])
+        .composite([
+          { input: shadowBuf, left: Math.round(left - 25), top: baseContactY - 14 },
+          { input: resized.data, left, top }
+        ])
         .jpeg({ quality: 95 })
         .toFile(absImg);
       return relImg;

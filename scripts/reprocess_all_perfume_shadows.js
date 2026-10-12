@@ -1,5 +1,6 @@
 const sharp = require('sharp');
 const { removeBackground } = require('@imgly/background-removal-node');
+const { refineCutout } = require('./lib/refine_cutout');
 const fs = require('fs');
 const path = require('path');
 
@@ -131,7 +132,8 @@ async function reprocessOne(id) {
     }
   }
 
-  const cleaned = await sharp(data, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+  const cleaned0 = await sharp(data, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+  const cleaned = await refineCutout(cleaned0, { erode: 1, feather: 0.8 });
   const trimmed = await sharp(cleaned).trim().toBuffer({ resolveWithObject: true });
 
   fs.writeFileSync(path.join(publicImagesDir, `original_${id}.png`), trimmed.data);

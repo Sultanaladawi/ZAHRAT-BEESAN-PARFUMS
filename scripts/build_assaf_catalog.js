@@ -1,5 +1,6 @@
 const sharp = require('sharp');
 const { removeBackground } = require('@imgly/background-removal-node');
+const { refineCutout } = require('./lib/refine_cutout');
 const fs = require('fs');
 const path = require('path');
 
@@ -253,19 +254,21 @@ async function extractCutoutSpotless(rawBuf, sid, isBundle = false) {
 
   if (!isBundle) {
     // SINGLE BOTTLE / BAKHOOR:
-    // Threshold out semi-transparent floor reflections (< 140) and solidify kept pixels to 255
+    // Preserve continuous alpha from imgly (do not force 255 on semi-transparent glass) while cutting faint floor reflections
     let minY = h, maxY = 0, minX = w, maxX = 0, keptCount = 0;
     for (let y = 0; y < h; y++) {
       for (let x = 0; x < w; x++) {
         const idx = (y * w + x) * 4;
         const a = imglyData[idx + 3];
-        if (a >= 140) {
-          outData[idx + 3] = 255;
-          keptCount++;
-          if (y < minY) minY = y;
-          if (y > maxY) maxY = y;
-          if (x < minX) minX = x;
-          if (x > maxX) maxX = x;
+        if (a >= 24) {
+          outData[idx + 3] = a;
+          if (a >= 140) {
+            keptCount++;
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+            if (x < minX) minX = x;
+            if (x > maxX) maxX = x;
+          }
         } else {
           outData[idx + 3] = 0;
         }
@@ -355,9 +358,6 @@ async function extractCutoutSpotless(rawBuf, sid, isBundle = false) {
         }
       }
     }
-
-    // Fill any interior holes (e.g. white labels on bottle)
-    fillInteriorHoles(outData, w, h);
   } else {
     // BUNDLE / PACKAGE:
     // Preserve light-colored boxes at 100% solid opacity while removing outer background & bottom floor shadows
@@ -457,7 +457,8 @@ async function extractCutoutSpotless(rawBuf, sid, isBundle = false) {
     fillInteriorHoles(outData, w, h);
   }
 
-  const cleanedPng = await sharp(outData, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+  const cleanedPng0 = await sharp(outData, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+  const cleanedPng = await refineCutout(cleanedPng0, { erode: 1, feather: 0.8 });
   const trimmed = await sharp(cleanedPng).trim().toBuffer({ resolveWithObject: true });
   return trimmed;
 }
