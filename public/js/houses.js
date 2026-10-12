@@ -70,6 +70,22 @@ const FRAGRANCE_HOUSES = [
     count: 261
   },
   {
+    id: "al-rehab",
+    nameAr: "شركة الرحاب",
+    nameEn: "Al Rehab Perfumes",
+    logo: "images/brands/al-rehab.svg",
+    badge: "💧",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "أعرق دار للعطور الشرقية والفرنسية، التولات والزيوت العطرية المركزة، البخور والمعمول واللبان العماني ومجموعات لانسي منذ 1975",
+    specialtyEn: "Pioneering Perfumery Since 1975: Eau de Parfum, Concentrated Perfume Oils, Royal Bakhoor & Lansy Collections",
+    descAr: "التشكيلة الرسمية الشاملة لشركة الرحاب للعطور في زهرة بيسان مع توفير شامل لـ 625 عطراً وزيتاً عطرياً وبخوراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Al Rehab Perfumes collection at Zahrat Beesan with 625 authentic factory-sealed perfumes, concentrated oils, bakhoor, and gift sets.",
+    hasActiveCatalog: true,
+    count: 625
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -157,21 +173,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Masters of Royal Scents, Rare Dehn El Oud & Heritage Musk",
     descAr: "إرث مكي عريق يمتد لأكثر من 160 عاماً في صناعة العود الملكي وأندر أنواع المسك والعنبر الصافي.",
     descEn: "Over 160 years of Makkan royal heritage in the world's most prestigious agarwoods and pure musks.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "al-rehab",
-    nameAr: "شركة الرحاب",
-    nameEn: "Al Rehab Perfumes",
-    logo: "images/brands/al-rehab.svg",
-    badge: "💧",
-    region: "sa",
-    countryAr: "المملكة العربية السعودية 🇸🇦",
-    countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "أعرق دار للتولات والزيوت العطرية المركزة النقية الخالية من الكحول ومخلطات المسك",
-    specialtyEn: "World-Renowned Concentrated Perfume Oils (Attar) & Pure Musks",
-    descAr: "أشهر منتج للتولات الزيتية النقية المركزة في العالم الإسلامي. أصالة وجودة وثبات يدوم لأيام.",
-    descEn: "Legendary producer of pure non-alcoholic concentrated perfume oils and classic attars.",
     hasActiveCatalog: false
   },
   {

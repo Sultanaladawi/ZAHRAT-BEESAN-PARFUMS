@@ -28,10 +28,14 @@ const RASASI_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'rasasi_perf
 const RASASI_ARCHIVE_PATH = path.join(__dirname, 'data', 'rasasi_master_archive.json');
 const RASASI_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'rasasi_master_bg.jpg');
 
+const ALREHAB_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'alrehab_perfumes.json');
+const ALREHAB_ARCHIVE_PATH = path.join(__dirname, 'data', 'alrehab_master_archive.json');
+const ALREHAB_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'alrehab_master_bg.jpg');
+
 app.use(compression());
 app.use(express.json());
 
-// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan & Rasasi Stores (Salla API) ──
+// ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan, Rasasi & Al-Rehab Stores (Salla API) ──
 let cachedCatalog = null;
 let lastSyncTime = 0;
 let isSyncing = false;
@@ -47,6 +51,10 @@ let isSyncingThnyan = false;
 let cachedRasasiCatalog = null;
 let lastRasasiSyncTime = 0;
 let isSyncingRasasi = false;
+
+let cachedAlrehabCatalog = null;
+let lastAlrehabSyncTime = 0;
+let isSyncingAlrehab = false;
 
 const SYNC_TTL_MS = 60 * 1000; // Refresh live data every 60 seconds
 
@@ -92,6 +100,11 @@ const EXCLUDED_THNYAN_SALLA_IDS = new Set([
   '1513902596', '948068916', '1331416592', '133054996', '281581582'
 ]);
 
+const EXCLUDED_ALREHAB_SALLA_IDS = new Set([
+  '1939179563', '1159283233', // Standalone charcoal lighters
+  '2078790570', '434546476', '45060034' // Empty bags
+]);
+
 const BOTTLE_COUNTS_BY_SALLA_ID = {
   // === Ghalati ===
   '1388634421': 2, '899834833': 2, '241161755': 2, '1867218307': 2,
@@ -112,6 +125,10 @@ const BOTTLE_COUNTS_BY_SALLA_ID = {
   '666775809': 3, '511280757': 3, '1249242694': 3,
   '1531373346': 3, '685465028': 3, '967753483': 3,
   '2107910455': 2, '622114828': 2, '209082392': 2,
+  // === Al-Rehab ===
+  '1166501932': 4,
+  '2118388528': 3, '300003466': 3, '1447566078': 3,
+  '1059775384': 2, '10468758': 2, '1929188066': 2, '1464587488': 2, '91141607': 2,
   // === Assaf ===
   '369088822': 2, '2075831998': 2, '1436733170': 2, '1955253099': 2,
   '1036243994': 2, '615644271': 2, '1788666212': 2, '780287822': 2, '1492041621': 2,
@@ -139,16 +156,17 @@ const BOTTLE_COUNTS_BY_SALLA_ID = {
 
 function detectCategoryType(name = '', desc = '') {
   const text = `${name} ${desc}`;
-  if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة/i.test(name) && !/من مجموعة/i.test(name)) return 'bundle';
-  if (/تولة|زيت عطري|مسك.*15\s*مل|دهن عود|دهن العود/i.test(text) && !/بخاخ/i.test(text)) return 'oil';
-  if (/بخور|معمول|معطر جو|معطر للمنزل|عود معطر|دخون|مبثوث|لبان/i.test(name)) return 'bakhoor';
+  if ((/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة|-\s*3\s*(?:حبات|قطع)|طقم/i.test(name)) && !/من مجموعة/i.test(name)) return 'bundle';
+  if (/تولة|زيت عطري|مسك.*15\s*مل|دهن عود|دهن العود|\b6\s*مل|\b3\s*مل/i.test(text) && !/بخاخ/i.test(text)) return 'oil';
+  if (/بخور|معمول|معطر جو|معطر للمنزل|معطر الغرف|عود معطر|دخون|مبثوث|مبسوس|مغموس|لبان/i.test(name)) return 'bakhoor';
   return 'perfume';
 }
 
 function inferBottleCount(name = '', desc = '', catType = 'perfume') {
   if (catType !== 'bundle') return 1;
   const text = `${name} ${desc}`;
-  if (/باقة التاريخ|15\s*مل|15\s*ml|25\s*مل|25\s*ml|30\s*مل|30\s*ml|10\s*مل|ميني|ديسكفري|عينات/i.test(text)) return 1;
+  if (/-\s*3\s*(?:حبات|قطع)/i.test(name)) return 3;
+  if (/باقة التاريخ|15\s*مل|15\s*ml|25\s*مل|25\s*ml|30\s*مل|30\s*ml|10\s*مل|ميني|ديسكفري|عينات|مجموعة السفر|مجموعة بخور|مجموعة معمول/i.test(text)) return 1;
   if (/8\s*عطور|ثمانية\s*عطور/i.test(text)) return 8;
   if (/7\s*عطور|سبع\s*عطور|الحدائق السبع/i.test(text)) return 7;
   if (/6\s*عطور|ستة\s*عطور/i.test(text)) return 6;
@@ -177,7 +195,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
     ? `assaf_${idSlug.replace(/^assaf-/, '')}`
     : (house === 'thunayan'
       ? `thnyan_${idSlug.replace(/^thnyan-/, '')}`
-      : (house === 'rasasi' ? `rasasi_${idSlug.replace(/^rasasi-/, '')}` : `ghalati_${idSlug}`));
+      : (house === 'rasasi'
+        ? `rasasi_${idSlug.replace(/^rasasi-/, '')}`
+        : (house === 'al-rehab' ? `alrehab_${idSlug.replace(/^alrehab-/, '')}` : `ghalati_${idSlug}`)));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
@@ -185,7 +205,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
     ? ASSAF_MASTER_BG_PATH
     : (house === 'thunayan'
       ? THNYAN_MASTER_BG_PATH
-      : (house === 'rasasi' ? RASASI_MASTER_BG_PATH : MASTER_BG_PATH));
+      : (house === 'rasasi'
+        ? RASASI_MASTER_BG_PATH
+        : (house === 'al-rehab' ? ALREHAB_MASTER_BG_PATH : MASTER_BG_PATH)));
   if (!sharp || !rawImgUrl) return rawImgUrl || `images/${house}_master_bg.jpg`;
 
   try {
@@ -895,7 +917,139 @@ async function syncWithRasasiStore(force = false) {
   return cachedRasasiCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi)
+async function syncWithAlrehabStore(force = false) {
+  const now = Date.now();
+  if (!force && cachedAlrehabCatalog && (now - lastAlrehabSyncTime < SYNC_TTL_MS)) {
+    return cachedAlrehabCatalog;
+  }
+  if (isSyncingAlrehab && cachedAlrehabCatalog) {
+    return cachedAlrehabCatalog;
+  }
+
+  isSyncingAlrehab = true;
+  try {
+    const masterList = getMasterCatalog(ALREHAB_ARCHIVE_PATH, ALREHAB_PERFUMES_PATH);
+    if (!masterList.length) {
+      isSyncingAlrehab = false;
+      return [];
+    }
+
+    const headers = {
+      'Origin': 'https://alrehabstore.com',
+      'Referer': 'https://alrehabstore.com/ar',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'App-Store-Id': '64344517',
+      'Store-Identifier': '64344517',
+      'Accept': 'application/json, text/plain, */*'
+    };
+
+    const knownIds = new Set(
+      masterList
+        .map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || ''))
+        .filter(Boolean)
+    );
+
+    const allIds = [...knownIds];
+    const chunks = [];
+    for (let i = 0; i < allIds.length; i += 25) {
+      chunks.push(allIds.slice(i, i + 25));
+    }
+
+    const liveById = new Map();
+    await Promise.all(
+      chunks.map(async (chunk) => {
+        const q = 'source=selected&limit=30&' + chunk.map(id => `source_value[]=${id}`).join('&');
+        const res = await fetch(`https://api.salla.dev/store/v1/products?${q}`, { headers });
+        if (res.ok) {
+          const json = await res.json();
+          for (const it of (json.data || [])) {
+            liveById.set(String(it.id), it);
+          }
+        }
+      })
+    );
+
+    if (liveById.size > 0) {
+      const syncedCatalog = [];
+      let changesDetected = false;
+
+      for (const item of masterList) {
+        const sallaId = String(item.sallaId || ((item.url || '').match(/\/p(\d+)/) || [])[1] || '');
+        if (EXCLUDED_ALREHAB_SALLA_IDS.has(sallaId)) continue;
+        const live = liveById.get(sallaId);
+
+        if (!live) {
+          syncedCatalog.push({ ...item, sallaId, house: 'al-rehab' });
+          continue;
+        }
+
+        const p = { ...item, sallaId, house: 'al-rehab' };
+        const bottleCount = getBottleCount(p);
+        const feeJod = getDeliveryFeeJod(p);
+        p.bottleCount = bottleCount;
+        p.feeJod = feeJod;
+
+        const livePrice = Number(typeof live.price === 'object' ? live.price?.amount : live.price) || p.sarPrice;
+        const liveRegRaw = Number(typeof live.regular_price === 'object' ? live.regular_price?.amount : live.regular_price) || livePrice;
+        const liveReg = liveRegRaw > livePrice ? Math.round(liveRegRaw) : livePrice;
+        const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
+        const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
+        const livePromo = live.promotion_title || live.subtitle || '';
+
+        const newBaseJod = Math.round(livePrice / 5.29);
+        const newFinalJod = newBaseJod + feeJod;
+        const newOrigJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : newFinalJod;
+
+        if (
+          p.sarPrice !== livePrice ||
+          p.origSarPrice !== liveReg ||
+          p.finalJod !== newFinalJod ||
+          p.origJod !== newOrigJod ||
+          p.isAvailable !== liveAvail ||
+          p.status !== liveStatus
+        ) {
+          changesDetected = true;
+        }
+
+        p.sarPrice = livePrice;
+        p.origSarPrice = liveReg;
+        p.baseJod = newBaseJod;
+        p.finalJod = newFinalJod;
+        p.origJod = newOrigJod;
+        p.isAvailable = liveAvail;
+        p.status = liveStatus;
+        p.promotionTitle = livePromo;
+
+        syncedCatalog.push(p);
+      }
+
+      cachedAlrehabCatalog = syncedCatalog;
+      lastAlrehabSyncTime = Date.now();
+
+      if (changesDetected) {
+        fs.writeFileSync(ALREHAB_PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        fs.writeFileSync(ALREHAB_ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+      }
+    } else if (!cachedAlrehabCatalog) {
+      cachedAlrehabCatalog = JSON.parse(fs.readFileSync(ALREHAB_PERFUMES_PATH, 'utf8'));
+    }
+  } catch (err) {
+    console.error('Live Al-Rehab sync warning (using local fallback):', err.message);
+    if (!cachedAlrehabCatalog) {
+      try {
+        cachedAlrehabCatalog = JSON.parse(fs.readFileSync(ALREHAB_PERFUMES_PATH, 'utf8'));
+      } catch (e) {
+        cachedAlrehabCatalog = [];
+      }
+    }
+  } finally {
+    isSyncingAlrehab = false;
+  }
+
+  return cachedAlrehabCatalog;
+}
+
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab)
 app.get('/api/catalog', async (req, res) => {
   const force = req.query.force === '1';
   const house = (req.query.house || 'ghalati').toLowerCase();
@@ -905,7 +1059,9 @@ app.get('/api/catalog', async (req, res) => {
       ? await syncWithThnyanStore(force)
       : house === 'rasasi'
         ? await syncWithRasasiStore(force)
-        : await syncWithGhalatiStore(force);
+        : (house === 'al-rehab' || house === 'alrehab')
+          ? await syncWithAlrehabStore(force)
+          : await syncWithGhalatiStore(force);
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(data);
 });
@@ -916,7 +1072,7 @@ app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
     store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
-    version: '0.6.0-multi-house-live-sync',
+    version: '0.7.0-multi-house-live-sync',
     lastGhalatiSync: lastSyncTime ? new Date(lastSyncTime).toISOString() : null,
     totalGhalatiProducts: cachedCatalog ? cachedCatalog.length : null,
     lastAssafSync: lastAssafSyncTime ? new Date(lastAssafSyncTime).toISOString() : null,
@@ -924,7 +1080,9 @@ app.get('/api/status', (req, res) => {
     lastThnyanSync: lastThnyanSyncTime ? new Date(lastThnyanSyncTime).toISOString() : null,
     totalThnyanProducts: cachedThnyanCatalog ? cachedThnyanCatalog.length : null,
     lastRasasiSync: lastRasasiSyncTime ? new Date(lastRasasiSyncTime).toISOString() : null,
-    totalRasasiProducts: cachedRasasiCatalog ? cachedRasasiCatalog.length : null
+    totalRasasiProducts: cachedRasasiCatalog ? cachedRasasiCatalog.length : null,
+    lastAlrehabSync: lastAlrehabSyncTime ? new Date(lastAlrehabSyncTime).toISOString() : null,
+    totalAlrehabProducts: cachedAlrehabCatalog ? cachedAlrehabCatalog.length : null
   });
 });
 
@@ -934,6 +1092,7 @@ setInterval(() => {
   syncWithAssafStore(true).catch(() => {});
   syncWithThnyanStore(true).catch(() => {});
   syncWithRasasiStore(true).catch(() => {});
+  syncWithAlrehabStore(true).catch(() => {});
 }, 2 * 60 * 1000);
 
 app.listen(PORT, () => {
@@ -949,5 +1108,8 @@ app.listen(PORT, () => {
   });
   syncWithRasasiStore(true).then(list => {
     console.log(`🔄 Initial Live Rasasi Sync Complete: ${list.length} active products.`);
+  });
+  syncWithAlrehabStore(true).then(list => {
+    console.log(`🔄 Initial Live Al-Rehab Sync Complete: ${list.length} active products.`);
   });
 });
