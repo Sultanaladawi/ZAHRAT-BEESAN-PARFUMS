@@ -1615,6 +1615,21 @@ function ensureLuxuryLightboxDOM() {
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
+      <button type="button" class="ghalati-lb-icon-btn" onclick="lightboxZoomStep(0.35)" title="تكبير" aria-label="Zoom In">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <line x1="11" y1="8" x2="11" y2="14"></line>
+          <line x1="8" y1="11" x2="14" y2="11"></line>
+        </svg>
+      </button>
+      <button type="button" class="ghalati-lb-icon-btn" onclick="lightboxZoomStep(-0.35)" title="تصغير" aria-label="Zoom Out">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <line x1="8" y1="11" x2="14" y2="11"></line>
+        </svg>
+      </button>
       <button type="button" class="ghalati-lb-icon-btn" onclick="toggleLightboxFullscreen()" title="ملء الشاشة" aria-label="Fullscreen">
         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
@@ -1637,7 +1652,7 @@ function ensureLuxuryLightboxDOM() {
   // Wheel zoom
   stage.addEventListener('wheel', (e) => {
     e.preventDefault();
-    const delta = e.deltaY < 0 ? 0.35 : -0.35;
+    const delta = e.deltaY < 0 ? 0.25 : -0.25;
     lightboxZoomStep(delta);
   }, { passive: false });
 
@@ -1647,7 +1662,7 @@ function ensureLuxuryLightboxDOM() {
     lightboxState.moved = false;
     lightboxState.startX = e.clientX - lightboxState.x;
     lightboxState.startY = e.clientY - lightboxState.y;
-    card.style.transition = 'none';
+    if (img) img.style.transition = 'none';
   });
 
   stage.addEventListener('pointermove', (e) => {
@@ -1658,8 +1673,9 @@ function ensureLuxuryLightboxDOM() {
       lightboxState.moved = true;
     }
     if (lightboxState.scale > 1) {
-      const maxPanX = window.innerWidth * 0.4 * (lightboxState.scale - 1);
-      const maxPanY = window.innerHeight * 0.4 * (lightboxState.scale - 1);
+      const cardRect = card ? card.getBoundingClientRect() : { width: window.innerWidth * 0.8, height: window.innerHeight * 0.8 };
+      const maxPanX = cardRect.width * 0.45 * (lightboxState.scale - 1);
+      const maxPanY = cardRect.height * 0.45 * (lightboxState.scale - 1);
       lightboxState.x = Math.max(-maxPanX, Math.min(maxPanX, e.clientX - lightboxState.startX));
       lightboxState.y = Math.max(-maxPanY, Math.min(maxPanY, e.clientY - lightboxState.startY));
       applyLightboxTransform();
@@ -1670,18 +1686,20 @@ function ensureLuxuryLightboxDOM() {
     if (!lightboxState.isDragging) return;
     const wasMoved = lightboxState.moved;
     lightboxState.isDragging = false;
-    card.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+    if (img) img.style.transition = 'transform 0.26s cubic-bezier(0.22, 1, 0.36, 1)';
 
     if (!wasMoved) {
-      // Clicked outside the white card -> close lightbox
+      // Clicked outside the card -> close lightbox
       if (e.target === stage) {
         closeLuxuryLightbox();
       } else {
-        // Clicked on the image card -> toggle clean zoom (1x <-> 2x)
+        // Clicked on the image card -> toggle clean bottle-centered zoom (1x <-> 1.55x) inside the frame
         if (lightboxState.scale > 1.05) {
           lightboxResetZoom();
         } else {
-          lightboxState.scale = 2;
+          lightboxState.scale = 1.55;
+          lightboxState.x = 0;
+          lightboxState.y = 0;
           applyLightboxTransform();
         }
       }
@@ -1708,7 +1726,7 @@ function ensureLuxuryLightboxDOM() {
         e.touches[0].clientY - e.touches[1].clientY
       );
       const ratio = d / lightboxState.pinchStartDist;
-      lightboxState.scale = Math.min(4, Math.max(1, +(lightboxState.pinchStartScale * ratio).toFixed(2)));
+      lightboxState.scale = Math.min(3.5, Math.max(1, +(lightboxState.pinchStartScale * ratio).toFixed(2)));
       if (lightboxState.scale === 1) {
         lightboxState.x = 0;
         lightboxState.y = 0;
@@ -1731,20 +1749,20 @@ function toggleLightboxFullscreen() {
 }
 
 function applyLightboxTransform() {
-  const card = document.getElementById('luxuryLightboxImgWrap');
+  const img = document.getElementById('luxuryLightboxImg');
   const stage = document.getElementById('luxuryLightboxStage');
-  if (!card) return;
+  if (!img) return;
   if (lightboxState.scale <= 1.01) {
     lightboxState.scale = 1;
     lightboxState.x = 0;
     lightboxState.y = 0;
   }
-  card.style.transform = `translate3d(${lightboxState.x}px, ${lightboxState.y}px, 0) scale(${lightboxState.scale})`;
+  img.style.transform = `translate3d(${lightboxState.x}px, ${lightboxState.y}px, 0) scale(${lightboxState.scale})`;
   if (stage) stage.classList.toggle('is-zoomed', lightboxState.scale > 1);
 }
 
 function lightboxZoomStep(delta) {
-  lightboxState.scale = Math.min(4, Math.max(1, +(lightboxState.scale + delta).toFixed(2)));
+  lightboxState.scale = Math.min(3.5, Math.max(1, +(lightboxState.scale + delta).toFixed(2)));
   if (lightboxState.scale === 1) {
     lightboxState.x = 0;
     lightboxState.y = 0;
