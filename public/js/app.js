@@ -1201,7 +1201,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   }
 
   // Category section definitions
-  const SECTION_CONFIGS = isRehab ? REHAB_SECTION_CONFIGS : (isLaverne ? LAVERNE_SECTION_CONFIGS : [
+  let SECTION_CONFIGS = [
     {
       key: 'perfume',
       icon: '💎',
@@ -1239,6 +1239,12 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       match: (p) => p.categoryType === 'oil'
     }
   ];
+
+  if (isRehab) {
+    SECTION_CONFIGS = REHAB_SECTION_CONFIGS;
+  } else if (isLaverne) {
+    SECTION_CONFIGS = LAVERNE_SECTION_CONFIGS;
+  }
 
   renderCatalogFilterBar();
 
