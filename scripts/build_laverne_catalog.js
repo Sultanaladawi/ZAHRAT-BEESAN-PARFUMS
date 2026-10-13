@@ -71,6 +71,21 @@ function parseLaverneProduct(html, url) {
   const title = (product.name || '').trim();
   if (!title) return null;
 
+  const tLower = title.toLowerCase();
+
+  // Exclude non-perfume makeup, eyeliner, pencils, empty refills, bags
+  const isAccessory = tLower.includes('قلم') || 
+                      tLower.includes('كحل') || 
+                      tLower.includes('مسكرا') || 
+                      tLower.includes('حواجب') || 
+                      tLower.includes('حقيبة') || 
+                      tLower.includes('شنطة') || 
+                      tLower.includes('كيس') || 
+                      tLower.includes('إعادة التعبئة') || 
+                      tLower.includes('ليب قلوس') || 
+                      tLower.includes('ملمع');
+  if (isAccessory) return null;
+
   const sku = product.sku || '';
   const slugMatch = url.match(/\/([a-zA-Z0-9]+)$/);
   const slug = slugMatch ? slugMatch[1] : sku || Math.random().toString(36).substring(7);
@@ -140,24 +155,20 @@ function parseLaverneProduct(html, url) {
     prominent = [oFirst, hFirst, bFirst].filter(Boolean).join('، ');
   }
 
-  // Classification
+  // Classification (Strictly NO bakhoor category: Laverne only has luxury perfumes & sets)
   let categoryType = 'perfume';
   let categoryGender = 'للجنسين';
-  const tLower = title.toLowerCase();
   const descRaw = cleanBody;
-
   const numSize = parseInt(size);
 
-  if (tLower.includes('مجموعة') || tLower.includes('بكج') || tLower.includes('بوكس') || tLower.includes('طقم') || tLower.includes('مجموعات') || tLower.includes('كولكشن') || tLower.includes('collection')) {
+  if (tLower.includes('مجموعة') || tLower.includes('بكج') || tLower.includes('بوكس') || tLower.includes('طقم') || tLower.includes('مجموعات') || tLower.includes('كولكشن') || tLower.includes('توزيعات') || tLower.includes('collection') || tLower.includes(' و')) {
     categoryType = 'bundle';
   } else if (tLower.includes('شعر') || tLower.includes('هير مست') || tLower.includes('hair mist')) {
     categoryType = 'hair_mist';
-  } else if (tLower.includes('ملمع') || tLower.includes('شفاه') || tLower.includes('gloss')) {
-    categoryType = 'lip_gloss';
-  } else if (tLower.includes('بخور') || tLower.includes('مبخرة') || tLower.includes('معمول')) {
-    categoryType = 'bakhoor';
   } else if (tLower.includes('ميني') || (numSize && numSize <= 30)) {
     categoryType = 'mini';
+  } else {
+    categoryType = 'perfume';
   }
 
   if (tLower.includes('رجالي') || descRaw.includes('عطر رجالي') || descRaw.includes('للرجال')) {
@@ -168,7 +179,7 @@ function parseLaverneProduct(html, url) {
 
   // Pricing (JOD)
   const baseJod = Math.round(sarPrice / 5.29);
-  const feeJod = categoryType === 'bundle' ? 18 : (categoryType === 'lip_gloss' ? 8 : 12);
+  const feeJod = categoryType === 'bundle' ? 18 : 12;
   const finalJod = baseJod + feeJod;
   const origJod = Math.round(origSarPrice / 5.29) + feeJod;
 
@@ -215,9 +226,7 @@ function parseLaverneProduct(html, url) {
       category: categoryGender,
       size,
       type: categoryType === 'hair_mist' ? 'معطر شعر فاخر' :
-            categoryType === 'bundle' ? 'مجموعة عطور ملكية' :
-            categoryType === 'lip_gloss' ? 'ملمع شفاه فاخر' :
-            categoryType === 'bakhoor' ? 'بخور فاخر' :
+            categoryType === 'bundle' ? 'مجموعة عطور ملكية فاخرة' :
             categoryType === 'mini' ? 'عطر ميني فاخر' : 'عطر أو دو بارفيوم (Eau de Parfum)',
       perfumer: 'دار لافيرن للعطور (Laverne Perfumes)'
     },
@@ -234,11 +243,8 @@ function parseLaverneProduct(html, url) {
 
 async function renderProductImage(rawBuf, slug, isBundle = false) {
   const outPath = path.join(PUBLIC_IMAGES_DIR, `laverne_${slug}.jpg`);
-  if (fs.existsSync(outPath) && fs.statSync(outPath).size > 10000) {
-    return;
-  }
 
-  // Studio framing for bundles, gift sets, lip gloss, and boxes
+  // Studio framing for bundles, gift sets, and boxed collections
   if (isBundle) {
     const inner = await sharp(rawBuf)
       .resize({ width: 920, height: 920, fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
@@ -252,15 +258,15 @@ async function renderProductImage(rawBuf, slug, isBundle = false) {
       }
     })
       .composite([{ input: inner, gravity: 'center' }])
-      .jpeg({ quality: 96 })
+      .jpeg({ quality: 96, chromaSubsampling: '4:4:4' })
       .toFile(outPath);
     return;
   }
 
-  // Single bottle: AI background removal + refineCutout + contact shadow on royal podium
+  // Single bottle: AI background removal + Symmetry shadow slicer + reflection base cutoff + refineCutout
   try {
     const normPng = await sharp(rawBuf)
-      .resize({ width: 1100, height: 1100, fit: 'inside', withoutEnlargement: true })
+      .resize({ width: 1000, height: 1000, fit: 'inside', withoutEnlargement: true })
       .png()
       .toBuffer();
 
@@ -268,44 +274,124 @@ async function renderProductImage(rawBuf, slug, isBundle = false) {
     const cutBlob = await removeBackground(blob);
     const cutBuf = Buffer.from(await cutBlob.arrayBuffer());
 
-    const refinedBuf = await refineCutout(cutBuf, { erode: 1, feather: 0.8 });
-    const trimmed = await sharp(refinedBuf).trim().toBuffer({ resolveWithObject: true });
+    const { data, info } = await sharp(cutBuf).raw().toBuffer({ resolveWithObject: true });
+    const w = info.width, h = info.height;
 
-    const maxW = 470;
-    const maxH = 510;
+    // 1. Measure solid widths per row
+    let maxW = 0;
+    const rowW = new Int32Array(h);
+    for (let y = 0; y < h; y++) {
+      let minX = w, maxX = -1;
+      for (let x = 0; x < w; x++) {
+        if (data[(y * w + x) * 4 + 3] >= 160) {
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+        }
+      }
+      if (maxX >= minX) {
+        rowW[y] = maxX - minX;
+        if (rowW[y] > maxW) maxW = rowW[y];
+      }
+    }
+
+    // 2. Measure cap center in top 2%..8%
+    let minY = 0, maxY = h - 1;
+    while (minY < h && rowW[minY] === 0) minY++;
+    while (maxY > 0 && rowW[maxY] === 0) maxY--;
+    const objH = maxY - minY;
+
+    let sumCapCenter = 0, capRows = 0;
+    const cStart = minY + Math.max(3, Math.round(objH * 0.02));
+    const cEnd = minY + Math.max(10, Math.round(objH * 0.08));
+    for (let y = cStart; y <= cEnd; y++) {
+      let rowL = w, rowR = 0;
+      for (let x = 0; x < w; x++) {
+        if (data[(y * w + x) * 4 + 3] >= 180) {
+          if (x < rowL) rowL = x;
+          if (x > rowR) rowR = x;
+        }
+      }
+      if (rowR > rowL + 10) {
+        sumCapCenter += (rowL + rowR) / 2;
+        capRows++;
+      }
+    }
+    const capCenterX = capRows > 0 ? Math.round(sumCapCenter / capRows) : Math.round(w / 2);
+
+    // 3. Find true base: scan up from maxY until row width is at least 70% of body width
+    let baseCutoffY = maxY;
+    for (let y = maxY; y >= minY + Math.round(objH * 0.6); y--) {
+      if (rowW[y] < maxW * 0.70) {
+        baseCutoffY = y - 1;
+      } else {
+        break;
+      }
+    }
+
+    // 4. Enforce Right-to-Left symmetry across all rows (erases left wall shadows & floor reflection)
+    for (let y = 0; y < h; y++) {
+      if (y > baseCutoffY) {
+        for (let x = 0; x < w; x++) data[(y * w + x) * 4 + 3] = 0;
+        continue;
+      }
+      let rX = -1;
+      for (let x = w - 1; x >= capCenterX; x--) {
+        if (data[(y * w + x) * 4 + 3] >= 160) {
+          rX = x;
+          break;
+        }
+      }
+      if (rX <= capCenterX) {
+        for (let x = 0; x < w; x++) data[(y * w + x) * 4 + 3] = 0;
+        continue;
+      }
+      const halfW = rX - capCenterX;
+      const symLeftX = capCenterX - halfW - 1;
+      for (let x = 0; x < symLeftX; x++) {
+        data[(y * w + x) * 4 + 3] = 0;
+      }
+    }
+
+    // 5. Run refineCutout for defringing and smooth feather
+    const cleaned0 = await sharp(data, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+    const refined = await refineCutout(cleaned0, { erode: 1, feather: 0.8 });
+    const trimmed = await sharp(refined).trim().toBuffer({ resolveWithObject: true });
+
+    // 6. Scale bottle to prominent majestic size: height 520px
+    const targetH = 520;
+    const bH = targetH;
+    const bW = Math.round(trimmed.info.width * targetH / trimmed.info.height);
     const resized = await sharp(trimmed.data)
-      .resize({ width: maxW, height: maxH, fit: 'inside', kernel: 'lanczos3' })
-      .toBuffer({ resolveWithObject: true });
+      .resize(bW, bH, { kernel: 'lanczos3' })
+      .toBuffer();
 
-    const bW = resized.info.width;
-    const bH = resized.info.height;
     const left = Math.round((1024 - bW) / 2);
     const baseContactY = 746;
     const top = baseContactY - bH;
 
-    const shadowW = bW + 50;
-    const shadowH = 30;
+    // Realistic multi-tier contact shadow
+    const shadowW = bW + 40;
     const shadowSvg = `
-    <svg width="${shadowW}" height="${shadowH}" xmlns="http://www.w3.org/2000/svg">
+    <svg width="${shadowW}" height="28" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <filter id="f1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5" /></filter>
-        <filter id="f2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.5" /></filter>
+        <filter id="f1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.2" /></filter>
+        <filter id="f2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.4" /></filter>
       </defs>
-      <ellipse cx="${shadowW / 2}" cy="15" rx="${bW * 0.42}" ry="8" fill="#1b1209" opacity="0.65" filter="url(#f1)" />
-      <ellipse cx="${shadowW / 2}" cy="15" rx="${bW * 0.28}" ry="4" fill="#080503" opacity="0.9" filter="url(#f2)" />
+      <ellipse cx="${shadowW / 2}" cy="14" rx="${bW * 0.43}" ry="7.5" fill="#1b1209" opacity="0.65" filter="url(#f1)" />
+      <ellipse cx="${shadowW / 2}" cy="14" rx="${bW * 0.28}" ry="4" fill="#080503" opacity="0.9" filter="url(#f2)" />
     </svg>
     `;
     const shadowBuf = await sharp(Buffer.from(shadowSvg)).png().toBuffer();
 
     await sharp(MASTER_BG_PATH)
       .composite([
-        { input: shadowBuf, left: Math.round(left - 25), top: baseContactY - 14 },
-        { input: resized.data, left: left, top: top }
+        { input: shadowBuf, left: Math.round(left - 20), top: baseContactY - 13 },
+        { input: resized, left, top }
       ])
       .jpeg({ quality: 96, chromaSubsampling: '4:4:4' })
       .toFile(outPath);
   } catch (err) {
-    console.warn(`Fallback to studio container for ${slug}:`, err.message);
+    console.warn(`Fallback for ${slug}:`, err.message);
     const inner = await sharp(rawBuf)
       .resize({ width: 920, height: 920, fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
       .toBuffer();
@@ -321,6 +407,56 @@ async function renderProductImage(rawBuf, slug, isBundle = false) {
       .jpeg({ quality: 96 })
       .toFile(outPath);
   }
+}
+
+const FLAGSHIP_PRIORITY = [
+  'بلو لافيرن سبورت',
+  'بلو لافيرن بخور',
+  'بلو لافيرن إلكسير',
+  'بلو لافيرن',
+  'توباكو',
+  'مس لافيرن',
+  'مس لافيرن بلوم',
+  'مس لافيرن روز',
+  'آي واز هير',
+  'فانتوم',
+  'فوربدن',
+  'لومير',
+  'ليدي روز',
+  'بيانكونيرو',
+  'ليسن',
+  'دير',
+  'لادور بخور',
+  'الليل الأزرق',
+  'عنبر رويال',
+  'سكار فيس',
+  'ذا لاست دانس',
+  'لاست تشانس',
+  'فيرليس',
+  'سمر نايتس',
+  'إن لوف',
+  'إنتو ذا سي',
+  'سوار',
+  'روز قاردن',
+  'مسك قاردن',
+  'اللور قاردن',
+  'فايوليت قاردن',
+  'تشامبيون',
+  'سينس'
+];
+
+function getProductScore(p) {
+  const t = p.title;
+  for (let i = 0; i < FLAGSHIP_PRIORITY.length; i++) {
+    if (t.startsWith(FLAGSHIP_PRIORITY[i]) || t.includes(FLAGSHIP_PRIORITY[i])) {
+      return i;
+    }
+  }
+  if (p.categoryType === 'perfume') return 1000;
+  if (p.categoryType === 'bundle') return 2000;
+  if (p.categoryType === 'hair_mist') return 3000;
+  if (p.categoryType === 'mini') return 4000;
+  return 5000;
 }
 
 async function buildCatalog() {
@@ -345,12 +481,15 @@ async function buildCatalog() {
     process.stdout.write(`Parsed ${Math.min(i + BATCH_SIZE, activeUrls.length)}/${activeUrls.length} products | Valid: ${products.length}\r`);
   }
 
-  console.log(`\nCrawl complete! Successfully parsed ${products.length} official Laverne products.`);
+  console.log(`\nCrawl complete! Successfully parsed ${products.length} official Laverne perfumes & sets.`);
+
+  // Sort logically with flagships first
+  products.sort((a, b) => getProductScore(a) - getProductScore(b));
 
   // Save Raw Archive & Catalog Data
   fs.writeFileSync(ARCHIVE_DATA_PATH, JSON.stringify(products, null, 2));
   fs.writeFileSync(PUBLIC_DATA_PATH, JSON.stringify(products, null, 2));
-  console.log(`Saved catalog to ${PUBLIC_DATA_PATH} & archive to ${ARCHIVE_DATA_PATH}`);
+  console.log(`Saved sorted catalog to ${PUBLIC_DATA_PATH} & archive to ${ARCHIVE_DATA_PATH}`);
 
   // Now process product images
   console.log(`\nProcessing product images for ${products.length} products...`);
@@ -359,13 +498,8 @@ async function buildCatalog() {
   for (let i = 0; i < products.length; i++) {
     const prod = products[i];
     const slug = prod.sallaId;
-    const isBundle = prod.categoryType === 'bundle' || prod.categoryType === 'lip_gloss';
+    const isBundle = prod.categoryType === 'bundle';
     const outPath = path.join(PUBLIC_IMAGES_DIR, `laverne_${slug}.jpg`);
-
-    if (fs.existsSync(outPath) && fs.statSync(outPath).size > 10000) {
-      renderedCount++;
-      continue;
-    }
 
     if (!prod.bottleUrl) continue;
 

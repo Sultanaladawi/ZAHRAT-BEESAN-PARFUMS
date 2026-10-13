@@ -29,9 +29,9 @@ async function makeLaverneMasterBg() {
   const wipedBuf = await sharp(data, { raw: { width: w, height: h, channels: c } }).png().toBuffer();
 
   const textSvg = `
-  <svg width="380" height="52" viewBox="0 0 380 52" xmlns="http://www.w3.org/2000/svg">
-    <text x="190" y="36" text-anchor="middle" font-family="'Segoe UI', 'Tajawal', 'Arial', sans-serif" font-size="29" font-weight="600" fill="#746957" letter-spacing="3.5">
-      LAVERNE • لافيرن
+  <svg width="420" height="52" viewBox="0 0 420 52" xmlns="http://www.w3.org/2000/svg">
+    <text x="210" y="36" text-anchor="middle" font-family="'Segoe UI', 'Tajawal', 'Arial', sans-serif" font-size="28" font-weight="600" fill="#746957">
+      <tspan letter-spacing="2.5">LAVERNE</tspan> • <tspan letter-spacing="0">لافيرن</tspan>
     </text>
   </svg>
   `;
@@ -41,7 +41,7 @@ async function makeLaverneMasterBg() {
     .composite([
       {
         input: textBuf,
-        left: Math.round((w - 380) / 2),
+        left: Math.round((w - 420) / 2),
         top: 943
       }
     ])

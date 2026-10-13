@@ -422,7 +422,7 @@ async function selectHouse(houseId) {
     if (filters) filters.style.display = 'flex';
     if (grid) grid.style.display = 'grid';
     const bakhoorFilterBtn = document.querySelector('.catalog-filter-btn[data-filter="bakhoor"]');
-    if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair') {
+    if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair' || houseId === 'laverne') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = 'none';
       if (currentFilter === 'bakhoor') {
         currentFilter = 'all';
@@ -436,14 +436,13 @@ async function selectHouse(houseId) {
       } else if (houseId === 'labonair') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة لابونير للعطور (Le Bonheur Perfumes)' : 'Complete Official Collection — Le Bonheur Perfumes';
         if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 38 عطراً وبكج إهداء من دار لابونير (لو بونور) أصلية 100% مستوردة مباشرة من المصدر' : 'All 38 authentic Le Bonheur perfumes, special offers & luxury gift sets imported directly';
+      } else if (houseId === 'laverne') {
+        if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — دار لافيرن للعطور (Laverne Perfumes)' : 'Complete Official Collection — Laverne Perfumes';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة عطور وباقات ومعطرات شعر دار لافيرن الرسمية أصلية 100% مستوردة مباشرة من المصدر' : 'All authentic Laverne perfumes, signature scents, gift sets & hair mists imported directly';
       } else {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور ثنيان (Thnyan Perfumes)' : 'Complete Official Collection — Thnyan Perfumes';
         if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 79 عطراً ومجموعة وبوكس إهداء من دار ثنيان أصلية 100% مستوردة مباشرة من المصدر' : 'All 79 authentic Thnyan perfumes, luxury gift sets & special offers imported directly';
       }
-    } else if (houseId === 'laverne') {
-      if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
-      if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — دار لافيرن للعطور (Laverne Perfumes)' : 'Complete Official Collection — Laverne Perfumes';
-      if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 217 عطراً ومجموعة وبكج إهداء ومعطرات شعر من دار لافيرن أصلية 100% مستوردة مباشرة من المصدر' : 'All 217 authentic Laverne perfumes, signature scents, gift sets & hair mists imported directly';
     } else if (houseId === 'rasasi') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة الرصاصي للعطور (Rasasi Perfumes)' : 'Complete Official Collection — Rasasi Perfumes';
@@ -794,7 +793,7 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         house,
         title: (item.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
         titleEn: (item.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
-        categoryType: ((house === 'assaf' || house === 'thunayan' || house === 'labonair') && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
+        categoryType: ((house === 'assaf' || house === 'thunayan' || house === 'labonair' || house === 'laverne') && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
         bottleCount,
         feeJod,
         sarPrice: livePrice,
@@ -989,7 +988,7 @@ function renderCatalogFilterBar() {
         <button type="button" class="catalog-filter-btn ${currentFilter === 'perfumes' ? 'active-filter' : ''}" data-filter="perfumes" onclick="filterCatalog('perfumes', this)" data-i18n="filterPerfumes">💎 ${isAr ? 'العطور الفاخرة' : 'Luxury Perfumes'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'bundles' ? 'active-filter' : ''}" data-filter="bundles" onclick="filterCatalog('bundles', this)" data-i18n="filterBundles">🎁 ${isAr ? 'باقات الإهداء والباكجات' : 'Gift Sets & Bundles'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'offers' ? 'active-filter' : ''}" data-filter="offers" onclick="filterCatalog('offers', this)" data-i18n="filterOffers">🔥 ${isAr ? 'العروض الخاصة' : 'Special Offers'}</button>
-        <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair' || activeHouse === 'laverne') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'oils' ? 'active-filter' : ''}" data-filter="oils" onclick="filterCatalog('oils', this)" data-i18n="filterOils">💧 ${isAr ? 'الزيوت العطرية والتولات' : 'Perfume Oils'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'unisex' ? 'active-filter' : ''}" data-filter="unisex" onclick="filterCatalog('unisex', this)" data-i18n="filterUnisex">👑 ${isAr ? 'للجنسين' : 'Unisex'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'women' ? 'active-filter' : ''}" data-filter="women" onclick="filterCatalog('women', this)" data-i18n="filterWomen">🌸 ${isAr ? 'نسائي' : 'Women'}</button>
@@ -1348,7 +1347,7 @@ function renderProductCard(p, t) {
 
 function getCategoryBadgeText(p) {
   const t = translations[currentLang] || translations.ar;
-  const isAssafOrThnyan = p.house === 'assaf' || p.house === 'thunayan' || p.house === 'labonair' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-') || String(p.id || '').startsWith('lebonheur-');
+  const isAssafOrThnyan = p.house === 'assaf' || p.house === 'thunayan' || p.house === 'labonair' || p.house === 'laverne' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-') || String(p.id || '').startsWith('lebonheur-') || String(p.id || '').startsWith('laverne-');
   if (p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود')) {
     return currentLang === 'ar' ? 'دهن عود / زيت عطري' : 'Perfume Oil';
   }
@@ -1407,6 +1406,9 @@ function openProductModal(id) {
 }
 
 function closeProductModal() {
+  if (typeof lightboxState !== 'undefined' && lightboxState.isOpen) {
+    closeLuxuryLightbox(true);
+  }
   const hero = document.getElementById('heroSection');
   const catalog = document.getElementById('catalog');
   const prodSection = document.getElementById('productPageSection');
@@ -1749,11 +1751,9 @@ function ensureLuxuryLightboxDOM() {
   lb.style.display = 'none';
   lb.innerHTML = `
     <div class="ghalati-lb-top-actions" onclick="event.stopPropagation()">
-      <button type="button" class="ghalati-lb-icon-btn" onclick="closeLuxuryLightbox()" title="إغلاق" aria-label="Close">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+      <button type="button" class="ghalati-lb-icon-btn" onclick="closeLuxuryLightbox()" title="إغلاق والرجوع" aria-label="Close" style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; width:auto; border-radius:20px;">
+        <span style="font-size:1.1rem; line-height:1;">&#8592;</span>
+        <span style="font-size:0.85rem; font-weight:600;">الرجوع</span>
       </button>
       <button type="button" class="ghalati-lb-icon-btn" onclick="lightboxZoomStep(0.35)" title="تكبير" aria-label="Zoom In">
         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -2063,10 +2063,10 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Browser Back / Forward History support for full product page
+// Browser Back / Forward History support for full product page & lightbox
 window.addEventListener('popstate', (e) => {
   // 1) An open lightbox always consumes the Back press first
-  if (lightboxState.isOpen) {
+  if (typeof lightboxState !== 'undefined' && lightboxState.isOpen) {
     closeLuxuryLightbox(true);
     return;
   }
@@ -2074,10 +2074,26 @@ window.addEventListener('popstate', (e) => {
   if (hash.startsWith('#product/')) {
     const id = hash.replace('#product/', '');
     if (id) {
-      const p = perfumesData.find(item => item.id === id);
+      const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === id) ||
+                (catalogByHouse.ghalati || []).find(item => item.id === id) ||
+                (catalogByHouse.assaf || []).find(item => item.id === id) ||
+                (catalogByHouse.thunayan || []).find(item => item.id === id) ||
+                (catalogByHouse.rasasi || []).find(item => item.id === id) ||
+                (catalogByHouse['al-rehab'] || []).find(item => item.id === id) ||
+                (catalogByHouse.labonair || []).find(item => item.id === id) ||
+                (catalogByHouse.laverne || []).find(item => item.id === id);
       if (p) openProductModal(id);
     }
   } else if (activeModalPerfume) {
+    closeProductModal();
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  if (typeof lightboxState !== 'undefined' && lightboxState.isOpen) {
+    closeLuxuryLightbox(true);
+  }
+  if (!window.location.hash.startsWith('#product') && activeModalPerfume) {
     closeProductModal();
   }
 });
