@@ -49,7 +49,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-KjjRvDy",
@@ -102,7 +103,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ZYrDDwx",
@@ -154,7 +156,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-DGVmpev",
@@ -207,7 +210,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-gyGEDea",
@@ -260,7 +264,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-oOKrVB",
@@ -312,7 +317,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-jYqGpy",
@@ -366,7 +372,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-NAyqNBa",
@@ -418,7 +425,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-gZQqbXv",
@@ -471,7 +479,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-PdzNOlV",
@@ -524,7 +533,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-RvymNKO",
@@ -578,7 +588,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-bwYevYY",
@@ -630,7 +641,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-BpwODQY",
@@ -683,7 +695,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-onQYNGp",
@@ -736,7 +749,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-YvGRxn",
@@ -789,7 +803,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-DGOgbBW",
@@ -809,9 +824,9 @@
     "status": "sale",
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/DGOgbBW",
-    "bottleUrl": "https://cdn.salla.sa/XzOPD/15b9bf24-be53-4c90-9c6a-cc78a8ab1708-1000x1000-4uUgMNJVoTUXxGcX9Wu5xNAwXzuAh3REadPgwVsC.jpg",
+    "bottleUrl": "https://cdn.salla.sa/XzOPD/mSoTXLs1nfDw7pr3ZcqtTs6VNHntTjUETryZtQNU.jpg",
     "image": "images/laverne_DGOgbBW.jpg",
-    "originalImage": "https://cdn.salla.sa/XzOPD/15b9bf24-be53-4c90-9c6a-cc78a8ab1708-1000x1000-4uUgMNJVoTUXxGcX9Wu5xNAwXzuAh3REadPgwVsC.jpg",
+    "originalImage": "https://cdn.salla.sa/XzOPD/mSoTXLs1nfDw7pr3ZcqtTs6VNHntTjUETryZtQNU.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/mSoTXLs1nfDw7pr3ZcqtTs6VNHntTjUETryZtQNU.jpg",
       "https://cdn.salla.sa/XzOPD/4Np4BB5wlffpodzKv0iuMyn7DyYimGeEqNKHzL2r.jpg",
@@ -843,7 +858,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-dPKrvWo",
@@ -896,7 +912,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-vAjbnqA",
@@ -948,7 +965,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-PdgOKDr",
@@ -968,9 +986,9 @@
     "status": "sale",
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/PdgOKDr",
-    "bottleUrl": "https://cdn.salla.sa/XzOPD/e4c99f10-84e2-423c-b11b-8f8bd3194f02-1000x1000-kqakOp8lO9L407NBkoO1fJtr8rKcNlyvI2uWjvRv.png",
+    "bottleUrl": "https://cdn.salla.sa/XzOPD/ZO1VLa6hMWRnT1KifUvusg8aRk5QAOTjqKt5wvhP.jpg",
     "image": "images/laverne_PdgOKDr.jpg",
-    "originalImage": "https://cdn.salla.sa/XzOPD/e4c99f10-84e2-423c-b11b-8f8bd3194f02-1000x1000-kqakOp8lO9L407NBkoO1fJtr8rKcNlyvI2uWjvRv.png",
+    "originalImage": "https://cdn.salla.sa/XzOPD/ZO1VLa6hMWRnT1KifUvusg8aRk5QAOTjqKt5wvhP.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/dc1ad6d5-c45f-417d-9884-5096160459d5-500x500-ZO1VLa6hMWRnT1KifUvusg8aRk5QAOTjqKt5wvhP.jpg",
       "https://cdn.salla.sa/XzOPD/ZO1VLa6hMWRnT1KifUvusg8aRk5QAOTjqKt5wvhP.jpg",
@@ -1002,7 +1020,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-rRaKYAy",
@@ -1056,7 +1075,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-AzwRVod",
@@ -1108,7 +1128,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-WzABDqy",
@@ -1162,7 +1183,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-EZKoDaG",
@@ -1214,7 +1236,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-BryobBn",
@@ -1266,7 +1289,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-mQOXGxo",
@@ -1318,7 +1342,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-dPVZewv",
@@ -1371,7 +1396,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-QdgbKmV",
@@ -1424,7 +1450,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-aeVapQX",
@@ -1477,7 +1504,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-KRNVZln",
@@ -1531,7 +1559,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-YgOzeDj",
@@ -1583,7 +1612,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-jZPPPld",
@@ -1636,7 +1666,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-NKeOZGv",
@@ -1689,7 +1720,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-aepDGeG",
@@ -1742,7 +1774,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xvvZRnK",
@@ -1795,7 +1828,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xAEmQao",
@@ -1848,7 +1882,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-dbGKoRw",
@@ -1902,7 +1937,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-onNXlwj",
@@ -1955,7 +1991,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-zvRVgGO",
@@ -2009,7 +2046,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-jgyemGq",
@@ -2061,7 +2099,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-qGKXvox",
@@ -2113,7 +2152,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-wWPzbKD",
@@ -2166,7 +2206,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-bwrQaKw",
@@ -2219,7 +2260,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-WzxKnWA",
@@ -2271,7 +2313,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-EXGROmy",
@@ -2323,7 +2366,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-zoymrGp",
@@ -2375,7 +2419,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-nEVgBab",
@@ -2428,7 +2473,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-mZKonyb",
@@ -2482,7 +2528,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-VDArBax",
@@ -2536,7 +2583,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ngPAODa",
@@ -2589,7 +2637,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-lvxbxle",
@@ -2641,7 +2690,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-gyKdBja",
@@ -2693,7 +2743,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-oZdXBGY",
@@ -2747,7 +2798,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-zowPGRA",
@@ -2801,7 +2853,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-EXKzNoQ",
@@ -2855,7 +2908,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-wARadPK",
@@ -2909,7 +2963,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-rRKPBPZ",
@@ -2963,7 +3018,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-vAgdGdo",
@@ -3017,7 +3073,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xvnOKOg",
@@ -3071,7 +3128,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-pnxdmA",
@@ -3124,7 +3182,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-qWQYyO",
@@ -3176,7 +3235,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-eDQqGR",
@@ -3229,7 +3289,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-jZampKg",
@@ -3282,7 +3343,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-NKQzwDm",
@@ -3334,7 +3396,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-qQKgDQK",
@@ -3386,7 +3449,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-QdZPRPG",
@@ -3439,7 +3503,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-lGVeDyg",
@@ -3492,7 +3557,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-onAaRKY",
@@ -3544,7 +3610,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-AzYPoYp",
@@ -3596,7 +3663,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-wWQVDvK",
@@ -3649,7 +3717,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ePqPzxy",
@@ -3701,7 +3770,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-rAlDjjr",
@@ -3754,7 +3824,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-GYxQNOB",
@@ -3807,7 +3878,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-EZaEoWZ",
@@ -3861,7 +3933,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-Azgvgme",
@@ -3914,7 +3987,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-OqVQEqa",
@@ -3967,7 +4041,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-pAADyWp",
@@ -4020,7 +4095,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ABXpWxZ",
@@ -4072,7 +4148,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-bwXnKxb",
@@ -4124,7 +4201,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ABeKbDP",
@@ -4178,7 +4256,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-qGZbPBW",
@@ -4232,7 +4311,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xvrmPDz",
@@ -4286,7 +4366,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-PDZgWbr",
@@ -4340,7 +4421,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-qGKXwVb",
@@ -4394,7 +4476,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xvBwbel",
@@ -4448,7 +4531,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-lvrzXan",
@@ -4502,7 +4586,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-OyRbnme",
@@ -4556,7 +4641,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-ngXQPYD",
@@ -4609,7 +4695,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-NANPyEr",
@@ -4662,7 +4749,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-ABdnqEb",
@@ -4716,7 +4804,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-RvadPmP",
@@ -4769,7 +4858,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-jgbDOzR",
@@ -4821,7 +4911,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-wAAYpej",
@@ -4874,7 +4965,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-YzgPVvo",
@@ -4928,7 +5020,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-mZoVqOj",
@@ -4982,7 +5075,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-gZrBlXN",
@@ -5034,7 +5128,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-vXWowya",
@@ -5086,7 +5181,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-vAjVYqK",
@@ -5138,7 +5234,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-BAylBR",
@@ -5192,7 +5289,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-KRnvwga",
@@ -5246,7 +5344,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-RAxAEBq",
@@ -5300,7 +5399,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-ZYrBDxW",
@@ -5353,7 +5453,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-wAdeEly",
@@ -5407,7 +5508,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-mZDygDl",
@@ -5460,7 +5562,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume",
+    "subCategory": "perfume"
   },
   {
     "id": "laverne-xvnyXya",
@@ -5512,7 +5615,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-EXYPoKy",
@@ -5565,7 +5669,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-qGzBmWY",
@@ -5617,7 +5722,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-eQOAoRP",
@@ -5668,7 +5774,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-XzArYev",
@@ -5722,7 +5829,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-vARWBbz",
@@ -5776,7 +5884,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-bREgdVw",
@@ -5828,7 +5937,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-OywmzdD",
@@ -5881,7 +5991,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-qGqPXEK",
@@ -5935,7 +6046,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-QzwYVGW",
@@ -5988,7 +6100,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-PDEorQx",
@@ -6040,7 +6153,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-ngerPoN",
@@ -6092,7 +6206,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-ngGrPXN",
@@ -6145,7 +6260,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-WzZwowr",
@@ -6197,7 +6313,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-wAREVoj",
@@ -6251,7 +6368,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-wARGOrV",
@@ -6304,7 +6422,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-QzyYDaq",
@@ -6356,7 +6475,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-YzyYejq",
@@ -6409,7 +6529,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-YzyYVER",
@@ -6463,7 +6584,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-BpEKqaA",
@@ -6515,7 +6637,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-qQnpbWK",
@@ -6569,7 +6692,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-YgBjdRa",
@@ -6623,7 +6747,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-RAGjeYY",
@@ -6676,7 +6801,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-GYEzEOn",
@@ -6728,7 +6854,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-DGWKBbz",
@@ -6780,7 +6907,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-lGmgNVV",
@@ -6833,7 +6961,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-bRBGjvA",
@@ -6886,7 +7015,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-PdRXyjB",
@@ -6939,7 +7069,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-BrVnAdr",
@@ -6992,7 +7123,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-Wzzgvmz",
@@ -7044,7 +7176,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-zoaeoAR",
@@ -7097,7 +7230,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-Dpzpvob",
@@ -7151,7 +7285,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-bwDmOKP",
@@ -7205,7 +7340,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-vAjYYWK",
@@ -7257,7 +7393,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "gift_set",
+    "subCategory": "gift_set"
   },
   {
     "id": "laverne-PDZgWRq",
@@ -7311,7 +7448,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-BrjXmyO",
@@ -7364,7 +7502,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-vXdZNDy",
@@ -7417,7 +7556,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-NKmpdDX",
@@ -7469,7 +7609,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-qGDmVKK",
@@ -7523,7 +7664,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-aeYZvyD",
@@ -7576,7 +7718,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-XegqDeD",
@@ -7629,7 +7772,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-mQXEjej",
@@ -7682,7 +7826,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "hair_mist"
+    "categoryType": "hair_mist",
+    "subCategory": "hair_mist"
   },
   {
     "id": "laverne-ngyvwza",
@@ -7735,7 +7880,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-BpqmPlN",
@@ -7789,7 +7935,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-BpwOoeY",
@@ -7843,7 +7990,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-GqgpRxW",
@@ -7896,7 +8044,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-ydQwGKq",
@@ -7949,7 +8098,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-azrvXoz",
@@ -8002,7 +8152,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-gyBOraK",
@@ -8055,7 +8206,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-GqgpRZP",
@@ -8109,7 +8261,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   },
   {
     "id": "laverne-wAjbDYn",
@@ -8161,6 +8314,7 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini"
+    "categoryType": "mini",
+    "subCategory": "mini"
   }
 ]

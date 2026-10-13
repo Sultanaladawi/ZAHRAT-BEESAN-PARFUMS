@@ -70,6 +70,30 @@ const REHAB_SUBCATEGORIES = [
     unitAr: 'معطراً', unitEn: 'sprays' }
 ];
 
+// ── Laverne: fine-grained luxury sub-categories (order = display order) ──
+const LAVERNE_SUBCATEGORIES = [
+  { key: 'perfume', icon: '💎', chipAr: 'العطور الفاخرة', chipEn: 'Luxury Perfumes',
+    titleAr: 'العطور الفاخرة والنخبة الملكية (Eau de Parfum)', titleEn: 'Luxury Eau de Parfum',
+    descAr: 'تشكيلة عطور لافيرن الرسمية الفردية والمجموعة الكريستالية الملكية الفاخرة', descEn: 'Official standalone Laverne perfumes & royal crystal collection',
+    unitAr: 'عطراً', unitEn: 'perfumes' },
+  { key: 'gift_set', icon: '🎁', chipAr: 'بكجات ومجموعات الإهداء', chipEn: 'Gift Sets',
+    titleAr: 'بكجات ومجموعات الإهداء والاستكشاف الملكية', titleEn: 'Luxury Gift Sets & Boxes',
+    descAr: 'صناديق ومجموعات الإهداء والاستكشاف الملكية بتغليف فاخر متكامل للمناسبات', descEn: 'Discovery sets, royal gift boxes & luxury presentation collections',
+    unitAr: 'مجموعة وبوكس', unitEn: 'gift sets' },
+  { key: 'bundle', icon: '✨', chipAr: 'باقات العطور المزدوجة (البكجات)', chipEn: 'Duo Bundles',
+    titleAr: 'باقات العطور المزدوجة والباكجات الخاصة', titleEn: 'Fragrance Duos & Special Bundles',
+    descAr: 'باقات دمج عطرين معاً والخيارات المزدوجة الأكثر طلباً', descEn: 'Two-perfume combos and duo fragrance packages',
+    unitAr: 'باقة', unitEn: 'bundles' },
+  { key: 'hair_mist', icon: '🌸', chipAr: 'عطور الشعر', chipEn: 'Hair Mists',
+    titleAr: 'عطور الشعر الملكية (هير مست)', titleEn: 'Royal Hair Mists',
+    descAr: 'عطور شعر ناعمة ومغذية بروائح لافيرن الأيقونية الفواحة', descEn: 'Nourishing lightweight hair mists infused with iconic scents',
+    unitAr: 'عطر شعر', unitEn: 'hair mists' },
+  { key: 'mini', icon: '🧴', chipAr: 'عطور ميني وتوزيعات', chipEn: 'Mini & Travel',
+    titleAr: 'عطور ميني (25 مل) وتوزيعات المناسبات', titleEn: 'Mini Perfumes (25ml) & Favors',
+    descAr: 'عطور ميني 25 مل للسفر وحقيبة اليد، وتوزيعات الأعياد والمناسبات', descEn: 'Pocket-sized 25ml travel perfumes and event distribution favors',
+    unitAr: 'صنفاً', unitEn: 'items' }
+];
+
 function getFlagUrl(iso) {
   if (!iso) return 'https://flagcdn.com/24x18/jo.png';
   if (iso === 'eu') return 'https://flagcdn.com/24x18/eu.png';
@@ -458,7 +482,7 @@ async function selectHouse(houseId) {
     }
     await ensureHouseCatalogLoaded(houseId);
     perfumesData = catalogByHouse[houseId] || [];
-    if (houseId === 'al-rehab' || (typeof currentFilter === 'string' && currentFilter.startsWith('rehab:'))) {
+    if (houseId === 'al-rehab' || houseId === 'laverne' || (typeof currentFilter === 'string' && (currentFilter.startsWith('rehab:') || currentFilter.startsWith('laverne:')))) {
       currentFilter = 'all';
     }
     renderCatalog(currentFilter, currentSearch);
@@ -952,6 +976,7 @@ function renderCatalogFilterBar() {
   if (!bar) return;
   const isAr = currentLang === 'ar';
   const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
+  const isLaverne = activeHouse === 'laverne' && perfumesData.some(p => p.subCategory);
 
   if (isRehab) {
     const totalCount = perfumesData.length;
@@ -980,9 +1005,36 @@ function renderCatalogFilterBar() {
     });
 
     bar.innerHTML = html;
+  } else if (isLaverne) {
+    const totalCount = perfumesData.length;
+    const subCounts = {};
+    perfumesData.forEach(p => {
+      if (p.subCategory) subCounts[p.subCategory] = (subCounts[p.subCategory] || 0) + 1;
+    });
+
+    let html = `
+      <button type="button" class="catalog-filter-btn ${currentFilter === 'all' ? 'active-filter' : ''}" data-filter="all" onclick="filterCatalog('all', this)" id="filterAllBtn">
+        ✨ ${isAr ? 'كافة منتجات لافيرن' : 'All Laverne'} (${totalCount})
+      </button>
+    `;
+
+    LAVERNE_SUBCATEGORIES.forEach(cat => {
+      const cnt = subCounts[cat.key] || 0;
+      if (cnt === 0) return;
+      const chipText = isAr ? cat.chipAr : cat.chipEn;
+      const filterKey = `laverne:${cat.key}`;
+      const isActive = currentFilter === filterKey;
+      html += `
+        <button type="button" class="catalog-filter-btn ${isActive ? 'active-filter' : ''}" data-filter="${filterKey}" onclick="filterCatalog('${filterKey}', this)">
+          ${cat.icon} ${chipText} (${cnt})
+        </button>
+      `;
+    });
+
+    bar.innerHTML = html;
   } else {
     // Restore default filter bar for other houses if needed
-    if (!bar.querySelector('[data-filter="perfumes"]') || bar.querySelector('[data-filter^="rehab:"]')) {
+    if (!bar.querySelector('[data-filter="perfumes"]') || bar.querySelector('[data-filter^="rehab:"]') || bar.querySelector('[data-filter^="laverne:"]')) {
       bar.innerHTML = `
         <button type="button" class="catalog-filter-btn ${currentFilter === 'all' ? 'active-filter' : ''}" data-filter="all" onclick="filterCatalog('all', this)" id="filterAllBtn" data-i18n="filterAll">✨ ${isAr ? 'كافة المنتجات' : 'All Products'} (${perfumesData.length})</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'perfumes' ? 'active-filter' : ''}" data-filter="perfumes" onclick="filterCatalog('perfumes', this)" data-i18n="filterPerfumes">💎 ${isAr ? 'العطور الفاخرة' : 'Luxury Perfumes'}</button>
@@ -1036,6 +1088,8 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     // 1. Category Filter
     if (typeof filter === 'string' && filter.startsWith('rehab:')) {
       if (p.subCategory !== filter.slice(6)) return false;
+    } else if (typeof filter === 'string' && filter.startsWith('laverne:')) {
+      if (p.subCategory !== filter.slice(8)) return false;
     } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
     } else if (filter === 'oils') {
@@ -1114,6 +1168,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   filtered.sort((a, b) => (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99));
 
   const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
+  const isLaverne = activeHouse === 'laverne' && perfumesData.some(p => p.subCategory);
 
   // Al-Rehab: dedicated sections (order = display order)
   const REHAB_SECTION_CONFIGS = REHAB_SUBCATEGORIES.map(s => ({
@@ -1126,13 +1181,27 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     match: (p) => p.subCategory === s.key
   }));
 
+  // Laverne: dedicated sections (order = display order)
+  const LAVERNE_SECTION_CONFIGS = LAVERNE_SUBCATEGORIES.map(s => ({
+    key: s.key,
+    icon: s.icon,
+    title: currentLang === 'ar' ? s.titleAr : s.titleEn,
+    desc: currentLang === 'ar' ? s.descAr : s.descEn,
+    unitAr: s.unitAr,
+    unitEn: s.unitEn,
+    match: (p) => p.subCategory === s.key
+  }));
+
   if (isRehab) {
     const order = Object.fromEntries(REHAB_SUBCATEGORIES.map((s, i) => [s.key, i + 1]));
+    filtered.sort((a, b) => (order[a.subCategory] || 99) - (order[b.subCategory] || 99));
+  } else if (isLaverne) {
+    const order = Object.fromEntries(LAVERNE_SUBCATEGORIES.map((s, i) => [s.key, i + 1]));
     filtered.sort((a, b) => (order[a.subCategory] || 99) - (order[b.subCategory] || 99));
   }
 
   // Category section definitions
-  const SECTION_CONFIGS = isRehab ? REHAB_SECTION_CONFIGS : [
+  const SECTION_CONFIGS = isRehab ? REHAB_SECTION_CONFIGS : (isLaverne ? LAVERNE_SECTION_CONFIGS : [
     {
       key: 'perfume',
       icon: '💎',
@@ -1207,6 +1276,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     const activeSec = SECTION_CONFIGS.find(s =>
       s.key === filter ||
       (typeof filter === 'string' && filter.startsWith('rehab:') && s.key === filter.slice(6)) ||
+      (typeof filter === 'string' && filter.startsWith('laverne:') && s.key === filter.slice(8)) ||
       (filter === 'bundles' && s.key === 'bundle') ||
       (filter === 'perfumes' && s.key === 'perfume') ||
       (filter === 'oils' && s.key === 'oil') ||
