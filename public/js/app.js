@@ -26,6 +26,50 @@ let currentSearch = '';
 let activeModalPerfume = null;
 let activeHouse = 'ghalati';
 
+// ── Al-Rehab: fine-grained sub-categories (order = display order) ──
+const REHAB_SUBCATEGORIES = [
+  { key: 'perfume', icon: '💎', chipAr: 'العطور', chipEn: 'Perfumes',
+    titleAr: 'العطور (60 – 125 مل)', titleEn: 'Perfumes (60–125 ml)',
+    descAr: 'عطور الرحاب الأصلية بأحجام 60 و75 و80 و100 و120 مل', descEn: 'Authentic Al Rehab perfumes in 60–125 ml bottles',
+    unitAr: 'عطراً', unitEn: 'perfumes' },
+  { key: 'mini', icon: '🧴', chipAr: 'عطور ميني', chipEn: 'Mini',
+    titleAr: 'عطور ميني (25 – 50 مل)', titleEn: 'Mini Perfumes (25–50 ml)',
+    descAr: 'عبوات صغيرة 30 و35 و50 مل مثالية للسفر والجيب', descEn: 'Compact 30, 35 & 50 ml bottles for travel and daily carry',
+    unitAr: 'عطراً', unitEn: 'minis' },
+  { key: 'pens', icon: '🖊️', chipAr: 'كراتين الأقلام', chipEn: 'Pen Cartons',
+    titleAr: 'كراتين عطور الأقلام (8 مل × 48 حبة)', titleEn: 'Pen Perfume Cartons (8 ml × 48)',
+    descAr: 'كرتونة كاملة بـ 48 قلم عطر جيب، مناسبة للتوزيع والهدايا', descEn: 'Full cartons of 48 pocket perfume pens, ideal for gifting & resale',
+    unitAr: 'كرتونة', unitEn: 'cartons' },
+  { key: 'bundle', icon: '🎁', chipAr: 'باقات ومجموعات', chipEn: 'Sets',
+    titleAr: 'باقات ومجموعات الإهداء', titleEn: 'Gift Sets & Bundles',
+    descAr: 'باقات 3 حبات ومجموعات السفر وأطقم الإهداء', descEn: '3-packs, travel sets & luxury gift collections',
+    unitAr: 'باقة ومجموعة', unitEn: 'sets' },
+  { key: 'oil', icon: '💧', chipAr: 'زيوت عطرية (رول)', chipEn: 'Roll-on Oils',
+    titleAr: 'الزيوت العطرية (رول)', titleEn: 'Perfume Oils (Roll-on)',
+    descAr: 'زيوت عطرية مركزة خالية من الكحول بعبوات رول 6 مل', descEn: 'Alcohol-free concentrated roll-on perfume oils',
+    unitAr: 'زيتاً', unitEn: 'oils' },
+  { key: 'dehn', icon: '🏺', chipAr: 'الدهون ودهن العود', chipEn: 'Dehn & Oud Oils',
+    titleAr: 'الدهون ودهن العود', titleEn: 'Dehn & Oud Oils',
+    descAr: 'دهن عود ودهون عطرية فاخرة بأحجام 3 و8 و10 و12 و15 و20 مل', descEn: 'Premium oud & perfume dehn in 3–20 ml bottles',
+    unitAr: 'دهناً', unitEn: 'dehn' },
+  { key: 'bakhoor', icon: '🪵', chipAr: 'البخور والدخون', chipEn: 'Bakhoor',
+    titleAr: 'البخور والدخون', titleEn: 'Bakhoor & Incense',
+    descAr: 'بخور عود ودخون ولبان ومبسوس لتعطير المجالس والمنازل', descEn: 'Oud bakhoor, dokhoon, frankincense & mabsoos for homes and majlis',
+    unitAr: 'صنفاً', unitEn: 'items' },
+  { key: 'maamoul', icon: '🔥', chipAr: 'المعمول', chipEn: 'Maamoul',
+    titleAr: 'المعمول', titleEn: 'Maamoul',
+    descAr: 'معمول الرحاب الفاخر بأوزان 60 و100 و200 جرام', descEn: 'Luxury Al Rehab maamoul in 60, 100 & 200 g jars',
+    unitAr: 'صنفاً', unitEn: 'items' },
+  { key: 'airfreshener', icon: '🌬️', chipAr: 'ملطفات الجو', chipEn: 'Air Fresheners',
+    titleAr: 'ملطفات الجو', titleEn: 'Air Fresheners',
+    descAr: 'ملطفات جو 300 مل بروائح البخور والعود', descEn: '300 ml air fresheners with bakhoor & oud scents',
+    unitAr: 'ملطفاً', unitEn: 'fresheners' },
+  { key: 'roomspray', icon: '🏠', chipAr: 'معطرات الغرف', chipEn: 'Room Sprays',
+    titleAr: 'معطرات الغرف والمنزل', titleEn: 'Room & Home Sprays',
+    descAr: 'معطرات غرف 500 مل ومعطرات جو وفواحات المنزل', descEn: '500 ml room sprays, home fragrances & diffusers',
+    unitAr: 'معطراً', unitEn: 'sprays' }
+];
+
 function getFlagUrl(iso) {
   if (!iso) return 'https://flagcdn.com/24x18/jo.png';
   if (iso === 'eu') return 'https://flagcdn.com/24x18/eu.png';
@@ -411,6 +455,9 @@ async function selectHouse(houseId) {
     }
     await ensureHouseCatalogLoaded(houseId);
     perfumesData = catalogByHouse[houseId] || [];
+    if (houseId === 'al-rehab' || (typeof currentFilter === 'string' && currentFilter.startsWith('rehab:'))) {
+      currentFilter = 'all';
+    }
     renderCatalog(currentFilter, currentSearch);
   } else {
     const house = typeof getHouseById === 'function' ? getHouseById(houseId) : (typeof FRAGRANCE_HOUSES !== 'undefined' ? FRAGRANCE_HOUSES.find(h => h.id === houseId) : null);
@@ -892,6 +939,57 @@ async function refreshLiveCatalogSilently() {
   }
 }
 
+function renderCatalogFilterBar() {
+  const bar = document.getElementById('catalogFilters');
+  if (!bar) return;
+  const isAr = currentLang === 'ar';
+  const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
+
+  if (isRehab) {
+    const totalCount = perfumesData.length;
+    const subCounts = {};
+    perfumesData.forEach(p => {
+      if (p.subCategory) subCounts[p.subCategory] = (subCounts[p.subCategory] || 0) + 1;
+    });
+
+    let html = `
+      <button type="button" class="catalog-filter-btn ${currentFilter === 'all' ? 'active-filter' : ''}" data-filter="all" onclick="filterCatalog('all', this)" id="filterAllBtn">
+        ✨ ${isAr ? 'كافة منتجات الرحاب' : 'All Al-Rehab'} (${totalCount})
+      </button>
+    `;
+
+    REHAB_SUBCATEGORIES.forEach(cat => {
+      const cnt = subCounts[cat.key] || 0;
+      if (cnt === 0) return;
+      const chipText = isAr ? cat.chipAr : cat.chipEn;
+      const filterKey = `rehab:${cat.key}`;
+      const isActive = currentFilter === filterKey;
+      html += `
+        <button type="button" class="catalog-filter-btn ${isActive ? 'active-filter' : ''}" data-filter="${filterKey}" onclick="filterCatalog('${filterKey}', this)">
+          ${cat.icon} ${chipText} (${cnt})
+        </button>
+      `;
+    });
+
+    bar.innerHTML = html;
+  } else {
+    // Restore default filter bar for other houses if needed
+    if (!bar.querySelector('[data-filter="perfumes"]') || bar.querySelector('[data-filter^="rehab:"]')) {
+      bar.innerHTML = `
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'all' ? 'active-filter' : ''}" data-filter="all" onclick="filterCatalog('all', this)" id="filterAllBtn" data-i18n="filterAll">✨ ${isAr ? 'كافة المنتجات' : 'All Products'} (${perfumesData.length})</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'perfumes' ? 'active-filter' : ''}" data-filter="perfumes" onclick="filterCatalog('perfumes', this)" data-i18n="filterPerfumes">💎 ${isAr ? 'العطور الفاخرة' : 'Luxury Perfumes'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'bundles' ? 'active-filter' : ''}" data-filter="bundles" onclick="filterCatalog('bundles', this)" data-i18n="filterBundles">🎁 ${isAr ? 'باقات الإهداء والباكجات' : 'Gift Sets & Bundles'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'offers' ? 'active-filter' : ''}" data-filter="offers" onclick="filterCatalog('offers', this)" data-i18n="filterOffers">🔥 ${isAr ? 'العروض الخاصة' : 'Special Offers'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'oils' ? 'active-filter' : ''}" data-filter="oils" onclick="filterCatalog('oils', this)" data-i18n="filterOils">💧 ${isAr ? 'الزيوت العطرية والتولات' : 'Perfume Oils'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'unisex' ? 'active-filter' : ''}" data-filter="unisex" onclick="filterCatalog('unisex', this)" data-i18n="filterUnisex">👑 ${isAr ? 'للجنسين' : 'Unisex'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'women' ? 'active-filter' : ''}" data-filter="women" onclick="filterCatalog('women', this)" data-i18n="filterWomen">🌸 ${isAr ? 'نسائي' : 'Women'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'men' ? 'active-filter' : ''}" data-filter="men" onclick="filterCatalog('men', this)" data-i18n="filterMen">🪵 ${isAr ? 'رجالي' : 'Men'}</button>
+      `;
+    }
+  }
+}
+
 function filterCatalog(category, btnElement) {
   if (activeModalPerfume) {
     const hero = document.getElementById('heroSection');
@@ -928,7 +1026,9 @@ function renderCatalog(filter = 'all', searchQuery = '') {
 
   const filtered = perfumesData.filter(p => {
     // 1. Category Filter
-    if (filter === 'perfumes') {
+    if (typeof filter === 'string' && filter.startsWith('rehab:')) {
+      if (p.subCategory !== filter.slice(6)) return false;
+    } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
     } else if (filter === 'oils') {
       const isOil = p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود') || (p.title || '').includes('تولة');
@@ -1005,8 +1105,26 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   const catPriority = { 'perfume': 1, 'bundle': 2, 'bakhoor': 3, 'oil': 4 };
   filtered.sort((a, b) => (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99));
 
+  const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
+
+  // Al-Rehab: dedicated sections (order = display order)
+  const REHAB_SECTION_CONFIGS = REHAB_SUBCATEGORIES.map(s => ({
+    key: s.key,
+    icon: s.icon,
+    title: currentLang === 'ar' ? s.titleAr : s.titleEn,
+    desc: currentLang === 'ar' ? s.descAr : s.descEn,
+    unitAr: s.unitAr,
+    unitEn: s.unitEn,
+    match: (p) => p.subCategory === s.key
+  }));
+
+  if (isRehab) {
+    const order = Object.fromEntries(REHAB_SUBCATEGORIES.map((s, i) => [s.key, i + 1]));
+    filtered.sort((a, b) => (order[a.subCategory] || 99) - (order[b.subCategory] || 99));
+  }
+
   // Category section definitions
-  const SECTION_CONFIGS = [
+  const SECTION_CONFIGS = isRehab ? REHAB_SECTION_CONFIGS : [
     {
       key: 'perfume',
       icon: '💎',
@@ -1045,6 +1163,8 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     }
   ];
 
+  renderCatalogFilterBar();
+
   // If viewing all products without search: render distinct luxury sections
   if (filter === 'all' && !q) {
     let sectionsHtml = '';
@@ -1076,7 +1196,14 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     container.innerHTML = sectionsHtml;
   } else {
     // When a specific filter is active or search is performed
-    const activeSec = SECTION_CONFIGS.find(s => s.key === filter || (filter === 'bundles' && s.key === 'bundle') || (filter === 'perfumes' && s.key === 'perfume') || (filter === 'oils' && s.key === 'oil') || (filter === 'bakhoor' && s.key === 'bakhoor'));
+    const activeSec = SECTION_CONFIGS.find(s =>
+      s.key === filter ||
+      (typeof filter === 'string' && filter.startsWith('rehab:') && s.key === filter.slice(6)) ||
+      (filter === 'bundles' && s.key === 'bundle') ||
+      (filter === 'perfumes' && s.key === 'perfume') ||
+      (filter === 'oils' && s.key === 'oil') ||
+      (filter === 'bakhoor' && s.key === 'bakhoor')
+    );
 
     let headerHtml = '';
     if (activeSec) {
@@ -1797,14 +1924,20 @@ function renderLightboxView() {
 
 function openLuxuryLightbox(index = 0) {
   const lb = ensureLuxuryLightboxDOM();
+  const wasOpen = lightboxState.isOpen;
   lightboxState.isOpen = true;
   lightboxState.index = index;
   lb.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  // Register the lightbox in browser history so the Back button closes it first
+  if (!wasOpen && !(history.state && history.state.lightbox)) {
+    history.pushState({ ...(history.state || {}), lightbox: true }, '', window.location.href);
+    lightboxState.pushedHistory = true;
+  }
   renderLightboxView();
 }
 
-function closeLuxuryLightbox() {
+function closeLuxuryLightbox(fromPopstate = false) {
   if (document.fullscreenElement) {
     document.exitFullscreen?.().catch(() => {});
   }
@@ -1812,6 +1945,16 @@ function closeLuxuryLightbox() {
   if (lb) lb.style.display = 'none';
   lightboxState.isOpen = false;
   document.body.style.overflow = '';
+  const img = document.getElementById('luxuryLightboxImg');
+  if (img) { img.style.transition = ''; img.style.transform = ''; }
+  lightboxResetZoom();
+  // Closed via X / Esc / backdrop: consume the history entry we pushed on open
+  if (!fromPopstate && lightboxState.pushedHistory && history.state && history.state.lightbox) {
+    lightboxState.pushedHistory = false;
+    history.back();
+  } else {
+    lightboxState.pushedHistory = false;
+  }
 }
 
 function lightboxStepImage(dir) {
@@ -1909,6 +2052,11 @@ window.addEventListener('keydown', (e) => {
 
 // Browser Back / Forward History support for full product page
 window.addEventListener('popstate', (e) => {
+  // 1) An open lightbox always consumes the Back press first
+  if (lightboxState.isOpen) {
+    closeLuxuryLightbox(true);
+    return;
+  }
   const hash = window.location.hash;
   if (hash.startsWith('#product/')) {
     const id = hash.replace('#product/', '');
