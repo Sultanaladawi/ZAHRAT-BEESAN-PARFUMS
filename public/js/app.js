@@ -358,7 +358,7 @@ function renderHousesDropdown() {
         const name = isAr ? h.nameAr : h.nameEn;
         return `
           <a href="#catalog" class="mega-brand-item" onclick="selectHouse('${h.id}')" title="${name}">
-            <img src="${h.logo}" class="mega-brand-item-logo" alt="${name}" loading="lazy">
+            <img src="${h.logo}?v=10" class="mega-brand-item-logo" alt="${name}" loading="lazy">
             <span class="mega-brand-item-name">${name}</span>
             <span class="mega-brand-item-country">${h.region === 'sa' ? '🇸🇦' : (h.region === 'ae' ? '🇦🇪' : '🇰🇼')}</span>
           </a>
@@ -383,7 +383,7 @@ function renderHousesStrip() {
         data-house-id="${h.id}" 
         onclick="selectHouse('${h.id}')"
         title="${name}">
-        <img src="${h.logo}" class="house-chip-logo" alt="${name}" loading="lazy">
+        <img src="${h.logo}?v=10" class="house-chip-logo" alt="${name}" loading="lazy">
         <span>${name}${countTag}</span>
       </button>
     `;
@@ -403,7 +403,7 @@ function renderFooterHouses() {
       return `
         <li>
           <a href="#catalog" onclick="selectHouse('${h.id}')" class="footer-brand-item">
-            <img src="${h.logo}" class="footer-brand-logo" alt="${name}" loading="lazy">
+            <img src="${h.logo}?v=10" class="footer-brand-logo" alt="${name}" loading="lazy">
             <span>${name}</span>
           </a>
         </li>
@@ -527,7 +527,7 @@ function renderBrandShowcase(h) {
 
   panel.innerHTML = `
     <div class="brand-showcase-logo-box">
-      <img src="${h.logo}" class="brand-showcase-main-logo" alt="${name}">
+      <img src="${h.logo}?v=10" class="brand-showcase-main-logo" alt="${name}">
     </div>
     <h2 class="brand-showcase-title-ar">${h.nameAr}</h2>
     <span class="brand-showcase-title-en">${h.nameEn}</span>
