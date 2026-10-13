@@ -40,7 +40,7 @@ prods.forEach(item => {
     item.categoryType = 'mini';
   }
   // 3. Gift sets & Luxury discovery boxes
-  else if (t.includes('مجموعة الإهداء') || t.includes('الحديقة الكُبرى') || t.includes('الحديقة الصغيرة') ||
+  else if (item.sallaId === 'ngXQPYD' || t.includes('مجموعة الإهداء') || t.includes('الحديقة الكُبرى') || t.includes('الحديقة الصغيرة') ||
            t.includes('مجموعة الإستكشاف') || t.includes('المجموعة الثلاثية') || t.includes('المجموعة الكاملة') ||
            t.includes('سينس فورايفر الكاملة') || t.includes('تايرنت - 10') || t.includes('تايرنت - 5') ||
            t.includes('والحديقة الصغيرة') || t.includes('لويارد والحديقة') || t.includes('بيلا والحديقة') ||
@@ -49,7 +49,8 @@ prods.forEach(item => {
     item.categoryType = 'gift_set';
   }
   // 4. Duo / Combo fragrance bundles
-  else if (t.includes('مجموعة') || t.includes('باقة') || t.includes('لك ولها') ||
+  else if (item.sallaId === 'jgbDOzR' || item.sallaId === 'wAdeEly' || item.sallaId === 'mZDygDl' ||
+           t.includes('مجموعة') || t.includes('باقة') || t.includes('لك ولها') ||
            t.includes('المتناقضات') || t.includes('الليل والنهار') || t.includes('القمر والنجوم') ||
            t.includes('الأيام البخورية') || t.includes('لاند اوف وود') || t.includes('ذا واي أوف لوف') ||
            t.includes('100 وايز أوف لوف') || t.includes('آي واز هير') || t.includes('ليتل قاردن')) {

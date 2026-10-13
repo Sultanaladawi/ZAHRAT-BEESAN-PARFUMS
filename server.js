@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
 const compression = require('compression');
 let sharp = null;
 let removeBackground = null;
@@ -1236,6 +1237,49 @@ async function syncWithLebonheurStore(force = false) {
   return cachedLebonheurCatalog;
 }
 
+function fetchSingleLaverneProductLive(slug) {
+  return new Promise((resolve) => {
+    const req = https.get(`https://laverne.com/ar/${slug}`, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+      },
+      timeout: 8000
+    }, res => {
+      let html = '';
+      res.on('data', c => html += c);
+      res.on('end', () => {
+        let price = null;
+        let origPrice = null;
+        let isAvailable = true;
+
+        const jsonLdRegex = /<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi;
+        let match;
+        while ((match = jsonLdRegex.exec(html)) !== null) {
+          try {
+            const data = JSON.parse(match[1].trim());
+            const p = data['@graph'] ? data['@graph'].find(x => x['@type'] === 'Product') : (data['@type'] === 'Product' ? data : null);
+            if (p && p.offers) {
+              price = parseFloat(p.offers.price);
+              if (p.offers.availability) {
+                isAvailable = p.offers.availability.includes('InStock');
+              }
+            }
+          } catch (e) {}
+        }
+
+        const origM = html.match(/class=["'][^"']*regular-price[^"']*["'][^>]*>\s*([\d.]+)/i) ||
+                      html.match(/<del[^>]*>\s*([\d.]+)\s*(?:ر\.س|SAR)?\s*<\/del>/i);
+        if (origM) origPrice = parseFloat(origM[1]);
+
+        resolve({ slug, price, origPrice, isAvailable });
+      });
+    });
+    req.on('error', () => resolve({ slug, error: true }));
+    req.on('timeout', () => { req.destroy(); resolve({ slug, timeout: true }); });
+  });
+}
+
 async function syncWithLaverneStore(force = false) {
   const now = Date.now();
   if (!force && cachedLaverneCatalog && (now - lastLaverneSyncTime < 90 * 1000)) {
@@ -1247,15 +1291,84 @@ async function syncWithLaverneStore(force = false) {
   isSyncingLaverne = true;
 
   try {
+    let masterList = [];
     if (fs.existsSync(LAVERNE_PERFUMES_PATH)) {
-      cachedLaverneCatalog = JSON.parse(fs.readFileSync(LAVERNE_PERFUMES_PATH, 'utf8'));
+      masterList = JSON.parse(fs.readFileSync(LAVERNE_PERFUMES_PATH, 'utf8'));
+    }
+    if (!masterList.length) {
+      isSyncingLaverne = false;
+      return [];
+    }
+
+    // Check availability & prices in concurrent batches of 8
+    const liveById = new Map();
+    const batchSize = 8;
+    for (let i = 0; i < masterList.length; i += batchSize) {
+      const slice = masterList.slice(i, i + batchSize);
+      const results = await Promise.all(slice.map(it => fetchSingleLaverneProductLive(it.sallaId)));
+      results.forEach(res => {
+        if (res && res.price !== null) {
+          liveById.set(res.slug, res);
+        }
+      });
+    }
+
+    if (liveById.size > 0) {
+      let changesDetected = false;
+      const syncedCatalog = masterList.map(item => {
+        const live = liveById.get(item.sallaId);
+        if (!live) return item;
+
+        const livePrice = Number(live.price) || item.sarPrice;
+        const liveReg = live.origPrice ? Math.round(Number(live.origPrice)) : (item.origSarPrice || livePrice);
+        const liveAvail = live.isAvailable !== false;
+        const liveStatus = liveAvail ? 'sale' : 'out';
+
+        const feeJod = item.feeJod || 12;
+        const newBaseJod = Math.round(livePrice / 5.29);
+        const newFinalJod = newBaseJod + feeJod;
+        const newOrigJod = liveReg > livePrice ? (Math.round(liveReg / 5.29) + feeJod) : newFinalJod;
+
+        if (
+          item.sarPrice !== livePrice ||
+          item.origSarPrice !== liveReg ||
+          item.finalJod !== newFinalJod ||
+          item.origJod !== newOrigJod ||
+          item.isAvailable !== liveAvail ||
+          item.status !== liveStatus
+        ) {
+          changesDetected = true;
+        }
+
+        return {
+          ...item,
+          sarPrice: livePrice,
+          origSarPrice: liveReg,
+          baseJod: newBaseJod,
+          finalJod: newFinalJod,
+          origJod: newOrigJod,
+          isAvailable: liveAvail,
+          status: liveStatus
+        };
+      });
+
+      cachedLaverneCatalog = syncedCatalog;
       lastLaverneSyncTime = Date.now();
-    } else {
-      cachedLaverneCatalog = [];
+
+      if (changesDetected) {
+        fs.writeFileSync(LAVERNE_PERFUMES_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        fs.writeFileSync(LAVERNE_ARCHIVE_PATH, JSON.stringify(syncedCatalog, null, 2), 'utf8');
+        console.log('[Laverne Live Sync] Price/Stock changes detected and updated!');
+      }
+    } else if (!cachedLaverneCatalog) {
+      cachedLaverneCatalog = masterList;
+      lastLaverneSyncTime = Date.now();
     }
   } catch (err) {
-    console.error('Laverne local load error:', err.message);
-    if (!cachedLaverneCatalog) cachedLaverneCatalog = [];
+    console.error('Laverne live sync error:', err.message);
+    if (!cachedLaverneCatalog && fs.existsSync(LAVERNE_PERFUMES_PATH)) {
+      cachedLaverneCatalog = JSON.parse(fs.readFileSync(LAVERNE_PERFUMES_PATH, 'utf8'));
+    }
   } finally {
     isSyncingLaverne = false;
   }
