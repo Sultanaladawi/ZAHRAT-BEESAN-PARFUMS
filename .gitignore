@@ -12,6 +12,8 @@ Thumbs.db
 
 # Temporary scrape samples and test dumps in scripts
 scripts/secundar_samples/
+scripts/raw_assaf/
+scripts/raw_laverne/
 scripts/*.png
 scripts/*.jpg
 scripts/*.jpeg

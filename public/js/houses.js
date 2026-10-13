@@ -102,6 +102,22 @@ const FRAGRANCE_HOUSES = [
     count: 38
   },
   {
+    id: "laverne",
+    nameAr: "دار لافيرن",
+    nameEn: "Laverne Perfumes",
+    logo: "images/brands/laverne.svg",
+    badge: "⚜️",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "عطور استثنائية مستوحاة من سحر الطبيعة (توباكو، بلو لافيرن، مس لافيرن، فانتوم، آي واز هير، لومير)",
+    specialtyEn: "Nature-Inspired Masterpieces & Signature Blends: Tobacco, Blue Laverne, Miss Laverne, Phantom, I Was Here & Lumiere",
+    descAr: "التشكيلة الرسمية الشاملة لدار لافيرن للعطور في زهرة بيسان مع توفير شامل لـ 217 عطراً ومجموعة وبكج إهداء ومعطرات شعر مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Laverne Perfumes collection at Zahrat Beesan with 217 authentic factory-sealed perfumes, signature scents, luxury gift sets & hair mists.",
+    hasActiveCatalog: true,
+    count: 217
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -354,21 +370,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Refined Gulf Creations Blending Freshness & Oriental Depth",
     descAr: "عطور خليجية راقية بتوليفات متوازنة تمنحك إحساساً ملكياً فريداً طوال اليوم.",
     descEn: "Exquisite compositions offering an all-day majestic aura of elegance and freshness.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "laverne",
-    nameAr: "عطور لافيرن",
-    nameEn: "Laverne Perfumes",
-    logo: "images/brands/laverne.svg",
-    badge: "⚜️",
-    region: "sa",
-    countryAr: "المملكة العربية السعودية 🇸🇦",
-    countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "عطور الطبيعة الساحرة (بلو لافيرن، ليدي روز، بيانكونيرو، لومينوس)",
-    specialtyEn: "Nature-Inspired Masterpieces & Signature Blends (Blue Laverne)",
-    descAr: "دار العطور السعودية المستوحاة من سحر الطبيعة وسحر النوتات الغنية والمميزة.",
-    descEn: "Prestigious Saudi brand inspired by natural beauty and captivating aromatics.",
     hasActiveCatalog: false
   },
   {

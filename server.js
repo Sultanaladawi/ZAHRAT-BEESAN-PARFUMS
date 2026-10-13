@@ -40,6 +40,14 @@ const LEBONHEUR_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'lebonheu
 const LEBONHEUR_ARCHIVE_PATH = path.join(__dirname, 'data', 'lebonheur_master_archive.json');
 const LEBONHEUR_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'lebonheur_master_bg.jpg');
 
+const LAVERNE_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'laverne_perfumes.json');
+const LAVERNE_ARCHIVE_PATH = path.join(__dirname, 'data', 'laverne_master_archive.json');
+const LAVERNE_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'laverne_master_bg.jpg');
+
+let cachedLaverneCatalog = null;
+let lastLaverneSyncTime = 0;
+let isSyncingLaverne = false;
+
 app.use(compression());
 app.use(express.json());
 
@@ -211,7 +219,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
         ? `rasasi_${idSlug.replace(/^rasasi-/, '')}`
         : (house === 'al-rehab'
           ? `alrehab_${idSlug.replace(/^alrehab-/, '')}`
-          : (house === 'labonair' ? `lebonheur_${idSlug.replace(/^lebonheur-/, '')}` : `ghalati_${idSlug}`))));
+          : (house === 'labonair'
+            ? `lebonheur_${idSlug.replace(/^lebonheur-/, '')}`
+            : (house === 'laverne' ? `laverne_${idSlug.replace(/^laverne-/, '')}` : `ghalati_${idSlug}`)))));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
@@ -223,7 +233,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
         ? RASASI_MASTER_BG_PATH
         : (house === 'al-rehab'
           ? ALREHAB_MASTER_BG_PATH
-          : (house === 'labonair' ? LEBONHEUR_MASTER_BG_PATH : MASTER_BG_PATH))));
+          : (house === 'labonair'
+            ? LEBONHEUR_MASTER_BG_PATH
+            : (house === 'laverne' ? LAVERNE_MASTER_BG_PATH : MASTER_BG_PATH)))));
   if (!sharp || !rawImgUrl) return rawImgUrl || `images/${house}_master_bg.jpg`;
 
   try {
@@ -1224,7 +1236,34 @@ async function syncWithLebonheurStore(force = false) {
   return cachedLebonheurCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair)
+async function syncWithLaverneStore(force = false) {
+  const now = Date.now();
+  if (!force && cachedLaverneCatalog && (now - lastLaverneSyncTime < 90 * 1000)) {
+    return cachedLaverneCatalog;
+  }
+  if (isSyncingLaverne) {
+    return cachedLaverneCatalog || [];
+  }
+  isSyncingLaverne = true;
+
+  try {
+    if (fs.existsSync(LAVERNE_PERFUMES_PATH)) {
+      cachedLaverneCatalog = JSON.parse(fs.readFileSync(LAVERNE_PERFUMES_PATH, 'utf8'));
+      lastLaverneSyncTime = Date.now();
+    } else {
+      cachedLaverneCatalog = [];
+    }
+  } catch (err) {
+    console.error('Laverne local load error:', err.message);
+    if (!cachedLaverneCatalog) cachedLaverneCatalog = [];
+  } finally {
+    isSyncingLaverne = false;
+  }
+
+  return cachedLaverneCatalog;
+}
+
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne)
 app.get('/api/catalog', async (req, res) => {
   const force = req.query.force === '1';
   const house = (req.query.house || 'ghalati').toLowerCase();
@@ -1238,7 +1277,9 @@ app.get('/api/catalog', async (req, res) => {
           ? await syncWithAlrehabStore(force)
           : (house === 'labonair' || house === 'lebonheur' || house === 'le-bonheur')
             ? await syncWithLebonheurStore(force)
-            : await syncWithGhalatiStore(force);
+            : (house === 'laverne'
+              ? await syncWithLaverneStore(force)
+              : await syncWithGhalatiStore(force));
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(data);
 });
@@ -1261,7 +1302,9 @@ app.get('/api/status', (req, res) => {
     lastAlrehabSync: lastAlrehabSyncTime ? new Date(lastAlrehabSyncTime).toISOString() : null,
     totalAlrehabProducts: cachedAlrehabCatalog ? cachedAlrehabCatalog.length : null,
     lastLebonheurSync: lastLebonheurSyncTime ? new Date(lastLebonheurSyncTime).toISOString() : null,
-    totalLebonheurProducts: cachedLebonheurCatalog ? cachedLebonheurCatalog.length : null
+    totalLebonheurProducts: cachedLebonheurCatalog ? cachedLebonheurCatalog.length : null,
+    lastLaverneSync: lastLaverneSyncTime ? new Date(lastLaverneSyncTime).toISOString() : null,
+    totalLaverneProducts: cachedLaverneCatalog ? cachedLaverneCatalog.length : null
   });
 });
 
@@ -1273,6 +1316,7 @@ setInterval(() => {
   syncWithRasasiStore(true).catch(() => {});
   syncWithAlrehabStore(true).catch(() => {});
   syncWithLebonheurStore(true).catch(() => {});
+  syncWithLaverneStore(true).catch(() => {});
 }, 2 * 60 * 1000);
 
 app.listen(PORT, () => {
@@ -1294,5 +1338,8 @@ app.listen(PORT, () => {
   });
   syncWithLebonheurStore(true).then(list => {
     console.log(`🔄 Initial Live Le Bonheur Sync Complete: ${list.length} active products.`);
+  });
+  syncWithLaverneStore(true).then(list => {
+    console.log(`🔄 Initial Live Laverne Sync Complete: ${list.length} active products.`);
   });
 });
