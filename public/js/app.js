@@ -745,6 +745,7 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
       const rawImg = live.image?.url || '';
       const origImg = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
       const tempItem = { id: `ghalati-${sid}`, title: live.name, overview: cleanDesc, categoryType: catType };
+      const existingItem = (list || []).find(it => String(it.sallaId) === sid || it.id === `ghalati-${sid}`);
       const bottleCount = getClientBottleCount(tempItem);
       const feeJod = getClientDeliveryFeeJod(tempItem);
       const baseJod = Math.round(livePrice / 5.29);
@@ -768,7 +769,7 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         promotionTitle: live.promotion_title || '',
         url: live.url || `https://ghalati.com/ar/p${sid}`,
         bottleUrl: origImg || rawImg,
-        image: origImg || rawImg,
+        image: (existingItem && existingItem.image && !existingItem.image.startsWith('http')) ? existingItem.image : `images/ghalati_${sid}.jpg`,
         originalImage: origImg || rawImg,
         galleryImages: [origImg || rawImg],
         overview: cleanDesc || `${live.name} من دار غلاتي للعطور.`,

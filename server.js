@@ -47,6 +47,7 @@ const LAVERNE_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'laverne
 
 const DERAAH_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'deraah_perfumes.json');
 const DERAAH_ARCHIVE_PATH = path.join(__dirname, 'data', 'deraah_master_archive.json');
+const DERAAH_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'deraah_master_bg.jpg');
 
 let cachedLaverneCatalog = null;
 let lastLaverneSyncTime = 0;
@@ -243,7 +244,11 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
           ? `alrehab_${idSlug.replace(/^alrehab-/, '')}`
           : (house === 'labonair'
             ? `lebonheur_${idSlug.replace(/^lebonheur-/, '')}`
-            : (house === 'laverne' ? `laverne_${idSlug.replace(/^laverne-/, '')}` : `ghalati_${idSlug}`)))));
+            : (house === 'laverne'
+              ? `laverne_${idSlug.replace(/^laverne-/, '')}`
+              : (house === 'deraah'
+                ? `deraah_${idSlug.replace(/^deraah-/, '')}`
+                : `ghalati_${idSlug}`))))));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
@@ -257,7 +262,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
           ? ALREHAB_MASTER_BG_PATH
           : (house === 'labonair'
             ? LEBONHEUR_MASTER_BG_PATH
-            : (house === 'laverne' ? LAVERNE_MASTER_BG_PATH : MASTER_BG_PATH)))));
+            : (house === 'laverne'
+              ? LAVERNE_MASTER_BG_PATH
+              : (house === 'deraah' ? DERAAH_MASTER_BG_PATH : MASTER_BG_PATH))))));
   if (!sharp || !rawImgUrl) return rawImgUrl || `images/${house}_master_bg.jpg`;
 
   try {
@@ -1454,6 +1461,7 @@ setInterval(() => {
   syncWithAlrehabStore(true).catch(() => {});
   syncWithLebonheurStore(true).catch(() => {});
   syncWithLaverneStore(true).catch(() => {});
+  syncWithDeraahStore(true).catch(() => {});
 }, 2 * 60 * 1000);
 
 app.listen(PORT, () => {
