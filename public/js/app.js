@@ -20,7 +20,7 @@ let currentLang = 'ar';
 let activeCurrency = CURRENCIES[0]; // JOD by default
 let cartItemsCount = 0;
 let perfumesData = [];
-const catalogByHouse = { all: [], ghalati: [], assaf: [], thunayan: [], rasasi: [], 'al-rehab': [], labonair: [], laverne: [] };
+const catalogByHouse = { all: [], ghalati: [], assaf: [], thunayan: [], rasasi: [], 'al-rehab': [], labonair: [], laverne: [], deraah: [] };
 let currentFilter = 'all';
 let currentSearch = '';
 let activeModalPerfume = null;
@@ -441,7 +441,7 @@ async function selectHouse(houseId) {
   const subtitleText = document.getElementById('catalogSubtitleText');
   const isAr = currentLang === 'ar';
 
-  if (houseId === 'all' || houseId === 'ghalati' || houseId === 'assaf' || houseId === 'thunayan' || houseId === 'rasasi' || houseId === 'al-rehab' || houseId === 'labonair' || houseId === 'laverne') {
+  if (houseId === 'all' || houseId === 'ghalati' || houseId === 'assaf' || houseId === 'thunayan' || houseId === 'rasasi' || houseId === 'al-rehab' || houseId === 'labonair' || houseId === 'laverne' || houseId === 'deraah') {
     if (panel) panel.style.display = 'none';
     if (filters) filters.style.display = 'flex';
     if (grid) grid.style.display = 'grid';
@@ -449,8 +449,8 @@ async function selectHouse(houseId) {
     if (houseId === 'all') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
       if (titleText) titleText.textContent = isAr ? '✨ روائع وتحف قصر زهرة بيسان — تشكيلة العطور الأكثر طلباً وشهرة' : '✨ Zahrat Beesan Royal Masterpieces — Most Requested Fragrances';
-      if (subtitleText) subtitleText.textContent = isAr ? 'مختارات ملكية استثنائية منتقاة بعناية من كبرى الدور الخليجية والعربية (عساف، لافيرن، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)' : 'Hand-picked royal masterpieces from leading Arabian perfume houses (Assaf, Laverne, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)';
-    } else if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair' || houseId === 'laverne') {
+      if (subtitleText) subtitleText.textContent = isAr ? 'مختارات ملكية استثنائية منتقاة بعناية من كبرى الدور الخليجية والعربية (عساف، درعه، لافيرن، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)' : 'Hand-picked royal masterpieces from leading Arabian perfume houses (Assaf, Deraah, Laverne, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)';
+    } else if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair' || houseId === 'laverne' || houseId === 'deraah') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = 'none';
       if (currentFilter === 'bakhoor') {
         currentFilter = 'all';
@@ -467,6 +467,9 @@ async function selectHouse(houseId) {
       } else if (houseId === 'laverne') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — دار لافيرن للعطور (Laverne Perfumes)' : 'Complete Official Collection — Laverne Perfumes';
         if (subtitleText) subtitleText.textContent = isAr ? 'كافة عطور وباقات ومعطرات شعر دار لافيرن الرسمية أصلية 100% مستوردة مباشرة من المصدر' : 'All authentic Laverne perfumes, signature scents, gift sets & hair mists imported directly';
+      } else if (houseId === 'deraah') {
+        if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة درعه للعطور (Deraah Perfumes)' : 'Complete Official Collection — Deraah Perfumes';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 346 عطراً وطقم إهداء وبدائل النيش من شركة درعه أصلية 100% مستوردة مباشرة من المصدر' : 'All 346 authentic Deraah perfumes, gift sets & niche alternatives imported directly';
       } else {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور ثنيان (Thnyan Perfumes)' : 'Complete Official Collection — Thnyan Perfumes';
         if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 79 عطراً ومجموعة وبوكس إهداء من دار ثنيان أصلية 100% مستوردة مباشرة من المصدر' : 'All 79 authentic Thnyan perfumes, luxury gift sets & special offers imported directly';
@@ -486,7 +489,7 @@ async function selectHouse(houseId) {
     }
     await ensureHouseCatalogLoaded(houseId);
     perfumesData = catalogByHouse[houseId] || [];
-    if (houseId === 'all' || houseId === 'al-rehab' || houseId === 'laverne' || (typeof currentFilter === 'string' && (currentFilter.startsWith('rehab:') || currentFilter.startsWith('laverne:')))) {
+    if (houseId === 'all' || houseId === 'al-rehab' || houseId === 'laverne' || houseId === 'deraah' || (typeof currentFilter === 'string' && (currentFilter.startsWith('rehab:') || currentFilter.startsWith('laverne:')))) {
       currentFilter = 'all';
     }
     renderCatalog(currentFilter, currentSearch);
@@ -821,7 +824,7 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         house,
         title: (item.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
         titleEn: (item.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
-        categoryType: ((house === 'assaf' || house === 'thunayan' || house === 'labonair' || house === 'laverne') && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
+        categoryType: ((house === 'assaf' || house === 'thunayan' || house === 'labonair' || house === 'laverne' || house === 'deraah') && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
         bottleCount,
         feeJod,
         sarPrice: livePrice,
@@ -845,7 +848,7 @@ async function ensureHouseCatalogLoaded(house = 'all') {
     if (Array.isArray(catalogByHouse['all']) && catalogByHouse['all'].length > 0) {
       return catalogByHouse['all'];
     }
-    const houses = ['laverne', 'assaf', 'rasasi', 'thunayan', 'ghalati', 'labonair', 'al-rehab'];
+    const houses = ['laverne', 'assaf', 'rasasi', 'deraah', 'thunayan', 'ghalati', 'labonair', 'al-rehab'];
     const allResults = await Promise.all(houses.map(h => ensureHouseCatalogLoaded(h)));
     const combined = [];
     houses.forEach((h, idx) => {
@@ -870,7 +873,9 @@ async function ensureHouseCatalogLoaded(house = 'all') {
           ? 'data/alrehab_perfumes.json'
           : (house === 'labonair'
             ? 'data/lebonheur_perfumes.json'
-            : (house === 'laverne' ? 'data/laverne_perfumes.json' : 'data/perfumes.json')))));
+            : (house === 'laverne'
+              ? 'data/laverne_perfumes.json'
+              : (house === 'deraah' ? 'data/deraah_perfumes.json' : 'data/perfumes.json'))))));
   let loadedFromLiveEndpoint = false;
   let data = [];
   try {
@@ -928,6 +933,9 @@ async function loadCatalog() {
     } else if (hashProdId.startsWith('laverne-')) {
       activeHouse = 'laverne';
       renderHousesStrip();
+    } else if (hashProdId.startsWith('deraah-')) {
+      activeHouse = 'deraah';
+      renderHousesStrip();
     }
 
     await ensureHouseCatalogLoaded(activeHouse);
@@ -935,7 +943,7 @@ async function loadCatalog() {
     renderCatalog(currentFilter, currentSearch);
 
     // Preload the other active houses silently in the background for instant switching
-    ['ghalati', 'assaf', 'thunayan', 'rasasi', 'al-rehab', 'labonair', 'laverne'].filter(h => h !== activeHouse).forEach((h, idx) => {
+    ['ghalati', 'assaf', 'thunayan', 'rasasi', 'al-rehab', 'labonair', 'laverne', 'deraah'].filter(h => h !== activeHouse).forEach((h, idx) => {
       setTimeout(() => ensureHouseCatalogLoaded(h), 500 * (idx + 1));
     });
   } catch (err) {
@@ -957,7 +965,7 @@ async function loadCatalog() {
 
 async function refreshLiveCatalogSilently() {
   try {
-    const house = (activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'rasasi' || activeHouse === 'al-rehab' || activeHouse === 'labonair' || activeHouse === 'laverne') ? activeHouse : 'ghalati';
+    const house = (activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'rasasi' || activeHouse === 'al-rehab' || activeHouse === 'labonair' || activeHouse === 'laverne' || activeHouse === 'deraah') ? activeHouse : 'ghalati';
     const res = await fetch(`/api/catalog?house=${house}&force=1`).catch(() => null);
     let freshData = null;
     if (res && res.ok) {
@@ -1060,7 +1068,7 @@ function renderCatalogFilterBar() {
         <button type="button" class="catalog-filter-btn ${currentFilter === 'perfumes' ? 'active-filter' : ''}" data-filter="perfumes" onclick="filterCatalog('perfumes', this)" data-i18n="filterPerfumes">💎 ${isAr ? 'العطور الفاخرة' : 'Luxury Perfumes'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'bundles' ? 'active-filter' : ''}" data-filter="bundles" onclick="filterCatalog('bundles', this)" data-i18n="filterBundles">🎁 ${isAr ? 'باقات الإهداء والباكجات' : 'Gift Sets & Bundles'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'offers' ? 'active-filter' : ''}" data-filter="offers" onclick="filterCatalog('offers', this)" data-i18n="filterOffers">🔥 ${isAr ? 'العروض الخاصة' : 'Special Offers'}</button>
-        <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair' || activeHouse === 'laverne') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
+        <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair' || activeHouse === 'laverne' || activeHouse === 'deraah') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'oils' ? 'active-filter' : ''}" data-filter="oils" onclick="filterCatalog('oils', this)" data-i18n="filterOils">💧 ${isAr ? 'الزيوت العطرية والتولات' : 'Perfume Oils'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'unisex' ? 'active-filter' : ''}" data-filter="unisex" onclick="filterCatalog('unisex', this)" data-i18n="filterUnisex">👑 ${isAr ? 'للجنسين' : 'Unisex'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'women' ? 'active-filter' : ''}" data-filter="women" onclick="filterCatalog('women', this)" data-i18n="filterWomen">🌸 ${isAr ? 'نسائي' : 'Women'}</button>
@@ -1444,7 +1452,7 @@ function renderProductCard(p, t) {
 
 function getCategoryBadgeText(p) {
   const t = translations[currentLang] || translations.ar;
-  const isAssafOrThnyan = p.house === 'assaf' || p.house === 'thunayan' || p.house === 'labonair' || p.house === 'laverne' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-') || String(p.id || '').startsWith('lebonheur-') || String(p.id || '').startsWith('laverne-');
+  const isAssafOrThnyan = p.house === 'assaf' || p.house === 'thunayan' || p.house === 'labonair' || p.house === 'laverne' || p.house === 'deraah' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-') || String(p.id || '').startsWith('lebonheur-') || String(p.id || '').startsWith('laverne-') || String(p.id || '').startsWith('deraah-');
   if (p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود')) {
     return currentLang === 'ar' ? 'دهن عود / زيت عطري' : 'Perfume Oil';
   }
@@ -1470,7 +1478,8 @@ function openProductModal(id) {
             (catalogByHouse.rasasi || []).find(item => item.id === id) ||
             (catalogByHouse['al-rehab'] || []).find(item => item.id === id) ||
             (catalogByHouse.labonair || []).find(item => item.id === id) ||
-            (catalogByHouse.laverne || []).find(item => item.id === id);
+            (catalogByHouse.laverne || []).find(item => item.id === id) ||
+            (catalogByHouse.deraah || []).find(item => item.id === id);
   if (!p) return;
 
   activeModalPerfume = p;
@@ -1546,8 +1555,9 @@ function renderProductModalContent(p) {
   const isAlrehab = p.house === 'al-rehab' || String(p.id || '').startsWith('alrehab-');
   const isLebonheur = p.house === 'labonair' || String(p.id || '').startsWith('lebonheur-');
   const isLaverne = p.house === 'laverne' || String(p.id || '').startsWith('laverne-');
-  const houseNameAr = isAssaf ? 'عطور عساف' : (isThnyan ? 'عطور ثنيان' : (isRasasi ? 'شركة الرصاصي' : (isAlrehab ? 'شركة الرحاب' : (isLebonheur ? 'شركة لابونير' : (isLaverne ? 'دار لافيرن' : 'دار غلاتي')))));
-  const houseNameEn = isAssaf ? 'Assaf Perfumes' : (isThnyan ? 'Thnyan Perfumes' : (isRasasi ? 'Rasasi Perfumes' : (isAlrehab ? 'Al Rehab Perfumes' : (isLebonheur ? 'Le Bonheur Perfumes' : (isLaverne ? 'Laverne Perfumes' : 'Ghalati House')))));
+  const isDeraah = p.house === 'deraah' || String(p.id || '').startsWith('deraah-');
+  const houseNameAr = isAssaf ? 'عطور عساف' : (isThnyan ? 'عطور ثنيان' : (isRasasi ? 'شركة الرصاصي' : (isAlrehab ? 'شركة الرحاب' : (isLebonheur ? 'شركة لابونير' : (isLaverne ? 'دار لافيرن' : (isDeraah ? 'شركة درعه' : 'دار غلاتي'))))));
+  const houseNameEn = isAssaf ? 'Assaf Perfumes' : (isThnyan ? 'Thnyan Perfumes' : (isRasasi ? 'Rasasi Perfumes' : (isAlrehab ? 'Al Rehab Perfumes' : (isLebonheur ? 'Le Bonheur Perfumes' : (isLaverne ? 'Laverne Perfumes' : (isDeraah ? 'Deraah Perfumes' : 'Ghalati House'))))));
   const houseBadgeLabel = isAssaf
     ? '👑 عطور عساف • Assaf Perfumes (السعودية)'
     : (isThnyan
@@ -1560,7 +1570,9 @@ function renderProductModalContent(p) {
             ? '✨ شركة لابونير • Le Bonheur Perfumes (السعودية)'
             : (isLaverne
               ? '⚜️ دار لافيرن • Laverne Perfumes (السعودية)'
-              : '🌟 دار غلاتي • Ghalati Parfums (السعودية)')))));
+              : (isDeraah
+                ? '🛡️ شركة درعه • Deraah Perfumes (السعودية)'
+                : '🌟 دار غلاتي • Ghalati Parfums (السعودية)'))))));
 
   const t = translations[currentLang] || translations.ar;
   const title = currentLang === 'ar' ? p.title : p.titleEn;
@@ -2180,7 +2192,8 @@ window.addEventListener('popstate', (e) => {
                 (catalogByHouse.rasasi || []).find(item => item.id === id) ||
                 (catalogByHouse['al-rehab'] || []).find(item => item.id === id) ||
                 (catalogByHouse.labonair || []).find(item => item.id === id) ||
-                (catalogByHouse.laverne || []).find(item => item.id === id);
+                (catalogByHouse.laverne || []).find(item => item.id === id) ||
+                (catalogByHouse.deraah || []).find(item => item.id === id);
       if (p) openProductModal(id);
     }
   } else if (activeModalPerfume) {

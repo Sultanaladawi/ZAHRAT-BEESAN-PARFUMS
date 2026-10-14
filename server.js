@@ -45,9 +45,30 @@ const LAVERNE_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'laverne_pe
 const LAVERNE_ARCHIVE_PATH = path.join(__dirname, 'data', 'laverne_master_archive.json');
 const LAVERNE_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'laverne_master_bg.jpg');
 
+const DERAAH_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'deraah_perfumes.json');
+const DERAAH_ARCHIVE_PATH = path.join(__dirname, 'data', 'deraah_master_archive.json');
+
 let cachedLaverneCatalog = null;
 let lastLaverneSyncTime = 0;
 let isSyncingLaverne = false;
+
+let cachedDeraahCatalog = null;
+let lastDeraahSyncTime = 0;
+let isSyncingDeraah = false;
+
+async function syncWithDeraahStore(force = false) {
+  if (!cachedDeraahCatalog || force) {
+    if (fs.existsSync(DERAAH_PERFUMES_PATH)) {
+      try {
+        cachedDeraahCatalog = JSON.parse(fs.readFileSync(DERAAH_PERFUMES_PATH, 'utf8'));
+        lastDeraahSyncTime = Date.now();
+      } catch (e) {
+        cachedDeraahCatalog = [];
+      }
+    }
+  }
+  return cachedDeraahCatalog || [];
+}
 
 app.use(compression());
 app.use(express.json());
@@ -1376,7 +1397,7 @@ async function syncWithLaverneStore(force = false) {
   return cachedLaverneCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne)
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne, ?house=deraah)
 app.get('/api/catalog', async (req, res) => {
   const force = req.query.force === '1';
   const house = (req.query.house || 'ghalati').toLowerCase();
@@ -1392,7 +1413,9 @@ app.get('/api/catalog', async (req, res) => {
             ? await syncWithLebonheurStore(force)
             : (house === 'laverne'
               ? await syncWithLaverneStore(force)
-              : await syncWithGhalatiStore(force));
+              : (house === 'deraah'
+                ? await syncWithDeraahStore(force)
+                : await syncWithGhalatiStore(force)));
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(data);
 });
@@ -1417,7 +1440,8 @@ app.get('/api/status', (req, res) => {
     lastLebonheurSync: lastLebonheurSyncTime ? new Date(lastLebonheurSyncTime).toISOString() : null,
     totalLebonheurProducts: cachedLebonheurCatalog ? cachedLebonheurCatalog.length : null,
     lastLaverneSync: lastLaverneSyncTime ? new Date(lastLaverneSyncTime).toISOString() : null,
-    totalLaverneProducts: cachedLaverneCatalog ? cachedLaverneCatalog.length : null
+    totalLaverneProducts: cachedLaverneCatalog ? cachedLaverneCatalog.length : null,
+    totalDeraahProducts: cachedDeraahCatalog ? cachedDeraahCatalog.length : 346
   });
 });
 

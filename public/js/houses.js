@@ -14,12 +14,12 @@ const FRAGRANCE_HOUSES = [
     region: "global",
     countryAr: "المملكة الأردنية الهاشمية 🇯🇴",
     countryEn: "Jordan & International 🇯🇴",
-    specialtyAr: "مختارات حصرية من أرقى بيوت العطور الملكية المعتمدة (عساف، لافيرن، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)",
-    specialtyEn: "Curated Masterpieces from the Finest Royal Houses (Assaf, Laverne, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)",
+    specialtyAr: "مختارات حصرية من أرقى بيوت العطور المعتمدة (عساف، لافيرن، درعه، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)",
+    specialtyEn: "Curated Masterpieces from the Finest Houses (Assaf, Laverne, Deraah, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)",
     descAr: "قصر العطور الملكية الشامل — تصفح أحدث وأرقى ما أنتجته دور العطور الخليجية والعربية بضمان الأصالة 100%.",
     descEn: "The Premier Royal Perfume Destination — Browse the finest creations from authorized Arabian and French houses with 100% authenticity guarantee.",
     hasActiveCatalog: true,
-    count: 1475
+    count: 1821
   },
   {
     id: "ghalati",
@@ -134,6 +134,22 @@ const FRAGRANCE_HOUSES = [
     count: 217
   },
   {
+    id: "deraah",
+    nameAr: "شركة درعه",
+    nameEn: "Deraah Perfumes",
+    logo: "images/brands/deraah.svg",
+    badge: "🛡️",
+    region: "sa",
+    countryAr: "المملكة العربية السعودية 🇸🇦",
+    countryEn: "Saudi Arabia 🇸🇦",
+    specialtyAr: "أضخم تشكيلة عطور فرنسية وشرقية وبدائل نيش وأطقم إهداء (سيرين، مايوس، براود، لينك، كيج، بورموا)",
+    specialtyEn: "Leading French & Oriental Collections: Serene, Maios, Proud, Link, Cage, Pour Moi & Luxury Gift Sets",
+    descAr: "التشكيلة الرسمية الشاملة لشركة درعه للعطور في زهرة بيسان مع توفير فوري لـ 346 عطراً وطقم إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Deraah Perfumes collection at Zahrat Beesan with 346 authentic factory-sealed perfumes and luxury gift sets.",
+    hasActiveCatalog: true,
+    count: 346
+  },
+  {
     id: "almajed",
     nameAr: "الماجد للعود",
     nameEn: "Almajed For Oud",
@@ -146,21 +162,6 @@ const FRAGRANCE_HOUSES = [
     specialtyEn: "Heritage Agarwood & Royalty Fragrances Since 1956: Reema, Hakim, Miral & Special 4 You",
     descAr: "أعرق بيوت العود والمسك والعطور الشرقية في المملكة. نوفر كافة روائع الماجد للعود الرسمية والمختومة بضمان 100%.",
     descEn: "One of the most prestigious Arabian perfumeries founded in 1956, renowned for exceptional heritage ouds.",
-    hasActiveCatalog: false
-  },
-  {
-    id: "deraah",
-    nameAr: "شركة درعة",
-    nameEn: "Deraah Perfumes",
-    logo: "images/brands/deraah.svg",
-    badge: "🛡️",
-    region: "sa",
-    countryAr: "المملكة العربية السعودية 🇸🇦",
-    countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "أضخم تشكيلة عطور فرنسية وشرقية وبدائل نيش (كاج، لينكي، ماجستيك، بورموا، سيرين)",
-    specialtyEn: "Leading French & Oriental Collections: Cage, Link, Majestic, Pour Moi & Serene",
-    descAr: "كبرى شركات العطور ومستحضرات التجميل بالمملكة. متوفرة بالكامل للاستيراد والطلب الفوري المباشر بضمان زهرة بيسان.",
-    descEn: "Saudi Arabia's premier perfume retailer with hundreds of world-class French-oriental blends.",
     hasActiveCatalog: false
   },
   {
