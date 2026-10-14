@@ -1401,15 +1401,19 @@ function renderProductCard(p, t) {
       </button>
     `;
 
-  const cardHouseLabel = (p.house === 'assaf' || String(p.id || '').startsWith('assaf-'))
-    ? 'عطور عساف'
-    : ((p.house === 'thunayan' || String(p.id || '').startsWith('thnyan-'))
-      ? 'عطور ثنيان'
-      : ((p.house === 'rasasi' || String(p.id || '').startsWith('rasasi-'))
-        ? 'شركة الرصاصي'
-        : ((p.house === 'al-rehab' || String(p.id || '').startsWith('alrehab-'))
-          ? 'شركة الرحاب'
-          : ((p.house === 'labonair' || String(p.id || '').startsWith('lebonheur-')) ? 'شركة لابونير' : 'دار غلاتي'))));
+  const cardHouseLabel = (p.house === 'deraah' || String(p.id || '').startsWith('deraah-'))
+    ? 'شركة درعه'
+    : ((p.house === 'laverne' || String(p.id || '').startsWith('laverne-'))
+      ? 'دار لافيرن'
+      : ((p.house === 'assaf' || String(p.id || '').startsWith('assaf-'))
+        ? 'عطور عساف'
+        : ((p.house === 'thunayan' || String(p.id || '').startsWith('thnyan-'))
+          ? 'عطور ثنيان'
+          : ((p.house === 'rasasi' || String(p.id || '').startsWith('rasasi-'))
+            ? 'شركة الرصاصي'
+            : ((p.house === 'al-rehab' || String(p.id || '').startsWith('alrehab-'))
+              ? 'شركة الرحاب'
+              : ((p.house === 'labonair' || String(p.id || '').startsWith('lebonheur-')) ? 'شركة لو بانهور' : 'دار غلاتي'))))));
 
   return `
     <article class="product-card ${isOut ? 'product-card-out' : ''}" data-id="${p.id}">
