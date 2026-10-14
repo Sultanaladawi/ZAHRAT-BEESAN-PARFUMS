@@ -111,6 +111,7 @@ def process_and_save_catalog(output_folder: Path, max_per_brand: int = 50):
         {"id": "thunayan", "nameAr": "عطور ثنيان", "file": data_dir / "thnyan_perfumes.json"},
         {"id": "rasasi", "nameAr": "شركة الرصاصي", "file": base_dir / "data" / "rasasi_master_archive.json"},
         {"id": "al-rehab", "nameAr": "شركة الرحاب", "file": base_dir / "data" / "alrehab_master_archive.json"},
+        {"id": "deraah", "nameAr": "شركة درعه", "file": data_dir / "deraah_perfumes.json"},
         {"id": "labonair", "nameAr": "لو بانهور", "file": data_dir / "lebonheur_perfumes.json"},
     ]
 
