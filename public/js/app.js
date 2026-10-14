@@ -1112,6 +1112,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       if (p.subCategory !== filter.slice(8)) return false;
     } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
+      if ((p.title || '').includes('باكج') || (p.title || '').includes('بكج') || (p.title || '').includes('بوكس') || (p.title || '').includes('باقة') || (p.title || '').includes('طقم') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة')) || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة')) return false;
     } else if (filter === 'oils') {
       const isOil = p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود') || (p.title || '').includes('تولة');
       if (!isOil) return false;
@@ -1120,7 +1121,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       const isBakhoor = p.categoryType === 'bakhoor';
       if (!isBakhoor) return false;
     } else if (filter === 'bundles') {
-      const isBundle = p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.title || '').includes('باقة') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة'));
+      const isBundle = p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.title || '').includes('باكج') || (p.title || '').includes('بكج') || (p.title || '').includes('بوكس') || (p.title || '').includes('باقة') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة'));
       if (!isBundle) return false;
     } else if (filter === 'offers') {
       const fullTxt = `${p.title || ''} ${p.promotionTitle || ''} ${p.overview || ''}`;
@@ -1481,7 +1482,6 @@ function openProductModal(id) {
   const prodSection = document.getElementById('productPageSection');
 
   if (hero) hero.style.display = 'none';
-  if (pavilions) pavilions.style.display = 'none';
   if (catalog) catalog.style.display = 'none';
   if (prodSection) prodSection.style.display = 'block';
 
@@ -1509,42 +1509,12 @@ function closeProductModal() {
     closeLuxuryLightbox(true);
   }
   const hero = document.getElementById('heroSection');
-  const pavilions = document.getElementById('royalPavilions');
   const catalog = document.getElementById('catalog');
   const prodSection = document.getElementById('productPageSection');
 
   if (prodSection) prodSection.style.display = 'none';
   if (hero) hero.style.display = '';
-  if (pavilions) pavilions.style.display = '';
   if (catalog) catalog.style.display = '';
-
-// ── Royal Cinema Modal Controller ──
-function openCinemaModal() {
-  const modal = document.getElementById('cinemaModal');
-  if (modal) {
-    modal.style.display = 'flex';
-  }
-  const video = document.getElementById('royalHeroVideo');
-  const fallback = document.getElementById('cinemaVideoFallback');
-  if (video) {
-    video.play().then(() => {
-      if (fallback) fallback.style.display = 'none';
-    }).catch(() => {
-      if (fallback) fallback.style.display = 'flex';
-    });
-  }
-}
-
-function closeCinemaModal() {
-  const modal = document.getElementById('cinemaModal');
-  if (modal) {
-    modal.style.display = 'none';
-  }
-  const video = document.getElementById('royalHeroVideo');
-  if (video) {
-    video.pause();
-  }
-}
 
   const prevPerfumeId = activeModalPerfume ? activeModalPerfume.id : null;
   activeModalPerfume = null;

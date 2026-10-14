@@ -170,133 +170,13 @@
         وجهتكم الرسمية الأولى لأعرق دور العطور الخليجية والعربية (لافيرن، عساف، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور) مع التوصيل الفوري لكافة أنحاء العالم وضمان الأصالة 100%.
       </p>
 
-      <!-- أزرار الإجراءات الملكية والسينمائية -->
-      <div class="hero-actions-group">
-        <a href="#royalPavilions" class="hero-btn-primary">
-          <span class="btn-icon">🏛️</span>
-          <span>أجنحة الدور الملكية</span>
-        </a>
-        <button type="button" class="hero-btn-cinema" onclick="openCinemaModal()">
-          <span class="cinema-play-badge">▶</span>
-          <span>العرض السينمائي الترحيبي</span>
-        </button>
-        <a href="#catalog" onclick="selectHouse('all')" class="hero-btn-secondary">
-          <span class="btn-icon">✨</span>
-          <span>روائع زهرة بيسان</span>
-        </a>
-      </div>
-
-      <!-- إحصائيات الفخامة الملكية -->
+      <!-- شريط إحصائيات المتجر -->
       <div class="hero-stats-ticker">
         <div class="stat-pill"><strong class="stat-num">1,475+</strong> <span class="stat-label">عطر وبكج أصلي</span></div>
         <div class="stat-divider">✦</div>
-        <div class="stat-pill"><strong class="stat-num">7</strong> <span class="stat-label">دور معتمدة فورية</span></div>
-        <div class="stat-divider">✦</div>
-        <div class="stat-pill"><strong class="stat-num">45</strong> <span class="stat-label">داراً مسجلة للاستيراد</span></div>
+        <div class="stat-pill"><strong class="stat-num">7</strong> <span class="stat-label">دور عطور معتمدة</span></div>
         <div class="stat-divider">✦</div>
         <div class="stat-pill"><strong class="stat-num">100%</strong> <span class="stat-label">أصالة بختم المصنع</span></div>
-      </div>
-    </section>
-
-    <!-- ── أجنحة وبوابات دور العطور الملكية المعتمدة ── -->
-    <section class="royal-pavilions-section" id="royalPavilions">
-      <div class="pavilions-header">
-        <span class="pavilions-pill">🏛️ أجنحة الدور الملكية المعتمدة</span>
-        <h2 class="pavilions-title">بوابات كبرى بيوت العطور في قصر زهرة بيسان</h2>
-        <p class="pavilions-subtitle">اختر الدار المفضلة لديك للانتقال الفوري إلى جناحها الملكي واستعراض كامل عطورها وباقاتها الحصرية</p>
-      </div>
-
-      <div class="pavilions-grid">
-        <!-- 1. دار لافيرن -->
-        <div class="pavilion-card" onclick="selectHouse('laverne')">
-          <div class="pavilion-badge">🇸🇦 الرياض</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/laverne.svg?v=10" alt="دار لافيرن" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">دار لافيرن</h3>
-          <span class="pavilion-name-en">Laverne Perfumes</span>
-          <div class="pavilion-count-pill">154 عطراً وباقة فاخرة</div>
-          <p class="pavilion-desc">سحر الطبيعة والجمال (بلو لافيرن، توباكو، مس لافيرن، لادور بخور)</p>
-          <button type="button" class="pavilion-btn">دخول جناح لافيرن ➔</button>
-        </div>
-
-        <!-- 2. عطور عساف -->
-        <div class="pavilion-card" onclick="selectHouse('assaf')">
-          <div class="pavilion-badge">🇸🇦 الرياض</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/assaf.svg?v=10" alt="عطور عساف" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">عطور عساف</h3>
-          <span class="pavilion-name-en">Assaf Perfumes</span>
-          <div class="pavilion-count-pill">250 عطراً وبوكس إهداء</div>
-          <p class="pavilion-desc">أيقونات الفخامة وثبات استثنائي (فرانكل، وايلد كولت، أروقيت، ريسك)</p>
-          <button type="button" class="pavilion-btn">دخول جناح عساف ➔</button>
-        </div>
-
-        <!-- 3. شركة الرصاصي -->
-        <div class="pavilion-card" onclick="selectHouse('rasasi')">
-          <div class="pavilion-badge">🇦🇪 دبي</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/rasasi.svg?v=10" alt="شركة الرصاصي" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">شركة الرصاصي</h3>
-          <span class="pavilion-name-en">Rasasi Perfumes</span>
-          <div class="pavilion-count-pill">261 عطراً وبخوراً ملكياً</div>
-          <p class="pavilion-desc">أعرق بيوت الشرق منذ 1979 (هوس، هوس آيس، لا يقاوم، شهرة، دهن العود)</p>
-          <button type="button" class="pavilion-btn">دخول جناح الرصاصي ➔</button>
-        </div>
-
-        <!-- 4. عطور ثنيان -->
-        <div class="pavilion-card" onclick="selectHouse('thunayan')">
-          <div class="pavilion-badge">🇸🇦 الرياض</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/thunayan.svg?v=10" alt="عطور ثنيان" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">عطور ثنيان</h3>
-          <span class="pavilion-name-en">Thnyan Perfumes</span>
-          <div class="pavilion-count-pill">79 عطراً ومجموعة ملكية</div>
-          <p class="pavilion-desc">قمة عطور النيش الملكية (ديكتاتور، أول أوف يو، ليدي أوف ذا سين، أستون)</p>
-          <button type="button" class="pavilion-btn">دخول جناح ثنيان ➔</button>
-        </div>
-
-        <!-- 5. دار غلاتي -->
-        <div class="pavilion-card" onclick="selectHouse('ghalati')">
-          <div class="pavilion-badge">🇸🇦 مكة المكرمة</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/ghalati.svg?v=10" alt="دار غلاتي" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">دار غلاتي</h3>
-          <span class="pavilion-name-en">Ghalati Parfums</span>
-          <div class="pavilion-count-pill">124 عطراً نيش وباقة</div>
-          <p class="pavilion-desc">خلاصات العطور الفرنسية والشرقية النقية وباقات الإهداء الفاخرة</p>
-          <button type="button" class="pavilion-btn">دخول جناح غلاتي ➔</button>
-        </div>
-
-        <!-- 6. شركة الرحاب -->
-        <div class="pavilion-card" onclick="selectHouse('al-rehab')">
-          <div class="pavilion-badge">🇸🇦 جدة</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/al-rehab.svg?v=10" alt="شركة الرحاب" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">شركة الرحاب</h3>
-          <span class="pavilion-name-en">Al Rehab Perfumes</span>
-          <div class="pavilion-count-pill">625 عطراً وزيتاً وبخوراً</div>
-          <p class="pavilion-desc">عراقة التولات الشرقية والزيوت النقية والبخور والمعمول منذ 1975</p>
-          <button type="button" class="pavilion-btn">دخول جناح الرحاب ➔</button>
-        </div>
-
-        <!-- 7. لو بانهور -->
-        <div class="pavilion-card" onclick="selectHouse('labonair')">
-          <div class="pavilion-badge">🇸🇦 الرياض</div>
-          <div class="pavilion-logo-wrap">
-            <img src="images/brands/labonair.svg?v=10" alt="لو بانهور" class="pavilion-logo-img">
-          </div>
-          <h3 class="pavilion-name-ar">لو بانهور</h3>
-          <span class="pavilion-name-en">Le Bonheur Perfumes</span>
-          <div class="pavilion-count-pill">38 عطراً فرنسياً فاخراً</div>
-          <p class="pavilion-desc">عطور النيش الفرنسية الشرقية (بلاك كافالير، سفاير روج، ديليشز، قمرة)</p>
-          <button type="button" class="pavilion-btn">دخول جناح بانهور ➔</button>
-        </div>
       </div>
     </section>
 
@@ -582,43 +462,6 @@
         <button class="action-btn-whatsapp" onclick="closeShippingModal()" style="width: 100%; justify-content: center; padding: 12px;" data-i18n="btnClose">
           إغلاق والمتابعة
         </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 8. نافذة العرض السينمائي الملكي الترحيبي (Cinema Modal) ── -->
-  <div class="cinema-modal" id="cinemaModal" style="display: none;">
-    <div class="cinema-modal-backdrop" onclick="closeCinemaModal()"></div>
-    <div class="cinema-modal-dialog">
-      <div class="cinema-modal-header">
-        <div class="cinema-modal-title">
-          <span class="cinema-crest">👑</span>
-          <span>العرض السينمائي الرسمي — قصر زهرة بيسان للعطور الملكية</span>
-        </div>
-        <button type="button" class="cinema-modal-close" onclick="closeCinemaModal()" aria-label="Close">✕</button>
-      </div>
-      <div class="cinema-modal-body">
-        <div class="cinema-video-frame">
-          <video id="royalHeroVideo" class="cinema-player" controls playsinline poster="images/logo.jpg">
-            <source src="videos/zahrat_beesan_film.mp4" type="video/mp4">
-          </video>
-          <!-- Fallback Showcase Container until custom video is placed -->
-          <div class="cinema-video-fallback" id="cinemaVideoFallback">
-            <div class="cinema-fallback-content">
-              <img src="images/logo_transparent.png" alt="Zahrat Beesan" class="cinema-fallback-logo">
-              <h3 class="cinema-fallback-title">قصر زهرة بيسان للعطور الملكية</h3>
-              <span class="cinema-fallback-en">ZAHRAT BEESAN HAUTE PARFUMERIE</span>
-              <p class="cinema-fallback-p">
-                أهلاً بكم في قصر الفخامة والأناقة الملكية. وجهتكم الحصرية المعتمدة لأندر وأفخم روائع العطور والبخور من كبرى البيوت الخليجية والعربية والعالمية بضمان الأصالة 100%.
-              </p>
-              <div class="cinema-fallback-actions">
-                <a href="#catalog" onclick="closeCinemaModal(); selectHouse('all');" class="cinema-fallback-btn">
-                  <span>✨ تصفح روائع العطور الملكية الآن</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
