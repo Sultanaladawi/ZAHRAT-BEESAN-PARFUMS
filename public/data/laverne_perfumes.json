@@ -1954,8 +1954,8 @@
     "baseJod": 19,
     "finalJod": 31,
     "origJod": 37,
-    "isAvailable": true,
-    "status": "sale",
+    "isAvailable": false,
+    "status": "out",
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/onNXlwj",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/a690b6d0-d069-4227-8962-857aeb9b8d1e-969.11196911197x1000-6LtEZBVjtogdf0j6D6nrsfkBwJc9A1m1cp79YtOo.jpg",
@@ -2644,10 +2644,10 @@
     "id": "laverne-lvxbxle",
     "sallaId": "lvxbxle",
     "house": "laverne",
-    "title": "بخور الصباح",
-    "titleEn": "بخور الصباح",
+    "title": "باكج بخور الصباح",
+    "titleEn": "Morning Bakhur Luxury Bundle",
     "brand": "عطور لافيرن (Laverne)",
-    "bottleCount": 1,
+    "bottleCount": 2,
     "feeJod": 12,
     "sarPrice": 199,
     "origSarPrice": 269,
@@ -2690,8 +2690,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume",
-    "subCategory": "perfume"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-gyKdBja",
@@ -4318,10 +4318,10 @@
     "id": "laverne-xvrmPDz",
     "sallaId": "xvrmPDz",
     "house": "laverne",
-    "title": "البخور بالطريقة الفرنسية",
-    "titleEn": "البخور بالطريقة الفرنسية",
+    "title": "باكج البخور بالطريقة الفرنسية",
+    "titleEn": "French Style Bakhur Luxury Bundle",
     "brand": "عطور لافيرن (Laverne)",
-    "bottleCount": 1,
+    "bottleCount": 2,
     "feeJod": 12,
     "sarPrice": 199,
     "origSarPrice": 269,
@@ -4366,8 +4366,8 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "perfume",
-    "subCategory": "perfume"
+    "categoryType": "bundle",
+    "subCategory": "bundle"
   },
   {
     "id": "laverne-PDZgWbr",

@@ -50,12 +50,14 @@ prods.forEach(item => {
   }
   // 4. Duo / Combo fragrance bundles
   else if (item.sallaId === 'jgbDOzR' || item.sallaId === 'wAdeEly' || item.sallaId === 'mZDygDl' ||
-           t.includes('مجموعة') || t.includes('باقة') || t.includes('لك ولها') ||
+           item.sallaId === 'lvxbxle' || item.sallaId === 'xvrmPDz' ||
+           t.includes('مجموعة') || t.includes('باقة') || t.includes('باكج') || t.includes('لك ولها') ||
            t.includes('المتناقضات') || t.includes('الليل والنهار') || t.includes('القمر والنجوم') ||
            t.includes('الأيام البخورية') || t.includes('لاند اوف وود') || t.includes('ذا واي أوف لوف') ||
            t.includes('100 وايز أوف لوف') || t.includes('آي واز هير') || t.includes('ليتل قاردن')) {
     item.subCategory = 'bundle';
     item.categoryType = 'bundle';
+    item.bottleCount = 2;
   }
   // 5. Standalone Eau de Parfum
   else {
