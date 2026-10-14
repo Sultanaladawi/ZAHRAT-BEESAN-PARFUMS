@@ -34,7 +34,9 @@ async function processBottleToPodium(rawBuf, slug, isSet = false) {
     .toBuffer({ resolveWithObject: true });
 
   // Save the transparent PNG for future use or export
-  fs.writeFileSync(pngCutoutPath, cleanBottle.data);
+  try {
+    fs.writeFileSync(pngCutoutPath, cleanBottle.data);
+  } catch (e) {}
 
   // Resize to fit the podium (height ~490 for bottles, ~440 for sets)
   const targetH = isSet ? 440 : 490;
@@ -78,57 +80,88 @@ async function processBottleToPodium(rawBuf, slug, isSet = false) {
   return `images/deraah_${slug}.jpg`;
 }
 
-async function renderBatch(limit = 15) {
+async function renderBatch(limit = 0, concurrency = 5) {
   if (!fs.existsSync(PUBLIC_DATA_PATH)) {
     console.error('Deraah perfumes data not found!');
     return;
   }
 
   const catalog = JSON.parse(fs.readFileSync(PUBLIC_DATA_PATH, 'utf8'));
-  console.log(`Starting podium rendering for top ${limit} Deraah perfumes...`);
+  const totalToProcess = limit > 0 ? Math.min(limit, catalog.length) : catalog.length;
+  console.log(`Starting podium rendering for ${totalToProcess} Deraah perfumes (concurrency: ${concurrency})...`);
 
   let count = 0;
-  for (let i = 0; i < Math.min(limit, catalog.length); i++) {
-    const item = catalog[i];
-    const slug = (item.slug || `deraah-${i+1}`).replace(/[^a-zA-Z0-9_-]/g, '_');
-    const isSet = item.categoryType === 'bundle' || (item.title || '').includes('طقم');
-    const outRelative = `images/deraah_${slug}.jpg`;
-    const outFull = path.join(PUBLIC_IMAGES_DIR, `deraah_${slug}.jpg`);
+  let currentIndex = 0;
 
-    if (fs.existsSync(outFull)) {
-      console.log(`[${i+1}/${limit}] Already rendered on podium: ${item.title}`);
-      item.image = outRelative;
-      item.bottleUrl = item.image;
-      count++;
-      continue;
-    }
+  async function worker() {
+    while (currentIndex < totalToProcess) {
+      const i = currentIndex++;
+      const item = catalog[i];
+      const slug = (item.slug || `deraah-${i+1}`).replace(/[^a-zA-Z0-9_-]/g, '_');
+      const isSet = item.categoryType === 'bundle' || (item.title || '').includes('طقم');
+      const outRelative = `images/deraah_${slug}.jpg`;
+      const outFull = path.join(PUBLIC_IMAGES_DIR, `deraah_${slug}.jpg`);
 
-    const rawUrl = item.originalImage || item.image;
-    if (!rawUrl || !rawUrl.startsWith('http')) continue;
+      const rawUrl = (item.originalImage && item.originalImage.startsWith('http'))
+        ? item.originalImage
+        : ((item.bottleUrl && item.bottleUrl.startsWith('http'))
+          ? item.bottleUrl
+          : ((item.image && item.image.startsWith('http')) ? item.image : null));
 
-    try {
-      console.log(`[${i+1}/${limit}] Fetching & mounting on podium: ${item.title}...`);
-      const res = await fetch(rawUrl);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const buf = Buffer.from(await res.arrayBuffer());
-      const newImgPath = await processBottleToPodium(buf, slug, isSet);
-      item.image = newImgPath;
-      item.bottleUrl = newImgPath;
-      count++;
-      console.log(`  ✅ Successfully mounted: ${newImgPath}`);
-    } catch (err) {
-      console.error(`  ❌ Failed for ${item.title}:`, err.message);
+      if (fs.existsSync(outFull)) {
+        item.image = outRelative;
+        if (rawUrl) {
+          item.bottleUrl = rawUrl;
+          item.originalImage = rawUrl;
+          if (!Array.isArray(item.galleryImages) || item.galleryImages.length === 0) {
+            item.galleryImages = [rawUrl];
+          }
+        }
+        count++;
+        continue;
+      }
+
+      if (!rawUrl) continue;
+
+      try {
+        const res = await fetch(rawUrl, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const buf = Buffer.from(await res.arrayBuffer());
+        const newImgPath = await processBottleToPodium(buf, slug, isSet);
+        item.image = newImgPath;
+        item.bottleUrl = rawUrl;
+        item.originalImage = rawUrl;
+        if (!Array.isArray(item.galleryImages) || item.galleryImages.length === 0) {
+          item.galleryImages = [rawUrl];
+        } else if (!item.galleryImages.includes(rawUrl)) {
+          item.galleryImages.unshift(rawUrl);
+        }
+        count++;
+        console.log(`  ✅ [${count}/${totalToProcess}] Mounted on podium: ${item.title}`);
+      } catch (err) {
+        console.error(`  ❌ Failed for [${i+1}] ${item.title}:`, err.message);
+      }
+
+      if (count % 25 === 0) {
+        fs.writeFileSync(PUBLIC_DATA_PATH, JSON.stringify(catalog, null, 2), 'utf8');
+      }
     }
   }
+
+  const workers = Array.from({ length: concurrency }, () => worker());
+  await Promise.all(workers);
 
   fs.writeFileSync(PUBLIC_DATA_PATH, JSON.stringify(catalog, null, 2), 'utf8');
   if (fs.existsSync(MASTER_ARCHIVE_PATH)) {
     fs.writeFileSync(MASTER_ARCHIVE_PATH, JSON.stringify(catalog, null, 2), 'utf8');
   }
 
-  console.log(`\n🎉 Completed mounting ${count} Deraah perfumes onto the luxury template!`);
+  console.log(`\n🎉 Successfully completed mounting ${count}/${totalToProcess} Deraah perfumes onto the luxury template with original store gallery images!`);
 }
 
 const args = process.argv.slice(2);
-const limit = args[0] ? parseInt(args[0], 10) : 15;
-renderBatch(limit).catch(console.error);
+const limit = args[0] ? parseInt(args[0], 10) : 0;
+const concurrency = args[1] ? parseInt(args[1], 10) : 6;
+renderBatch(limit, concurrency).catch(console.error);

@@ -14,6 +14,7 @@ Thumbs.db
 scripts/secundar_samples/
 scripts/raw_assaf/
 scripts/raw_laverne/
+scripts/raw_deraah/
 scripts/*.png
 scripts/*.jpg
 scripts/*.jpeg
