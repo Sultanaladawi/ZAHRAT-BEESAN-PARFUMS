@@ -6,6 +6,22 @@
 
 const FRAGRANCE_HOUSES = [
   {
+    id: "all",
+    nameAr: "✨ روائع زهرة بيسان (كافة الدور)",
+    nameEn: "✨ Beesan Masterpieces (All Houses)",
+    logo: "images/logo_transparent.png",
+    badge: "👑",
+    region: "global",
+    countryAr: "المملكة الأردنية الهاشمية 🇯🇴",
+    countryEn: "Jordan & International 🇯🇴",
+    specialtyAr: "مختارات حصرية من أرقى بيوت العطور الملكية المعتمدة (عساف، لافيرن، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)",
+    specialtyEn: "Curated Masterpieces from the Finest Royal Houses (Assaf, Laverne, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)",
+    descAr: "قصر العطور الملكية الشامل — تصفح أحدث وأرقى ما أنتجته دور العطور الخليجية والعربية بضمان الأصالة 100%.",
+    descEn: "The Premier Royal Perfume Destination — Browse the finest creations from authorized Arabian and French houses with 100% authenticity guarantee.",
+    hasActiveCatalog: true,
+    count: 1475
+  },
+  {
     id: "ghalati",
     nameAr: "دار غلاتي",
     nameEn: "Ghalati Parfums",

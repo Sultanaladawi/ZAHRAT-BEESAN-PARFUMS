@@ -20,11 +20,11 @@ let currentLang = 'ar';
 let activeCurrency = CURRENCIES[0]; // JOD by default
 let cartItemsCount = 0;
 let perfumesData = [];
-const catalogByHouse = { ghalati: [], assaf: [], thunayan: [], rasasi: [], 'al-rehab': [], labonair: [], laverne: [] };
+const catalogByHouse = { all: [], ghalati: [], assaf: [], thunayan: [], rasasi: [], 'al-rehab': [], labonair: [], laverne: [] };
 let currentFilter = 'all';
 let currentSearch = '';
 let activeModalPerfume = null;
-let activeHouse = 'ghalati';
+let activeHouse = 'all';
 
 // ── Al-Rehab: fine-grained sub-categories (order = display order) ──
 const REHAB_SUBCATEGORIES = [
@@ -441,12 +441,16 @@ async function selectHouse(houseId) {
   const subtitleText = document.getElementById('catalogSubtitleText');
   const isAr = currentLang === 'ar';
 
-  if (houseId === 'ghalati' || houseId === 'assaf' || houseId === 'thunayan' || houseId === 'rasasi' || houseId === 'al-rehab' || houseId === 'labonair' || houseId === 'laverne') {
+  if (houseId === 'all' || houseId === 'ghalati' || houseId === 'assaf' || houseId === 'thunayan' || houseId === 'rasasi' || houseId === 'al-rehab' || houseId === 'labonair' || houseId === 'laverne') {
     if (panel) panel.style.display = 'none';
     if (filters) filters.style.display = 'flex';
     if (grid) grid.style.display = 'grid';
     const bakhoorFilterBtn = document.querySelector('.catalog-filter-btn[data-filter="bakhoor"]');
-    if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair' || houseId === 'laverne') {
+    if (houseId === 'all') {
+      if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
+      if (titleText) titleText.textContent = isAr ? '✨ روائع وتحف قصر زهرة بيسان — تشكيلة العطور الأكثر طلباً وشهرة' : '✨ Zahrat Beesan Royal Masterpieces — Most Requested Fragrances';
+      if (subtitleText) subtitleText.textContent = isAr ? 'مختارات ملكية استثنائية منتقاة بعناية من كبرى الدور الخليجية والعربية (عساف، لافيرن، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)' : 'Hand-picked royal masterpieces from leading Arabian perfume houses (Assaf, Laverne, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)';
+    } else if (houseId === 'assaf' || houseId === 'thunayan' || houseId === 'labonair' || houseId === 'laverne') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = 'none';
       if (currentFilter === 'bakhoor') {
         currentFilter = 'all';
@@ -482,7 +486,7 @@ async function selectHouse(houseId) {
     }
     await ensureHouseCatalogLoaded(houseId);
     perfumesData = catalogByHouse[houseId] || [];
-    if (houseId === 'al-rehab' || houseId === 'laverne' || (typeof currentFilter === 'string' && (currentFilter.startsWith('rehab:') || currentFilter.startsWith('laverne:')))) {
+    if (houseId === 'all' || houseId === 'al-rehab' || houseId === 'laverne' || (typeof currentFilter === 'string' && (currentFilter.startsWith('rehab:') || currentFilter.startsWith('laverne:')))) {
       currentFilter = 'all';
     }
     renderCatalog(currentFilter, currentSearch);
@@ -836,7 +840,23 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
   }
 }
 
-async function ensureHouseCatalogLoaded(house = 'ghalati') {
+async function ensureHouseCatalogLoaded(house = 'all') {
+  if (house === 'all') {
+    if (Array.isArray(catalogByHouse['all']) && catalogByHouse['all'].length > 0) {
+      return catalogByHouse['all'];
+    }
+    const houses = ['laverne', 'assaf', 'rasasi', 'thunayan', 'ghalati', 'labonair', 'al-rehab'];
+    const allResults = await Promise.all(houses.map(h => ensureHouseCatalogLoaded(h)));
+    const combined = [];
+    houses.forEach((h, idx) => {
+      const list = allResults[idx] || [];
+      // Take curated top bestsellers from each house (up to 12 items)
+      combined.push(...list.slice(0, 12));
+    });
+    catalogByHouse['all'] = combined;
+    return combined;
+  }
+
   if (Array.isArray(catalogByHouse[house]) && catalogByHouse[house].length > 0) {
     return catalogByHouse[house];
   }
@@ -1442,6 +1462,7 @@ function getCategoryBadgeText(p) {
 // ── Native Luxury Product Page View ──
 function openProductModal(id) {
   const p = perfumesData.find(item => item.id === id) ||
+            (catalogByHouse.all || []).find(item => item.id === id) ||
             (catalogByHouse.ghalati || []).find(item => item.id === id) ||
             (catalogByHouse.assaf || []).find(item => item.id === id) ||
             (catalogByHouse.thunayan || []).find(item => item.id === id) ||
@@ -1455,10 +1476,12 @@ function openProductModal(id) {
   renderProductModalContent(p);
 
   const hero = document.getElementById('heroSection');
+  const pavilions = document.getElementById('royalPavilions');
   const catalog = document.getElementById('catalog');
   const prodSection = document.getElementById('productPageSection');
 
   if (hero) hero.style.display = 'none';
+  if (pavilions) pavilions.style.display = 'none';
   if (catalog) catalog.style.display = 'none';
   if (prodSection) prodSection.style.display = 'block';
 
@@ -1486,12 +1509,42 @@ function closeProductModal() {
     closeLuxuryLightbox(true);
   }
   const hero = document.getElementById('heroSection');
+  const pavilions = document.getElementById('royalPavilions');
   const catalog = document.getElementById('catalog');
   const prodSection = document.getElementById('productPageSection');
 
   if (prodSection) prodSection.style.display = 'none';
   if (hero) hero.style.display = '';
+  if (pavilions) pavilions.style.display = '';
   if (catalog) catalog.style.display = '';
+
+// ── Royal Cinema Modal Controller ──
+function openCinemaModal() {
+  const modal = document.getElementById('cinemaModal');
+  if (modal) {
+    modal.style.display = 'flex';
+  }
+  const video = document.getElementById('royalHeroVideo');
+  const fallback = document.getElementById('cinemaVideoFallback');
+  if (video) {
+    video.play().then(() => {
+      if (fallback) fallback.style.display = 'none';
+    }).catch(() => {
+      if (fallback) fallback.style.display = 'flex';
+    });
+  }
+}
+
+function closeCinemaModal() {
+  const modal = document.getElementById('cinemaModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+  const video = document.getElementById('royalHeroVideo');
+  if (video) {
+    video.pause();
+  }
+}
 
   const prevPerfumeId = activeModalPerfume ? activeModalPerfume.id : null;
   activeModalPerfume = null;
