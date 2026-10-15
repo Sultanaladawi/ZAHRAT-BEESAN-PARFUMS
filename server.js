@@ -653,12 +653,7 @@ async function syncWithAssafStore(force = false) {
         }
 
         const p = { ...item, sallaId, house: 'assaf' };
-        if (p.categoryType === 'bakhoor') {
-          p.categoryType = 'perfume';
-          if (p.specs) p.specs.type = 'أو دو بارفيوم (Eau De Parfum)';
-          if (p.specsEn) p.specsEn.type = 'Eau De Parfum';
-          changesDetected = true;
-        }
+        // Preserve genuine categoryType (bakhoor, home fresheners, diffusers remain distinct from perfumes)
         p.title = (p.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim();
         p.titleEn = (p.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim();
 

@@ -399,7 +399,7 @@
     "origJod": 58,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/arrogate-pink-diva-255571/p1151255571",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/djNIw25Xy4lXP8woZVGWzWXCPSINNJT4yO7qXuxj.png",
     "image": "images/assaf_1151255571.jpg",
@@ -467,7 +467,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
       "size": "200 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -477,7 +477,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-646394479",
@@ -543,7 +543,7 @@
     "origJod": 50,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/wild-colt-200-ml/p1692580195",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/iNDCmVbLAjmc535lKaMC5Y9Ux1SJ1y3JpXVLWIBU.png",
     "image": "images/assaf_1692580195.jpg",
@@ -584,14 +584,14 @@
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
-    "sarPrice": 115,
+    "sarPrice": 99,
     "origSarPrice": 295,
-    "baseJod": 22,
-    "finalJod": 34,
+    "baseJod": 19,
+    "finalJod": 31,
     "origJod": 68,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/wild-colt-assaf/p1370701860",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/cJqgWVHFKL6m2wFJq3BqKFZLCajAGtFkke8Bn6ce.png",
     "image": "images/assaf_1370701860.jpg",
@@ -687,7 +687,7 @@
     "origJod": 69,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/gris-erik-200-ml/p1491376332",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/inRuZCXr6YJxEY934WWbI3nsIO6ptTxsRqGBdItO.jpg",
     "image": "images/assaf_1491376332.jpg",
@@ -927,7 +927,7 @@
     "origJod": 50,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/hook-blue/p1730850081",
     "bottleUrl": "https://cdn.files.salla.network/products/935113581/72a0e83c-cd06-4943-8e86-c6ac5c7ffff3_900x900.webp",
     "image": "images/assaf_1730850081.jpg",
@@ -1983,7 +1983,7 @@
     "origJod": 50,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/king-enable/p1552683209",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/HofcLQYGQSIo1OuOtq2kVSqIgHV3Or7F2Arffhpn.png",
     "image": "images/assaf_1552683209.jpg",
@@ -2205,7 +2205,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-611082214",
@@ -2253,7 +2253,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-1293950756",
@@ -2685,7 +2685,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-2092355928",
@@ -2703,7 +2703,7 @@
     "origJod": 69,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/frankel-aventus-strike/p2092355928",
     "bottleUrl": "https://cdn.files.salla.network/products/935113581/4dae8ea0-7698-424c-9ed8-1c5f4700f3d8-original.webp",
     "image": "images/assaf_2092355928.jpg",
@@ -3347,7 +3347,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "200 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -3357,7 +3357,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bundle"
   },
   {
     "id": "assaf-1006585511",
@@ -3693,7 +3693,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-757538292",
@@ -5411,7 +5411,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "200 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "بخور وعود فاخر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -5421,7 +5421,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bakhoor"
   },
   {
     "id": "assaf-536799694",
@@ -5603,7 +5603,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
       "size": "200 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "بخور وعود فاخر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -5613,7 +5613,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bakhoor"
   },
   {
     "id": "assaf-1731158495",
@@ -6717,7 +6717,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-612456968",
@@ -7043,7 +7043,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
       "size": "150 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "بخور وعود فاخر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -7053,7 +7053,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bakhoor"
   },
   {
     "id": "assaf-1839061432",
@@ -7235,7 +7235,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
       "size": "مجموعة عطور وهدايا فاخرة",
-      "type": "مجموعة إهداء وعروض ملكية",
+      "type": "عناية وترطيب",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -7427,7 +7427,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "500 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "معطر مفارش وأجواء",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -7437,7 +7437,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bakhoor"
   },
   {
     "id": "assaf-558544826",
@@ -7715,7 +7715,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "200 مل",
-      "type": "أو دو بارفيوم (Eau De Parfum)",
+      "type": "فواحة منزلية فاخرة",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -7725,7 +7725,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "bakhoor"
   },
   {
     "id": "assaf-722797759",
@@ -8291,7 +8291,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
       "size": "بودرة جسم عطرية فاخرة",
-      "type": "مجموعة إهداء وعروض ملكية",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -8339,7 +8339,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "بودرة جسم عطرية فاخرة",
-      "type": "مجموعة إهداء وعروض ملكية",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -8387,7 +8387,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "بودرة جسم عطرية فاخرة",
-      "type": "مجموعة إهداء وعروض ملكية",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -8781,7 +8781,7 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "perfume"
   },
   {
     "id": "assaf-972955204",
@@ -9011,7 +9011,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "بودرة جسم عطرية فاخرة",
-      "type": "مجموعة إهداء وعروض ملكية",
+      "type": "بودرة معطرة للجسم",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {

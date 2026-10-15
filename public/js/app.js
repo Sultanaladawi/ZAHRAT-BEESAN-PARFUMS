@@ -824,8 +824,7 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
         sallaId,
         house,
         title: (item.title || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
-        titleEn: (item.titleEn || '').replace(/\s*[-–—]?\s*(سيتم|تم)\s*[اإ]لغاء\s*العطر\s*/g, '').trim(),
-        categoryType: ((house === 'assaf' || house === 'thunayan' || house === 'labonair' || house === 'laverne' || house === 'deraah') && item.categoryType === 'bakhoor') ? 'perfume' : item.categoryType,
+        categoryType: item.categoryType,
         bottleCount,
         feeJod,
         sarPrice: livePrice,
@@ -1121,13 +1120,14 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       if (p.subCategory !== filter.slice(8)) return false;
     } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
-      if ((p.title || '').includes('باكج') || (p.title || '').includes('بكج') || (p.title || '').includes('بوكس') || (p.title || '').includes('باقة') || (p.title || '').includes('طقم') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة')) || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة')) return false;
+      if (/باكج|بكج|بوكس|باقة|طقم|معطر|فواحة|بخور|بودرة|باودر|توزيعات/i.test(p.title || '')) return false;
+      if ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة')) return false;
+      if (/باقة|طقم|مجموعة|بخور|معطر|فواحة|بودرة/i.test(p.specs?.type || '')) return false;
     } else if (filter === 'oils') {
       const isOil = p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود') || (p.title || '').includes('تولة');
       if (!isOil) return false;
     } else if (filter === 'bakhoor') {
-      if (p.house === 'assaf' || p.house === 'thunayan' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-')) return false;
-      const isBakhoor = p.categoryType === 'bakhoor';
+      const isBakhoor = p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '') || /بخور|معمول|معطر/i.test(p.specs?.type || '');
       if (!isBakhoor) return false;
     } else if (filter === 'bundles') {
       const isBundle = p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.title || '').includes('باكج') || (p.title || '').includes('بكج') || (p.title || '').includes('بوكس') || (p.title || '').includes('باقة') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة'));
@@ -1239,7 +1239,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       desc: t.secPerfumesDesc || 'تشكيلة استثنائية من أرقى العطور الشرقية والفرنسية الملكية بفوحان آسر وثبات طويل',
       unitAr: 'عطراً',
       unitEn: 'perfumes',
-      match: (p) => p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))
+      match: (p) => (p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))) && !/معطر|فواحة|^بخور\s|عود\s*بخور|بودرة|باودر|مجموعة|طقم|بكج|باكج/i.test(p.title || '')
     },
     {
       key: 'bundle',
@@ -1253,11 +1253,11 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     {
       key: 'bakhoor',
       icon: '🪵',
-      title: t.secBakhoorTitle || 'البخور والمعمول والمباخر الفاخرة',
-      desc: t.secBakhoorDesc || 'أجود أنواع العود الملكي، المبثوث، والمعمول التراثي لتعطير المجالس والمناسبات',
+      title: t.secBakhoorTitle || 'البخور والمعمول والمعطرات والمباخر',
+      desc: t.secBakhoorDesc || 'أجود أنواع العود الملكي، المبثوث، فواحات المنازل، ومعطرات المفارش التراثية',
       unitAr: 'صنفاً',
       unitEn: 'items',
-      match: (p) => p.categoryType === 'bakhoor'
+      match: (p) => p.categoryType === 'bakhoor' || /معطر|فواحة|^بخور\s|عود\s*بخور|معمول|دخون/i.test(p.title || '')
     },
     {
       key: 'oil',
@@ -1461,8 +1461,8 @@ function getCategoryBadgeText(p) {
   if (p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود')) {
     return currentLang === 'ar' ? 'دهن عود / زيت عطري' : 'Perfume Oil';
   }
-  if (!isAssafOrThnyan && (p.categoryType === 'bakhoor' || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول'))) {
-    return currentLang === 'ar' ? 'بخور ومعمول' : 'Bakhoor';
+  if (p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '') || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول') || (p.specs?.type || '').includes('معطر')) {
+    return currentLang === 'ar' ? 'بخور ومعطرات' : 'Bakhoor & Home';
   }
   if (p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.specs?.type || '').includes('بكج')) {
     return currentLang === 'ar' ? 'باقة إهداء' : 'Gift Set';
