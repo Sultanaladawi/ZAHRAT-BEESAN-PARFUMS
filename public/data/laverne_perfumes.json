@@ -7145,7 +7145,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/Wzzgvmz",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/b4810748-b13d-4f59-965a-fb5af8bf8c82-1000x1000-mhVYB9LjO79U505NnqfTIHGVBapzQiMTCIkbSoKY.jpg",
-    "image": "images/laverne_Wzzgvmz.jpg",
+    "image": "images/laverne_Wzzgvmz.jpg?v=2",
     "originalImage": "https://cdn.salla.sa/XzOPD/b4810748-b13d-4f59-965a-fb5af8bf8c82-1000x1000-mhVYB9LjO79U505NnqfTIHGVBapzQiMTCIkbSoKY.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/2a7b6efb-5446-491f-b832-f6fe6ba78c62-500x500-mhVYB9LjO79U505NnqfTIHGVBapzQiMTCIkbSoKY.jpg",
@@ -7177,7 +7177,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-zoaeoAR",

@@ -38,7 +38,11 @@ PACK_RE = re.compile(
     re.I,
 )
 # Room/fabric fresheners and deodorants keep the original photo.
-FRESHENER_RE = re.compile(r"ملطف|معطر\s*(?:ال)?جو|مفارش|فواحة|مزيل|deodorant|air\s*fresh", re.I)
+FRESHENER_RE = re.compile(
+    r"ملطف|معطر\s*(?:ال)?(?:جو|منزل|غرف|بيت|سيار)|مفارش|فواحة|مزيل"
+    r"|deodorant|air\s*fresh|home\s*fragrance|room\s*(?:spray|fragrance)",
+    re.I,
+)
 # Hair and body mists are bottles, so they go on the template.
 MIST_RE = re.compile(r"معطر\s*(?:ال)?(?:شعر|جسم)|عطر\s*الشعر|hair\s*mist|body\s*mist", re.I)
 

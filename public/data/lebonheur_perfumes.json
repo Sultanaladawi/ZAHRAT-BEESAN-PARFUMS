@@ -539,7 +539,7 @@
     "promotionTitle": "العرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/بكج-سيجنتشر-اليوم-الوطني/p227869852",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/kULGFNylpceG7UYtu2Lt36IRMB8DD2MgyEFXsR2A.jpg",
-    "image": "images/lebonheur_227869852.jpg?v=2",
+    "image": "images/lebonheur_227869852.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/WlRyvX/kULGFNylpceG7UYtu2Lt36IRMB8DD2MgyEFXsR2A.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/kULGFNylpceG7UYtu2Lt36IRMB8DD2MgyEFXsR2A.jpg",
@@ -571,7 +571,8 @@
       "origin": "Saudi Arabia",
       "type": "Luxury Perfume Set"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "imageLayout": "original"
   },
   {
     "id": "lebonheur-1711696664",

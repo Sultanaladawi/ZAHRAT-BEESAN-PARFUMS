@@ -1489,7 +1489,7 @@
     "promotionTitle": "",
     "url": "https://thnyan.com/VDaVZNE",
     "bottleUrl": "https://cdn.salla.sa/olVxl/3gAyXguC5hZt154k2lLn4SGia760I30B7tX5FvFQ.png",
-    "image": "images/thnyan_1628120054.jpg?v=2",
+    "image": "images/thnyan_1628120054.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/olVxl/3gAyXguC5hZt154k2lLn4SGia760I30B7tX5FvFQ.png",
     "galleryImages": [
       "images/thnyan_1628120054.jpg?v=2"
@@ -1516,7 +1516,8 @@
       "origin": "Saudi Arabia",
       "type": "Royal Perfume Set"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "imageLayout": "original"
   },
   {
     "id": "thnyan-1655170092",
@@ -1538,7 +1539,7 @@
     "promotionTitle": "",
     "url": "https://thnyan.com/YzzmQbm",
     "bottleUrl": "https://cdn.salla.sa/olVxl/lEyIXHxHwdk4Ga3sB8JrImnPNEU6hF6MIGHaWylQ.png",
-    "image": "images/thnyan_1655170092.jpg?v=2",
+    "image": "images/thnyan_1655170092.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/olVxl/lEyIXHxHwdk4Ga3sB8JrImnPNEU6hF6MIGHaWylQ.png",
     "galleryImages": [
       "images/thnyan_1655170092.jpg?v=2"
@@ -1565,7 +1566,8 @@
       "origin": "Saudi Arabia",
       "type": "Royal Perfume Set"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "imageLayout": "original"
   },
   {
     "id": "thnyan-896782966",

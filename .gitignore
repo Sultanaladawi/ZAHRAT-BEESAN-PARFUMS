@@ -31,3 +31,5 @@ Perfumes_PNG_Catalog/
 STORE_DISCOUNT_CODES.md
 tools/images/.cache/
 tools/images/__pycache__/
+tools/images/audit.json
+tools/images/qa.json
