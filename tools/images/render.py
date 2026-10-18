@@ -199,7 +199,7 @@ def cut_metrics(alpha):
     return {
         "hollow": round(float(1 - mask.sum() / filled.sum()), 3),
         "pieces": int((sizes > mask.sum() * 0.03).sum()),
-        "aspect": round(float((xs.ptp() + 1) / (ys.ptp() + 1)), 2),
+        "aspect": round(float((np.ptp(xs) + 1) / (np.ptp(ys) + 1)), 2),
     }
 
 
@@ -285,6 +285,7 @@ def main():
                 layout, info = render(item, house, out_dir)
             except Exception as exc:  # keep going; report at the end
                 failed.append((item["id"], str(exc)[:120]))
+                print(f"{house:10} FAILED    {item['id']} {str(exc)[:120]}", flush=True)
                 continue
             done += 1
             print(f"{house:10} {layout:9} {item['id']} {info}", flush=True)
