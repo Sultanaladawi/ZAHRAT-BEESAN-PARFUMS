@@ -81,6 +81,8 @@ async function pageLive(p) {
         const offer = prod && (Array.isArray(prod.offers) ? prod.offers[0] : prod.offers);
         if (offer) {
           price = parseFloat(offer.price);
+          // Stores geo-price by visitor IP; normalise USD offers back to SAR.
+          if (String(offer.priceCurrency || '').toUpperCase() === 'USD') price = Math.round(price * 3.75);
           available = String(offer.availability || '').includes('InStock');
         }
       } catch (e) { /* ignore malformed blocks */ }
