@@ -29,3 +29,5 @@ Perfumes_PNG_Catalog/
 
 # Private admin notes (supplier codes & margins) - never publish
 STORE_DISCOUNT_CODES.md
+tools/images/.cache/
+tools/images/__pycache__/
