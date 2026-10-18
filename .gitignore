@@ -33,3 +33,4 @@ tools/images/.cache/
 tools/images/__pycache__/
 tools/images/audit.json
 tools/images/qa.json
+tools/sync-report.json
