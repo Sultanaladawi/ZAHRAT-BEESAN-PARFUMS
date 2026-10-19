@@ -2373,7 +2373,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/pdrnlne/p269748749",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/78a70bbd-bd40-4d52-ad47-e43929486036-500x500-zNcBgvhHkkUO3MgCVKOdeGsRlMnhsJ7BQKWEgw6o.jpg",
-    "image": "images/rasasi_269748749.jpg?v=0ebe7b94",
+    "image": "images/rasasi_269748749.jpg?v=771d577d",
     "originalImage": "https://cdn.salla.sa/lGDEen/78a70bbd-bd40-4d52-ad47-e43929486036-500x500-zNcBgvhHkkUO3MgCVKOdeGsRlMnhsJ7BQKWEgw6o.jpg",
     "galleryImages": [
       "images/rasasi_269748749.jpg?v=2"
@@ -2400,7 +2400,12 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutClipBodyFrom": 0.3,
+    "cutoutTrimBottom": 0.03,
+    "imageLayout": "showcase"
   },
   {
     "id": "rasasi-1839207725",
@@ -4831,7 +4836,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/onozpmv/p168892209",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/31578c58-7749-4ebf-9f56-b5f3ab65b14d-500x500-5aunAZTsZxc5bVZeHqBIMJL4wNZCeroUCCoGVejK.jpg",
-    "image": "images/rasasi_168892209.jpg?v=c82c5c73",
+    "image": "images/rasasi_168892209.jpg?v=6a7cb53b",
     "originalImage": "https://cdn.salla.sa/lGDEen/31578c58-7749-4ebf-9f56-b5f3ab65b14d-500x500-5aunAZTsZxc5bVZeHqBIMJL4wNZCeroUCCoGVejK.jpg",
     "galleryImages": [
       "images/rasasi_168892209.jpg?v=2"
@@ -4859,8 +4864,9 @@
       "type": "Eau de Parfum"
     },
     "categoryType": "perfume",
-    "cutoutClearGlass": true,
-    "imageLayout": "showcase"
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "rasasi-749514996",
@@ -9488,7 +9494,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/xvawwjg/p876391209",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/7d2e6b8d-1d16-4918-a469-b7c799725cb2-500x500-0ior88w8CDizBL9iOej2jcyqNAFgF6hwOHXhNmgV.jpg",
-    "image": "images/rasasi_876391209.jpg?v=5d6f6ed2",
+    "image": "images/rasasi_876391209.jpg?v=2fc01798",
     "originalImage": "https://cdn.salla.sa/lGDEen/7d2e6b8d-1d16-4918-a469-b7c799725cb2-500x500-0ior88w8CDizBL9iOej2jcyqNAFgF6hwOHXhNmgV.jpg",
     "galleryImages": [
       "images/rasasi_876391209.jpg?v=2"
@@ -9516,8 +9522,9 @@
       "type": "Eau de Parfum"
     },
     "categoryType": "perfume",
-    "cutoutClearGlass": true,
-    "imageLayout": "showcase"
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "rasasi-1345687673",

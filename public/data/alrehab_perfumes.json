@@ -2256,7 +2256,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/cotton-candy/p1567678255",
     "bottleUrl": "https://cdn.salla.sa/pywvq/OVrOPjkNsVvrC3yqKdEHRTDFiflCIw62572C3Cxe.jpg",
-    "image": "images/alrehab_1567678255.jpg?v=ba260851",
+    "image": "images/alrehab_1567678255.jpg?v=4651a414",
     "originalImage": "https://cdn.salla.sa/pywvq/OVrOPjkNsVvrC3yqKdEHRTDFiflCIw62572C3Cxe.jpg",
     "galleryImages": [
       "images/alrehab_1567678255.jpg?v=2"
@@ -2286,7 +2286,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-2077466902",
@@ -5332,7 +5335,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/vip-blend-classic/p2123252152",
     "bottleUrl": "https://cdn.salla.sa/pywvq/1eAGYCyO4wTyrLENd1dLaJ4BJW2VjFK6H5mDCh6I.jpg",
-    "image": "images/alrehab_2123252152.jpg?v=b5e4b6d8",
+    "image": "images/alrehab_2123252152.jpg?v=edce03cc",
     "originalImage": "https://cdn.salla.sa/pywvq/1eAGYCyO4wTyrLENd1dLaJ4BJW2VjFK6H5mDCh6I.jpg",
     "galleryImages": [
       "images/alrehab_2123252152.jpg?v=2"
@@ -5362,7 +5365,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-1438508907",
@@ -10405,7 +10411,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/musk-arabian-edition-lansy/p1821984050",
     "bottleUrl": "https://cdn.salla.sa/pywvq/bn4uM2OGprGptOb26k0IIv8aCWDtsYRrjX55WOOw.jpg",
-    "image": "images/alrehab_1821984050.jpg?v=6dc51670",
+    "image": "images/alrehab_1821984050.jpg?v=7301c0ae",
     "originalImage": "https://cdn.salla.sa/pywvq/bn4uM2OGprGptOb26k0IIv8aCWDtsYRrjX55WOOw.jpg",
     "galleryImages": [
       "images/alrehab_1821984050.jpg?v=2"
@@ -10435,7 +10441,11 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutClipBodyFrom": 0.3,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-466416135",
@@ -18085,7 +18095,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/alrehab-shajarat-al-oud-concentrated-unisex-12ml/p2130757205",
     "bottleUrl": "https://cdn.salla.sa/pywvq/v1EGSDH0jdnd4kqYtn91kfF8xy144WGRcFlvzfU3.jpg",
-    "image": "images/alrehab_2130757205.jpg?v=4265a958",
+    "image": "images/alrehab_2130757205.jpg?v=06c0e1e4",
     "originalImage": "https://cdn.salla.sa/pywvq/v1EGSDH0jdnd4kqYtn91kfF8xy144WGRcFlvzfU3.jpg",
     "galleryImages": [
       "images/alrehab_2130757205.jpg?v=2"
@@ -18116,8 +18126,10 @@
     "subCategory": "dehn",
     "subCategoryAr": "الدهون ودهن العود",
     "subCategoryEn": "Dehn & Oud Oils",
-    "imageLayout": "original",
-    "imageLayoutOverride": "original"
+    "imageLayout": "showcase",
+    "imageLayoutOverride": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35
   },
   {
     "id": "alrehab-24148298",
@@ -20911,7 +20923,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-في-اي-بي-اسود-100-مل/p2051742632",
     "bottleUrl": "https://cdn.salla.sa/pywvq/EeQdyxuURmjcprbGCkmWYOHV3HTZsTQzB6onzamV.jpg",
-    "image": "images/alrehab_2051742632.jpg?v=4c9c5039",
+    "image": "images/alrehab_2051742632.jpg?v=9c170546",
     "originalImage": "https://cdn.salla.sa/pywvq/EeQdyxuURmjcprbGCkmWYOHV3HTZsTQzB6onzamV.jpg",
     "galleryImages": [
       "images/alrehab_2051742632.jpg?v=2"
@@ -20941,7 +20953,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-678362287",
@@ -25335,7 +25350,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/remy-marquis-shalis-women-100ml-spray-classic-magnolia-patchouli-perfume/p1087018439",
     "bottleUrl": "https://cdn.salla.sa/pywvq/QcNG7BUs5ssg342Uwpjl8vYAT9tmLKbncnwyaGuZ.jpg",
-    "image": "images/alrehab_1087018439.jpg?v=0185a919",
+    "image": "images/alrehab_1087018439.jpg?v=02753721",
     "originalImage": "https://cdn.salla.sa/pywvq/QcNG7BUs5ssg342Uwpjl8vYAT9tmLKbncnwyaGuZ.jpg",
     "galleryImages": [
       "images/alrehab_1087018439.jpg?v=2"
@@ -25365,7 +25380,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-1995208390",
@@ -25492,7 +25510,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/remy-marquis-women-60ml-spray-compact-gardenia-cotton-flower-vanilla-perfume/p1262110916",
     "bottleUrl": "https://cdn.salla.sa/pywvq/dlZSgIneBtY6B0JqVhuSgV5ygaRYL8nVobbliKBf.jpg",
-    "image": "images/alrehab_1262110916.jpg?v=fce21622",
+    "image": "images/alrehab_1262110916.jpg?v=84639a08",
     "originalImage": "https://cdn.salla.sa/pywvq/dlZSgIneBtY6B0JqVhuSgV5ygaRYL8nVobbliKBf.jpg",
     "galleryImages": [
       "images/alrehab_1262110916.jpg?v=2"
@@ -25522,7 +25540,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-2036148731",
@@ -25544,7 +25565,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/remy-marquis-women-100ml-spray-classic-gardenia-cotton-flower-vanilla-perfume/p2036148731",
     "bottleUrl": "https://cdn.salla.sa/pywvq/6xQ9x4ojUwVUCPtY9DlJAR603s1cB9xo3x5R0WMS.jpg",
-    "image": "images/alrehab_2036148731.jpg?v=6dccba95",
+    "image": "images/alrehab_2036148731.jpg?v=d4eece53",
     "originalImage": "https://cdn.salla.sa/pywvq/6xQ9x4ojUwVUCPtY9DlJAR603s1cB9xo3x5R0WMS.jpg",
     "galleryImages": [
       "images/alrehab_2036148731.jpg?v=2"
@@ -25574,7 +25595,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-944849148",
@@ -25596,7 +25620,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-100-مل/p944849148",
     "bottleUrl": "https://cdn.salla.sa/pywvq/TZ3cP6T2gWA11y9yHi1x0i6B2WD8EJB0R9rEmFx3.jpg",
-    "image": "images/alrehab_944849148.jpg?v=782c6123",
+    "image": "images/alrehab_944849148.jpg?v=86fcb987",
     "originalImage": "https://cdn.salla.sa/pywvq/TZ3cP6T2gWA11y9yHi1x0i6B2WD8EJB0R9rEmFx3.jpg",
     "galleryImages": [
       "images/alrehab_944849148.jpg?v=2"
@@ -25627,8 +25651,9 @@
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
     "subCategoryEn": "Perfumes (60–125 ml)",
-    "cutoutClearGlass": true,
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35
   },
   {
     "id": "alrehab-1853104627",
@@ -25650,7 +25675,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-60-مل/p1853104627",
     "bottleUrl": "https://cdn.salla.sa/pywvq/xxQUvGiRRE3mtJ34wTIJsyjR4BTKLMxXYCjFnmbd.jpg",
-    "image": "images/alrehab_1853104627.jpg?v=a7e91b29",
+    "image": "images/alrehab_1853104627.jpg?v=8092b70b",
     "originalImage": "https://cdn.salla.sa/pywvq/xxQUvGiRRE3mtJ34wTIJsyjR4BTKLMxXYCjFnmbd.jpg",
     "galleryImages": [
       "images/alrehab_1853104627.jpg?v=2"
@@ -25681,8 +25706,9 @@
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
     "subCategoryEn": "Perfumes (60–125 ml)",
-    "cutoutClearGlass": true,
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35
   },
   {
     "id": "alrehab-481231602",
@@ -25704,7 +25730,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-30-مل/p481231602",
     "bottleUrl": "https://cdn.salla.sa/pywvq/kNK1koZlaZN8FISJixwhubEAcw1phMBEwAQYXQfb.jpg",
-    "image": "images/alrehab_481231602.jpg?v=1e43675e",
+    "image": "images/alrehab_481231602.jpg?v=dac8c264",
     "originalImage": "https://cdn.salla.sa/pywvq/kNK1koZlaZN8FISJixwhubEAcw1phMBEwAQYXQfb.jpg",
     "galleryImages": [
       "images/alrehab_481231602.jpg?v=2"
@@ -25736,7 +25762,8 @@
     "subCategoryAr": "عطور ميني (25 – 50 مل)",
     "subCategoryEn": "Mini Perfumes (25–50 ml)",
     "imageLayout": "showcase",
-    "cutoutClearGlass": true
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35
   },
   {
     "id": "alrehab-1120068593",
@@ -25811,7 +25838,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-مسك-العروسة/p1894106352",
     "bottleUrl": "https://cdn.salla.sa/pywvq/cGDcqS6K49YYcDcNTYrFcGpr5hYUK1CCCTcrxMyy.jpg",
-    "image": "images/alrehab_1894106352.jpg?v=c801d5da",
+    "image": "images/alrehab_1894106352.jpg?v=29910d31",
     "originalImage": "https://cdn.salla.sa/pywvq/cGDcqS6K49YYcDcNTYrFcGpr5hYUK1CCCTcrxMyy.jpg",
     "galleryImages": [
       "images/alrehab_1894106352.jpg?v=2"
@@ -25841,7 +25868,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-1604532715",
@@ -25969,7 +25999,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-صوفيا-100-مل/p1363354258",
     "bottleUrl": "https://cdn.salla.sa/pywvq/4aSlnIsppIZ2IfWTeQULO3tpBYrfX0IrnERxII48.jpg",
-    "image": "images/alrehab_1363354258.jpg?v=20b00638",
+    "image": "images/alrehab_1363354258.jpg?v=efa2e289",
     "originalImage": "https://cdn.salla.sa/pywvq/4aSlnIsppIZ2IfWTeQULO3tpBYrfX0IrnERxII48.jpg",
     "galleryImages": [
       "images/alrehab_1363354258.jpg?v=2"
@@ -25999,7 +26029,10 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutModel": "birefnet-general",
+    "cutoutClearGlass": 0.35,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-899277968",
