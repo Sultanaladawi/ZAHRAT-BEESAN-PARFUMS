@@ -36,6 +36,7 @@ Some photos need a hint in the catalog entry before rendering:
 - `cutoutModel: "birefnet-general"` uses the full (slower, ~12 GB RAM) model, which separates soft cast shadows the lite model keeps; render such items one per process.
 - `cutoutCapClip: 0.12` keeps only the cap width above that fraction of the height (drops a card standing behind the cap).
 - `cutoutRemoveCard: [top, bottom]` whitens a message card standing behind an egg-shaped cap (rows as fractions of the photo height); the cap outline there is extrapolated from below the card.
+- `cutoutWhiteBackdrop: true` for studio shots on pure white: every non-white pixel joins the bottle, so frosted or white parts the model drops are kept.
 - `cutoutCrop: [l, t, r, b]` crops the source photo (fractions) before the cutout, e.g. to leave out the box next to a bottle.
 
 After rendering, run `python tools/images/thumbs.py` to refresh the card thumbnails. Image URLs carry `?v=<content hash>` so browsers never show a cached older picture; `python tools/images/versions.py` re-syncs them after manual image edits.

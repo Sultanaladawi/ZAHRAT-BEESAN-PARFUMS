@@ -3839,7 +3839,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/all-perfumes/10111041012100-1190.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-74.jpg?v=571f9324",
+    "image": "images/deraah_deraah-74.jpg?v=99875875",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85"
@@ -3870,7 +3870,9 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutModel": "birefnet-general"
+    "cutoutModel": "birefnet-general",
+    "cutoutSource": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=1200&sh=1200&q=90",
+    "cutoutWhiteBackdrop": true
   },
   {
     "id": "deraah-10111101013100-1336",
@@ -10573,7 +10575,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/maios-m/10111021011100-1009.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw51b111bd/images/10111021011100-1009-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-203.jpg?v=025839f3",
+    "image": "images/deraah_deraah-203.jpg?v=acd587c1",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw51b111bd/images/10111021011100-1009-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw51b111bd/images/10111021011100-1009-1.jpg?sw=800&sh=800&q=85"
@@ -10603,8 +10605,12 @@
       "perfumer": "Deraah Perfumes — MAIOS"
     },
     "categoryType": "perfume",
-    "imageLayout": "original",
-    "imageLayoutOverride": "original"
+    "imageLayout": "showcase",
+    "imageLayoutOverride": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutSource": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw364a2e41/images/10111021011100-1009-2.jpg?sw=1200&sh=1200&q=90",
+    "cutoutWhiteBackdrop": true,
+    "cutoutSolid": true
   },
   {
     "id": "deraah-10111021011100-1449",
@@ -17560,7 +17566,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111031011100-1244.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-337.jpg?v=255b0e41",
+    "image": "images/deraah_deraah-337.jpg?v=741486f6",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85"
@@ -17591,7 +17597,9 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutModel": "birefnet-general"
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutMirrorClip": true
   },
   {
     "id": "deraah-10111021011100-1406",
@@ -17977,7 +17985,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111031011150-1244.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-345.jpg?v=255b0e41",
+    "image": "images/deraah_deraah-345.jpg?v=741486f6",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85"
@@ -18008,7 +18016,9 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutModel": "birefnet-general"
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutMirrorClip": true
   },
   {
     "id": "deraah-10111081012070-1168",
