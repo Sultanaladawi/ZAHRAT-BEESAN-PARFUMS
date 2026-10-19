@@ -1131,14 +1131,14 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       if (p.subCategory !== filter.slice(8)) return false;
     } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
-      if (/باكج|بكج|بوكس|باقة|طقم|معطر|فواحة|بخور|بودرة|باودر|توزيعات/i.test(p.title || '')) return false;
+      if (!isScentNamedPerfume(p) && /باكج|بكج|بوكس|باقة|طقم|معطر|فواحة|بخور|بودرة|باودر|توزيعات/i.test(p.title || '')) return false;
       if ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة')) return false;
       if (/باقة|طقم|مجموعة|بخور|معطر|فواحة|بودرة/i.test(p.specs?.type || '')) return false;
     } else if (filter === 'oils') {
       const isOil = p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود') || (p.title || '').includes('تولة');
       if (!isOil) return false;
     } else if (filter === 'bakhoor') {
-      const isBakhoor = p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '') || /بخور|معمول|معطر/i.test(p.specs?.type || '');
+      const isBakhoor = !isScentNamedPerfume(p) && (p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '')) || /بخور|معمول|معطر/i.test(p.specs?.type || '');
       if (!isBakhoor) return false;
     } else if (filter === 'bundles') {
       const isBundle = p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.title || '').includes('باكج') || (p.title || '').includes('بكج') || (p.title || '').includes('بوكس') || (p.title || '').includes('باقة') || ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة'));
@@ -1250,7 +1250,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       desc: t.secPerfumesDesc || 'تشكيلة استثنائية من أرقى العطور الشرقية والفرنسية الملكية بفوحان آسر وثبات طويل',
       unitAr: 'عطراً',
       unitEn: 'perfumes',
-      match: (p) => (p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))) && !/معطر|فواحة|^بخور\s|عود\s*بخور|بودرة|باودر|مجموعة|طقم|بكج|باكج/i.test(p.title || '')
+      match: (p) => (p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))) && (isScentNamedPerfume(p) || !/معطر|فواحة|^بخور\s|عود\s*بخور|بودرة|باودر|مجموعة|طقم|بكج|باكج/i.test(p.title || ''))
     },
     {
       key: 'bundle',
@@ -1268,7 +1268,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       desc: t.secBakhoorDesc || 'أجود أنواع العود الملكي، المبثوث، فواحات المنازل، ومعطرات المفارش التراثية',
       unitAr: 'صنفاً',
       unitEn: 'items',
-      match: (p) => p.categoryType === 'bakhoor' || /معطر|فواحة|^بخور\s|عود\s*بخور|معمول|دخون/i.test(p.title || '')
+      match: (p) => !isScentNamedPerfume(p) && (p.categoryType === 'bakhoor' || /معطر|فواحة|^بخور\s|عود\s*بخور|معمول|دخون/i.test(p.title || ''))
     },
     {
       key: 'oil',
@@ -1472,13 +1472,17 @@ function renderProductCard(p, t) {
   `;
 }
 
+// Perfumes whose name is a scent (e.g. "بخور وايلد كولت") are flagged in the
+// catalog so name-based bakhoor/home detection leaves them with perfumes.
+const isScentNamedPerfume = p => p.namedAfterScent === true;
+
 function getCategoryBadgeText(p) {
   const t = translations[currentLang] || translations.ar;
   const isAssafOrThnyan = p.house === 'assaf' || p.house === 'thunayan' || p.house === 'labonair' || p.house === 'laverne' || p.house === 'deraah' || String(p.id || '').startsWith('assaf-') || String(p.id || '').startsWith('thnyan-') || String(p.id || '').startsWith('lebonheur-') || String(p.id || '').startsWith('laverne-') || String(p.id || '').startsWith('deraah-');
   if (p.categoryType === 'oil' || (p.specs?.type || '').includes('زيت') || (p.specs?.type || '').includes('تولة') || (p.specs?.type || '').includes('دهن عود')) {
     return currentLang === 'ar' ? 'دهن عود / زيت عطري' : 'Perfume Oil';
   }
-  if (p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '') || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول') || (p.specs?.type || '').includes('معطر')) {
+  if (!isScentNamedPerfume(p) && (p.categoryType === 'bakhoor' || /بخور|معمول|دخون|فواحة|معطر/i.test(p.title || '')) || (p.specs?.type || '').includes('بخور') || (p.specs?.type || '').includes('معمول') || (p.specs?.type || '').includes('معطر')) {
     return currentLang === 'ar' ? 'بخور ومعطرات' : 'Bakhoor & Home';
   }
   if (p.categoryType === 'bundle' || (p.specs?.type || '').includes('باقة') || (p.specs?.type || '').includes('طقم') || (p.specs?.type || '').includes('مجموعة') || (p.specs?.type || '').includes('بكج')) {
