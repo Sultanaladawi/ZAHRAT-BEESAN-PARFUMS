@@ -261,7 +261,17 @@ def clip_body(alpha, start):
     return out
 
 
-def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None):
+def keep_largest(alpha):
+    """Drop props lying next to the bottle (wood chips, petals)."""
+    labels, n = ndimage.label(alpha > 64)
+    if n < 2:
+        return alpha
+    sizes = ndimage.sum(np.ones_like(alpha), labels, range(1, n + 1))
+    keep = ndimage.binary_dilation(labels == (int(np.argmax(sizes)) + 1), iterations=3)
+    return np.where(keep, alpha, 0)
+
+
+def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -277,6 +287,8 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None):
     line = reflection_line(arr[..., :3].astype(np.float32), alpha)
     if line is not None:
         alpha[line:] = 0
+    if largest:
+        alpha = keep_largest(alpha)
     if mirror_fill_:
         alpha = mirror_fill(alpha)
     if body_clip:
@@ -318,7 +330,8 @@ def showcase(item, house):
     cut, info = cutout(fetch(source_url(item)), mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
                        solid=bool(item.get("cutoutSolid")),
                        mirror_fill_=bool(item.get("cutoutMirrorFill")),
-                       body_clip=item.get("cutoutClipBodyFrom"))
+                       body_clip=item.get("cutoutClipBodyFrom"),
+                       largest=bool(item.get("cutoutKeepLargest")))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
