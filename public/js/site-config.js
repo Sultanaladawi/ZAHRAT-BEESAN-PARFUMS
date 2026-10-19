@@ -8,6 +8,7 @@
 const SITE_CONFIG_DEFAULTS = {
   ordersOpen: true, freeDeliveryJod: 100, couponsEnabled: false, showQuiz: true, showRecent: true,
   announcement: null, hiddenHouses: [], offers: {}, hidden: [], featured: [], prices: {},
+  reviewsEnabled: true, ratings: {}, homeReviews: [],
 };
 let SITE_CONFIG = { ...SITE_CONFIG_DEFAULTS, ...(window.__SITE_CONFIG__ || {}) };
 

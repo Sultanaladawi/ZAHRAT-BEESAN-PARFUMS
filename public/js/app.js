@@ -1450,6 +1450,7 @@ function renderProductCard(p, t) {
       <!-- معلومات وسعر العطر بالمنتصف بدقة وتناسق -->
       <div class="product-card-info">
         <h3 class="product-card-title" onclick="openProductModal('${p.id}')">${title}</h3>
+        ${typeof cardRatingHtml === 'function' ? cardRatingHtml(p.id) : ''}
         <div class="product-card-prices">
           <span class="product-price-sale">${prices.saleStr}</span>
           ${prices.hasDiscount ? `<span class="product-price-old">${prices.origStr}</span>` : ''}

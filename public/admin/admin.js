@@ -9,6 +9,7 @@ const NAV = [
   { id: 'products', ico: '🧴', ar: 'المنتجات' },
   { id: 'offers', ico: '🎁', ar: 'العروض' },
   { id: 'coupons', ico: '🎟', ar: 'أكواد الخصم' },
+  { id: 'reviews', ico: '★', ar: 'التقييمات', badge: 'reviews' },
   { id: 'notify', ico: '🔔', ar: 'طلبات التنبيه', badge: 'notify' },
   { id: 'settings', ico: '⚙', ar: 'إعدادات الموقع' },
 ];
@@ -31,7 +32,7 @@ const thumb = src => {
   return '/' + (m ? `images/thumbs/${m[1]}.webp${m[2] || ''}` : src);
 };
 
-let counts = { newOrders: 0, notify: 0 };
+let counts = { newOrders: 0, notify: 0, reviews: 0 };
 let lastNewOrders = null;
 let pollTimer = null;
 let clockTimer = null;
@@ -99,7 +100,10 @@ async function boot() {
   if (!me.loggedIn) return showLogin();
   $('loginView').hidden = true;
   $('appView').hidden = false;
-  if (me.storage !== 'github') {
+  if (me.storageError) {
+    $('storageWarning').hidden = false;
+    $('storageWarning').innerHTML = `⚠️ <strong>مشكلة بالحفظ:</strong> ${esc(me.storageError)}`;
+  } else if (me.storage !== 'github') {
     $('storageWarning').hidden = false;
     $('storageWarning').innerHTML = me.storage === 'temporary'
       ? '⚠️ <strong>الحفظ مؤقت:</strong> التعديلات رح تنمسح مع كل تحديث للموقع. أضف <code>ADMIN_GITHUB_TOKEN</code> في إعدادات Vercel حتى ينحفظ كل اشي بشكل دائم.'
@@ -166,7 +170,7 @@ $('storeToggle').addEventListener('click', async () => {
 async function poll() {
   try {
     const s = await api('/api/admin/stats');
-    counts = { newOrders: s.totals.newOrders, notify: s.totals.notify };
+    counts = { newOrders: s.totals.newOrders, notify: s.totals.notify, reviews: s.totals.reviews };
     setStoreToggle(s.ordersOpen);
     if (lastNewOrders !== null && s.totals.newOrders > lastNewOrders) {
       chime();
@@ -583,6 +587,119 @@ PAGES.coupons = async () => {
   });
 };
 
+// ── Reviews ──
+let reviewsFilter = 'pending';
+const REVIEW_STATUS = { pending: 'بانتظار المراجعة', approved: 'منشور', hidden: 'مخفي' };
+const stars = n => `<span class="rv-stars">${'★'.repeat(n)}<i>${'★'.repeat(5 - n)}</i></span>`;
+
+PAGES.reviews = async () => {
+  const { items } = await api(`/api/admin/reviews${reviewsFilter ? `?status=${reviewsFilter}` : ''}`);
+  const all = await api('/api/admin/reviews');
+  const n = k => all.items.filter(r => r.status === k).length;
+  $('page').innerHTML = pageHead('★', 'التقييمات', 'كل تقييم يكتبه زبون بيوصل هون أول، وما بيظهر على الموقع إلا لما تنشره.', `
+    <div class="head-chips"><button class="btn gold" id="addReview">＋ إضافة تقييم من واتساب</button></div>`) + `
+    <div class="toolbar tabs">
+      ${[['pending', `بانتظار المراجعة (${n('pending')})`], ['approved', `منشور (${n('approved')})`], ['hidden', `مخفي (${n('hidden')})`], ['', `الكل (${all.items.length})`]]
+        .map(([k, v]) => `<button class="btn sm${k === reviewsFilter ? ' gold' : ''}" data-tab="${k}">${v}</button>`).join('')}
+    </div>
+    ${items.length ? `<div class="rv-list">${items.map(r => `
+      <div class="rv-card" data-id="${esc(r.id)}">
+        <div class="rv-top">
+          <div class="avatar">${esc((r.name || '?').charAt(0))}</div>
+          <div class="rv-who"><strong>${esc(r.name)}</strong><span class="muted">${r.city ? `${esc(r.city)} · ` : ''}${fmtDate(r.at)}${r.source !== 'customer' ? ' · من واتساب' : ''}</span></div>
+          ${stars(r.rating)}
+        </div>
+        <div class="rv-product">🧴 ${esc(r.productTitle)} <span class="muted">· ${HOUSE_AR[r.house] || ''}</span></div>
+        ${r.text ? `<p class="rv-text">${esc(r.text)}</p>` : ''}
+        ${r.reply ? `<div class="rv-reply"><strong>ردك:</strong> ${esc(r.reply)}</div>` : ''}
+        <div class="rv-actions">
+          <span class="pill ${r.status === 'approved' ? 'ok' : r.status === 'hidden' ? 'bad' : 'new'}">${REVIEW_STATUS[r.status]}</span>
+          ${r.status !== 'approved' ? '<button class="btn sm gold" data-act="approved">✓ نشر</button>' : ''}
+          ${r.status !== 'hidden' ? '<button class="btn sm" data-act="hidden">إخفاء</button>' : ''}
+          ${r.status === 'approved' ? `<button class="btn sm${r.home ? ' gold' : ''}" data-act="home">${r.home ? '★ بالرئيسية' : '☆ اعرضه بالرئيسية'}</button>` : ''}
+          <button class="btn sm" data-act="reply">💬 رد</button>
+          <button class="icon-btn del" data-act="delete" title="حذف">🗑</button>
+        </div>
+      </div>`).join('')}</div>`
+      : `<div class="panel empty"><div class="big">★</div>${reviewsFilter === 'pending' ? 'ما في تقييمات جديدة بانتظارك.' : 'ما في تقييمات هون.'}</div>`}`;
+
+  document.querySelectorAll('[data-tab]').forEach(b => { b.onclick = () => { reviewsFilter = b.dataset.tab; PAGES.reviews(); }; });
+  $('addReview').onclick = addReviewModal;
+  document.querySelectorAll('.rv-card').forEach(card => {
+    const id = card.dataset.id;
+    const r = items.find(x => x.id === id);
+    card.querySelectorAll('[data-act]').forEach(b => {
+      b.onclick = async () => {
+        const act = b.dataset.act;
+        try {
+          if (act === 'delete') {
+            if (!confirm('حذف التقييم نهائياً؟')) return;
+            await api(`/api/admin/reviews/${id}`, { method: 'DELETE' });
+          } else if (act === 'reply') {
+            const reply = prompt('ردّك على الزبون (بيظهر تحت تقييمه):', r.reply || '');
+            if (reply === null) return;
+            await api(`/api/admin/reviews/${id}`, { method: 'PATCH', body: { reply } });
+          } else if (act === 'home') {
+            await api(`/api/admin/reviews/${id}`, { method: 'PATCH', body: { home: !r.home } });
+            toast(r.home ? 'انشال من الرئيسية' : 'رح يظهر بقسم "آراء زبائننا" بالرئيسية ⭐');
+          } else {
+            await api(`/api/admin/reviews/${id}`, { method: 'PATCH', body: { status: act } });
+            toast(act === 'approved' ? 'التقييم منشور على الموقع ✅' : 'تم إخفاء التقييم');
+          }
+          poll();
+          PAGES.reviews();
+        } catch (e) { toast(e.message, true); }
+      };
+    });
+  });
+};
+
+function addReviewModal() {
+  let picked = null;
+  let rating = 5;
+  openModal(`
+    <h3>إضافة تقييم</h3>
+    <p class="muted" style="margin-top:-8px">لتقييم وصلك من زبون على واتساب أو انستغرام. بينشر مباشرة.</p>
+    <label class="field"><span>المنتج</span><input class="input" id="rvSearch" placeholder="ابحث عن اسم العطر…" autocomplete="off"></label>
+    <div class="rv-results" id="rvResults"></div>
+    <div class="rv-pick" id="rvPick">${[1, 2, 3, 4, 5].map(i => `<button type="button" data-v="${i}" class="on">★</button>`).join('')}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0">
+      <input class="input" id="rvName" placeholder="اسم الزبون">
+      <input class="input" id="rvCity" placeholder="المدينة (اختياري)">
+    </div>
+    <textarea class="input" id="rvText" rows="3" placeholder="كلام الزبون كما وصلك"></textarea>
+    <label class="house-check" style="margin-top:12px;display:inline-flex"><input type="checkbox" id="rvHome"> اعرضه بقسم "آراء زبائننا" بالرئيسية</label>
+    <div style="margin-top:16px"><button class="btn gold" id="rvSave">حفظ ونشر</button></div>`);
+  let t;
+  $('rvSearch').oninput = e => {
+    clearTimeout(t);
+    t = setTimeout(async () => {
+      const { items } = await api(`/api/admin/product-search?q=${encodeURIComponent(e.target.value.trim())}`);
+      $('rvResults').innerHTML = items.map(p => `<button type="button" data-id="${esc(p.id)}">${esc(p.title)} <span class="muted">· ${HOUSE_AR[p.house] || ''}</span></button>`).join('');
+      $('rvResults').querySelectorAll('button').forEach(b => {
+        b.onclick = () => { picked = b.dataset.id; $('rvSearch').value = b.textContent.split(' · ')[0]; $('rvResults').innerHTML = ''; };
+      });
+    }, 250);
+  };
+  $('rvPick').querySelectorAll('button').forEach(b => {
+    b.onclick = () => {
+      rating = Number(b.dataset.v);
+      $('rvPick').querySelectorAll('button').forEach(x => x.classList.toggle('on', Number(x.dataset.v) <= rating));
+    };
+  });
+  $('rvSave').onclick = async () => {
+    try {
+      await api('/api/admin/reviews', { method: 'POST', body: {
+        productId: picked, rating, name: $('rvName').value, city: $('rvCity').value, text: $('rvText').value, home: $('rvHome').checked,
+      } });
+      closeModal();
+      toast('تم نشر التقييم ✅');
+      reviewsFilter = 'approved';
+      PAGES.reviews();
+    } catch (e) { toast(e.message, true); }
+  };
+}
+
 // ── Notify-me requests ──
 PAGES.notify = async () => {
   const { items } = await api('/api/admin/notify');
@@ -621,6 +738,7 @@ PAGES.settings = async () => {
       <div class="set-row"><div><h4>التوصيل المجاني</h4><p>التوصيل مجاني للطلبات من هذا المبلغ وفوق. اكتب 0 لإخفاء شريط التوصيل المجاني.</p></div>
         <div class="inline-field"><input class="input" type="number" min="0" id="freeDelivery" value="${Number(s.freeDeliveryJod) || 0}"> د.أ</div></div>
       <div class="set-row"><div><h4>خانة كود الخصم بالحقيبة</h4><p>بتبين بس إذا في كود فعّال واحد على الأقل.</p></div>${sw('couponsEnabled', s.couponsEnabled !== false)}</div>
+      <div class="set-row"><div><h4>تقييمات الزبائن</h4><p>النجوم على المنتجات، وقسم "آراء الزبائن" وخانة "اكتب تقييمك". التقييم الجديد ما بيظهر إلا بعد ما توافق عليه.</p></div>${sw('reviewsEnabled', s.reviewsEnabled !== false)}</div>
       <div class="set-row"><div><h4>"اختار عطرك" بالصفحة الرئيسية</h4><p>الأسئلة الأربعة اللي بتقترح عطور للزبون.</p></div>${sw('showQuiz', s.showQuiz !== false)}</div>
       <div class="set-row"><div><h4>"شاهدتها مؤخراً"</h4><p>شريط المنتجات اللي شافها الزبون آخر مرة.</p></div>${sw('showRecent', s.showRecent !== false)}</div>
       <div class="set-row col">
