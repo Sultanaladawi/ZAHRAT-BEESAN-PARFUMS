@@ -80,6 +80,7 @@ function goHome() {
     selectHouse('all');
   }
   updateHomeVisibility();
+  renderHome();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -209,7 +210,9 @@ async function renderHome() {
     return renderHomeRail(homeIsAr() ? `من ${meta.nameAr}` : `From ${meta.nameEn}`, singles(byHouse[h]).slice(3, 15), `house:${h}`);
   });
 
+  const recent = typeof recentProducts === 'function' ? recentProducts().slice(0, 10) : [];
   root.innerHTML = renderHomeHero()
+    + (recent.length ? renderHomeRail(homeIsAr() ? 'شاهدتها مؤخراً' : 'Recently viewed', recent, null) : '')
     + renderHomeHouses()
     + renderHomeRail(homeIsAr() ? 'الأكثر طلباً' : 'Most wanted', bestsellers, 'catalog')
     + renderHomeCategories(all)
