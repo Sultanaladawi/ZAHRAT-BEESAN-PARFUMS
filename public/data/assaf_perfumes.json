@@ -5420,7 +5420,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
       "size": "200 مل",
-      "type": "بخور وعود فاخر",
+      "type": "عطر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -5431,7 +5431,8 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "namedAfterScent": true
   },
   {
     "id": "assaf-536799694",
@@ -5613,7 +5614,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
       "size": "200 مل",
-      "type": "بخور وعود فاخر",
+      "type": "عطر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -5624,7 +5625,8 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "namedAfterScent": true
   },
   {
     "id": "assaf-1731158495",
@@ -7056,7 +7058,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
       "size": "150 مل",
-      "type": "بخور وعود فاخر",
+      "type": "عطر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
@@ -7067,7 +7069,8 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "namedAfterScent": true
   },
   {
     "id": "assaf-1839061432",
@@ -7330,7 +7333,7 @@
     "promotionTitle": "SOLD OUT",
     "url": "https://3saf.com/ar/abeyah-oud-oil/p1724171461",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/0ibWEXRtzFHILslyXRV0rL61KIV2LLaLzmyiM0TL.jpg",
-    "image": "images/assaf_1724171461.jpg?v=4",
+    "image": "images/assaf_1724171461.jpg?v=5",
     "originalImage": "https://cdn.salla.sa/yrlRO/0ibWEXRtzFHILslyXRV0rL61KIV2LLaLzmyiM0TL.jpg",
     "galleryImages": [],
     "overview": "إنه إرث عتيق ليس دهن عود فقط منذ عدة عقود كانت إحدى المقتنيات الخاصة (جدا) من أندر أنواع أدهان العود ، تتعتق في مكان خاص ، لتكون بين يديك الآن جزء بسيط من هذا التاريخ ، لتكون لك بصمة خاصة لن تتكرر . ما يميز الدهن ؟ اصدار خاص بعدد 80 ربع تولة ( فقط ) لن تتكرر ، مرقمة لكل تولة. مجموعة أدهان صافية نادره جدا وعتيقه لا يوجد بالدهن رائحة الزنخ (وهي رائحة حيوانية حادة تكون بداية التطيب بالعود عادةً ولا تعيب العود ولكن كثير لا يتقبلها) يتفرد الدهن برائحة بخورية فريدة يعد من الأدهان النادرة والفاخرة يعد من الأدهان التي لها ثبات عالي على الجلد وثبات أعلى على الملابس والأشمغة تصل الى أيام أفضل استخدامات للدهن ؟ مناسب للاستخدام الشخصي لمحبين الروائح الفخمة و روائح العود البخورية النادرة مناسب للإهداء ، حيث يعتبر إصدار خاص من اندر أنواع الادهان واكثرها ثباتاً وفوحانا ، مما يجعل الدهن من أفخم الهدايا مناسب للاستخدام في المناسبات الفاخرة اصدار خاص ومحدود لن يتوفر مستقبلاً نفذت الكمية.",
@@ -7358,9 +7361,8 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "oil",
-    "imageLayout": "showcase",
-    "imageLayoutOverride": "showcase",
-    "cutoutKeepLargest": true
+    "imageLayout": "original",
+    "imageLayoutOverride": "original"
   },
   {
     "id": "assaf-427598918",
