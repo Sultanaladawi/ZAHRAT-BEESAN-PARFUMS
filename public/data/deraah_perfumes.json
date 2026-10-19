@@ -2263,7 +2263,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/private-f/10111101762030-1001.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw646ae8e7/images/10111101762030-1001-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-45.jpg",
+    "image": "images/deraah_deraah-45.jpg?v=2",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw646ae8e7/images/10111101762030-1001-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw646ae8e7/images/10111101762030-1001-1.jpg?sw=800&sh=800&q=85"
@@ -2292,7 +2292,8 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "imageLayout": "showcase"
   },
   {
     "id": "deraah-10111051011100-1137",
@@ -10117,7 +10118,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/private-f/10111101752150-1001.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd155538d/images/10111101752150-1001-1.png?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-199.jpg",
+    "image": "images/deraah_deraah-199.jpg?v=2",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd155538d/images/10111101752150-1001-1.png?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd155538d/images/10111101752150-1001-1.png?sw=800&sh=800&q=85"
@@ -10146,7 +10147,8 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "imageLayout": "showcase"
   },
   {
     "id": "deraah-10111081012075-1408",
@@ -12361,7 +12363,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/maios-m/10111021751150-1002.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd863ceef/images/10111021751150-1002-1.png?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-243.jpg",
+    "image": "images/deraah_deraah-243.jpg?v=2",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd863ceef/images/10111021751150-1002-1.png?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwd863ceef/images/10111021751150-1002-1.png?sw=800&sh=800&q=85"
@@ -12390,7 +12392,8 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — MAIOS"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "imageLayout": "showcase"
   },
   {
     "id": "deraah-10111011013150-1446",
@@ -12514,7 +12517,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/pourmoi-f/10111041752150-1002.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8490f48d/images/10111041752150-1002-1.png?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-246.jpg",
+    "image": "images/deraah_deraah-246.jpg?v=2",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8490f48d/images/10111041752150-1002-1.png?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8490f48d/images/10111041752150-1002-1.png?sw=800&sh=800&q=85"
@@ -12543,7 +12546,8 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — POUR MOI"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "imageLayout": "showcase"
   },
   {
     "id": "deraah-10111091011100-1054",
@@ -17257,7 +17261,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/gingle-m/10111061751150-1001.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw1d4447c8/images/10111061751150-1001-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-339.jpg",
+    "image": "images/deraah_deraah-339.jpg?v=2",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw1d4447c8/images/10111061751150-1001-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw1d4447c8/images/10111061751150-1001-1.jpg?sw=800&sh=800&q=85"
@@ -17286,7 +17290,8 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — GINGLE"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "imageLayout": "showcase"
   },
   {
     "id": "deraah-10111041012100-1048",

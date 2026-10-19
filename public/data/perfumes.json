@@ -4348,7 +4348,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/معطر-جو-انسيستري-عود/p414722664",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/l9WY6yRSKCUsdRJ7wNWwETfrfEWh0t0uPMKYzwSn.png",
-    "image": "images/ghalati_freshener-ancestry-oud.jpg",
+    "image": "images/ghalati_freshener-ancestry-oud.jpg?v=2",
     "originalImage": "images/original_freshener-ancestry-oud.png",
     "galleryImages": [
       "images/ghalati_freshener-ancestry-oud.jpg"
@@ -4383,7 +4383,8 @@
     "boxImage": null,
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-wasaef",
@@ -4407,7 +4408,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-wasaef.jpg",
+    "image": "images/ghalati_bakhoor-wasaef.jpg?v=2",
     "originalImage": "images/original_bakhoor-wasaef.png",
     "galleryImages": [],
     "specsEn": {
@@ -4425,7 +4426,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-oud-azraq",
@@ -4449,7 +4451,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-azraq.jpg",
+    "image": "images/ghalati_bakhoor-oud-azraq.jpg?v=2",
     "originalImage": "images/original_bakhoor-oud-azraq.png",
     "galleryImages": [],
     "specsEn": {
@@ -4467,7 +4469,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-dar-alkaram",
@@ -4491,7 +4494,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-dar-alkaram.jpg",
+    "image": "images/ghalati_mamool-dar-alkaram.jpg?v=2",
     "originalImage": "images/original_mamool-dar-alkaram.png",
     "galleryImages": [],
     "specsEn": {
@@ -4509,7 +4512,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-rajwa",
@@ -4533,7 +4537,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-rajwa.jpg",
+    "image": "images/ghalati_mamool-rajwa.jpg?v=2",
     "originalImage": "images/original_mamool-rajwa.png",
     "galleryImages": [],
     "specsEn": {
@@ -4551,7 +4555,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-jazi",
@@ -4575,7 +4580,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-jazi.jpg",
+    "image": "images/ghalati_mamool-jazi.jpg?v=2",
     "originalImage": "images/original_mamool-jazi.png",
     "galleryImages": [],
     "specsEn": {
@@ -4593,7 +4598,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-alanoud",
@@ -4617,7 +4623,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-alanoud.jpg",
+    "image": "images/ghalati_mamool-alanoud.jpg?v=2",
     "originalImage": "images/original_mamool-alanoud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4635,7 +4641,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-waad",
@@ -4659,7 +4666,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-waad.jpg",
+    "image": "images/ghalati_mamool-waad.jpg?v=2",
     "originalImage": "images/original_mamool-waad.png",
     "galleryImages": [],
     "specsEn": {
@@ -4677,7 +4684,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-oud-ghalati",
@@ -4701,7 +4709,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-ghalati.jpg",
+    "image": "images/ghalati_bakhoor-oud-ghalati.jpg?v=2",
     "originalImage": "images/original_bakhoor-oud-ghalati.png",
     "galleryImages": [],
     "specsEn": {
@@ -4719,7 +4727,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-mabthooth-aljoud",
@@ -4743,7 +4752,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-mabthooth-aljoud.jpg",
+    "image": "images/ghalati_bakhoor-mabthooth-aljoud.jpg?v=2",
     "originalImage": "images/original_bakhoor-mabthooth-aljoud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4761,7 +4770,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-oud-fakher",
@@ -4785,7 +4795,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-fakher.jpg",
+    "image": "images/ghalati_bakhoor-oud-fakher.jpg?v=2",
     "originalImage": "images/original_bakhoor-oud-fakher.png",
     "galleryImages": [],
     "specsEn": {
@@ -4803,7 +4813,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-asrar-aloud",
@@ -4827,7 +4838,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-asrar-aloud.jpg",
+    "image": "images/ghalati_bakhoor-asrar-aloud.jpg?v=2",
     "originalImage": "images/original_bakhoor-asrar-aloud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4845,7 +4856,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "mamool-khas-ghalati",
@@ -4869,7 +4881,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-khas-ghalati.jpg",
+    "image": "images/ghalati_mamool-khas-ghalati.jpg?v=2",
     "originalImage": "images/original_mamool-khas-ghalati.png",
     "galleryImages": [],
     "specsEn": {
@@ -4887,7 +4899,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-oud-alsamou",
@@ -4911,7 +4924,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-alsamou.jpg",
+    "image": "images/ghalati_bakhoor-oud-alsamou.jpg?v=2",
     "originalImage": "images/original_bakhoor-oud-alsamou.png",
     "galleryImages": [],
     "specsEn": {
@@ -4929,7 +4942,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "bakhoor-dokhoon-almajales",
@@ -4953,7 +4967,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-dokhoon-almajales.jpg",
+    "image": "images/ghalati_bakhoor-dokhoon-almajales.jpg?v=2",
     "originalImage": "images/original_bakhoor-dokhoon-almajales.png",
     "galleryImages": [],
     "specsEn": {
@@ -4971,7 +4985,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "original"
   },
   {
     "id": "oud-aldar",
@@ -5037,7 +5052,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-tom-ford-oud-wood.jpg",
+    "image": "images/ghalati_oil-tom-ford-oud-wood.jpg?v=2",
     "originalImage": "images/original_oil-tom-ford-oud-wood.png",
     "galleryImages": [],
     "specsEn": {
@@ -5055,7 +5070,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-oud-sayoufi",
@@ -5079,7 +5095,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-oud-sayoufi.jpg",
+    "image": "images/ghalati_oil-oud-sayoufi.jpg?v=2",
     "originalImage": "images/original_oil-oud-sayoufi.png",
     "galleryImages": [],
     "specsEn": {
@@ -5097,7 +5113,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-musk-mubakhar",
@@ -5121,7 +5138,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-mubakhar.jpg",
+    "image": "images/ghalati_oil-musk-mubakhar.jpg?v=2",
     "originalImage": "images/original_oil-musk-mubakhar.png",
     "galleryImages": [],
     "specsEn": {
@@ -5139,7 +5156,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-alyaa",
@@ -5163,7 +5181,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-alyaa.jpg",
+    "image": "images/ghalati_oil-alyaa.jpg?v=2",
     "originalImage": "images/original_oil-alyaa.png",
     "galleryImages": [],
     "specsEn": {
@@ -5181,7 +5199,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-zuhour-alrabeea",
@@ -5205,7 +5224,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-zuhour-alrabeea.jpg",
+    "image": "images/ghalati_oil-zuhour-alrabeea.jpg?v=2",
     "originalImage": "images/original_oil-zuhour-alrabeea.png",
     "galleryImages": [],
     "specsEn": {
@@ -5223,7 +5242,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-rosetta",
@@ -5247,7 +5267,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rosetta.jpg",
+    "image": "images/ghalati_oil-rosetta.jpg?v=2",
     "originalImage": "images/original_oil-rosetta.png",
     "galleryImages": [],
     "specsEn": {
@@ -5265,7 +5285,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-mashaer",
@@ -5289,7 +5310,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-mashaer.jpg",
+    "image": "images/ghalati_oil-mashaer.jpg?v=2",
     "originalImage": "images/original_oil-mashaer.png",
     "galleryImages": [],
     "specsEn": {
@@ -5307,7 +5328,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-rose-vanilla-montale",
@@ -5331,7 +5353,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rose-vanilla-montale.jpg",
+    "image": "images/ghalati_oil-rose-vanilla-montale.jpg?v=2",
     "originalImage": "images/original_oil-rose-vanilla-montale.png",
     "galleryImages": [],
     "specsEn": {
@@ -5349,7 +5371,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-muhjah",
@@ -5373,7 +5396,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-muhjah.jpg",
+    "image": "images/ghalati_oil-muhjah.jpg?v=2",
     "originalImage": "images/original_oil-muhjah.png",
     "galleryImages": [],
     "specsEn": {
@@ -5391,7 +5414,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-ghalyah",
@@ -5415,7 +5439,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-ghalyah.jpg",
+    "image": "images/ghalati_oil-ghalyah.jpg?v=2",
     "originalImage": "images/original_oil-ghalyah.png",
     "galleryImages": [],
     "specsEn": {
@@ -5433,7 +5457,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-sukoon",
@@ -5457,7 +5482,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-sukoon.jpg",
+    "image": "images/ghalati_oil-sukoon.jpg?v=2",
     "originalImage": "images/original_oil-sukoon.png",
     "galleryImages": [],
     "specsEn": {
@@ -5475,7 +5500,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-oud-vanilla",
@@ -5499,7 +5525,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-oud-vanilla.jpg",
+    "image": "images/ghalati_oil-oud-vanilla.jpg?v=2",
     "originalImage": "images/original_oil-oud-vanilla.png",
     "galleryImages": [],
     "specsEn": {
@@ -5517,7 +5543,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-musk-abyad-moutsaleq",
@@ -5541,7 +5568,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg",
+    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg?v=2",
     "originalImage": "images/original_oil-musk-abyad-moutsaleq.png",
     "galleryImages": [],
     "specsEn": {
@@ -5559,7 +5586,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-mukhallat-najd-aldhahabi",
@@ -5583,7 +5611,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-mukhallat-najd-aldhahabi.jpg",
+    "image": "images/ghalati_oil-mukhallat-najd-aldhahabi.jpg?v=2",
     "originalImage": "images/original_oil-mukhallat-najd-aldhahabi.png",
     "galleryImages": [],
     "specsEn": {
@@ -5601,7 +5629,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-lemon-hask",
@@ -5625,7 +5654,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-lemon-hask.jpg",
+    "image": "images/ghalati_oil-lemon-hask.jpg?v=2",
     "originalImage": "images/original_oil-lemon-hask.png",
     "galleryImages": [],
     "specsEn": {
@@ -5643,7 +5672,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-rose-heart",
@@ -5667,7 +5697,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rose-heart.jpg",
+    "image": "images/ghalati_oil-rose-heart.jpg?v=2",
     "originalImage": "images/original_oil-rose-heart.png",
     "galleryImages": [],
     "specsEn": {
@@ -5685,7 +5715,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-musk-altoot",
@@ -5709,7 +5740,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-altoot.jpg",
+    "image": "images/ghalati_oil-musk-altoot.jpg?v=2",
     "originalImage": "images/original_oil-musk-altoot.png",
     "galleryImages": [],
     "specsEn": {
@@ -5727,7 +5758,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-believer",
@@ -5751,7 +5783,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-believer.jpg",
+    "image": "images/ghalati_oil-believer.jpg?v=2",
     "originalImage": "images/original_oil-believer.png",
     "galleryImages": [],
     "specsEn": {
@@ -5769,7 +5801,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-sweet-musk",
@@ -5793,7 +5826,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-sweet-musk.jpg",
+    "image": "images/ghalati_oil-sweet-musk.jpg?v=2",
     "originalImage": "images/original_oil-sweet-musk.png",
     "galleryImages": [],
     "specsEn": {
@@ -5811,7 +5844,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-musk-alrumman",
@@ -5835,7 +5869,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-alrumman.jpg",
+    "image": "images/ghalati_oil-musk-alrumman.jpg?v=2",
     "originalImage": "images/original_oil-musk-alrumman.png",
     "galleryImages": [],
     "specsEn": {
@@ -5853,7 +5887,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-pink-musk",
@@ -5877,7 +5912,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-pink-musk.jpg",
+    "image": "images/ghalati_oil-pink-musk.jpg?v=2",
     "originalImage": "images/original_oil-pink-musk.png",
     "galleryImages": [],
     "specsEn": {
@@ -5895,7 +5930,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   },
   {
     "id": "oil-tayf-alemarat",
@@ -5919,7 +5955,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-tayf-alemarat.jpg",
+    "image": "images/ghalati_oil-tayf-alemarat.jpg?v=2",
     "originalImage": "images/original_oil-tayf-alemarat.png",
     "galleryImages": [],
     "specsEn": {
@@ -5937,6 +5973,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "imageLayout": "showcase"
   }
 ]
