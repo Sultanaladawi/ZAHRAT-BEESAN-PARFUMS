@@ -78,7 +78,7 @@ function homeShowCategory(filter) {
 function renderHomeHero() {
   const slides = HOME_SLIDES.map((s, i) => {
     const p = homeFindProduct(s.productId);
-    const img = p ? p.image : 'images/template_empty_podium.jpg';
+    const img = p ? p.image : 'images/logo_transparent_small.webp';
     return `
       <article class="home-slide ${i === homeSlideIndex ? 'is-active' : ''}" aria-hidden="${i !== homeSlideIndex}">
         <div class="home-slide-copy">
@@ -128,7 +128,7 @@ function renderHomeHouses() {
 function renderHomeCategories(all) {
   const tiles = HOME_CATEGORIES.map(c => {
     const p = all.find(x => homeAvailable(x) && c.match(x));
-    const img = p ? p.image : 'images/template_empty_podium.jpg';
+    const img = p ? getCardThumb(p.image) : 'images/logo_transparent_small.webp';
     return `
       <button type="button" class="home-tile" onclick="homeShowCategory('${c.filter}')">
         <img src="${img}" alt="" loading="lazy">

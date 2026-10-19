@@ -9,7 +9,7 @@ const FRAGRANCE_HOUSES = [
     id: "all",
     nameAr: "✨ روائع زهرة بيسان (كافة الدور)",
     nameEn: "✨ Beesan Masterpieces (All Houses)",
-    logo: "images/logo_transparent.png",
+    logo: "images/logo_transparent_small.webp",
     badge: "👑",
     region: "global",
     countryAr: "المملكة الأردنية الهاشمية 🇯🇴",
