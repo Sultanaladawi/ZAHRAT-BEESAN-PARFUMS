@@ -9935,7 +9935,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/dpwddva/p1593535954",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
-    "image": "images/rasasi_1593535954.jpg?v=c1524aff",
+    "image": "images/rasasi_1593535954.jpg?v=143bf8f5",
     "originalImage": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
     "galleryImages": [
       "images/rasasi_1593535954.jpg?v=2"
@@ -9964,7 +9964,10 @@
     },
     "categoryType": "perfume",
     "imageLayoutOverride": "showcase",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutSource": "images/sources/rasasi_1593535954.webp",
+    "cutoutSolid": true,
+    "cutoutMirrorFill": true
   },
   {
     "id": "rasasi-624623193",
