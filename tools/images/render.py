@@ -39,7 +39,7 @@ def session():
 
 
 def source_url(item):
-    for key in ("originalImage", "bottleUrl"):
+    for key in ("cutoutSource", "originalImage", "bottleUrl"):
         url = str(item.get(key) or "")
         if url:
             return url
@@ -154,6 +154,40 @@ def trim_cast_shadow(rgb, alpha):
     return out
 
 
+def mirror_clip(alpha):
+    """For symmetric bottles with a one-sided shadow: mirror the clean side.
+
+    The axis comes from the top of the cap (the shadow starts lower); each
+    row is clipped to the extent of its less-wide side, mirrored.
+    """
+    mask = alpha > 64
+    rows = np.where(mask.any(axis=1))[0]
+    if len(rows) < 50:
+        return alpha
+    top = rows[: max(3, len(rows) // 40)]
+    centers = []
+    for y in top:
+        xs = np.nonzero(mask[y])[0]
+        centers.append((xs.min() + xs.max()) / 2)
+    axis = float(np.median(centers))
+    out = alpha.copy()
+    for y in rows:
+        xs = np.nonzero(mask[y])[0]
+        half = min(axis - xs.min(), xs.max() - axis)
+        if half <= 0:
+            out[y] = 0
+            continue
+        lo, hi = int(np.floor(axis - half)), int(np.ceil(axis + half))
+        out[y, :max(lo, 0)] = 0
+        out[y, hi + 1:] = 0
+    return out
+
+
+# Same symmetric bottle shot with a hard one-sided studio shadow.
+def needs_mirror_clip(item):
+    return item.get("house") in (None, "ghalati") and str(item.get("id", "")).startswith("oil-")
+
+
 def defringe(rgba):
     arr = np.asarray(rgba, dtype=np.float32).copy()
     a = arr[..., 3]
@@ -169,7 +203,7 @@ def defringe(rgba):
     return Image.fromarray(arr.clip(0, 255).astype(np.uint8), "RGBA")
 
 
-def cutout(img):
+def cutout(img, mirror=False):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -177,7 +211,10 @@ def cutout(img):
     arr = np.asarray(cut)
     alpha = clean_alpha(arr[..., 3])
     rows = np.where(alpha.max(axis=1) > 128)[0]
-    alpha = trim_cast_shadow(arr[..., :3].astype(np.float32), alpha)
+    if mirror:
+        alpha = mirror_clip(alpha)
+    else:
+        alpha = trim_cast_shadow(arr[..., :3].astype(np.float32), alpha)
     alpha = drop_slivers(alpha, max(2, int((rows[-1] - rows[0]) * 0.006)) if len(rows) else 2)
     line = reflection_line(arr[..., :3].astype(np.float32), alpha)
     if line is not None:
@@ -213,7 +250,7 @@ def qa_pass(info):
 
 
 def showcase(item, house):
-    cut, info = cutout(fetch(source_url(item)))
+    cut, info = cutout(fetch(source_url(item)), mirror=house == "ghalati" and needs_mirror_clip(item))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
@@ -231,6 +268,11 @@ def original(item, house):
     arr = np.asarray(img)
     edge = np.concatenate([arr[0], arr[-1], arr[:, 0], arr[:, -1]])
     fill = tuple(int(v) for v in np.median(edge, axis=0))
+    if edge.std(axis=0).mean() > 25:
+        # Busy lifestyle photo: padding would show bars, so crop to a square.
+        side = min(img.size)
+        left, top = (img.width - side) // 2, (img.height - side) // 2
+        return img.crop((left, top, left + side, top + side)).resize((SIZE, SIZE), Image.LANCZOS), {}
     img.thumbnail((SIZE, SIZE), Image.LANCZOS)
     canvas = Image.new("RGB", (SIZE, SIZE), fill)
     canvas.paste(img, ((SIZE - img.width) // 2, (SIZE - img.height) // 2))
