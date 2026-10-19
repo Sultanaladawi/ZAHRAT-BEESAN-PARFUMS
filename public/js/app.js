@@ -1349,7 +1349,10 @@ function getCardThumb(src) {
 // set and drop the rest, so cards read the same across the store.
 function getPromoBadgeLabel(p, prices, isAr) {
   const txt = String(p.promotionTitle || '');
-  if (/buy\s*2|1\s*\+\s*2|2\s*\+\s*1|free|مجان|الثالث/i.test(txt)) return isAr ? 'اشترِ 2 والثالث مجاناً' : 'Buy 2, get 1 free';
+  if (typeof offerRuleFor === 'function') {
+    const rule = offerRuleFor(p);
+    if (rule) return isAr ? (rule.size === 4 ? 'اشترِ 3 والرابع مجاناً' : 'اشترِ 2 والثالث مجاناً') : (rule.size === 4 ? 'Buy 3, get 1 free' : 'Buy 2, get 1 free');
+  }
   if (/الأكثر|best\s*sell/i.test(txt)) return isAr ? 'الأكثر مبيعاً' : 'Best seller';
   if (/جديد|\bnew\b/i.test(txt)) return isAr ? 'جديد' : 'New';
   if (prices.hasDiscount) {
