@@ -540,7 +540,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/pourmoi-f/10111041012100-1176.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-11.jpg?v=f4a2c8de",
+    "image": "images/deraah_deraah-11.jpg?v=d93d546b",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85"
@@ -573,8 +573,10 @@
     "imageLayout": "showcase",
     "cutoutSolid": true,
     "cutoutModel": "birefnet-general",
-    "cutoutTrimTop": 0.16,
-    "cutoutCapClip": 0.12
+    "cutoutRemoveCard": [
+      0.15,
+      0.34
+    ]
   },
   {
     "id": "deraah-10111011011100-1356",
@@ -1253,7 +1255,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -2348,7 +2350,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
-    "categoryType": "bakhoor",
+    "categoryType": "hair_mist",
     "imageLayout": "showcase"
   },
   {
@@ -3837,7 +3839,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/all-perfumes/10111041012100-1190.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-74.jpg?v=5bdfc0ca",
+    "image": "images/deraah_deraah-74.jpg?v=571f9324",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw8db418ea/images/10111041012100-1190-1.jpg?sw=800&sh=800&q=85"
@@ -3867,7 +3869,8 @@
       "perfumer": "Deraah Perfumes — RING"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111101013100-1336",
@@ -10391,7 +10394,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
-    "categoryType": "bakhoor",
+    "categoryType": "hair_mist",
     "imageLayout": "showcase"
   },
   {
@@ -11172,7 +11175,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -12478,7 +12481,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -12686,7 +12689,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — MAIOS"
     },
-    "categoryType": "bakhoor",
+    "categoryType": "hair_mist",
     "imageLayout": "showcase"
   },
   {
@@ -12843,7 +12846,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — POUR MOI"
     },
-    "categoryType": "bakhoor",
+    "categoryType": "hair_mist",
     "imageLayout": "showcase"
   },
   {
@@ -13623,7 +13626,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -13831,7 +13834,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -16544,7 +16547,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — CAGE"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -16752,7 +16755,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH"
     },
-    "categoryType": "perfume",
+    "categoryType": "bundle",
     "imageLayout": "original"
   },
   {
@@ -17690,7 +17693,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — GINGLE"
     },
-    "categoryType": "bakhoor",
+    "categoryType": "hair_mist",
     "imageLayout": "showcase"
   },
   {

@@ -363,6 +363,44 @@ def qa_pass(info):
             and info.get("aspect", 0) <= QA_LIMITS["aspect"])
 
 
+def remove_card(img, top, bottom):
+    """Whiten a white message card standing behind an egg-shaped cap.
+
+    Rows top..bottom (fractions of the photo height) hold the card. The cap
+    is light like the card, so its outline there is extrapolated: an
+    ellipse fitted to the cap's edges in the rows just below the card.
+    Everything else in the card rows becomes backdrop.
+    """
+    arr = np.asarray(flatten(img), dtype=np.float32).copy()
+    h, w = arr.shape[:2]
+    y0, y1 = int(top * h), int(bottom * h)
+    solid = arr.min(axis=2) < 240
+    ys, half = [], []
+    for y in range(y1 + 4, min(h, y1 + int(0.15 * h))):
+        xs = np.nonzero(solid[y])[0]
+        if len(xs):
+            ys.append(y)
+            half.append((xs.max() - xs.min()) / 2)
+            cx = (xs.max() + xs.min()) / 2
+    if len(ys) < 5:
+        return Image.fromarray(arr.astype(np.uint8))
+    ys, half = np.array(ys, float), np.array(half)
+    # Stop where the outline jumps outward (feathers or shoulders start).
+    jumps = np.nonzero(half[1:] > half[:-1] * 1.12)[0]
+    stop = int(jumps[0]) + 1 if len(jumps) else len(half)
+    ys, half = ys[:stop], half[:stop]
+    a_ = half.max()
+    cy = ys[int(np.argmax(half))]
+    k = np.clip(half / a_, 0, 0.999)
+    b_ = np.median(np.abs(ys - cy) / np.sqrt(1 - k ** 2))
+    yy, xx = np.mgrid[0:h, 0:w]
+    egg = ((xx - cx) / (a_ * 0.97)) ** 2 + ((yy - cy) / max(b_, 1)) ** 2 <= 1
+    region = np.zeros((h, w), bool)
+    region[y0:y1 + 4] = True
+    arr[region & ~egg] = 255
+    return Image.fromarray(arr.clip(0, 255).astype(np.uint8))
+
+
 def showcase(item, house):
     src = fetch(source_url(item))
     if item.get("cutoutCrop"):
@@ -370,6 +408,8 @@ def showcase(item, house):
         # photo also shows its box.
         l, t, r, b = item["cutoutCrop"]
         src = src.crop((round(l * src.width), round(t * src.height), round(r * src.width), round(b * src.height)))
+    if item.get("cutoutRemoveCard"):
+        src = remove_card(src, *item["cutoutRemoveCard"])
     cut, info = cutout(src, mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
                        solid=bool(item.get("cutoutSolid")),
                        mirror_fill_=bool(item.get("cutoutMirrorFill")),
