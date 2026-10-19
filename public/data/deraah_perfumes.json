@@ -16361,7 +16361,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/10111011011100-1478.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwb3da7073/images/10111011011100-1478-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-314.jpg?v=4e24b9c6",
+    "image": "images/deraah_deraah-314.jpg?v=05a889da",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwb3da7073/images/10111011011100-1478-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwb3da7073/images/10111011011100-1478-1.jpg?sw=800&sh=800&q=85"
@@ -16391,8 +16391,9 @@
       "perfumer": "Deraah Perfumes — LINK"
     },
     "categoryType": "perfume",
-    "imageLayout": "original",
-    "imageLayoutOverride": "original"
+    "imageLayout": "showcase",
+    "imageLayoutOverride": "showcase",
+    "cutoutSource": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwce1e3a51/images/10111011011100-1478-4.png?sw=1200&sh=1200&q=90"
   },
   {
     "id": "deraah-10111011013150-1394",
