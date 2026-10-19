@@ -333,7 +333,13 @@ def qa_pass(info):
 
 
 def showcase(item, house):
-    cut, info = cutout(fetch(source_url(item)), mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
+    src = fetch(source_url(item))
+    if item.get("cutoutCrop"):
+        # Fractions [left, top, right, bottom]: keep only the bottle when the
+        # photo also shows its box.
+        l, t, r, b = item["cutoutCrop"]
+        src = src.crop((round(l * src.width), round(t * src.height), round(r * src.width), round(b * src.height)))
+    cut, info = cutout(src, mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
                        solid=bool(item.get("cutoutSolid")),
                        mirror_fill_=bool(item.get("cutoutMirrorFill")),
                        body_clip=item.get("cutoutClipBodyFrom"),
