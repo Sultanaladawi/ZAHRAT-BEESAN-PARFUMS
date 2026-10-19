@@ -1,0 +1,41 @@
+name: Sync supplier prices and stock
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-catalog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check suppliers and apply price/stock changes
+        run: node tools/sync-check.js --apply
+
+      - name: Commit updated catalog
+        run: |
+          if git diff --quiet -- public/data; then
+            echo "No price or stock changes."
+            exit 0
+          fi
+          git config user.name "catalog-sync-bot"
+          git config user.email "catalog-sync-bot@users.noreply.github.com"
+          git add public/data
+          git commit -m "Sync supplier prices and stock"
+          git push

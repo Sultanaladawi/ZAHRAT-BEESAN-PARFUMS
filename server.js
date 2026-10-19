@@ -505,7 +505,9 @@ async function syncWithGhalatiStore(force = false) {
         const live = liveById.get(sallaId);
 
         if (!live) {
-          changesDetected = true;
+          // Not in this response (request failed or product delisted):
+          // keep its last known state rather than dropping it from the store.
+          syncedCatalog.push({ ...item, sallaId, house: 'ghalati' });
           continue;
         }
 
@@ -1275,6 +1277,7 @@ function fetchSingleLaverneProductLive(slug) {
         let price = null;
         let origPrice = null;
         let isAvailable = true;
+        let found = false;
 
         const jsonLdRegex = /<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi;
         let match;
@@ -1283,7 +1286,11 @@ function fetchSingleLaverneProductLive(slug) {
             const data = JSON.parse(match[1].trim());
             const p = data['@graph'] ? data['@graph'].find(x => x['@type'] === 'Product') : (data['@type'] === 'Product' ? data : null);
             if (p && p.offers) {
-              price = parseFloat(p.offers.price);
+              found = true;
+              // Laverne geo-prices by visitor IP; only trust riyal offers
+              // (a server abroad gets USD, which must not be read as SAR).
+              const currency = String(p.offers.priceCurrency || 'SAR').toUpperCase();
+              price = currency === 'SAR' ? parseFloat(p.offers.price) : null;
               if (p.offers.availability) {
                 isAvailable = p.offers.availability.includes('InStock');
               }
@@ -1293,9 +1300,9 @@ function fetchSingleLaverneProductLive(slug) {
 
         const origM = html.match(/class=["'][^"']*regular-price[^"']*["'][^>]*>\s*([\d.]+)/i) ||
                       html.match(/<del[^>]*>\s*([\d.]+)\s*(?:ر\.س|SAR)?\s*<\/del>/i);
-        if (origM) origPrice = parseFloat(origM[1]);
+        if (origM && price !== null) origPrice = parseFloat(origM[1]);
 
-        resolve({ slug, price, origPrice, isAvailable });
+        resolve({ slug, price, origPrice, isAvailable, found });
       });
     });
     req.on('error', () => resolve({ slug, error: true }));
@@ -1330,7 +1337,7 @@ async function syncWithLaverneStore(force = false) {
       const slice = masterList.slice(i, i + batchSize);
       const results = await Promise.all(slice.map(it => fetchSingleLaverneProductLive(it.sallaId)));
       results.forEach(res => {
-        if (res && res.price !== null) {
+        if (res && res.found) {
           liveById.set(res.slug, res);
         }
       });
