@@ -540,7 +540,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/pourmoi-f/10111041012100-1176.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-11.jpg?v=e1fdbc59",
+    "image": "images/deraah_deraah-11.jpg?v=f4a2c8de",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw3db0f51f/images/10111041012100-1176-1.jpg?sw=800&sh=800&q=85"
@@ -571,7 +571,10 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutSolid": true
+    "cutoutSolid": true,
+    "cutoutModel": "birefnet-general",
+    "cutoutTrimTop": 0.16,
+    "cutoutCapClip": 0.12
   },
   {
     "id": "deraah-10111011011100-1356",
@@ -645,7 +648,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/private-f/10111101012100-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-13.jpg?v=98ab86f6",
+    "image": "images/deraah_deraah-13.jpg?v=afd8a57c",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85"
@@ -675,7 +678,8 @@
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111011011200-1027",
@@ -749,7 +753,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/private-f/10111101012100-1339.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw0923d206/images/10111101012100-1339-1%20(3).jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-15.jpg?v=92b61652",
+    "image": "images/deraah_deraah-15.jpg?v=eeaa7016",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw0923d206/images/10111101012100-1339-1%20(3).jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw0923d206/images/10111101012100-1339-1%20(3).jpg?sw=800&sh=800&q=85"
@@ -779,7 +783,8 @@
       "perfumer": "Deraah Perfumes — DERAAH PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111171013100-1305",
@@ -2470,7 +2475,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111101012200-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwf379fabb/images/10111101012200-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-48.jpg?v=f74e2a25",
+    "image": "images/deraah_deraah-48.jpg?v=efb73ca3",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwf379fabb/images/10111101012200-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwf379fabb/images/10111101012200-1152-1.jpg?sw=800&sh=800&q=85"
@@ -2502,7 +2507,8 @@
     "categoryType": "perfume",
     "imageLayout": "showcase",
     "cutoutSolid": true,
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111061011100-1266",
@@ -3256,7 +3262,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111101012150-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5f1f86f4/images/10111101012150-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-63.jpg?v=efbe1b47",
+    "image": "images/deraah_deraah-63.jpg?v=7ce15d69",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5f1f86f4/images/10111101012150-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5f1f86f4/images/10111101012150-1152-1.jpg?sw=800&sh=800&q=85"
@@ -3286,7 +3292,8 @@
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111011012100-1250",
@@ -4091,7 +4098,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/private-f/10111101012300-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-79.jpg?v=f2759831",
+    "image": "images/deraah_deraah-79.jpg?v=fd8e0b42",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85"
@@ -4121,7 +4128,8 @@
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111051011095-1028",
@@ -4684,7 +4692,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
       "size": "150مل",
-      "type": "زيت عطري مركز",
+      "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة H2O"
     },
     "specsEn": {
@@ -4694,7 +4702,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — H2O"
     },
-    "categoryType": "oil",
+    "categoryType": "perfume",
     "imageLayout": "showcase",
     "cutoutSolid": true
   },
@@ -7535,7 +7543,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111101012050-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-145.jpg?v=98ab86f6",
+    "image": "images/deraah_deraah-145.jpg?v=afd8a57c",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw4ad73c4b/images/10111101012100-1152-1.jpg?sw=800&sh=800&q=85"
@@ -7565,7 +7573,8 @@
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111071012150-1209",
@@ -9360,7 +9369,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111101012250-1152.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-180.jpg?v=f2759831",
+    "image": "images/deraah_deraah-180.jpg?v=fd8e0b42",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwda72c025/images/10111101012250-1152-1.jpg?sw=800&sh=800&q=85"
@@ -9390,7 +9399,8 @@
       "perfumer": "Deraah Perfumes — PRIVATE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111031011150-1010",
@@ -9484,7 +9494,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
       "size": "50مل",
-      "type": "زيت عطري مركز",
+      "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة H2O"
     },
     "specsEn": {
@@ -9494,7 +9504,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — H2O"
     },
-    "categoryType": "oil",
+    "categoryType": "perfume",
     "imageLayout": "showcase",
     "cutoutSolid": true
   },
@@ -12094,7 +12104,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "رجالي",
       "size": "100 مل",
-      "type": "زيت عطري مركز",
+      "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة H2O"
     },
     "specsEn": {
@@ -12104,7 +12114,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — H2O"
     },
-    "categoryType": "oil",
+    "categoryType": "perfume",
     "imageLayout": "showcase"
   },
   {
@@ -13915,7 +13925,7 @@
       "origin": "المملكة العربية السعودية",
       "category": "رجالي",
       "size": "75 مل",
-      "type": "زيت عطري مركز",
+      "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة CAGE"
     },
     "specsEn": {
@@ -13925,7 +13935,7 @@
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — CAGE"
     },
-    "categoryType": "oil",
+    "categoryType": "perfume",
     "imageLayout": "showcase"
   },
   {
@@ -17546,7 +17556,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111031011100-1244.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-337.jpg?v=56c212b9",
+    "image": "images/deraah_deraah-337.jpg?v=255b0e41",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85"
@@ -17576,7 +17586,8 @@
       "perfumer": "Deraah Perfumes — RING"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111021011100-1406",
@@ -17962,7 +17973,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111031011150-1244.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-345.jpg?v=56c212b9",
+    "image": "images/deraah_deraah-345.jpg?v=255b0e41",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwcb39fd9e/images/10111031011150-1244-1.jpg?sw=800&sh=800&q=85"
@@ -17992,7 +18003,8 @@
       "perfumer": "Deraah Perfumes — RING"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "deraah-10111081012070-1168",
