@@ -676,7 +676,8 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
             : (house === 'labonair' ? '673065613' : '1939633486'))));
     const headers = {
       'Accept': 'application/json, text/plain, */*',
-      'Store-Identifier': storeId
+      'Store-Identifier': storeId,
+      'Accept-Language': 'ar'
     };
     const knownIds = new Set(
       filteredList.map(p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '')).filter(Boolean)
@@ -963,13 +964,13 @@ async function loadCatalog() {
   }
 
   // Periodic live sync every 90 seconds so price/stock/deletion changes appear automatically
-  setInterval(refreshLiveCatalogSilently, 90 * 1000);
+  setInterval(refreshLiveCatalogSilently, 10 * 60 * 1000);
 }
 
 async function refreshLiveCatalogSilently() {
   try {
     const house = (activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'rasasi' || activeHouse === 'al-rehab' || activeHouse === 'labonair' || activeHouse === 'laverne' || activeHouse === 'deraah') ? activeHouse : 'ghalati';
-    const res = await fetch(`/api/catalog?house=${house}&force=1`).catch(() => null);
+    const res = await fetch(`/api/catalog?house=${house}`).catch(() => null);
     let freshData = null;
     if (res && res.ok) {
       freshData = await res.json();

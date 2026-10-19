@@ -111,10 +111,20 @@ function productHouseKey(p) {
   return 'ghalati';
 }
 
+// The sync refreshes which products are in each fixed-price group
+// (public/data/offers.json); the lists above are the fallback.
+fetch('data/offers.json').then(r => (r.ok ? r.json() : null)).then(lists => {
+  if (!lists) return;
+  for (const rule of OFFER_RULES) {
+    if (rule.sallaIds && Array.isArray(lists[rule.key]) && lists[rule.key].length) rule.sallaIds = lists[rule.key];
+  }
+}).catch(() => {});
+
 function offerRuleFor(p) {
   if (p.isAvailable === false || p.status === 'out') return null;
   const key = productHouseKey(p);
-  const txt = String(p.promotionTitle || '');
+  // Suppliers write offers with Arabic digits too ("٢+١").
+  const txt = String(p.promotionTitle || '').replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
   const sid = String(p.sallaId || '');
   return OFFER_RULES.find(r => r.house === key && offerSetting(r).enabled !== false
     && (r.sallaIds ? r.sallaIds.includes(sid) : r.match.test(txt))) || null;

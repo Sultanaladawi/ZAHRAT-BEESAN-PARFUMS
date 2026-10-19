@@ -50,7 +50,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "majestic-wood",
@@ -103,7 +104,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oud-argent",
@@ -159,7 +161,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "amber-cashmere",
@@ -212,7 +215,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "layana",
@@ -267,7 +271,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "nowara",
@@ -320,7 +325,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "moudhi",
@@ -372,7 +378,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "rozana",
@@ -427,7 +434,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "emotion",
@@ -480,7 +488,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "attraction",
@@ -535,7 +544,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "spring",
@@ -580,10 +590,10 @@
     "origJod": 22,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "sparkle",
@@ -628,10 +638,10 @@
     "origJod": 22,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "sunrise",
@@ -676,10 +686,10 @@
     "origJod": 22,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bois-noir",
@@ -727,7 +737,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "shades",
@@ -779,7 +790,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oud-absolute",
@@ -827,7 +839,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "utopia-platinum",
@@ -881,7 +894,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "rasayil-wudd",
@@ -923,14 +937,15 @@
     "boxImage": "images/box_rasayil-wudd.jpg",
     "fragranticaCard": "images/pyramid_rasayil-wudd.jpg",
     "sallaId": "1291527951",
-    "origSarPrice": 449,
+    "origSarPrice": 449.01,
     "origJod": 97,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "rasayil-haneen",
@@ -975,14 +990,15 @@
     "boxImage": "images/box_rasayil-haneen.jpg",
     "fragranticaCard": "images/pyramid_rasayil-haneen.jpg",
     "sallaId": "1089182563",
-    "origSarPrice": 449,
+    "origSarPrice": 449.01,
     "origJod": 97,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "rasayil-shawq",
@@ -1025,14 +1041,15 @@
     "boxImage": "images/box_rasayil-shawq.jpg",
     "fragranticaCard": "images/pyramid_rasayil-shawq.jpg",
     "sallaId": "113450693",
-    "origSarPrice": 449,
+    "origSarPrice": 449.01,
     "origJod": 97,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "just-oud",
@@ -1087,7 +1104,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "perfume-1932",
@@ -1134,7 +1152,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mountain-leather",
@@ -1182,7 +1201,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "perfume-2016",
@@ -1230,7 +1250,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "ambitious",
@@ -1283,7 +1304,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "sublime-woods",
@@ -1336,7 +1358,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "perfume-1985",
@@ -1384,7 +1407,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "absolute-musk",
@@ -1436,7 +1460,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "sublime-flowers",
@@ -1482,14 +1507,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79256.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/11793243-8e9c-4ef4-adf0-e3ad67820753-1000x1000-Ltgg1yQuyr6DsMFj8knWZpFBXMY74rfQL1qUiwjj.jpg",
     "sallaId": "192589990",
-    "origSarPrice": 149,
+    "origSarPrice": 149.01,
     "origJod": 40,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "eloquent",
@@ -1542,7 +1568,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "peach-musk",
@@ -1594,7 +1621,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "just-amber",
@@ -1647,7 +1675,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "carmine-soul",
@@ -1694,7 +1723,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "dama",
@@ -1740,14 +1770,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.84781.jpg",
     "boxImage": "images/box_dama.jpg",
     "sallaId": "1422738068",
-    "origSarPrice": 149,
+    "origSarPrice": 149.01,
     "origJod": 40,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "utopia-essence",
@@ -1796,7 +1827,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "exotic-wood",
@@ -1845,7 +1877,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "rose-intense",
@@ -1894,7 +1927,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "raspberry-musk",
@@ -1941,7 +1975,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "cherry-musk",
@@ -1990,7 +2025,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "vintage",
@@ -2034,14 +2070,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.89823.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/9a75fb62-c2bb-4b3d-bbbc-7d70edd0f2dd-1000x1000-q08wKeGTINQnipveAgW3VB9nrx7ltw1bHzpEC1bl.jpg",
     "sallaId": "1644587878",
-    "origSarPrice": 380,
+    "origSarPrice": 380.01,
     "origJod": 84,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "iris-musk",
@@ -2089,7 +2126,7 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.79255.jpg",
     "boxImage": "images/box_iris-musk.jpg",
     "sallaId": "1779601443",
-    "origSarPrice": 194,
+    "origSarPrice": 194.01,
     "origJod": 49,
     "isAvailable": true,
     "status": "sale",
@@ -2152,7 +2189,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "utopia-gist",
@@ -2207,7 +2245,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "utopia-ideal",
@@ -2257,7 +2296,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "eternal-passion",
@@ -2310,7 +2350,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mont-dor",
@@ -2356,14 +2397,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.89822.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/ad5d2ba6-a31b-4dd5-9127-39cf1e1d50cb-1000x1000-e7Tfceap8b00roiLPzGOQTS6bZjZbDwuFKi35vFL.png",
     "sallaId": "272190565",
-    "origSarPrice": 380,
+    "origSarPrice": 380.01,
     "origJod": 84,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "boudoir",
@@ -2416,7 +2458,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "first-impression",
@@ -2469,7 +2512,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "seraj",
@@ -2515,14 +2559,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.143758.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/25a8ac07-aae6-48f5-8056-c18e375d9a86-1000x1000-Qg8jW2Z87I4ylmy8SWsjZ0psCnnA4JbUAtpz5oHe.jpg",
     "sallaId": "73669949",
-    "origSarPrice": 838,
+    "origSarPrice": 838.01,
     "origJod": 170,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "cartage-velours",
@@ -2575,7 +2620,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "most-wanted",
@@ -2621,14 +2667,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.111005.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/41a5a6d6-3af5-4b73-bf01-16a5c29da635-1000x1000-IxmNmruZWfOVYKdFII91qri0vLKMVoMKrU9bxH4u.jpg",
     "sallaId": "2084953248",
-    "origSarPrice": 333,
+    "origSarPrice": 333.01,
     "origJod": 75,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "cartage-etoile",
@@ -2681,7 +2728,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "silk-essence",
@@ -2734,7 +2782,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "amber-oud",
@@ -2787,7 +2836,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "cartage-noble",
@@ -2840,7 +2890,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "honest",
@@ -2892,7 +2943,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "varna-single",
@@ -2938,14 +2990,15 @@
     "fragranticaBottle": "https://fimgs.net/mdimg/perfume/o.89824.jpg",
     "boxImage": "https://cdn.salla.sa/Dqvgy/5ecf2ed2-9c3b-46cc-91ff-b4a955543c7c-1000x1000-KDBWRnMG2CtFUxXTwm3oV8xVohnKdLkBgvQqDCvB.jpg",
     "sallaId": "1536608353",
-    "origSarPrice": 380,
+    "origSarPrice": 380.02,
     "origJod": 84,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "heroic",
@@ -2998,7 +3051,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "ancestry-oud",
@@ -3053,7 +3107,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bundle-exceptional-offer",
@@ -3115,7 +3170,7 @@
     "titleEn": "Last Hours Luxury Trio Bundle",
     "brand": "Ghalati",
     "sarPrice": 333.01,
-    "origSarPrice": 1137,
+    "origSarPrice": 1137.01,
     "baseJod": 63,
     "finalJod": 85,
     "origJod": 237,
@@ -3494,7 +3549,7 @@
     },
     "boxImage": null,
     "sallaId": "2116848990",
-    "origSarPrice": 930,
+    "origSarPrice": 930.01,
     "origJod": 198,
     "isAvailable": true,
     "status": "sale",
@@ -3729,7 +3784,7 @@
     },
     "boxImage": null,
     "sallaId": "1943659770",
-    "origSarPrice": 149,
+    "origSarPrice": 149.01,
     "origJod": 50,
     "isAvailable": true,
     "status": "sale",
@@ -3776,10 +3831,10 @@
     "origJod": 60,
     "isAvailable": false,
     "status": "out",
-    "promotionTitle": "",
     "bottleCount": 3,
     "feeJod": 22,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "set-varna",
@@ -3821,7 +3876,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bundle-altarikh",
@@ -3864,7 +3920,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "set-alfakhamah",
@@ -3906,7 +3963,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "sandouq-albarqa",
@@ -3955,7 +4013,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "package-cartage-noble",
@@ -4002,7 +4061,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "package-cartage-etoile",
@@ -4049,7 +4109,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "package-cartage-velours",
@@ -4096,7 +4157,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bundle-body-musk",
@@ -4143,7 +4205,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bundle-al-saada",
@@ -4190,7 +4253,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bundle-discovery",
@@ -4237,7 +4301,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "luxury-edition",
@@ -4333,7 +4398,8 @@
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 2,
     "feeJod": 18,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "freshener-ancestry-oud",
@@ -4387,7 +4453,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-wasaef",
@@ -4430,7 +4497,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-azraq",
@@ -4473,7 +4541,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-dar-alkaram",
@@ -4516,7 +4585,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-rajwa",
@@ -4559,7 +4629,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-jazi",
@@ -4602,7 +4673,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-alanoud",
@@ -4645,7 +4717,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-waad",
@@ -4688,7 +4761,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-ghalati",
@@ -4731,7 +4805,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-mabthooth-aljoud",
@@ -4774,7 +4849,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-fakher",
@@ -4817,7 +4893,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-asrar-aloud",
@@ -4860,7 +4937,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "mamool-khas-ghalati",
@@ -4903,7 +4981,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-alsamou",
@@ -4946,7 +5025,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "bakhoor-dokhoon-almajales",
@@ -4989,7 +5069,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oud-aldar",
@@ -5024,14 +5105,15 @@
     },
     "boxImage": null,
     "sallaId": "667748448",
-    "origSarPrice": 80,
+    "origSarPrice": 80.01,
     "origJod": 27,
     "isAvailable": true,
     "status": "sale",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
-    "house": "ghalati"
+    "house": "ghalati",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-tom-ford-oud-wood",
@@ -5074,7 +5156,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-oud-sayoufi",
@@ -5117,7 +5200,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-musk-mubakhar",
@@ -5246,7 +5330,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-rosetta",
@@ -5289,7 +5374,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-mashaer",
@@ -5375,7 +5461,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-muhjah",
@@ -5547,7 +5634,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-musk-abyad-moutsaleq",
@@ -5591,7 +5679,8 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "cutoutSolid": true
+    "cutoutSolid": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-mukhallat-najd-aldhahabi",
@@ -5634,7 +5723,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-lemon-hask",
@@ -5677,7 +5767,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-rose-heart",
@@ -5720,7 +5811,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-musk-altoot",
@@ -5763,7 +5855,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-believer",
@@ -5806,7 +5899,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-sweet-musk",
@@ -5849,7 +5943,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-musk-alrumman",
@@ -5892,7 +5987,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-pink-musk",
@@ -5935,7 +6031,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oil-tayf-alemarat",
@@ -5978,6 +6075,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   }
 ]
