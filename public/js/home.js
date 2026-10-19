@@ -61,9 +61,31 @@ function homeFindProduct(id) {
   return null;
 }
 
+// The home page shows the storefront only; the full catalog opens on demand.
+let homeBrowseAll = false;
+
+function homeBrowseCatalog() {
+  homeBrowseAll = true;
+  updateHomeVisibility();
+  document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function goHome() {
+  homeBrowseAll = false;
+  if (typeof activeModalPerfume !== 'undefined' && activeModalPerfume) closeProductModal();
+  if (activeHouse !== 'all' || currentFilter !== 'all' || currentSearch) {
+    const box = document.getElementById('mainSearchInput');
+    if (box) box.value = '';
+    currentSearch = '';
+    selectHouse('all');
+  }
+  updateHomeVisibility();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function homeGo(action) {
   if (action === 'catalog') {
-    document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+    homeBrowseCatalog();
   } else if (action.startsWith('house:')) {
     selectHouse(action.slice(6));
   }
@@ -72,7 +94,7 @@ function homeGo(action) {
 function homeShowCategory(filter) {
   const btn = document.querySelector(`.catalog-filter-btn[data-filter="${filter}"]`);
   filterCatalog(filter, btn);
-  document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+  homeBrowseCatalog();
 }
 
 function renderHomeHero() {
@@ -192,13 +214,15 @@ async function renderHome() {
     + renderHomeRail(homeIsAr() ? 'الأكثر طلباً' : 'Most wanted', bestsellers, 'catalog')
     + renderHomeCategories(all)
     + renderHomePromo()
-    + rails.join('');
+    + rails.join('')
+    + `<div class="home-browse-all"><button type="button" class="home-cta" onclick="homeBrowseCatalog()">${homeIsAr() ? 'تصفّح كل العطور' : 'Browse all perfumes'}</button></div>`;
   homeSetSlide(homeSlideIndex);
 }
 
 function updateHomeVisibility() {
   const isHome = activeHouse === 'all' && currentFilter === 'all' && !currentSearch;
   document.body.classList.toggle('is-home', isHome);
+  document.body.classList.toggle('home-catalog-hidden', isHome && !homeBrowseAll);
 }
 
 // Keep the home page in step with house, filter, search and language changes.

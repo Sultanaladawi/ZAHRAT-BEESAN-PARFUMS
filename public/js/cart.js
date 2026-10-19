@@ -190,6 +190,20 @@ function closeCart() {
 
 // ── Footer policy pages (guarantee, order tracking) ──
 const POLICIES = {
+  // DRAFT terms: confirm with the owner before publishing.
+  returns: {
+    icon: '🔄',
+    ar: { title: 'سياسة الاستبدال والاسترجاع', body: [
+      ['منتج تالف أو مختلف', 'إذا وصلك العطر تالفاً أو مختلفاً عن طلبك، نستبدله لك مجاناً. تواصل معنا خلال 48 ساعة من الاستلام مع صورة للمنتج.'],
+      ['العطور المختومة', 'يمكن استبدال العطر خلال 3 أيام من الاستلام بشرط أن يكون مختوماً بغلافه الأصلي ولم يُستخدم.'],
+      ['ما لا يُستبدل', 'العطور المفتوحة أو المستخدمة، والعروض والتوزيعات، لا يمكن استبدالها لأسباب صحية.'],
+    ] },
+    en: { title: 'Exchange & returns', body: [
+      ['Damaged or wrong item', 'If your perfume arrives damaged or different from your order, we replace it free. Message us within 48 hours of delivery with a photo.'],
+      ['Sealed perfumes', 'A perfume can be exchanged within 3 days of delivery if it is still sealed in its original wrapping and unused.'],
+      ['Not exchangeable', 'Opened or used perfumes, offers and favour packs cannot be exchanged for hygiene reasons.'],
+    ] },
+  },
   guarantee: {
     icon: '👑',
     ar: { title: 'ضمان الأصالة 100%', body: [

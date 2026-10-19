@@ -3308,3 +3308,6 @@ body.cart-open { overflow: hidden; }
   .home-more { padding: 10px 6px; }
   .social-icon, .top-social a { min-width: 36px; min-height: 36px; display: inline-flex; align-items: center; justify-content: center; }
 }
+/* Home shows the storefront; the full catalog opens from "Browse all". */
+body.home-catalog-hidden #catalog { display: none; }
+.home-browse-all { display: flex; justify-content: center; margin: 10px 0 40px; }
