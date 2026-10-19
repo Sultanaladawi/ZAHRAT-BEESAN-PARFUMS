@@ -13785,7 +13785,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/patchouli-rose-califah/p1589122907",
     "bottleUrl": "https://cdn.salla.sa/pywvq/vbATNR5bV0Pd7J6foKg3iKnON1GMWJvFFWC4X2OO.jpg",
-    "image": "images/alrehab_1589122907.jpg?v=2",
+    "image": "images/alrehab_1589122907.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/pywvq/vbATNR5bV0Pd7J6foKg3iKnON1GMWJvFFWC4X2OO.jpg",
     "galleryImages": [
       "images/alrehab_1589122907.jpg?v=2"
@@ -13815,7 +13815,9 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-1805217117",
@@ -18083,7 +18085,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/alrehab-shajarat-al-oud-concentrated-unisex-12ml/p2130757205",
     "bottleUrl": "https://cdn.salla.sa/pywvq/v1EGSDH0jdnd4kqYtn91kfF8xy144WGRcFlvzfU3.jpg",
-    "image": "images/alrehab_2130757205.jpg?v=3",
+    "image": "images/alrehab_2130757205.jpg?v=4",
     "originalImage": "https://cdn.salla.sa/pywvq/v1EGSDH0jdnd4kqYtn91kfF8xy144WGRcFlvzfU3.jpg",
     "galleryImages": [
       "images/alrehab_2130757205.jpg?v=2"
@@ -18114,7 +18116,8 @@
     "subCategory": "dehn",
     "subCategoryAr": "الدهون ودهن العود",
     "subCategoryEn": "Dehn & Oud Oils",
-    "imageLayout": "showcase"
+    "imageLayout": "original",
+    "imageLayoutOverride": "original"
   },
   {
     "id": "alrehab-24148298",

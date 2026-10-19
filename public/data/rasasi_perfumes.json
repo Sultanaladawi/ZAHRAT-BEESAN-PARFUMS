@@ -2077,7 +2077,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/vxqbnna/p825489645",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/7c75a2be-dbae-4788-ab5d-777a3b3f1dd0-500x500-bXnY2FYt7Lz3nxIRah4Awq3wWdEHvsffJF27g2Ma.jpg",
-    "image": "images/rasasi_825489645.jpg?v=2",
+    "image": "images/rasasi_825489645.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/lGDEen/7c75a2be-dbae-4788-ab5d-777a3b3f1dd0-500x500-bXnY2FYt7Lz3nxIRah4Awq3wWdEHvsffJF27g2Ma.jpg",
     "galleryImages": [
       "images/rasasi_825489645.jpg?v=2"
@@ -2104,7 +2104,9 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "rasasi-1501750602",
@@ -4380,7 +4382,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/onwlzzx/p749268399",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/d9992ddb-a23d-4177-b5a9-137e33c37e98-500x500-5mbVcXYavBHGe11ojVI2GweiUfTFHLsAqDyW71N2.jpg",
-    "image": "images/rasasi_749268399.jpg?v=2",
+    "image": "images/rasasi_749268399.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/lGDEen/d9992ddb-a23d-4177-b5a9-137e33c37e98-500x500-5mbVcXYavBHGe11ojVI2GweiUfTFHLsAqDyW71N2.jpg",
     "galleryImages": [
       "images/rasasi_749268399.jpg?v=2"
@@ -4407,7 +4409,9 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "rasasi-1919048133",
@@ -9721,7 +9725,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/عود-المبخر-للجنسين-100مل/p1758532688",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/27c62980-0577-461b-8950-ee633a755666-500x500-UUyZvxMce5Jnegf7SzuWV5JQenxeP2u1nGaaMfc5.jpg",
-    "image": "images/rasasi_1758532688.jpg?v=2",
+    "image": "images/rasasi_1758532688.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/lGDEen/27c62980-0577-461b-8950-ee633a755666-500x500-UUyZvxMce5Jnegf7SzuWV5JQenxeP2u1nGaaMfc5.jpg",
     "galleryImages": [
       "images/rasasi_1758532688.jpg?v=2"
@@ -9748,7 +9752,9 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "rasasi-648841367",
@@ -9917,7 +9923,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/dpwddva/p1593535954",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
-    "image": "images/rasasi_1593535954.jpg?v=2",
+    "image": "images/rasasi_1593535954.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
     "galleryImages": [
       "images/rasasi_1593535954.jpg?v=2"
@@ -9944,7 +9950,9 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Luxury Body Mist"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "rasasi-624623193",
@@ -10750,7 +10758,7 @@
     "promotionTitle": "جديد",
     "url": "https://store.rasasi.com.sa/ar/mzyqdlz/p155117055",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/bc7491ca-0c39-4679-92a7-75b782a14272-500x500-jCioVddxdS267xIsEfFLtz5xvvXbJAbcjI2vxXEU.png",
-    "image": "images/rasasi_155117055.jpg?v=2",
+    "image": "images/rasasi_155117055.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/lGDEen/bc7491ca-0c39-4679-92a7-75b782a14272-500x500-jCioVddxdS267xIsEfFLtz5xvvXbJAbcjI2vxXEU.png",
     "galleryImages": [
       "images/rasasi_155117055.jpg?v=2"
@@ -10777,7 +10785,10 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutSolid": true,
+    "cutoutMirrorFill": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "rasasi-385264515",

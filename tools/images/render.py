@@ -203,7 +203,65 @@ def defringe(rgba):
     return Image.fromarray(arr.clip(0, 255).astype(np.uint8), "RGBA")
 
 
-def cutout(img, mirror=False):
+def solidify(alpha):
+    """Make pale or clear glass fully opaque inside the bottle outline.
+
+    The model gives see-through glass a low alpha, so the template's crest
+    shows through and the bottle looks washed out. The outline comes from
+    every pixel the model kept; inside it the photo's own glass is used.
+    """
+    mask = ndimage.binary_closing(alpha > 24, structure=np.ones((5, 5)), iterations=2)
+    mask = ndimage.binary_fill_holes(mask)
+    edge = ndimage.gaussian_filter(mask.astype(np.float32), 1.2) * 255
+    return np.where(mask, np.maximum(alpha, edge), alpha)
+
+
+def mirror_fill(alpha):
+    """For symmetric bottles where white glass merged into a white backdrop:
+    restore the missing side by mirroring the outline around the cap's axis."""
+    mask = alpha > 64
+    rows = np.where(mask.any(axis=1))[0]
+    if len(rows) < 50:
+        return alpha
+    centers = [(np.nonzero(mask[y])[0].min() + np.nonzero(mask[y])[0].max()) / 2
+               for y in rows[: max(3, len(rows) // 40)]]
+    axis = float(np.median(centers))
+    xs = np.arange(alpha.shape[1])
+    src = np.clip(np.round(2 * axis - xs).astype(int), 0, alpha.shape[1] - 1)
+    out = np.maximum(alpha, alpha[:, src])
+    # Close short notches along the straight sides before filling rows.
+    closed = ndimage.binary_closing(out > 64, structure=np.ones((41, 1)))
+    out = np.where(closed, np.maximum(out, 255), out)
+    for y in rows:  # straight sides: fill each row between its outer edges
+        xs = np.nonzero(out[y] > 64)[0]
+        if len(xs):
+            out[y, xs.min():xs.max() + 1] = np.maximum(out[y, xs.min():xs.max() + 1], 255)
+    return out
+
+
+def clip_body(alpha, start):
+    """Trim a stray strip on one side of the bottle body (rows from `start`,
+    a fraction of the height) to the mirrored extent of the narrower side.
+    The cap above is left as is, so asymmetric caps survive."""
+    mask = alpha > 64
+    rows = np.where(mask.any(axis=1))[0]
+    if len(rows) < 50:
+        return alpha
+    body = rows[int(len(rows) * start):]
+    centers = [(np.nonzero(mask[y])[0].min() + np.nonzero(mask[y])[0].max()) / 2 for y in body]
+    lefts = [np.nonzero(mask[y])[0].min() for y in body]
+    rights = [np.nonzero(mask[y])[0].max() for y in body]
+    axis = (np.median(lefts) + np.median(rights)) / 2 if len(body) else np.median(centers)
+    out = alpha.copy()
+    for y in body:
+        xs = np.nonzero(mask[y])[0]
+        half = min(axis - xs.min(), xs.max() - axis)
+        out[y, :max(int(np.floor(axis - half)), 0)] = 0
+        out[y, int(np.ceil(axis + half)) + 1:] = 0
+    return out
+
+
+def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -219,6 +277,13 @@ def cutout(img, mirror=False):
     line = reflection_line(arr[..., :3].astype(np.float32), alpha)
     if line is not None:
         alpha[line:] = 0
+    if mirror_fill_:
+        alpha = mirror_fill(alpha)
+    if body_clip:
+        alpha = clip_body(alpha, body_clip)
+    if solid:
+        alpha = solidify(alpha)
+        cut = rgb.convert("RGBA")  # the model blanks colours it dropped; use the photo's
     cut.putalpha(Image.fromarray(alpha.clip(0, 255).astype(np.uint8)))
     cut = defringe(cut)
     return cut.crop(cut.getbbox()), {"reflectionRemoved": line is not None, **cut_metrics(alpha)}
@@ -250,7 +315,10 @@ def qa_pass(info):
 
 
 def showcase(item, house):
-    cut, info = cutout(fetch(source_url(item)), mirror=house == "ghalati" and needs_mirror_clip(item))
+    cut, info = cutout(fetch(source_url(item)), mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
+                       solid=bool(item.get("cutoutSolid")),
+                       mirror_fill_=bool(item.get("cutoutMirrorFill")),
+                       body_clip=item.get("cutoutClipBodyFrom"))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
