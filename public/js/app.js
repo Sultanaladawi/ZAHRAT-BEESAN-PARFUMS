@@ -220,7 +220,11 @@ function toggleNotifyWhenAvailable(perfumeId, btnEl) {
   const p = (typeof cartFindProduct === 'function' ? cartFindProduct(perfumeId) : null)
     || (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === perfumeId);
   const name = p ? p.title : '';
-  if (!list.includes(perfumeId)) list.push(perfumeId);
+  if (!list.includes(perfumeId)) {
+    list.push(perfumeId);
+    // Counted in the dashboard so the owner knows what to restock.
+    fetch('/api/notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: perfumeId }) }).catch(() => {});
+  }
   try { localStorage.setItem('zb_notify_available', JSON.stringify(list)); } catch(e) {}
   // The request reaches the store on WhatsApp; a browser-only flag told nobody.
   const text = isAr
@@ -890,10 +894,12 @@ async function loadHouseCatalog(house = 'all') {
     console.error(`Error fetching ${house} catalog:`, err);
   }
 
+  if (typeof applySiteOverrides === 'function') data = await applySiteOverrides(data);
   catalogByHouse[house] = data;
 
   if (!loadedFromLiveEndpoint && data.length > 0) {
-    syncClientSideWithSalla(data, house).then(fresh => {
+    syncClientSideWithSalla(data, house).then(async fresh => {
+      if (typeof applySiteOverrides === 'function') fresh = await applySiteOverrides(fresh);
       if (fresh && fresh.length > 0) {
         catalogByHouse[house] = fresh;
         if (activeHouse === house) {

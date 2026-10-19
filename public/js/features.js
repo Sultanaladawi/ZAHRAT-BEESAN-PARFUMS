@@ -4,12 +4,10 @@
 // free delivery progress and coupons in the bag.
 // ══════════════════════════════════════════════════════════
 
-const FREE_DELIVERY_JOD = 100;
+// Free-delivery threshold and coupons are managed in the dashboard (/admin).
+const freeDeliveryJod = () => (typeof SITE_CONFIG !== 'undefined' ? Number(SITE_CONFIG.freeDeliveryJod) || 0 : 100);
 // Analytics IDs: set them to start tracking (e.g. 'G-XXXXXXX', '1234567890').
 const ANALYTICS = { googleId: '', metaPixelId: '' };
-// Coupon codes: CODE -> percent off the bag total (after offers).
-// Keep this list short-lived; anyone can read it in the page source.
-const COUPONS = {};
 
 // ── Smart search ──
 // Arabic spelling variants (أ/إ/آ, ة/ه, ى/ي, ق/ج/غ for the Gulf "g") and
@@ -226,23 +224,33 @@ function closeWishlist() {
 }
 
 // ── Free delivery and coupons in the bag ──
+// The code is checked on the server; the bag keeps { code, pct, minJod }.
 function activeCoupon() {
+  if (typeof SITE_CONFIG !== 'undefined' && !SITE_CONFIG.couponsEnabled) return null;
   try {
-    const code = localStorage.getItem('zb_coupon') || '';
-    return COUPONS[code] ? { code, ...COUPONS[code] } : null;
+    const c = JSON.parse(localStorage.getItem('zb_coupon') || 'null');
+    return c && c.code && c.pct ? c : null;
   } catch (e) { return null; }
 }
 
-function applyCoupon() {
+async function applyCoupon() {
   const input = document.getElementById('couponInput');
   const code = (input?.value || '').trim().toUpperCase();
   const isAr = currentLang === 'ar';
-  if (!COUPONS[code]) {
-    showNotification(isAr ? 'كود الخصم غير صحيح' : 'Invalid coupon code', '⚠️');
+  if (!code) return;
+  const subtotalJod = cartPriceJod(cartLines()).total;
+  let res = null, data = {};
+  try {
+    res = await fetch('/api/coupon', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code, subtotalJod }) });
+    data = await res.json();
+  } catch (e) { /* offline */ }
+  if (!res || !res.ok) {
+    const msg = isAr ? (data.error || 'كود الخصم غير صحيح') : (data.minJod ? `This code needs an order of ${data.minJod} JOD or more` : 'Invalid coupon code');
+    showNotification(msg, '⚠️');
     return;
   }
-  try { localStorage.setItem('zb_coupon', code); } catch (e) {}
-  showNotification(isAr ? `تم تطبيق الكود ${code}` : `Code ${code} applied`, '🎟️');
+  try { localStorage.setItem('zb_coupon', JSON.stringify(data)); } catch (e) {}
+  showNotification(isAr ? `تم تطبيق الكود ${data.code}` : `Code ${data.code} applied`, '🎟️');
   cartRender();
 }
 
@@ -256,21 +264,23 @@ function removeCoupon() {
 function cartExtras(subtotalJod) {
   const isAr = currentLang === 'ar';
   const symbol = activeSymbol();
-  const coupon = activeCoupon();
+  let coupon = activeCoupon();
+  if (coupon && coupon.minJod && subtotalJod < coupon.minJod) coupon = null;
   const discountJod = coupon ? Math.round(subtotalJod * coupon.pct / 100) : 0;
   const afterJod = subtotalJod - discountJod;
-  const left = FREE_DELIVERY_JOD - afterJod;
-  const pct = Math.max(0, Math.min(100, Math.round(afterJod / FREE_DELIVERY_JOD * 100)));
-  const delivery = left > 0
+  const threshold = freeDeliveryJod();
+  const left = threshold - afterJod;
+  const pct = Math.max(0, Math.min(100, Math.round(afterJod / (threshold || 1) * 100)));
+  const delivery = !threshold ? '' : left > 0
     ? `<div class="free-ship"><div class="free-ship-text">🚚 ${isAr ? `باقي ${jodToActive(left)} ${symbol} للتوصيل المجاني` : `${jodToActive(left)} ${symbol} away from free delivery`}</div><div class="free-ship-bar"><span style="width:${pct}%"></span></div></div>`
     : `<div class="free-ship is-done"><div class="free-ship-text">🎉 ${isAr ? 'مبروك! التوصيل مجاني لطلبك' : 'Your order ships free!'}</div></div>`;
   let couponHtml = '';
-  if (Object.keys(COUPONS).length) {
+  if (typeof SITE_CONFIG === 'undefined' || SITE_CONFIG.couponsEnabled) {
     couponHtml = coupon
       ? `<div class="cart-saving"><span>🎟️ ${coupon.code} (${coupon.pct}٪) <button type="button" class="coupon-remove" onclick="removeCoupon()">✕</button></span><strong>− ${jodToActive(discountJod)} ${symbol}</strong></div>`
       : `<div class="coupon-row"><input id="couponInput" type="text" placeholder="${isAr ? 'كود الخصم' : 'Coupon code'}" autocomplete="off"><button type="button" onclick="applyCoupon()">${isAr ? 'تطبيق' : 'Apply'}</button></div>`;
   }
-  return { html: delivery + couponHtml, discountJod, freeDelivery: left <= 0 };
+  return { html: delivery + couponHtml, discountJod, freeDelivery: threshold > 0 && left <= 0, coupon };
 }
 
 // ── Shareable product links (/p/<id>) ──

@@ -3386,3 +3386,22 @@ body.home-catalog-hidden #catalog { display: none; }
 .quiz-back { display: block; margin: 18px auto 0; border: none; background: none; color: var(--gold-dim); font-weight: 700; cursor: pointer; }
 .quiz-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 @media (max-width: 560px) { .quiz-results { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Set from the dashboard: announcement bar, orders paused ── */
+.site-announcement {
+  background: linear-gradient(90deg, #1a1a1a, #3a2f22, #1a1a1a);
+  color: var(--gold-light);
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  letter-spacing: 0.2px;
+}
+.cart-closed {
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--cream-dark);
+  color: var(--espresso-mid);
+  font-weight: 600;
+}

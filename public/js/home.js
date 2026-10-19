@@ -4,7 +4,9 @@
 // or search; picking a house, a filter or searching shows the catalog.
 // ══════════════════════════════════════════════════════════
 
-const HOME_HOUSES = ['ghalati', 'assaf', 'laverne', 'rasasi', 'deraah', 'al-rehab', 'thunayan', 'labonair'];
+// Houses switched off in the dashboard are left out.
+const homeHouseOn = id => typeof SITE_CONFIG === 'undefined' || !SITE_CONFIG.hiddenHouses.includes(id);
+const HOME_HOUSES = ['ghalati', 'assaf', 'laverne', 'rasasi', 'deraah', 'al-rehab', 'thunayan', 'labonair'].filter(homeHouseOn);
 
 const HOME_SLIDES = [
   {
@@ -32,6 +34,11 @@ const HOME_SLIDES = [
     ctaAr: 'تسوّق عساف', ctaEn: 'Shop Assaf', action: 'house:assaf',
   },
 ];
+
+for (let i = HOME_SLIDES.length - 1; i >= 0; i--) {
+  const m = HOME_SLIDES[i].action.match(/^house:(.+)$/);
+  if (m && !homeHouseOn(m[1])) HOME_SLIDES.splice(i, 1);
+}
 
 const HOME_CATEGORIES = [
   { filter: 'men', ar: 'عطور رجالية', en: "Men's perfumes", match: p => /رجال|men\b|pour homme/i.test(`${p.title} ${p.titleEn} ${JSON.stringify(p.specs || {})}`) },
@@ -205,18 +212,22 @@ async function renderHome() {
   const singles = list => list.filter(p => !['bundle', 'gift_set', 'bakhoor'].includes(p.categoryType));
 
   const bestsellers = HOME_HOUSES.flatMap(h => singles(byHouse[h]).slice(0, 3));
-  const rails = ['deraah', 'rasasi', 'ghalati', 'laverne'].map(h => {
+  const rails = ['deraah', 'rasasi', 'ghalati', 'laverne'].filter(homeHouseOn).map(h => {
     const meta = homeHouseMeta(h);
     return renderHomeRail(homeIsAr() ? `من ${meta.nameAr}` : `From ${meta.nameEn}`, singles(byHouse[h]).slice(3, 15), `house:${h}`);
   });
 
-  const recent = typeof recentProducts === 'function' ? recentProducts().slice(0, 10) : [];
+  const cfg = typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG : {};
+  const recent = cfg.showRecent !== false && typeof recentProducts === 'function' ? recentProducts().slice(0, 10) : [];
+  // "Our picks" are the products starred in the dashboard.
+  const featured = all.filter(p => p.featured).slice(0, 16);
   root.innerHTML = renderHomeHero()
+    + (featured.length ? renderHomeRail(homeIsAr() ? 'مختارات زهرة بيسان' : 'Zahrat Beesan picks', featured, null) : '')
     + (recent.length ? renderHomeRail(homeIsAr() ? 'شاهدتها مؤخراً' : 'Recently viewed', recent, null) : '')
     + renderHomeHouses()
     + renderHomeRail(homeIsAr() ? 'الأكثر طلباً' : 'Most wanted', bestsellers, 'catalog')
     + renderHomeCategories(all)
-    + `<section class="home-quiz"><div><h2>${homeIsAr() ? 'محتار شو تختار؟' : 'Not sure what to pick?'}</h2><p>${homeIsAr() ? 'جاوب على 4 أسئلة وبنختارلك العطور الأنسب لذوقك.' : 'Answer 4 quick questions and we will pick the perfumes for you.'}</p></div><button type="button" class="home-cta" onclick="openQuiz()">${homeIsAr() ? 'اختار عطرك' : 'Find your perfume'}</button></section>`
+    + (cfg.showQuiz === false ? '' : `<section class="home-quiz"><div><h2>${homeIsAr() ? 'محتار شو تختار؟' : 'Not sure what to pick?'}</h2><p>${homeIsAr() ? 'جاوب على 4 أسئلة وبنختارلك العطور الأنسب لذوقك.' : 'Answer 4 quick questions and we will pick the perfumes for you.'}</p></div><button type="button" class="home-cta" onclick="openQuiz()">${homeIsAr() ? 'اختار عطرك' : 'Find your perfume'}</button></section>`)
     + renderHomePromo()
     + rails.join('')
     + `<div class="home-browse-all"><button type="button" class="home-cta" onclick="homeBrowseCatalog()">${homeIsAr() ? 'تصفّح كل العطور' : 'Browse all perfumes'}</button></div>`;

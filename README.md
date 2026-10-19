@@ -93,3 +93,15 @@ zahrat-beesan-perfumes/
 
 جميع الحقوق محفوظة © دار زهرة بيسان للتسوق والمتاجرة الإلكترونية | 2026.
 مرخص ومسجل رسمياً لدى وزارة الصناعة والتجارة الأردنية.
+
+## Dashboard (`/admin`)
+
+Orders, products (hide, price, featured), offers, coupons, notify-me requests
+and site settings. Set these in Vercel → Settings → Environment Variables:
+
+| Variable | What it is |
+|---|---|
+| `ADMIN_PASSWORD` | Dashboard password (required; the dashboard stays locked without it). |
+| `ADMIN_GITHUB_TOKEN` | Fine-grained GitHub token for this repo only, permission **Contents: Read and write**. Dashboard data is saved to `admin-data.json` on the `admin-data` branch (created automatically; `vercel.json` stops that branch from deploying). Without it, changes are lost on every deploy. |
+
+Locally the data is kept in `data/admin-state.json` (git-ignored).
