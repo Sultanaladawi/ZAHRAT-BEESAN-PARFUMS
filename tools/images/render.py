@@ -356,7 +356,7 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
             white = np.clip((src.min(axis=2) - 222) / 28, 0, 1) * (sat < 14)
             white = ndimage.gaussian_filter(white, 1.5)
             white[y:] = 0
-            alpha = alpha * (1 - 0.8 * white)
+            alpha = alpha * (1 - (0.8 if clear_glass is True else float(clear_glass)) * white)
     cut.putalpha(Image.fromarray(alpha.clip(0, 255).astype(np.uint8)))
     cut = defringe(cut)
     return cut.crop(cut.getbbox()), {"reflectionRemoved": line is not None, **cut_metrics(alpha)}
@@ -474,7 +474,7 @@ def showcase(item, house):
                        model=item.get("cutoutModel"),
                        cap_clip=item.get("cutoutCapClip"),
                        white_backdrop=bool(item.get("cutoutWhiteBackdrop")),
-                       clear_glass=bool(item.get("cutoutClearGlass")))
+                       clear_glass=item.get("cutoutClearGlass") or False)
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
