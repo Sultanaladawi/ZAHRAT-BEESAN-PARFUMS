@@ -216,6 +216,7 @@ async function renderHome() {
     + renderHomeHouses()
     + renderHomeRail(homeIsAr() ? 'الأكثر طلباً' : 'Most wanted', bestsellers, 'catalog')
     + renderHomeCategories(all)
+    + `<section class="home-quiz"><div><h2>${homeIsAr() ? 'محتار شو تختار؟' : 'Not sure what to pick?'}</h2><p>${homeIsAr() ? 'جاوب على 4 أسئلة وبنختارلك العطور الأنسب لذوقك.' : 'Answer 4 quick questions and we will pick the perfumes for you.'}</p></div><button type="button" class="home-cta" onclick="openQuiz()">${homeIsAr() ? 'اختار عطرك' : 'Find your perfume'}</button></section>`
     + renderHomePromo()
     + rails.join('')
     + `<div class="home-browse-all"><button type="button" class="home-cta" onclick="homeBrowseCatalog()">${homeIsAr() ? 'تصفّح كل العطور' : 'Browse all perfumes'}</button></div>`;

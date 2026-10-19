@@ -1447,7 +1447,93 @@ app.get('/api/catalog', async (req, res) => {
   res.json(data);
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+// ── SEO: one shareable page per product, sitemap and robots ──
+const SEO_FILES = ['perfumes', 'assaf_perfumes', 'thnyan_perfumes', 'rasasi_perfumes', 'alrehab_perfumes',
+  'lebonheur_perfumes', 'laverne_perfumes', 'deraah_perfumes'];
+let seoIndex = null;
+function seoProducts() {
+  if (!seoIndex) {
+    seoIndex = new Map();
+    for (const f of SEO_FILES) {
+      try {
+        for (const p of JSON.parse(fs.readFileSync(path.join(__dirname, 'public', 'data', `${f}.json`), 'utf8'))) {
+          if (p && p.id) seoIndex.set(String(p.id), p);
+        }
+      } catch (e) { /* skip a missing file */ }
+    }
+  }
+  return seoIndex;
+}
+const escHtml = s => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const siteOrigin = req => `${req.headers['x-forwarded-proto'] || req.protocol}://${req.headers['x-forwarded-host'] || req.get('host')}`;
+let indexTemplate = null;
+function renderPage(req, meta) {
+  if (!indexTemplate) indexTemplate = fs.readFileSync(path.join(__dirname, 'public', 'index.html'), 'utf8');
+  const origin = siteOrigin(req);
+  const tags = `
+  <base href="/">
+  <meta name="description" content="${escHtml(meta.description)}">
+  <link rel="canonical" href="${origin}${meta.path}">
+  <meta property="og:type" content="${meta.type || 'website'}">
+  <meta property="og:site_name" content="زهرة بيسان للعطور | Zahrat Beesan Parfums">
+  <meta property="og:title" content="${escHtml(meta.title)}">
+  <meta property="og:description" content="${escHtml(meta.description)}">
+  <meta property="og:image" content="${origin}/${escHtml(meta.image)}">
+  <meta property="og:url" content="${origin}${meta.path}">
+  <meta name="twitter:card" content="summary_large_image">${meta.jsonLd ? `
+  <script type="application/ld+json">${JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c')}</script>` : ''}${meta.productId ? `
+  <script>window.__OPEN_PRODUCT__ = ${JSON.stringify(meta.productId)};</script>` : ''}`;
+  return indexTemplate
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escHtml(meta.title)}</title>`)
+    .replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', m => m + tags);
+}
+
+app.get('/', (req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+  res.send(renderPage(req, {
+    path: '/',
+    title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
+    description: 'أكثر من 1,800 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور، بتوصيل لكل الأردن والخليج.',
+    image: 'images/logo_small.jpg',
+  }));
+});
+
+app.get('/p/:id', (req, res, next) => {
+  const p = seoProducts().get(String(req.params.id));
+  if (!p) return next();
+  const price = Number(p.finalJod) || 0;
+  const available = p.isAvailable !== false && p.status !== 'out';
+  const name = p.title || p.titleEn;
+  const desc = `${name}${p.titleEn && p.titleEn !== name ? ` (${p.titleEn})` : ''} — ${price} د.أ. ${String(p.overview || '').replace(/\s+/g, ' ').slice(0, 150)}`;
+  res.setHeader('Cache-Control', 'public, max-age=300');
+  res.send(renderPage(req, {
+    path: `/p/${encodeURIComponent(p.id)}`,
+    type: 'product',
+    title: `${name} | زهرة بيسان للعطور`,
+    description: desc,
+    image: String(p.image || '').split('?')[0],
+    productId: String(p.id),
+    jsonLd: {
+      '@context': 'https://schema.org', '@type': 'Product', name, alternateName: p.titleEn || undefined,
+      image: `${siteOrigin(req)}/${String(p.image || '').split('?')[0]}`, description: String(p.overview || '').slice(0, 500),
+      brand: { '@type': 'Brand', name: p.brand || 'Zahrat Beesan' },
+      offers: { '@type': 'Offer', priceCurrency: 'JOD', price, availability: available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+        url: `${siteOrigin(req)}/p/${encodeURIComponent(p.id)}` },
+    },
+  }));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  const origin = siteOrigin(req);
+  const urls = [`${origin}/`, ...[...seoProducts().keys()].map(id => `${origin}/p/${encodeURIComponent(id)}`)];
+  res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${escHtml(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${siteOrigin(req)}/sitemap.xml\n`);
+});
+
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
 app.get('/api/status', (req, res) => {
   res.json({

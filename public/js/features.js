@@ -5,6 +5,8 @@
 // ══════════════════════════════════════════════════════════
 
 const FREE_DELIVERY_JOD = 100;
+// Analytics IDs: set them to start tracking (e.g. 'G-XXXXXXX', '1234567890').
+const ANALYTICS = { googleId: '', metaPixelId: '' };
 // Coupon codes: CODE -> percent off the bag total (after offers).
 // Keep this list short-lived; anyone can read it in the page source.
 const COUPONS = {};
@@ -271,6 +273,68 @@ function cartExtras(subtotalJod) {
   return { html: delivery + couponHtml, discountJod, freeDelivery: left <= 0 };
 }
 
+// ── Shareable product links (/p/<id>) ──
+function productUrl(id) {
+  return `${location.origin}/p/${encodeURIComponent(id)}`;
+}
+
+function shareProduct(id) {
+  const p = cartFindProduct(id);
+  if (!p) return;
+  const isAr = currentLang === 'ar';
+  const url = productUrl(id);
+  const title = isAr ? p.title : (p.titleEn || p.title);
+  if (navigator.share) {
+    navigator.share({ title, text: `${title} — ${getProductPrices(p).saleStr}`, url }).catch(() => {});
+  } else {
+    window.open(`https://wa.me/?text=${encodeURIComponent(`${title} — ${getProductPrices(p).saleStr}\n${url}`)}`, '_blank', 'noopener');
+  }
+}
+
+function addShareButton(p) {
+  const grid = document.querySelector('#productModalContent .modal-actions-grid');
+  if (!grid || grid.querySelector('.btn-share')) return;
+  const isAr = currentLang === 'ar';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn-share';
+  btn.innerHTML = `<span>🔗</span><span>${isAr ? 'شارك العطر' : 'Share'}</span>`;
+  btn.onclick = () => shareProduct(p.id);
+  grid.insertAdjacentElement('afterend', btn);
+}
+
+function syncProductUrl(id) {
+  const want = id ? `/p/${encodeURIComponent(id)}` : '/';
+  if (location.pathname !== want) history.pushState({ p: id || null }, '', want);
+}
+
+// ── Analytics (loads only when IDs are set) ──
+function loadAnalytics() {
+  if (ANALYTICS.googleId) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.googleId}`;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ANALYTICS.googleId);
+  }
+  if (ANALYTICS.metaPixelId) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', ANALYTICS.metaPixelId);
+    fbq('track', 'PageView');
+  }
+}
+
+function trackEvent(name, data) {
+  if (window.gtag) gtag('event', name, data || {});
+  const fbMap = { view_item: 'ViewContent', add_to_cart: 'AddToCart', begin_checkout: 'InitiateCheckout', search: 'Search' };
+  if (window.fbq && fbMap[name]) fbq('track', fbMap[name], data || {});
+}
+
 // ── Wiring ──
 (function wireFeatures() {
   const wrapAfter = (name, after) => {
@@ -284,13 +348,36 @@ function cartExtras(subtotalJod) {
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    wrapAfter('renderProductModalContent', p => renderAlsoLike(p));
-    wrapAfter('openProductModal', id => rememberViewed(id));
+    wrapAfter('renderProductModalContent', p => { renderAlsoLike(p); addShareButton(p); });
+    wrapAfter('openProductModal', id => { rememberViewed(id); if (!window.__fromPopstate) syncProductUrl(id); });
+    wrapAfter('closeProductModal', () => { if (!window.__fromPopstate && location.pathname.startsWith('/p/')) syncProductUrl(null); });
+    window.addEventListener('popstate', () => {
+      window.__fromPopstate = true;
+      const m = location.pathname.match(/^\/p\/(.+)$/);
+      if (m) openProductModal(decodeURIComponent(m[1])); else if (activeModalPerfume) closeProductModal();
+      window.__fromPopstate = false;
+    });
+    // A shared /p/<id> link opens that perfume once its house has loaded.
+    const target = window.__OPEN_PRODUCT__ || (location.pathname.match(/^\/p\/(.+)$/) || [])[1];
+    if (target) {
+      const id = decodeURIComponent(target);
+      let tries = 0;
+      const timer = setInterval(() => {
+        if (cartFindProduct(id) || ++tries > 60) {
+          clearInterval(timer);
+          if (cartFindProduct(id)) { window.__fromPopstate = true; openProductModal(id); window.__fromPopstate = false; }
+        }
+      }, 250);
+    }
     wrapAfter('toggleWishlist', () => updateWishlistBadge());
     wrapAfter('renderCatalog', () => renderCatalogToolbar());
     wrapAfter('setLanguage', () => { renderCatalogToolbar(); renderWishlist(); });
     updateWishlistBadge();
     renderCatalogToolbar();
+    loadAnalytics();
+    wrapAfter('openProductModal', id => trackEvent('view_item', { item_id: id }));
+    wrapAfter('addToCart', id => trackEvent('add_to_cart', { item_id: id }));
+    wrapAfter('cartCheckout', () => trackEvent('begin_checkout'));
 
     const input = document.getElementById('mainSearchInput');
     if (input) {
