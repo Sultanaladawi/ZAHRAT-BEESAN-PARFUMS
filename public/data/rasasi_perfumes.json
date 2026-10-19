@@ -2077,7 +2077,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/vxqbnna/p825489645",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/7c75a2be-dbae-4788-ab5d-777a3b3f1dd0-500x500-bXnY2FYt7Lz3nxIRah4Awq3wWdEHvsffJF27g2Ma.jpg",
-    "image": "images/rasasi_825489645.jpg?v=2ac3a872",
+    "image": "images/rasasi_825489645.jpg?v=dc4dce22",
     "originalImage": "https://cdn.salla.sa/lGDEen/7c75a2be-dbae-4788-ab5d-777a3b3f1dd0-500x500-bXnY2FYt7Lz3nxIRah4Awq3wWdEHvsffJF27g2Ma.jpg",
     "galleryImages": [
       "images/rasasi_825489645.jpg?v=2"
@@ -2105,8 +2105,8 @@
       "type": "Eau de Parfum"
     },
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayoutOverride": "showcase",
+    "imageLayout": "showcase"
   },
   {
     "id": "rasasi-1501750602",
