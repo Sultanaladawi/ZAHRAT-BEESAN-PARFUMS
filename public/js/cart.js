@@ -86,6 +86,91 @@ function cartLines() {
   return cartLoad().map(i => ({ ...i, p: cartFindProduct(i.id) })).filter(l => l.p);
 }
 
+// ── Supplier "buy N, get 1 free" offers ──
+// Pricing rule (owner): for a full offer group the customer pays the
+// supplier's price of the paid bottles (the dearest ones; the cheapest
+// is the free one, as the supplier does), plus 4 JOD per bottle in the
+// group, plus a fixed profit per group.
+const OFFER_RULES = [
+  // house, how the supplier writes it, bottles in a group, profit per group (JOD)
+  { house: 'assaf', match: /3\s*\+\s*1/, size: 4, profit: 10, ar: 'اشترِ 3 والرابع مجاناً', en: 'Buy 3, get 1 free' },
+  { house: 'assaf', match: /2\s*\+\s*1|1\s*\+\s*2/, size: 3, profit: 10, ar: 'اشترِ 2 والثالث مجاناً', en: 'Buy 2, get 1 free' },
+  // Fixed-price groups: the supplier sells the whole group for groupSar.
+  // Product lists are the suppliers' offer categories (Ghalati c1389534759
+  // "اختر ٢ بـ 96 ريال", Thnyan c214031821 "اشتر اربع عطور بـ199 ريال").
+  { house: 'ghalati', sallaIds: ["1249911952", "1089182563", "1569128723", "113450693", "625338571", "25373017", "1942806396", "64193430", "214279369", "1757606131", "704485665", "1859126740", "1487856502", "133723763", "1781279602"], size: 2, groupSar: 96, profit: 10, ar: 'أي عطرين بسعر مميز', en: 'Any 2 for a special price' },
+  { house: 'thnyan', sallaIds: ["144017218", "1373419763", "1978166384", "402320647", "1013392673", "1494531800", "1981620511", "604656001", "1303768509", "1072057445", "1812897358", "1253372737", "637775795", "732847010", "402914932"], size: 4, groupSar: 199, profit: 15, ar: 'أي 4 عطور بسعر مميز', en: 'Any 4 for a special price' },
+];
+const OFFER_FEE_PER_BOTTLE = 4;
+
+function productHouseKey(p) {
+  const id = String(p.id || '');
+  if (p.house === 'assaf' || id.startsWith('assaf-')) return 'assaf';
+  if (p.house === 'thunayan' || id.startsWith('thnyan-')) return 'thnyan';
+  if (id.startsWith('alrehab-') || id.startsWith('rasasi-') || id.startsWith('laverne-') || id.startsWith('deraah-') || id.startsWith('lebonheur-')) return id.split('-')[0];
+  return 'ghalati';
+}
+
+function offerRuleFor(p) {
+  if (p.isAvailable === false || p.status === 'out') return null;
+  const key = productHouseKey(p);
+  const txt = String(p.promotionTitle || '');
+  const sid = String(p.sallaId || '');
+  return OFFER_RULES.find(r => r.house === key && (r.sallaIds ? r.sallaIds.includes(sid) : r.match.test(txt))) || null;
+}
+
+const supplierJod = p => Number(p.baseJod) || Math.round((Number(p.sarPrice) || 0) / 5.29);
+const normalJod = p => Number(p.finalJod) || (supplierJod(p) + 12);
+
+// Splits the bag into offer groups. Returns the JOD total, the normal JOD
+// total and one summary row per applied group.
+function cartPriceJod(lines) {
+  let total = 0, normal = 0;
+  const applied = [];
+  const pools = new Map();
+  for (const { p, qty } of lines) {
+    normal += normalJod(p) * qty;
+    const rule = offerRuleFor(p);
+    if (!rule) { total += normalJod(p) * qty; continue; }
+    if (!pools.has(rule)) pools.set(rule, []);
+    for (let i = 0; i < qty; i++) pools.get(rule).push(p);
+  }
+  for (const [rule, units] of pools) {
+    units.sort((a, b) => supplierJod(b) - supplierJod(a));
+    const groups = Math.floor(units.length / rule.size);
+    for (let g = 0; g < groups; g++) {
+      const grp = units.slice(g * rule.size, (g + 1) * rule.size);
+      const paid = rule.groupSar
+        ? Math.round(rule.groupSar / 5.29)
+        : grp.slice(0, rule.size - 1).reduce((n, p) => n + supplierJod(p), 0);
+      const price = paid + OFFER_FEE_PER_BOTTLE * rule.size + rule.profit;
+      total += price;
+      applied.push({ rule, price, normal: grp.reduce((n, p) => n + normalJod(p), 0) });
+    }
+    for (const p of units.slice(groups * rule.size)) total += normalJod(p);
+  }
+  return { total, normal, applied };
+}
+
+function jodToActive(jod) {
+  return activeCurrency.code === 'JOD' ? jod : Math.round(jod * activeCurrency.rate);
+}
+
+function activeSymbol() {
+  const isAr = currentLang === 'ar';
+  if (activeCurrency.code === 'SAR') return isAr ? '﷼' : 'SAR';
+  return isAr ? activeCurrency.symbol : activeCurrency.symbolEn;
+}
+
+// Hint shown under an offer product in the bag when its group is not full yet.
+function offerHint(lines, rule) {
+  const count = lines.filter(l => offerRuleFor(l.p) === rule).reduce((n, l) => n + l.qty, 0);
+  const left = (rule.size - (count % rule.size)) % rule.size;
+  if (!left) return '';
+  const isAr = currentLang === 'ar';
+  return isAr ? `أضف ${left} ${left === 1 ? 'عطراً' : 'عطور'} من نفس العرض ليُطبَّق عرض "${rule.ar}"` : `Add ${left} more from this offer to apply "${rule.en}"`;
+}
+
 function cartRender() {
   const body = document.getElementById('cartDrawerBody');
   const foot = document.getElementById('cartDrawerFoot');
@@ -105,21 +190,25 @@ function cartRender() {
     return;
   }
 
-  let total = 0;
-  let symbol = '';
+  const priced = cartPriceJod(lines);
+  const symbol = activeSymbol();
+  const total = jodToActive(priced.total);
+  const saved = jodToActive(priced.normal - priced.total);
   body.innerHTML = lines.map(({ p, qty }) => {
     const unit = cartUnitPrice(p);
-    total += unit.value * qty;
-    symbol = unit.symbol;
     const name = isAr ? p.title : (p.titleEn || p.title);
     const house = typeof getHouseLabel === 'function' ? getHouseLabel(p) : '';
+    const rule = offerRuleFor(p);
+    const hint = rule ? offerHint(lines, rule) : '';
     return `
       <div class="cart-line">
         <img class="cart-line-img" src="${getCardThumb(p.image)}" alt="" onerror="this.onerror=null;this.src='${p.image}'">
         <div class="cart-line-info">
           <div class="cart-line-name" onclick="closeCart(); openProductModal('${p.id}')">${name}</div>
           ${house ? `<div class="cart-line-house">${house}</div>` : ''}
+          ${rule ? `<div class="cart-line-offer">🎁 ${isAr ? rule.ar : rule.en}</div>` : ''}
           <div class="cart-line-price">${unit.value * qty} ${unit.symbol}</div>
+          ${hint ? `<div class="cart-line-hint">${hint}</div>` : ''}
           <div class="cart-qty">
             <button type="button" onclick="cartSetQty('${p.id}', ${qty - 1})" aria-label="-">−</button>
             <span>${qty}</span>
@@ -131,6 +220,7 @@ function cartRender() {
   }).join('');
 
   foot.innerHTML = `
+    ${priced.applied.length ? `<div class="cart-saving"><span>🎁 ${isAr ? 'وفّرت بالعروض' : 'Offer savings'}</span><strong>− ${saved} ${symbol}</strong></div>` : ''}
     <div class="cart-total"><span>${isAr ? 'المجموع' : 'Total'}</span><strong>${total} ${symbol}</strong></div>
     <p class="cart-note">${isAr ? 'التوصيل يُحسب حسب المدينة ويُؤكَّد معك على واتساب.' : 'Delivery depends on your city and is confirmed with you on WhatsApp.'}</p>
     <button type="button" class="cart-checkout" onclick="cartCheckout()">
@@ -142,17 +232,16 @@ function cartCheckout() {
   const isAr = currentLang === 'ar';
   const lines = cartLines();
   if (!lines.length) return;
-  let total = 0;
-  let symbol = '';
+  const priced = cartPriceJod(lines);
+  const symbol = activeSymbol();
   const rows = lines.map(({ p, qty }, n) => {
-    const unit = cartUnitPrice(p);
-    total += unit.value * qty;
-    symbol = unit.symbol;
-    return `${n + 1}. ${p.title} × ${qty} = ${unit.value * qty} ${unit.symbol}`;
+    const rule = offerRuleFor(p);
+    return `${n + 1}. ${p.title} × ${qty}${rule ? ` (${rule.ar})` : ''}`;
   });
+  const offers = priced.applied.map(a => `🎁 ${a.rule.ar}: ${jodToActive(a.price)} ${symbol}`);
   const text = (isAr
-    ? ['مرحباً، أود طلب العطور التالية من زهرة بيسان:', '', ...rows, '', `المجموع: ${total} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
-    : ['Hello, I would like to order these perfumes from Zahrat Beesan:', '', ...rows, '', `Total: ${total} ${symbol}`, '', 'Name:', 'City & address:']
+    ? ['مرحباً، أود طلب العطور التالية من زهرة بيسان:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
+    : ['Hello, I would like to order these perfumes from Zahrat Beesan:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '', 'Name:', 'City & address:']
   ).join('\n');
   window.open(`https://wa.me/${CART_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
 }

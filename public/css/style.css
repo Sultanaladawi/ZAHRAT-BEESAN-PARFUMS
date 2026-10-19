@@ -3311,3 +3311,6 @@ body.cart-open { overflow: hidden; }
 /* Home shows the storefront; the full catalog opens from "Browse all". */
 body.home-catalog-hidden #catalog { display: none; }
 .home-browse-all { display: flex; justify-content: center; margin: 10px 0 40px; }
+.cart-line-offer { font-size: 0.76rem; font-weight: 700; color: #1f7a4a; margin-top: 3px; }
+.cart-line-hint { font-size: 0.74rem; color: #a6655d; margin: 2px 0 6px; }
+.cart-saving { display: flex; justify-content: space-between; color: #1f7a4a; font-weight: 700; margin-bottom: 6px; }
