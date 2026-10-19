@@ -272,7 +272,7 @@ def keep_largest(alpha):
 
 
 def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
-           trim_bottom=None, trim_top=None):
+           trim_bottom=None, trim_top=None, straight_left=False):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -297,6 +297,17 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
     if solid:
         alpha = solidify(alpha)
         cut = rgb.convert("RGBA")  # the model blanks colours it dropped; use the photo's
+    if straight_left:
+        # The bottle's left side is straight; a shadow bulging past the
+        # body's usual left edge is cut off (charms on the right are kept).
+        rows = np.where(alpha.max(axis=1) > 64)[0]
+        if len(rows):
+            h = rows[-1] - rows[0]
+            body = rows[(rows > rows[0] + h * 0.45) & (rows < rows[0] + h * 0.9)]
+            lefts = [np.nonzero(alpha[y] > 64)[0].min() for y in body]
+            limit = int(np.percentile(lefts, 70)) if lefts else 0
+            for y in rows[rows > rows[0] + h * 0.35]:
+                alpha[y, :limit] = 0
     if trim_top:
         # Drop a sliver of backdrop the model kept on top of a flat cap.
         rows = np.where(alpha.max(axis=1) > 64)[0]
@@ -350,7 +361,8 @@ def showcase(item, house):
                        body_clip=item.get("cutoutClipBodyFrom"),
                        largest=bool(item.get("cutoutKeepLargest")),
                        trim_bottom=item.get("cutoutTrimBottom"),
-                       trim_top=item.get("cutoutTrimTop"))
+                       trim_top=item.get("cutoutTrimTop"),
+                       straight_left=bool(item.get("cutoutStraightLeft")))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
