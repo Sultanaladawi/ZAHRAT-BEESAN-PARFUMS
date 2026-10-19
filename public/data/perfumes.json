@@ -5568,7 +5568,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg?v=3",
+    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg?v=4",
     "originalImage": "images/original_oil-musk-abyad-moutsaleq.png",
     "galleryImages": [],
     "specsEn": {
@@ -5587,7 +5587,8 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutSolid": true
   },
   {
     "id": "oil-mukhallat-najd-aldhahabi",

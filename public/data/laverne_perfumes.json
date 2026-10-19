@@ -555,7 +555,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/RvymNKO",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/88f0ace6-1ac9-4e97-8cc8-d8c676caed69-1000x1000-Rm73qbNzCPaIT8askTPfFOObMThpHjnv04pDjWPJ.jpg",
-    "image": "images/laverne_RvymNKO.jpg",
+    "image": "images/laverne_RvymNKO.jpg?v=2",
     "originalImage": "https://cdn.salla.sa/XzOPD/88f0ace6-1ac9-4e97-8cc8-d8c676caed69-1000x1000-Rm73qbNzCPaIT8askTPfFOObMThpHjnv04pDjWPJ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/86cd85eb-a65c-494e-907a-68f17768fa17-500x500-WEGZOychITU6WjF6C1QX5nUIqqWVRFmJ1P6mKvWE.jpg",
@@ -589,7 +589,9 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "laverne-bwYevYY",
@@ -4227,7 +4229,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/ABeKbDP",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/230d0a79-56dd-449f-a4f1-9c24b862578a-1000x1000-F5wqJ1glPpr4ajK4Cwfxf2YhRSB7gTwvtMT3DrV2.jpg",
-    "image": "images/laverne_ABeKbDP.jpg",
+    "image": "images/laverne_ABeKbDP.jpg?v=2",
     "originalImage": "https://cdn.salla.sa/XzOPD/230d0a79-56dd-449f-a4f1-9c24b862578a-1000x1000-F5wqJ1glPpr4ajK4Cwfxf2YhRSB7gTwvtMT3DrV2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/714560a7-a0cf-4c9c-abcf-be5de20c474f-500x500-u7VclbAM6dNJBow914KmBhHta0qdDZimfvNSiAwn.jpg",
@@ -4261,7 +4263,9 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "laverne-qGZbPBW",
@@ -4449,7 +4453,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/qGKXwVb",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/8c426904-dd31-4a52-b13a-aa9bfe039934-1000x1000-nmdf9OOqUKtrdHMZDTqWQPrpKdauEhcbEAur5vpm.jpg",
-    "image": "images/laverne_qGKXwVb.jpg?v=2",
+    "image": "images/laverne_qGKXwVb.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/XzOPD/8c426904-dd31-4a52-b13a-aa9bfe039934-1000x1000-nmdf9OOqUKtrdHMZDTqWQPrpKdauEhcbEAur5vpm.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/ca2627ca-9c1d-40b2-ab85-312378825bd6-500x500-gR4QBldta93NYw9f4mOkER6mPx9zxhvdEOLLSpgW.jpg",
@@ -4485,7 +4489,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "cutoutSource": "https://cdn.salla.sa/XzOPD/NuchU1R9RcT09mTW7P34u3Uan199rUpRUBqAmDNy.jpg",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutMirrorClip": true
   },
   {
     "id": "laverne-xvBwbel",
@@ -4506,7 +4511,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/xvBwbel",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/a7a766ae-9b29-4b63-a1ff-836b55c88fc6-1000x1000-pJrQEwEMws6EgAZgmmSWuDgGXMjEn0wWTMyvOlC4.jpg",
-    "image": "images/laverne_xvBwbel.jpg?v=2",
+    "image": "images/laverne_xvBwbel.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/XzOPD/a7a766ae-9b29-4b63-a1ff-836b55c88fc6-1000x1000-pJrQEwEMws6EgAZgmmSWuDgGXMjEn0wWTMyvOlC4.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/d8103984-25bd-44d9-8daa-a70fd7f2defe-500x500-qL5fqkLD7mazyPdYaSJmBlZo62htjRpV915lEg44.jpg",
@@ -4542,7 +4547,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "cutoutSource": "https://cdn.salla.sa/XzOPD/Rievi9fIBZOOhSICIVDdjnflFzFHYLguPpw0XzWk.jpg",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutMirrorClip": true
   },
   {
     "id": "laverne-lvrzXan",
@@ -4563,7 +4569,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/lvrzXan",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/50af50ea-8f68-4436-acc3-f0101440a356-1000x1000-PytZkfEa9iZ6PUXQwDupfBf65aEK2tWGGFbsF3Z6.jpg",
-    "image": "images/laverne_lvrzXan.jpg?v=2",
+    "image": "images/laverne_lvrzXan.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/XzOPD/50af50ea-8f68-4436-acc3-f0101440a356-1000x1000-PytZkfEa9iZ6PUXQwDupfBf65aEK2tWGGFbsF3Z6.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/5cab5ee4-d8f6-4677-b426-ed270bbf6069-500x500-qOaKQfohxZEFkQaz6xqueYRi9Uk8kKxG2OS0URDR.jpg",
@@ -4599,7 +4605,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "cutoutSource": "https://cdn.salla.sa/XzOPD/sWiese4W4uKRvzJLc0R2dpimnH9Qjxo8iwROQpLv.jpg",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutMirrorClip": true
   },
   {
     "id": "laverne-OyRbnme",
@@ -4620,7 +4627,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/OyRbnme",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/2b689805-9027-4b41-ae11-b74cf08f6ff7-1000x1000-9N17oGHLCokWGxocCmebfuactyczZvACqthvcp9Z.jpg",
-    "image": "images/laverne_OyRbnme.jpg?v=2",
+    "image": "images/laverne_OyRbnme.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/XzOPD/2b689805-9027-4b41-ae11-b74cf08f6ff7-1000x1000-9N17oGHLCokWGxocCmebfuactyczZvACqthvcp9Z.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/8f5b74b4-54f1-4e40-bbb8-1273ec045176-500x500-nSxTJLCydVdXBdjiyXSBZt3SOMK5xg624LMOcWHH.jpg",
@@ -4656,7 +4663,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "cutoutSource": "https://cdn.salla.sa/XzOPD/oiXy9DVWRfWAS2N96k1M0hXorbPlUN3agqhHypHI.jpg",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutMirrorClip": true
   },
   {
     "id": "laverne-ngXQPYD",

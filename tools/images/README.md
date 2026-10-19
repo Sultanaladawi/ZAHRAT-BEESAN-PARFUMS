@@ -18,3 +18,16 @@ cd tools/images
 - `render.py` — downloads sources, cuts out bottles (BiRefNet), removes cast
   shadows and floor reflections, composites onto the template
 - `qa.py` — rough defect scoring of existing templated images
+
+## Per-product fixes
+
+Some photos need a hint in the catalog entry before rendering:
+
+- `imageLayoutOverride: "original" | "showcase"` forces the layout, e.g. a bottle photographed with its box.
+- `cutoutSource` uses a different photo for the cutout.
+- `cutoutSolid: true` makes clear or pale glass opaque so the template does not show through it.
+- `cutoutMirrorFill: true` rebuilds a symmetric bottle whose side merged into a white backdrop.
+- `cutoutMirrorClip: true` trims a shadow or ghost bottle on one side of a symmetric bottle.
+- `cutoutClipBodyFrom: 0.4` does the same for the body only (from 40% of the height down), keeping an asymmetric cap.
+
+After rendering, run `python tools/images/thumbs.py` to refresh the card thumbnails.
