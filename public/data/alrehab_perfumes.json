@@ -20923,7 +20923,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-في-اي-بي-اسود-100-مل/p2051742632",
     "bottleUrl": "https://cdn.salla.sa/pywvq/EeQdyxuURmjcprbGCkmWYOHV3HTZsTQzB6onzamV.jpg",
-    "image": "images/alrehab_2051742632.jpg?v=9c170546",
+    "image": "images/alrehab_2051742632.jpg?v=aaf72c2e",
     "originalImage": "https://cdn.salla.sa/pywvq/EeQdyxuURmjcprbGCkmWYOHV3HTZsTQzB6onzamV.jpg",
     "galleryImages": [
       "images/alrehab_2051742632.jpg?v=2"
@@ -20955,8 +20955,8 @@
     "subCategoryAr": "العطور (60 – 125 مل)",
     "subCategoryEn": "Perfumes (60–125 ml)",
     "cutoutModel": "birefnet-general",
-    "cutoutClearGlass": 0.35,
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutWhiteBackdrop": true
   },
   {
     "id": "alrehab-678362287",

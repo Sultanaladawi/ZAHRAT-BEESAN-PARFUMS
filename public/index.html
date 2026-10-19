@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>زهرة بيسان للعطور | Zahrat Beesan Parfums — المتجر الرسمي</title>
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -94,11 +94,7 @@
 
       <!-- الإجراءات السريعة (البحث، حسابي، السلة، وزر واتساب الملكي) -->
       <div class="actions-area">
-        <button class="icon-btn" title="حسابي / تسجيل الدخول" onclick="alert('👑 أهلاً بك في نادي النخبة لدار زهرة بيسان للعطور')">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-
-        <button class="icon-btn" title="حقيبة التسوق" onclick="alert(currentLang === 'ar' ? '🛍️ حقيبة التسوق الخاصة بك جاهزة!' : '🛍️ Your shopping bag is ready!')">
+        <button class="icon-btn" title="حقيبة التسوق" aria-label="حقيبة التسوق" onclick="openCart()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span class="cart-count-badge" id="cartCountBadge">0</span>
         </button>
@@ -446,7 +442,19 @@
 
   <script src="js/translations.js?v=10"></script>
   <script src="js/houses.js?v=11"></script>
-  <script src="js/app.js?v=12"></script>
+  <script src="js/app.js?v=13"></script>
   <script src="js/home.js?v=2"></script>
+  <script src="js/cart.js?v=1"></script>
+
+  <!-- حقيبة التسوق -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="حقيبة التسوق">
+    <div class="cart-drawer-head">
+      <h2 id="cartDrawerTitle">حقيبة التسوق</h2>
+      <button type="button" class="cart-close" onclick="closeCart()" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody"></div>
+    <div class="cart-drawer-foot" id="cartDrawerFoot"></div>
+  </aside>
 </body>
 </html>
