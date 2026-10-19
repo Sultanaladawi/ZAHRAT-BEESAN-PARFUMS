@@ -1351,7 +1351,7 @@ function getPromoBadgeLabel(p, prices, isAr) {
   const txt = String(p.promotionTitle || '');
   if (typeof offerRuleFor === 'function') {
     const rule = offerRuleFor(p);
-    if (rule) return isAr ? (rule.size === 4 ? 'اشترِ 3 والرابع مجاناً' : 'اشترِ 2 والثالث مجاناً') : (rule.size === 4 ? 'Buy 3, get 1 free' : 'Buy 2, get 1 free');
+    if (rule) return isAr ? rule.ar : rule.en;
   }
   if (/الأكثر|best\s*sell/i.test(txt)) return isAr ? 'الأكثر مبيعاً' : 'Best seller';
   if (/جديد|\bnew\b/i.test(txt)) return isAr ? 'جديد' : 'New';

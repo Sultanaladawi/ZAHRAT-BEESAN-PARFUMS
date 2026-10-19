@@ -95,6 +95,11 @@ const OFFER_RULES = [
   // house, how the supplier writes it, bottles in a group, profit per group (JOD)
   { house: 'assaf', match: /3\s*\+\s*1/, size: 4, profit: 10, ar: 'اشترِ 3 والرابع مجاناً', en: 'Buy 3, get 1 free' },
   { house: 'assaf', match: /2\s*\+\s*1|1\s*\+\s*2/, size: 3, profit: 10, ar: 'اشترِ 2 والثالث مجاناً', en: 'Buy 2, get 1 free' },
+  // Fixed-price groups: the supplier sells the whole group for groupSar.
+  // Product lists are the suppliers' offer categories (Ghalati c1389534759
+  // "اختر ٢ بـ 96 ريال", Thnyan c214031821 "اشتر اربع عطور بـ199 ريال").
+  { house: 'ghalati', sallaIds: ["1249911952", "1089182563", "1569128723", "113450693", "625338571", "25373017", "1942806396", "64193430", "214279369", "1757606131", "704485665", "1859126740", "1487856502", "133723763", "1781279602"], size: 2, groupSar: 96, profit: 10, ar: 'أي عطرين بسعر مميز', en: 'Any 2 for a special price' },
+  { house: 'thnyan', sallaIds: ["144017218", "1373419763", "1978166384", "402320647", "1013392673", "1494531800", "1981620511", "604656001", "1303768509", "1072057445", "1812897358", "1253372737", "637775795", "732847010", "402914932"], size: 4, groupSar: 199, profit: 15, ar: 'أي 4 عطور بسعر مميز', en: 'Any 4 for a special price' },
 ];
 const OFFER_FEE_PER_BOTTLE = 4;
 
@@ -110,7 +115,8 @@ function offerRuleFor(p) {
   if (p.isAvailable === false || p.status === 'out') return null;
   const key = productHouseKey(p);
   const txt = String(p.promotionTitle || '');
-  return OFFER_RULES.find(r => r.house === key && r.match.test(txt)) || null;
+  const sid = String(p.sallaId || '');
+  return OFFER_RULES.find(r => r.house === key && (r.sallaIds ? r.sallaIds.includes(sid) : r.match.test(txt))) || null;
 }
 
 const supplierJod = p => Number(p.baseJod) || Math.round((Number(p.sarPrice) || 0) / 5.29);
@@ -134,7 +140,9 @@ function cartPriceJod(lines) {
     const groups = Math.floor(units.length / rule.size);
     for (let g = 0; g < groups; g++) {
       const grp = units.slice(g * rule.size, (g + 1) * rule.size);
-      const paid = grp.slice(0, rule.size - 1).reduce((n, p) => n + supplierJod(p), 0);
+      const paid = rule.groupSar
+        ? Math.round(rule.groupSar / 5.29)
+        : grp.slice(0, rule.size - 1).reduce((n, p) => n + supplierJod(p), 0);
       const price = paid + OFFER_FEE_PER_BOTTLE * rule.size + rule.profit;
       total += price;
       applied.push({ rule, price, normal: grp.reduce((n, p) => n + normalJod(p), 0) });
