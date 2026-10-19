@@ -3055,7 +3055,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/one-love-f/10111081012100-1100.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7fbcba5f/images/10111081012100-1100-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-59.jpg?v=725dde6d",
+    "image": "images/deraah_deraah-59.jpg?v=d8bf6c2e",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7fbcba5f/images/10111081012100-1100-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7fbcba5f/images/10111081012100-1100-1.jpg?sw=800&sh=800&q=85"
@@ -3085,7 +3085,9 @@
       "perfumer": "Deraah Perfumes — ONE LOVE"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutMirrorClip": true
   },
   {
     "id": "deraah-10111181013100-1312",
@@ -3473,7 +3475,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/q-a-m/10111071011100-1261.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw04895338/images/10111071011100-1261-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-67.jpg?v=52ff1a56",
+    "image": "images/deraah_deraah-67.jpg?v=19b88a53",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw04895338/images/10111071011100-1261-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw04895338/images/10111071011100-1261-1.jpg?sw=800&sh=800&q=85"
@@ -3504,7 +3506,9 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutSolid": true
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutClearGlass": true
   },
   {
     "id": "deraah-10111011013150-1395",
@@ -8290,7 +8294,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/10111011011150-1409.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw687f352c/images/10111011011150-1409-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-159.jpg?v=de18c645",
+    "image": "images/deraah_deraah-159.jpg?v=cf83fb62",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw687f352c/images/10111011011150-1409-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw687f352c/images/10111011011150-1409-1.jpg?sw=800&sh=800&q=85"
@@ -8321,8 +8325,10 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
     "cutoutSolid": true,
-    "cutoutMirrorFill": true
+    "cutoutMirrorClip": true
   },
   {
     "id": "deraah-10111061012050-1014",
@@ -9281,7 +9287,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/unisex-perfumes/maios-un/10111021013125-1293.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwa15b494b/images/10111021013125-1293-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-178.jpg?v=a8c39f9c",
+    "image": "images/deraah_deraah-178.jpg?v=e34da361",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwa15b494b/images/10111021013125-1293-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwa15b494b/images/10111021013125-1293-1.jpg?sw=800&sh=800&q=85"
@@ -9311,7 +9317,11 @@
       "perfumer": "Deraah Perfumes — MAIOS"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutClearGlass": true,
+    "cutoutMirrorClip": true
   },
   {
     "id": "deraah-10111091011100-1103",
@@ -10430,7 +10440,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/women-perfumes/one-love-f/10111081012075-1408.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwefb76ed1/images/10111081012075-1408-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-200.jpg?v=0f961871",
+    "image": "images/deraah_deraah-200.jpg?v=61f70d8f",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwefb76ed1/images/10111081012075-1408-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwefb76ed1/images/10111081012075-1408-1.jpg?sw=800&sh=800&q=85"
@@ -10461,7 +10471,9 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutModel": "birefnet-general"
+    "cutoutModel": "birefnet-general",
+    "cutoutWhiteBackdrop": true,
+    "cutoutClearGlass": true
   },
   {
     "id": "deraah-10111181013100-1316",
