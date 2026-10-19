@@ -33,7 +33,7 @@ function cartUnitPrice(p) {
   const isAr = currentLang === 'ar';
   const jod = Number(p.finalJod) || (Math.round((Number(p.sarPrice) || 95) / 5.29) + 12);
   if (activeCurrency.code === 'JOD') return { value: jod, symbol: isAr ? activeCurrency.symbol : activeCurrency.symbolEn };
-  if (activeCurrency.code === 'SAR') return { value: Number(p.sarPrice) || Math.round(jod * activeCurrency.rate), symbol: isAr ? '﷼' : 'SAR' };
+  if (activeCurrency.code === 'SAR') return { value: Math.round(jod * activeCurrency.rate), symbol: isAr ? '﷼' : 'SAR' };
   return { value: Math.round(jod * activeCurrency.rate), symbol: isAr ? activeCurrency.symbol : activeCurrency.symbolEn };
 }
 
@@ -171,7 +171,7 @@ function closeCart() {
 }
 
 (function wireCart() {
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCart(); if (typeof closePolicyModal === 'function') closePolicyModal(); } });
   document.addEventListener('DOMContentLoaded', () => {
     cartUpdateBadge(false);
     // Re-price the drawer when the language or currency changes.
@@ -187,3 +187,47 @@ function closeCart() {
     }
   });
 })();
+
+// ── Footer policy pages (guarantee, order tracking) ──
+const POLICIES = {
+  guarantee: {
+    icon: '👑',
+    ar: { title: 'ضمان الأصالة 100%', body: [
+      ['عطور أصلية ومختومة', 'كل عطورنا أصلية 100% ومستوردة من الدور الرسمية مباشرة، وتصلك مختومة بختم المصنع.'],
+      ['من المصدر الرسمي', 'نتعامل فقط مع الدور المعتمدة (غلاتي، عساف، درعة، الرصاصي، الرحاب، ثنيان، لافيرن، لو بانهور).'],
+      ['أي استفسار', 'تواصل معنا على واتساب في أي وقت للتأكد من أي منتج قبل الطلب.'],
+    ] },
+    en: { title: '100% authenticity guarantee', body: [
+      ['Genuine & sealed', 'All our perfumes are 100% genuine, imported directly from the official houses and delivered factory-sealed.'],
+      ['Official sources only', 'We only work with authorized houses (Ghalati, Assaf, Deraah, Rasasi, Al-Rehab, Thnyan, Laverne, Le Bonheur).'],
+      ['Questions', 'Message us on WhatsApp any time to check a product before you order.'],
+    ] },
+  },
+  tracking: {
+    icon: '📦',
+    ar: { title: 'تتبع الطلب', body: [
+      ['داخل الأردن', 'نتواصل معك على واتساب لتأكيد الطلب وموعد التوصيل.'],
+      ['الشحن الدولي', 'نرسل لك رقم البوليصة على واتساب فور الشحن لتتبع شحنتك.'],
+    ] },
+    en: { title: 'Order tracking', body: [
+      ['Within Jordan', 'We confirm your order and delivery time with you on WhatsApp.'],
+      ['International', 'We send your tracking number on WhatsApp as soon as the order ships.'],
+    ] },
+  },
+};
+
+function openPolicyModal(key) {
+  const pol = POLICIES[key];
+  if (!pol) return;
+  const c = currentLang === 'ar' ? pol.ar : pol.en;
+  document.getElementById('policyModalIcon').textContent = pol.icon;
+  document.getElementById('policyModalTitle').textContent = c.title;
+  document.getElementById('policyModalBody').innerHTML = c.body.map(([h, t]) =>
+    `<div class="shipping-feature-box"><h4>${h}</h4><p>${t}</p></div>`).join('') +
+    `<a class="cart-checkout" style="text-decoration:none;margin-top:14px" href="https://wa.me/${CART_WHATSAPP}" target="_blank" rel="noopener">💬 ${currentLang === 'ar' ? 'تواصل معنا عبر واتساب' : 'Message us on WhatsApp'}</a>`;
+  document.getElementById('policyModal').style.display = 'flex';
+}
+
+function closePolicyModal() {
+  const m = document.getElementById('policyModal'); if (m) m.style.display = 'none';
+}

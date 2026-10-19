@@ -127,7 +127,9 @@ function renderHomeHouses() {
 
 function renderHomeCategories(all) {
   const tiles = HOME_CATEGORIES.map(c => {
-    const p = all.find(x => homeAvailable(x) && c.match(x));
+    // Prefer a photo on the house template so the tiles look like one set.
+    const p = all.find(x => homeAvailable(x) && c.match(x) && x.imageLayout === 'showcase')
+      || all.find(x => homeAvailable(x) && c.match(x));
     const img = p ? getCardThumb(p.image) : 'images/logo_transparent_small.webp';
     return `
       <button type="button" class="home-tile" onclick="homeShowCategory('${c.filter}')">
@@ -213,6 +215,7 @@ function updateHomeVisibility() {
   wrap('selectHouse', updateHomeVisibility);
   wrap('renderCatalog', updateHomeVisibility);
   wrap('setLanguage', () => { renderHome(); updateHomeVisibility(); });
+  wrap('setCurrency', () => { renderHome(); });
   document.addEventListener('DOMContentLoaded', () => {
     updateHomeVisibility();
     renderHome();
