@@ -27,15 +27,18 @@ SIZE = 1024
 BOTTLE_BOX = (480, 515)                       # max bottle width/height on the podium
 PODIUM_Y = {"ghalati": 746, "assaf": 746}     # y where the bottle touches the podium
 DEFAULT_PODIUM_Y = 752
-_session = None
 
 
-def session():
-    global _session
-    if _session is None:
+_sessions = {}
+
+
+def session(model="birefnet-general-lite"):
+    """rembg session per model; the full birefnet-general is slower but
+    separates soft cast shadows the lite model keeps."""
+    if model not in _sessions:
         from rembg import new_session
-        _session = new_session("birefnet-general-lite")
-    return _session
+        _sessions[model] = new_session(model)
+    return _sessions[model]
 
 
 def source_url(item):
@@ -272,11 +275,12 @@ def keep_largest(alpha):
 
 
 def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
-           trim_bottom=None, trim_top=None, straight_left=False):
+           trim_bottom=None, trim_top=None, straight_left=False, model=None,
+           cap_clip=None):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
-    cut = remove(rgb, session=session())
+    cut = remove(rgb, session=session(model) if model else session())
     arr = np.asarray(cut)
     alpha = clean_alpha(arr[..., 3])
     rows = np.where(alpha.max(axis=1) > 128)[0]
@@ -313,6 +317,17 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
         rows = np.where(alpha.max(axis=1) > 64)[0]
         if len(rows):
             alpha[:rows[0] + int((rows[-1] - rows[0]) * trim_top)] = 0
+    if cap_clip:
+        # Above `cap_clip` (fraction of the height) keep only the cap's width,
+        # measured on that row: drops a card or tag standing behind the cap.
+        rows = np.where(alpha.max(axis=1) > 64)[0]
+        if len(rows):
+            y = rows[0] + int((rows[-1] - rows[0]) * cap_clip)
+            xs = np.nonzero(alpha[y] > 64)[0]
+            if len(xs):
+                pad = max(2, (xs.max() - xs.min()) // 20)
+                alpha[:y, :max(xs.min() - pad, 0)] = 0
+                alpha[:y, xs.max() + pad + 1:] = 0
     if trim_bottom:
         # Drop a stand or plinth the bottle was photographed on.
         rows = np.where(alpha.max(axis=1) > 64)[0]
@@ -362,7 +377,9 @@ def showcase(item, house):
                        largest=bool(item.get("cutoutKeepLargest")),
                        trim_bottom=item.get("cutoutTrimBottom"),
                        trim_top=item.get("cutoutTrimTop"),
-                       straight_left=bool(item.get("cutoutStraightLeft")))
+                       straight_left=bool(item.get("cutoutStraightLeft")),
+                       model=item.get("cutoutModel"),
+                       cap_clip=item.get("cutoutCapClip"))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)

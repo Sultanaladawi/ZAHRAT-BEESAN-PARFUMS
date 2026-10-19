@@ -6027,7 +6027,7 @@
     "promotionTitle": "دار لافيرن الرسمية",
     "url": "https://laverne.com/ar/QzwYVGW",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/a4d2a171-3581-4322-80db-b13a7fa51ed1-969.11196911197x1000-LkZptP9LsDvgb1UaoYyoOiAemhSeyUYIO6a4xrll.jpg",
-    "image": "images/laverne_QzwYVGW.jpg?v=9d366772",
+    "image": "images/laverne_QzwYVGW.jpg?v=7e9debea",
     "originalImage": "https://cdn.salla.sa/XzOPD/a4d2a171-3581-4322-80db-b13a7fa51ed1-969.11196911197x1000-LkZptP9LsDvgb1UaoYyoOiAemhSeyUYIO6a4xrll.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/87dc574b-b530-48f4-b4b9-df8d09f17f9e-484.55598455598x500-LkZptP9LsDvgb1UaoYyoOiAemhSeyUYIO6a4xrll.jpg",
@@ -6062,8 +6062,7 @@
     "subCategory": "perfume",
     "imageLayoutOverride": "showcase",
     "imageLayout": "showcase",
-    "cutoutTrimBottom": 0.05,
-    "cutoutStraightLeft": true
+    "cutoutModel": "birefnet-general"
   },
   {
     "id": "laverne-PDEorQx",
