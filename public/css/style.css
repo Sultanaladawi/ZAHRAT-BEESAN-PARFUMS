@@ -3293,3 +3293,18 @@ body.cart-open { overflow: hidden; }
   background: #1faa59; color: #fff; font-weight: 800; font-size: 1rem; cursor: pointer;
 }
 .cart-checkout:hover { background: #178a48; }
+
+/* Mobile: catalog filters in one swipeable row instead of a tall stack */
+@media (max-width: 768px) {
+  .catalog-filters-bar {
+    flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto;
+    gap: 8px; margin: 16px -16px 22px; padding: 4px 16px 8px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .catalog-filters-bar::-webkit-scrollbar { display: none; }
+  .catalog-filters-bar .catalog-filter-btn { flex: 0 0 auto; white-space: nowrap; }
+  /* Comfortable tap targets for small links and toggles */
+  .footer-links a { display: inline-block; padding: 8px 0; }
+  .home-more { padding: 10px 6px; }
+  .social-icon, .top-social a { min-width: 36px; min-height: 36px; display: inline-flex; align-items: center; justify-content: center; }
+}

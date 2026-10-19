@@ -706,6 +706,13 @@ const FRAGRANCE_HOUSES = [
   }
 ];
 
+// Only houses we actually stock are shown in menus, the footer and counts;
+// the rest of the list above is kept for future houses.
+const STOCKED_HOUSE_IDS = ['all', 'ghalati', 'assaf', 'thunayan', 'rasasi', 'al-rehab', 'labonair', 'laverne', 'deraah'];
+for (let i = FRAGRANCE_HOUSES.length - 1; i >= 0; i--) {
+  if (!STOCKED_HOUSE_IDS.includes(FRAGRANCE_HOUSES[i].id)) FRAGRANCE_HOUSES.splice(i, 1);
+}
+
 function getHouseById(id) {
   return FRAGRANCE_HOUSES.find(h => h.id === id) || null;
 }

@@ -122,16 +122,15 @@ function getProductPrices(p) {
 
   let salePriceVal, origPriceVal;
 
-  if (activeCurrency.code === 'SAR') {
-    salePriceVal = sarSale;
-    origPriceVal = sarOrig;
-    if (isAr) symbol = '﷼';
-  } else if (activeCurrency.code === 'JOD') {
+  // Every currency is converted from our JOD price; the SAR figures in the
+  // catalog are the supplier's own prices, before our margin.
+  if (activeCurrency.code === 'JOD') {
     salePriceVal = jodSale;
     origPriceVal = jodOrig;
   } else {
     salePriceVal = Math.round(jodSale * activeCurrency.rate);
     origPriceVal = Math.round(jodOrig * activeCurrency.rate);
+    if (activeCurrency.code === 'SAR' && isAr) symbol = '﷼';
   }
 
   const formatVal = (v) => Number.isInteger(v) ? v : Number(v.toFixed(1));
@@ -338,7 +337,7 @@ function renderHousesDropdown() {
   container.innerHTML = `
     <div class="mega-brand-header">
       <span class="mega-brand-title">🏛️ ${t.housesSectionTitle || 'دور العطور المعتمدة'}</span>
-      <span class="mega-brand-count">${FRAGRANCE_HOUSES.length} ${isAr ? 'داراً' : 'Houses'}</span>
+      <span class="mega-brand-count">${FRAGRANCE_HOUSES.length - 1} ${isAr ? 'دور' : 'houses'}</span>
     </div>
     <div class="mega-brand-grid">
       ${FRAGRANCE_HOUSES.map(h => {
@@ -399,7 +398,7 @@ function renderFooterHouses() {
     <li>
       <a href="#catalog" onclick="selectHouse('ghalati')" class="footer-brand-all">
         <img src="images/brands/ghalati.svg" class="footer-brand-logo" alt="Ghalati" loading="lazy">
-        <span>${isAr ? `عرض كافة الـ ${FRAGRANCE_HOUSES.length} داراً معتمدة...` : `Browse all ${FRAGRANCE_HOUSES.length} Houses...`}</span>
+        <span>${isAr ? `عرض كافة الدور (${FRAGRANCE_HOUSES.length - 1})` : `Browse all ${FRAGRANCE_HOUSES.length - 1} houses`}</span>
       </a>
     </li>
   `;
@@ -1193,7 +1192,9 @@ function renderCatalog(filter = 'all', searchQuery = '') {
 
   // Consistent category ordering: Perfumes -> Bundles -> Bakhoor -> Oils (preserving original catalog order)
   const catPriority = { 'perfume': 1, 'bundle': 2, 'bakhoor': 3, 'oil': 4 };
-  filtered.sort((a, b) => (catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99));
+  const isOutP = p => p.isAvailable === false || p.status === 'out';
+  // Available perfumes first; out-of-stock ones move to the end of each list.
+  filtered.sort((a, b) => (isOutP(a) - isOutP(b)) || ((catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99)));
 
   const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
   const isLaverne = activeHouse === 'laverne' && perfumesData.some(p => p.subCategory);
@@ -1343,6 +1344,22 @@ function getCardThumb(src) {
   return m ? `images/thumbs/${m[1]}.webp${m[2] || ''}` : src;
 }
 
+// One badge style for every house. Suppliers' promotion titles are mixed
+// (English, Arabic, "1+2", house names, product types); map them to a short
+// set and drop the rest, so cards read the same across the store.
+function getPromoBadgeLabel(p, prices, isAr) {
+  const txt = String(p.promotionTitle || '');
+  if (/buy\s*2|1\s*\+\s*2|2\s*\+\s*1|free|مجان|الثالث/i.test(txt)) return isAr ? 'اشترِ 2 والثالث مجاناً' : 'Buy 2, get 1 free';
+  if (/الأكثر|best\s*sell/i.test(txt)) return isAr ? 'الأكثر مبيعاً' : 'Best seller';
+  if (/جديد|\bnew\b/i.test(txt)) return isAr ? 'جديد' : 'New';
+  if (prices.hasDiscount) {
+    const sale = Number(p.finalJod), orig = Number(p.origJod);
+    const pct = orig > sale && sale > 0 ? Math.round((1 - sale / orig) * 100) : 0;
+    if (pct >= 5) return isAr ? `خصم ${pct}٪` : `${pct}% off`;
+  }
+  return '';
+}
+
 function renderProductCard(p, t) {
   const isAr = currentLang === 'ar';
   const title = isAr ? p.title : p.titleEn;
@@ -1353,28 +1370,16 @@ function renderProductCard(p, t) {
   const isNotified = isOut && isInNotifyList(p.id);
 
   let badgeHtml = '';
-  let outSashHtml = '';
+  const outSashHtml = '';
 
   if (isOut) {
     const outLabel = p.promotionTitle === 'يتوفر قريباً'
-      ? (isAr ? '⏳ يتوفر قريباً' : '⏳ Coming Soon')
-      : (isAr ? 'نفذت الكمية' : 'Out of Stock');
-    badgeHtml = `
-      <span class="product-badge-offer badge-out-of-stock">
-        <span class="badge-out-dot"></span>
-        <span>${outLabel}</span>
-      </span>
-    `;
-    outSashHtml = `
-      <div class="product-out-sash">
-        <span>${isAr ? 'غير متوفر حالياً' : 'Currently Unavailable'}</span>
-      </div>
-    `;
-  } else if (p.promotionTitle || prices.hasDiscount) {
-    const promoLabel = isAr
-      ? (p.promotionTitle || t.limitedTimeOffer || 'عرض لفترة محدودة')
-      : (t.limitedTimeOffer || 'Limited Time Offer');
-    badgeHtml = `<span class="product-badge-offer">${promoLabel}</span>`;
+      ? (isAr ? 'يتوفر قريباً' : 'Coming Soon')
+      : (isAr ? 'نفذت الكمية' : 'Sold Out');
+    badgeHtml = `<span class="product-badge-offer badge-out-of-stock"><span class="badge-out-dot"></span><span>${outLabel}</span></span>`;
+  } else {
+    const promoLabel = getPromoBadgeLabel(p, prices, isAr);
+    if (promoLabel) badgeHtml = `<span class="product-badge-offer">${promoLabel}</span>`;
   }
 
   const actionBtnHtml = isOut
@@ -1453,7 +1458,6 @@ function renderProductCard(p, t) {
           <span class="product-price-sale">${prices.saleStr}</span>
           ${prices.hasDiscount ? `<span class="product-price-old">${prices.origStr}</span>` : ''}
         </div>
-        ${isOut ? `<span class="product-info-out-tag">${isAr ? '● غير متوفر حالياً' : '● Out of Stock'}</span>` : ''}
       </div>
     </article>
   `;
