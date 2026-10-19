@@ -78,7 +78,7 @@
     <div class="header-container">
       
       <!-- اللوجو وهوية المتجر المعتمدة (الخيار 2 المعتمد) -->
-      <a href="#catalog" class="brand-identity" onclick="closeProductModal()">
+      <a href="#" class="brand-identity" onclick="event.preventDefault(); goHome()">
         <img src="images/logo_small.webp" alt="زهرة بيسان للعطور" class="brand-logo-img" width="54" height="54">
         <div class="brand-text-block">
           <h1 class="brand-title-ar"><span data-i18n="brandTitleAr">زهرة بيسان</span> <span data-i18n="brandTitleSuffix">للعطور</span></h1>
@@ -113,7 +113,7 @@
     <div class="nav-container">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="#" class="nav-link active" onclick="closeProductModal()" data-i18n="navHome">الرئيسية</a>
+          <a href="#" class="nav-link active" onclick="event.preventDefault(); goHome()" data-i18n="navHome">الرئيسية</a>
         </li>
         <li class="nav-item">
           <a href="#catalog" class="nav-link" id="navHousesLink" onclick="if(activeModalPerfume) closeProductModal();">
@@ -203,7 +203,7 @@
       <div class="product-breadcrumb-bar">
         <div class="product-breadcrumb-inner">
           <nav class="breadcrumb-trail" aria-label="Breadcrumb">
-            <a href="javascript:void(0)" onclick="closeProductModal()" class="breadcrumb-link">
+            <a href="javascript:void(0)" onclick="goHome()" class="breadcrumb-link">
               <span class="breadcrumb-home-icon">🏠</span>
               <span data-i18n="breadcrumbHome">الرئيسية</span>
             </a>
@@ -325,7 +325,7 @@
           <li><a href="javascript:void(0)" onclick="openShippingModal()" data-i18n="footerShippingPolicy">سياسة الشحن والتوصيل</a></li>
           <li><a href="javascript:void(0)" onclick="openPolicyModal('guarantee')" data-i18n="footerGoldenGuarantee">شهادة الضمان والأصالة 100%</a></li>
           <li><a href="javascript:void(0)" onclick="openPolicyModal('tracking')" data-i18n="footerOrderTracking">تتبع الشحنات والطلبات</a></li>
-          <li><a href="javascript:void(0)" onclick="openShippingModal()" data-i18n="footerReturnPolicy">سياسة الاستبدال والاسترجاع</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('returns')" data-i18n="footerReturnPolicy">سياسة الاستبدال والاسترجاع</a></li>
           <li><a href="https://www.ebay.com/usr/zahratbeesan" target="_blank" rel="noopener noreferrer" data-i18n="footerEbay">متجرنا الرسمي على eBay</a></li>
         </ul>
       </div>
@@ -454,8 +454,8 @@
   <script src="js/translations.js?v=10"></script>
   <script src="js/houses.js?v=12"></script>
   <script src="js/app.js?v=13"></script>
-  <script src="js/home.js?v=3"></script>
-  <script src="js/cart.js?v=2"></script>
+  <script src="js/home.js?v=4"></script>
+  <script src="js/cart.js?v=3"></script>
 
   <!-- حقيبة التسوق -->
   <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
