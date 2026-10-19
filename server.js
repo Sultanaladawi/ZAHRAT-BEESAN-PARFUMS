@@ -1311,6 +1311,22 @@ function fetchSingleLaverneProductLive(slug) {
 }
 
 async function syncWithLaverneStore(force = false) {
+  // Prices and stock are refreshed into the catalog file every 3 hours by
+  // the sync-catalog GitHub Action, so serve the file instead of scraping
+  // 150+ product pages on each request (that took ~5 s per visit).
+  if (!cachedLaverneCatalog || force) {
+    try {
+      cachedLaverneCatalog = JSON.parse(fs.readFileSync(LAVERNE_PERFUMES_PATH, 'utf8'));
+      lastLaverneSyncTime = Date.now();
+    } catch (e) {
+      cachedLaverneCatalog = cachedLaverneCatalog || [];
+    }
+  }
+  return cachedLaverneCatalog;
+}
+
+// Kept for manual use; not called on requests.
+async function syncWithLaverneStoreLive(force = false) {
   const now = Date.now();
   if (!force && cachedLaverneCatalog && (now - lastLaverneSyncTime < 90 * 1000)) {
     return cachedLaverneCatalog;

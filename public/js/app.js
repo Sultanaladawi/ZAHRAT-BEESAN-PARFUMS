@@ -843,7 +843,18 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
   }
 }
 
-async function ensureHouseCatalogLoaded(house = 'all') {
+// Several parts of the page ask for the same house at once; share one request.
+const catalogRequests = {};
+function ensureHouseCatalogLoaded(house = 'all') {
+  if (!catalogRequests[house]) {
+    catalogRequests[house] = loadHouseCatalog(house).finally(() => {
+      setTimeout(() => { delete catalogRequests[house]; }, 0);
+    });
+  }
+  return catalogRequests[house];
+}
+
+async function loadHouseCatalog(house = 'all') {
   if (house === 'all') {
     if (Array.isArray(catalogByHouse['all']) && catalogByHouse['all'].length > 0) {
       return catalogByHouse['all'];
@@ -1339,6 +1350,12 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   }
 }
 
+// Light 400px WebP used by product cards; the product page keeps the full image.
+function getCardThumb(src) {
+  const m = /^images\/([^/?]+)\.(?:jpe?g|png|webp)(\?.*)?$/i.exec(src || '');
+  return m ? `images/thumbs/${m[1]}.webp${m[2] || ''}` : src;
+}
+
 function renderProductCard(p, t) {
   const isAr = currentLang === 'ar';
   const title = isAr ? p.title : p.titleEn;
@@ -1422,7 +1439,7 @@ function renderProductCard(p, t) {
         ${outSashHtml}
 
         <!-- صورة القالب الملكي للعطر -->
-        <img src="${imgSrc}" alt="${title} - ${cardHouseLabel}" class="product-card-image" loading="lazy">
+        <img src="${getCardThumb(imgSrc)}" alt="${title} - ${cardHouseLabel}" class="product-card-image" loading="lazy" decoding="async" width="400" height="400" onerror="if(this.src.indexOf('/thumbs/')>-1){this.onerror=null;this.src='${imgSrc}';}">
 
         <!-- أزرار المعاينة السريعة والمفضلة بالمنتصف عند التحويم -->
         <div class="product-card-hover-actions">

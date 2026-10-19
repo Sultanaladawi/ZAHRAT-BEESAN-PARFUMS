@@ -32,7 +32,7 @@ SHOWCASE_CATEGORIES = {"perfume", "oil", "mini", "hair_mist"}
 
 # Multi-item packs, cartons and offers are never single bottles.
 PACK_RE = re.compile(
-    r"مجموع|بكج|باكج|باقة|باقه|بوكس|كرتون|اقلام|أقلام|توزيعات|عينات|تستر"
+    r"مجموع|بكج|باكج|باقة|باقه|بوكس|كرتون|اقلام|أقلام|توزيع|عينات|تستر"
     r"|\d+\s*حب[ةه]|حبات|ثلاثية|ثنائية|\d\s*\+\s*\d|\s\+\s"
     r"|\bbox\b|\bset\b|collection|gift|bundle|tester|discovery|\bpens?\b",
     re.I,
@@ -56,6 +56,8 @@ LINE_RE = re.compile(r"من\s+مجموع[ةه]\s+\S+", re.I)
 
 
 def layout_for(item):
+    if item.get("imageLayoutOverride") in ("showcase", "original"):
+        return item["imageLayoutOverride"]  # manual decision for odd source photos
     cat = item.get("categoryType") or "perfume"
     text = LINE_RE.sub(" ", text_of(item))
     if MIST_RE.search(text) and not PACK_RE.search(text):
