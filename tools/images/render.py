@@ -276,13 +276,24 @@ def keep_largest(alpha):
 
 def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
            trim_bottom=None, trim_top=None, straight_left=False, model=None,
-           cap_clip=None):
+           cap_clip=None, white_backdrop=False):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
     cut = remove(rgb, session=session(model) if model else session())
     arr = np.asarray(cut)
     alpha = clean_alpha(arr[..., 3])
+    if white_backdrop:
+        # Studio shot on pure white: frosted or white parts the model drops
+        # are still slightly off-white, so take every non-white pixel too.
+        src = np.asarray(rgb, dtype=np.float32)
+        ink = ndimage.binary_opening(src.min(axis=2) < 246, iterations=1)
+        ink = ndimage.binary_fill_holes(ndimage.binary_closing(ink, iterations=3))
+        labels, n = ndimage.label(ink)
+        if n:
+            sizes = ndimage.sum(ink, labels, range(1, n + 1))
+            ink = labels == (int(np.argmax(sizes)) + 1)
+        alpha = np.maximum(alpha, ink.astype(np.float32) * 255)
     rows = np.where(alpha.max(axis=1) > 128)[0]
     if mirror:
         alpha = mirror_clip(alpha)
@@ -419,7 +430,8 @@ def showcase(item, house):
                        trim_top=item.get("cutoutTrimTop"),
                        straight_left=bool(item.get("cutoutStraightLeft")),
                        model=item.get("cutoutModel"),
-                       cap_clip=item.get("cutoutCapClip"))
+                       cap_clip=item.get("cutoutCapClip"),
+                       white_backdrop=bool(item.get("cutoutWhiteBackdrop")))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
