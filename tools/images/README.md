@@ -29,5 +29,6 @@ Some photos need a hint in the catalog entry before rendering:
 - `cutoutMirrorFill: true` rebuilds a symmetric bottle whose side merged into a white backdrop.
 - `cutoutMirrorClip: true` trims a shadow or ghost bottle on one side of a symmetric bottle.
 - `cutoutClipBodyFrom: 0.4` does the same for the body only (from 40% of the height down), keeping an asymmetric cap.
+- `cutoutKeepLargest: true` drops props lying next to the bottle (wood chips, petals).
 
 After rendering, run `python tools/images/thumbs.py` to refresh the card thumbnails.

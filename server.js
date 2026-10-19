@@ -102,19 +102,16 @@ let isSyncingLebonheur = false;
 const SYNC_TTL_MS = 60 * 1000; // Refresh live data every 60 seconds
 
 function getMasterCatalog(archivePath = ARCHIVE_PATH, publicPath = PERFUMES_PATH) {
-  try {
-    if (fs.existsSync(archivePath)) {
-      return JSON.parse(fs.readFileSync(archivePath, 'utf8'));
+  // public/data is the source of truth: the image pipeline and the scheduled
+  // supplier sync both write there. The archive is only a fallback.
+  for (const file of [publicPath, archivePath]) {
+    try {
+      if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch (err) {
+      console.error('Error reading master catalog:', file, err.message);
     }
-    const current = JSON.parse(fs.readFileSync(publicPath, 'utf8'));
-    const dataDir = path.dirname(archivePath);
-    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-    fs.writeFileSync(archivePath, JSON.stringify(current, null, 2), 'utf8');
-    return current;
-  } catch (err) {
-    console.error('Error reading master catalog:', err.message);
-    return [];
   }
+  return [];
 }
 
 const EXCLUDED_SALLA_IDS = new Set([
@@ -386,6 +383,11 @@ async function syncWithGhalatiStore(force = false) {
         .filter(Boolean)
     );
 
+    // Ghalati sometimes relists a product under a new id; match by name so
+    // the existing (templated) entry is kept instead of adding a copy.
+    const normName = t => String(t || '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه')
+      .replace(/عطر|تولة|\(?\d+\s*مل\)?|ml/gi, '').replace(/\s+/g, ' ').trim();
+    const knownNames = new Set(masterList.map(p => normName(p.title)).filter(Boolean));
     const discoveredNewItems = [];
     try {
       const latestRes = await fetch('https://api.salla.dev/store/v1/products?source=latest&limit=30', { headers });
@@ -393,7 +395,7 @@ async function syncWithGhalatiStore(force = false) {
         const latestJson = await latestRes.json();
         for (const it of (latestJson.data || [])) {
           const sid = String(it.id);
-          if (!knownIds.has(sid) && !EXCLUDED_SALLA_IDS.has(sid)) {
+          if (!knownIds.has(sid) && !EXCLUDED_SALLA_IDS.has(sid) && !knownNames.has(normName(it.name))) {
             knownIds.add(sid);
             discoveredNewItems.push(it);
           }

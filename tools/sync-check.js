@@ -167,6 +167,7 @@ function applyChanges(items, results) {
       } else if (r.available === true && (p.isAvailable === false || p.status === 'out')) {
         p.isAvailable = true;
         p.status = 'sale';
+        if (p.promotionTitle === 'يتوفر قريباً') delete p.promotionTitle;
       }
     }
     if (JSON.stringify([p.sarPrice, p.origSarPrice, p.finalJod, p.origJod, p.isAvailable, p.status]) !== before) changed++;
