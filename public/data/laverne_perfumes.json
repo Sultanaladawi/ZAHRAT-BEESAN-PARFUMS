@@ -6270,7 +6270,7 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini",
+    "categoryType": "bundle",
     "subCategory": "mini"
   },
   {
@@ -6430,7 +6430,7 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini",
+    "categoryType": "bundle",
     "subCategory": "mini"
   },
   {
@@ -6483,7 +6483,7 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini",
+    "categoryType": "bundle",
     "subCategory": "mini"
   },
   {
@@ -8273,7 +8273,7 @@
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
-    "categoryType": "mini",
+    "categoryType": "bundle",
     "subCategory": "mini",
     "imageLayout": "original"
   }
