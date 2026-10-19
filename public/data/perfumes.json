@@ -21,7 +21,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_purple-rose.jpg",
+    "image": "images/ghalati_purple-rose.jpg?v=6b18fbdb",
     "originalImage": "images/original_purple-rose.png",
     "galleryImages": [],
     "overviewEn": "Purple Rose embodies the spirit of oriental fragrances with a modern touch, blending warm amber and velvety rose with hints of coffee and spices. Inspired by boozy bouquets, this perfume recreates the vibrant atmosphere of enchanting oriental evenings.",
@@ -74,7 +74,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_majestic-wood.jpg",
+    "image": "images/ghalati_majestic-wood.jpg?v=7872ff1c",
     "originalImage": "images/original_majestic-wood.png",
     "galleryImages": [],
     "overviewEn": "Majestic Wood is a velvety leather-woody-amber fragrance like a breeze drifting across desert dunes, fused with classic oriental aromas of saffron, oud, rose, and amber.",
@@ -127,7 +127,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_oud-argent.jpg",
+    "image": "images/ghalati_oud-argent.jpg?v=48fbf221",
     "originalImage": "images/original_oud-argent.png",
     "galleryImages": [
       "images/box_oud-argent_presentation.jpg",
@@ -183,7 +183,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_amber-cashmere.jpg",
+    "image": "images/ghalati_amber-cashmere.jpg?v=f6f17282",
     "originalImage": "images/original_amber-cashmere.png",
     "galleryImages": [],
     "overviewEn": "An impeccably modern classic with impressive sillage, blending comforting amber with powdery softness and rich cashmere woods for a profound sense of warmth, peace, and serenity.",
@@ -236,7 +236,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_layana.jpg",
+    "image": "images/ghalati_layana.jpg?v=3432ac08",
     "originalImage": "images/original_layana.png",
     "galleryImages": [
       "images/box_layana_presentation.jpg"
@@ -291,7 +291,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_nowara.jpg",
+    "image": "images/ghalati_nowara.jpg?v=54f7a861",
     "originalImage": "images/original_nowara.png",
     "galleryImages": [],
     "overviewEn": "A luminous morning breeze brimming with vitality and freshness. Light and ethereal, wandering through dewy floral orchards, perfect for everyday refinement and daylight elegance.",
@@ -344,7 +344,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_moudhi.jpg",
+    "image": "images/ghalati_moudhi.jpg?v=d50a58de",
     "originalImage": "images/original_moudhi.png",
     "galleryImages": [
       "images/box_moudhi_presentation.jpg"
@@ -396,7 +396,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_rozana.jpg",
+    "image": "images/ghalati_rozana.jpg?v=1415bc1c",
     "originalImage": "images/original_rozana.png",
     "galleryImages": [
       "images/rozana_notes.jpg"
@@ -451,7 +451,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_emotion.jpg",
+    "image": "images/ghalati_emotion.jpg?v=1d62dad7",
     "originalImage": "images/original_emotion.png",
     "galleryImages": [],
     "overviewEn": "A fragrance of profound emotions and warm intimacy, marrying gourmand sweetness with deep woods to craft an unforgettable olfactory signature.",
@@ -504,7 +504,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_attraction.jpg",
+    "image": "images/ghalati_attraction.jpg?v=e8fa660e",
     "originalImage": "images/original_attraction.png",
     "galleryImages": [
       "https://cdn.salla.sa/Dqvgy/e003a1ab-4ad5-4626-b4dc-0afdc1e7c7c6-1000x1000-AWLdbJSzvMqjURFhda5nzEomZbJLsQo8wDZnZQN7.jpg"
@@ -559,7 +559,7 @@
       "type": "عطر",
       "perfumer": "لوكاس سيوزاك"
     },
-    "image": "images/ghalati_spring.jpg",
+    "image": "images/ghalati_spring.jpg?v=6bb6f7ae",
     "originalImage": "images/original_spring.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -607,7 +607,7 @@
       "type": "عطر",
       "perfumer": "سوزيك بوكور"
     },
-    "image": "images/ghalati_sparkle.jpg",
+    "image": "images/ghalati_sparkle.jpg?v=0a6a509b",
     "originalImage": "images/original_sparkle.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -655,7 +655,7 @@
       "type": "عطر",
       "perfumer": "ميرسولاف بيتكوف"
     },
-    "image": "images/ghalati_sunrise.jpg",
+    "image": "images/ghalati_sunrise.jpg?v=f8161fe3",
     "originalImage": "images/original_sunrise.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -703,7 +703,7 @@
       "type": "عطر فرنسي",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_bois-noir.jpg",
+    "image": "images/ghalati_bois-noir.jpg?v=c5656986",
     "originalImage": "images/original_bois-noir.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -751,7 +751,7 @@
       "type": "عطر فرنسي",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_shades.jpg",
+    "image": "images/ghalati_shades.jpg?v=03ac16dd",
     "originalImage": "images/original_shades.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -803,7 +803,7 @@
       "type": "عطر شرقي",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_oud-absolute.jpg",
+    "image": "images/ghalati_oud-absolute.jpg?v=e223eb7a",
     "originalImage": "images/original_oud-absolute.png",
     "galleryImages": [],
     "categoryType": "perfume",
@@ -851,7 +851,7 @@
       "type": "عطر فاخر يدوم طويلًا",
       "perfumer": "Chris Maurice Carbonnel"
     },
-    "image": "images/ghalati_utopia-platinum.jpg",
+    "image": "images/ghalati_utopia-platinum.jpg?v=bb1803f3",
     "originalImage": "images/original_utopia-platinum.png",
     "galleryImages": [
       "images/utopia-platinum_notes.jpg"
@@ -904,7 +904,7 @@
       "size": "100 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_rasayil-wudd.jpg",
+    "image": "images/ghalati_rasayil-wudd.jpg?v=2b70aa6f",
     "originalImage": "images/original_rasayil-wudd.png",
     "galleryImages": [
       "images/box_rasayil-wudd_presentation.jpg"
@@ -966,7 +966,7 @@
       "type": "Eau De Parfum",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_rasayil-haneen.jpg",
+    "image": "images/ghalati_rasayil-haneen.jpg?v=0eeabda6",
     "originalImage": "images/original_rasayil-haneen.png",
     "galleryImages": [
       "images/box_rasayil-haneen_presentation.jpg"
@@ -1006,7 +1006,7 @@
       "size": "100 مل",
       "type": "عطر شرقي عصري"
     },
-    "image": "images/ghalati_rasayil-shawq.jpg",
+    "image": "images/ghalati_rasayil-shawq.jpg?v=f41ad073",
     "originalImage": "images/original_rasayil-shawq.png",
     "galleryImages": [
       "images/box_rasayil-shawq_presentation.jpg"
@@ -1057,7 +1057,7 @@
       "type": "عطر",
       "perfumer": "شادي سمرة"
     },
-    "image": "images/ghalati_just-oud.jpg",
+    "image": "images/ghalati_just-oud.jpg?v=5be46718",
     "originalImage": "images/original_just-oud.png",
     "galleryImages": [
       "https://cdn.salla.sa/Dqvgy/tOwMFTterYk39Cil70TyWQsG8wEreiHC62nJUezg.jpg"
@@ -1111,7 +1111,7 @@
       "size": "80 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_perfume-1932.jpg",
+    "image": "images/ghalati_perfume-1932.jpg?v=635360d0",
     "originalImage": "images/original_perfume-1932.png",
     "galleryImages": [],
     "overviewEn": "A timeless homage commemorating historical grandeur, balancing vintage herbal aristocracy with rich woods and smooth amber.",
@@ -1158,7 +1158,7 @@
       "size": "100 مل",
       "type": "عطر فاخر يجمع بين الأناقة والدفء"
     },
-    "image": "images/ghalati_mountain-leather.jpg",
+    "image": "images/ghalati_mountain-leather.jpg?v=8d4972ae",
     "originalImage": "images/original_mountain-leather.png",
     "galleryImages": [],
     "overviewEn": "Inspired by misty mountainous landscapes and windswept peaks, offering an invigorating leather fragrance underscored by fresh green accords and refined woods.",
@@ -1206,7 +1206,7 @@
       "size": "80 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_perfume-2016.jpg",
+    "image": "images/ghalati_perfume-2016.jpg?v=839761a3",
     "originalImage": "images/original_perfume-2016.png",
     "galleryImages": [],
     "overviewEn": "A modern, dynamic tribute celebrating contemporary luxury and vibrant energy, brimming with effervescent citrus and warm woods.",
@@ -1255,7 +1255,7 @@
       "type": "عطر",
       "perfumer": "كريس موريس كاربونيل"
     },
-    "image": "images/ghalati_ambitious.jpg",
+    "image": "images/ghalati_ambitious.jpg?v=d3df0d72",
     "originalImage": "images/original_ambitious.png",
     "galleryImages": [],
     "overviewEn": "Crafted for leaders with unwavering confidence, featuring bold spices, magnetic resins, and rich dry woods that command instant admiration.",
@@ -1308,7 +1308,7 @@
       "type": "عطر",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_sublime-woods.jpg",
+    "image": "images/ghalati_sublime-woods.jpg?v=9d579c73",
     "originalImage": "images/original_sublime-woods.png",
     "galleryImages": [],
     "overviewEn": "An immersion into ancient enchanted forests, combining creamy sandalwood, earthy vetiver, and smoky cedarwood in a harmonious, serene blend.",
@@ -1360,7 +1360,7 @@
       "size": "80 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_perfume-1985.jpg",
+    "image": "images/ghalati_perfume-1985.jpg?v=a78f8536",
     "originalImage": "images/original_perfume-1985.png",
     "galleryImages": [],
     "overviewEn": "A golden classic encapsulating retro charm and timeless sophistication with spicy florality and velvety amber notes.",
@@ -1409,7 +1409,7 @@
       "type": "عطر",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_absolute-musk.jpg",
+    "image": "images/ghalati_absolute-musk.jpg?v=733e7200",
     "originalImage": "images/original_absolute-musk.png",
     "galleryImages": [
       "images/box_absolute-musk_detail.jpg"
@@ -1461,7 +1461,7 @@
       "type": "عطر",
       "perfumer": "آن فليبو"
     },
-    "image": "images/ghalati_sublime-flowers.jpg",
+    "image": "images/ghalati_sublime-flowers.jpg?v=fb6816c0",
     "originalImage": "images/original_sublime-flowers.png",
     "galleryImages": [],
     "overviewEn": "A dazzling bouquet of radiant spring blossoms wrapped in gentle fruity undertones and delicate sheer woods.",
@@ -1514,7 +1514,7 @@
       "type": "عطر",
       "perfumer": "ميروسلاف بيتكوف"
     },
-    "image": "images/ghalati_eloquent.jpg",
+    "image": "images/ghalati_eloquent.jpg?v=8ad8a76c",
     "originalImage": "images/original_eloquent.png",
     "galleryImages": [],
     "overviewEn": "Sophisticated eloquence captured in scent, blending uplifting citrus with delicate florals and refined cedar.",
@@ -1567,7 +1567,7 @@
       "type": "عطر",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_peach-musk.jpg",
+    "image": "images/ghalati_peach-musk.jpg?v=241a296f",
     "originalImage": "images/original_peach-musk.png",
     "galleryImages": [
       "images/box_peach-musk_detail.jpg"
@@ -1619,7 +1619,7 @@
       "type": "عطر",
       "perfumer": "كريس موريس كاربونيل"
     },
-    "image": "images/ghalati_just-amber.jpg",
+    "image": "images/ghalati_just-amber.jpg?v=9486ef2d",
     "originalImage": "images/original_just-amber.png",
     "galleryImages": [],
     "overviewEn": "A warm, hypnotic amber masterpiece glowing with golden resin, sweet vanilla, and exotic balsam.",
@@ -1671,7 +1671,7 @@
       "size": "75 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_carmine-soul.jpg",
+    "image": "images/ghalati_carmine-soul.jpg?v=2b49a595",
     "originalImage": "images/original_carmine-soul.png",
     "galleryImages": [],
     "overviewEn": "A passionate crimson soul composed of velvety deep roses, mysterious incenses, and dark woody undertones.",
@@ -1719,7 +1719,7 @@
       "type": "عطر",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_dama.jpg",
+    "image": "images/ghalati_dama.jpg?v=d9ee0245",
     "originalImage": "images/original_dama.png",
     "galleryImages": [],
     "overviewEn": "An aristocratic feminine fragrance radiating grace and majesty, weaving together royal florals, subtle gourmand notes, and silky woods.",
@@ -1772,7 +1772,7 @@
       "type": "عطر فرنسي",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_utopia-essence.jpg",
+    "image": "images/ghalati_utopia-essence.jpg?v=f51dda5b",
     "originalImage": "images/original_utopia-essence.png",
     "galleryImages": [],
     "overviewEn": "An ethereal paradise of rare florals and uplifting marine-fruity nuances resting on a foundation of warm sunlit woods.",
@@ -1821,7 +1821,7 @@
       "type": "عطر",
       "perfumer": "كريس موريس"
     },
-    "image": "images/ghalati_exotic-wood.jpg",
+    "image": "images/ghalati_exotic-wood.jpg?v=6d73dbc2",
     "originalImage": "images/original_exotic-wood.png",
     "galleryImages": [],
     "overviewEn": "An expedition into tropical forests featuring exotic precious timbers, dark spices, and enigmatic resins.",
@@ -1870,7 +1870,7 @@
       "type": "عطر",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_rose-intense.jpg",
+    "image": "images/ghalati_rose-intense.jpg?v=81ecc501",
     "originalImage": "images/original_rose-intense.png",
     "galleryImages": [],
     "overviewEn": "A captivating celebration of the queen of flowers, presenting concentrated Damascus rose petals enriched with sweet praline and amber.",
@@ -1918,7 +1918,7 @@
       "size": "50 مل",
       "type": "عطر"
     },
-    "image": "images/ghalati_raspberry-musk.jpg",
+    "image": "images/ghalati_raspberry-musk.jpg?v=e65f2801",
     "originalImage": "images/original_raspberry-musk.png",
     "galleryImages": [],
     "overviewEn": "A delicious harmony of wild ripe raspberries and clean, comforting white musk that leaves an irresistible impression.",
@@ -1966,7 +1966,7 @@
       "type": "عطر شرقي",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_cherry-musk.jpg",
+    "image": "images/ghalati_cherry-musk.jpg?v=45e9c9a6",
     "originalImage": "images/original_cherry-musk.png",
     "galleryImages": [],
     "overviewEn": "Succulent black cherries dipped in velvet musk and light almond facets, exuding modern charm and sweet allure.",
@@ -2014,7 +2014,7 @@
       "size": "100 مل",
       "type": "عطر يمكنك إضافة عبوة محمولة فارغة قابلة للتعبئة"
     },
-    "image": "images/ghalati_vintage.jpg",
+    "image": "images/ghalati_vintage.jpg?v=fac229ce",
     "originalImage": "images/original_vintage.png",
     "galleryImages": [],
     "overviewEn": "Signed by master perfumer Olaf Larsen, Vintage is a tribute to noble elegance featuring zesty bergamot, saffron, Florentine iris butter, and vetiver.",
@@ -2066,7 +2066,7 @@
       "type": "عطر فرنسي",
       "perfumer": "جون لوي سيوزاك يمكنك إضافة عبوة محمولة فارغة قابلة للتعبئة"
     },
-    "image": "images/ghalati_iris-musk.jpg",
+    "image": "images/ghalati_iris-musk.jpg?v=3317c6d1",
     "originalImage": "images/original_iris-musk.png",
     "galleryImages": [
       "images/iris-musk_notes.jpg"
@@ -2124,7 +2124,7 @@
       "type": "عطر",
       "perfumer": "Lucas Sieuzac"
     },
-    "image": "images/ghalati_serenade.jpg",
+    "image": "images/ghalati_serenade.jpg?v=90f3651e",
     "originalImage": "images/original_serenade.png",
     "galleryImages": [],
     "overviewEn": "A melodic symphony of crisp apple, aromatic lavender, geranium, and deep woods that creates an unforgettable evening aura.",
@@ -2177,7 +2177,7 @@
       "type": "عطر فرنسي فاخر",
       "perfumer": "Chris Maurice"
     },
-    "image": "images/ghalati_utopia-gist.jpg",
+    "image": "images/ghalati_utopia-gist.jpg?v=e6e011a7",
     "originalImage": "images/original_utopia-gist.png",
     "galleryImages": [
       "images/utopia-gist_notes.jpg"
@@ -2232,7 +2232,7 @@
       "type": "عطر خشبي أروماتي",
       "perfumer": "دار غلاتي للعطور"
     },
-    "image": "images/ghalati_utopia-ideal.jpg",
+    "image": "images/ghalati_utopia-ideal.jpg?v=dfa9f784",
     "originalImage": "images/original_utopia-ideal.png",
     "galleryImages": [],
     "overviewEn": "Inspired by the raw strength of desert winds at dusk. A magnetic fusion of cool night air and desert heat, bursting with refreshing citrus, fiery pepper, noble lavender, and dark earthy woods in an enigmatic black bottle.",
@@ -2282,7 +2282,7 @@
       "type": "عطر",
       "perfumer": "Dominique Ropion"
     },
-    "image": "images/ghalati_eternal-passion.jpg",
+    "image": "images/ghalati_eternal-passion.jpg?v=ee9ab39a",
     "originalImage": "images/original_eternal-passion.png",
     "galleryImages": [],
     "overviewEn": "A fiery, long-lasting passion captured in exotic spices, intoxicating dark florals, and smoldering amber resins.",
@@ -2335,7 +2335,7 @@
       "type": "عطر",
       "perfumer": "جوردي فرنانديز"
     },
-    "image": "images/ghalati_mont-dor.jpg",
+    "image": "images/ghalati_mont-dor.jpg?v=fa4c5163",
     "originalImage": "images/original_mont-dor.png",
     "galleryImages": [],
     "overviewEn": "A golden mountain of majesty featuring radiant citrus, precious golden saffron, honeyed woods, and imperial amber.",
@@ -2388,7 +2388,7 @@
       "type": "عطر",
       "perfumer": "Dominique Ropion"
     },
-    "image": "images/ghalati_boudoir.jpg",
+    "image": "images/ghalati_boudoir.jpg?v=dd049227",
     "originalImage": "images/original_boudoir.png",
     "galleryImages": [],
     "overviewEn": "Intimate, velvety elegance inspired by royal boudoirs, blending sweet spices, powdery florals, and sensual musk.",
@@ -2441,7 +2441,7 @@
       "type": "عطر",
       "perfumer": "Lucas Sieuzac"
     },
-    "image": "images/ghalati_first-impression.jpg",
+    "image": "images/ghalati_first-impression.jpg?v=f7e6468b",
     "originalImage": "images/original_first-impression.png",
     "galleryImages": [],
     "overviewEn": "An unforgettable opening statement defined by vibrant citrus, modern aromatics, and rich woody foundations.",
@@ -2494,7 +2494,7 @@
       "type": "عطر",
       "perfumer": "Carole Calmettes"
     },
-    "image": "images/ghalati_seraj.jpg",
+    "image": "images/ghalati_seraj.jpg?v=4f79730f",
     "originalImage": "images/original_seraj.png",
     "galleryImages": [],
     "overviewEn": "A radiant beacon of light and warmth illuminating the night with golden spices, noble oud, and sweet resins.",
@@ -2547,7 +2547,7 @@
       "type": "عطر",
       "perfumer": "BELMAS THEO"
     },
-    "image": "images/ghalati_cartage-velours.jpg",
+    "image": "images/ghalati_cartage-velours.jpg?v=f6abdb9a",
     "originalImage": "images/original_cartage-velours.png",
     "galleryImages": [],
     "overviewEn": "Velvety royal luxury inspired by Carthage majesty, uniting deep roses, smooth cashmere, and comforting vanilla musk.",
@@ -2600,7 +2600,7 @@
       "type": "عطر",
       "perfumer": "Jordi Fernandez"
     },
-    "image": "images/ghalati_most-wanted.jpg",
+    "image": "images/ghalati_most-wanted.jpg?v=df82ba0e",
     "originalImage": "images/original_most-wanted.png",
     "galleryImages": [],
     "overviewEn": "The epitome of attraction and distinction, built upon fiery ginger, decadent toffee caramel, and smoky amber woods.",
@@ -2653,7 +2653,7 @@
       "type": "عطر",
       "perfumer": "Gael Montero"
     },
-    "image": "images/ghalati_cartage-etoile.jpg",
+    "image": "images/ghalati_cartage-etoile.jpg?v=c4a81ff8",
     "originalImage": "images/original_cartage-etoile.png",
     "galleryImages": [],
     "overviewEn": "A starry, radiant oriental gem shimmering with starry white florals, solar citrus, and golden amber.",
@@ -2706,7 +2706,7 @@
       "type": "عطر",
       "perfumer": "Miroslav Petkov"
     },
-    "image": "images/ghalati_silk-essence.jpg",
+    "image": "images/ghalati_silk-essence.jpg?v=f6b5303d",
     "originalImage": "images/original_silk-essence.png",
     "galleryImages": [],
     "overviewEn": "Silky smooth opulence caressing the skin with delicate florals, creamy sandalwood, and sheer white musk.",
@@ -2759,7 +2759,7 @@
       "type": "عطر شرقي فاخر يدوم طويلًا",
       "perfumer": "كريس موريس"
     },
-    "image": "images/ghalati_amber-oud.jpg",
+    "image": "images/ghalati_amber-oud.jpg?v=110e4b21",
     "originalImage": "images/original_amber-oud.png",
     "galleryImages": [],
     "overviewEn": "A majestic union of golden amber and noble Arabian oud, creating an enduring aura of supreme regal prestige.",
@@ -2812,7 +2812,7 @@
       "type": "عطر عطر نوبل أحد ابتكارات فريق البحث والتطوير في غلاتي، حيث اكتشف تصميمه بإلهام وإبداع لحظي، ندعوك لإكتشافه والتعمّق بثباته وفوحانه منقطع النظير",
       "perfumer": "فريق البحث والتطوير بغلاتي"
     },
-    "image": "images/ghalati_cartage-noble.jpg",
+    "image": "images/ghalati_cartage-noble.jpg?v=6297fa4a",
     "originalImage": "images/original_cartage-noble.png",
     "galleryImages": [],
     "overviewEn": "Noble stature captured in royal ingredients: aristocratic iris, smoky vetiver, and dark regal amber.",
@@ -2865,7 +2865,7 @@
       "type": "عطر",
       "perfumer": "ميروسلاف بيتكوف"
     },
-    "image": "images/ghalati_honest.jpg",
+    "image": "images/ghalati_honest.jpg?v=d90539ea",
     "originalImage": "images/original_honest.png",
     "galleryImages": [
       "images/box_honest_straight.jpg"
@@ -2917,7 +2917,7 @@
       "type": "عطر",
       "perfumer": "جوردي فرنانديز"
     },
-    "image": "images/ghalati_varna-single.jpg",
+    "image": "images/ghalati_varna-single.jpg?v=cce9a2ae",
     "originalImage": "images/original_varna-single.png",
     "galleryImages": [],
     "overviewEn": "Varna Royal Eau De Parfum, a magnificent aristocratic creation blending precious sandalwood, cedar, and velvety patchouli.",
@@ -2969,7 +2969,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_heroic.jpg",
+    "image": "images/ghalati_heroic.jpg?v=79e39e20",
     "originalImage": "images/original_heroic.png",
     "galleryImages": [],
     "overviewEn": "Heroic embodies the spirit of valor, distinction, and enduring charisma. An exhilarating opening of Italian bergamot, lemon, and pink pepper leads into an opulent Indonesian patchouli heart, resting on a sophisticated base of amber, sandalwood, and musk.",
@@ -3022,7 +3022,7 @@
     },
     "baseJod": 18,
     "finalJod": 30,
-    "image": "images/ghalati_ancestry-oud.jpg",
+    "image": "images/ghalati_ancestry-oud.jpg?v=ee05cebf",
     "originalImage": "images/original_ancestry-oud.png",
     "galleryImages": [
       "images/original_ancestry-oud_200ml.png"
@@ -3071,7 +3071,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/باقة-العرض-الإستثنائي/p1216096780",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/OIEJ9C6BonH154woRUuMDpybqkKqLd267xiNFVCR.png",
-    "image": "images/ghalati_bundle-exceptional-offer.jpg",
+    "image": "images/ghalati_bundle-exceptional-offer.jpg?v=d30e5060",
     "originalImage": "images/original_bundle-exceptional-offer.png",
     "galleryImages": [
       "images/ghalati_bundle-exceptional-offer.jpg"
@@ -3124,7 +3124,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/باقة-الساعات-الأخيرة/p1043559241",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/mD57BpjFeJph9RYbRFVx4m4kGuidXxBXT4KbKTz6.png",
-    "image": "images/ghalati_bundle-last-hours.jpg",
+    "image": "images/ghalati_bundle-last-hours.jpg?v=4617529b",
     "originalImage": "images/original_bundle-last-hours.png",
     "galleryImages": [
       "images/ghalati_bundle-last-hours.jpg"
@@ -3177,7 +3177,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/العرض-الخيالي/p1115950667",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/1hw95W5qR85aA2UrFwmLmKJD64NzeJqAgNe1ag9z.jpg",
-    "image": "images/ghalati_bundle-fantasy-offer.jpg",
+    "image": "images/ghalati_bundle-fantasy-offer.jpg?v=77db3663",
     "originalImage": "images/original_bundle-fantasy-offer.png",
     "galleryImages": [
       "images/ghalati_bundle-fantasy-offer.jpg"
@@ -3230,7 +3230,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/بكج-الصيف/p496251357",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/sg4FdACJ1lpPJpaNBeePXxq9zZUGlU8R66u3PiBE.png",
-    "image": "images/ghalati_bundle-summer-pkg.jpg",
+    "image": "images/ghalati_bundle-summer-pkg.jpg?v=9432da9e",
     "originalImage": "images/original_bundle-summer-pkg.png",
     "galleryImages": [
       "images/ghalati_bundle-summer-pkg.jpg"
@@ -3285,7 +3285,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/ثلاثية-فارنا-21-مجاناً/p227587094",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/7N4mD9rC208xU8p03jNAn3zZCEpY41Hca3mC84x1.jpg",
-    "image": "images/ghalati_bundle-varna-trio.jpg",
+    "image": "images/ghalati_bundle-varna-trio.jpg?v=ac1875f0",
     "originalImage": "https://cdn.salla.sa/Dqvgy/7N4mD9rC208xU8p03jNAn3zZCEpY41Hca3mC84x1.jpg",
     "galleryImages": [
       "images/ghalati_bundle-varna-trio.jpg"
@@ -3337,7 +3337,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة ثنائية فاخرة (عطران)"
     },
-    "image": "images/ghalati_bundle-varna-montdor.jpg",
+    "image": "images/ghalati_bundle-varna-montdor.jpg?v=8ceffaae",
     "originalImage": "images/original_bundle-varna-montdor.png",
     "galleryImages": [],
     "overviewEn": "An aristocratic pairing of two royal crown jewels: Varna and Mont Dor, presented together for connoisseurs of timeless elegance.",
@@ -3384,7 +3384,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة ثنائية فاخرة (عطران)"
     },
-    "image": "images/ghalati_bundle-lak-walaha.jpg",
+    "image": "images/ghalati_bundle-lak-walaha.jpg?v=c4c8c2b8",
     "originalImage": "images/original_bundle-lak-walaha.png",
     "galleryImages": [],
     "overviewEn": "The ultimate couple’s gift set combining a distinguished masculine fragrance with an enchanting feminine creation.",
@@ -3431,7 +3431,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور ملكية (3 عطور)"
     },
-    "image": "images/ghalati_bundle-modern.jpg",
+    "image": "images/ghalati_bundle-modern.jpg?v=067cf266",
     "originalImage": "images/original_bundle-modern.png",
     "galleryImages": [],
     "overviewEn": "A breathtaking diorama box presenting Varna, Utopia Gist, and Sandouq Al-Barqa in an illuminated heritage architectural display.",
@@ -3478,7 +3478,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور التراث (3 عطور)"
     },
-    "image": "images/ghalati_bundle-daraa.jpg",
+    "image": "images/ghalati_bundle-daraa.jpg?v=e2c1922a",
     "originalImage": "images/original_bundle-daraa.png",
     "galleryImages": [],
     "overviewEn": "Celebrating Saudi folklore and heritage through an architectural diorama box housing Dar Ghalati’s most cherished scents.",
@@ -3525,7 +3525,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور التراث (3 عطور)"
     },
-    "image": "images/ghalati_bundle-tuwaiq.jpg",
+    "image": "images/ghalati_bundle-tuwaiq.jpg?v=6b2071aa",
     "originalImage": "images/original_bundle-tuwaiq.png",
     "galleryImages": [],
     "overviewEn": "Named after the mighty Tuwaiq Mountains, symbol of Saudi determination and grandeur, featuring towering woody and amber notes.",
@@ -3572,7 +3572,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور التراث (3 عطور)"
     },
-    "image": "images/ghalati_bundle-rawshan.jpg",
+    "image": "images/ghalati_bundle-rawshan.jpg?v=282a8cc5",
     "originalImage": "images/original_bundle-rawshan.png",
     "galleryImages": [],
     "overviewEn": "Inspired by traditional Hijazi wooden rawshan architecture, capturing historical warmth and artistic grace.",
@@ -3619,7 +3619,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور التراث (3 عطور)"
     },
-    "image": "images/ghalati_bundle-sadu.jpg",
+    "image": "images/ghalati_bundle-sadu.jpg?v=4085556a",
     "originalImage": "images/original_bundle-sadu.png",
     "galleryImages": [],
     "overviewEn": "Honoring the UNESCO-inscribed art of traditional Bedouin Sadu weaving, presenting iconic royal perfumes in an artistic diorama.",
@@ -3666,7 +3666,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور التراث (3 عطور)"
     },
-    "image": "images/ghalati_bundle-yamama.jpg",
+    "image": "images/ghalati_bundle-yamama.jpg?v=db2efebe",
     "originalImage": "images/original_bundle-yamama.png",
     "galleryImages": [],
     "overviewEn": "A tribute to the historic heart of Najd and Al-Yamama, marrying ancient desert pride with contemporary perfumery excellence.",
@@ -3713,7 +3713,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "بكج معطرات الجو الملكي"
     },
-    "image": "images/ghalati_package-air-fresheners.jpg",
+    "image": "images/ghalati_package-air-fresheners.jpg?v=708ca874",
     "originalImage": "images/original_package-air-fresheners.png",
     "galleryImages": [],
     "overviewEn": "A luxury trio of long-lasting home and linen fresheners from Dar Ghalati, infusing fabrics, living rooms, and hospitality halls with enchanting French and oriental fragrances.",
@@ -3760,7 +3760,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة عطور المسك (3 عطور)"
     },
-    "image": "images/ghalati_bundle-musk-collection.jpg",
+    "image": "images/ghalati_bundle-musk-collection.jpg?v=556f8308",
     "originalImage": "images/original_bundle-musk-collection.png",
     "galleryImages": [],
     "prominentEn": "Musk : : Bergamot, Rose : Freesia, Ylang-Ylang, Orris Root Butter : Musk,  Tonka Bean, Amber, : Musk, Iris Butter, Tonka Bean, Freesia, Musk : : Bergamot, Aldehydes, Pear : Lily of the Valley, Jasmine, Iris, Rose, Ylang-Ylang : Musk, Amber,  , Cedarwood,  : Musk   Musk : :, Fruits, Raspberry,  : Freesia, Iris, Lily of the Valley, Jasmine : Musk,  ,  , : Musk, Berries  : 50",
@@ -3803,7 +3803,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_set-varna.jpg",
+    "image": "images/ghalati_set-varna.jpg?v=c31cf5e6",
     "originalImage": "images/original_set-varna.png",
     "galleryImages": [],
     "specsEn": {
@@ -3845,7 +3845,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة التاريخ التراثية (ميني)"
     },
-    "image": "images/ghalati_bundle-altarikh.jpg",
+    "image": "images/ghalati_bundle-altarikh.jpg?v=e59694ed",
     "originalImage": "images/original_bundle-altarikh.png",
     "galleryImages": [],
     "prominentEn": "2016 :, 2016 : :, : Amber, : Vanilla,  1985 :, 1985 : : Basil, : Cedarwood, Precious Woods  : Patchouli, Oud, Amber  1932 :, 1932 :  : Mandarin,  , : Amber, Frankincense, Spanish Labdanum  : Oud,  Benzoin  1727 :, 1727 :  : Saffron,  Bergamot  : Cedarwood,  Jasmine  : Patchouli, Sandalwood, Leather  : 30",
@@ -3888,7 +3888,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_set-alfakhamah.jpg",
+    "image": "images/ghalati_set-alfakhamah.jpg?v=6486140a",
     "originalImage": "images/original_set-alfakhamah.png",
     "galleryImages": [],
     "specsEn": {
@@ -3930,7 +3930,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_sandouq-albarqa.jpg",
+    "image": "images/ghalati_sandouq-albarqa.jpg?v=3460321a",
     "originalImage": "images/original_sandouq-albarqa.png",
     "galleryImages": [
       "https://cdn.salla.sa/Dqvgy/52fcc27a-4d52-492e-b644-cbad328131cf-1000x1000-zFkvW9FrGqudcUOHQw6onb1aKmBS9QvQqsRAjIXg.png"
@@ -3979,7 +3979,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_package-cartage-noble.jpg",
+    "image": "images/ghalati_package-cartage-noble.jpg?v=b7f2af2e",
     "originalImage": "images/original_package-cartage-noble.png",
     "galleryImages": [],
     "overviewEn": "An exclusive gift package featuring the acclaimed Cartage Noble fragrance accompanied by complementary scented luxuries.",
@@ -4026,7 +4026,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_package-cartage-etoile.jpg",
+    "image": "images/ghalati_package-cartage-etoile.jpg?v=d89ce4b9",
     "originalImage": "images/original_package-cartage-etoile.png",
     "galleryImages": [],
     "overviewEn": "A shining gift set containing Cartage Etoile along with luxurious fragrant pairings.",
@@ -4073,7 +4073,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_package-cartage-velours.jpg",
+    "image": "images/ghalati_package-cartage-velours.jpg?v=9a176559",
     "originalImage": "images/original_package-cartage-velours.png",
     "galleryImages": [],
     "overviewEn": "A velvety royal package presenting the beloved Cartage Velours perfume in a gift presentation box.",
@@ -4120,7 +4120,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "مجموعة مسك ميني (تُعامل كعطر واحد)"
     },
-    "image": "images/ghalati_bundle-body-musk.jpg",
+    "image": "images/ghalati_bundle-body-musk.jpg?v=0e540e05",
     "originalImage": "images/original_bundle-body-musk.png",
     "galleryImages": [],
     "overviewEn": "An irresistible collection of pure body musks formulated to pamper the skin with gentle freshness and captivating longevity.",
@@ -4167,7 +4167,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "مجموعة عطور ميني (تُعامل كعطر واحد)"
     },
-    "image": "images/ghalati_bundle-al-saada.jpg",
+    "image": "images/ghalati_bundle-al-saada.jpg?v=bede41ec",
     "originalImage": "images/original_bundle-al-saada.png",
     "galleryImages": [],
     "overviewEn": "The Happiness Bundle delivers vibrant joy with a curated trio of upliftings scents designed to brighten every moment.",
@@ -4214,7 +4214,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "مجموعة ميني فاخر (تُعامل كعطر واحد)"
     },
-    "image": "images/ghalati_bundle-discovery.jpg",
+    "image": "images/ghalati_bundle-discovery.jpg?v=ef2e4ed5",
     "originalImage": "images/original_bundle-discovery.png",
     "galleryImages": [],
     "overviewEn": "The definitive discovery box showcasing Dar Ghalati’s finest signature perfumes, allowing you to explore the spectrum of oriental opulence.",
@@ -4261,7 +4261,7 @@
       "size": "مجموعة متكاملة فاخرة",
       "type": "باقة إهداء فاخرة"
     },
-    "image": "images/ghalati_luxury-edition.jpg",
+    "image": "images/ghalati_luxury-edition.jpg?v=81728e77",
     "originalImage": "images/original_luxury-edition.png",
     "galleryImages": [],
     "overviewEn": "A limited luxury edition combining exquisite boutique fragrances crafted for discerning collectors.",
@@ -4308,7 +4308,7 @@
       "origin": "المملكة العربية السعودية",
       "type": "باقة مجموعة التراث الفاخرة"
     },
-    "image": "images/ghalati_bundle-heritage-collection.jpg",
+    "image": "images/ghalati_bundle-heritage-collection.jpg?v=b4a6bae0",
     "originalImage": "images/original_bundle-heritage-collection.png",
     "galleryImages": [
       "https://cdn.salla.sa/Dqvgy/04805b4c-5faf-4185-b4ed-69b45b6ae809-1000x1000-A8O4Dbwl4s6qhV2kScUYoPMuqKASfwPi7S7C0tAx.jpg"
@@ -4351,7 +4351,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/معطر-جو-انسيستري-عود/p414722664",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/l9WY6yRSKCUsdRJ7wNWwETfrfEWh0t0uPMKYzwSn.png",
-    "image": "images/ghalati_freshener-ancestry-oud.jpg?v=2",
+    "image": "images/ghalati_freshener-ancestry-oud.jpg?v=0f5898bc",
     "originalImage": "images/original_freshener-ancestry-oud.png",
     "galleryImages": [
       "images/ghalati_freshener-ancestry-oud.jpg"
@@ -4411,7 +4411,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-wasaef.jpg?v=2",
+    "image": "images/ghalati_bakhoor-wasaef.jpg?v=51c3b3cf",
     "originalImage": "images/original_bakhoor-wasaef.png",
     "galleryImages": [],
     "specsEn": {
@@ -4454,7 +4454,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-azraq.jpg?v=2",
+    "image": "images/ghalati_bakhoor-oud-azraq.jpg?v=b38a0748",
     "originalImage": "images/original_bakhoor-oud-azraq.png",
     "galleryImages": [],
     "specsEn": {
@@ -4497,7 +4497,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-dar-alkaram.jpg?v=2",
+    "image": "images/ghalati_mamool-dar-alkaram.jpg?v=a491e363",
     "originalImage": "images/original_mamool-dar-alkaram.png",
     "galleryImages": [],
     "specsEn": {
@@ -4540,7 +4540,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-rajwa.jpg?v=2",
+    "image": "images/ghalati_mamool-rajwa.jpg?v=574b758f",
     "originalImage": "images/original_mamool-rajwa.png",
     "galleryImages": [],
     "specsEn": {
@@ -4583,7 +4583,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-jazi.jpg?v=2",
+    "image": "images/ghalati_mamool-jazi.jpg?v=e9535785",
     "originalImage": "images/original_mamool-jazi.png",
     "galleryImages": [],
     "specsEn": {
@@ -4626,7 +4626,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-alanoud.jpg?v=2",
+    "image": "images/ghalati_mamool-alanoud.jpg?v=962b450b",
     "originalImage": "images/original_mamool-alanoud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4669,7 +4669,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-waad.jpg?v=2",
+    "image": "images/ghalati_mamool-waad.jpg?v=e194887e",
     "originalImage": "images/original_mamool-waad.png",
     "galleryImages": [],
     "specsEn": {
@@ -4712,7 +4712,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-ghalati.jpg?v=2",
+    "image": "images/ghalati_bakhoor-oud-ghalati.jpg?v=4310301e",
     "originalImage": "images/original_bakhoor-oud-ghalati.png",
     "galleryImages": [],
     "specsEn": {
@@ -4755,7 +4755,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-mabthooth-aljoud.jpg?v=2",
+    "image": "images/ghalati_bakhoor-mabthooth-aljoud.jpg?v=a9f1d348",
     "originalImage": "images/original_bakhoor-mabthooth-aljoud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4798,7 +4798,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-fakher.jpg?v=2",
+    "image": "images/ghalati_bakhoor-oud-fakher.jpg?v=1096be04",
     "originalImage": "images/original_bakhoor-oud-fakher.png",
     "galleryImages": [],
     "specsEn": {
@@ -4841,7 +4841,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-asrar-aloud.jpg?v=2",
+    "image": "images/ghalati_bakhoor-asrar-aloud.jpg?v=0a55d71a",
     "originalImage": "images/original_bakhoor-asrar-aloud.png",
     "galleryImages": [],
     "specsEn": {
@@ -4884,7 +4884,7 @@
       "size": "120 جرام",
       "type": "معمول بخور شرقي فاخر"
     },
-    "image": "images/ghalati_mamool-khas-ghalati.jpg?v=2",
+    "image": "images/ghalati_mamool-khas-ghalati.jpg?v=8ae6d403",
     "originalImage": "images/original_mamool-khas-ghalati.png",
     "galleryImages": [],
     "specsEn": {
@@ -4927,7 +4927,7 @@
       "size": "45 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-oud-alsamou.jpg?v=2",
+    "image": "images/ghalati_bakhoor-oud-alsamou.jpg?v=ae34a5df",
     "originalImage": "images/original_bakhoor-oud-alsamou.png",
     "galleryImages": [],
     "specsEn": {
@@ -4970,7 +4970,7 @@
       "size": "80 جرام",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_bakhoor-dokhoon-almajales.jpg?v=2",
+    "image": "images/ghalati_bakhoor-dokhoon-almajales.jpg?v=8d2c5938",
     "originalImage": "images/original_bakhoor-dokhoon-almajales.png",
     "galleryImages": [],
     "specsEn": {
@@ -5013,7 +5013,7 @@
       "size": "علبة رقائق عود",
       "type": "بخور ملكي فاخر"
     },
-    "image": "images/ghalati_oud-aldar.jpg",
+    "image": "images/ghalati_oud-aldar.jpg?v=7234f68c",
     "originalImage": "images/original_oud-aldar.png",
     "galleryImages": [],
     "specsEn": {
@@ -5055,7 +5055,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-tom-ford-oud-wood.jpg?v=3",
+    "image": "images/ghalati_oil-tom-ford-oud-wood.jpg?v=0c831fd4",
     "originalImage": "images/original_oil-tom-ford-oud-wood.png",
     "galleryImages": [],
     "specsEn": {
@@ -5098,7 +5098,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-oud-sayoufi.jpg?v=3",
+    "image": "images/ghalati_oil-oud-sayoufi.jpg?v=828069e1",
     "originalImage": "images/original_oil-oud-sayoufi.png",
     "galleryImages": [],
     "specsEn": {
@@ -5141,7 +5141,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-mubakhar.jpg?v=3",
+    "image": "images/ghalati_oil-musk-mubakhar.jpg?v=326b7120",
     "originalImage": "images/original_oil-musk-mubakhar.png",
     "galleryImages": [],
     "specsEn": {
@@ -5184,7 +5184,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-alyaa.jpg?v=3",
+    "image": "images/ghalati_oil-alyaa.jpg?v=755acb03",
     "originalImage": "images/original_oil-alyaa.png",
     "galleryImages": [],
     "specsEn": {
@@ -5227,7 +5227,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-zuhour-alrabeea.jpg?v=3",
+    "image": "images/ghalati_oil-zuhour-alrabeea.jpg?v=326b7120",
     "originalImage": "images/original_oil-zuhour-alrabeea.png",
     "galleryImages": [],
     "specsEn": {
@@ -5270,7 +5270,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rosetta.jpg?v=3",
+    "image": "images/ghalati_oil-rosetta.jpg?v=0ba0bd54",
     "originalImage": "images/original_oil-rosetta.png",
     "galleryImages": [],
     "specsEn": {
@@ -5313,7 +5313,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-mashaer.jpg?v=3",
+    "image": "images/ghalati_oil-mashaer.jpg?v=dd8e831a",
     "originalImage": "images/original_oil-mashaer.png",
     "galleryImages": [],
     "specsEn": {
@@ -5356,7 +5356,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rose-vanilla-montale.jpg?v=3",
+    "image": "images/ghalati_oil-rose-vanilla-montale.jpg?v=b6c45aca",
     "originalImage": "images/original_oil-rose-vanilla-montale.png",
     "galleryImages": [],
     "specsEn": {
@@ -5399,7 +5399,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-muhjah.jpg?v=3",
+    "image": "images/ghalati_oil-muhjah.jpg?v=755acb03",
     "originalImage": "images/original_oil-muhjah.png",
     "galleryImages": [],
     "specsEn": {
@@ -5442,7 +5442,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-ghalyah.jpg?v=3",
+    "image": "images/ghalati_oil-ghalyah.jpg?v=dd8e831a",
     "originalImage": "images/original_oil-ghalyah.png",
     "galleryImages": [],
     "specsEn": {
@@ -5485,7 +5485,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-sukoon.jpg?v=3",
+    "image": "images/ghalati_oil-sukoon.jpg?v=dd8e831a",
     "originalImage": "images/original_oil-sukoon.png",
     "galleryImages": [],
     "specsEn": {
@@ -5528,7 +5528,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-oud-vanilla.jpg?v=3",
+    "image": "images/ghalati_oil-oud-vanilla.jpg?v=828069e1",
     "originalImage": "images/original_oil-oud-vanilla.png",
     "galleryImages": [],
     "specsEn": {
@@ -5571,7 +5571,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg?v=4",
+    "image": "images/ghalati_oil-musk-abyad-moutsaleq.jpg?v=aab33991",
     "originalImage": "images/original_oil-musk-abyad-moutsaleq.png",
     "galleryImages": [],
     "specsEn": {
@@ -5615,7 +5615,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-mukhallat-najd-aldhahabi.jpg?v=3",
+    "image": "images/ghalati_oil-mukhallat-najd-aldhahabi.jpg?v=dd8e831a",
     "originalImage": "images/original_oil-mukhallat-najd-aldhahabi.png",
     "galleryImages": [],
     "specsEn": {
@@ -5658,7 +5658,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-lemon-hask.jpg?v=3",
+    "image": "images/ghalati_oil-lemon-hask.jpg?v=755acb03",
     "originalImage": "images/original_oil-lemon-hask.png",
     "galleryImages": [],
     "specsEn": {
@@ -5701,7 +5701,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-rose-heart.jpg?v=3",
+    "image": "images/ghalati_oil-rose-heart.jpg?v=b6c45aca",
     "originalImage": "images/original_oil-rose-heart.png",
     "galleryImages": [],
     "specsEn": {
@@ -5744,7 +5744,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-altoot.jpg?v=3",
+    "image": "images/ghalati_oil-musk-altoot.jpg?v=fd77f45f",
     "originalImage": "images/original_oil-musk-altoot.png",
     "galleryImages": [],
     "specsEn": {
@@ -5787,7 +5787,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-believer.jpg?v=3",
+    "image": "images/ghalati_oil-believer.jpg?v=828069e1",
     "originalImage": "images/original_oil-believer.png",
     "galleryImages": [],
     "specsEn": {
@@ -5830,7 +5830,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-sweet-musk.jpg?v=3",
+    "image": "images/ghalati_oil-sweet-musk.jpg?v=7ab733c0",
     "originalImage": "images/original_oil-sweet-musk.png",
     "galleryImages": [],
     "specsEn": {
@@ -5873,7 +5873,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-musk-alrumman.jpg?v=3",
+    "image": "images/ghalati_oil-musk-alrumman.jpg?v=d66bf8c2",
     "originalImage": "images/original_oil-musk-alrumman.png",
     "galleryImages": [],
     "specsEn": {
@@ -5916,7 +5916,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-pink-musk.jpg?v=3",
+    "image": "images/ghalati_oil-pink-musk.jpg?v=755acb03",
     "originalImage": "images/original_oil-pink-musk.png",
     "galleryImages": [],
     "specsEn": {
@@ -5959,7 +5959,7 @@
       "size": "15 مل (تولة كاملة)",
       "type": "زيت عطري مركز نقي"
     },
-    "image": "images/ghalati_oil-tayf-alemarat.jpg?v=3",
+    "image": "images/ghalati_oil-tayf-alemarat.jpg?v=04496768",
     "originalImage": "images/original_oil-tayf-alemarat.png",
     "galleryImages": [],
     "specsEn": {

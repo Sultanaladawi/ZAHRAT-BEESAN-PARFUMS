@@ -367,10 +367,12 @@ def original(item, house):
     return canvas, {}
 
 
-def bump_version(path):
-    base, _, query = path.partition("?")
-    match = re.search(r"v=(\d+)", query)
-    return f"{base}?v={int(match.group(1)) + 1 if match else 2}"
+def versioned(path):
+    """Point the image URL at its current content, so browsers never reuse a
+    cached older picture that had the same URL."""
+    base = path.partition("?")[0]
+    digest = hashlib.md5((PUBLIC / base).read_bytes()).hexdigest()[:8]
+    return f"{base}?v={digest}"
 
 
 def render(item, house, out_dir=None):
@@ -424,7 +426,7 @@ def main():
                 if done % 10 == 0:
                     metrics_file.write_text(json.dumps(metrics, indent=1), encoding="utf-8")
             else:
-                item["image"] = bump_version(item["image"])
+                item["image"] = versioned(item["image"])
                 item["imageLayout"] = layout
                 changed = True
         if changed:

@@ -32,4 +32,4 @@ Some photos need a hint in the catalog entry before rendering:
 - `cutoutKeepLargest: true` drops props lying next to the bottle (wood chips, petals).
 - `cutoutTrimBottom: 0.08` cuts off a stand or plinth the bottle was photographed on (fraction of the height).
 
-After rendering, run `python tools/images/thumbs.py` to refresh the card thumbnails.
+After rendering, run `python tools/images/thumbs.py` to refresh the card thumbnails. Image URLs carry `?v=<content hash>` so browsers never show a cached older picture; `python tools/images/versions.py` re-syncs them after manual image edits.
