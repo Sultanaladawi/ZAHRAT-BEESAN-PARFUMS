@@ -8776,7 +8776,7 @@
     "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/miss-arrogate-25-ml/p1565660433",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/QgDBsQzhTD2y4emiotSes68ef72CZqFL3qEpmdz8.jpg",
-    "image": "images/assaf_1565660433.jpg?v=4717975a",
+    "image": "images/assaf_1565660433.jpg?v=772b3497",
     "originalImage": "https://cdn.salla.sa/yrlRO/QgDBsQzhTD2y4emiotSes68ef72CZqFL3qEpmdz8.jpg",
     "galleryImages": [],
     "overview": "Miss Arwaqit.. Perfume not for everyone - 25 ml Miss Arwaqit 25 ml \"Spray\" version is suitable for mobility In the world of perfume, where creativity meets the stories of the world, the perfume of Miss is broadcast on the corridors as a masterpiece inspired by the name of a racing horse that symbolizes strength and speed. Composition: Grapefruit, bergamot, ylang-ylang with Indian sambak jasmine, Turkish Damascus rose flowers bloom with it.",
@@ -8806,7 +8806,8 @@
     "categoryType": "perfume",
     "cutoutSolid": true,
     "cutoutMirrorClip": true,
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutTrimTop": 0.035
   },
   {
     "id": "assaf-972955204",
