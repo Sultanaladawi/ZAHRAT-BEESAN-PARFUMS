@@ -754,7 +754,7 @@
     "promotionTitle": "",
     "url": "https://thnyan.com/YzZxBAw",
     "bottleUrl": "https://cdn.salla.sa/olVxl/iatKzjh7P3NrBf2h8EfYAS20lZlhCUJ3zxZFm4HT.png",
-    "image": "images/thnyan_154859116.jpg?v=2",
+    "image": "images/thnyan_154859116.jpg?v=3",
     "originalImage": "https://cdn.salla.sa/olVxl/iatKzjh7P3NrBf2h8EfYAS20lZlhCUJ3zxZFm4HT.png",
     "galleryImages": [
       "images/thnyan_154859116.jpg?v=2"
@@ -781,7 +781,11 @@
       "origin": "Saudi Arabia",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutMirrorClip": true,
+    "cutoutSolid": true,
+    "cutoutTrimBottom": 0.08,
+    "imageLayout": "showcase"
   },
   {
     "id": "thnyan-760392110",

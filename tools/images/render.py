@@ -271,7 +271,8 @@ def keep_largest(alpha):
     return np.where(keep, alpha, 0)
 
 
-def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False):
+def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
+           trim_bottom=None):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -296,6 +297,11 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
     if solid:
         alpha = solidify(alpha)
         cut = rgb.convert("RGBA")  # the model blanks colours it dropped; use the photo's
+    if trim_bottom:
+        # Drop a stand or plinth the bottle was photographed on.
+        rows = np.where(alpha.max(axis=1) > 64)[0]
+        if len(rows):
+            alpha[rows[-1] - int((rows[-1] - rows[0]) * trim_bottom):] = 0
     cut.putalpha(Image.fromarray(alpha.clip(0, 255).astype(np.uint8)))
     cut = defringe(cut)
     return cut.crop(cut.getbbox()), {"reflectionRemoved": line is not None, **cut_metrics(alpha)}
@@ -331,7 +337,8 @@ def showcase(item, house):
                        solid=bool(item.get("cutoutSolid")),
                        mirror_fill_=bool(item.get("cutoutMirrorFill")),
                        body_clip=item.get("cutoutClipBodyFrom"),
-                       largest=bool(item.get("cutoutKeepLargest")))
+                       largest=bool(item.get("cutoutKeepLargest")),
+                       trim_bottom=item.get("cutoutTrimBottom"))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
