@@ -18,7 +18,6 @@ const CURRENCIES = [
 
 let currentLang = 'ar';
 let activeCurrency = CURRENCIES[0]; // JOD by default
-let cartItemsCount = 0;
 let perfumesData = [];
 const catalogByHouse = { all: [], ghalati: [], assaf: [], thunayan: [], rasasi: [], 'al-rehab': [], labonair: [], laverne: [], deraah: [] };
 let currentFilter = 'all';
@@ -218,31 +217,19 @@ function toggleNotifyWhenAvailable(perfumeId, btnEl) {
   try {
     list = JSON.parse(localStorage.getItem('zb_notify_available') || '[]');
   } catch(e) {}
-
-  const idx = list.indexOf(perfumeId);
   const isAr = currentLang === 'ar';
-  const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === perfumeId);
-  const name = p ? (isAr ? p.title : p.titleEn) : '';
-
-  if (idx > -1) {
-    list.splice(idx, 1);
-    localStorage.setItem('zb_notify_available', JSON.stringify(list));
-    showNotification(
-      isAr ? `تم إلغاء تنبيه توفر "${name}"` : `Availability alert removed for "${name}"`,
-      '🔕'
-    );
-  } else {
-    list.push(perfumeId);
-    localStorage.setItem('zb_notify_available', JSON.stringify(list));
-    showNotification(
-      isAr ? `تم تسجيل طلبك! سنبلغك فور توفر "${name}" 🔔` : `We will notify you as soon as "${name}" is back in stock! 🔔`,
-      '🔔'
-    );
-  }
-
-  renderCatalog(currentFilter, currentSearch);
-  if (activeModalPerfume && activeModalPerfume.id === perfumeId) {
-    renderProductModalContent(activeModalPerfume);
+  const p = (typeof cartFindProduct === 'function' ? cartFindProduct(perfumeId) : null)
+    || (typeof perfumesData !== 'undefined' ? perfumesData : []).find(item => item.id === perfumeId);
+  const name = p ? p.title : '';
+  if (!list.includes(perfumeId)) list.push(perfumeId);
+  try { localStorage.setItem('zb_notify_available', JSON.stringify(list)); } catch(e) {}
+  // The request reaches the store on WhatsApp; a browser-only flag told nobody.
+  const text = isAr
+    ? `مرحباً، أرجو إبلاغي فور توفر عطر "${name}".`
+    : `Hello, please let me know when "${p ? (p.titleEn || p.title) : ''}" is back in stock.`;
+  window.open(`https://wa.me/962796697413?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  if (btnEl) {
+    btnEl.innerHTML = isAr ? '<span>✅</span><span>سنبلغك فور التوفر</span>' : '<span>✅</span><span>We will notify you</span>';
   }
 }
 
@@ -1821,18 +1808,12 @@ function renderProductModalContent(p) {
               <span>${isInNotifyList(p.id) ? (currentLang === 'ar' ? 'سنبلغك فور التوفر' : 'Alert Activated') : (currentLang === 'ar' ? 'أبلغني عند التوفر' : 'Notify When Available')}</span>
             </button>
           ` : `
-            <button type="button" class="btn-add-cart" onclick="addToCart('${p.title}')" style="padding: 12px 18px; font-size: 0.9rem;">
+            <button type="button" class="btn-add-cart" onclick="addToCart('${p.id}')" style="padding: 12px 18px; font-size: 0.9rem;">
               <span>🛍️</span>
               <span>${t.btnAddToCart}</span>
             </button>
           `}
         </div>
-
-        <!-- رابط التحقق في المصدر الأصلي -->
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="modal-source-link">
-          <span>🔗</span>
-          <span>${t.modalOfficialSource}</span>
-        </a>
 
         <!-- زر الرجوع للكتالوج في أسفل الصفحة -->
         <div style="margin-top: 20px;">
@@ -2237,26 +2218,6 @@ window.addEventListener('hashchange', () => {
 });
 
 // ── Cart & Direct Actions ──
-function addToCart(idOrName) {
-  cartItemsCount++;
-  const badge = document.getElementById('cartCountBadge');
-  if (badge) {
-    badge.textContent = cartItemsCount;
-    badge.style.transform = 'scale(1.25)';
-    setTimeout(() => badge.style.transform = 'scale(1)', 250);
-  }
-
-  const p = (typeof perfumesData !== 'undefined' ? perfumesData : []).find(
-    item => item.id === idOrName || item.title === idOrName || item.titleEn === idOrName
-  );
-  const displayName = p ? (currentLang === 'ar' ? p.title : p.titleEn) : idOrName;
-
-  const msg = currentLang === 'ar'
-    ? `تم إضافة "${displayName}" إلى السلة بنجاح`
-    : `"${displayName}" was added to your shopping cart`;
-  showNotification(msg, '🛍️');
-}
-
 function handleNewsletter(e) {
   e.preventDefault();
   const input = document.getElementById('newsletterEmail');

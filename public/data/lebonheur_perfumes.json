@@ -70,7 +70,7 @@
     "promotionTitle": "جديد - عرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/عطر-بلاك-كافالير-ايمرلد/p643539953",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/f350qTezfKiqbHojYxeaZkJSvpjCJ8j1t1tmCfWy.jpg",
-    "image": "images/lebonheur_643539953.jpg?v=4dbb25d0",
+    "image": "images/lebonheur_643539953.jpg?v=039d3021",
     "originalImage": "https://cdn.salla.sa/WlRyvX/f350qTezfKiqbHojYxeaZkJSvpjCJ8j1t1tmCfWy.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/f350qTezfKiqbHojYxeaZkJSvpjCJ8j1t1tmCfWy.jpg",
@@ -101,7 +101,10 @@
       "type": "Extrait de Parfum",
       "perfumer": "Jordi Fernández"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "lebonheur-852955235",
@@ -1215,7 +1218,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/عطر-بلاك-كافالير-سيداكتيف/p1923210754",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/lLfy1XMGKIULUazbECzTJlYTACtOFSmwK3JWtvVW.png",
-    "image": "images/lebonheur_1923210754.jpg?v=2490c7de",
+    "image": "images/lebonheur_1923210754.jpg?v=5b66ca94",
     "originalImage": "https://cdn.salla.sa/WlRyvX/lLfy1XMGKIULUazbECzTJlYTACtOFSmwK3JWtvVW.png",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/lLfy1XMGKIULUazbECzTJlYTACtOFSmwK3JWtvVW.png",
@@ -1245,7 +1248,10 @@
       "origin": "Saudi Arabia",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "lebonheur-724849158",
@@ -1266,7 +1272,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/عطر-بلاك-كافالير-سيرج/p724849158",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/6yeSgYDpvquQ97amPF7aRlKB3D7iPWfNunHSapFq.png",
-    "image": "images/lebonheur_724849158.jpg?v=677ec9b9",
+    "image": "images/lebonheur_724849158.jpg?v=e96f4e11",
     "originalImage": "https://cdn.salla.sa/WlRyvX/6yeSgYDpvquQ97amPF7aRlKB3D7iPWfNunHSapFq.png",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/6yeSgYDpvquQ97amPF7aRlKB3D7iPWfNunHSapFq.png",
@@ -1296,7 +1302,10 @@
       "origin": "Saudi Arabia",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "lebonheur-301184825",
@@ -1837,7 +1846,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/عطر-بلاك-كافالير-في-اي/p34683500",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/46hFLoo2A6FhCPZjFMPrHJ6JmqgU3kG1mFo3sfvN.png",
-    "image": "images/lebonheur_34683500.jpg?v=f2811aae",
+    "image": "images/lebonheur_34683500.jpg?v=dd167622",
     "originalImage": "https://cdn.salla.sa/WlRyvX/46hFLoo2A6FhCPZjFMPrHJ6JmqgU3kG1mFo3sfvN.png",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/46hFLoo2A6FhCPZjFMPrHJ6JmqgU3kG1mFo3sfvN.png",
@@ -1868,7 +1877,10 @@
       "origin": "Saudi Arabia",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "lebonheur-932525561",
@@ -1889,7 +1901,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://lebonheurperfumes.com/ar/عطر-بلاك-كافالير-اكس-اي/p932525561",
     "bottleUrl": "https://cdn.salla.sa/WlRyvX/cUf9pK2np3wNJl5aSLGMKTZu3AY7HQeID2s4Wl5H.png",
-    "image": "images/lebonheur_932525561.jpg?v=f4508edc",
+    "image": "images/lebonheur_932525561.jpg?v=caaaa122",
     "originalImage": "https://cdn.salla.sa/WlRyvX/cUf9pK2np3wNJl5aSLGMKTZu3AY7HQeID2s4Wl5H.png",
     "galleryImages": [
       "https://cdn.salla.sa/WlRyvX/cUf9pK2np3wNJl5aSLGMKTZu3AY7HQeID2s4Wl5H.png",
@@ -1920,7 +1932,10 @@
       "origin": "Saudi Arabia",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "cutoutModel": "birefnet-general",
+    "cutoutSolid": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "lebonheur-1541284133",
