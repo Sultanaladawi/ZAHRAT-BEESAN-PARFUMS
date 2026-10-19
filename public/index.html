@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>زهرة بيسان للعطور | Zahrat Beesan Parfums — المتجر الرسمي</title>
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=12">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
@@ -90,10 +90,16 @@
       <div class="search-wrapper">
         <input type="text" id="mainSearchInput" class="search-input" data-i18n="searchPlaceholder" placeholder="ابحث عن عطرك المفضل، دار العطور، أو المكونات...">
         <span class="search-icon">🔍</span>
+        <div class="search-suggest" id="searchSuggest"></div>
       </div>
 
       <!-- الإجراءات السريعة (البحث، حسابي، السلة، وزر واتساب الملكي) -->
       <div class="actions-area">
+        <button class="icon-btn" title="المفضلة" aria-label="المفضلة" onclick="openWishlist()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="cart-count-badge is-empty" id="wishCountBadge">0</span>
+        </button>
+
         <button class="icon-btn" title="حقيبة التسوق" aria-label="حقيبة التسوق" onclick="openCart()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span class="cart-count-badge" id="cartCountBadge">0</span>
@@ -192,6 +198,7 @@
       </div>
 
       <!-- شبكة المنتجات الديناميكية (يتم توليد كافة العطور العشرة بواسطة app.js) -->
+      <div class="catalog-toolbar" id="catalogToolbar"></div>
       <div class="catalog-grid" id="catalogGrid">
         <!-- Rendered dynamically by app.js -->
       </div>
@@ -453,12 +460,32 @@
 
   <script src="js/translations.js?v=10"></script>
   <script src="js/houses.js?v=12"></script>
-  <script src="js/app.js?v=14"></script>
-  <script src="js/home.js?v=4"></script>
-  <script src="js/cart.js?v=5"></script>
+  <script src="js/app.js?v=15"></script>
+  <script src="js/home.js?v=6"></script>
+  <script src="js/cart.js?v=6"></script>
+
+  <script src="js/features.js?v=2"></script>
+  <script src="js/quiz.js?v=1"></script>
+
+  <!-- اختار عطرك -->
+  <div class="modal-overlay" id="quizModal" onclick="if(event.target===this)closeQuiz()">
+    <div class="modal-card quiz-card">
+      <button class="modal-close-btn" onclick="closeQuiz()" aria-label="إغلاق">&times;</button>
+      <div id="quizBody"></div>
+    </div>
+  </div>
+
+  <!-- المفضلة -->
+  <aside class="cart-drawer" id="wishDrawer" aria-label="المفضلة">
+    <div class="cart-drawer-head">
+      <h2 id="wishDrawerTitle">المفضلة</h2>
+      <button type="button" class="cart-close" onclick="closeWishlist()" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="wishDrawerBody"></div>
+  </aside>
 
   <!-- حقيبة التسوق -->
-  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart(); closeWishlist()"></div>
   <aside class="cart-drawer" id="cartDrawer" aria-label="حقيبة التسوق">
     <div class="cart-drawer-head">
       <h2 id="cartDrawerTitle">حقيبة التسوق</h2>

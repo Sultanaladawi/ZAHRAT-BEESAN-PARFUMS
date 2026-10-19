@@ -192,7 +192,8 @@ function cartRender() {
 
   const priced = cartPriceJod(lines);
   const symbol = activeSymbol();
-  const total = jodToActive(priced.total);
+  const extras = typeof cartExtras === 'function' ? cartExtras(priced.total) : { html: '', discountJod: 0 };
+  const total = jodToActive(priced.total - extras.discountJod);
   const saved = jodToActive(priced.normal - priced.total);
   body.innerHTML = lines.map(({ p, qty }) => {
     const unit = cartUnitPrice(p);
@@ -221,6 +222,7 @@ function cartRender() {
 
   foot.innerHTML = `
     ${priced.applied.length ? `<div class="cart-saving"><span>🎁 ${isAr ? 'وفّرت بالعروض' : 'Offer savings'}</span><strong>− ${saved} ${symbol}</strong></div>` : ''}
+    ${extras.html}
     <div class="cart-total"><span>${isAr ? 'المجموع' : 'Total'}</span><strong>${total} ${symbol}</strong></div>
     <p class="cart-note">${isAr ? 'التوصيل يُحسب حسب المدينة ويُؤكَّد معك على واتساب.' : 'Delivery depends on your city and is confirmed with you on WhatsApp.'}</p>
     <button type="button" class="cart-checkout" onclick="cartCheckout()">
@@ -239,6 +241,11 @@ function cartCheckout() {
     return `${n + 1}. ${p.title} × ${qty}${rule ? ` (${rule.ar})` : ''}`;
   });
   const offers = priced.applied.map(a => `🎁 ${a.rule.ar}: ${jodToActive(a.price)} ${symbol}`);
+  const extras = typeof cartExtras === 'function' ? cartExtras(priced.total) : { discountJod: 0 };
+  const coupon = typeof activeCoupon === 'function' ? activeCoupon() : null;
+  if (coupon) offers.push(`🎟️ ${isAr ? 'كود الخصم' : 'Coupon'} ${coupon.code}: − ${jodToActive(extras.discountJod)} ${symbol}`);
+  if (extras.freeDelivery) offers.push(isAr ? '🚚 توصيل مجاني' : '🚚 Free delivery');
+  priced.total -= extras.discountJod;
   const text = (isAr
     ? ['مرحباً، أود طلب العطور التالية من زهرة بيسان:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
     : ['Hello, I would like to order these perfumes from Zahrat Beesan:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '', 'Name:', 'City & address:']

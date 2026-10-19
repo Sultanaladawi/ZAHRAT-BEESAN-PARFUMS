@@ -1108,8 +1108,10 @@ function renderCatalog(filter = 'all', searchQuery = '') {
 
   const t = translations[currentLang] || translations.ar;
   const q = searchQuery.toLowerCase().trim();
+  // On the all-houses view a search looks through every loaded house.
+  const source = (q && activeHouse === 'all' && typeof allLoadedProducts === 'function') ? allLoadedProducts() : perfumesData;
 
-  const filtered = perfumesData.filter(p => {
+  const filtered = source.filter(p => {
     // 1. Category Filter
     if (typeof filter === 'string' && filter.startsWith('rehab:')) {
       if (p.subCategory !== filter.slice(6)) return false;
@@ -1154,23 +1156,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     }
 
     // 2. Search Query Filter
-    if (q) {
-      const title = (p.title || '').toLowerCase();
-      const titleEn = (p.titleEn || '').toLowerCase();
-      const overview = (p.overview || '').toLowerCase();
-      const overviewEn = (p.overviewEn || '').toLowerCase();
-      const opening = (p.opening || '').toLowerCase();
-      const heart = (p.heart || '').toLowerCase();
-      const base = (p.base || '').toLowerCase();
-      const prominent = (p.prominent || '').toLowerCase();
-
-      const matches = title.includes(q) || titleEn.includes(q) ||
-        overview.includes(q) || overviewEn.includes(q) ||
-        opening.includes(q) || heart.includes(q) ||
-        base.includes(q) || prominent.includes(q);
-
-      if (!matches) return false;
-    }
+    if (q && !(typeof searchMatches === 'function' ? searchMatches(p, q) : (p.title || '').toLowerCase().includes(q))) return false;
 
     return true;
   });
@@ -1195,6 +1181,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   const isOutP = p => p.isAvailable === false || p.status === 'out';
   // Available perfumes first; out-of-stock ones move to the end of each list.
   filtered.sort((a, b) => (isOutP(a) - isOutP(b)) || ((catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99)));
+  if (typeof applyCatalogPreferences === 'function') applyCatalogPreferences(filtered);
 
   const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
   const isLaverne = activeHouse === 'laverne' && perfumesData.some(p => p.subCategory);

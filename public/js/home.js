@@ -80,6 +80,7 @@ function goHome() {
     selectHouse('all');
   }
   updateHomeVisibility();
+  renderHome();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -209,10 +210,13 @@ async function renderHome() {
     return renderHomeRail(homeIsAr() ? `من ${meta.nameAr}` : `From ${meta.nameEn}`, singles(byHouse[h]).slice(3, 15), `house:${h}`);
   });
 
+  const recent = typeof recentProducts === 'function' ? recentProducts().slice(0, 10) : [];
   root.innerHTML = renderHomeHero()
+    + (recent.length ? renderHomeRail(homeIsAr() ? 'شاهدتها مؤخراً' : 'Recently viewed', recent, null) : '')
     + renderHomeHouses()
     + renderHomeRail(homeIsAr() ? 'الأكثر طلباً' : 'Most wanted', bestsellers, 'catalog')
     + renderHomeCategories(all)
+    + `<section class="home-quiz"><div><h2>${homeIsAr() ? 'محتار شو تختار؟' : 'Not sure what to pick?'}</h2><p>${homeIsAr() ? 'جاوب على 4 أسئلة وبنختارلك العطور الأنسب لذوقك.' : 'Answer 4 quick questions and we will pick the perfumes for you.'}</p></div><button type="button" class="home-cta" onclick="openQuiz()">${homeIsAr() ? 'اختار عطرك' : 'Find your perfume'}</button></section>`
     + renderHomePromo()
     + rails.join('')
     + `<div class="home-browse-all"><button type="button" class="home-cta" onclick="homeBrowseCatalog()">${homeIsAr() ? 'تصفّح كل العطور' : 'Browse all perfumes'}</button></div>`;
