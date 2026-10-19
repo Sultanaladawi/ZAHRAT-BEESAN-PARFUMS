@@ -190,18 +190,20 @@ function closeCart() {
 
 // ── Footer policy pages (guarantee, order tracking) ──
 const POLICIES = {
-  // DRAFT terms: confirm with the owner before publishing.
+  // Same terms as the Zahrat Beesan abaya store, adapted to perfumes.
   returns: {
     icon: '🔄',
     ar: { title: 'سياسة الاستبدال والاسترجاع', body: [
-      ['منتج تالف أو مختلف', 'إذا وصلك العطر تالفاً أو مختلفاً عن طلبك، نستبدله لك مجاناً. تواصل معنا خلال 48 ساعة من الاستلام مع صورة للمنتج.'],
-      ['العطور المختومة', 'يمكن استبدال العطر خلال 3 أيام من الاستلام بشرط أن يكون مختوماً بغلافه الأصلي ولم يُستخدم.'],
-      ['ما لا يُستبدل', 'العطور المفتوحة أو المستخدمة، والعروض والتوزيعات، لا يمكن استبدالها لأسباب صحية.'],
+      ['1. المعاينة والاستبدال عند التسليم (داخل الأردن فقط)', 'الاستبدال والإرجاع متاح داخل المملكة الأردنية الهاشمية فقط، ويتم فوراً أثناء تواجد كابتن التوصيل عند باب المنزل؛ حيث يبقى الكابتن حتى تعاين العطر وتتأكد من سلامة العبوة والختم وأنه مطابق لطلبك.'],
+      ['2. رسوم التوصيل عند الاستبدال أو الإرجاع', 'رسوم التوصيل غير قابلة للاسترداد وتكون على حساب العميل في حال الاستبدال أو الإرجاع داخل الأردن، حيث تُدفع للكابتن مقابل خدمة النقل.'],
+      ['3. الطلبات والشحنات الخارجية (خارج الأردن)', 'جميع الشحنات إلى خارج المملكة الأردنية الهاشمية نهائية، ولا يوجد لها استبدال أو إرجاع نظراً لإجراءات الجمارك والشحن الدولي.'],
+      ['4. انتهاء مهلة الاستبدال والإرجاع', 'بمجرد انتهاء المعاينة ومغادرة كابتن التوصيل وتأكيد الاستلام، يُعتبر الطلب مكتملاً ونهائياً ولا يُتاح الاستبدال أو الإرجاع بعد مغادرة الكابتن.'],
     ] },
     en: { title: 'Exchange & returns', body: [
-      ['Damaged or wrong item', 'If your perfume arrives damaged or different from your order, we replace it free. Message us within 48 hours of delivery with a photo.'],
-      ['Sealed perfumes', 'A perfume can be exchanged within 3 days of delivery if it is still sealed in its original wrapping and unused.'],
-      ['Not exchangeable', 'Opened or used perfumes, offers and favour packs cannot be exchanged for hygiene reasons.'],
+      ['1. Check and exchange on delivery (Jordan only)', 'Exchanges and returns are available inside Jordan only, on the spot while the courier is at your door: the courier waits while you check the perfume, its seal and packaging, and that it matches your order.'],
+      ['2. Delivery fees on exchange or return', 'Delivery fees are not refundable and are paid by the customer for an exchange or return inside Jordan, as they cover the courier\'s delivery service.'],
+      ['3. Orders shipped outside Jordan', 'All shipments outside Jordan are final and cannot be exchanged or returned, due to customs and international shipping procedures.'],
+      ['4. End of the exchange window', 'Once you have checked the order, confirmed delivery and the courier has left, the order is complete and final; exchanges and returns are no longer possible.'],
     ] },
   },
   guarantee: {
