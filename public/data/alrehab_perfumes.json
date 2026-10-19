@@ -25596,7 +25596,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-100-مل/p944849148",
     "bottleUrl": "https://cdn.salla.sa/pywvq/TZ3cP6T2gWA11y9yHi1x0i6B2WD8EJB0R9rEmFx3.jpg",
-    "image": "images/alrehab_944849148.jpg?v=d0911a5e",
+    "image": "images/alrehab_944849148.jpg?v=782c6123",
     "originalImage": "https://cdn.salla.sa/pywvq/TZ3cP6T2gWA11y9yHi1x0i6B2WD8EJB0R9rEmFx3.jpg",
     "galleryImages": [
       "images/alrehab_944849148.jpg?v=2"
@@ -25626,7 +25626,9 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutClearGlass": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-1853104627",
@@ -25648,7 +25650,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-60-مل/p1853104627",
     "bottleUrl": "https://cdn.salla.sa/pywvq/xxQUvGiRRE3mtJ34wTIJsyjR4BTKLMxXYCjFnmbd.jpg",
-    "image": "images/alrehab_1853104627.jpg?v=02a956e6",
+    "image": "images/alrehab_1853104627.jpg?v=a7e91b29",
     "originalImage": "https://cdn.salla.sa/pywvq/xxQUvGiRRE3mtJ34wTIJsyjR4BTKLMxXYCjFnmbd.jpg",
     "galleryImages": [
       "images/alrehab_1853104627.jpg?v=2"
@@ -25678,7 +25680,9 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "subCategoryAr": "العطور (60 – 125 مل)",
-    "subCategoryEn": "Perfumes (60–125 ml)"
+    "subCategoryEn": "Perfumes (60–125 ml)",
+    "cutoutClearGlass": true,
+    "imageLayout": "showcase"
   },
   {
     "id": "alrehab-481231602",
@@ -25700,7 +25704,7 @@
     "promotionTitle": "",
     "url": "https://alrehabstore.com/ar/عطر-كلاسيك-30-مل/p481231602",
     "bottleUrl": "https://cdn.salla.sa/pywvq/kNK1koZlaZN8FISJixwhubEAcw1phMBEwAQYXQfb.jpg",
-    "image": "images/alrehab_481231602.jpg?v=dd254093",
+    "image": "images/alrehab_481231602.jpg?v=1e43675e",
     "originalImage": "https://cdn.salla.sa/pywvq/kNK1koZlaZN8FISJixwhubEAcw1phMBEwAQYXQfb.jpg",
     "galleryImages": [
       "images/alrehab_481231602.jpg?v=2"
@@ -25731,7 +25735,8 @@
     "subCategory": "mini",
     "subCategoryAr": "عطور ميني (25 – 50 مل)",
     "subCategoryEn": "Mini Perfumes (25–50 ml)",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutClearGlass": true
   },
   {
     "id": "alrehab-1120068593",
