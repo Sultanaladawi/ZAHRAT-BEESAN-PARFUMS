@@ -4382,7 +4382,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/onwlzzx/p749268399",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/d9992ddb-a23d-4177-b5a9-137e33c37e98-500x500-5mbVcXYavBHGe11ojVI2GweiUfTFHLsAqDyW71N2.jpg",
-    "image": "images/rasasi_749268399.jpg?v=8afb8eec",
+    "image": "images/rasasi_749268399.jpg?v=dd423927",
     "originalImage": "https://cdn.salla.sa/lGDEen/d9992ddb-a23d-4177-b5a9-137e33c37e98-500x500-5mbVcXYavBHGe11ojVI2GweiUfTFHLsAqDyW71N2.jpg",
     "galleryImages": [
       "images/rasasi_749268399.jpg?v=2"
@@ -4410,8 +4410,14 @@
       "type": "Eau de Parfum"
     },
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayoutOverride": "showcase",
+    "imageLayout": "showcase",
+    "cutoutCrop": [
+      0.48,
+      0,
+      1,
+      1
+    ]
   },
   {
     "id": "rasasi-1919048133",
@@ -9725,7 +9731,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/عود-المبخر-للجنسين-100مل/p1758532688",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/27c62980-0577-461b-8950-ee633a755666-500x500-UUyZvxMce5Jnegf7SzuWV5JQenxeP2u1nGaaMfc5.jpg",
-    "image": "images/rasasi_1758532688.jpg?v=57f600ed",
+    "image": "images/rasasi_1758532688.jpg?v=d49e59cd",
     "originalImage": "https://cdn.salla.sa/lGDEen/27c62980-0577-461b-8950-ee633a755666-500x500-UUyZvxMce5Jnegf7SzuWV5JQenxeP2u1nGaaMfc5.jpg",
     "galleryImages": [
       "images/rasasi_1758532688.jpg?v=2"
@@ -9753,8 +9759,14 @@
       "type": "Eau de Parfum"
     },
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayoutOverride": "showcase",
+    "imageLayout": "showcase",
+    "cutoutCrop": [
+      0,
+      0,
+      0.5,
+      1
+    ]
   },
   {
     "id": "rasasi-648841367",
@@ -9923,7 +9935,7 @@
     "promotionTitle": "",
     "url": "https://store.rasasi.com.sa/ar/dpwddva/p1593535954",
     "bottleUrl": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
-    "image": "images/rasasi_1593535954.jpg?v=adec2c0b",
+    "image": "images/rasasi_1593535954.jpg?v=c1524aff",
     "originalImage": "https://cdn.salla.sa/lGDEen/8354cb48-72f6-42de-9ab9-cb7ef14409bb-500x500-lCZ1llTWcOwvkGF40JpDP2j3Xd94eN7bjC4vMiOT.jpg",
     "galleryImages": [
       "images/rasasi_1593535954.jpg?v=2"
@@ -9951,8 +9963,8 @@
       "type": "Luxury Body Mist"
     },
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayoutOverride": "showcase",
+    "imageLayout": "showcase"
   },
   {
     "id": "rasasi-624623193",
