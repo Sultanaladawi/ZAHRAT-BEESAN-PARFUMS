@@ -276,7 +276,7 @@ def keep_largest(alpha):
 
 def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
            trim_bottom=None, trim_top=None, straight_left=False, model=None,
-           cap_clip=None, white_backdrop=False):
+           cap_clip=None, white_backdrop=False, clear_glass=False):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -344,6 +344,19 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
         rows = np.where(alpha.max(axis=1) > 64)[0]
         if len(rows):
             alpha[rows[-1] - int((rows[-1] - rows[0]) * trim_bottom):] = 0
+    if clear_glass:
+        # Clear glass shot on white shows as flat white; make those pixels
+        # see-through so the template shows behind like real glass. Only
+        # the bottle's top third (the cap), where such parts sit.
+        src = np.asarray(rgb, dtype=np.float32)
+        rows = np.where(alpha.max(axis=1) > 64)[0]
+        if len(rows):
+            y = rows[0] + int((rows[-1] - rows[0]) * 0.4)
+            sat = src.max(axis=2) - src.min(axis=2)
+            white = np.clip((src.min(axis=2) - 222) / 28, 0, 1) * (sat < 14)
+            white = ndimage.gaussian_filter(white, 1.5)
+            white[y:] = 0
+            alpha = alpha * (1 - 0.8 * white)
     cut.putalpha(Image.fromarray(alpha.clip(0, 255).astype(np.uint8)))
     cut = defringe(cut)
     return cut.crop(cut.getbbox()), {"reflectionRemoved": line is not None, **cut_metrics(alpha)}
@@ -412,6 +425,33 @@ def remove_card(img, top, bottom):
     return Image.fromarray(arr.clip(0, 255).astype(np.uint8))
 
 
+def remove_card_rect(img, top, bottom):
+    """Whiten a white card standing behind a coloured box-shaped cap.
+
+    The cap's columns come from the rows just below the card; inside the
+    card rows the cap starts at the first row where those columns turn
+    coloured (gold, silver tint). Everything else there becomes backdrop.
+    """
+    arr = np.asarray(flatten(img), dtype=np.float32).copy()
+    h, w = arr.shape[:2]
+    y0, y1 = int(top * h), int(bottom * h)
+    solid = arr.min(axis=2) < 240
+    below = solid[y1 + 2:y1 + 12]
+    cols = np.nonzero(below.mean(axis=0) > 0.8)[0]
+    if not len(cols):
+        return Image.fromarray(arr.astype(np.uint8))
+    x0, x1 = cols.min(), cols.max()
+    sat = arr.max(axis=2) - arr.min(axis=2)
+    coloured = (sat[y0:y1, x0:x1 + 1] > 30).mean(axis=1) > 0.5
+    start = y0 + (int(np.argmax(coloured)) if coloured.any() else y1 - y0)
+    keep = np.zeros((h, w), bool)
+    keep[start:y1, x0:x1 + 1] = True
+    region = np.zeros((h, w), bool)
+    region[y0:y1] = True
+    arr[region & ~keep] = 255
+    return Image.fromarray(arr.clip(0, 255).astype(np.uint8))
+
+
 def showcase(item, house):
     src = fetch(source_url(item))
     if item.get("cutoutCrop"):
@@ -419,6 +459,8 @@ def showcase(item, house):
         # photo also shows its box.
         l, t, r, b = item["cutoutCrop"]
         src = src.crop((round(l * src.width), round(t * src.height), round(r * src.width), round(b * src.height)))
+    if item.get("cutoutRemoveCardRect"):
+        src = remove_card_rect(src, *item["cutoutRemoveCardRect"])
     if item.get("cutoutRemoveCard"):
         src = remove_card(src, *item["cutoutRemoveCard"])
     cut, info = cutout(src, mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
@@ -431,7 +473,8 @@ def showcase(item, house):
                        straight_left=bool(item.get("cutoutStraightLeft")),
                        model=item.get("cutoutModel"),
                        cap_clip=item.get("cutoutCapClip"),
-                       white_backdrop=bool(item.get("cutoutWhiteBackdrop")))
+                       white_backdrop=bool(item.get("cutoutWhiteBackdrop")),
+                       clear_glass=bool(item.get("cutoutClearGlass")))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
