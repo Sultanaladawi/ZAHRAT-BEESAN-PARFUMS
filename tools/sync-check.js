@@ -5,12 +5,15 @@
  *   node tools/sync-check.js                  # report only, all houses
  *   node tools/sync-check.js deraah           # one or more houses
  *   node tools/sync-check.js --apply          # also update public/data/*.json
+ *   node tools/sync-check.js --discover       # also list supplier products we don't carry
  *
  * Reports, per house: products whose live price differs from ours, products
  * that went out of stock (or came back), and products the supplier no longer
- * lists. The report is saved to tools/sync-report.json. With --apply, prices
- * and stock are written back and delisted products are marked unavailable
- * (never deleted); products whose check failed are left untouched.
+ * lists. The report is saved to tools/sync-report.json. With --apply, prices,
+ * "was" prices, offer titles, sale end dates and stock are written back,
+ * delisted products are marked unavailable (never deleted), products whose
+ * check failed are left untouched, and the supplier offer groups used by the
+ * bag (public/data/offers.json) are refreshed.
  */
 const fs = require('fs');
 const path = require('path');
@@ -37,12 +40,28 @@ const PAGE_HOUSES = {
 const SAR_PER_JOD = 5.29;
 
 const sallaId = p => String(p.sallaId || ((p.url || '').match(/\/p(\d+)/) || [])[1] || '');
+const amount = v => Number(typeof v === 'object' && v ? v.amount : v);
+
+// Price, list price, offer title, sale end and stock from one Salla product.
+function sallaFields(it) {
+  const price = amount(it.price);
+  const regular = amount(it.regular_price);
+  return {
+    price,
+    regular: Number.isFinite(regular) && regular > price ? regular : price,
+    promo: typeof it.promotion_title === 'string' ? it.promotion_title.trim() : '',
+    endsAt: it.discount_ends ? new Date(Number(it.discount_ends) > 1e9 && Number(it.discount_ends) < 1e11 ? Number(it.discount_ends) * 1000 : it.discount_ends).toISOString() : null,
+    available: it.is_available !== false && it.status !== 'out' && !it.is_out_of_stock,
+  };
+}
 
 async function sallaLive(house, items) {
   const cfg = SALLA_HOUSES[house];
   const headers = {
     Origin: cfg.origin, Referer: `${cfg.origin}/`, 'User-Agent': UA,
     'App-Store-Id': cfg.storeId, 'Store-Identifier': cfg.storeId, Accept: 'application/json',
+    // The API answers in English unless asked; offer titles must stay Arabic.
+    'Accept-Language': 'ar',
   };
   const ids = items.map(sallaId).filter(Boolean);
   const live = new Map();
@@ -54,11 +73,7 @@ async function sallaLive(house, items) {
       const res = await fetch(`https://api.salla.dev/store/v1/products?${q}`, { headers });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       for (const it of (await res.json()).data || []) {
-        const price = Number(typeof it.price === 'object' ? it.price?.amount : it.price);
-        live.set(String(it.id), {
-          price,
-          available: it.is_available !== false && it.status !== 'out' && !it.is_out_of_stock,
-        });
+        live.set(String(it.id), sallaFields(it));
       }
     } catch (e) {
       chunk.forEach(id => failedIds.add(id));
@@ -76,24 +91,11 @@ const slugOf = url => String(url || '').replace(/[?#].*$/, '').split('/').filter
 
 async function sallaListedLive(house, items) {
   const cfg = SALLA_LISTED_HOUSES[house];
-  const headers = {
-    Origin: cfg.origin, Referer: `${cfg.origin}/`, 'User-Agent': UA,
-    'App-Store-Id': cfg.storeId, 'Store-Identifier': cfg.storeId, Accept: 'application/json',
-  };
   const live = new Map();
-  let url = 'https://api.salla.dev/store/v1/products?per_page=100';
-  for (let guard = 0; url && guard < 100; guard++) {
-    const res = await fetch(url, { headers });
-    if (!res.ok) return items.map(p => ({ p, error: `listing HTTP ${res.status}` }));
-    const json = await res.json();
-    for (const it of json.data || []) {
-      const price = Number(typeof it.price === 'object' ? it.price?.amount : it.price);
-      live.set(slugOf(it.url), {
-        price,
-        available: it.is_available !== false && it.status !== 'out' && !it.is_out_of_stock,
-      });
-    }
-    url = json.cursor?.next || null;
+  try {
+    for (const it of await sallaListing(cfg, '')) live.set(slugOf(it.url), sallaFields(it));
+  } catch (e) {
+    return items.map(p => ({ p, error: `listing ${e.message}` }));
   }
   return items.map(p => {
     const l = live.get(slugOf(p.url));
@@ -124,7 +126,12 @@ async function pageLive(p) {
       } catch (e) { /* ignore malformed blocks */ }
     }
     if (price === null) return { p, error: 'no price on page' };
-    return { p, price, available };
+    // Deraah's tracking data carries the list price; trust it only when its
+    // sale price is this product's (some pages show another size there).
+    let regular = price;
+    const ins = html.match(/"unit_price":([\d.]+),"unit_sale_price":([\d.]+)/);
+    if (ins && Math.abs(Number(ins[2]) - price) < 1 && Number(ins[1]) > price) regular = Number(ins[1]);
+    return { p, price, regular, available };
   } catch (e) {
     return { p, error: e.message };
   }
@@ -142,24 +149,37 @@ async function pagesLive(items, concurrency = 6) {
   return out;
 }
 
+// Titles we set ourselves for discontinued items; the supplier must not overwrite them.
+const CANCELLED_TITLES = /غير متوفر حالياً|الغاء|إلغاء|ملغي/;
+
 function applyChanges(items, results) {
   const byId = new Map(results.map(r => [r.p.id, r]));
   let changed = 0;
   for (const p of items) {
     const r = byId.get(p.id);
     if (!r || r.error) continue;
-    const before = JSON.stringify([p.sarPrice, p.origSarPrice, p.finalJod, p.origJod, p.isAvailable, p.status]);
+    const snapshot = () => JSON.stringify([p.sarPrice, p.origSarPrice, p.finalJod, p.origJod, p.isAvailable, p.status, p.promotionTitle, p.saleEndsAt]);
+    const before = snapshot();
     if (r.missing) {
       p.isAvailable = false;
       p.status = 'out';
     } else {
+      const fee = Number(p.feeJod) || 12;
       if (Number.isFinite(r.price) && r.price > 0 && Math.abs(r.price - Number(p.sarPrice)) >= 0.5) {
-        const fee = Number(p.feeJod) || 12;
         p.sarPrice = r.price;
-        if (!(Number(p.origSarPrice) > r.price)) p.origSarPrice = r.price;
         p.baseJod = Math.round(r.price / SAR_PER_JOD);
         p.finalJod = p.baseJod + fee;
+      }
+      // The "was" price follows the supplier's list price, up or down.
+      if (Number.isFinite(r.regular) && r.regular > 0) {
+        p.origSarPrice = Math.max(r.regular, Number(p.sarPrice) || 0);
         p.origJod = p.origSarPrice > p.sarPrice ? Math.round(p.origSarPrice / SAR_PER_JOD) + fee : p.finalJod;
+      }
+      if ('promo' in r && !CANCELLED_TITLES.test(p.promotionTitle || '') && p.promotionTitle !== 'يتوفر قريباً') {
+        if (r.promo) p.promotionTitle = r.promo; else delete p.promotionTitle;
+      }
+      if ('endsAt' in r) {
+        if (r.endsAt) p.saleEndsAt = r.endsAt; else delete p.saleEndsAt;
       }
       if (r.available === false) {
         p.isAvailable = false;
@@ -170,7 +190,7 @@ function applyChanges(items, results) {
         if (p.promotionTitle === 'يتوفر قريباً') delete p.promotionTitle;
       }
     }
-    if (JSON.stringify([p.sarPrice, p.origSarPrice, p.finalJod, p.origJod, p.isAvailable, p.status]) !== before) changed++;
+    if (snapshot() !== before) changed++;
   }
   return changed;
 }
@@ -192,9 +212,81 @@ function compare(house, results) {
   return report;
 }
 
+// Supplier offer categories behind the bag's group offers (see OFFER_RULES in
+// public/js/cart.js). Every page is read so no product is missed.
+const OFFER_CATEGORIES = {
+  'ghalati-2': { house: 'ghalati', category: '1389534759' },
+  'thnyan-4': { house: 'thnyan', category: '214031821' },
+};
+
+function sallaHeaders(cfg) {
+  return {
+    Origin: cfg.origin, Referer: `${cfg.origin}/`, 'User-Agent': UA,
+    'App-Store-Id': cfg.storeId, 'Store-Identifier': cfg.storeId, Accept: 'application/json', 'Accept-Language': 'ar',
+  };
+}
+
+// All products of a Salla listing. Follows the API's "next" link (moved back
+// to api.salla.dev when it points at another host) and stops once a page
+// brings nothing new.
+async function sallaListing(cfg, query) {
+  const seen = new Map();
+  let url = `https://api.salla.dev/store/v1/products${query ? `?${query}` : ''}`;
+  for (let page = 1; url && page <= 400; page++) {
+    let json = null;
+    for (let attempt = 0; attempt < 4 && !json; attempt++) {
+      const res = await fetch(url, { headers: sallaHeaders(cfg) });
+      if (res.status === 429) { await new Promise(r => setTimeout(r, 2000 * (attempt + 1))); continue; }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      json = await res.json();
+    }
+    if (!json) throw new Error('rate limited');
+    const before = seen.size;
+    for (const it of json.data || []) seen.set(String(it.id), it);
+    if (seen.size === before) break;
+    const next = json.cursor && json.cursor.next;
+    if (!next) break;
+    const u = new URL(next);
+    u.protocol = 'https:';
+    u.hostname = 'api.salla.dev';
+    url = u.toString();
+  }
+  return [...seen.values()];
+}
+
+async function refreshOffers() {
+  const file = path.join(DATA, 'offers.json');
+  let current = {};
+  try { current = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { /* first run */ }
+  const next = { ...current };
+  for (const [key, o] of Object.entries(OFFER_CATEGORIES)) {
+    try {
+      const items = await sallaListing(SALLA_HOUSES[o.house], `source=categories&source_value[]=${o.category}`);
+      const ids = items.filter(it => it.is_available !== false && !it.is_out_of_stock).map(it => String(it.id));
+      if (ids.length) next[key] = [...new Set(ids)].sort();
+      console.log(`offer ${key.padEnd(10)} ${ids.length} products`);
+    } catch (e) {
+      console.log(`offer ${key.padEnd(10)} check failed (${e.message}), kept the old list`);
+    }
+  }
+  if (JSON.stringify(next) !== JSON.stringify(current)) fs.writeFileSync(file, JSON.stringify(next, null, 2) + '\n');
+}
+
+// Supplier products we don't carry yet (report only: new items need photos).
+async function discover(house, items) {
+  const cfg = SALLA_HOUSES[house];
+  if (!cfg) return null;
+  const ours = new Set(items.map(sallaId));
+  const live = await sallaListing(cfg, '');
+  return live.filter(it => !ours.has(String(it.id)) && it.is_available !== false && !it.is_out_of_stock)
+    .map(it => ({ id: String(it.id), name: it.name, price: amount(it.price), url: it.url }));
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const apply = args.includes('--apply');
+  const wantDiscover = args.includes('--discover');
+  const found = {};
   const wanted = args.filter(a => !a.startsWith('--'));
   const all = { ...SALLA_HOUSES, ...SALLA_LISTED_HOUSES, ...PAGE_HOUSES };
   const houses = wanted.length ? wanted : Object.keys(all);
@@ -216,9 +308,17 @@ async function main() {
       if (changed) fs.writeFileSync(file, JSON.stringify(items, null, 2) + (raw.endsWith('\n') ? '\n' : ''));
       note = ` | updated ${changed}`;
     }
+    if (wantDiscover) {
+      try {
+        const extra = await discover(house, items);
+        if (extra) { found[house] = extra; note += ` | not carried ${extra.length}`; }
+      } catch (e) { note += ' | discovery failed'; }
+    }
     console.log(`${house.padEnd(10)} products ${String(r.total).padStart(4)} | price changed ${r.priceChanged.length} | out of stock ${r.wentOut.length} | back in stock ${r.cameBack.length} | gone ${r.missing.length} | check failed ${r.errors.length}${note}`);
   }
+  if (apply && !wanted.length) await refreshOffers();
   fs.writeFileSync(path.join(__dirname, 'sync-report.json'), JSON.stringify(reports, null, 2));
+  if (wantDiscover) fs.writeFileSync(path.join(__dirname, 'discover-report.json'), JSON.stringify(found, null, 2));
 }
 
 main();

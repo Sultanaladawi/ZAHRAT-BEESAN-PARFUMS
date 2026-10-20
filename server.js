@@ -377,6 +377,7 @@ async function syncWithGhalatiStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '1939633486',
       'Store-Identifier': '1939633486',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -611,6 +612,7 @@ async function syncWithAssafStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '935113581',
       'Store-Identifier': '935113581',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -676,7 +678,7 @@ async function syncWithAssafStore(force = false) {
         const isCancelledPerfume = CANCELLED_ASSAF_SALLA_IDS.has(sallaId) || /الغاء|إلغاء|ملغي/.test(rawPromoText);
         const liveAvail = !isCancelledPerfume && live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = isCancelledPerfume ? 'out' : (live.status || (liveAvail ? 'sale' : 'out'));
-        const livePromo = isCancelledPerfume ? 'غير متوفر حالياً' : (live.promotion_title || live.subtitle || '');
+        const livePromo = isCancelledPerfume ? 'غير متوفر حالياً' : (live.promotion_title || '');
 
         const newBaseJod = Math.round(livePrice / 5.29);
         const newFinalJod = newBaseJod + feeJod;
@@ -758,6 +760,7 @@ async function syncWithThnyanStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '1657367005',
       'Store-Identifier': '1657367005',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -817,7 +820,7 @@ async function syncWithThnyanStore(force = false) {
         const liveReg = Math.round(liveRegRaw);
         const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
-        const livePromo = live.promotion_title || live.subtitle || '';
+        const livePromo = live.promotion_title || '';
 
         const newBaseJod = Math.round(livePrice / 5.29);
         const newFinalJod = newBaseJod + feeJod;
@@ -896,6 +899,7 @@ async function syncWithRasasiStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '1903977862',
       'Store-Identifier': '1903977862',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -1027,6 +1031,7 @@ async function syncWithAlrehabStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '64344517',
       'Store-Identifier': '64344517',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -1081,7 +1086,7 @@ async function syncWithAlrehabStore(force = false) {
         const liveReg = liveRegRaw > livePrice ? Math.round(liveRegRaw) : livePrice;
         const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
-        const livePromo = live.promotion_title || live.subtitle || '';
+        const livePromo = live.promotion_title || '';
 
         const newBaseJod = Math.round(livePrice / 5.29);
         const newFinalJod = newBaseJod + feeJod;
@@ -1159,6 +1164,7 @@ async function syncWithLebonheurStore(force = false) {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'App-Store-Id': '673065613',
       'Store-Identifier': '673065613',
+      'Accept-Language': 'ar',
       'Accept': 'application/json, text/plain, */*'
     };
 
@@ -1212,7 +1218,7 @@ async function syncWithLebonheurStore(force = false) {
         const liveReg = liveRegRaw > livePrice ? Math.round(liveRegRaw) : livePrice;
         const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
-        const livePromo = live.promotion_title || live.subtitle || '';
+        const livePromo = live.promotion_title || '';
 
         const newBaseJod = Math.round(livePrice / 5.29);
         const newFinalJod = newBaseJod + feeJod;
@@ -1429,7 +1435,9 @@ async function syncWithLaverneStoreLive(force = false) {
 
 // Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne, ?house=deraah)
 app.get('/api/catalog', async (req, res) => {
-  const force = req.query.force === '1';
+  // Forcing a fresh supplier fetch is for local work only; online every
+  // visitor would otherwise hit the supplier on each refresh.
+  const force = req.query.force === '1' && !process.env.VERCEL;
   const house = (req.query.house || 'ghalati').toLowerCase();
   const data = house === 'assaf'
     ? await syncWithAssafStore(force)
@@ -1571,8 +1579,9 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-// Background auto-sync every 2 minutes
-setInterval(() => {
+// Background auto-sync every 2 minutes (a long-running server only; on Vercel
+// the scheduled GitHub Action keeps the catalog files current).
+if (!process.env.VERCEL) setInterval(() => {
   syncWithGhalatiStore(true).catch(() => {});
   syncWithAssafStore(true).catch(() => {});
   syncWithThnyanStore(true).catch(() => {});
