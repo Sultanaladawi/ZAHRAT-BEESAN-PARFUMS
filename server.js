@@ -241,9 +241,17 @@ function getBottleCount(item) {
   return inferBottleCount(item?.title || '', item?.overview || '', item?.categoryType || 'perfume');
 }
 
+// Small oils sold by the tola (1, 1/2, 1/4 tola) carry 5 JOD instead of 12.
+const TOLA_FEE_JOD = 5;
+const TOLA_RE = /تول(?:ة|ه|ات)(?=$|[\s\/)\-،,])/;
+function isTolaItem(item) {
+  return TOLA_RE.test(`${item?.title || ''} ${item?.specs?.size || ''}`);
+}
+
 function getDeliveryFeeJod(item) {
   const count = getBottleCount(item);
   if (count > 1) return (count * 4) + 10;
+  if (isTolaItem(item)) return TOLA_FEE_JOD;
   return 12;
 }
 
