@@ -51,7 +51,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "majestic-wood",
@@ -105,7 +105,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oud-argent",
@@ -162,7 +162,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "amber-cashmere",
@@ -216,7 +216,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "layana",
@@ -272,7 +272,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "nowara",
@@ -326,7 +326,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "moudhi",
@@ -379,7 +379,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "rozana",
@@ -429,13 +429,13 @@
     "sallaId": "25373017",
     "origSarPrice": 299,
     "origJod": 69,
-    "isAvailable": true,
-    "status": "sale",
+    "isAvailable": false,
+    "status": "out",
     "promotionTitle": "عرض لفترة محدودة",
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "emotion",
@@ -489,7 +489,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "attraction",
@@ -545,7 +545,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "spring",
@@ -593,7 +593,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "sparkle",
@@ -641,7 +641,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "sunrise",
@@ -689,7 +689,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bois-noir",
@@ -738,7 +738,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "shades",
@@ -791,7 +791,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oud-absolute",
@@ -840,7 +840,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "utopia-platinum",
@@ -895,7 +895,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "rasayil-wudd",
@@ -945,7 +945,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "rasayil-haneen",
@@ -998,7 +998,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "rasayil-shawq",
@@ -1049,7 +1049,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "just-oud",
@@ -1105,7 +1105,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "perfume-1932",
@@ -1153,7 +1153,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mountain-leather",
@@ -1202,7 +1202,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "perfume-2016",
@@ -1251,7 +1251,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "ambitious",
@@ -1305,7 +1305,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "sublime-woods",
@@ -1359,7 +1359,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "perfume-1985",
@@ -1408,7 +1408,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "absolute-musk",
@@ -1461,7 +1461,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "sublime-flowers",
@@ -1515,7 +1515,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "eloquent",
@@ -1569,7 +1569,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "peach-musk",
@@ -1622,7 +1622,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "just-amber",
@@ -1676,7 +1676,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "carmine-soul",
@@ -1724,7 +1724,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "dama",
@@ -1778,7 +1778,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "utopia-essence",
@@ -1828,7 +1828,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "exotic-wood",
@@ -1878,7 +1878,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "rose-intense",
@@ -1928,7 +1928,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "raspberry-musk",
@@ -1976,7 +1976,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "cherry-musk",
@@ -2026,7 +2026,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "vintage",
@@ -2078,7 +2078,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "iris-musk",
@@ -2190,7 +2190,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "utopia-gist",
@@ -2246,7 +2246,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "utopia-ideal",
@@ -2297,7 +2297,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "eternal-passion",
@@ -2351,7 +2351,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mont-dor",
@@ -2405,7 +2405,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "boudoir",
@@ -2459,7 +2459,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "first-impression",
@@ -2513,7 +2513,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "seraj",
@@ -2567,7 +2567,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "cartage-velours",
@@ -2621,7 +2621,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "most-wanted",
@@ -2675,7 +2675,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "cartage-etoile",
@@ -2729,7 +2729,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "silk-essence",
@@ -2783,7 +2783,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "amber-oud",
@@ -2837,7 +2837,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "cartage-noble",
@@ -2891,7 +2891,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "honest",
@@ -2944,7 +2944,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "varna-single",
@@ -2998,7 +2998,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "heroic",
@@ -3052,7 +3052,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "ancestry-oud",
@@ -3108,7 +3108,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bundle-exceptional-offer",
@@ -3834,7 +3834,7 @@
     "bottleCount": 3,
     "feeJod": 22,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "set-varna",
@@ -3877,7 +3877,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bundle-altarikh",
@@ -3921,7 +3921,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "set-alfakhamah",
@@ -3964,7 +3964,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "sandouq-albarqa",
@@ -4014,7 +4014,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "package-cartage-noble",
@@ -4062,7 +4062,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "package-cartage-etoile",
@@ -4110,7 +4110,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "package-cartage-velours",
@@ -4158,7 +4158,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bundle-body-musk",
@@ -4206,7 +4206,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bundle-al-saada",
@@ -4254,7 +4254,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bundle-discovery",
@@ -4302,7 +4302,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "luxury-edition",
@@ -4399,7 +4399,7 @@
     "bottleCount": 2,
     "feeJod": 18,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "freshener-ancestry-oud",
@@ -4454,7 +4454,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-wasaef",
@@ -4498,7 +4498,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-azraq",
@@ -4542,7 +4542,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-dar-alkaram",
@@ -4586,7 +4586,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-rajwa",
@@ -4630,7 +4630,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-jazi",
@@ -4674,7 +4674,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-alanoud",
@@ -4718,7 +4718,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-waad",
@@ -4762,7 +4762,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-ghalati",
@@ -4806,7 +4806,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-mabthooth-aljoud",
@@ -4850,7 +4850,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-fakher",
@@ -4894,7 +4894,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-asrar-aloud",
@@ -4938,7 +4938,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "mamool-khas-ghalati",
@@ -4982,7 +4982,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-oud-alsamou",
@@ -5026,7 +5026,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "bakhoor-dokhoon-almajales",
@@ -5070,7 +5070,7 @@
     "feeJod": 12,
     "house": "ghalati",
     "imageLayout": "original",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oud-aldar",
@@ -5113,7 +5113,7 @@
     "bottleCount": 1,
     "feeJod": 12,
     "house": "ghalati",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-tom-ford-oud-wood",
@@ -5157,7 +5157,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-oud-sayoufi",
@@ -5201,7 +5201,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-musk-mubakhar",
@@ -5331,7 +5331,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-rosetta",
@@ -5375,7 +5375,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-mashaer",
@@ -5462,7 +5462,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-muhjah",
@@ -5635,7 +5635,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-musk-abyad-moutsaleq",
@@ -5680,7 +5680,7 @@
     "house": "ghalati",
     "imageLayout": "showcase",
     "cutoutSolid": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-mukhallat-najd-aldhahabi",
@@ -5724,7 +5724,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-lemon-hask",
@@ -5768,7 +5768,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-rose-heart",
@@ -5812,7 +5812,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-musk-altoot",
@@ -5856,7 +5856,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-believer",
@@ -5900,7 +5900,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-sweet-musk",
@@ -5944,7 +5944,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-musk-alrumman",
@@ -5988,7 +5988,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-pink-musk",
@@ -6032,7 +6032,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "oil-tayf-alemarat",
@@ -6076,7 +6076,7 @@
     "feeJod": 5,
     "house": "ghalati",
     "imageLayout": "showcase",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "ghalati-23443030",
@@ -6119,7 +6119,7 @@
     },
     "boxImage": null,
     "categoryType": "bakhoor",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "ghalati-104646338",
@@ -6162,7 +6162,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase"
   },
   {
@@ -6206,7 +6206,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase"
   },
   {
@@ -6250,7 +6250,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase"
   },
   {
@@ -6294,7 +6294,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
     "imageLayout": "original"
   },
@@ -6339,7 +6339,7 @@
     },
     "boxImage": null,
     "categoryType": "bakhoor",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T20:59:59.000Z"
   },
   {
     "id": "ghalati-1643445094",
@@ -6381,7 +6381,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase"
   },
   {
@@ -6425,7 +6425,7 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase"
   }
 ]

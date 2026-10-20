@@ -635,7 +635,7 @@
     "origJod": 68,
     "isAvailable": true,
     "status": "sale",
-    "promotionTitle": "2 + 1 مجانًا",
+    "promotionTitle": "3 + 1 مجانًا",
     "url": "https://3saf.com/ar/far/p932961910",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/uEzsee7Q5jHvyqsWo5Y9tMjkpEMcK8D9aBkIGvep.png",
     "image": "images/assaf_932961910.jpg?v=13651bfe",
@@ -10773,7 +10773,8 @@
       "type": "Luxury Gift & Offer Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "promotionTitle": "3 + 1 مجانًا"
   },
   {
     "id": "assaf-1810909461",
