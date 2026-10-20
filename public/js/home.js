@@ -126,7 +126,7 @@ function renderHomeHero() {
           const house = (s.action.match(/^house:(.+)$/) || [])[1];
           const meta = house ? homeHouseMeta(house) : null;
           const label = meta ? (homeIsAr() ? meta.nameAr : meta.nameEn) : (homeIsAr() ? 'زهرة بيسان' : 'Zahrat Beesan');
-          const img = p ? p.image : 'images/logo_transparent_small.webp';
+          const img = p ? homeHeroImage(p) : 'images/logo_transparent_small.webp';
           return `
           <button type="button" class="hero-b-bottle${i === 1 ? ' is-main' : ''}" onclick="${p ? `openProductModal('${p.id}')` : `homeGo('${s.action}')`}">
             <img src="${img}" alt="${p ? (homeIsAr() ? p.title : (p.titleEn || p.title)) : ''}" ${i === 1 ? 'fetchpriority="high"' : 'loading="lazy"'}>
@@ -136,6 +136,15 @@ function renderHomeHero() {
       </div>
     </section>`;
 }
+
+// The hero bottles have 720px webp copies in images/hero (about 35 KB instead
+// of a 300 KB photo); any other product falls back to its card thumbnail.
+function homeHeroImage(p) {
+  const m = /^images\/([^/?]+)\.(?:jpe?g|png|webp)(\?.*)?$/i.exec(p.image || '');
+  if (!m) return p.image;
+  return HOME_HERO_WEBP.has(m[1]) ? `images/hero/${m[1]}.webp${m[2] || ''}` : getCardThumb(p.image);
+}
+const HOME_HERO_WEBP = new Set(['assaf_2017195362', 'rasasi_604456049', 'alrehab_209357139']);
 
 // Kept for older callers; the hero no longer slides.
 function homeSetSlide() {
