@@ -12,6 +12,8 @@ const NAV = [
   { id: 'reviews', ico: '★', ar: 'التقييمات', badge: 'reviews' },
   { id: 'notify', ico: '🔔', ar: 'طلبات التنبيه', badge: 'notify' },
   { id: 'settings', ico: '⚙', ar: 'إعدادات الموقع' },
+  { id: 'team', ico: '👥', ar: 'الفريق' },
+  { id: 'leader', ico: '♛', ar: 'لوحة القائد' },
 ];
 
 const STATUS = {
@@ -33,6 +35,9 @@ const thumb = src => {
 };
 
 let counts = { newOrders: 0, notify: 0, reviews: 0 };
+// The signed-in person and the pages their role opens.
+let me = { name: '', role: '', roleAr: '', perms: [] };
+const can = perm => me.perms.includes(perm);
 let lastNewOrders = null;
 let pollTimer = null;
 let clockTimer = null;
@@ -95,17 +100,23 @@ function showLogin(message) {
 }
 
 async function boot() {
-  const me = await fetch('/api/admin/me').then(r => r.json()).catch(() => ({}));
-  if (!me.configured) return showLogin('لوحة التحكم غير مفعّلة بعد: لازم تضيف ADMIN_PASSWORD في إعدادات Vercel.');
-  if (!me.loggedIn) return showLogin();
+  const info = await fetch('/api/admin/me').then(r => r.json()).catch(() => ({}));
+  if (!info.configured) return showLogin('لوحة التحكم غير مفعّلة بعد: لازم تضيف ADMIN_PASSWORD في إعدادات Vercel.');
+  if (!info.loggedIn) return showLogin();
+  me = info.user;
+  $('profileName').textContent = me.name;
+  $('profileRole').textContent = me.roleAr;
+  $('profileAvatar').textContent = (me.name || '؟').trim().charAt(0);
+  $('storeToggle').disabled = !can('settings');
   $('loginView').hidden = true;
   $('appView').hidden = false;
-  if (me.storageError) {
+  $('storageWarning').hidden = true;
+  if (info.storageError) {
     $('storageWarning').hidden = false;
-    $('storageWarning').innerHTML = `⚠️ <strong>مشكلة بالحفظ:</strong> ${esc(me.storageError)}`;
-  } else if (me.storage !== 'github') {
+    $('storageWarning').innerHTML = `⚠️ <strong>مشكلة بالحفظ:</strong> ${esc(info.storageError)}`;
+  } else if (info.storage !== 'github') {
     $('storageWarning').hidden = false;
-    $('storageWarning').innerHTML = me.storage === 'temporary'
+    $('storageWarning').innerHTML = info.storage === 'temporary'
       ? '⚠️ <strong>الحفظ مؤقت:</strong> التعديلات رح تنمسح مع كل تحديث للموقع. أضف <code>ADMIN_GITHUB_TOKEN</code> في إعدادات Vercel حتى ينحفظ كل اشي بشكل دائم.'
       : 'ℹ️ وضع التجربة المحلي: البيانات محفوظة في data/admin-state.json على هذا الجهاز.';
   }
@@ -121,7 +132,7 @@ $('loginForm').addEventListener('submit', async e => {
   btn.disabled = true;
   $('loginError').hidden = true;
   try {
-    await api('/api/admin/login', { method: 'POST', body: { password: $('loginPassword').value } });
+    await api('/api/admin/login', { method: 'POST', body: { username: $('loginUsername').value.trim(), password: $('loginPassword').value } });
     $('loginPassword').value = '';
     boot();
   } catch (err) {
@@ -143,7 +154,7 @@ $('logoutBtn').addEventListener('click', async () => {
 // ── Shell ──
 function renderNav() {
   const current = (location.hash.slice(1) || 'dashboard').split('?')[0];
-  $('sideNav').innerHTML = NAV.map(n => `
+  $('sideNav').innerHTML = NAV.filter(n => can(n.id)).map(n => `
     <a href="#${n.id}" class="nav-item${n.id === current ? ' active' : ''}">
       <span class="ico">${n.ico}</span><span>${n.ar}</span>
       ${n.badge && counts[n.badge] ? `<span class="nav-badge">${counts[n.badge]}</span>` : ''}
@@ -158,6 +169,7 @@ function setStoreToggle(open) {
 }
 
 $('storeToggle').addEventListener('click', async () => {
+  if (!can('settings')) return;
   const open = $('storeToggle').dataset.open !== '1';
   if (!open && !confirm('إيقاف استقبال الطلبات من الموقع؟ زر "أكمل الطلب" رح يختفي من الحقيبة.')) return;
   try {
@@ -197,7 +209,7 @@ function pageHead(badgeIco, badge, sub, right = '') {
     <div class="bg-orb a"></div><div class="bg-orb b"></div>
     <div class="page-head">
       <div>
-        <div class="page-title">Zahrat <em>Beesan</em></div>
+        <div class="page-title">ZAHRAT BEESAN</div>
         <div class="page-badge"><span class="ico">${badgeIco}</span><span>${badge}</span></div>
         <p class="page-sub">${sub}</p>
       </div>
@@ -209,13 +221,20 @@ const PAGES = {};
 function route() {
   document.body.classList.remove('nav-open');
   clearInterval(clockTimer);
-  const id = (location.hash.slice(1) || 'dashboard').split('?')[0];
+  let id = (location.hash.slice(1) || 'dashboard').split('?')[0];
+  if (!PAGES[id] || !can(id)) id = 'dashboard';
   renderNav();
   $('page').innerHTML = '<div class="spinner"></div>';
   window.scrollTo(0, 0);
-  (PAGES[id] || PAGES.dashboard)().catch(err => {
+  PAGES[id]().catch(err => {
     if (err.message !== 'unauthorized') $('page').innerHTML = `<div class="empty"><div class="big">⚠️</div>${esc(err.message)}</div>`;
   });
+}
+
+// One line of the activity log: when, who, what.
+function logLine(l) {
+  const who = l.by ? `<span class="who">${esc(l.by.name)}</span>` : `<span class="who customer">${l.kind === 'order' || l.kind === 'notify' || l.kind === 'review' ? 'زبون' : 'النظام'}</span>`;
+  return `<div class="log-line ${esc(l.kind)}"><time>${fmtDate(l.at)}</time>${who}<span>${esc(l.text)}</span></div>`;
 }
 
 // ── Dashboard ──
@@ -283,9 +302,9 @@ PAGES.dashboard = async () => {
           : '<div class="empty"><div class="big">🛍</div>لسا ما في طلبات. أول ما يطلب زبون من الحقيبة رح يبين هون.</div>'}
       </div>
       <div class="terminal">
-        <div class="terminal-head">STORE MONITOR <i></i></div>
-        ${s.log.length ? s.log.map(l => `<div class="log-line ${esc(l.kind)}"><time>${fmtDate(l.at)}</time><span>${esc(l.text)}</span></div>`).join('')
-          : '<div class="log-line"><span>النظام جاهز. كل تعديل أو طلب رح ينسجل هون.</span></div>'}
+        <div class="terminal-head"><i></i> ${can('leader') ? 'آخر حركات الفريق' : 'آخر حركاتك'}</div>
+        ${s.log.length ? s.log.map(logLine).join('')
+          : `<div class="log-line"><span>${can('leader') ? 'النظام جاهز. كل تعديل أو طلب رح ينسجل هون.' : 'حركاتك رح تظهر هون.'}</span></div>`}
       </div>
     </div>`;
   const tick = () => {
@@ -343,6 +362,8 @@ function showOrder(ref) {
     </tbody></table>
     ${o.discountJod ? `<div class="info-box" style="margin-top:14px"><div><span>قبل الخصم</span><span>${jod(o.subtotalJod)} د.أ</span></div><div><span>الخصم</span><span style="color:var(--success)">− ${jod(o.discountJod)} د.أ</span></div></div>` : ''}
     <div class="total-row"><span>المجموع</span><span class="money">${jod(o.totalJod)} د.أ</span></div>
+    ${(o.history || []).length ? `<h4 style="margin:18px 0 8px">سجل الطلب</h4><ul class="timeline">${o.history.map(h => `
+      <li><strong>${h.by ? esc(h.by.name) : 'الزبون'}</strong> ${h.note ? 'كتب ملاحظة' : h.status === 'new' && !h.by ? 'أرسل الطلب' : `غيّر الحالة إلى «${STATUS[h.status]}»`}<time>${fmtDate(h.at)}</time></li>`).join('')}</ul>` : ''}
     <div class="status-steps">
       ${Object.entries(STATUS).map(([k, v]) => `<button class="btn sm${k === o.status ? ' cur' : ''}" data-status="${k}">${v}</button>`).join('')}
     </div>
@@ -351,7 +372,7 @@ function showOrder(ref) {
     </label>
     <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
       <button class="btn gold" id="saveNote">حفظ الملاحظة</button>
-      <button class="btn danger" id="deleteOrder">حذف الطلب</button>
+      ${me.role !== 'employee' ? '<button class="btn danger" id="deleteOrder">حذف الطلب</button>' : ''}
     </div>`);
   document.querySelectorAll('[data-status]').forEach(b => {
     b.onclick = async () => {
@@ -372,7 +393,7 @@ function showOrder(ref) {
       route();
     } catch (e) { toast(e.message, true); }
   };
-  $('deleteOrder').onclick = async () => {
+  if ($('deleteOrder')) $('deleteOrder').onclick = async () => {
     if (!confirm(`حذف الطلب ${o.ref} نهائياً؟`)) return;
     try {
       await api(`/api/admin/orders/${encodeURIComponent(o.ref)}`, { method: 'DELETE' });
@@ -701,6 +722,149 @@ function addReviewModal() {
 }
 
 // ── Notify-me requests ──
+// ── Team (owner) ──
+const ROLE_LABEL = { owner: 'المالك', manager: 'مسؤول', employee: 'موظف' };
+PAGES.team = async () => {
+  const { items } = await api('/api/admin/team');
+  $('page').innerHTML = pageHead('👥', 'الفريق', 'كل شخص بيدخل باسم مستخدم وكلمة سر خاصين فيه، وكل اللي بيعمله بينسجل باسمه بلوحة القائد.') + `
+    <div class="panel" style="margin-bottom:18px">
+      <h3>＋ إضافة شخص للفريق</h3>
+      <form class="team-form" id="teamForm" autocomplete="off">
+        <label>الاسم<input class="input" id="tName" placeholder="مثلاً: أحمد" required></label>
+        <label>اسم المستخدم<input class="input" id="tUser" dir="ltr" placeholder="ahmad" required autocapitalize="none" spellcheck="false"></label>
+        <label>كلمة السر<input class="input" id="tPass" type="text" dir="ltr" placeholder="8 أحرف أو أكثر" required></label>
+        <label>الصلاحية<select class="input" id="tRole"><option value="employee">موظف</option><option value="manager">مسؤول</option></select></label>
+        <button class="btn gold" type="submit">إضافة</button>
+      </form>
+      <div class="roles-help">
+        <div><strong>♛ المالك (انت)</strong>كل إشي، ومعه الفريق ولوحة القائد وسجل كل حركة.</div>
+        <div><strong>مسؤول</strong>الطلبات والمنتجات والأسعار والعروض وأكواد الخصم والتقييمات وإعدادات الموقع.</div>
+        <div><strong>موظف</strong>الطلبات (تأكيد وتوصيل وتسليم)، والتقييمات، وطلبات التنبيه بس.</div>
+      </div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>الشخص</th><th>اسم المستخدم</th><th>الصلاحية</th><th class="hide-sm">آخر نشاط</th><th class="hide-sm">الحركات</th><th>فعّال</th><th></th></tr></thead>
+      <tbody>${items.map(u => `
+        <tr data-user="${esc(u.username)}">
+          <td><div style="display:flex;align-items:center;gap:10px"><span class="avatar" style="width:34px;height:34px;font-size:1rem">${esc(u.name.charAt(0))}</span><strong>${esc(u.name)}</strong></div></td>
+          <td dir="ltr" style="text-align:end">${esc(u.username)}</td>
+          <td>${u.role === 'owner' ? '<span class="role-pill owner">المالك</span>' : `<select class="input" data-role style="width:auto;padding:7px 10px"><option value="employee"${u.role === 'employee' ? ' selected' : ''}>موظف</option><option value="manager"${u.role === 'manager' ? ' selected' : ''}>مسؤول</option></select>`}</td>
+          <td class="hide-sm muted">${u.lastSeen ? fmtDate(u.lastSeen) : '—'}</td>
+          <td class="hide-sm">${u.actions}</td>
+          <td>${u.role === 'owner' ? '' : `<label class="switch"><input type="checkbox" data-active${u.active ? ' checked' : ''}><span></span></label>`}</td>
+          <td>${u.role === 'owner' ? '' : '<div style="display:flex;gap:6px"><button class="btn sm" data-pass>🔑 كلمة سر</button><button class="icon-btn del" data-del title="حذف">🗑</button></div>'}</td>
+        </tr>`).join('')}</tbody>
+    </table></div>`;
+  $('tUser').oninput = e => { e.target.value = e.target.value.toLowerCase().replace(/[^a-z0-9._-]/g, ''); };
+  $('teamForm').onsubmit = async e => {
+    e.preventDefault();
+    try {
+      await api('/api/admin/team', { method: 'POST', body: { name: $('tName').value, username: $('tUser').value, password: $('tPass').value, role: $('tRole').value } });
+      toast(`تمت إضافة ${$('tName').value} ✅ ابعتله اسم المستخدم وكلمة السر`);
+      PAGES.team();
+    } catch (err) { toast(err.message, true); }
+  };
+  document.querySelectorAll('tr[data-user]').forEach(row => {
+    const u = row.dataset.user;
+    const patch = async (body, msg) => {
+      try { await api(`/api/admin/team/${encodeURIComponent(u)}`, { method: 'PATCH', body }); toast(msg); PAGES.team(); } catch (err) { toast(err.message, true); }
+    };
+    const role = row.querySelector('[data-role]');
+    if (role) role.onchange = () => patch({ role: role.value }, `صارت الصلاحية: ${ROLE_LABEL[role.value]}`);
+    const active = row.querySelector('[data-active]');
+    if (active) active.onchange = () => patch({ active: active.checked }, active.checked ? 'الحساب فعّال' : 'تم إيقاف الحساب، وما بيقدر يدخل');
+    const pass = row.querySelector('[data-pass]');
+    if (pass) pass.onclick = () => {
+      const p = prompt('كلمة السر الجديدة (8 أحرف أو أكثر):');
+      if (p) patch({ password: p }, 'تم تغيير كلمة السر، وانطلع من أي جهاز كان داخل منه');
+    };
+    const del = row.querySelector('[data-del]');
+    if (del) del.onclick = async () => {
+      if (!confirm('حذف هالشخص من الفريق؟ سجل حركاته بيضل محفوظ.')) return;
+      try { await api(`/api/admin/team/${encodeURIComponent(u)}`, { method: 'DELETE' }); PAGES.team(); } catch (err) { toast(err.message, true); }
+    };
+  });
+};
+
+// ── Leader view (owner): who did what, and reviews that need attention ──
+const KIND_AR = { order: 'الطلبات', product: 'المنتجات', coupon: 'أكواد الخصم', offer: 'العروض', review: 'التقييمات', notify: 'التنبيهات', settings: 'الإعدادات', team: 'الفريق', auth: 'الدخول والخروج' };
+const leaderQuery = { user: '', kind: '', q: '' };
+let leaderTimer = null;
+PAGES.leader = async () => {
+  const [{ items, critical }, team] = await Promise.all([
+    api(`/api/admin/activity?user=${encodeURIComponent(leaderQuery.user)}&kind=${encodeURIComponent(leaderQuery.kind)}`),
+    api('/api/admin/team'),
+  ]);
+  const q = leaderQuery.q.trim();
+  const rows = q ? items.filter(l => `${l.text} ${l.by ? l.by.name : ''}`.includes(q)) : items;
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Amman' });
+  const isToday = l => new Date(l.at).toLocaleDateString('en-CA', { timeZone: 'Asia/Amman' }) === today;
+  window.__leaderRows = rows;
+  $('page').innerHTML = pageHead('♛', 'لوحة القائد', 'مين عمل شو ومتى: كل تأكيد طلب، تعديل سعر، كود خصم، تقييم، ودخول وخروج. بتتحدث لحالها كل 15 ثانية.', `
+    <div class="head-chips">
+      <div class="chip"><small>الفريق</small><strong>${team.items.length}</strong></div>
+      <div class="chip"><small>حركات اليوم</small><strong>${items.filter(isToday).filter(l => l.by).length}</strong></div>
+      <div class="chip"><small>تقييمات منخفضة</small><strong style="color:var(--danger)">${critical.length}</strong></div>
+      <button class="btn" id="exportLog">⬇ تصدير السجل</button>
+    </div>`) + `
+    <div class="stats" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+      ${team.items.map(u => {
+        const mine = items.filter(l => l.by && l.by.u === u.username);
+        return `<div class="stat">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="avatar" style="width:38px;height:38px;font-size:1.1rem">${esc(u.name.charAt(0))}</span><div><strong>${esc(u.name)}</strong><div><span class="role-pill ${u.role}">${ROLE_LABEL[u.role]}</span></div></div></div>
+          <div class="label">اليوم: ${mine.filter(isToday).length} حركة · طلبات: ${mine.filter(l => l.kind === 'order').length}</div>
+          <div class="foot">آخر نشاط: ${u.lastSeen ? fmtDate(u.lastSeen) : '—'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="grid-2">
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div class="toolbar" style="padding:16px 18px 0">
+          <select class="input" id="lUser"><option value="">كل الأشخاص</option>${team.items.map(u => `<option value="${esc(u.username)}"${u.username === leaderQuery.user ? ' selected' : ''}>${esc(u.name)}</option>`).join('')}<option value="customers"${leaderQuery.user === 'customers' ? ' selected' : ''}>الزباين</option></select>
+          <select class="input" id="lKind"><option value="">كل الأقسام</option>${Object.entries(KIND_AR).map(([k, v]) => `<option value="${k}"${k === leaderQuery.kind ? ' selected' : ''}>${v}</option>`).join('')}</select>
+          <input class="input grow" id="lSearch" placeholder="ابحث بالسجل…" value="${esc(leaderQuery.q)}">
+        </div>
+        <div style="max-height:620px;overflow-y:auto"><table>
+          <thead><tr><th>الوقت</th><th>الشخص</th><th class="hide-sm">القسم</th><th>التفاصيل</th></tr></thead>
+          <tbody>${rows.slice(0, 300).map(l => `<tr>
+            <td class="muted" dir="ltr" style="text-align:end;white-space:nowrap">${fmtDate(l.at)}</td>
+            <td><strong>${l.by ? esc(l.by.name) : '<span class="muted">زبون</span>'}</strong></td>
+            <td class="hide-sm"><span class="pill gold">${KIND_AR[l.kind] || l.kind}</span></td>
+            <td>${esc(l.text)}</td></tr>`).join('') || '<tr><td colspan="4" class="empty">ما في حركات</td></tr>'}</tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <h3>⚠️ تقييمات تحتاج متابعة <span class="tag">3 نجوم أو أقل</span></h3>
+        ${critical.length ? critical.map(r => `
+          <div style="border-bottom:1px dashed var(--border);padding:10px 0">
+            <div style="display:flex;justify-content:space-between;gap:8px"><strong>${esc(r.name)}</strong><span class="rv-stars">${'★'.repeat(r.rating)}<i>${'★'.repeat(5 - r.rating)}</i></span></div>
+            <div class="muted" style="font-size:.8rem">${esc(r.productTitle)} · ${fmtDate(r.at)}</div>
+            ${r.text ? `<p style="margin:6px 0 0">${esc(r.text)}</p>` : ''}
+          </div>`).join('') + '<a class="btn sm" href="#reviews" style="margin-top:12px">فتح التقييمات</a>'
+          : '<div class="empty"><div class="big">🌷</div>ما في تقييمات منخفضة.</div>'}
+      </div>
+    </div>`;
+  $('lUser').onchange = e => { leaderQuery.user = e.target.value; PAGES.leader(); };
+  $('lKind').onchange = e => { leaderQuery.kind = e.target.value; PAGES.leader(); };
+  let t;
+  $('lSearch').oninput = e => { clearTimeout(t); t = setTimeout(() => { leaderQuery.q = e.target.value; PAGES.leader().then(() => { const i = $('lSearch'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }); }, 300); };
+  $('exportLog').onclick = () => {
+    const csv = '\ufeff' + [['الوقت', 'الشخص', 'الصلاحية', 'القسم', 'التفاصيل']]
+      .concat((window.__leaderRows || []).map(l => [fmtDate(l.at), l.by ? l.by.name : 'زبون', l.by ? ROLE_LABEL[l.by.role] || '' : '', KIND_AR[l.kind] || l.kind, l.text]))
+      .map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    a.download = `zahrat-beesan-activity-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+  };
+  clearInterval(leaderTimer);
+  leaderTimer = setInterval(() => {
+    if ((location.hash.slice(1) || '') !== 'leader') { clearInterval(leaderTimer); return; }
+    if (document.activeElement && document.activeElement.id === 'lSearch') return;
+    PAGES.leader().catch(() => {});
+  }, 15000);
+};
+
 PAGES.notify = async () => {
   const { items } = await api('/api/admin/notify');
   $('page').innerHTML = pageHead('🔔', 'طلبات التنبيه', 'المنتجات اللي الزباين طلبوا يتبلغوا لما ترجع. الزبون بيبعتلك كمان على واتساب.') + (items.length ? `
