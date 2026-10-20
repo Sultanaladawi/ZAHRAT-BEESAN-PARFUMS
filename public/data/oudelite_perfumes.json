@@ -17,7 +17,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020017-asaeel-mukhallat-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/WOVL45d2GwHJ58wk64aOPxpuR0mMhcvFjGcn3ye5.jpg",
-    "image": "images/oudelite_36704070.jpg?v=a42aef8a",
+    "image": "images/oudelite_36704070.jpg?v=491e1d47",
     "originalImage": "https://cdn.salla.sa/wWORaV/WOVL45d2GwHJ58wk64aOPxpuR0mMhcvFjGcn3ye5.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/WOVL45d2GwHJ58wk64aOPxpuR0mMhcvFjGcn3ye5.jpg"
@@ -48,8 +48,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-55732867",
@@ -69,7 +69,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010204-kanz-ii",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/z80rEUImy8nte2LC6cszF1jKqy5NGVJuxP7YxDxr.jpg",
-    "image": "images/oudelite_55732867.jpg?v=3b9a1c77",
+    "image": "images/oudelite_55732867.jpg?v=40b0ccc0",
     "originalImage": "https://cdn.salla.sa/wWORaV/z80rEUImy8nte2LC6cszF1jKqy5NGVJuxP7YxDxr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/z80rEUImy8nte2LC6cszF1jKqy5NGVJuxP7YxDxr.jpg"
@@ -100,8 +100,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-65115145",
@@ -121,7 +121,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020015-royal-elite-musk-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/w2DYoxZHfgbVOGmed8rKbbcaRsXkKtE7qSew70oX.jpg",
-    "image": "images/oudelite_65115145.jpg?v=529401d8",
+    "image": "images/oudelite_65115145.jpg?v=d1069f70",
     "originalImage": "https://cdn.salla.sa/wWORaV/w2DYoxZHfgbVOGmed8rKbbcaRsXkKtE7qSew70oX.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/w2DYoxZHfgbVOGmed8rKbbcaRsXkKtE7qSew70oX.jpg"
@@ -152,8 +152,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-82989994",
@@ -225,7 +225,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010277-elite-knight-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/gkaKOPRJDp2ZgEa7tEHeaBE9prczfonOkw6Mfccd.jpg",
-    "image": "images/oudelite_111596853.jpg?v=61b904b6",
+    "image": "images/oudelite_111596853.jpg?v=fa89e965",
     "originalImage": "https://cdn.salla.sa/wWORaV/gkaKOPRJDp2ZgEa7tEHeaBE9prczfonOkw6Mfccd.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/gkaKOPRJDp2ZgEa7tEHeaBE9prczfonOkw6Mfccd.jpg"
@@ -256,8 +256,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-127527714",
@@ -308,8 +308,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-131164981",
@@ -330,7 +331,7 @@
     "promotionTitle": "جديد",
     "url": "https://sa.oudelite.com/ar/E0301010331-khayal-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/h0CFESdVQom4ZV50nsva0d483h7DVYe0eC6rh8kw.jpg",
-    "image": "images/oudelite_131164981.jpg?v=723c3328",
+    "image": "images/oudelite_131164981.jpg?v=3e860305",
     "originalImage": "https://cdn.salla.sa/wWORaV/h0CFESdVQom4ZV50nsva0d483h7DVYe0eC6rh8kw.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/h0CFESdVQom4ZV50nsva0d483h7DVYe0eC6rh8kw.jpg"
@@ -361,8 +362,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-140114204",
@@ -382,7 +383,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020014-dehan-oud-cambodian-fawwah-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/pe6gRt7FOhfyoA7el6Llb97Nv39uM21wClCBJHL0.jpg",
-    "image": "images/oudelite_140114204.jpg?v=541b61c3",
+    "image": "images/oudelite_140114204.jpg?v=eecb7531",
     "originalImage": "https://cdn.salla.sa/wWORaV/pe6gRt7FOhfyoA7el6Llb97Nv39uM21wClCBJHL0.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/pe6gRt7FOhfyoA7el6Llb97Nv39uM21wClCBJHL0.jpg"
@@ -413,8 +414,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-162685412",
@@ -434,7 +435,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010187-magic-intense",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/kALTPr9EPz69ZGwAIw2bmRljcBcGJ0tr8z7g1KTF.jpg",
-    "image": "images/oudelite_162685412.jpg?v=94ce3a40",
+    "image": "images/oudelite_162685412.jpg?v=c7392db6",
     "originalImage": "https://cdn.salla.sa/wWORaV/kALTPr9EPz69ZGwAIw2bmRljcBcGJ0tr8z7g1KTF.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/kALTPr9EPz69ZGwAIw2bmRljcBcGJ0tr8z7g1KTF.jpg"
@@ -465,8 +466,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-192713547",
@@ -486,7 +487,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010131-deep",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/6aQJkdhzgVzOn8n1mpTZKFmfcbIa4pwYHwTrJ3xZ.jpg",
-    "image": "images/oudelite_192713547.jpg?v=118d30cf",
+    "image": "images/oudelite_192713547.jpg?v=d4818b4d",
     "originalImage": "https://cdn.salla.sa/wWORaV/6aQJkdhzgVzOn8n1mpTZKFmfcbIa4pwYHwTrJ3xZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/6aQJkdhzgVzOn8n1mpTZKFmfcbIa4pwYHwTrJ3xZ.jpg"
@@ -517,8 +518,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-195202059",
@@ -570,8 +571,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-212407735",
@@ -623,8 +625,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-234480187",
@@ -644,7 +647,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010219-dream-light-blue",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/IHkcYQeGSk16N5NnNDIA8E39Cewv95FT2lWaryMi.jpg",
-    "image": "images/oudelite_234480187.jpg?v=e5077e33",
+    "image": "images/oudelite_234480187.jpg?v=98ac4d80",
     "originalImage": "https://cdn.salla.sa/wWORaV/IHkcYQeGSk16N5NnNDIA8E39Cewv95FT2lWaryMi.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/IHkcYQeGSk16N5NnNDIA8E39Cewv95FT2lWaryMi.jpg"
@@ -675,8 +678,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-258209455",
@@ -778,8 +781,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-276439332",
@@ -799,7 +803,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010156-pink-bank-perfume",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/KHOTxDgmKZ7jucCnmMf62u8xnOfzD7aA4250FZIX.jpg",
-    "image": "images/oudelite_276439332.jpg?v=ebed08c2",
+    "image": "images/oudelite_276439332.jpg?v=0d35b574",
     "originalImage": "https://cdn.salla.sa/wWORaV/KHOTxDgmKZ7jucCnmMf62u8xnOfzD7aA4250FZIX.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/KHOTxDgmKZ7jucCnmMf62u8xnOfzD7aA4250FZIX.jpg"
@@ -830,8 +834,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-280055399",
@@ -851,7 +855,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020024-dihn-oud-cambodi-al-nokhba-moabah-1-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/HE5R7Uv8Ky89GRwkVXjzfzZbXLCFt5oafUnJgJmV.jpg",
-    "image": "images/oudelite_280055399.jpg?v=8324b040",
+    "image": "images/oudelite_280055399.jpg?v=8fa55bc5",
     "originalImage": "https://cdn.salla.sa/wWORaV/HE5R7Uv8Ky89GRwkVXjzfzZbXLCFt5oafUnJgJmV.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/HE5R7Uv8Ky89GRwkVXjzfzZbXLCFt5oafUnJgJmV.jpg"
@@ -882,8 +886,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-285764258",
@@ -903,7 +907,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020029-ghawali-mukhallat-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/wlMNC9iUWAqNzbowBS4Edc83HIFHuEFZgZwzOrHD.jpg",
-    "image": "images/oudelite_285764258.jpg?v=7646f8ff",
+    "image": "images/oudelite_285764258.jpg?v=e96ba784",
     "originalImage": "https://cdn.salla.sa/wWORaV/wlMNC9iUWAqNzbowBS4Edc83HIFHuEFZgZwzOrHD.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/wlMNC9iUWAqNzbowBS4Edc83HIFHuEFZgZwzOrHD.jpg"
@@ -934,8 +938,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-293562888",
@@ -956,7 +960,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010283-dazzling-silver-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/B13XHMON6YFwxap5E9vsknX3K8DTxXZW0HTdxEpP.jpg",
-    "image": "images/oudelite_293562888.jpg?v=3d1d3c65",
+    "image": "images/oudelite_293562888.jpg?v=8709ddf5",
     "originalImage": "https://cdn.salla.sa/wWORaV/B13XHMON6YFwxap5E9vsknX3K8DTxXZW0HTdxEpP.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/B13XHMON6YFwxap5E9vsknX3K8DTxXZW0HTdxEpP.jpg"
@@ -987,8 +991,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-296992319",
@@ -1008,7 +1012,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020028-royal-cambodian-dehn-oud-packed-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/products/TZkhgkRqb2BiqAOIppMCrgIFnzOmVRrRymFJnqb2.jpg",
-    "image": "images/oudelite_296992319.jpg?v=1fe50fd1",
+    "image": "images/oudelite_296992319.jpg?v=e81570f6",
     "originalImage": "https://cdn.salla.sa/wWORaV/products/TZkhgkRqb2BiqAOIppMCrgIFnzOmVRrRymFJnqb2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/products/TZkhgkRqb2BiqAOIppMCrgIFnzOmVRrRymFJnqb2.jpg"
@@ -1039,8 +1043,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-307106703",
@@ -1111,7 +1115,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010170-elite-gentleman",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/0HNsvjx8pH0KE6KvoY0exKBvjQiqWPHLpWHG1RnB.jpg",
-    "image": "images/oudelite_332724318.jpg?v=a165f655",
+    "image": "images/oudelite_332724318.jpg?v=5842cd1d",
     "originalImage": "https://cdn.salla.sa/wWORaV/0HNsvjx8pH0KE6KvoY0exKBvjQiqWPHLpWHG1RnB.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/0HNsvjx8pH0KE6KvoY0exKBvjQiqWPHLpWHG1RnB.jpg"
@@ -1142,8 +1146,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-336754941",
@@ -1163,7 +1167,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010139-rozi-nawar",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/jVEBuHBVHmp28DJDllhCstA46mSgPDG8AIzdQN2z.jpg",
-    "image": "images/oudelite_336754941.jpg?v=ae8c1e15",
+    "image": "images/oudelite_336754941.jpg?v=afabf1eb",
     "originalImage": "https://cdn.salla.sa/wWORaV/jVEBuHBVHmp28DJDllhCstA46mSgPDG8AIzdQN2z.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/jVEBuHBVHmp28DJDllhCstA46mSgPDG8AIzdQN2z.jpg"
@@ -1194,8 +1198,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-341841838",
@@ -1216,7 +1220,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010270-couture-silver",
     "bottleUrl": "https://cdn.files.salla.network/products/1934736234/b5085206-9d2d-426b-9fab-cc5e21e1b17f-original.webp",
-    "image": "images/oudelite_341841838.jpg?v=dd980893",
+    "image": "images/oudelite_341841838.jpg?v=4c72e12f",
     "originalImage": "https://cdn.files.salla.network/products/1934736234/b5085206-9d2d-426b-9fab-cc5e21e1b17f-original.webp",
     "galleryImages": [
       "https://cdn.files.salla.network/products/1934736234/b5085206-9d2d-426b-9fab-cc5e21e1b17f-original.webp"
@@ -1247,8 +1251,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-400251826",
@@ -1319,7 +1323,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010207-bliss",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/ecY7Jgc4cjyHUiWPoO2LgnTjjSQClx1a3fzBeBfr.jpg",
-    "image": "images/oudelite_412838380.jpg?v=2b17eaa9",
+    "image": "images/oudelite_412838380.jpg?v=ad2b682b",
     "originalImage": "https://cdn.salla.sa/wWORaV/ecY7Jgc4cjyHUiWPoO2LgnTjjSQClx1a3fzBeBfr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/ecY7Jgc4cjyHUiWPoO2LgnTjjSQClx1a3fzBeBfr.jpg"
@@ -1350,8 +1354,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-425836469",
@@ -1423,7 +1427,7 @@
     "promotionTitle": "جديد",
     "url": "https://sa.oudelite.com/ar/E0301010327-miss-elite-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/wDGv7gufPktfjKAHsbAQ0cJAFBY9vBhDInGM79My.jpg",
-    "image": "images/oudelite_440860187.jpg?v=90481f4a",
+    "image": "images/oudelite_440860187.jpg?v=c9822c12",
     "originalImage": "https://cdn.salla.sa/wWORaV/wDGv7gufPktfjKAHsbAQ0cJAFBY9vBhDInGM79My.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/wDGv7gufPktfjKAHsbAQ0cJAFBY9vBhDInGM79My.jpg"
@@ -1454,8 +1458,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-446474142",
@@ -1475,7 +1479,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010150-qawafi-brawn",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/opSfYyKFR4i7efwYrjM0lO5qaNAc3xOlgT8Zamf8.jpg",
-    "image": "images/oudelite_446474142.jpg?v=93fae267",
+    "image": "images/oudelite_446474142.jpg?v=b9e837c2",
     "originalImage": "https://cdn.salla.sa/wWORaV/opSfYyKFR4i7efwYrjM0lO5qaNAc3xOlgT8Zamf8.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/opSfYyKFR4i7efwYrjM0lO5qaNAc3xOlgT8Zamf8.jpg"
@@ -1506,8 +1510,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-451658969",
@@ -1558,8 +1562,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-455270756",
@@ -1579,7 +1584,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020022-dihn-oud-cambodi-al-nokhba-moabah-14-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/EnWlcpyriLxNndSHpZ8LM3FDKzdOvfWkhxcSuzPt.jpg",
-    "image": "images/oudelite_455270756.jpg?v=e34a7b0b",
+    "image": "images/oudelite_455270756.jpg?v=358b8b36",
     "originalImage": "https://cdn.salla.sa/wWORaV/EnWlcpyriLxNndSHpZ8LM3FDKzdOvfWkhxcSuzPt.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/EnWlcpyriLxNndSHpZ8LM3FDKzdOvfWkhxcSuzPt.jpg"
@@ -1610,8 +1615,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-511908850",
@@ -1631,7 +1636,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010119-oud-mood",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/ZZ7M9WK6haR2MUW07rXD7TWsqcVYdPE3Ftq11KCO.jpg",
-    "image": "images/oudelite_511908850.jpg?v=13e2cc06",
+    "image": "images/oudelite_511908850.jpg?v=63c0bb1d",
     "originalImage": "https://cdn.salla.sa/wWORaV/ZZ7M9WK6haR2MUW07rXD7TWsqcVYdPE3Ftq11KCO.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/ZZ7M9WK6haR2MUW07rXD7TWsqcVYdPE3Ftq11KCO.jpg"
@@ -1662,8 +1667,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-547721652",
@@ -1765,8 +1770,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-558619442",
@@ -1786,7 +1792,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010212-lazurd",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/QmIZYCNFB10RfDaJaC7v6DogfInpH5CfLiVrIbOn.jpg",
-    "image": "images/oudelite_558619442.jpg?v=4dc64e53",
+    "image": "images/oudelite_558619442.jpg?v=8f319f94",
     "originalImage": "https://cdn.salla.sa/wWORaV/QmIZYCNFB10RfDaJaC7v6DogfInpH5CfLiVrIbOn.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/QmIZYCNFB10RfDaJaC7v6DogfInpH5CfLiVrIbOn.jpg"
@@ -1817,8 +1823,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-566436488",
@@ -1839,7 +1845,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010284-dazzling-gold-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/o4wBherQi8E0nitbLWbux9gsAhCIpgFxjMzae97V.jpg",
-    "image": "images/oudelite_566436488.jpg?v=c188ce6a",
+    "image": "images/oudelite_566436488.jpg?v=9d545830",
     "originalImage": "https://cdn.salla.sa/wWORaV/o4wBherQi8E0nitbLWbux9gsAhCIpgFxjMzae97V.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/o4wBherQi8E0nitbLWbux9gsAhCIpgFxjMzae97V.jpg"
@@ -1870,8 +1876,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-582872998",
@@ -1891,7 +1897,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010184-glamor",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/V0rT2zG69xfeVPgGphCyoCz3t1dwW1fk19JFaFZu.jpg",
-    "image": "images/oudelite_582872998.jpg?v=e83995dc",
+    "image": "images/oudelite_582872998.jpg?v=e69a1abe",
     "originalImage": "https://cdn.salla.sa/wWORaV/V0rT2zG69xfeVPgGphCyoCz3t1dwW1fk19JFaFZu.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/V0rT2zG69xfeVPgGphCyoCz3t1dwW1fk19JFaFZu.jpg"
@@ -1922,8 +1928,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-591604012",
@@ -1943,7 +1949,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010203-kanz-i",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/KgBBSveBC1eJgA3O3YP3AQle45LfUfjWAKc51z1j.jpg",
-    "image": "images/oudelite_591604012.jpg?v=29a92c49",
+    "image": "images/oudelite_591604012.jpg?v=d8ca3962",
     "originalImage": "https://cdn.salla.sa/wWORaV/KgBBSveBC1eJgA3O3YP3AQle45LfUfjWAKc51z1j.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/KgBBSveBC1eJgA3O3YP3AQle45LfUfjWAKc51z1j.jpg"
@@ -1974,8 +1980,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-600920746",
@@ -2046,7 +2052,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010126-gold-wood",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/c1nsCy4X3l9gtn1YReQILo6Q91M2kqZp1MKRx99m.jpg",
-    "image": "images/oudelite_689825471.jpg?v=1d597b15",
+    "image": "images/oudelite_689825471.jpg?v=136ea1c6",
     "originalImage": "https://cdn.salla.sa/wWORaV/c1nsCy4X3l9gtn1YReQILo6Q91M2kqZp1MKRx99m.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/c1nsCy4X3l9gtn1YReQILo6Q91M2kqZp1MKRx99m.jpg"
@@ -2077,8 +2083,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-693371898",
@@ -2098,7 +2104,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010155-double-brown",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/sPzZUR0Cls9HWQR1nHMqxi1IBjrmvvbHk2ZWhaek.jpg",
-    "image": "images/oudelite_693371898.jpg?v=cced11fb",
+    "image": "images/oudelite_693371898.jpg?v=765bf668",
     "originalImage": "https://cdn.salla.sa/wWORaV/sPzZUR0Cls9HWQR1nHMqxi1IBjrmvvbHk2ZWhaek.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/sPzZUR0Cls9HWQR1nHMqxi1IBjrmvvbHk2ZWhaek.jpg"
@@ -2129,8 +2135,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-695787650",
@@ -2150,7 +2156,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010094-adonis",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/d51ae6d0-3f88-4cad-a652-90bd4db9f0fb-400.59347181009x500-PjM89xrO1cEq1z6UuXnDiOgXntT1LvJuoGlnOTYP.jpg",
-    "image": "images/oudelite_695787650.jpg?v=d9cfd49c",
+    "image": "images/oudelite_695787650.jpg?v=036d3ed3",
     "originalImage": "https://cdn.salla.sa/wWORaV/d51ae6d0-3f88-4cad-a652-90bd4db9f0fb-400.59347181009x500-PjM89xrO1cEq1z6UuXnDiOgXntT1LvJuoGlnOTYP.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/d51ae6d0-3f88-4cad-a652-90bd4db9f0fb-400.59347181009x500-PjM89xrO1cEq1z6UuXnDiOgXntT1LvJuoGlnOTYP.jpg"
@@ -2181,8 +2187,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-698556421",
@@ -2202,7 +2208,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010217-elite-brave",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/q82tmX9Kx15lueSQwaZr3C3bdlOrw7jOUdWxW7EK.jpg",
-    "image": "images/oudelite_698556421.jpg?v=53146d92",
+    "image": "images/oudelite_698556421.jpg?v=865e4e15",
     "originalImage": "https://cdn.salla.sa/wWORaV/q82tmX9Kx15lueSQwaZr3C3bdlOrw7jOUdWxW7EK.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/q82tmX9Kx15lueSQwaZr3C3bdlOrw7jOUdWxW7EK.jpg"
@@ -2233,8 +2239,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-709031343",
@@ -2337,8 +2343,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-750075472",
@@ -2358,7 +2365,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010148-mukhallat-al-azm",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/gOAdLWxAwqa7KQ92AE1HSuhVgWnG0ffPyJBM6ZEc.jpg",
-    "image": "images/oudelite_750075472.jpg?v=01ac7cd7",
+    "image": "images/oudelite_750075472.jpg?v=ae38a945",
     "originalImage": "https://cdn.salla.sa/wWORaV/gOAdLWxAwqa7KQ92AE1HSuhVgWnG0ffPyJBM6ZEc.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/gOAdLWxAwqa7KQ92AE1HSuhVgWnG0ffPyJBM6ZEc.jpg"
@@ -2389,8 +2396,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-755784339",
@@ -2441,8 +2448,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-794605000",
@@ -2493,8 +2501,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-799789579",
@@ -2514,7 +2523,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020016-royal-elite-musk-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/gWrYkmBUVM213SJzAZAfmXs0tn7JCaKLzzO8IdTN.jpg",
-    "image": "images/oudelite_799789579.jpg?v=bde6571f",
+    "image": "images/oudelite_799789579.jpg?v=1b596581",
     "originalImage": "https://cdn.salla.sa/wWORaV/gWrYkmBUVM213SJzAZAfmXs0tn7JCaKLzzO8IdTN.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/gWrYkmBUVM213SJzAZAfmXs0tn7JCaKLzzO8IdTN.jpg"
@@ -2545,8 +2554,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-807191354",
@@ -2566,7 +2575,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010214-infinity-purple",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/NiaZpdjMHKjz9aQDOiQwXtwUtAX7RHIrga3xGeS9.jpg",
-    "image": "images/oudelite_807191354.jpg?v=98fbb485",
+    "image": "images/oudelite_807191354.jpg?v=c409712e",
     "originalImage": "https://cdn.salla.sa/wWORaV/NiaZpdjMHKjz9aQDOiQwXtwUtAX7RHIrga3xGeS9.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/NiaZpdjMHKjz9aQDOiQwXtwUtAX7RHIrga3xGeS9.jpg"
@@ -2597,8 +2606,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-812376133",
@@ -2618,7 +2627,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020016-mukhlat-asaeel-moabah-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/WPgSqqQPoWcDFBoA34FtCLrPJXl5IqCLffARvotf.jpg",
-    "image": "images/oudelite_812376133.jpg?v=a5c255bf",
+    "image": "images/oudelite_812376133.jpg?v=40c1c3c6",
     "originalImage": "https://cdn.salla.sa/wWORaV/WPgSqqQPoWcDFBoA34FtCLrPJXl5IqCLffARvotf.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/WPgSqqQPoWcDFBoA34FtCLrPJXl5IqCLffARvotf.jpg"
@@ -2649,8 +2658,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-826158919",
@@ -2701,8 +2710,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-829770626",
@@ -2722,7 +2732,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010182-al-sumou",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/yXCEWZN81asUH35lyvrxyM2W0sfsHnpdKvq1ZExE.jpg",
-    "image": "images/oudelite_829770626.jpg?v=d8a48013",
+    "image": "images/oudelite_829770626.jpg?v=cfff7180",
     "originalImage": "https://cdn.salla.sa/wWORaV/yXCEWZN81asUH35lyvrxyM2W0sfsHnpdKvq1ZExE.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/yXCEWZN81asUH35lyvrxyM2W0sfsHnpdKvq1ZExE.jpg"
@@ -2753,8 +2763,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-830409629",
@@ -2774,7 +2784,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010323-musk-to-musk-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Vnuaf0ex8qPCyTFLWk3eB6zxo4YvmPW6TMoDNuZB.jpg",
-    "image": "images/oudelite_830409629.jpg?v=fc8c94fd",
+    "image": "images/oudelite_830409629.jpg?v=eb6d8f95",
     "originalImage": "https://cdn.salla.sa/wWORaV/Vnuaf0ex8qPCyTFLWk3eB6zxo4YvmPW6TMoDNuZB.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Vnuaf0ex8qPCyTFLWk3eB6zxo4YvmPW6TMoDNuZB.jpg"
@@ -2805,8 +2815,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-835479757",
@@ -2826,7 +2836,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010209-kaian-ii",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/jFoy75z24zJ5w9TYVzUOeICX2zFv2y3jWN7nPGxx.jpg",
-    "image": "images/oudelite_835479757.jpg?v=de5d08d9",
+    "image": "images/oudelite_835479757.jpg?v=477bd639",
     "originalImage": "https://cdn.salla.sa/wWORaV/jFoy75z24zJ5w9TYVzUOeICX2zFv2y3jWN7nPGxx.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/jFoy75z24zJ5w9TYVzUOeICX2zFv2y3jWN7nPGxx.jpg"
@@ -2857,8 +2867,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-911446603",
@@ -2878,7 +2888,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020022-mukhlat-zhuq-moabah-14-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/NnI9gCP45aQSVHacnD9YjGlq0DDlmizUrLqWqmkK.jpg",
-    "image": "images/oudelite_911446603.jpg?v=0ac54604",
+    "image": "images/oudelite_911446603.jpg?v=aa0510f2",
     "originalImage": "https://cdn.salla.sa/wWORaV/NnI9gCP45aQSVHacnD9YjGlq0DDlmizUrLqWqmkK.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/NnI9gCP45aQSVHacnD9YjGlq0DDlmizUrLqWqmkK.jpg"
@@ -2909,8 +2919,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-925290837",
@@ -2961,8 +2971,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-928445508",
@@ -2983,7 +2994,7 @@
     "promotionTitle": "جديد",
     "url": "https://sa.oudelite.com/ar/E0301010329-solo-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/UU7mF4tE0pUx44h1Km0FtH1jPJdCPHP2xA5WTMsZ.jpg",
-    "image": "images/oudelite_928445508.jpg?v=5d83596d",
+    "image": "images/oudelite_928445508.jpg?v=bcbc1eea",
     "originalImage": "https://cdn.salla.sa/wWORaV/UU7mF4tE0pUx44h1Km0FtH1jPJdCPHP2xA5WTMsZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/UU7mF4tE0pUx44h1Km0FtH1jPJdCPHP2xA5WTMsZ.jpg"
@@ -3014,8 +3025,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-931003792",
@@ -3035,7 +3046,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010107-fares-al-jazeera",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/DALmXUIK0ZtD2AYnPzN7b4nlvPnlE8ICGClL6Zl9.jpg",
-    "image": "images/oudelite_931003792.jpg?v=02be27bb",
+    "image": "images/oudelite_931003792.jpg?v=3d79fa1a",
     "originalImage": "https://cdn.salla.sa/wWORaV/DALmXUIK0ZtD2AYnPzN7b4nlvPnlE8ICGClL6Zl9.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/DALmXUIK0ZtD2AYnPzN7b4nlvPnlE8ICGClL6Zl9.jpg"
@@ -3066,8 +3077,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-934550227",
@@ -3118,8 +3129,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-943524802",
@@ -3139,7 +3151,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010186-l-eau-bleue",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/63dVYLN4uS51VSjrrn0ZDpdtmU16Bf8F5FcGkn0O.jpg",
-    "image": "images/oudelite_943524802.jpg?v=d716be8a",
+    "image": "images/oudelite_943524802.jpg?v=b6d277b9",
     "originalImage": "https://cdn.salla.sa/wWORaV/63dVYLN4uS51VSjrrn0ZDpdtmU16Bf8F5FcGkn0O.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/63dVYLN4uS51VSjrrn0ZDpdtmU16Bf8F5FcGkn0O.jpg"
@@ -3170,8 +3182,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-947136525",
@@ -3191,7 +3203,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020010-musk-malaky-moabah-12-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/1w9e4F4H31FowFDVpRlDdVk5cJ5wSoywVqsUV4KO.jpg",
-    "image": "images/oudelite_947136525.jpg?v=77474bac",
+    "image": "images/oudelite_947136525.jpg?v=5ef28379",
     "originalImage": "https://cdn.salla.sa/wWORaV/1w9e4F4H31FowFDVpRlDdVk5cJ5wSoywVqsUV4KO.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/1w9e4F4H31FowFDVpRlDdVk5cJ5wSoywVqsUV4KO.jpg"
@@ -3222,8 +3234,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-958026123",
@@ -3243,7 +3255,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010225-riwayah-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/9AYnG0UoafwHW87106i1NofHwCBRUBg2ZGLvJWGX.png",
-    "image": "images/oudelite_958026123.jpg?v=2cfeb1f6",
+    "image": "images/oudelite_958026123.jpg?v=00e487be",
     "originalImage": "https://cdn.salla.sa/wWORaV/9AYnG0UoafwHW87106i1NofHwCBRUBg2ZGLvJWGX.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/9AYnG0UoafwHW87106i1NofHwCBRUBg2ZGLvJWGX.png"
@@ -3274,8 +3286,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-966161482",
@@ -3326,8 +3338,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-982279743",
@@ -3347,7 +3360,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010224-prime-blue",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/HbuteluU01237wK8XIloR0HWJnVWR9toOgtal0Rt.jpg",
-    "image": "images/oudelite_982279743.jpg?v=08962705",
+    "image": "images/oudelite_982279743.jpg?v=16e03f8d",
     "originalImage": "https://cdn.salla.sa/wWORaV/HbuteluU01237wK8XIloR0HWJnVWR9toOgtal0Rt.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/HbuteluU01237wK8XIloR0HWJnVWR9toOgtal0Rt.jpg"
@@ -3378,8 +3391,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-991145861",
@@ -3399,7 +3412,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010228-portrait-blue",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/ZIcjtRxsdogpkDTtaJ0sL6EtW2mXYDBMFPXpRp5U.png",
-    "image": "images/oudelite_991145861.jpg?v=9ef329d7",
+    "image": "images/oudelite_991145861.jpg?v=262ffedf",
     "originalImage": "https://cdn.salla.sa/wWORaV/ZIcjtRxsdogpkDTtaJ0sL6EtW2mXYDBMFPXpRp5U.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/ZIcjtRxsdogpkDTtaJ0sL6EtW2mXYDBMFPXpRp5U.png"
@@ -3430,8 +3443,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1001374276",
@@ -3482,8 +3495,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1032247214",
@@ -3585,8 +3599,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1042660816",
@@ -3606,7 +3621,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010125-elite-oud",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/3OjEhWQ9B96HTdzfFs5a1Vi8snmh36GJxSLOVKkL.jpg",
-    "image": "images/oudelite_1042660816.jpg?v=5eff150b",
+    "image": "images/oudelite_1042660816.jpg?v=5f770541",
     "originalImage": "https://cdn.salla.sa/wWORaV/3OjEhWQ9B96HTdzfFs5a1Vi8snmh36GJxSLOVKkL.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/3OjEhWQ9B96HTdzfFs5a1Vi8snmh36GJxSLOVKkL.jpg"
@@ -3637,8 +3652,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1048369683",
@@ -3658,7 +3673,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020013-dehan-oud-cambodian-fawwah-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/9F0RQmdIAuxi3uyYqeyRlaWuiipNDJoFlBcjfYw9.png",
-    "image": "images/oudelite_1048369683.jpg?v=b48c220b",
+    "image": "images/oudelite_1048369683.jpg?v=6600c764",
     "originalImage": "https://cdn.salla.sa/wWORaV/9F0RQmdIAuxi3uyYqeyRlaWuiipNDJoFlBcjfYw9.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/9F0RQmdIAuxi3uyYqeyRlaWuiipNDJoFlBcjfYw9.png"
@@ -3689,8 +3704,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1054372500",
@@ -3711,7 +3726,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010297-makarem-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/L5UjREO5BUsjEqlUe0Ba59Qt4srB1GsaMo2BWD2R.jpg",
-    "image": "images/oudelite_1054372500.jpg?v=e0b1d539",
+    "image": "images/oudelite_1054372500.jpg?v=593aeba4",
     "originalImage": "https://cdn.salla.sa/wWORaV/L5UjREO5BUsjEqlUe0Ba59Qt4srB1GsaMo2BWD2R.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/L5UjREO5BUsjEqlUe0Ba59Qt4srB1GsaMo2BWD2R.jpg"
@@ -3742,8 +3757,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1056290806",
@@ -3763,7 +3778,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010267-mashaeir-silver",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/VUD2bfimZeAWXtec05d9RSEtcN8pflqS44IYO629.jpg",
-    "image": "images/oudelite_1056290806.jpg?v=291f809c",
+    "image": "images/oudelite_1056290806.jpg?v=9ed0fbcf",
     "originalImage": "https://cdn.salla.sa/wWORaV/VUD2bfimZeAWXtec05d9RSEtcN8pflqS44IYO629.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/VUD2bfimZeAWXtec05d9RSEtcN8pflqS44IYO629.jpg"
@@ -3794,8 +3809,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1070087856",
@@ -3816,7 +3831,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010322-whisper-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/yuOzReduhCv85bPOseRnnlZHrEPnMRgkfQW6apaZ.jpg",
-    "image": "images/oudelite_1070087856.jpg?v=196da877",
+    "image": "images/oudelite_1070087856.jpg?v=f46e4551",
     "originalImage": "https://cdn.salla.sa/wWORaV/yuOzReduhCv85bPOseRnnlZHrEPnMRgkfQW6apaZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/yuOzReduhCv85bPOseRnnlZHrEPnMRgkfQW6apaZ.jpg"
@@ -3847,8 +3862,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1079915402",
@@ -3919,7 +3934,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010120-mashaer-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/psmn61lnh99MKKYil1lTfumOxsXyu7aik2ybRnAl.jpg",
-    "image": "images/oudelite_1083527381.jpg?v=623b6ccf",
+    "image": "images/oudelite_1083527381.jpg?v=bf76589e",
     "originalImage": "https://cdn.salla.sa/wWORaV/psmn61lnh99MKKYil1lTfumOxsXyu7aik2ybRnAl.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/psmn61lnh99MKKYil1lTfumOxsXyu7aik2ybRnAl.jpg"
@@ -3950,8 +3965,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1115544953",
@@ -3971,7 +3986,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010324-so-black-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/GlyAynU1bTf4oUxTvzwIbVRUuhv6eYcDgroykgQd.jpg",
-    "image": "images/oudelite_1115544953.jpg?v=0fcb84ad",
+    "image": "images/oudelite_1115544953.jpg?v=1f4556aa",
     "originalImage": "https://cdn.salla.sa/wWORaV/GlyAynU1bTf4oUxTvzwIbVRUuhv6eYcDgroykgQd.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/GlyAynU1bTf4oUxTvzwIbVRUuhv6eYcDgroykgQd.jpg"
@@ -4002,8 +4017,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1130558084",
@@ -4023,7 +4038,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020029-royal-cambodian-dehn-oud-packed-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/YuWqysgqFKabG9iTns7rNqPdqcEcBoNLUS1wargO.jpg",
-    "image": "images/oudelite_1130558084.jpg?v=1e167a91",
+    "image": "images/oudelite_1130558084.jpg?v=ab82767b",
     "originalImage": "https://cdn.salla.sa/wWORaV/YuWqysgqFKabG9iTns7rNqPdqcEcBoNLUS1wargO.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/YuWqysgqFKabG9iTns7rNqPdqcEcBoNLUS1wargO.jpg"
@@ -4054,8 +4069,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1133245576",
@@ -4075,7 +4090,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010227-elite-special-musk-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/4SM8DFxHr1kCx3SZNNhUA77ujaKl5j5fDYn561Zi.png",
-    "image": "images/oudelite_1133245576.jpg?v=d2373db5",
+    "image": "images/oudelite_1133245576.jpg?v=00613d17",
     "originalImage": "https://cdn.salla.sa/wWORaV/4SM8DFxHr1kCx3SZNNhUA77ujaKl5j5fDYn561Zi.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/4SM8DFxHr1kCx3SZNNhUA77ujaKl5j5fDYn561Zi.png"
@@ -4106,8 +4121,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1146001390",
@@ -4178,7 +4193,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010183-mystery",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/zJ4k8XrP4vbvp1bPvjaAJtbPpECM8mDgIYsJuOtX.jpg",
-    "image": "images/oudelite_1179051416.jpg?v=538fa5e9",
+    "image": "images/oudelite_1179051416.jpg?v=12dba49d",
     "originalImage": "https://cdn.salla.sa/wWORaV/zJ4k8XrP4vbvp1bPvjaAJtbPpECM8mDgIYsJuOtX.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/zJ4k8XrP4vbvp1bPvjaAJtbPpECM8mDgIYsJuOtX.jpg"
@@ -4209,8 +4224,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1184695003",
@@ -4230,7 +4245,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010149-qawafi-blak",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/K4bREYiSeGtkWZOCrWevyEiDyhAj4woLsMQDywm2.jpg",
-    "image": "images/oudelite_1184695003.jpg?v=72183d83",
+    "image": "images/oudelite_1184695003.jpg?v=928abc24",
     "originalImage": "https://cdn.salla.sa/wWORaV/K4bREYiSeGtkWZOCrWevyEiDyhAj4woLsMQDywm2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/K4bREYiSeGtkWZOCrWevyEiDyhAj4woLsMQDywm2.jpg"
@@ -4261,8 +4276,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1207405219",
@@ -4282,7 +4297,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010211-elite-crystal",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/tVZSAMlOb0oe3Py0qHQeip7h6mCa0jsDV8uhOEXO.jpg",
-    "image": "images/oudelite_1207405219.jpg?v=af92ff59",
+    "image": "images/oudelite_1207405219.jpg?v=fd9356fc",
     "originalImage": "https://cdn.salla.sa/wWORaV/tVZSAMlOb0oe3Py0qHQeip7h6mCa0jsDV8uhOEXO.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/tVZSAMlOb0oe3Py0qHQeip7h6mCa0jsDV8uhOEXO.jpg"
@@ -4313,8 +4328,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1219991709",
@@ -4334,7 +4349,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010147-elite-rose",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/xYnnVGvPLakp2maeD9IDwQFiqPceCzhAxMEZY8Bj.jpg",
-    "image": "images/oudelite_1219991709.jpg?v=6dd5c5a1",
+    "image": "images/oudelite_1219991709.jpg?v=adf26125",
     "originalImage": "https://cdn.salla.sa/wWORaV/xYnnVGvPLakp2maeD9IDwQFiqPceCzhAxMEZY8Bj.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/xYnnVGvPLakp2maeD9IDwQFiqPceCzhAxMEZY8Bj.jpg"
@@ -4365,8 +4380,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1229308443",
@@ -4386,7 +4401,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020021-old-cambodian-oud-oil-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/s7RskQjYdaV2eyOKd9fKxMjrN9fNHqvD3l7fqrZf.jpg",
-    "image": "images/oudelite_1229308443.jpg?v=edc64463",
+    "image": "images/oudelite_1229308443.jpg?v=1761fd69",
     "originalImage": "https://cdn.salla.sa/wWORaV/s7RskQjYdaV2eyOKd9fKxMjrN9fNHqvD3l7fqrZf.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/s7RskQjYdaV2eyOKd9fKxMjrN9fNHqvD3l7fqrZf.jpg"
@@ -4417,8 +4432,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1258746826",
@@ -4438,7 +4453,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010109-ajial",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/TbEkbtyWQSkQ3OqhvEG8IMZUiLhdoJukA8NnYON6.jpg",
-    "image": "images/oudelite_1258746826.jpg?v=e9d26d12",
+    "image": "images/oudelite_1258746826.jpg?v=47be9be0",
     "originalImage": "https://cdn.salla.sa/wWORaV/TbEkbtyWQSkQ3OqhvEG8IMZUiLhdoJukA8NnYON6.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/TbEkbtyWQSkQ3OqhvEG8IMZUiLhdoJukA8NnYON6.jpg"
@@ -4469,8 +4484,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1264390165",
@@ -4490,7 +4505,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020017-musk-al-nokhba-almalakii-moabah-1-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/hwHJqOYdi6xPi1IyPT8CEpR6WTAnWhRPCgcXH1j7.jpg",
-    "image": "images/oudelite_1264390165.jpg?v=d8f936f9",
+    "image": "images/oudelite_1264390165.jpg?v=a96e16eb",
     "originalImage": "https://cdn.salla.sa/wWORaV/hwHJqOYdi6xPi1IyPT8CEpR6WTAnWhRPCgcXH1j7.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/hwHJqOYdi6xPi1IyPT8CEpR6WTAnWhRPCgcXH1j7.jpg"
@@ -4521,8 +4536,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1268006224",
@@ -4542,7 +4557,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020023-mukhlat-zhuq-moabah-12-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/zIyAUhpTQA11LJJtK8gtRbSZTXER8rqserPcsppS.jpg",
-    "image": "images/oudelite_1268006224.jpg?v=88c5dd0a",
+    "image": "images/oudelite_1268006224.jpg?v=576f85a0",
     "originalImage": "https://cdn.salla.sa/wWORaV/zIyAUhpTQA11LJJtK8gtRbSZTXER8rqserPcsppS.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/zIyAUhpTQA11LJJtK8gtRbSZTXER8rqserPcsppS.jpg"
@@ -4573,8 +4588,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1274412815",
@@ -4595,7 +4610,7 @@
     "promotionTitle": "مستوى جديد من الجاذبية",
     "url": "https://sa.oudelite.com/ar/E0301010342-ليفل-100-مل-e0301010342",
     "bottleUrl": "https://cdn.files.salla.network/other/1934736234/3f6f1988-f310-484c-96de-878285f24afd-original.webp",
-    "image": "images/oudelite_1274412815.jpg?v=0528e67a",
+    "image": "images/oudelite_1274412815.jpg?v=06da547a",
     "originalImage": "https://cdn.files.salla.network/other/1934736234/3f6f1988-f310-484c-96de-878285f24afd-original.webp",
     "galleryImages": [
       "https://cdn.files.salla.network/other/1934736234/3f6f1988-f310-484c-96de-878285f24afd-original.webp"
@@ -4626,8 +4641,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1282400182",
@@ -4698,7 +4713,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010117-maani-andalusia",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/c94qcawtUbXv0KPIjuIKRUhVSPxo8iWq3mOevPD0.jpg",
-    "image": "images/oudelite_1286012145.jpg?v=820bb4b5",
+    "image": "images/oudelite_1286012145.jpg?v=e5a50bd5",
     "originalImage": "https://cdn.salla.sa/wWORaV/c94qcawtUbXv0KPIjuIKRUhVSPxo8iWq3mOevPD0.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/c94qcawtUbXv0KPIjuIKRUhVSPxo8iWq3mOevPD0.jpg"
@@ -4729,8 +4744,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1291655484",
@@ -4750,7 +4765,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010218-brave",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/rfxq7lBmVyEQkzwlp5ECKV40r0qZswkN7RQfc6kN.jpg",
-    "image": "images/oudelite_1291655484.jpg?v=bbfd2576",
+    "image": "images/oudelite_1291655484.jpg?v=47fa1682",
     "originalImage": "https://cdn.salla.sa/wWORaV/rfxq7lBmVyEQkzwlp5ECKV40r0qZswkN7RQfc6kN.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/rfxq7lBmVyEQkzwlp5ECKV40r0qZswkN7RQfc6kN.jpg"
@@ -4781,8 +4796,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1324701486",
@@ -4853,7 +4868,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010185-sadeen",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/D8yrH3ucwzrXLqAWVhwhOSxivocnYvCWg0uvFJOr.jpg",
-    "image": "images/oudelite_1355858085.jpg?v=8bbd4d22",
+    "image": "images/oudelite_1355858085.jpg?v=113de5a4",
     "originalImage": "https://cdn.salla.sa/wWORaV/D8yrH3ucwzrXLqAWVhwhOSxivocnYvCWg0uvFJOr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/D8yrH3ucwzrXLqAWVhwhOSxivocnYvCWg0uvFJOr.jpg"
@@ -4884,8 +4899,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1366173591",
@@ -4905,7 +4920,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010255-diwan-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/1PPBQASqyOumU50TAAZ7WAoXTwN0Egg8NqR3Tqy5.jpg",
-    "image": "images/oudelite_1366173591.jpg?v=d84aa658",
+    "image": "images/oudelite_1366173591.jpg?v=0609e178",
     "originalImage": "https://cdn.salla.sa/wWORaV/1PPBQASqyOumU50TAAZ7WAoXTwN0Egg8NqR3Tqy5.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/1PPBQASqyOumU50TAAZ7WAoXTwN0Egg8NqR3Tqy5.jpg"
@@ -4936,8 +4951,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1395080082",
@@ -4957,7 +4972,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010122-elite-bouquet",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/iqT41U1TTtJQar9uGUG1NbXycJ6UbmolhA2qdSRm.jpg",
-    "image": "images/oudelite_1395080082.jpg?v=9faf93e7",
+    "image": "images/oudelite_1395080082.jpg?v=649c86d4",
     "originalImage": "https://cdn.salla.sa/wWORaV/iqT41U1TTtJQar9uGUG1NbXycJ6UbmolhA2qdSRm.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/iqT41U1TTtJQar9uGUG1NbXycJ6UbmolhA2qdSRm.jpg"
@@ -4988,8 +5003,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1431662087",
@@ -5009,7 +5024,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010220-dream-pink",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/oqf3G675lVR2DyWkJephxQz86MQG1JE4YXsYvVZ1.jpg",
-    "image": "images/oudelite_1431662087.jpg?v=d7c7b46e",
+    "image": "images/oudelite_1431662087.jpg?v=9cd6c8ef",
     "originalImage": "https://cdn.salla.sa/wWORaV/oqf3G675lVR2DyWkJephxQz86MQG1JE4YXsYvVZ1.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/oqf3G675lVR2DyWkJephxQz86MQG1JE4YXsYvVZ1.jpg"
@@ -5040,8 +5055,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1437436738",
@@ -5061,7 +5076,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020018-asaeel-mukhallat-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/yQgLqNZAb6FSSx2wHuHtuMMwgvXaIX29wI4lSSMU.jpg",
-    "image": "images/oudelite_1437436738.jpg?v=f7136e96",
+    "image": "images/oudelite_1437436738.jpg?v=d1fa97b6",
     "originalImage": "https://cdn.salla.sa/wWORaV/yQgLqNZAb6FSSx2wHuHtuMMwgvXaIX29wI4lSSMU.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/yQgLqNZAb6FSSx2wHuHtuMMwgvXaIX29wI4lSSMU.jpg"
@@ -5092,8 +5107,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1457484459",
@@ -5215,7 +5230,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020015-dehan-oud-cambodian-fawwah-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/VU1X2Not5vliLQ0qpa2nkYQ5JpuhO7VGpxQfJgso.png",
-    "image": "images/oudelite_1512445981.jpg?v=82433d07",
+    "image": "images/oudelite_1512445981.jpg?v=b6885d1d",
     "originalImage": "https://cdn.salla.sa/wWORaV/VU1X2Not5vliLQ0qpa2nkYQ5JpuhO7VGpxQfJgso.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/VU1X2Not5vliLQ0qpa2nkYQ5JpuhO7VGpxQfJgso.png"
@@ -5246,8 +5261,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1516269441",
@@ -5268,7 +5283,7 @@
     "promotionTitle": "جديد",
     "url": "https://sa.oudelite.com/ar/E0301010328-lamar-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/lFnR5iUey4tOuZa29abSfCiP44j6s7S4n81QTXOG.jpg",
-    "image": "images/oudelite_1516269441.jpg?v=347289a7",
+    "image": "images/oudelite_1516269441.jpg?v=035050ec",
     "originalImage": "https://cdn.salla.sa/wWORaV/lFnR5iUey4tOuZa29abSfCiP44j6s7S4n81QTXOG.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/lFnR5iUey4tOuZa29abSfCiP44j6s7S4n81QTXOG.jpg"
@@ -5299,8 +5314,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1536721125",
@@ -5371,7 +5386,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010169-net",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/LRUYiSYS0ZjzNWKyaH1djIv6vrc5EBkNfkVvFywx.jpg",
-    "image": "images/oudelite_1540861216.jpg?v=d4617b7a",
+    "image": "images/oudelite_1540861216.jpg?v=36ed096c",
     "originalImage": "https://cdn.salla.sa/wWORaV/LRUYiSYS0ZjzNWKyaH1djIv6vrc5EBkNfkVvFywx.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/LRUYiSYS0ZjzNWKyaH1djIv6vrc5EBkNfkVvFywx.jpg"
@@ -5402,8 +5417,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1563986316",
@@ -5454,8 +5469,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1575352351",
@@ -5557,8 +5573,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1629130038",
@@ -5579,7 +5596,7 @@
     "promotionTitle": "جديد",
     "url": "https://sa.oudelite.com/ar/E0301010338-aura-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/OZIltf2M0kCHAQOP0CTlEgbxVKiNyPL0ACEgna7q.jpg",
-    "image": "images/oudelite_1629130038.jpg?v=bc795844",
+    "image": "images/oudelite_1629130038.jpg?v=6e2fc42b",
     "originalImage": "https://cdn.salla.sa/wWORaV/OZIltf2M0kCHAQOP0CTlEgbxVKiNyPL0ACEgna7q.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/OZIltf2M0kCHAQOP0CTlEgbxVKiNyPL0ACEgna7q.jpg"
@@ -5610,8 +5627,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1648836645",
@@ -5631,7 +5648,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010163-edge-silver",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/LBSy8uHkQ3eJarOyWk2pZcthFDfsQ16YYmycAeF9.jpg",
-    "image": "images/oudelite_1648836645.jpg?v=6edddca5",
+    "image": "images/oudelite_1648836645.jpg?v=69b07800",
     "originalImage": "https://cdn.salla.sa/wWORaV/LBSy8uHkQ3eJarOyWk2pZcthFDfsQ16YYmycAeF9.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/LBSy8uHkQ3eJarOyWk2pZcthFDfsQ16YYmycAeF9.jpg"
@@ -5662,8 +5679,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1658227107",
@@ -5683,7 +5700,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020030-ghawali-mukhallat-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/SQAMKKcd60wf8QeSnJl0WLjkwImv2yG4ZsLOIXOk.jpg",
-    "image": "images/oudelite_1658227107.jpg?v=45d875de",
+    "image": "images/oudelite_1658227107.jpg?v=e3a216c9",
     "originalImage": "https://cdn.salla.sa/wWORaV/SQAMKKcd60wf8QeSnJl0WLjkwImv2yG4ZsLOIXOk.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/SQAMKKcd60wf8QeSnJl0WLjkwImv2yG4ZsLOIXOk.jpg"
@@ -5714,8 +5731,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1676727784",
@@ -5786,7 +5803,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020011-musk-malaky-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/vT4ql6aBqDcgJ5sws72ieQPT43zsdqH1aPjIgWIA.jpg",
-    "image": "images/oudelite_1681806863.jpg?v=b31c87ec",
+    "image": "images/oudelite_1681806863.jpg?v=c8d888fc",
     "originalImage": "https://cdn.salla.sa/wWORaV/vT4ql6aBqDcgJ5sws72ieQPT43zsdqH1aPjIgWIA.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/vT4ql6aBqDcgJ5sws72ieQPT43zsdqH1aPjIgWIA.jpg"
@@ -5817,8 +5834,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1688652591",
@@ -5838,7 +5855,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020030-royal-cambodian-dehn-oud-packed-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/products/NjdXvAlWHstFJFgaGQsX7hxuT9UNYxskWEdlyTiw.jpg",
-    "image": "images/oudelite_1688652591.jpg?v=27d1e0a0",
+    "image": "images/oudelite_1688652591.jpg?v=7eccecd9",
     "originalImage": "https://cdn.salla.sa/wWORaV/products/NjdXvAlWHstFJFgaGQsX7hxuT9UNYxskWEdlyTiw.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/products/NjdXvAlWHstFJFgaGQsX7hxuT9UNYxskWEdlyTiw.jpg"
@@ -5869,8 +5886,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1703992983",
@@ -5973,8 +5990,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1743210956",
@@ -5994,7 +6012,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010208-kaian-i",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/HkCTcGF702xxSB0y6gZjJT5jn1Y6J7CtTOGeNPVJ.jpg",
-    "image": "images/oudelite_1743210956.jpg?v=07016c16",
+    "image": "images/oudelite_1743210956.jpg?v=41f9226d",
     "originalImage": "https://cdn.salla.sa/wWORaV/HkCTcGF702xxSB0y6gZjJT5jn1Y6J7CtTOGeNPVJ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/HkCTcGF702xxSB0y6gZjJT5jn1Y6J7CtTOGeNPVJ.jpg"
@@ -6025,8 +6043,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1755793214",
@@ -6046,7 +6064,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010223-prime-brown",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/4IyYdA4DqFT7Tc1Yuv9Qcq4u7xvRlSqhTNmoXePy.jpg",
-    "image": "images/oudelite_1755793214.jpg?v=7833b49b",
+    "image": "images/oudelite_1755793214.jpg?v=c9388b2e",
     "originalImage": "https://cdn.salla.sa/wWORaV/4IyYdA4DqFT7Tc1Yuv9Qcq4u7xvRlSqhTNmoXePy.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/4IyYdA4DqFT7Tc1Yuv9Qcq4u7xvRlSqhTNmoXePy.jpg"
@@ -6077,8 +6095,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1806283534",
@@ -6150,7 +6168,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010205-asaiel",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/QPgkkTroKT9HAv1KjHP9KdRALWW0jhnxQ5ZtCEjQ.jpg",
-    "image": "images/oudelite_1811968404.jpg?v=766a3ff7",
+    "image": "images/oudelite_1811968404.jpg?v=8b3e942e",
     "originalImage": "https://cdn.salla.sa/wWORaV/QPgkkTroKT9HAv1KjHP9KdRALWW0jhnxQ5ZtCEjQ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/QPgkkTroKT9HAv1KjHP9KdRALWW0jhnxQ5ZtCEjQ.jpg"
@@ -6181,8 +6199,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1817747159",
@@ -6202,7 +6220,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010123-elite-blend",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/xpNlDo84e1y79vjiZDDFX247vI6udtCPt8PDHujo.jpg",
-    "image": "images/oudelite_1817747159.jpg?v=62e9b490",
+    "image": "images/oudelite_1817747159.jpg?v=7f868522",
     "originalImage": "https://cdn.salla.sa/wWORaV/xpNlDo84e1y79vjiZDDFX247vI6udtCPt8PDHujo.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/xpNlDo84e1y79vjiZDDFX247vI6udtCPt8PDHujo.jpg"
@@ -6233,8 +6251,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1856964876",
@@ -6254,7 +6272,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0103020009-musk-malaky-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/JIgtnJzAJGj6Xh65Sz9Bdpkj0WmKFL4SSJri5B4n.jpg",
-    "image": "images/oudelite_1856964876.jpg?v=94512bfa",
+    "image": "images/oudelite_1856964876.jpg?v=459eadfe",
     "originalImage": "https://cdn.salla.sa/wWORaV/JIgtnJzAJGj6Xh65Sz9Bdpkj0WmKFL4SSJri5B4n.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/JIgtnJzAJGj6Xh65Sz9Bdpkj0WmKFL4SSJri5B4n.jpg"
@@ -6285,8 +6303,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1875081046",
@@ -6306,7 +6324,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010229-e0301010229-drops-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/products/dOprS9whgAioeDTEAsglCtzK0VJO6r1CiFEwspoB.jpg",
-    "image": "images/oudelite_1875081046.jpg?v=5525f6c9",
+    "image": "images/oudelite_1875081046.jpg?v=a1461b37",
     "originalImage": "https://cdn.salla.sa/wWORaV/products/dOprS9whgAioeDTEAsglCtzK0VJO6r1CiFEwspoB.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/products/dOprS9whgAioeDTEAsglCtzK0VJO6r1CiFEwspoB.jpg"
@@ -6337,8 +6355,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1888051899",
@@ -6389,8 +6407,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1926880752",
@@ -6410,7 +6429,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010106-autumn-leaves",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/dUwIj1DtQFAvHJUHgfMxf9kW8Bv34pH9cE0zlURY.jpg",
-    "image": "images/oudelite_1926880752.jpg?v=9b337763",
+    "image": "images/oudelite_1926880752.jpg?v=0ac426f8",
     "originalImage": "https://cdn.salla.sa/wWORaV/dUwIj1DtQFAvHJUHgfMxf9kW8Bv34pH9cE0zlURY.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/dUwIj1DtQFAvHJUHgfMxf9kW8Bv34pH9cE0zlURY.jpg"
@@ -6441,8 +6460,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1948432988",
@@ -6493,8 +6512,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-1963917413",
@@ -6514,7 +6534,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020023-elite-cambodian-oud-oil-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/sASsLw8upgw1YNx1xYdq2iFNGVhmx62sDLfDaYLW.jpg",
-    "image": "images/oudelite_1963917413.jpg?v=f9c08e46",
+    "image": "images/oudelite_1963917413.jpg?v=8a2c1568",
     "originalImage": "https://cdn.salla.sa/wWORaV/sASsLw8upgw1YNx1xYdq2iFNGVhmx62sDLfDaYLW.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/sASsLw8upgw1YNx1xYdq2iFNGVhmx62sDLfDaYLW.jpg"
@@ -6545,8 +6565,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1967533216",
@@ -6566,7 +6586,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020028-ghawali-mukhallat-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/xfxpwtpWd35xJEv2DDBShSzauuI76K99lNjsk6mz.jpg",
-    "image": "images/oudelite_1967533216.jpg?v=b910a85e",
+    "image": "images/oudelite_1967533216.jpg?v=55f1bb04",
     "originalImage": "https://cdn.salla.sa/wWORaV/xfxpwtpWd35xJEv2DDBShSzauuI76K99lNjsk6mz.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/xfxpwtpWd35xJEv2DDBShSzauuI76K99lNjsk6mz.jpg"
@@ -6597,8 +6617,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2006353821",
@@ -6618,7 +6638,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010230-portrait-red",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/1XDp5Q8Mt3mNEIgdQhhOtMLMlEd7uvpYPw84HZZ1.png",
-    "image": "images/oudelite_2006353821.jpg?v=ff012bb2",
+    "image": "images/oudelite_2006353821.jpg?v=c948fa8b",
     "originalImage": "https://cdn.salla.sa/wWORaV/1XDp5Q8Mt3mNEIgdQhhOtMLMlEd7uvpYPw84HZZ1.png",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/1XDp5Q8Mt3mNEIgdQhhOtMLMlEd7uvpYPw84HZZ1.png"
@@ -6649,8 +6669,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2016836317",
@@ -6702,8 +6722,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-2024516419",
@@ -6754,8 +6775,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-2033833161",
@@ -6775,7 +6797,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010103-fatma",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Eqd3BCoHoCFYMPYIUhhIZQVd2J7SaHSJsOCPDLpt.jpg",
-    "image": "images/oudelite_2033833161.jpg?v=2716e25a",
+    "image": "images/oudelite_2033833161.jpg?v=3235c2ba",
     "originalImage": "https://cdn.salla.sa/wWORaV/Eqd3BCoHoCFYMPYIUhhIZQVd2J7SaHSJsOCPDLpt.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Eqd3BCoHoCFYMPYIUhhIZQVd2J7SaHSJsOCPDLpt.jpg"
@@ -6806,8 +6828,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2043616855",
@@ -6827,7 +6849,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0102020024-mukhallat-zhuq-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/uPAMNAFjJThiZ34sjwQpvPnEDC34vHRHaVc1xM9t.jpg",
-    "image": "images/oudelite_2043616855.jpg?v=373d26f7",
+    "image": "images/oudelite_2043616855.jpg?v=6cc94cd7",
     "originalImage": "https://cdn.salla.sa/wWORaV/uPAMNAFjJThiZ34sjwQpvPnEDC34vHRHaVc1xM9t.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/uPAMNAFjJThiZ34sjwQpvPnEDC34vHRHaVc1xM9t.jpg"
@@ -6858,8 +6880,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2114337426",
@@ -6879,7 +6901,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010226-gawhara",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/NM8X69o6lZMqxmx1e30nk8DV6FNANp3n16GtG5aK.jpg",
-    "image": "images/oudelite_2114337426.jpg?v=d331c7f4",
+    "image": "images/oudelite_2114337426.jpg?v=774f4668",
     "originalImage": "https://cdn.salla.sa/wWORaV/NM8X69o6lZMqxmx1e30nk8DV6FNANp3n16GtG5aK.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/NM8X69o6lZMqxmx1e30nk8DV6FNANp3n16GtG5aK.jpg"
@@ -6910,8 +6932,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2123521361",
@@ -6931,7 +6953,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010154-double-black",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/KR7BscKursDOOXjzSueSG01NRdqydkn2iHEZOcE7.jpg",
-    "image": "images/oudelite_2123521361.jpg?v=6f1b3d97",
+    "image": "images/oudelite_2123521361.jpg?v=9f3b0498",
     "originalImage": "https://cdn.salla.sa/wWORaV/KR7BscKursDOOXjzSueSG01NRdqydkn2iHEZOcE7.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/KR7BscKursDOOXjzSueSG01NRdqydkn2iHEZOcE7.jpg"
@@ -6962,8 +6984,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2129230236",
@@ -6983,7 +7005,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010133-twin-black",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/qaBUsZJHehUrh0Q84XFpgbzGaTJWRFpIkwbDsvR8.jpg",
-    "image": "images/oudelite_2129230236.jpg?v=78bd2a2f",
+    "image": "images/oudelite_2129230236.jpg?v=c9bb5316",
     "originalImage": "https://cdn.salla.sa/wWORaV/qaBUsZJHehUrh0Q84XFpgbzGaTJWRFpIkwbDsvR8.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/qaBUsZJHehUrh0Q84XFpgbzGaTJWRFpIkwbDsvR8.jpg"
@@ -7014,8 +7036,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-2138612506",
@@ -7035,7 +7057,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0101020020-dihn-oud-cambodi-qadeem-moabah-12-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/9bSZ1UHnWbHi9IBmhzhw39Um65Xc5txYBh2GmG5N.jpg",
-    "image": "images/oudelite_2138612506.jpg?v=1cd7fa8d",
+    "image": "images/oudelite_2138612506.jpg?v=526dc1fa",
     "originalImage": "https://cdn.salla.sa/wWORaV/9bSZ1UHnWbHi9IBmhzhw39Um65Xc5txYBh2GmG5N.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/9bSZ1UHnWbHi9IBmhzhw39Um65Xc5txYBh2GmG5N.jpg"
@@ -7066,8 +7088,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-17035350",
@@ -7087,7 +7109,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010146-couture-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Kxe4VKOH1TnwRiu4ym2lufHJ0TH9hOvgZbCP6izd.jpg",
-    "image": "images/oudelite_17035350.jpg?v=783ecbdf",
+    "image": "images/oudelite_17035350.jpg?v=915b529c",
     "originalImage": "https://cdn.salla.sa/wWORaV/Kxe4VKOH1TnwRiu4ym2lufHJ0TH9hOvgZbCP6izd.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Kxe4VKOH1TnwRiu4ym2lufHJ0TH9hOvgZbCP6izd.jpg"
@@ -7118,8 +7140,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-22682769",
@@ -7139,7 +7161,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010113-dalaa",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/nUpIPblC03tuWQDlLHFKc0huheBW9l7x1DPgSw6W.jpg",
-    "image": "images/oudelite_22682769.jpg?v=b86c7e02",
+    "image": "images/oudelite_22682769.jpg?v=b07eca61",
     "originalImage": "https://cdn.salla.sa/wWORaV/nUpIPblC03tuWQDlLHFKc0huheBW9l7x1DPgSw6W.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/nUpIPblC03tuWQDlLHFKc0huheBW9l7x1DPgSw6W.jpg"
@@ -7170,8 +7192,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-26294748",
@@ -7191,7 +7213,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010136-he",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/f0X7yvPLstoiJSGG4K54jSUw5UJfLFDJRTS6wdLS.jpg",
-    "image": "images/oudelite_26294748.jpg?v=47b7360f",
+    "image": "images/oudelite_26294748.jpg?v=c30a7b39",
     "originalImage": "https://cdn.salla.sa/wWORaV/f0X7yvPLstoiJSGG4K54jSUw5UJfLFDJRTS6wdLS.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/f0X7yvPLstoiJSGG4K54jSUw5UJfLFDJRTS6wdLS.jpg"
@@ -7222,8 +7244,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-61437902",
@@ -7345,7 +7367,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/p119992962-باشن-100-مل",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg",
-    "image": "images/oudelite_119992962.jpg?v=b4ff92ac",
+    "image": "images/oudelite_119992962.jpg?v=4584d43c",
     "originalImage": "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg"
@@ -7376,8 +7398,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-121818855",
@@ -7479,8 +7501,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-359981381",
@@ -7551,7 +7574,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010285-ايدج-ذهبي-100-مل",
     "bottleUrl": "https://cdn.files.salla.network/other/1934736234/78ab27e4-63de-47a1-a6ff-79b77cd3d9f5-original.webp",
-    "image": "images/oudelite_368934140.jpg?v=35d00073",
+    "image": "images/oudelite_368934140.jpg?v=601d96f7",
     "originalImage": "https://cdn.files.salla.network/other/1934736234/78ab27e4-63de-47a1-a6ff-79b77cd3d9f5-original.webp",
     "galleryImages": [
       "https://cdn.files.salla.network/other/1934736234/78ab27e4-63de-47a1-a6ff-79b77cd3d9f5-original.webp"
@@ -7582,8 +7605,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-375575338",
@@ -7685,8 +7708,9 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "oudelite-521225592",
@@ -7706,7 +7730,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0103020014-musk-dam-al-ghazal-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/MqmrFbMYiS3TIgn9sRLKG9hj6QSUP3H1Teh3G0mz.jpg",
-    "image": "images/oudelite_521225592.jpg?v=810440af",
+    "image": "images/oudelite_521225592.jpg?v=694410ed",
     "originalImage": "https://cdn.salla.sa/wWORaV/MqmrFbMYiS3TIgn9sRLKG9hj6QSUP3H1Teh3G0mz.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/MqmrFbMYiS3TIgn9sRLKG9hj6QSUP3H1Teh3G0mz.jpg"
@@ -7737,8 +7761,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-586419425",
@@ -7809,7 +7833,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0102020019-sheikha-mukhallat-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg",
-    "image": "images/oudelite_663398979.jpg?v=0ac54604",
+    "image": "images/oudelite_663398979.jpg?v=aa0510f2",
     "originalImage": "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg"
@@ -7840,8 +7864,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-733707831",
@@ -7963,7 +7987,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010134-twin-pink",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/keWdYGH3dwLv6s7b9fsex8nyRgEiCErzExduyZE3.jpg",
-    "image": "images/oudelite_976574972.jpg?v=04ba2dae",
+    "image": "images/oudelite_976574972.jpg?v=2aeeb455",
     "originalImage": "https://cdn.salla.sa/wWORaV/keWdYGH3dwLv6s7b9fsex8nyRgEiCErzExduyZE3.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/keWdYGH3dwLv6s7b9fsex8nyRgEiCErzExduyZE3.jpg"
@@ -7994,8 +8018,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1321093859",
@@ -8066,7 +8090,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010128-liyali",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/7fCcClFkjRouyLvZFPWTsklz0SYhNs6VcIxNfnQN.jpg",
-    "image": "images/oudelite_1422337209.jpg?v=9af1d81b",
+    "image": "images/oudelite_1422337209.jpg?v=d8c56717",
     "originalImage": "https://cdn.salla.sa/wWORaV/7fCcClFkjRouyLvZFPWTsklz0SYhNs6VcIxNfnQN.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/7fCcClFkjRouyLvZFPWTsklz0SYhNs6VcIxNfnQN.jpg"
@@ -8097,8 +8121,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1461166070",
@@ -8169,7 +8193,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010216-mashaer-musk",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/5nQUCbM8mBnKysf4nmhaSNvlIHOjVyTfx9gkbvvU.jpg",
-    "image": "images/oudelite_1466874929.jpg?v=f8815d44",
+    "image": "images/oudelite_1466874929.jpg?v=ab4fd7dc",
     "originalImage": "https://cdn.salla.sa/wWORaV/5nQUCbM8mBnKysf4nmhaSNvlIHOjVyTfx9gkbvvU.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/5nQUCbM8mBnKysf4nmhaSNvlIHOjVyTfx9gkbvvU.jpg"
@@ -8200,8 +8224,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1470486908",
@@ -8221,7 +8245,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0103020012-musk-dam-al-ghazal-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Ygct80BQUcesL9McErVhDX3Du5UtKkFkNRngxJ6z.jpg",
-    "image": "images/oudelite_1470486908.jpg?v=625d4518",
+    "image": "images/oudelite_1470486908.jpg?v=42128c6a",
     "originalImage": "https://cdn.salla.sa/wWORaV/Ygct80BQUcesL9McErVhDX3Du5UtKkFkNRngxJ6z.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Ygct80BQUcesL9McErVhDX3Du5UtKkFkNRngxJ6z.jpg"
@@ -8252,8 +8276,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1507745590",
@@ -8324,7 +8348,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0101020026-amber-fakher-moabah-12-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg",
-    "image": "images/oudelite_1518151000.jpg?v=6304bc58",
+    "image": "images/oudelite_1518151000.jpg?v=ed8a43de",
     "originalImage": "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg"
@@ -8355,7 +8379,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1558211905",
@@ -8375,7 +8399,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010096-c-style-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/E0aFrpryvWCENfiDvNbZRWOVvXkvltJXsveZDeYL.jpg",
-    "image": "images/oudelite_1558211905.jpg?v=f509816b",
+    "image": "images/oudelite_1558211905.jpg?v=6f464aad",
     "originalImage": "https://cdn.salla.sa/wWORaV/E0aFrpryvWCENfiDvNbZRWOVvXkvltJXsveZDeYL.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/E0aFrpryvWCENfiDvNbZRWOVvXkvltJXsveZDeYL.jpg"
@@ -8406,8 +8430,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1568118479",
@@ -8580,7 +8604,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0102020021-sheikha-mukhallat-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg",
-    "image": "images/oudelite_1685418826.jpg?v=71b34a68",
+    "image": "images/oudelite_1685418826.jpg?v=0ef923cf",
     "originalImage": "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg"
@@ -8611,8 +8635,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1720631620",
@@ -8632,7 +8656,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0102020015-khaleeji-mukhallat-1-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg",
-    "image": "images/oudelite_1720631620.jpg?v=71b34a68",
+    "image": "images/oudelite_1720631620.jpg?v=0ef923cf",
     "originalImage": "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/pmHNwtdnQ53DIl3oEgjCqtit6FR8c27gvvIjQ7UT.jpg"
@@ -8663,7 +8687,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1739074689",
@@ -8683,7 +8707,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010179-marron",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/TWIMVwsr9zfTdHlgIWqgoof3xEGH4IkGD856p3b1.jpg",
-    "image": "images/oudelite_1739074689.jpg?v=6a2a4e42",
+    "image": "images/oudelite_1739074689.jpg?v=bfe806b2",
     "originalImage": "https://cdn.salla.sa/wWORaV/TWIMVwsr9zfTdHlgIWqgoof3xEGH4IkGD856p3b1.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/TWIMVwsr9zfTdHlgIWqgoof3xEGH4IkGD856p3b1.jpg"
@@ -8714,8 +8738,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1761502329",
@@ -8735,7 +8759,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0102020013-khaleeji-mukhallat-14-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg",
-    "image": "images/oudelite_1761502329.jpg?v=0ac54604",
+    "image": "images/oudelite_1761502329.jpg?v=aa0510f2",
     "originalImage": "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/3Iw9ZBYXFMti5xDBNV7Tz2dfoFfXRErZrYMer5iF.jpg"
@@ -8766,7 +8790,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1781099426",
@@ -8786,7 +8810,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010210-passion",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg",
-    "image": "images/oudelite_1781099426.jpg?v=b4ff92ac",
+    "image": "images/oudelite_1781099426.jpg?v=4584d43c",
     "originalImage": "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Td2bU5tDA7n17EBlTFsQSdVZShUYOofLua4S9gRZ.jpg"
@@ -8817,8 +8841,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1784776941",
@@ -8991,7 +9015,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010164-antik-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/VSjGM1eFs7tMZXDpeG3CRjTyCdpJrQwJBM6jVljX.jpg",
-    "image": "images/oudelite_1891733446.jpg?v=caa799ac",
+    "image": "images/oudelite_1891733446.jpg?v=3e8981e3",
     "originalImage": "https://cdn.salla.sa/wWORaV/VSjGM1eFs7tMZXDpeG3CRjTyCdpJrQwJBM6jVljX.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/VSjGM1eFs7tMZXDpeG3CRjTyCdpJrQwJBM6jVljX.jpg"
@@ -9022,8 +9046,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1897442305",
@@ -9043,7 +9067,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010221-dream-vanilla",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/I1bDJfESsr4D6ARfhViBnRfZmUynrh2dJiMlWvPy.jpg",
-    "image": "images/oudelite_1897442305.jpg?v=a922c92e",
+    "image": "images/oudelite_1897442305.jpg?v=537b5010",
     "originalImage": "https://cdn.salla.sa/wWORaV/I1bDJfESsr4D6ARfhViBnRfZmUynrh2dJiMlWvPy.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/I1bDJfESsr4D6ARfhViBnRfZmUynrh2dJiMlWvPy.jpg"
@@ -9074,8 +9098,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1901578572",
@@ -9095,7 +9119,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0102020020-sheikha-mukhallat-12-tola",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/pdYsI5A0sVEc5p7tjYkcDljRVhUIQIUoVljXuUIY.jpg",
-    "image": "images/oudelite_1901578572.jpg?v=2389aaaa",
+    "image": "images/oudelite_1901578572.jpg?v=6a95b229",
     "originalImage": "https://cdn.salla.sa/wWORaV/pdYsI5A0sVEc5p7tjYkcDljRVhUIQIUoVljXuUIY.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/pdYsI5A0sVEc5p7tjYkcDljRVhUIQIUoVljXuUIY.jpg"
@@ -9126,8 +9150,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1936656254",
@@ -9147,7 +9171,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0103020013-musk-dam-al-ghazal-moabah-12-tol",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg",
-    "image": "images/oudelite_1936656254.jpg?v=6304bc58",
+    "image": "images/oudelite_1936656254.jpg?v=ed8a43de",
     "originalImage": "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/TIbQ5g8smYUSv2dYQVrud3JW74vfMCJxtUVUteYl.jpg"
@@ -9178,8 +9202,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1962440179",
@@ -9199,7 +9223,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010312-مشاعر-مسك-100-مل",
     "bottleUrl": "https://cdn.files.salla.network/other/1934736234/bb12fd3f-4572-4ebe-9c08-073b2f306aa4-original.webp",
-    "image": "images/oudelite_1962440179.jpg?v=03d51da4",
+    "image": "images/oudelite_1962440179.jpg?v=14b24936",
     "originalImage": "https://cdn.files.salla.network/other/1934736234/bb12fd3f-4572-4ebe-9c08-073b2f306aa4-original.webp",
     "galleryImages": [
       "https://cdn.files.salla.network/other/1934736234/bb12fd3f-4572-4ebe-9c08-073b2f306aa4-original.webp"
@@ -9230,8 +9254,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   },
   {
     "id": "oudelite-1987122313",
@@ -9302,7 +9326,7 @@
     "status": "out",
     "url": "https://sa.oudelite.com/ar/E0301010157-duo-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/Gd3ARn3M6RR19kUBEQiFHwMUmFZYceaHeGtlmnxe.jpg",
-    "image": "images/oudelite_2066817787.jpg?v=30aaaa14",
+    "image": "images/oudelite_2066817787.jpg?v=61ef35b2",
     "originalImage": "https://cdn.salla.sa/wWORaV/Gd3ARn3M6RR19kUBEQiFHwMUmFZYceaHeGtlmnxe.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/Gd3ARn3M6RR19kUBEQiFHwMUmFZYceaHeGtlmnxe.jpg"
@@ -9333,7 +9357,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true,
-    "saleEndsAt": "2026-10-31T23:59:59.000Z"
+    "saleEndsAt": "2026-10-31T23:59:59.000Z",
+    "imageLayout": "showcase"
   }
 ]

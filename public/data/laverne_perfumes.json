@@ -8398,7 +8398,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/gyXEmEw",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/nRCWsqGK6uhBAxuS85VkLP2G0BgsWngBVoXBnGHT.jpg",
-    "image": "images/laverne_gyXEmEw.jpg?v=18636ff7",
+    "image": "images/laverne_gyXEmEw.jpg?v=92e3d261",
     "originalImage": "https://cdn.salla.sa/XzOPD/nRCWsqGK6uhBAxuS85VkLP2G0BgsWngBVoXBnGHT.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/nRCWsqGK6uhBAxuS85VkLP2G0BgsWngBVoXBnGHT.jpg"
@@ -8429,7 +8429,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-vAaPmjG",
@@ -8450,7 +8450,7 @@
     "promotionTitle": "سعر خاص لأول 5000 عميل",
     "url": "https://laverne.com/ar/vAaPmjG",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/vU1LtC2K4WgeStLgMW34IRTSxlmkLQeCQpHhQz6h.jpg",
-    "image": "images/laverne_vAaPmjG.jpg?v=8bbe35c9",
+    "image": "images/laverne_vAaPmjG.jpg?v=acf34384",
     "originalImage": "https://cdn.salla.sa/XzOPD/vU1LtC2K4WgeStLgMW34IRTSxlmkLQeCQpHhQz6h.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/vU1LtC2K4WgeStLgMW34IRTSxlmkLQeCQpHhQz6h.jpg"
@@ -8481,7 +8481,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-zvzbXNE",
@@ -8501,7 +8501,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/zvzbXNE",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/exZi1tzXlvsVIeYwliCQ21sNWc0KTWCOL4CYas3s.jpg",
-    "image": "images/laverne_zvzbXNE.jpg?v=b84c58be",
+    "image": "images/laverne_zvzbXNE.jpg?v=a41cf323",
     "originalImage": "https://cdn.salla.sa/XzOPD/exZi1tzXlvsVIeYwliCQ21sNWc0KTWCOL4CYas3s.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/exZi1tzXlvsVIeYwliCQ21sNWc0KTWCOL4CYas3s.jpg"
@@ -8532,7 +8532,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-NAqYbln",
@@ -8760,7 +8760,7 @@
     "promotionTitle": "خوخ - ورد - مسك",
     "url": "https://laverne.com/ar/wAOxbBD",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/ERnv5jyF7sxs7gTz6blw0ydkg2ztsUuYToRaFyf4.jpg",
-    "image": "images/laverne_wAOxbBD.jpg?v=7f64a1c7",
+    "image": "images/laverne_wAOxbBD.jpg?v=9fd34bac",
     "originalImage": "https://cdn.salla.sa/XzOPD/ERnv5jyF7sxs7gTz6blw0ydkg2ztsUuYToRaFyf4.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/ERnv5jyF7sxs7gTz6blw0ydkg2ztsUuYToRaFyf4.jpg"
@@ -8791,7 +8791,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-ydQnZOz",
@@ -8811,7 +8811,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/ydQnZOz",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/mzvGeitiEyURWGmBEH3KBF8nqRZXJx0aRKZQoOfu.jpg",
-    "image": "images/laverne_ydQnZOz_v2.jpg?v=f900572a",
+    "image": "images/laverne_ydQnZOz_v2.jpg?v=c020bb13",
     "originalImage": "https://cdn.salla.sa/XzOPD/mzvGeitiEyURWGmBEH3KBF8nqRZXJx0aRKZQoOfu.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/mzvGeitiEyURWGmBEH3KBF8nqRZXJx0aRKZQoOfu.jpg"
@@ -8842,7 +8842,7 @@
     },
     "categoryType": "mini",
     "subCategory": "mini",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-XegqoOV",
@@ -8862,7 +8862,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/XegqoOV",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/DAA2aasOgQczgBxNxWCSks3QIh0wZxkIqnGaOVIu.jpg",
-    "image": "images/laverne_XegqoOV_v2.jpg?v=25ea046d",
+    "image": "images/laverne_XegqoOV_v2.jpg?v=2eb7cb58",
     "originalImage": "https://cdn.salla.sa/XzOPD/DAA2aasOgQczgBxNxWCSks3QIh0wZxkIqnGaOVIu.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/DAA2aasOgQczgBxNxWCSks3QIh0wZxkIqnGaOVIu.jpg"
@@ -8893,7 +8893,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KROYrDE",
@@ -8964,7 +8964,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/OqyebEY",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/LDPN9awnKezb5gMM3ig7BKIh8AWq3z4kgUnxzLhD.jpg",
-    "image": "images/laverne_OqyebEY.jpg?v=75273d98",
+    "image": "images/laverne_OqyebEY.jpg?v=be1d3325",
     "originalImage": "https://cdn.salla.sa/XzOPD/LDPN9awnKezb5gMM3ig7BKIh8AWq3z4kgUnxzLhD.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/LDPN9awnKezb5gMM3ig7BKIh8AWq3z4kgUnxzLhD.jpg"
@@ -8995,7 +8995,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-xAOyKYe",
@@ -9015,7 +9015,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/xAOyKYe",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/dcg52PmSzNsoFv3inhzZSfeQptHuZfiIqFv3oTxh.jpg",
-    "image": "images/laverne_xAOyKYe.jpg?v=9b3c71fc",
+    "image": "images/laverne_xAOyKYe.jpg?v=9b414bcd",
     "originalImage": "https://cdn.salla.sa/XzOPD/dcg52PmSzNsoFv3inhzZSfeQptHuZfiIqFv3oTxh.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/dcg52PmSzNsoFv3inhzZSfeQptHuZfiIqFv3oTxh.jpg"
@@ -9046,7 +9046,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-DpEdGnG",
@@ -9067,7 +9067,7 @@
     "promotionTitle": "مسكٌ يشبه بشرتك",
     "url": "https://laverne.com/ar/DpEdGnG",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/vKLd88TL9aN711KCedNfSUjBWaXFE1blOiFzQEj6.jpg",
-    "image": "images/laverne_DpEdGnG.jpg?v=49535be2",
+    "image": "images/laverne_DpEdGnG.jpg?v=ebf15e13",
     "originalImage": "https://cdn.salla.sa/XzOPD/vKLd88TL9aN711KCedNfSUjBWaXFE1blOiFzQEj6.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/vKLd88TL9aN711KCedNfSUjBWaXFE1blOiFzQEj6.jpg"
@@ -9098,7 +9098,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-bRwGnDP",
@@ -9118,7 +9118,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/bRwGnDP",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/GERuOYpBrJfGaHymNdKol0mACi594RMLfhePaUg1.jpg",
-    "image": "images/laverne_bRwGnDP_v2.jpg?v=41079fc6",
+    "image": "images/laverne_bRwGnDP_v2.jpg?v=0effd4e3",
     "originalImage": "https://cdn.salla.sa/XzOPD/GERuOYpBrJfGaHymNdKol0mACi594RMLfhePaUg1.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/GERuOYpBrJfGaHymNdKol0mACi594RMLfhePaUg1.jpg"
@@ -9149,7 +9149,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-RvxgXKj",
@@ -9272,7 +9272,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/xvBwbgK",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/tgRczbV3SHQw2RoazwGWIksMcVQGiYJdRsLkP1Dr.jpg",
-    "image": "images/laverne_xvBwbgK.jpg?v=1f9f6869",
+    "image": "images/laverne_xvBwbgK.jpg?v=d7796e0a",
     "originalImage": "https://cdn.salla.sa/XzOPD/tgRczbV3SHQw2RoazwGWIksMcVQGiYJdRsLkP1Dr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/tgRczbV3SHQw2RoazwGWIksMcVQGiYJdRsLkP1Dr.jpg"
@@ -9303,7 +9303,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-rRXpOAX",
@@ -9479,7 +9479,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/lGzErrA",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/INmiJo2B7X3UZ3yf6Kum7I3QsSwcCAGfTy1J2Lue.jpg",
-    "image": "images/laverne_lGzErrA.jpg?v=08f719f3",
+    "image": "images/laverne_lGzErrA.jpg?v=b4112e01",
     "originalImage": "https://cdn.salla.sa/XzOPD/INmiJo2B7X3UZ3yf6Kum7I3QsSwcCAGfTy1J2Lue.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/INmiJo2B7X3UZ3yf6Kum7I3QsSwcCAGfTy1J2Lue.jpg"
@@ -9510,7 +9510,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-ABaqDQY",
@@ -9735,7 +9735,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/ePQoVwq",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/Y3epsDf8Gjch1wC81x6zSmBvbNdO2kPQOAoVH5Lz.jpg",
-    "image": "images/laverne_ePQoVwq_v2.jpg?v=714a7f06",
+    "image": "images/laverne_ePQoVwq_v2.jpg?v=15210acf",
     "originalImage": "https://cdn.salla.sa/XzOPD/Y3epsDf8Gjch1wC81x6zSmBvbNdO2kPQOAoVH5Lz.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/Y3epsDf8Gjch1wC81x6zSmBvbNdO2kPQOAoVH5Lz.jpg"
@@ -9766,7 +9766,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-GqdDlNW",
@@ -9889,7 +9889,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/xjojVg",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/7io7Qg1eY6IphZ6GfGTiaJxMyRaEKljNhi9qkaZR.jpg",
-    "image": "images/laverne_xjojVg.jpg?v=ec91509a",
+    "image": "images/laverne_xjojVg.jpg?v=2f4007d2",
     "originalImage": "https://cdn.salla.sa/XzOPD/7io7Qg1eY6IphZ6GfGTiaJxMyRaEKljNhi9qkaZR.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/7io7Qg1eY6IphZ6GfGTiaJxMyRaEKljNhi9qkaZR.jpg"
@@ -9920,7 +9920,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-dbZjXDp",
@@ -9941,7 +9941,7 @@
     "promotionTitle": "عرض اليوم",
     "url": "https://laverne.com/ar/dbZjXDp",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/g6GfevKFJN8EY4S9gmPFNmfVCGxwE0ZArkvptP0U.jpg",
-    "image": "images/laverne_dbZjXDp_v2.jpg?v=a467743b",
+    "image": "images/laverne_dbZjXDp_v2.jpg?v=c5fe253a",
     "originalImage": "https://cdn.salla.sa/XzOPD/g6GfevKFJN8EY4S9gmPFNmfVCGxwE0ZArkvptP0U.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/g6GfevKFJN8EY4S9gmPFNmfVCGxwE0ZArkvptP0U.jpg"
@@ -9972,7 +9972,7 @@
     },
     "categoryType": "mini",
     "subCategory": "mini",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-QzDqQlY",
@@ -10043,7 +10043,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/mZQKyZo",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/mWkfhTAyNrPwT9Kq9kaX6RjUehgEEovIo97ap4oV.jpg",
-    "image": "images/laverne_mZQKyZo.jpg?v=722c3200",
+    "image": "images/laverne_mZQKyZo.jpg?v=5301768c",
     "originalImage": "https://cdn.salla.sa/XzOPD/mWkfhTAyNrPwT9Kq9kaX6RjUehgEEovIo97ap4oV.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/mWkfhTAyNrPwT9Kq9kaX6RjUehgEEovIo97ap4oV.jpg"
@@ -10074,7 +10074,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-lGboNdB",
@@ -10095,7 +10095,7 @@
     "promotionTitle": "رقيق",
     "url": "https://laverne.com/ar/lGboNdB",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/ccyaSN3ib36k64rqYLWfFmlPhkJM0wMXLCShyQ7N.jpg",
-    "image": "images/laverne_lGboNdB.jpg?v=df66c58b",
+    "image": "images/laverne_lGboNdB.jpg?v=ab4ebe5a",
     "originalImage": "https://cdn.salla.sa/XzOPD/ccyaSN3ib36k64rqYLWfFmlPhkJM0wMXLCShyQ7N.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/ccyaSN3ib36k64rqYLWfFmlPhkJM0wMXLCShyQ7N.jpg"
@@ -10126,7 +10126,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-oZgxoGp",
@@ -10249,7 +10249,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/OqolvxK",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/IKRW8IePLl78OXOaQl3R03sMjYQWUI5dyJkuZH1k.jpg",
-    "image": "images/laverne_OqolvxK_v2.jpg?v=631ffacc",
+    "image": "images/laverne_OqolvxK_v2.jpg?v=85f8d858",
     "originalImage": "https://cdn.salla.sa/XzOPD/IKRW8IePLl78OXOaQl3R03sMjYQWUI5dyJkuZH1k.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/IKRW8IePLl78OXOaQl3R03sMjYQWUI5dyJkuZH1k.jpg"
@@ -10280,7 +10280,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-dbjRgDz",
@@ -10301,7 +10301,7 @@
     "promotionTitle": "عطور بـ 96 ريال",
     "url": "https://laverne.com/ar/dbjRgDz",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/LKn7EY026t4pxX8sx7EUO2i3BM86UrKBb3tkyxiR.jpg",
-    "image": "images/laverne_dbjRgDz.jpg?v=f5b18f38",
+    "image": "images/laverne_dbjRgDz.jpg?v=d60a21f0",
     "originalImage": "https://cdn.salla.sa/XzOPD/LKn7EY026t4pxX8sx7EUO2i3BM86UrKBb3tkyxiR.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/LKn7EY026t4pxX8sx7EUO2i3BM86UrKBb3tkyxiR.jpg"
@@ -10332,7 +10332,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-jgQAQxz",
@@ -10403,7 +10403,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/dbVWEBP",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/9xGajS4qESS1lsZPrt7bKPlbHzEarB19qqmhAyjf.png",
-    "image": "images/laverne_dbVWEBP.jpg?v=85e6e8ee",
+    "image": "images/laverne_dbVWEBP.jpg?v=54d9d560",
     "originalImage": "https://cdn.salla.sa/XzOPD/9xGajS4qESS1lsZPrt7bKPlbHzEarB19qqmhAyjf.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/9xGajS4qESS1lsZPrt7bKPlbHzEarB19qqmhAyjf.png"
@@ -10434,7 +10434,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-bwQgBKW",
@@ -10661,7 +10661,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/YgYpDrW",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/pX06mDh0Rz1Dd2J021aq2vIsjnkkUEeAEud6BgvW.jpg",
-    "image": "images/laverne_YgYpDrW.jpg?v=7c5f81a4",
+    "image": "images/laverne_YgYpDrW.jpg?v=400e9e3d",
     "originalImage": "https://cdn.salla.sa/XzOPD/pX06mDh0Rz1Dd2J021aq2vIsjnkkUEeAEud6BgvW.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/pX06mDh0Rz1Dd2J021aq2vIsjnkkUEeAEud6BgvW.jpg"
@@ -10692,7 +10692,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-qGVowyK",
@@ -10713,7 +10713,7 @@
     "promotionTitle": "ينفد سريعًا",
     "url": "https://laverne.com/ar/qGVowyK",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/mAk9rTkRFPxEiiDYLuIf4r7P6C8LzRBkqrI1KakX.png",
-    "image": "images/laverne_qGVowyK.jpg?v=f6bbbcd5",
+    "image": "images/laverne_qGVowyK.jpg?v=2c106ada",
     "originalImage": "https://cdn.salla.sa/XzOPD/mAk9rTkRFPxEiiDYLuIf4r7P6C8LzRBkqrI1KakX.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/mAk9rTkRFPxEiiDYLuIf4r7P6C8LzRBkqrI1KakX.png"
@@ -10744,7 +10744,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-GYbXpjE",
@@ -10764,7 +10764,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/GYbXpjE",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/LffytI5QVZxZ9akOw9dGuPPfVzoJspGSNPs4xqRq.jpg",
-    "image": "images/laverne_GYbXpjE_v2.jpg?v=f165ab3c",
+    "image": "images/laverne_GYbXpjE_v2.jpg?v=ede29a2b",
     "originalImage": "https://cdn.salla.sa/XzOPD/LffytI5QVZxZ9akOw9dGuPPfVzoJspGSNPs4xqRq.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/LffytI5QVZxZ9akOw9dGuPPfVzoJspGSNPs4xqRq.jpg"
@@ -10795,7 +10795,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-rRDOYdG",
@@ -10866,7 +10866,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/YgYYRmp",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/S9wRyucGS2rp171SKJ9V98WfKSOMOqEECUDnZo6u.jpg",
-    "image": "images/laverne_YgYYRmp.jpg?v=fb708e4f",
+    "image": "images/laverne_YgYYRmp.jpg?v=c74db79f",
     "originalImage": "https://cdn.salla.sa/XzOPD/S9wRyucGS2rp171SKJ9V98WfKSOMOqEECUDnZo6u.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/S9wRyucGS2rp171SKJ9V98WfKSOMOqEECUDnZo6u.jpg"
@@ -10897,7 +10897,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-BpEQArz",
@@ -10917,7 +10917,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/BpEQArz",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/Mvj7oLayzISWBpYrWskDQIHmBtsoWBOm5jltomeH.jpg",
-    "image": "images/laverne_BpEQArz.jpg?v=5b0dcdc2",
+    "image": "images/laverne_BpEQArz.jpg?v=70f2fd05",
     "originalImage": "https://cdn.salla.sa/XzOPD/Mvj7oLayzISWBpYrWskDQIHmBtsoWBOm5jltomeH.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/Mvj7oLayzISWBpYrWskDQIHmBtsoWBOm5jltomeH.jpg"
@@ -10948,7 +10948,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-wAmDOKy",
@@ -11020,7 +11020,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/vXANgqB",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/yTJDTnPfOdoEp6La6sOtXs0gmL4C6dw2pmCUPXeo.jpg",
-    "image": "images/laverne_vXANgqB_v2.jpg?v=eae3c8be",
+    "image": "images/laverne_vXANgqB_v2.jpg?v=0737fc49",
     "originalImage": "https://cdn.salla.sa/XzOPD/yTJDTnPfOdoEp6La6sOtXs0gmL4C6dw2pmCUPXeo.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/yTJDTnPfOdoEp6La6sOtXs0gmL4C6dw2pmCUPXeo.jpg"
@@ -11051,7 +11051,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KynagQ",
@@ -11071,7 +11071,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/KynagQ",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/kXaWC0p2rYUslWaZMb9MLIR9NRTsRcDsXLJ12zgs.jpg",
-    "image": "images/laverne_KynagQ.jpg?v=0f6e7977",
+    "image": "images/laverne_KynagQ.jpg?v=cf869cb0",
     "originalImage": "https://cdn.salla.sa/XzOPD/kXaWC0p2rYUslWaZMb9MLIR9NRTsRcDsXLJ12zgs.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/kXaWC0p2rYUslWaZMb9MLIR9NRTsRcDsXLJ12zgs.jpg"
@@ -11102,7 +11102,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-ABqPpNn",
@@ -11173,7 +11173,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/RAbOvyO",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/GWTTD36Zr0PlO0eF9UFRh0uKi7fkLKjlazaxAhiz.jpg",
-    "image": "images/laverne_RAbOvyO.jpg?v=eb199afd",
+    "image": "images/laverne_RAbOvyO.jpg?v=66489e6b",
     "originalImage": "https://cdn.salla.sa/XzOPD/GWTTD36Zr0PlO0eF9UFRh0uKi7fkLKjlazaxAhiz.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/GWTTD36Zr0PlO0eF9UFRh0uKi7fkLKjlazaxAhiz.jpg"
@@ -11204,7 +11204,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-bwQpVEx",
@@ -11327,7 +11327,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/EXXlDjy",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/v3BCUWfrc5EkTOcAK5PhyDTOb6Yn7HSNlH45qj4f.jpg",
-    "image": "images/laverne_EXXlDjy.jpg?v=41a86a03",
+    "image": "images/laverne_EXXlDjy.jpg?v=631a5870",
     "originalImage": "https://cdn.salla.sa/XzOPD/v3BCUWfrc5EkTOcAK5PhyDTOb6Yn7HSNlH45qj4f.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/v3BCUWfrc5EkTOcAK5PhyDTOb6Yn7HSNlH45qj4f.jpg"
@@ -11358,7 +11358,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-Rvneeao",
@@ -11431,7 +11431,7 @@
     "promotionTitle": "نعناع - ماء - عنبر",
     "url": "https://laverne.com/ar/EXwngBY",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/gJY5kpkhXMyvZJZq7SUcQ5qnE2DNmHbhN80DNsUl.jpg",
-    "image": "images/laverne_EXwngBY.jpg?v=bb00e264",
+    "image": "images/laverne_EXwngBY.jpg?v=792057dc",
     "originalImage": "https://cdn.salla.sa/XzOPD/gJY5kpkhXMyvZJZq7SUcQ5qnE2DNmHbhN80DNsUl.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/gJY5kpkhXMyvZJZq7SUcQ5qnE2DNmHbhN80DNsUl.jpg"
@@ -11462,7 +11462,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-mZARelW",
@@ -11739,7 +11739,7 @@
     "promotionTitle": "تفاح - زهر - برقوق",
     "url": "https://laverne.com/ar/Wzqmlzg",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/UJ4XntdOGLbq9K4ikGtpWqhySyFBcpPP68j6EQMP.jpg",
-    "image": "images/laverne_Wzqmlzg.jpg?v=2d0da6dd",
+    "image": "images/laverne_Wzqmlzg.jpg?v=cfc68529",
     "originalImage": "https://cdn.salla.sa/XzOPD/UJ4XntdOGLbq9K4ikGtpWqhySyFBcpPP68j6EQMP.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/UJ4XntdOGLbq9K4ikGtpWqhySyFBcpPP68j6EQMP.jpg"
@@ -11770,7 +11770,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-mZKjEOj",
@@ -11945,7 +11945,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/dbgEryd",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/SMjyF7qtk5LwnDj7AiFlZhAPwyai8CtigjvxZtyN.jpg",
-    "image": "images/laverne_dbgEryd.jpg?v=534eb503",
+    "image": "images/laverne_dbgEryd.jpg?v=49934a03",
     "originalImage": "https://cdn.salla.sa/XzOPD/SMjyF7qtk5LwnDj7AiFlZhAPwyai8CtigjvxZtyN.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/SMjyF7qtk5LwnDj7AiFlZhAPwyai8CtigjvxZtyN.jpg"
@@ -11976,7 +11976,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-yKYamRG",
@@ -12099,7 +12099,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/XejeRWd",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/cAxFsWVS14r2AItMCM0bnlFjjHgfm7EPL1ZNH0qs.jpg",
-    "image": "images/laverne_XejeRWd.jpg?v=9ee4377b",
+    "image": "images/laverne_XejeRWd.jpg?v=316a2c52",
     "originalImage": "https://cdn.salla.sa/XzOPD/cAxFsWVS14r2AItMCM0bnlFjjHgfm7EPL1ZNH0qs.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/cAxFsWVS14r2AItMCM0bnlFjjHgfm7EPL1ZNH0qs.jpg"
@@ -12130,7 +12130,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-VDAyVwO",
@@ -12201,7 +12201,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/xAbVEmz",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/BD7hQ4t1TLxRRbYL7wCgPwgak2eEnNuwLokonWvd.jpg",
-    "image": "images/laverne_xAbVEmz.jpg?v=b5456f83",
+    "image": "images/laverne_xAbVEmz.jpg?v=596e4913",
     "originalImage": "https://cdn.salla.sa/XzOPD/BD7hQ4t1TLxRRbYL7wCgPwgak2eEnNuwLokonWvd.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/BD7hQ4t1TLxRRbYL7wCgPwgak2eEnNuwLokonWvd.jpg"
@@ -12232,7 +12232,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-jgAqzgl",
@@ -12354,7 +12354,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/EZYdjpY",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/m3kMWRSemsE2PcBGv9nhRfumdNR0GrybM5Y9LIXz.jpg",
-    "image": "images/laverne_EZYdjpY_v2.jpg?v=20dfe264",
+    "image": "images/laverne_EZYdjpY_v2.jpg?v=16cc88eb",
     "originalImage": "https://cdn.salla.sa/XzOPD/m3kMWRSemsE2PcBGv9nhRfumdNR0GrybM5Y9LIXz.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/m3kMWRSemsE2PcBGv9nhRfumdNR0GrybM5Y9LIXz.jpg"
@@ -12385,7 +12385,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-qGVKYBN",
@@ -12458,7 +12458,7 @@
     "promotionTitle": "الكشميران - نوتات خضراء",
     "url": "https://laverne.com/ar/oZbKnKb",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/AIRNvrQsfjetg2pAIzAlpc5YuNsBMsRrZGMUjDGE.jpg",
-    "image": "images/laverne_oZbKnKb.jpg?v=01d5de25",
+    "image": "images/laverne_oZbKnKb.jpg?v=cff10a19",
     "originalImage": "https://cdn.salla.sa/XzOPD/AIRNvrQsfjetg2pAIzAlpc5YuNsBMsRrZGMUjDGE.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/AIRNvrQsfjetg2pAIzAlpc5YuNsBMsRrZGMUjDGE.jpg"
@@ -12489,7 +12489,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-zomQRqo",
@@ -12561,7 +12561,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/YgnYona",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/OaqoL5YPVN3658A9ZuuetY3WKQ4C9bTIbJj0oGze.jpg",
-    "image": "images/laverne_YgnYona_v2.jpg?v=f6383210",
+    "image": "images/laverne_YgnYona_v2.jpg?v=673cba5d",
     "originalImage": "https://cdn.salla.sa/XzOPD/OaqoL5YPVN3658A9ZuuetY3WKQ4C9bTIbJj0oGze.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/OaqoL5YPVN3658A9ZuuetY3WKQ4C9bTIbJj0oGze.jpg"
@@ -12592,7 +12592,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-lvbvPyQ",
@@ -12663,7 +12663,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/lGqoVpD",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/HgMBEvnwv5nkWKRB1PtdYeeumKWnnyrcWP9EtL5O.jpg",
-    "image": "images/laverne_lGqoVpD.jpg?v=99fe7f6c",
+    "image": "images/laverne_lGqoVpD.jpg?v=c93dc666",
     "originalImage": "https://cdn.salla.sa/XzOPD/HgMBEvnwv5nkWKRB1PtdYeeumKWnnyrcWP9EtL5O.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/HgMBEvnwv5nkWKRB1PtdYeeumKWnnyrcWP9EtL5O.jpg"
@@ -12694,7 +12694,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-pArRQep",
@@ -12715,7 +12715,7 @@
     "promotionTitle": "تفاح - جلد - مسك",
     "url": "https://laverne.com/ar/pArRQep",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/EWC0KXAvA64D5GZCSctNgZAZjDaFVBhd4nQoNhQY.jpg",
-    "image": "images/laverne_pArRQep.jpg?v=bf6e3c3b",
+    "image": "images/laverne_pArRQep.jpg?v=83756f67",
     "originalImage": "https://cdn.salla.sa/XzOPD/EWC0KXAvA64D5GZCSctNgZAZjDaFVBhd4nQoNhQY.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/EWC0KXAvA64D5GZCSctNgZAZjDaFVBhd4nQoNhQY.jpg"
@@ -12746,7 +12746,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-jgQdebD",
@@ -12818,7 +12818,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/dbjQDEy",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/HAhVPPncPlsg66eQpXHOuzwyQQOSY20kApCTks1z.jpg",
-    "image": "images/laverne_dbjQDEy.jpg?v=ac2ddd1c",
+    "image": "images/laverne_dbjQDEy.jpg?v=aec04670",
     "originalImage": "https://cdn.salla.sa/XzOPD/HAhVPPncPlsg66eQpXHOuzwyQQOSY20kApCTks1z.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/HAhVPPncPlsg66eQpXHOuzwyQQOSY20kApCTks1z.jpg"
@@ -12849,7 +12849,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-onQYNmR",
@@ -12869,7 +12869,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/onQYNmR",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/NOKYASsfe8TzUj9AYshskj0UnuqR6fsuODtImfWz.png",
-    "image": "images/laverne_onQYNmR.jpg?v=a2f94a17",
+    "image": "images/laverne_onQYNmR.jpg?v=58a64512",
     "originalImage": "https://cdn.salla.sa/XzOPD/NOKYASsfe8TzUj9AYshskj0UnuqR6fsuODtImfWz.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/NOKYASsfe8TzUj9AYshskj0UnuqR6fsuODtImfWz.png"
@@ -12900,7 +12900,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-Zqrmamy",
@@ -13075,7 +13075,7 @@
     "promotionTitle": "متبقي 50 قطعة فقط!",
     "url": "https://laverne.com/ar/jZEAbDK",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/tXmDINlyvehHtkcTvIUEHNYYxlYhnq79o99y6CCw.jpg",
-    "image": "images/laverne_jZEAbDK.jpg?v=5b1d3845",
+    "image": "images/laverne_jZEAbDK.jpg?v=294ccd41",
     "originalImage": "https://cdn.salla.sa/XzOPD/tXmDINlyvehHtkcTvIUEHNYYxlYhnq79o99y6CCw.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/tXmDINlyvehHtkcTvIUEHNYYxlYhnq79o99y6CCw.jpg"
@@ -13106,7 +13106,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-rRWrapo",
@@ -13127,7 +13127,7 @@
     "promotionTitle": "فلفل - زهور - مسك",
     "url": "https://laverne.com/ar/rRWrapo",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/KNHkwxJMmP3hsz5xcdKcl0t7BRI0ST82XIep375t.jpg",
-    "image": "images/laverne_rRWrapo.jpg?v=ec0d6535",
+    "image": "images/laverne_rRWrapo.jpg?v=e73217f3",
     "originalImage": "https://cdn.salla.sa/XzOPD/KNHkwxJMmP3hsz5xcdKcl0t7BRI0ST82XIep375t.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/KNHkwxJMmP3hsz5xcdKcl0t7BRI0ST82XIep375t.jpg"
@@ -13158,7 +13158,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-PDWXjNK",
@@ -13435,7 +13435,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/vXjyyNB",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/dUw34PNw2DY1ry8TweYuKvDFazqobjQK4VGLdvo9.jpg",
-    "image": "images/laverne_vXjyyNB.jpg?v=14806169",
+    "image": "images/laverne_vXjyyNB.jpg?v=f4372350",
     "originalImage": "https://cdn.salla.sa/XzOPD/dUw34PNw2DY1ry8TweYuKvDFazqobjQK4VGLdvo9.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/dUw34PNw2DY1ry8TweYuKvDFazqobjQK4VGLdvo9.jpg"
@@ -13466,7 +13466,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-qQnaljA",
@@ -13487,7 +13487,7 @@
     "promotionTitle": "جديد",
     "url": "https://laverne.com/ar/qQnaljA",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/B48ydKDHVXLf52UB0Fz9liS4v8K9yc3cwYBU3POl.jpg",
-    "image": "images/laverne_qQnaljA.jpg?v=442e6439",
+    "image": "images/laverne_qQnaljA.jpg?v=3e147b28",
     "originalImage": "https://cdn.salla.sa/XzOPD/B48ydKDHVXLf52UB0Fz9liS4v8K9yc3cwYBU3POl.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/B48ydKDHVXLf52UB0Fz9liS4v8K9yc3cwYBU3POl.jpg"
@@ -13518,7 +13518,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KRrljBV",
@@ -13590,7 +13590,7 @@
     "promotionTitle": "رائحة تعرف كيف تبقى",
     "url": "https://laverne.com/ar/xARwdVg",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/2nZBxFvOcBfQ8Y4OiYupMFw4iVLD8pJJCLUiIchQ.jpg",
-    "image": "images/laverne_xARwdVg_v2.jpg?v=c6bed460",
+    "image": "images/laverne_xARwdVg_v2.jpg?v=ffb33238",
     "originalImage": "https://cdn.salla.sa/XzOPD/2nZBxFvOcBfQ8Y4OiYupMFw4iVLD8pJJCLUiIchQ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/2nZBxFvOcBfQ8Y4OiYupMFw4iVLD8pJJCLUiIchQ.jpg"
@@ -13621,7 +13621,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-VqGPZKv",
@@ -13826,7 +13826,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "laverne-zoXVojg",
@@ -14054,7 +14055,7 @@
     "promotionTitle": "إشراقة فاكهة ودفء المسك",
     "url": "https://laverne.com/ar/lvAwwdB",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/PLyjpwBFhiQGavQb1KklzEkjPeeUcl5O2dxVdOep.jpg",
-    "image": "images/laverne_lvAwwdB.jpg?v=30c189e8",
+    "image": "images/laverne_lvAwwdB.jpg?v=c2e99dd6",
     "originalImage": "https://cdn.salla.sa/XzOPD/PLyjpwBFhiQGavQb1KklzEkjPeeUcl5O2dxVdOep.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/PLyjpwBFhiQGavQb1KklzEkjPeeUcl5O2dxVdOep.jpg"
@@ -14085,7 +14086,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-NAZAAKG",
@@ -14157,7 +14158,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/ydVdlzx",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/yCm8KAi2naLtET81uv9kNP43UtbEAP5DRUKnIKzF.jpg",
-    "image": "images/laverne_ydVdlzx.jpg?v=7c9a870a",
+    "image": "images/laverne_ydVdlzx.jpg?v=c968b1a1",
     "originalImage": "https://cdn.salla.sa/XzOPD/yCm8KAi2naLtET81uv9kNP43UtbEAP5DRUKnIKzF.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/yCm8KAi2naLtET81uv9kNP43UtbEAP5DRUKnIKzF.jpg"
@@ -14188,7 +14189,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-gybgRyz",
@@ -14363,7 +14364,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/qQvRdbD",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/db2YSCsFLtDTxsKMlxOx2zNHKhAE0qnDv9XIaJSf.jpg",
-    "image": "images/laverne_qQvRdbD.jpg?v=18ef8b22",
+    "image": "images/laverne_qQvRdbD.jpg?v=88c8943d",
     "originalImage": "https://cdn.salla.sa/XzOPD/db2YSCsFLtDTxsKMlxOx2zNHKhAE0qnDv9XIaJSf.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/db2YSCsFLtDTxsKMlxOx2zNHKhAE0qnDv9XIaJSf.jpg"
@@ -14394,7 +14395,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-rAybPjR",
@@ -14414,7 +14415,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/rAybPjR",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/2dA7zw5vxxGVEunvb1o8rmGnBGMRtyXcxd9mw2ia.jpg",
-    "image": "images/laverne_rAybPjR.jpg?v=2de79f08",
+    "image": "images/laverne_rAybPjR.jpg?v=4d27aef8",
     "originalImage": "https://cdn.salla.sa/XzOPD/2dA7zw5vxxGVEunvb1o8rmGnBGMRtyXcxd9mw2ia.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/2dA7zw5vxxGVEunvb1o8rmGnBGMRtyXcxd9mw2ia.jpg"
@@ -14445,7 +14446,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-VwYOxW",
@@ -14465,7 +14466,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/VwYOxW",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/zMVcKRlC5j35F0UnQcN2V34gp1XzyIP5v7dAp6QO.jpg",
-    "image": "images/laverne_VwYOxW.jpg?v=c7428090",
+    "image": "images/laverne_VwYOxW.jpg?v=20965c5f",
     "originalImage": "https://cdn.salla.sa/XzOPD/zMVcKRlC5j35F0UnQcN2V34gp1XzyIP5v7dAp6QO.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/zMVcKRlC5j35F0UnQcN2V34gp1XzyIP5v7dAp6QO.jpg"
@@ -14496,7 +14497,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-QzDzzYw",
@@ -14619,7 +14620,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/KRRYqGq",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/osKrNnCUR1q8XdpjW5XvCGFdjveIKsF2NSyMHEej.jpg",
-    "image": "images/laverne_KRRYqGq_v2.jpg?v=9f32b3d7",
+    "image": "images/laverne_KRRYqGq_v2.jpg?v=c151059c",
     "originalImage": "https://cdn.salla.sa/XzOPD/osKrNnCUR1q8XdpjW5XvCGFdjveIKsF2NSyMHEej.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/osKrNnCUR1q8XdpjW5XvCGFdjveIKsF2NSyMHEej.jpg"
@@ -14650,7 +14651,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KROBRgy",
@@ -14879,7 +14880,7 @@
     "promotionTitle": "ليمون - جوز - فانيلا",
     "url": "https://laverne.com/ar/xvbPvQw",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/igqqAYjhn0wOoe8Q1R6OfdTn9dW7WqDHb3hbQNuf.jpg",
-    "image": "images/laverne_xvbPvQw.jpg?v=48174572",
+    "image": "images/laverne_xvbPvQw.jpg?v=6155b4d9",
     "originalImage": "https://cdn.salla.sa/XzOPD/igqqAYjhn0wOoe8Q1R6OfdTn9dW7WqDHb3hbQNuf.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/igqqAYjhn0wOoe8Q1R6OfdTn9dW7WqDHb3hbQNuf.jpg"
@@ -14910,7 +14911,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KRorBEy",
@@ -15034,7 +15035,7 @@
     "promotionTitle": "حمضيات - شاي - مسك",
     "url": "https://laverne.com/ar/ZqmdEny",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/Q8qjcWI2ZlEjETHiohNUIt2jxRzJz2Eemirv4In2.jpg",
-    "image": "images/laverne_ZqmdEny.jpg?v=f39d1624",
+    "image": "images/laverne_ZqmdEny.jpg?v=707806a4",
     "originalImage": "https://cdn.salla.sa/XzOPD/Q8qjcWI2ZlEjETHiohNUIt2jxRzJz2Eemirv4In2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/Q8qjcWI2ZlEjETHiohNUIt2jxRzJz2Eemirv4In2.jpg"
@@ -15065,7 +15066,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-OyRXYPY",
@@ -15345,7 +15346,7 @@
     "promotionTitle": "كمثرى - ورد - مسك",
     "url": "https://laverne.com/ar/azEKQpv",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/PRxyJFaRqrtpeMT12Xtk54neiBxNMSt4Vcitw8p6.jpg",
-    "image": "images/laverne_azEKQpv.jpg?v=61e21ea4",
+    "image": "images/laverne_azEKQpv.jpg?v=4cef29fb",
     "originalImage": "https://cdn.salla.sa/XzOPD/PRxyJFaRqrtpeMT12Xtk54neiBxNMSt4Vcitw8p6.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/PRxyJFaRqrtpeMT12Xtk54neiBxNMSt4Vcitw8p6.jpg"
@@ -15376,7 +15377,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-wAmRbZV",
@@ -15499,7 +15500,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/wWXqRPx",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/4tjUb0jT1v9ja2IwSX8CpanDHvQylGMel4EAMGJ5.jpg",
-    "image": "images/laverne_wWXqRPx.jpg?v=20a7fd02",
+    "image": "images/laverne_wWXqRPx.jpg?v=506acffc",
     "originalImage": "https://cdn.salla.sa/XzOPD/4tjUb0jT1v9ja2IwSX8CpanDHvQylGMel4EAMGJ5.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/4tjUb0jT1v9ja2IwSX8CpanDHvQylGMel4EAMGJ5.jpg"
@@ -15530,7 +15531,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-lGQQKqN",
@@ -15653,7 +15654,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/ydKXyvD",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/uPJHS3hSnmF2iAtbdRvrUxjFhMSJRyZ3ClpXxLCy.jpg",
-    "image": "images/laverne_ydKXyvD.jpg?v=9d7ae6b5",
+    "image": "images/laverne_ydKXyvD.jpg?v=5a1e0cde",
     "originalImage": "https://cdn.salla.sa/XzOPD/uPJHS3hSnmF2iAtbdRvrUxjFhMSJRyZ3ClpXxLCy.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/uPJHS3hSnmF2iAtbdRvrUxjFhMSJRyZ3ClpXxLCy.jpg"
@@ -15684,7 +15685,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-KRvxznq",
@@ -15704,7 +15705,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/KRvxznq",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/HMPzKkLQIb5ECU0RPvXb0CNruBNoR7iuNeaHcwGn.jpg",
-    "image": "images/laverne_KRvxznq.jpg?v=d0475446",
+    "image": "images/laverne_KRvxznq.jpg?v=c8c4235c",
     "originalImage": "https://cdn.salla.sa/XzOPD/HMPzKkLQIb5ECU0RPvXb0CNruBNoR7iuNeaHcwGn.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/HMPzKkLQIb5ECU0RPvXb0CNruBNoR7iuNeaHcwGn.jpg"
@@ -15735,7 +15736,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-vABoodp",
@@ -15963,7 +15964,7 @@
     "promotionTitle": "كشمش - ورد - مسك",
     "url": "https://laverne.com/ar/yKGQRwa",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/blzmeyy6oiBsukEfgMoMYC1jmO0kjyrxZqwTtyui.jpg",
-    "image": "images/laverne_yKGQRwa.jpg?v=c16105bd",
+    "image": "images/laverne_yKGQRwa.jpg?v=ac49e1cd",
     "originalImage": "https://cdn.salla.sa/XzOPD/blzmeyy6oiBsukEfgMoMYC1jmO0kjyrxZqwTtyui.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/blzmeyy6oiBsukEfgMoMYC1jmO0kjyrxZqwTtyui.jpg"
@@ -15994,7 +15995,7 @@
     },
     "categoryType": "mini",
     "subCategory": "mini",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-mZAGObl",
@@ -16065,7 +16066,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/eQxDzBa",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/fi8K2mOVOmRMFEYFCIvCSDhYw1r2xtKnal4cMEpE.jpg",
-    "image": "images/laverne_eQxDzBa_v2.jpg?v=6611d7bd",
+    "image": "images/laverne_eQxDzBa_v2.jpg?v=0a6d9003",
     "originalImage": "https://cdn.salla.sa/XzOPD/fi8K2mOVOmRMFEYFCIvCSDhYw1r2xtKnal4cMEpE.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/fi8K2mOVOmRMFEYFCIvCSDhYw1r2xtKnal4cMEpE.jpg"
@@ -16096,7 +16097,7 @@
     },
     "categoryType": "mini",
     "subCategory": "mini",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-oZAWmQY",
@@ -16117,7 +16118,7 @@
     "promotionTitle": "لأول ٥٠٠٠ عميل",
     "url": "https://laverne.com/ar/oZAWmQY",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/05bElm2b8uKGVTbQiZsSqCAYKtPWfNMeXvcfi2B0.png",
-    "image": "images/laverne_oZAWmQY.jpg?v=74789efe",
+    "image": "images/laverne_oZAWmQY.jpg?v=63bfe6c9",
     "originalImage": "https://cdn.salla.sa/XzOPD/05bElm2b8uKGVTbQiZsSqCAYKtPWfNMeXvcfi2B0.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/05bElm2b8uKGVTbQiZsSqCAYKtPWfNMeXvcfi2B0.png"
@@ -16148,7 +16149,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-PDPmBXz",
@@ -16220,7 +16221,7 @@
     "promotionTitle": "هيل - عنبر - بخور",
     "url": "https://laverne.com/ar/lvXaGer",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/XMBFKsmBY3N0qHRVjPZn8mGvhPgROISl3s21R6ej.jpg",
-    "image": "images/laverne_lvXaGer.jpg?v=403fbccf",
+    "image": "images/laverne_lvXaGer.jpg?v=b5480035",
     "originalImage": "https://cdn.salla.sa/XzOPD/XMBFKsmBY3N0qHRVjPZn8mGvhPgROISl3s21R6ej.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/XMBFKsmBY3N0qHRVjPZn8mGvhPgROISl3s21R6ej.jpg"
@@ -16251,7 +16252,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-VDvmdle",
@@ -16427,7 +16428,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/ABGBXAe",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/sLwhLlWblGjjbFoDoqxMHAbGZhMTzFrsSCBy0ZqP.jpg",
-    "image": "images/laverne_ABGBXAe.jpg?v=0225f374",
+    "image": "images/laverne_ABGBXAe.jpg?v=3213f502",
     "originalImage": "https://cdn.salla.sa/XzOPD/sLwhLlWblGjjbFoDoqxMHAbGZhMTzFrsSCBy0ZqP.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/sLwhLlWblGjjbFoDoqxMHAbGZhMTzFrsSCBy0ZqP.jpg"
@@ -16458,7 +16459,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-pAlQpZj",
@@ -16685,7 +16686,7 @@
     "promotionTitle": "لها",
     "url": "https://laverne.com/ar/EZEpnvB",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/BXI2x0F6E2Vp0oYFDApGjBzSpdyHIzDbiIbDseFr.jpg",
-    "image": "images/laverne_EZEpnvB.jpg?v=e807a92f",
+    "image": "images/laverne_EZEpnvB.jpg?v=6b9c3beb",
     "originalImage": "https://cdn.salla.sa/XzOPD/BXI2x0F6E2Vp0oYFDApGjBzSpdyHIzDbiIbDseFr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/BXI2x0F6E2Vp0oYFDApGjBzSpdyHIzDbiIbDseFr.jpg"
@@ -16716,7 +16717,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-BpOGqVn",
@@ -16819,7 +16820,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "laverne-ABqQnoO",
@@ -16995,7 +16997,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/RApPOQy",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/LIBqgLqNK7Jn6L0wFPchiXRDxOfQnTKIuGq36Z1J.jpg",
-    "image": "images/laverne_RApPOQy_v2.jpg?v=eed73d6d",
+    "image": "images/laverne_RApPOQy_v2.jpg?v=242b5202",
     "originalImage": "https://cdn.salla.sa/XzOPD/LIBqgLqNK7Jn6L0wFPchiXRDxOfQnTKIuGq36Z1J.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/LIBqgLqNK7Jn6L0wFPchiXRDxOfQnTKIuGq36Z1J.jpg"
@@ -17026,7 +17028,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-WzqVKOW",
@@ -17047,7 +17049,7 @@
     "promotionTitle": "حمضيات - زهور - مسك خشب",
     "url": "https://laverne.com/ar/WzqVKOW",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/VrIs5U8TOswU7roAbv0LQfFz0zhaOASYjBSSaUyY.jpg",
-    "image": "images/laverne_WzqVKOW.jpg?v=0a7c053e",
+    "image": "images/laverne_WzqVKOW.jpg?v=ef7ccf81",
     "originalImage": "https://cdn.salla.sa/XzOPD/VrIs5U8TOswU7roAbv0LQfFz0zhaOASYjBSSaUyY.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/VrIs5U8TOswU7roAbv0LQfFz0zhaOASYjBSSaUyY.jpg"
@@ -17078,7 +17080,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-OqagmbK",
@@ -17099,7 +17101,7 @@
     "promotionTitle": "إصدار خاص",
     "url": "https://laverne.com/ar/OqagmbK",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/BlHBrfTALuiD1XT8dCCDqTdYByUXtjDv9k9620Q2.jpg",
-    "image": "images/laverne_OqagmbK.jpg?v=dfc5138d",
+    "image": "images/laverne_OqagmbK.jpg?v=545517cb",
     "originalImage": "https://cdn.salla.sa/XzOPD/BlHBrfTALuiD1XT8dCCDqTdYByUXtjDv9k9620Q2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/BlHBrfTALuiD1XT8dCCDqTdYByUXtjDv9k9620Q2.jpg"
@@ -17130,7 +17132,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-WlblmOr",
@@ -17151,7 +17153,7 @@
     "promotionTitle": "اوشك على النفاد",
     "url": "https://laverne.com/ar/WlblmOr",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/uFNxPBmnMGUze0YcBQdgIQlwmBPriLCz3UL8vTwS.jpg",
-    "image": "images/laverne_WlblmOr.jpg?v=c57a3e82",
+    "image": "images/laverne_WlblmOr.jpg?v=55eb7812",
     "originalImage": "https://cdn.salla.sa/XzOPD/uFNxPBmnMGUze0YcBQdgIQlwmBPriLCz3UL8vTwS.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/uFNxPBmnMGUze0YcBQdgIQlwmBPriLCz3UL8vTwS.jpg"
@@ -17182,7 +17184,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-EXWXZmB",
@@ -17306,7 +17308,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/pQDwGyr",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/YkQ7cpQqqme7g4CzHhJzwQfKTTfh0kJruvj9kcQS.jpg",
-    "image": "images/laverne_pQDwGyr.jpg?v=3fcd2592",
+    "image": "images/laverne_pQDwGyr.jpg?v=c57473d6",
     "originalImage": "https://cdn.salla.sa/XzOPD/YkQ7cpQqqme7g4CzHhJzwQfKTTfh0kJruvj9kcQS.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/YkQ7cpQqqme7g4CzHhJzwQfKTTfh0kJruvj9kcQS.jpg"
@@ -17337,7 +17339,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-yKGjZQa",
@@ -17358,7 +17360,7 @@
     "promotionTitle": "ليمون - ورد - مسك",
     "url": "https://laverne.com/ar/yKGjZQa",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/K82HPQ7ZcwO7uet0z9KY9MN1IySVJBf3VcZ8yST5.jpg",
-    "image": "images/laverne_yKGjZQa.jpg?v=0549a822",
+    "image": "images/laverne_yKGjZQa.jpg?v=d3510c63",
     "originalImage": "https://cdn.salla.sa/XzOPD/K82HPQ7ZcwO7uet0z9KY9MN1IySVJBf3VcZ8yST5.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/K82HPQ7ZcwO7uet0z9KY9MN1IySVJBf3VcZ8yST5.jpg"
@@ -17389,7 +17391,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-QdBQjzq",
@@ -17409,7 +17411,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/QdBQjzq",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/n5g4OVpt85vYmS4WRZTdqTut279O1P1Ob7KPiJ74.jpg",
-    "image": "images/laverne_QdBQjzq.jpg?v=559f930d",
+    "image": "images/laverne_QdBQjzq.jpg?v=8e0aae8f",
     "originalImage": "https://cdn.salla.sa/XzOPD/n5g4OVpt85vYmS4WRZTdqTut279O1P1Ob7KPiJ74.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/n5g4OVpt85vYmS4WRZTdqTut279O1P1Ob7KPiJ74.jpg"
@@ -17440,7 +17442,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-dbbBexj",
@@ -17460,7 +17462,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/dbbBexj",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/oczeHzOlemP0PLWw7qJgeMAD4IpFnU2qHNsZnRSv.jpg",
-    "image": "images/laverne_dbbBexj.jpg?v=8e55bf28",
+    "image": "images/laverne_dbbBexj.jpg?v=505eb4ce",
     "originalImage": "https://cdn.salla.sa/XzOPD/oczeHzOlemP0PLWw7qJgeMAD4IpFnU2qHNsZnRSv.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/oczeHzOlemP0PLWw7qJgeMAD4IpFnU2qHNsZnRSv.jpg"
@@ -17491,7 +17493,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-ABBogyn",
@@ -17562,7 +17564,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/OyezKqm",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/91u2cp4Ci3QCCmaypP4vkXKram9ytZs9sjCbfQon.jpg",
-    "image": "images/laverne_OyezKqm.jpg?v=3a1831f3",
+    "image": "images/laverne_OyezKqm.jpg?v=70a880a4",
     "originalImage": "https://cdn.salla.sa/XzOPD/91u2cp4Ci3QCCmaypP4vkXKram9ytZs9sjCbfQon.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/91u2cp4Ci3QCCmaypP4vkXKram9ytZs9sjCbfQon.jpg"
@@ -17593,7 +17595,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-azEbjvb",
@@ -17716,7 +17718,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/qQGNXYd",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/u2OIA0OB5jUaS1muJTw8t660nxMiH8YEX3iQONFb.jpg",
-    "image": "images/laverne_qQGNXYd_v2.jpg?v=ce7aa9f6",
+    "image": "images/laverne_qQGNXYd_v2.jpg?v=2ab86b5e",
     "originalImage": "https://cdn.salla.sa/XzOPD/u2OIA0OB5jUaS1muJTw8t660nxMiH8YEX3iQONFb.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/u2OIA0OB5jUaS1muJTw8t660nxMiH8YEX3iQONFb.jpg"
@@ -17747,7 +17749,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-QdKwvrY",
@@ -17767,7 +17769,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/QdKwvrY",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/iax5T30zIrB4HWe8q1piamQMEX493TsxtPHlpZCv.jpg",
-    "image": "images/laverne_QdKwvrY.jpg?v=b6404825",
+    "image": "images/laverne_QdKwvrY.jpg?v=d7caaa35",
     "originalImage": "https://cdn.salla.sa/XzOPD/iax5T30zIrB4HWe8q1piamQMEX493TsxtPHlpZCv.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/iax5T30zIrB4HWe8q1piamQMEX493TsxtPHlpZCv.jpg"
@@ -17798,7 +17800,7 @@
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-DpEObmV",
@@ -17819,7 +17821,7 @@
     "promotionTitle": "ينفد سريعًا",
     "url": "https://laverne.com/ar/DpEObmV",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/DsTq8TDDsdPli8FlnU4jpad1nykjSK5NRXZ9HOwC.png",
-    "image": "images/laverne_DpEObmV.jpg?v=a1f5781b",
+    "image": "images/laverne_DpEObmV.jpg?v=e59e28ae",
     "originalImage": "https://cdn.salla.sa/XzOPD/DsTq8TDDsdPli8FlnU4jpad1nykjSK5NRXZ9HOwC.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/DsTq8TDDsdPli8FlnU4jpad1nykjSK5NRXZ9HOwC.png"
@@ -17850,7 +17852,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-vXljrdy",
@@ -17870,7 +17872,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/vXljrdy",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/dZaxWBLtVi8Gl116J7pG7CuIbjNtYDKbYvyLSew2.jpg",
-    "image": "images/laverne_vXljrdy.jpg?v=6d49c379",
+    "image": "images/laverne_vXljrdy.jpg?v=0f76578b",
     "originalImage": "https://cdn.salla.sa/XzOPD/dZaxWBLtVi8Gl116J7pG7CuIbjNtYDKbYvyLSew2.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/dZaxWBLtVi8Gl116J7pG7CuIbjNtYDKbYvyLSew2.jpg"
@@ -17901,7 +17903,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-wWjRRKm",
@@ -18127,7 +18129,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/lOxaOQ",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/Q0LOnLw8ewXstbTJHvbaCiGc5XTZiQHOAGoA9wdq.jpg",
-    "image": "images/laverne_lOxaOQ.jpg?v=c3e5e099",
+    "image": "images/laverne_lOxaOQ.jpg?v=e4cdb694",
     "originalImage": "https://cdn.salla.sa/XzOPD/Q0LOnLw8ewXstbTJHvbaCiGc5XTZiQHOAGoA9wdq.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/Q0LOnLw8ewXstbTJHvbaCiGc5XTZiQHOAGoA9wdq.jpg"
@@ -18158,7 +18160,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-oZBQErE",
@@ -18643,7 +18645,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/azyROvv",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/pDRr7teMN4NDwyifF6CCUYZsXBDxzKFCktGfXa1F.jpg",
-    "image": "images/laverne_azyROvv.jpg?v=abd2131b",
+    "image": "images/laverne_azyROvv.jpg?v=7ae9d4a2",
     "originalImage": "https://cdn.salla.sa/XzOPD/pDRr7teMN4NDwyifF6CCUYZsXBDxzKFCktGfXa1F.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/pDRr7teMN4NDwyifF6CCUYZsXBDxzKFCktGfXa1F.jpg"
@@ -18674,7 +18676,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-ABavoQZ",
@@ -18952,7 +18954,7 @@
     "status": "sale",
     "url": "https://laverne.com/ar/rRnaGGr",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/OWxtPvX9Q10n1sPhuSIDlUFXrg6R8axHMCKck7Jv.png",
-    "image": "images/laverne_rRnaGGr.jpg?v=c7e350ce",
+    "image": "images/laverne_rRnaGGr.jpg?v=ee5c2c51",
     "originalImage": "https://cdn.salla.sa/XzOPD/OWxtPvX9Q10n1sPhuSIDlUFXrg6R8axHMCKck7Jv.png",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/OWxtPvX9Q10n1sPhuSIDlUFXrg6R8axHMCKck7Jv.png"
@@ -18983,7 +18985,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-YgdejKR",
@@ -19003,7 +19005,7 @@
     "status": "out",
     "url": "https://laverne.com/ar/YgdejKR",
     "bottleUrl": "https://cdn.salla.sa/XzOPD/jP6oOQBkhXxNKgvY8MeXzrsh8LES2Bx73anVJn3d.jpg",
-    "image": "images/laverne_YgdejKR_v2.jpg?v=9f32b6df",
+    "image": "images/laverne_YgdejKR_v2.jpg?v=b88551b4",
     "originalImage": "https://cdn.salla.sa/XzOPD/jP6oOQBkhXxNKgvY8MeXzrsh8LES2Bx73anVJn3d.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/XzOPD/jP6oOQBkhXxNKgvY8MeXzrsh8LES2Bx73anVJn3d.jpg"
@@ -19034,7 +19036,7 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "laverne-eQBGZDP",

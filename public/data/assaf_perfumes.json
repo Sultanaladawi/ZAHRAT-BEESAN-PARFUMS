@@ -12065,7 +12065,7 @@
     "status": "out",
     "url": "https://3saf.com/ar/عطر/p648178010",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/P9JGTwMsWkHkwgUylj9CoYlsdV981M8lFMFOdaDR.jpg",
-    "image": "images/assaf_648178010.jpg?v=c7cbdfc3",
+    "image": "images/assaf_648178010.jpg?v=2a6675cc",
     "originalImage": "https://cdn.salla.sa/yrlRO/P9JGTwMsWkHkwgUylj9CoYlsdV981M8lFMFOdaDR.jpg",
     "galleryImages": [],
     "overview": "عطر وايلد كولت من عطور عساف — إصدار عطري أصلي مستورد مباشرة من المصدر الرسمي.",
@@ -12093,7 +12093,7 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "assaf-1354027755",
@@ -12302,7 +12302,7 @@
     "status": "out",
     "url": "https://3saf.com/ar/rebel-enable-small/p1809319445",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/a8mejYlZUIlZkc9uINaw3SiiF5sW0tPtgina44L8.jpg",
-    "image": "images/assaf_1809319445.jpg?v=c510ba1e",
+    "image": "images/assaf_1809319445.jpg?v=6c899637",
     "originalImage": "https://cdn.salla.sa/yrlRO/a8mejYlZUIlZkc9uINaw3SiiF5sW0tPtgina44L8.jpg",
     "galleryImages": [],
     "overview": "عطر ريبل من عطور عساف — إصدار عطري أصلي مستورد مباشرة من المصدر الرسمي.",
@@ -12330,7 +12330,7 @@
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "assaf-2077147024",
