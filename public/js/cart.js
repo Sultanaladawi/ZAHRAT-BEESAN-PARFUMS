@@ -162,10 +162,14 @@ function cartPriceJod(lines) {
     const groups = Math.floor(units.length / rule.size);
     for (let g = 0; g < groups; g++) {
       const grp = units.slice(g * rule.size, (g + 1) * rule.size);
-      const paid = rule.groupSar
-        ? Math.round(rule.groupSar / 5.29)
-        : grp.slice(0, rule.size - 1).reduce((n, p) => n + supplierJod(p), 0);
-      const price = paid + OFFER_FEE_PER_BOTTLE * rule.size + offerProfit(rule);
+      // Buy X get 1: the paid bottles at their normal price, plus the free
+      // bottle's delivery fee and the offer profit (3 × 31 at 2+1 = 62 + 12 + 10).
+      // Fixed-price groups: the supplier's group price, a fee per bottle and the profit.
+      const free = grp[grp.length - 1];
+      const price = rule.groupSar
+        ? Math.round(rule.groupSar / 5.29) + OFFER_FEE_PER_BOTTLE * rule.size + offerProfit(rule)
+        : grp.slice(0, rule.size - 1).reduce((n, p) => n + normalJod(p), 0)
+          + (Number(free.feeJod) || 12) + offerProfit(rule);
       total += price;
       applied.push({ rule, price, normal: grp.reduce((n, p) => n + normalJod(p), 0) });
     }

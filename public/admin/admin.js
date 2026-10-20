@@ -574,7 +574,7 @@ PAGES.products = async () => {
 // ── Offers ──
 PAGES.offers = async () => {
   const { items } = await api('/api/admin/offers');
-  $('page').innerHTML = pageHead('🎁', 'العروض', 'عروض الموردين اللي بتنطبق تلقائياً بالحقيبة. السعر = سعر المورد + 4 د.أ لكل قنينة + ربحك.') + `
+  $('page').innerHTML = pageHead('🎁', 'العروض', 'عروض الموردين اللي بتنطبق تلقائياً بالحقيبة. اشترِ X وخذ 1: سعر القناني المدفوعة العادي + أجور القنينة المجانية + ربحك. عروض السعر الثابت: سعر المورد + 4 د.أ لكل قنينة + ربحك.') + `
     <div class="cards">${items.map(o => `
       <div class="opt-card${o.enabled ? '' : ' off'}" data-key="${esc(o.key)}">
         <div class="opt-top">
