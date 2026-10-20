@@ -48,7 +48,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-55732867",
@@ -99,7 +100,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-65115145",
@@ -150,7 +152,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-82989994",
@@ -200,7 +203,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-111596853",
@@ -252,7 +256,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-127527714",
@@ -303,7 +308,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-131164981",
@@ -355,7 +361,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-140114204",
@@ -406,7 +413,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-162685412",
@@ -457,7 +465,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-192713547",
@@ -508,7 +517,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-195202059",
@@ -560,7 +570,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-212407735",
@@ -612,7 +623,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-234480187",
@@ -663,7 +675,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-258209455",
@@ -713,7 +726,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-263853034",
@@ -764,7 +778,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-276439332",
@@ -815,7 +830,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-280055399",
@@ -866,7 +882,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-285764258",
@@ -917,7 +934,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-293562888",
@@ -969,7 +987,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-296992319",
@@ -1020,7 +1039,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-307106703",
@@ -1070,7 +1090,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-332724318",
@@ -1121,7 +1142,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-336754941",
@@ -1172,7 +1194,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-341841838",
@@ -1224,7 +1247,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-400251826",
@@ -1274,7 +1298,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-412838380",
@@ -1325,7 +1350,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-425836469",
@@ -1375,7 +1401,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-440860187",
@@ -1427,7 +1454,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-446474142",
@@ -1478,7 +1506,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-451658969",
@@ -1529,7 +1558,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-455270756",
@@ -1580,7 +1610,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-511908850",
@@ -1631,7 +1662,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-547721652",
@@ -1681,7 +1713,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-553434871",
@@ -1732,7 +1765,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-558619442",
@@ -1783,7 +1817,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-566436488",
@@ -1835,7 +1870,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-582872998",
@@ -1886,7 +1922,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-591604012",
@@ -1937,7 +1974,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-600920746",
@@ -1987,7 +2025,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-689825471",
@@ -2038,7 +2077,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-693371898",
@@ -2089,7 +2129,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-695787650",
@@ -2140,7 +2181,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-698556421",
@@ -2191,7 +2233,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-709031343",
@@ -2241,7 +2284,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-746550493",
@@ -2293,7 +2337,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-750075472",
@@ -2344,7 +2389,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-755784339",
@@ -2395,7 +2441,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-794605000",
@@ -2446,7 +2493,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-799789579",
@@ -2497,7 +2545,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-807191354",
@@ -2548,7 +2597,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-812376133",
@@ -2599,7 +2649,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-826158919",
@@ -2650,7 +2701,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-829770626",
@@ -2701,7 +2753,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-830409629",
@@ -2752,7 +2805,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-835479757",
@@ -2803,7 +2857,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-911446603",
@@ -2854,7 +2909,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-925290837",
@@ -2905,7 +2961,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-928445508",
@@ -2957,7 +3014,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-931003792",
@@ -3008,7 +3066,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-934550227",
@@ -3059,7 +3118,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-943524802",
@@ -3110,7 +3170,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-947136525",
@@ -3161,7 +3222,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-958026123",
@@ -3212,7 +3274,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-966161482",
@@ -3263,7 +3326,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-982279743",
@@ -3314,7 +3378,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-991145861",
@@ -3365,7 +3430,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1001374276",
@@ -3416,7 +3482,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1032247214",
@@ -3466,7 +3533,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1037956329",
@@ -3517,7 +3585,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1042660816",
@@ -3568,7 +3637,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1048369683",
@@ -3619,7 +3689,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1054372500",
@@ -3671,7 +3742,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1056290806",
@@ -3722,7 +3794,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1070087856",
@@ -3774,7 +3847,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1079915402",
@@ -3824,7 +3898,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1083527381",
@@ -3875,7 +3950,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1115544953",
@@ -3926,7 +4002,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1130558084",
@@ -3977,7 +4054,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1133245576",
@@ -4028,7 +4106,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1146001390",
@@ -4078,7 +4157,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1179051416",
@@ -4129,7 +4209,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1184695003",
@@ -4180,7 +4261,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1207405219",
@@ -4231,7 +4313,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1219991709",
@@ -4282,7 +4365,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1229308443",
@@ -4333,7 +4417,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1258746826",
@@ -4384,7 +4469,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1264390165",
@@ -4435,7 +4521,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1268006224",
@@ -4486,7 +4573,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1274412815",
@@ -4538,7 +4626,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1282400182",
@@ -4588,7 +4677,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1286012145",
@@ -4639,7 +4729,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1291655484",
@@ -4690,7 +4781,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1324701486",
@@ -4740,7 +4832,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1355858085",
@@ -4791,7 +4884,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1366173591",
@@ -4842,7 +4936,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1395080082",
@@ -4893,7 +4988,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1431662087",
@@ -4944,7 +5040,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1437436738",
@@ -4995,7 +5092,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1457484459",
@@ -5045,7 +5143,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1497896360",
@@ -5095,7 +5194,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1512445981",
@@ -5146,7 +5246,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1516269441",
@@ -5198,7 +5299,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1536721125",
@@ -5248,7 +5350,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1540861216",
@@ -5299,7 +5402,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1563986316",
@@ -5350,7 +5454,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1575352351",
@@ -5400,7 +5505,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1597032382",
@@ -5451,7 +5557,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1629130038",
@@ -5503,7 +5610,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1648836645",
@@ -5554,7 +5662,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1658227107",
@@ -5605,7 +5714,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1676727784",
@@ -5655,7 +5765,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1681806863",
@@ -5706,7 +5817,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1688652591",
@@ -5757,7 +5869,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1703992983",
@@ -5807,7 +5920,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1717206102",
@@ -5859,7 +5973,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1743210956",
@@ -5910,7 +6025,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1755793214",
@@ -5961,7 +6077,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1806283534",
@@ -6012,7 +6129,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "burner"
+    "subCategory": "burner",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1811968404",
@@ -6063,7 +6181,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1817747159",
@@ -6114,7 +6233,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1856964876",
@@ -6165,7 +6285,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1875081046",
@@ -6216,7 +6337,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1888051899",
@@ -6267,7 +6389,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1926880752",
@@ -6318,7 +6441,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1948432988",
@@ -6369,7 +6493,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1963917413",
@@ -6420,7 +6545,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1967533216",
@@ -6471,7 +6597,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2006353821",
@@ -6522,7 +6649,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2016836317",
@@ -6574,7 +6702,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2024516419",
@@ -6625,7 +6754,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2033833161",
@@ -6676,7 +6806,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2043616855",
@@ -6727,7 +6858,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2114337426",
@@ -6778,7 +6910,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2123521361",
@@ -6829,7 +6962,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2129230236",
@@ -6880,7 +7014,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2138612506",
@@ -6931,7 +7066,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-17035350",
@@ -6982,7 +7118,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-22682769",
@@ -7033,7 +7170,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-26294748",
@@ -7084,7 +7222,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-61437902",
@@ -7134,7 +7273,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-88699125",
@@ -7184,7 +7324,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-119992962",
@@ -7235,7 +7376,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-121818855",
@@ -7285,7 +7427,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-169487043",
@@ -7336,7 +7479,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-359981381",
@@ -7386,7 +7530,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-368934140",
@@ -7437,7 +7582,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-375575338",
@@ -7487,7 +7633,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-391283859",
@@ -7538,7 +7685,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-521225592",
@@ -7589,7 +7737,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-586419425",
@@ -7639,7 +7788,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "burner"
+    "subCategory": "burner",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-663398979",
@@ -7690,7 +7840,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-733707831",
@@ -7740,7 +7891,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-895856614",
@@ -7790,7 +7942,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-976574972",
@@ -7841,7 +7994,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1321093859",
@@ -7891,7 +8045,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1422337209",
@@ -7942,7 +8097,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1461166070",
@@ -7992,7 +8148,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1466874929",
@@ -8043,7 +8200,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1470486908",
@@ -8094,7 +8252,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1507745590",
@@ -8144,7 +8303,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1518151000",
@@ -8246,7 +8406,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1568118479",
@@ -8296,7 +8457,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1615852075",
@@ -8346,7 +8508,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1637907123",
@@ -8396,7 +8559,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1685418826",
@@ -8447,7 +8611,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1720631620",
@@ -8549,7 +8714,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1761502329",
@@ -8651,7 +8817,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1784776941",
@@ -8701,7 +8868,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1790481704",
@@ -8751,7 +8919,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1800330934",
@@ -8801,7 +8970,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1891733446",
@@ -8852,7 +9022,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1897442305",
@@ -8903,7 +9074,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1901578572",
@@ -8954,7 +9126,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1936656254",
@@ -9005,7 +9178,8 @@
     },
     "categoryType": "oil",
     "subCategory": "oil",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1962440179",
@@ -9056,7 +9230,8 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-1987122313",
@@ -9106,7 +9281,8 @@
       "perfumer": "Oud Elite"
     },
     "categoryType": "bakhoor",
-    "subCategory": "bakhoor"
+    "subCategory": "bakhoor",
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   },
   {
     "id": "oudelite-2066817787",
@@ -9157,6 +9333,7 @@
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "needsTemplate": true
+    "needsTemplate": true,
+    "saleEndsAt": "2026-10-31T23:59:59.000Z"
   }
 ]
