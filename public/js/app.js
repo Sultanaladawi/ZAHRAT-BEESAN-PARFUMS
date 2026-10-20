@@ -629,14 +629,15 @@ function getClientBottleCount(item) {
 }
 
 // Small oils carry 5 JOD instead of 12: anything sold by the tola (1, 1/2,
-// 1/4 tola) and Al-Rehab's 6 ml roll-ons.
+// 1/4 tola) and Al-Rehab's small oils (roll-ons and دهن bottles up to 20 ml).
 const TOLA_FEE_JOD = 5;
 const TOLA_RE = /تول(?:ة|ه|ات)(?=$|[\s\/)\-،,])/;
 function isTolaItem(item) {
   const text = `${item?.title || ''} ${item?.specs?.size || ''}`;
   if (TOLA_RE.test(text)) return true;
   const rehab = item?.house === 'al-rehab' || String(item?.id || '').startsWith('alrehab-');
-  return rehab && item?.categoryType === 'oil' && /(^|\s)6\s*مل/.test(text);
+  const ml = Number((text.match(/(\d+)\s*مل/) || [])[1]);
+  return rehab && (item?.categoryType === 'oil' || /دهن|زيت عطري/.test(item?.title || '')) && ml > 0 && ml <= 20;
 }
 
 function getClientDeliveryFeeJod(item) {
