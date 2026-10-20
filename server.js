@@ -72,7 +72,10 @@ async function syncWithDeraahStore(force = false) {
 }
 
 app.use(compression());
-app.use(express.json());
+app.use(express.json({ limit: '200kb' }));
+
+const { mountAdmin, publicConfig, applyOverrides, getState: getAdminState } = require('./lib/admin-routes');
+mountAdmin(app);
 
 // ── Live Direct Sync & Auto-Discovery Engine with Official Ghalati, Assaf, Thnyan, Rasasi, Al-Rehab & Le Bonheur Stores (Salla API) ──
 let cachedCatalog = null;
@@ -1444,7 +1447,7 @@ app.get('/api/catalog', async (req, res) => {
                 ? await syncWithDeraahStore(force)
                 : await syncWithGhalatiStore(force)));
   res.setHeader('Cache-Control', 'no-store, max-age=0');
-  res.json(data);
+  res.json(applyOverrides(data, publicConfig(await getAdminState())));
 });
 
 // ── SEO: one shareable page per product, sitemap and robots ──
@@ -1467,7 +1470,7 @@ function seoProducts() {
 const escHtml = s => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const siteOrigin = req => `${req.headers['x-forwarded-proto'] || req.protocol}://${req.headers['x-forwarded-host'] || req.get('host')}`;
 let indexTemplate = null;
-function renderPage(req, meta) {
+function renderPage(req, meta, siteConfig) {
   if (!indexTemplate) indexTemplate = fs.readFileSync(path.join(__dirname, 'public', 'index.html'), 'utf8');
   const origin = siteOrigin(req);
   const tags = `
@@ -1482,26 +1485,29 @@ function renderPage(req, meta) {
   <meta property="og:url" content="${origin}${meta.path}">
   <meta name="twitter:card" content="summary_large_image">${meta.jsonLd ? `
   <script type="application/ld+json">${JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c')}</script>` : ''}${meta.productId ? `
-  <script>window.__OPEN_PRODUCT__ = ${JSON.stringify(meta.productId)};</script>` : ''}`;
+  <script>window.__OPEN_PRODUCT__ = ${JSON.stringify(meta.productId)};</script>` : ''}${siteConfig ? `
+  <script>window.__SITE_CONFIG__ = ${JSON.stringify(siteConfig).replace(/</g, '\\u003c')};</script>` : ''}`;
   return indexTemplate
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escHtml(meta.title)}</title>`)
     .replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', m => m + tags);
 }
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const cfg = publicConfig(await getAdminState());
   res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   res.send(renderPage(req, {
     path: '/',
     title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
     description: 'أكثر من 1,800 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور، بتوصيل لكل الأردن والخليج.',
     image: 'images/logo_small.jpg',
-  }));
+  }, cfg));
 });
 
-app.get('/p/:id', (req, res, next) => {
+app.get('/p/:id', async (req, res, next) => {
+  const cfg = publicConfig(await getAdminState());
   const p = seoProducts().get(String(req.params.id));
-  if (!p) return next();
-  const price = Number(p.finalJod) || 0;
+  if (!p || cfg.hidden.includes(String(p.id))) return next();
+  const price = Number(cfg.prices[String(p.id)] || p.finalJod) || 0;
   const available = p.isAvailable !== false && p.status !== 'out';
   const name = p.title || p.titleEn;
   const desc = `${name}${p.titleEn && p.titleEn !== name ? ` (${p.titleEn})` : ''} — ${price} د.أ. ${String(p.overview || '').replace(/\s+/g, ' ').slice(0, 150)}`;
@@ -1520,17 +1526,24 @@ app.get('/p/:id', (req, res, next) => {
       offers: { '@type': 'Offer', priceCurrency: 'JOD', price, availability: available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
         url: `${siteOrigin(req)}/p/${encodeURIComponent(p.id)}` },
     },
-  }));
+  }, cfg));
 });
 
-app.get('/sitemap.xml', (req, res) => {
+app.get('/sitemap.xml', async (req, res) => {
   const origin = siteOrigin(req);
-  const urls = [`${origin}/`, ...[...seoProducts().keys()].map(id => `${origin}/p/${encodeURIComponent(id)}`)];
+  const hidden = new Set(publicConfig(await getAdminState()).hidden);
+  const urls = [`${origin}/`, ...[...seoProducts().keys()].filter(id => !hidden.has(id)).map(id => `${origin}/p/${encodeURIComponent(id)}`)];
   res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${escHtml(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
 });
 
 app.get('/robots.txt', (req, res) => {
-  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${siteOrigin(req)}/sitemap.xml\n`);
+  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\nSitemap: ${siteOrigin(req)}/sitemap.xml\n`);
+});
+
+app.get(['/admin', '/admin/'], (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
 
 app.use(express.static(path.join(__dirname, 'public'), { index: false }));

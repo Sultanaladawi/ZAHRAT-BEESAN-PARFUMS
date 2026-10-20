@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة التحكم | زهرة بيسان</title>
+  <link rel="icon" href="/images/logo_transparent_small.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/admin/admin.css?v=2">
+</head>
+<body>
+  <!-- Login -->
+  <div id="loginView" class="login-page" hidden>
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
+    <div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div>
+    <form class="login-card" id="loginForm" autocomplete="on">
+      <div class="login-logo">
+        <img src="/images/logo_transparent_small.webp" alt="">
+        <h1>Zahrat <em>Beesan</em></h1>
+        <p>لوحة تحكم المتجر</p>
+      </div>
+      <label class="field">
+        <span>كلمة السر</span>
+        <div class="pass-wrap">
+          <input id="loginPassword" type="password" class="lux-input" autocomplete="current-password" required placeholder="••••••••">
+          <button type="button" class="eye-btn" id="eyeBtn" aria-label="إظهار">👁</button>
+        </div>
+      </label>
+      <div class="error-box" id="loginError" hidden></div>
+      <button class="submit-btn" type="submit" id="loginBtn">دخول <span>←</span></button>
+      <p class="login-hint">دخول آمن · الجلسة تبقى 7 أيام على هذا الجهاز</p>
+    </form>
+  </div>
+
+  <!-- App -->
+  <div id="appView" class="admin-root" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="side-logo">
+        <span class="side-spark">✦</span>
+        <div>
+          <div class="side-brand">Zahrat Beesan</div>
+          <div class="side-sub">PARFUMS</div>
+        </div>
+      </div>
+      <nav class="side-nav" id="sideNav"></nav>
+      <a class="side-link-out" href="/" target="_blank" rel="noopener">↗ فتح المتجر</a>
+      <button class="side-logout" id="logoutBtn" type="button">⎋ تسجيل الخروج</button>
+    </aside>
+    <div class="side-overlay" id="sideOverlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="القائمة">☰</button>
+        <div class="order-banner" id="orderBanner" hidden>
+          <span class="bell">🔔</span>
+          <span id="orderBannerText">طلب جديد</span>
+          <button type="button" id="orderBannerGo">عرض</button>
+        </div>
+        <div class="topbar-spacer"></div>
+        <button class="store-toggle" id="storeToggle" type="button">
+          <span class="dot"></span><span class="label">...</span>
+        </button>
+        <div class="profile">
+          <div class="avatar">ز</div>
+          <div class="profile-text"><strong>المالك</strong><span>Admin</span></div>
+        </div>
+      </header>
+      <div class="storage-warning" id="storageWarning" hidden></div>
+      <main class="page" id="page"></main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card">
+      <button class="modal-x" type="button" id="modalClose">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="/admin/admin.js?v=2"></script>
+</body>
+</html>

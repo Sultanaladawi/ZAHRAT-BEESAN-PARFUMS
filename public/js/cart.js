@@ -93,13 +93,13 @@ function cartLines() {
 // group, plus a fixed profit per group.
 const OFFER_RULES = [
   // house, how the supplier writes it, bottles in a group, profit per group (JOD)
-  { house: 'assaf', match: /3\s*\+\s*1/, size: 4, profit: 10, ar: 'اشترِ 3 والرابع مجاناً', en: 'Buy 3, get 1 free' },
-  { house: 'assaf', match: /2\s*\+\s*1|1\s*\+\s*2/, size: 3, profit: 10, ar: 'اشترِ 2 والثالث مجاناً', en: 'Buy 2, get 1 free' },
+  { key: 'assaf-3+1', house: 'assaf', match: /3\s*\+\s*1/, size: 4, profit: 10, ar: 'اشترِ 3 والرابع مجاناً', en: 'Buy 3, get 1 free' },
+  { key: 'assaf-2+1', house: 'assaf', match: /2\s*\+\s*1|1\s*\+\s*2/, size: 3, profit: 10, ar: 'اشترِ 2 والثالث مجاناً', en: 'Buy 2, get 1 free' },
   // Fixed-price groups: the supplier sells the whole group for groupSar.
   // Product lists are the suppliers' offer categories (Ghalati c1389534759
   // "اختر ٢ بـ 96 ريال", Thnyan c214031821 "اشتر اربع عطور بـ199 ريال").
-  { house: 'ghalati', sallaIds: ["1249911952", "1089182563", "1569128723", "113450693", "625338571", "25373017", "1942806396", "64193430", "214279369", "1757606131", "704485665", "1859126740", "1487856502", "133723763", "1781279602"], size: 2, groupSar: 96, profit: 10, ar: 'أي عطرين بسعر مميز', en: 'Any 2 for a special price' },
-  { house: 'thnyan', sallaIds: ["144017218", "1373419763", "1978166384", "402320647", "1013392673", "1494531800", "1981620511", "604656001", "1303768509", "1072057445", "1812897358", "1253372737", "637775795", "732847010", "402914932"], size: 4, groupSar: 199, profit: 15, ar: 'أي 4 عطور بسعر مميز', en: 'Any 4 for a special price' },
+  { key: 'ghalati-2', house: 'ghalati', sallaIds: ["1249911952", "1089182563", "1569128723", "113450693", "625338571", "25373017", "1942806396", "64193430", "214279369", "1757606131", "704485665", "1859126740", "1487856502", "133723763", "1781279602"], size: 2, groupSar: 96, profit: 10, ar: 'أي عطرين بسعر مميز', en: 'Any 2 for a special price' },
+  { key: 'thnyan-4', house: 'thnyan', sallaIds: ["144017218", "1373419763", "1978166384", "402320647", "1013392673", "1494531800", "1981620511", "604656001", "1303768509", "1072057445", "1812897358", "1253372737", "637775795", "732847010", "402914932"], size: 4, groupSar: 199, profit: 15, ar: 'أي 4 عطور بسعر مميز', en: 'Any 4 for a special price' },
 ];
 const OFFER_FEE_PER_BOTTLE = 4;
 
@@ -116,7 +116,17 @@ function offerRuleFor(p) {
   const key = productHouseKey(p);
   const txt = String(p.promotionTitle || '');
   const sid = String(p.sallaId || '');
-  return OFFER_RULES.find(r => r.house === key && (r.sallaIds ? r.sallaIds.includes(sid) : r.match.test(txt))) || null;
+  return OFFER_RULES.find(r => r.house === key && offerSetting(r).enabled !== false
+    && (r.sallaIds ? r.sallaIds.includes(sid) : r.match.test(txt))) || null;
+}
+
+// Switches and profit set in the dashboard.
+function offerSetting(rule) {
+  return (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.offers && SITE_CONFIG.offers[rule.key]) || {};
+}
+function offerProfit(rule) {
+  const v = offerSetting(rule).profit;
+  return v === undefined || v === null || !Number.isFinite(Number(v)) ? rule.profit : Number(v);
 }
 
 const supplierJod = p => Number(p.baseJod) || Math.round((Number(p.sarPrice) || 0) / 5.29);
@@ -143,7 +153,7 @@ function cartPriceJod(lines) {
       const paid = rule.groupSar
         ? Math.round(rule.groupSar / 5.29)
         : grp.slice(0, rule.size - 1).reduce((n, p) => n + supplierJod(p), 0);
-      const price = paid + OFFER_FEE_PER_BOTTLE * rule.size + rule.profit;
+      const price = paid + OFFER_FEE_PER_BOTTLE * rule.size + offerProfit(rule);
       total += price;
       applied.push({ rule, price, normal: grp.reduce((n, p) => n + normalJod(p), 0) });
     }
@@ -225,15 +235,27 @@ function cartRender() {
     ${extras.html}
     <div class="cart-total"><span>${isAr ? 'المجموع' : 'Total'}</span><strong>${total} ${symbol}</strong></div>
     <p class="cart-note">${isAr ? 'التوصيل يُحسب حسب المدينة ويُؤكَّد معك على واتساب.' : 'Delivery depends on your city and is confirmed with you on WhatsApp.'}</p>
-    <button type="button" class="cart-checkout" onclick="cartCheckout()">
+    ${typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.ordersOpen === false
+      ? `<div class="cart-closed">${isAr ? 'استقبال الطلبات متوقف مؤقتاً، رح نرجع قريباً 🌙' : 'We are not taking orders right now, back soon 🌙'}</div>`
+      : `<button type="button" class="cart-checkout" onclick="cartCheckout()">
       <span>💬</span> ${isAr ? 'أكمل الطلب عبر واتساب' : 'Complete order on WhatsApp'}
-    </button>`;
+    </button>`}`;
+}
+
+// Short order number the customer and the dashboard both see.
+function cartOrderRef() {
+  const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const bytes = new Uint8Array(5);
+  (window.crypto || {}).getRandomValues ? crypto.getRandomValues(bytes) : bytes.forEach((_, i) => { bytes[i] = Math.random() * 256; });
+  return 'ZB-' + [...bytes].map(b => abc[b % abc.length]).join('');
 }
 
 function cartCheckout() {
   const isAr = currentLang === 'ar';
   const lines = cartLines();
   if (!lines.length) return;
+  if (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.ordersOpen === false) return;
+  const ref = cartOrderRef();
   const priced = cartPriceJod(lines);
   const symbol = activeSymbol();
   const rows = lines.map(({ p, qty }, n) => {
@@ -242,15 +264,28 @@ function cartCheckout() {
   });
   const offers = priced.applied.map(a => `🎁 ${a.rule.ar}: ${jodToActive(a.price)} ${symbol}`);
   const extras = typeof cartExtras === 'function' ? cartExtras(priced.total) : { discountJod: 0 };
-  const coupon = typeof activeCoupon === 'function' ? activeCoupon() : null;
+  const coupon = extras.coupon || null;
   if (coupon) offers.push(`🎟️ ${isAr ? 'كود الخصم' : 'Coupon'} ${coupon.code}: − ${jodToActive(extras.discountJod)} ${symbol}`);
   if (extras.freeDelivery) offers.push(isAr ? '🚚 توصيل مجاني' : '🚚 Free delivery');
+  const subtotalJod = priced.total;
   priced.total -= extras.discountJod;
   const text = (isAr
-    ? ['مرحباً، أود طلب العطور التالية من زهرة بيسان:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
-    : ['Hello, I would like to order these perfumes from Zahrat Beesan:', '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '', 'Name:', 'City & address:']
+    ? [`مرحباً، أود طلب العطور التالية من زهرة بيسان (رقم الطلب ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
+    : [`Hello, I would like to order these perfumes from Zahrat Beesan (order ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '', 'Name:', 'City & address:']
   ).join('\n');
   window.open(`https://wa.me/${CART_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  // Logged for the dashboard; the order itself is confirmed on WhatsApp.
+  fetch('/api/orders', {
+    method: 'POST',
+    keepalive: true,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      ref,
+      lines: lines.map(({ p, qty }) => ({ id: p.id, title: p.title, qty, unitJod: normalJod(p) })),
+      subtotalJod, discountJod: extras.discountJod || 0, totalJod: priced.total,
+      coupon: coupon ? coupon.code : null, freeDelivery: !!extras.freeDelivery, currency: activeCurrency.code,
+    }),
+  }).catch(() => {});
 }
 
 function openCart() {

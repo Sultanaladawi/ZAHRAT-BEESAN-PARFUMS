@@ -34,3 +34,6 @@ tools/images/__pycache__/
 tools/images/audit.json
 tools/images/qa.json
 tools/sync-report.json
+
+# Dashboard data when running locally (online it lives on the admin-data branch)
+data/admin-state.json
