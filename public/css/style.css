@@ -3314,6 +3314,13 @@ body.home-catalog-hidden #catalog { display: none; }
 .cart-line-offer { font-size: 0.76rem; font-weight: 700; color: #1f7a4a; margin-top: 3px; }
 .cart-line-hint { font-size: 0.74rem; color: #a6655d; margin: 2px 0 6px; }
 .cart-saving { display: flex; justify-content: space-between; color: #1f7a4a; font-weight: 700; margin-bottom: 6px; }
+.cart-offers { border: 1px dashed rgba(31, 122, 74, 0.35); background: rgba(31, 122, 74, 0.05); border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; display: grid; gap: 6px; font-size: 0.88rem; }
+.cart-offers .cart-saving { margin: 2px 0 0; padding-top: 6px; border-top: 1px solid rgba(31, 122, 74, 0.18); }
+.cart-before { display: flex; justify-content: space-between; color: var(--text-muted, #777); }
+.cart-before s { opacity: 0.8; }
+.cart-offer-row { display: flex; justify-content: space-between; gap: 10px; color: #1f7a4a; }
+.cart-offer-row strong { white-space: nowrap; }
+.cart-offer-pct { font-style: normal; font-weight: 800; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; background: #1f7a4a; color: #fff; margin-inline-start: 4px; white-space: nowrap; }
 
 /* ══════════ Search suggestions ══════════ */
 .search-wrapper { position: relative; }
