@@ -8,7 +8,7 @@
   <link rel="icon" href="/images/logo_transparent_small.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@500;600&family=DM+Sans:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
-  <link rel="stylesheet" href="/admin/admin.css?v=3">
+  <link rel="stylesheet" href="/admin/admin.css?v=4">
 </head>
 <body>
   <!-- Login -->
@@ -16,6 +16,7 @@
     <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
     <div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div>
     <form class="login-card" id="loginForm" autocomplete="on">
+      <button class="lang-toggle login-lang" data-lang-toggle type="button" aria-label="Language">EN</button>
       <div class="login-logo">
         <img src="/images/logo_transparent_small.webp" alt="">
         <h1>زهرة بيسان</h1>
@@ -63,7 +64,9 @@
           <span id="orderBannerText">طلب جديد</span>
           <button type="button" id="orderBannerGo">عرض</button>
         </div>
+        <button class="stop-alarm" id="stopAlarm" type="button" hidden>🔔 إيقاف التنبيه</button>
         <div class="topbar-spacer"></div>
+        <button class="lang-toggle" id="langToggle" data-lang-toggle type="button" aria-label="Language">EN</button>
         <button class="store-toggle" id="storeToggle" type="button">
           <span class="dot"></span><span class="label">...</span>
         </button>
@@ -85,6 +88,7 @@
     </div>
   </div>
 
-  <script src="/admin/admin.js?v=3"></script>
+  <script src="/admin/i18n.js?v=1"></script>
+  <script src="/admin/admin.js?v=4"></script>
 </body>
 </html>

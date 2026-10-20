@@ -262,11 +262,52 @@ function cartOrderRef() {
   return 'ZB-' + [...bytes].map(b => abc[b % abc.length]).join('');
 }
 
+// Step 1 of checkout: the customer's name, phone and address, remembered
+// on this device for the next order.
 function cartCheckout() {
   const isAr = currentLang === 'ar';
-  const lines = cartLines();
-  if (!lines.length) return;
+  if (!cartLines().length) return;
   if (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.ordersOpen === false) return;
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('zb_contact') || '{}'); } catch (e) { /* none yet */ }
+  const esc = v => String(v || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const foot = document.getElementById('cartDrawerFoot');
+  foot.innerHTML = `
+    <form class="checkout-form" id="checkoutForm" onsubmit="event.preventDefault(); cartSendOrder()">
+      <h4>${isAr ? 'معلومات التوصيل' : 'Delivery details'}</h4>
+      <div class="checkout-row">
+        <input name="name" required maxlength="60" placeholder="${isAr ? 'الاسم' : 'Name'}" value="${esc(saved.name)}" autocomplete="name">
+        <input name="phone" required maxlength="30" inputmode="tel" dir="ltr" placeholder="${isAr ? 'رقم الهاتف' : 'Phone'}" value="${esc(saved.phone)}" autocomplete="tel">
+      </div>
+      <div class="checkout-delivery">
+        <label><input type="radio" name="delivery" value="delivery"${saved.delivery !== 'pickup' ? ' checked' : ''}> ${isAr ? 'توصيل' : 'Delivery'}</label>
+        <label><input type="radio" name="delivery" value="pickup"${saved.delivery === 'pickup' ? ' checked' : ''}> ${isAr ? 'استلام من المتجر' : 'Pick up'}</label>
+      </div>
+      <input name="city" maxlength="40" placeholder="${isAr ? 'المدينة' : 'City'}" value="${esc(saved.city)}" autocomplete="address-level2">
+      <input name="address" maxlength="200" placeholder="${isAr ? 'العنوان بالتفصيل (المنطقة، الشارع، أقرب معلم)' : 'Address (area, street, landmark)'}" value="${esc(saved.address)}" autocomplete="street-address">
+      <textarea name="notes" rows="2" maxlength="300" placeholder="${isAr ? 'ملاحظات (اختياري)' : 'Notes (optional)'}"></textarea>
+      <button type="submit" class="cart-checkout"><span>💬</span> ${isAr ? 'إرسال الطلب عبر واتساب' : 'Send order on WhatsApp'}</button>
+      <button type="button" class="checkout-back" onclick="cartRender()">${isAr ? '→ رجوع للحقيبة' : '← Back to bag'}</button>
+    </form>`;
+  foot.querySelector('input[name="name"]').focus();
+}
+
+function cartSendOrder() {
+  const isAr = currentLang === 'ar';
+  const lines = cartLines();
+  const form = document.getElementById('checkoutForm');
+  if (!lines.length || !form) return;
+  const f = new FormData(form);
+  const contact = {
+    name: String(f.get('name') || '').trim(), phone: String(f.get('phone') || '').trim(),
+    city: String(f.get('city') || '').trim(), address: String(f.get('address') || '').trim(),
+    notes: String(f.get('notes') || '').trim(), delivery: f.get('delivery') === 'pickup' ? 'pickup' : 'delivery',
+  };
+  if (contact.delivery === 'delivery' && !contact.city) {
+    showNotification(isAr ? 'اكتب المدينة حتى نوصلك الطلب' : 'Please add your city for delivery', '📍');
+    return;
+  }
+  try { localStorage.setItem('zb_contact', JSON.stringify({ ...contact, notes: '' })); } catch (e) { /* private mode */ }
   const ref = cartOrderRef();
   const priced = cartPriceJod(lines);
   const symbol = activeSymbol();
@@ -282,8 +323,10 @@ function cartCheckout() {
   const subtotalJod = priced.total;
   priced.total -= extras.discountJod;
   const text = (isAr
-    ? [`مرحباً، أود طلب العطور التالية من زهرة بيسان (رقم الطلب ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '', 'الاسم:', 'المدينة والعنوان:']
-    : [`Hello, I would like to order these perfumes from Zahrat Beesan (order ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '', 'Name:', 'City & address:']
+    ? [`مرحباً، أود طلب العطور التالية من زهرة بيسان (رقم الطلب ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `المجموع: ${jodToActive(priced.total)} ${symbol}`, '',
+      `الاسم: ${contact.name}`, `الهاتف: ${contact.phone}`, contact.delivery === 'pickup' ? 'الاستلام: من المتجر' : `التوصيل: ${contact.city}${contact.address ? ` – ${contact.address}` : ''}`, ...(contact.notes ? [`ملاحظات: ${contact.notes}`] : [])]
+    : [`Hello, I would like to order these perfumes from Zahrat Beesan (order ${ref}):`, '', ...rows, ...(offers.length ? ['', ...offers] : []), '', `Total: ${jodToActive(priced.total)} ${symbol}`, '',
+      `Name: ${contact.name}`, `Phone: ${contact.phone}`, contact.delivery === 'pickup' ? 'Pick up from the store' : `Delivery: ${contact.city}${contact.address ? ` – ${contact.address}` : ''}`, ...(contact.notes ? [`Notes: ${contact.notes}`] : [])]
   ).join('\n');
   window.open(`https://wa.me/${CART_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
   // Logged for the dashboard; the order itself is confirmed on WhatsApp.
@@ -295,9 +338,10 @@ function cartCheckout() {
       ref,
       lines: lines.map(({ p, qty }) => ({ id: p.id, title: p.title, qty, unitJod: normalJod(p) })),
       subtotalJod, discountJod: extras.discountJod || 0, totalJod: priced.total,
-      coupon: coupon ? coupon.code : null, freeDelivery: !!extras.freeDelivery, currency: activeCurrency.code,
+      coupon: coupon ? coupon.code : null, freeDelivery: !!extras.freeDelivery, currency: activeCurrency.code, contact,
     }),
   }).catch(() => {});
+  cartRender();
 }
 
 function openCart() {
