@@ -1485,7 +1485,7 @@ app.get('/api/catalog', async (req, res) => {
                 : (house === 'oudelite' || house === 'oud-elite')
                   ? await syncWithOudeliteStore(force)
                   : await syncWithGhalatiStore(force)));
-  res.setHeader('Cache-Control', 'no-store, max-age=0');
+  res.setHeader('Cache-Control', CATALOG_CACHE);
   res.json(applyOverrides(data, publicConfig(await getAdminState())));
 });
 
@@ -1531,9 +1531,14 @@ function renderPage(req, meta, siteConfig) {
     .replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', m => m + tags);
 }
 
+// The CDN keeps pages and catalogs for a minute or two (and serves a stale
+// copy while it refreshes), so visitors don't wait on the server each time.
+const PAGE_CACHE = 'public, max-age=0, s-maxage=60, stale-while-revalidate=600';
+const CATALOG_CACHE = 'public, max-age=60, s-maxage=120, stale-while-revalidate=3600';
+
 app.get('/', async (req, res) => {
   const cfg = publicConfig(await getAdminState());
-  res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+  res.setHeader('Cache-Control', PAGE_CACHE);
   res.send(renderPage(req, {
     path: '/',
     title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
@@ -1550,7 +1555,7 @@ app.get('/p/:id', async (req, res, next) => {
   const available = p.isAvailable !== false && p.status !== 'out';
   const name = p.title || p.titleEn;
   const desc = `${name}${p.titleEn && p.titleEn !== name ? ` (${p.titleEn})` : ''} — ${price} د.أ. ${String(p.overview || '').replace(/\s+/g, ' ').slice(0, 150)}`;
-  res.setHeader('Cache-Control', 'public, max-age=300');
+  res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600');
   res.send(renderPage(req, {
     path: `/p/${encodeURIComponent(p.id)}`,
     type: 'product',
@@ -1585,7 +1590,21 @@ app.get(['/admin', '/admin/'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
 
-app.use(express.static(path.join(__dirname, 'public'), { index: false }));
+// Images and fonts carry a version in their URL, so browsers keep them for a
+// week. Scripts, styles and data are checked on each visit but kept at the
+// CDN (a deploy clears it; catalog data for five minutes, as the sync is hourly).
+app.use(express.static(path.join(__dirname, 'public'), {
+  index: false,
+  setHeaders(res, file) {
+    if (/\.(?:jpe?g|png|webp|gif|svg|ico|woff2?|ttf|mp4)$/i.test(file)) {
+      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+    } else if (/\.json$/i.test(file)) {
+      res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=3600');
+    } else if (/\.(?:js|css)$/i.test(file)) {
+      res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=86400, must-revalidate');
+    }
+  },
+}));
 
 app.get('/api/status', (req, res) => {
   res.json({
