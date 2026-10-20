@@ -6140,7 +6140,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-كاندي-مسك/p104646338",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/ovoFesZuPgo1qvBKahLP2Hxy658hpkaAPLfwmhgJ.jpg",
-    "image": "images/ghalati_104646338.jpg?v=95f50065",
+    "image": "images/ghalati_104646338.jpg?v=2523c12e",
     "originalImage": "https://cdn.salla.sa/Dqvgy/ovoFesZuPgo1qvBKahLP2Hxy658hpkaAPLfwmhgJ.jpg",
     "galleryImages": [],
     "overview": "عطر كاندي مسك بخلاصة المسك المغلف بنكهة الفواكه اللذيذة، تركيبة معززة بفاكهة الليتشي والورد لتمنحك جاذبية خاصة ومتعة لا تقاوم، الرائحة مصممة بدقة واحتراف عالٍ لتلائم الرجال والنساء لكل المناسبات، مركز وفواح يدوم لساعات طويلة .",
@@ -6163,7 +6163,7 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "ghalati-215077727",
@@ -6184,7 +6184,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-ليذر-عود/p215077727",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/I4cgrMfb7syWgFT7ONvSMfqppvznfZ7XqoNZMq2y.jpg",
-    "image": "images/ghalati_215077727.jpg?v=8c59fd85",
+    "image": "images/ghalati_215077727.jpg?v=ba451794",
     "originalImage": "https://cdn.salla.sa/Dqvgy/I4cgrMfb7syWgFT7ONvSMfqppvznfZ7XqoNZMq2y.jpg",
     "galleryImages": [],
     "overview": "عطر ليذر عود: رحلة في عالم الشرق الفاخر الوصف: استوحي عطر ليذر عود من أجواء سباقات الخيل في الصحراء، حيث يجمع بين عبق الأصالة وفخامة الشرق. بانطلاقة تابلية غنية، تمتزج النفحات الخشبية مع الروائح الجلدية الدافئة لتجسد اسم العطر.",
@@ -6207,7 +6207,7 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "ghalati-863469488",
@@ -6228,7 +6228,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-1981/p863469488",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/yZ47OozfRAeIlSBJSfLiyGd2ytZD1os31DXezuyW.jpg",
-    "image": "images/ghalati_863469488.jpg?v=b9f3a054",
+    "image": "images/ghalati_863469488.jpg?v=8d9b4d82",
     "originalImage": "https://cdn.salla.sa/Dqvgy/yZ47OozfRAeIlSBJSfLiyGd2ytZD1os31DXezuyW.jpg",
     "galleryImages": [],
     "overview": "عطر 1981 يأخذك لحقبة الثمانينات الماضية ، حيث كانت لحظات من الفرح والعاطفة والرقي متداخلة ، مما يخلق ذكريات صمدت أمام اختبار الزمن. الهيل ، بمكوناته الدافئة والحارة ، يحتل مركز الصدارة وينقلك على الفور إلى لمسة من الغرابة التي توقظ الحواس مع تطور الرائحة ، تظهر همسات حلوة من الكراميل المملح ،",
@@ -6251,7 +6251,7 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "ghalati-921934657",
@@ -6272,7 +6272,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-1727/p921934657",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/jf5lOXuj41Ta0nje7kwVwiM3FtL7F33FKrLkSsoX.jpg",
-    "image": "images/ghalati_921934657.jpg?v=5d8d777f",
+    "image": "images/ghalati_921934657.jpg?v=9af766f3",
     "originalImage": "https://cdn.salla.sa/Dqvgy/jf5lOXuj41Ta0nje7kwVwiM3FtL7F33FKrLkSsoX.jpg",
     "galleryImages": [],
     "overview": "عطر 1727: تجربة فاخرة تمزج بين الأصالة والحداثة مكونات عطر 1727: الافتتاحية: عبير منعش من الجريب فروت والبرغموت. القلب: نغمات غنية من أخشاب الغاياك، التبغ، العود، وخشب الأرز. القاعدة: قاعدة قوية وجذابة من العنبر، البنزوين، الفيتيفير، والليذر الفاخر. مواصفات عطر 1727: بلد المنشأ: المملكة العربية السعودية.",
@@ -6295,7 +6295,8 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayoutOverride": "original",
+    "imageLayout": "original"
   },
   {
     "id": "ghalati-1205768081",
@@ -6358,7 +6359,7 @@
     "status": "out",
     "url": "https://ghalati.com/ar/عطر-ايريس-مسك-50-مل/p1643445094",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/KrmOFurf9NRCBOum6w4aETQkxhcVsE1gCItubKmc.jpg",
-    "image": "images/ghalati_1643445094.jpg?v=8b98ffb8",
+    "image": "images/ghalati_1643445094.jpg?v=5cc4a4ab",
     "originalImage": "https://cdn.salla.sa/Dqvgy/KrmOFurf9NRCBOum6w4aETQkxhcVsE1gCItubKmc.jpg",
     "galleryImages": [],
     "overview": "عطر ايريس مسك ، عطر نقي بقوام حريري يبرز السوسن في أكثر الثنائيات إثارة، يمنح الاحتضان الدافئ للمسك والسوسن الطابع البودري بلمسة دافئة وحميمية، مصمم للارتداء بمفرده أو ممزوجا مع أي من عطورنا لتكثيف وتخصيص انتشاره .",
@@ -6381,7 +6382,7 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   },
   {
     "id": "ghalati-2105329808",
@@ -6402,7 +6403,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-سبايسي-باتشولي/p2105329808",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/2r3MtCbE1rTbRIWpwB57VWzHEhcUnqSYQXyJZ2Ya.png",
-    "image": "images/ghalati_2105329808.jpg?v=389cf37d",
+    "image": "images/ghalati_2105329808.jpg?v=66ffcd33",
     "originalImage": "https://cdn.salla.sa/Dqvgy/2r3MtCbE1rTbRIWpwB57VWzHEhcUnqSYQXyJZ2Ya.png",
     "galleryImages": [],
     "overview": "عطر سبايسي باتشولي عباره عن روائح داكنة مكثفة من الأخشاب والجلد، معززة بتأثير دخاني. عطر يذكر بأجواء صالات السيجار الفخمة، حيث تتعانق روائح التبغ والبخور والجلود مع المكونات القورماندية .",
@@ -6425,6 +6426,6 @@
     "boxImage": null,
     "categoryType": "perfume",
     "saleEndsAt": "2026-10-31T23:59:59.000Z",
-    "needsTemplate": true
+    "imageLayout": "showcase"
   }
 ]

@@ -41,3 +41,4 @@ data/admin-state.json
 
 # Local agent worktrees
 .claude/
+.venv/
