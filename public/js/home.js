@@ -13,8 +13,8 @@ const HOME_SLIDES = [
     productId: 'alrehab-209357139',
     eyebrowAr: 'دار زهرة بيسان للعطور', eyebrowEn: 'Zahrat Beesan Parfums',
     titleAr: 'عطور أصلية من أعرق الدور الخليجية', titleEn: 'Authentic perfumes from the finest Gulf houses',
-    textAr: 'أكثر من 1,800 عطر وبخور وتولة من 8 دور معتمدة، بضمان الأصالة وتوصيل لكل الأردن والخليج.',
-    textEn: '1,800+ perfumes, bakhoor and oils from 8 authorized houses, delivered across Jordan and the Gulf.',
+    textAr: 'أكثر من 2,500 عطر وبخور وتولة من 8 دور معتمدة، بضمان الأصالة وتوصيل لكل الأردن والخليج.',
+    textEn: '2,500+ perfumes, bakhoor and oils from 8 authorized houses, delivered across Jordan and the Gulf.',
     ctaAr: 'تسوّق الآن', ctaEn: 'Shop now', action: 'catalog',
   },
   {

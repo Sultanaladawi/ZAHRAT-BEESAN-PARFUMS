@@ -19,7 +19,7 @@ const FRAGRANCE_HOUSES = [
     descAr: "قصر العطور الملكية الشامل — تصفح أحدث وأرقى ما أنتجته دور العطور الخليجية والعربية بضمان الأصالة 100%.",
     descEn: "The Premier Royal Perfume Destination — Browse the finest creations from authorized Arabian and French houses with 100% authenticity guarantee.",
     hasActiveCatalog: true,
-    count: 1821
+    count: 2502
   },
   {
     id: "ghalati",
@@ -32,10 +32,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور نيش وفرنسية فاخرة، زيوت نقية وبخور ملكي",
     specialtyEn: "Haute French & Oriental Parfums, Pure Oils & Royal Bakhoor",
-    descAr: "التشكيلة الرسمية المعتمدة في زهرة بيسان مع توفير فوري لـ 120 عطراً وباقة ومجموعة إهداء مختومة بختم المصنع.",
-    descEn: "Official launch collection at Zahrat Beesan with 120 authentic factory-sealed perfumes and gift sets ready for immediate delivery.",
+    descAr: "التشكيلة الرسمية المعتمدة في زهرة بيسان مع توفير فوري لـ 132 عطراً وباقة ومجموعة إهداء مختومة بختم المصنع.",
+    descEn: "Official launch collection at Zahrat Beesan with 132 authentic factory-sealed perfumes and gift sets ready for immediate delivery.",
     hasActiveCatalog: true,
-    count: 120
+    count: 132
   },
   {
     id: "assaf",
@@ -48,10 +48,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور استثنائية ومجموعات نيش عالمية فواحة (أروقيت، فرانكل، وايلد كولت، بيقاسوس، مس ساكورا، ريسك)",
     specialtyEn: "Iconic Arabian Scents & Global Best-Sellers (Arrogate, Frankel, Wild Colt, Pegasus, Risk)",
-    descAr: "التشكيلة الرسمية المعتمدة لعطور ومجموعات وعروض عساف في زهرة بيسان مع توفير شامل لـ 250 عطراً وبوكس إهداء وعرض خاص مختوماً بختم المصنع الأصلي.",
-    descEn: "Official authorized Assaf Perfumes collection at Zahrat Beesan with 250 authentic factory-sealed perfumes, luxury gift sets, and special offers.",
+    descAr: "التشكيلة الرسمية المعتمدة لعطور ومجموعات وعروض عساف في زهرة بيسان مع توفير شامل لـ 260 عطراً وبوكس إهداء وعرض خاص مختوماً بختم المصنع الأصلي.",
+    descEn: "Official authorized Assaf Perfumes collection at Zahrat Beesan with 260 authentic factory-sealed perfumes, luxury gift sets, and special offers.",
     hasActiveCatalog: true,
-    count: 250
+    count: 260
   },
   {
     id: "thunayan",
@@ -64,10 +64,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور نيش ومجموعات ملكية فاخرة (ديكتاتور، أول أوف يو، ليدي أوف ذا سين، ديكتاتور ميدنايت، أستون، تشارجر، ريفيرا)",
     specialtyEn: "Luxury Niche Perfumes & Signature Collections (Dictator, All Of You, Lady Of The Scene, Aston, Charger, Riviera)",
-    descAr: "التشكيلة الرسمية الشاملة لعطور ومجموعات وبوكسات ثنيان في زهرة بيسان مع توفير شامل لـ 79 عطراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
-    descEn: "Complete official Thnyan Perfumes collection at Zahrat Beesan with 79 authentic factory-sealed perfumes and luxury gift sets.",
+    descAr: "التشكيلة الرسمية الشاملة لعطور ومجموعات وبوكسات ثنيان في زهرة بيسان مع توفير شامل لـ 89 عطراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Thnyan Perfumes collection at Zahrat Beesan with 89 authentic factory-sealed perfumes and luxury gift sets.",
     hasActiveCatalog: true,
-    count: 79
+    count: 89
   },
   {
     id: "rasasi",
@@ -96,10 +96,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "أعرق دار للعطور الشرقية والفرنسية، التولات والزيوت العطرية المركزة، البخور والمعمول واللبان العماني ومجموعات لانسي منذ 1975",
     specialtyEn: "Pioneering Perfumery Since 1975: Eau de Parfum, Concentrated Perfume Oils, Royal Bakhoor & Lansy Collections",
-    descAr: "التشكيلة الرسمية الشاملة لشركة الرحاب للعطور في زهرة بيسان مع توفير شامل لـ 625 عطراً وزيتاً عطرياً وبخوراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
-    descEn: "Complete official Al Rehab Perfumes collection at Zahrat Beesan with 625 authentic factory-sealed perfumes, concentrated oils, bakhoor, and gift sets.",
+    descAr: "التشكيلة الرسمية الشاملة لشركة الرحاب للعطور في زهرة بيسان مع توفير شامل لـ 631 عطراً وزيتاً عطرياً وبخوراً ومجموعة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Al Rehab Perfumes collection at Zahrat Beesan with 631 authentic factory-sealed perfumes, concentrated oils, bakhoor, and gift sets.",
     hasActiveCatalog: true,
-    count: 625
+    count: 631
   },
   {
     id: "labonair",
@@ -112,10 +112,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور نيش فرنسية شرقية فاخرة (بلاك كافالير Black Cavalier، سفاير روج وأونكس، ديليشز مانجو وتشوكو، برايم 25 و26، قمرة، سيليست، ذا ستوري)",
     specialtyEn: "Luxury French-Oriental Niche Perfumes: Black Cavalier, Sapphire Rouge & Onyx, Delicious Collection, Prime 25 & 26, Qumra & Celeste",
-    descAr: "التشكيلة الرسمية الشاملة لشركة لابونير (لو بونور للعطور) في زهرة بيسان مع توفير شامل لـ 38 عطراً وبكج إهداء مختومة بختم المصنع الأصلي.",
-    descEn: "Complete official Le Bonheur Perfumes collection at Zahrat Beesan with 38 authentic factory-sealed perfumes and luxury gift sets.",
+    descAr: "التشكيلة الرسمية الشاملة لشركة لابونير (لو بونور للعطور) في زهرة بيسان مع توفير شامل لـ 41 عطراً وبكج إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Le Bonheur Perfumes collection at Zahrat Beesan with 41 authentic factory-sealed perfumes and luxury gift sets.",
     hasActiveCatalog: true,
-    count: 38
+    count: 41
   },
   {
     id: "laverne",
@@ -128,10 +128,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "عطور استثنائية مستوحاة من سحر الطبيعة (توباكو، بلو لافيرن، مس لافيرن، فانتوم، آي واز هير، لومير)",
     specialtyEn: "Nature-Inspired Masterpieces & Signature Blends: Tobacco, Blue Laverne, Miss Laverne, Phantom, I Was Here & Lumiere",
-    descAr: "التشكيلة الرسمية الشاملة لدار لافيرن للعطور في زهرة بيسان مع توفير شامل لـ 217 عطراً ومجموعة وبكج إهداء ومعطرات شعر مختومة بختم المصنع الأصلي.",
-    descEn: "Complete official Laverne Perfumes collection at Zahrat Beesan with 217 authentic factory-sealed perfumes, signature scents, luxury gift sets & hair mists.",
+    descAr: "التشكيلة الرسمية الشاملة لدار لافيرن للعطور في زهرة بيسان مع توفير شامل لـ 369 عطراً ومجموعة وبكج إهداء ومعطرات شعر مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Laverne Perfumes collection at Zahrat Beesan with 369 authentic factory-sealed perfumes, signature scents, luxury gift sets & hair mists.",
     hasActiveCatalog: true,
-    count: 217
+    count: 369
   },
   {
     id: "deraah",
@@ -144,10 +144,10 @@ const FRAGRANCE_HOUSES = [
     countryEn: "Saudi Arabia 🇸🇦",
     specialtyAr: "أضخم تشكيلة عطور فرنسية وشرقية وبدائل نيش وأطقم إهداء (سيرين، مايوس، براود، لينك، كيج، بورموا)",
     specialtyEn: "Leading French & Oriental Collections: Serene, Maios, Proud, Link, Cage, Pour Moi & Luxury Gift Sets",
-    descAr: "التشكيلة الرسمية الشاملة لشركة درعه للعطور في زهرة بيسان مع توفير فوري لـ 346 عطراً وطقم إهداء مختومة بختم المصنع الأصلي.",
-    descEn: "Complete official Deraah Perfumes collection at Zahrat Beesan with 346 authentic factory-sealed perfumes and luxury gift sets.",
+    descAr: "التشكيلة الرسمية الشاملة لشركة درعه للعطور في زهرة بيسان مع توفير فوري لـ 719 عطراً وطقم إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Deraah Perfumes collection at Zahrat Beesan with 719 authentic factory-sealed perfumes and luxury gift sets.",
     hasActiveCatalog: true,
-    count: 346
+    count: 719
   },
   {
     id: "almajed",
