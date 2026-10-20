@@ -25,6 +25,7 @@ HOUSES = {
     "lebonheur": ("lebonheur_perfumes.json", "lebonheur", "lebonheur_master_bg.jpg"),
     "laverne": ("laverne_perfumes.json", "laverne", "laverne_master_bg.jpg"),
     "deraah": ("deraah_perfumes.json", "deraah", "deraah_master_bg.jpg"),
+    "oudelite": ("oudelite_perfumes.json", "oudelite", "oudelite_master_bg.jpg"),
 }
 
 ORIGINAL_CATEGORIES = {"bundle", "gift_set", "bakhoor"}
