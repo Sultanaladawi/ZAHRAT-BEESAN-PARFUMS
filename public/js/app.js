@@ -422,19 +422,19 @@ async function selectHouse(houseId) {
       }
       if (houseId === 'assaf') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور عساف (Assaf Perfumes)' : 'Complete Official Collection — Assaf Perfumes';
-        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 250 عطراً ومجموعة وبكج وعرض خاص من عساف أصلية 100% مستوردة مباشرة من المصدر' : 'All 250 authentic Assaf perfumes, luxury gift sets, hidden releases & special offers';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 260 عطراً ومجموعة وبكج وعرض خاص من عساف أصلية 100% مستوردة مباشرة من المصدر' : 'All 260 authentic Assaf perfumes, luxury gift sets, hidden releases & special offers';
       } else if (houseId === 'labonair') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة لابونير للعطور (Le Bonheur Perfumes)' : 'Complete Official Collection — Le Bonheur Perfumes';
-        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 38 عطراً وبكج إهداء من دار لابونير (لو بونور) أصلية 100% مستوردة مباشرة من المصدر' : 'All 38 authentic Le Bonheur perfumes, special offers & luxury gift sets imported directly';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 41 عطراً وبكج إهداء من دار لابونير (لو بونور) أصلية 100% مستوردة مباشرة من المصدر' : 'All 41 authentic Le Bonheur perfumes, special offers & luxury gift sets imported directly';
       } else if (houseId === 'laverne') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — دار لافيرن للعطور (Laverne Perfumes)' : 'Complete Official Collection — Laverne Perfumes';
         if (subtitleText) subtitleText.textContent = isAr ? 'كافة عطور وباقات ومعطرات شعر دار لافيرن الرسمية أصلية 100% مستوردة مباشرة من المصدر' : 'All authentic Laverne perfumes, signature scents, gift sets & hair mists imported directly';
       } else if (houseId === 'deraah') {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة درعه للعطور (Deraah Perfumes)' : 'Complete Official Collection — Deraah Perfumes';
-        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 346 عطراً وطقم إهداء وبدائل النيش من شركة درعه أصلية 100% مستوردة مباشرة من المصدر' : 'All 346 authentic Deraah perfumes, gift sets & niche alternatives imported directly';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 719 عطراً وطقم إهداء وبدائل النيش من شركة درعه أصلية 100% مستوردة مباشرة من المصدر' : 'All 719 authentic Deraah perfumes, gift sets & niche alternatives imported directly';
       } else {
         if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — عطور ثنيان (Thnyan Perfumes)' : 'Complete Official Collection — Thnyan Perfumes';
-        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 79 عطراً ومجموعة وبوكس إهداء من دار ثنيان أصلية 100% مستوردة مباشرة من المصدر' : 'All 79 authentic Thnyan perfumes, luxury gift sets & special offers imported directly';
+        if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 89 عطراً ومجموعة وبوكس إهداء من دار ثنيان أصلية 100% مستوردة مباشرة من المصدر' : 'All 89 authentic Thnyan perfumes, luxury gift sets & special offers imported directly';
       }
     } else if (houseId === 'rasasi') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
@@ -443,7 +443,7 @@ async function selectHouse(houseId) {
     } else if (houseId === 'al-rehab') {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الشاملة — شركة الرحاب للعطور (Al Rehab Perfumes)' : 'Complete Official Collection — Al Rehab Perfumes';
-      if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 625 عطراً وزيتاً عطرياً وبخوراً ومجموعة إهداء من شركة الرحاب أصلية 100% مستوردة مباشرة من المصدر' : 'All 625 authentic Al Rehab perfumes, concentrated perfume oils, bakhoor & gift sets imported directly';
+      if (subtitleText) subtitleText.textContent = isAr ? 'كافة الـ 631 عطراً وزيتاً عطرياً وبخوراً ومجموعة إهداء من شركة الرحاب أصلية 100% مستوردة مباشرة من المصدر' : 'All 631 authentic Al Rehab perfumes, concentrated perfume oils, bakhoor & gift sets imported directly';
     } else {
       if (bakhoorFilterBtn) bakhoorFilterBtn.style.display = '';
       if (titleText) titleText.textContent = isAr ? 'التشكيلة الرسمية الأولى — دار غلاتي (Ghalati)' : 'Official Launch Collection — Ghalati House';
