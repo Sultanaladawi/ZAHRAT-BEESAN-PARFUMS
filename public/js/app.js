@@ -1631,7 +1631,13 @@ function renderProductModalContent(p) {
   // 3. Pure Flacon Official Studio Image (High-res Ghalati white-background bottle)
   const cleanBottleUrl = p.bottleUrl ? p.bottleUrl.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/') : '';
   const flaconSrc = cleanBottleUrl || p.originalImage || p.fragranticaBottle;
-  if (flaconSrc && flaconSrc !== p.image && flaconSrc !== p.boxImage) {
+  // Packs, sets and bakhoor already show the supplier's main photo as p.image,
+  // so their gallery goes straight to the supplier's photos (minus that one).
+  const keepsSupplierPhoto = p.imageLayout === 'original'
+    || (!p.imageLayout && ['bundle', 'gift_set', 'bakhoor'].includes(p.categoryType));
+  if (keepsSupplierPhoto) {
+    [cleanBottleUrl, p.originalImage, (p.galleryImages || [])[0]].forEach(u => { if (u) seenUrls.add(u); });
+  } else if (flaconSrc && flaconSrc !== p.image && flaconSrc !== p.boxImage) {
     addGalleryItem(flaconSrc, t.quickViewFlacon || 'الزجاجة الصافية', true);
   }
 
