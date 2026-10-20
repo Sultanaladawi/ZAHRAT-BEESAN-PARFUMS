@@ -14,12 +14,12 @@ const FRAGRANCE_HOUSES = [
     region: "global",
     countryAr: "المملكة الأردنية الهاشمية 🇯🇴",
     countryEn: "Jordan & International 🇯🇴",
-    specialtyAr: "مختارات حصرية من أرقى بيوت العطور المعتمدة (عساف، لافيرن، درعه، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور)",
-    specialtyEn: "Curated Masterpieces from the Finest Houses (Assaf, Laverne, Deraah, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur)",
+    specialtyAr: "مختارات حصرية من أرقى بيوت العطور المعتمدة (عساف، لافيرن، درعه، الرصاصي، ثنيان، غلاتي، الرحاب، لو بانهور، نخبة العود)",
+    specialtyEn: "Curated Masterpieces from the Finest Houses (Assaf, Laverne, Deraah, Rasasi, Thnyan, Ghalati, Al-Rehab, Le Bonheur, Oud Elite)",
     descAr: "قصر العطور الملكية الشامل — تصفح أحدث وأرقى ما أنتجته دور العطور الخليجية والعربية بضمان الأصالة 100%.",
     descEn: "The Premier Royal Perfume Destination — Browse the finest creations from authorized Arabian and French houses with 100% authenticity guarantee.",
     hasActiveCatalog: true,
-    count: 2502
+    count: 2682
   },
   {
     id: "ghalati",
@@ -225,19 +225,20 @@ const FRAGRANCE_HOUSES = [
     hasActiveCatalog: false
   },
   {
-    id: "oud-elite",
-    nameAr: "شركة نخبة العود",
+    id: "oudelite",
+    nameAr: "نخبة العود",
     nameEn: "Oud Elite",
     logo: "images/brands/oud-elite.svg",
-    badge: "💎",
+    badge: "🪵",
     region: "sa",
     countryAr: "المملكة العربية السعودية 🇸🇦",
     countryEn: "Saudi Arabia 🇸🇦",
-    specialtyAr: "رواد العود المبتكر والعطور الفواحة (إيليت بلند، فاطمة، كوين، مخلط ملكي)",
-    specialtyEn: "Award-Winning Agarwood & Signature Blends: Elite Blend & Fatima",
-    descAr: "علامة سعودية رائدة حاصلة على جوائز دولية بأكثر من 340 فرعاً. نوفر أرقى تشكيلاتها الأصلية المختومة.",
-    descEn: "Prestigious Saudi brand with hundreds of boutiques across the Arab world.",
-    hasActiveCatalog: false
+    specialtyAr: "دهن العود الكمبودي والمخلطات الملكية والعطور الشرقية (إليت بلند، فاطمة، مشاعر، كنز، مسك النخبة) مع البخور والمبثوث وشنط الإهداء",
+    specialtyEn: "Cambodian Oud Oils, Royal Mukhallats & Oriental Perfumes: Elite Blend, Fatima, Mashaer, Kanz & Elite Musk, plus Bakhoor and Gift Sets",
+    descAr: "التشكيلة الرسمية الشاملة لنخبة العود في زهرة بيسان مع 180 عطراً ودهن عود ومخلطاً وبخوراً وشنطة إهداء مختومة بختم المصنع الأصلي.",
+    descEn: "Complete official Oud Elite collection at Zahrat Beesan with 180 authentic perfumes, oud oils, mukhallats, bakhoor and gift sets.",
+    hasActiveCatalog: true,
+    count: 180
   },
   {
     id: "afnan",
@@ -708,7 +709,7 @@ const FRAGRANCE_HOUSES = [
 
 // Only houses we actually stock are shown in menus, the footer and counts;
 // the rest of the list above is kept for future houses.
-const STOCKED_HOUSE_IDS = ['all', 'ghalati', 'assaf', 'thunayan', 'rasasi', 'al-rehab', 'labonair', 'laverne', 'deraah'];
+const STOCKED_HOUSE_IDS = ['all', 'ghalati', 'assaf', 'thunayan', 'rasasi', 'al-rehab', 'labonair', 'laverne', 'deraah', 'oudelite'];
 for (let i = FRAGRANCE_HOUSES.length - 1; i >= 0; i--) {
   if (!STOCKED_HOUSE_IDS.includes(FRAGRANCE_HOUSES[i].id)) FRAGRANCE_HOUSES.splice(i, 1);
 }

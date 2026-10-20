@@ -6,15 +6,15 @@
 
 // Houses switched off in the dashboard are left out.
 const homeHouseOn = id => typeof SITE_CONFIG === 'undefined' || !SITE_CONFIG.hiddenHouses.includes(id);
-const HOME_HOUSES = ['ghalati', 'assaf', 'laverne', 'rasasi', 'deraah', 'al-rehab', 'thunayan', 'labonair'].filter(homeHouseOn);
+const HOME_HOUSES = ['ghalati', 'assaf', 'laverne', 'rasasi', 'deraah', 'al-rehab', 'thunayan', 'labonair', 'oudelite'].filter(homeHouseOn);
 
 const HOME_SLIDES = [
   {
     productId: 'alrehab-209357139',
     eyebrowAr: 'دار زهرة بيسان للعطور', eyebrowEn: 'Zahrat Beesan Parfums',
     titleAr: 'عطور أصلية من أعرق الدور الخليجية', titleEn: 'Authentic perfumes from the finest Gulf houses',
-    textAr: 'أكثر من 1,800 عطر وبخور وتولة من 8 دور معتمدة، بضمان الأصالة وتوصيل لكل الأردن والخليج.',
-    textEn: '1,800+ perfumes, bakhoor and oils from 8 authorized houses, delivered across Jordan and the Gulf.',
+    textAr: 'أكثر من 2,600 عطر وبخور وتولة من 9 دور معتمدة، بضمان الأصالة وتوصيل لكل الأردن والخليج.',
+    textEn: '2,600+ perfumes, bakhoor and oils from 9 authorized houses, delivered across Jordan and the Gulf.',
     ctaAr: 'تسوّق الآن', ctaEn: 'Shop now', action: 'house:al-rehab',
   },
   {
