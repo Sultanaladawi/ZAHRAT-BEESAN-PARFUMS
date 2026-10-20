@@ -216,7 +216,6 @@ function cartRender() {
   const symbol = activeSymbol();
   const extras = typeof cartExtras === 'function' ? cartExtras(priced.total) : { html: '', discountJod: 0 };
   const total = jodToActive(priced.total - extras.discountJod);
-  const saved = jodToActive(priced.normal - priced.total);
   body.innerHTML = lines.map(({ p, qty }) => {
     const unit = cartUnitPrice(p);
     const name = isAr ? p.title : (p.titleEn || p.title);
@@ -243,7 +242,7 @@ function cartRender() {
   }).join('');
 
   foot.innerHTML = `
-    ${priced.applied.length ? `<div class="cart-saving"><span>🎁 ${isAr ? 'وفّرت بالعروض' : 'Offer savings'}</span><strong>− ${saved} ${symbol}</strong></div>` : ''}
+    ${priced.applied.length ? cartOfferSummary(priced, isAr, symbol) : ''}
     ${extras.html}
     <div class="cart-total"><span>${isAr ? 'المجموع' : 'Total'}</span><strong>${total} ${symbol}</strong></div>
     <p class="cart-note">${isAr ? 'التوصيل يُحسب حسب المدينة ويُؤكَّد معك على واتساب.' : 'Delivery depends on your city and is confirmed with you on WhatsApp.'}</p>
@@ -252,6 +251,34 @@ function cartRender() {
       : `<button type="button" class="cart-checkout" onclick="cartCheckout()">
       <span>💬</span> ${isAr ? 'أكمل الطلب عبر واتساب' : 'Complete order on WhatsApp'}
     </button>`}`;
+}
+
+// The bag lines show normal prices, so when offers apply the foot spells out
+// the drop: the total before offers, each offer group with its discount
+// percentage, then the total.
+function cartOfferSummary(priced, isAr, symbol) {
+  const groups = new Map();
+  for (const a of priced.applied) {
+    const g = groups.get(a.rule) || { rule: a.rule, count: 0, normal: 0, price: 0 };
+    g.count += 1; g.normal += a.normal; g.price += a.price;
+    groups.set(a.rule, g);
+  }
+  const houses = { assaf: ['عساف', 'Assaf'], ghalati: ['غلاتي', 'Ghalati'], thnyan: ['ثنيان', 'Thnyan'], rasasi: ['الرصاصي', 'Rasasi'] };
+  const rows = [...groups.values()].map(g => {
+    const off = jodToActive(g.normal - g.price);
+    const pct = g.normal > 0 ? Math.round((g.normal - g.price) / g.normal * 100) : 0;
+    const house = houses[g.rule.house] ? houses[g.rule.house][isAr ? 0 : 1] : '';
+    const label = `${house ? `${house}: ` : ''}${isAr ? g.rule.ar : g.rule.en}${g.count > 1 ? ` × ${g.count}` : ''}`;
+    return `<div class="cart-offer-row"><span>🎁 ${label} <em class="cart-offer-pct">${isAr ? `خصم ${pct}%` : `${pct}% off`}</em></span><strong>− ${off} ${symbol}</strong></div>`;
+  }).join('');
+  const before = jodToActive(priced.normal);
+  const saved = jodToActive(priced.normal - priced.total);
+  const pct = priced.normal > 0 ? Math.round((priced.normal - priced.total) / priced.normal * 100) : 0;
+  return `<div class="cart-offers">
+    <div class="cart-before"><span>${isAr ? 'المجموع قبل العروض' : 'Before offers'}</span><s>${before} ${symbol}</s></div>
+    ${rows}
+    ${groups.size > 1 ? `<div class="cart-saving"><span>${isAr ? `وفّرت ${pct}% بالعروض` : `You save ${pct}% with offers`}</span><strong>− ${saved} ${symbol}</strong></div>` : ''}
+  </div>`;
 }
 
 // Short order number the customer and the dashboard both see.
