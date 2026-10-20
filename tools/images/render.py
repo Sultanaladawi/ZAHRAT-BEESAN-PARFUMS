@@ -186,6 +186,40 @@ def mirror_clip(alpha):
     return out
 
 
+def mirror_left(alpha, start=0.0):
+    """Trim a shadow on the bottle's LEFT side only, keeping charms, pompoms
+    and tassels on the right. The axis comes from the top of the cap; from
+    `start` (fraction of the height) down, each row's left edge is clipped to
+    the mirrored right edge of the body, where the body is the run of pixels
+    joined to the axis (a tag hanging apart on the right does not count)."""
+    mask = alpha > 64
+    rows = np.where(mask.any(axis=1))[0]
+    if len(rows) < 50:
+        return alpha
+    top = rows[: max(3, len(rows) // 40)]
+    centers = []
+    for y in top:
+        xs = np.nonzero(mask[y])[0]
+        centers.append((xs.min() + xs.max()) / 2)
+    ax = int(round(float(np.median(centers))))
+    out = alpha.copy()
+    first = rows[0] + int((rows[-1] - rows[0]) * start)
+    w = mask.shape[1]
+    for y in rows[rows >= first]:
+        row = mask[y]
+        if not row[ax]:
+            continue
+        r = ax
+        while r + 1 < w and row[r + 1]:
+            r += 1
+        l = ax
+        while l - 1 >= 0 and row[l - 1]:
+            l -= 1
+        half = min(ax - l, r - ax)
+        out[y, :max(ax - half, 0)] = 0
+    return out
+
+
 # Same symmetric bottle shot with a hard one-sided studio shadow.
 def needs_mirror_clip(item):
     return item.get("house") in (None, "ghalati") and str(item.get("id", "")).startswith("oil-")
@@ -276,7 +310,7 @@ def keep_largest(alpha):
 
 def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, largest=False,
            trim_bottom=None, trim_top=None, straight_left=False, model=None,
-           cap_clip=None, white_backdrop=False, clear_glass=False):
+           cap_clip=None, white_backdrop=False, clear_glass=False, mirror_left_=None):
     from rembg import remove
     img.thumbnail((1200, 1200), Image.LANCZOS)
     rgb = flatten(img)
@@ -309,6 +343,8 @@ def cutout(img, mirror=False, solid=False, mirror_fill_=False, body_clip=None, l
         alpha = mirror_fill(alpha)
     if body_clip:
         alpha = clip_body(alpha, body_clip)
+    if mirror_left_ is not None and mirror_left_ is not False:
+        alpha = mirror_left(alpha, 0.0 if mirror_left_ is True else float(mirror_left_))
     if solid:
         alpha = solidify(alpha)
         cut = rgb.convert("RGBA")  # the model blanks colours it dropped; use the photo's
@@ -474,7 +510,8 @@ def showcase(item, house):
                        model=item.get("cutoutModel"),
                        cap_clip=item.get("cutoutCapClip"),
                        white_backdrop=bool(item.get("cutoutWhiteBackdrop")),
-                       clear_glass=item.get("cutoutClearGlass") or False)
+                       clear_glass=item.get("cutoutClearGlass") or False,
+                       mirror_left_=item.get("cutoutMirrorLeft"))
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
