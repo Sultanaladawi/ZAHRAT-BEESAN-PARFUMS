@@ -49,19 +49,62 @@ async function applySiteOverrides(list) {
   });
 }
 
-// The gold strip above the header: the dashboard's announcement when set,
-// otherwise free delivery and authenticity.
-function renderAnnouncement() {
-  const el = document.getElementById('promoStripText');
-  if (!el) return;
-  const isAr = currentLang === 'ar';
+// The gold strip above the header scrolls through everything on offer: the
+// dashboard's announcement, every supplier offer switched on in the
+// dashboard (a tap opens that house), free delivery and authenticity.
+const TICKER_HOUSES = {
+  assaf: { id: 'assaf', ar: 'عساف', en: 'Assaf' },
+  ghalati: { id: 'ghalati', ar: 'غلاتي', en: 'Ghalati' },
+  thnyan: { id: 'thunayan', ar: 'ثنيان', en: 'Thnyan' },
+  rasasi: { id: 'rasasi', ar: 'الرصاصي', en: 'Rasasi' },
+};
+
+function tickerItems(isAr) {
+  const items = [];
   const a = SITE_CONFIG.announcement;
   const custom = a ? (isAr ? a.ar : (a.en || a.ar)) : '';
+  if (custom) items.push({ text: custom, star: true });
+  const rules = typeof OFFER_RULES !== 'undefined' ? OFFER_RULES : [];
+  for (const rule of rules) {
+    const house = TICKER_HOUSES[rule.house];
+    if (!house || SITE_CONFIG.hiddenHouses.includes(house.id)) continue;
+    if ((SITE_CONFIG.offers[rule.key] || {}).enabled === false) continue;
+    items.push({ label: isAr ? house.ar : house.en, text: isAr ? rule.ar : rule.en, house: house.id, badge: isAr ? 'عرض' : 'Offer' });
+  }
   const free = Number(SITE_CONFIG.freeDeliveryJod) || 0;
-  el.textContent = custom || (isAr
-    ? `${free ? `توصيل مجاني للطلبات فوق ${free} د.أ · ` : ''}عطور أصلية 100% بختم المصنع`
-    : `${free ? `Free delivery on orders over ${free} JOD · ` : ''}100% authentic, factory sealed`);
+  if (free) items.push({ text: isAr ? `توصيل مجاني للطلبات فوق ${free} د.أ` : `Free delivery on orders over ${free} JOD` });
+  items.push({ text: isAr ? 'عطور أصلية 100% بختم المصنع' : '100% authentic, factory sealed' });
+  return items;
 }
+
+function tickerItemHtml(it) {
+  const esc = v => String(v).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const body = `${it.label ? `<strong>${esc(it.label)}:</strong> ` : ''}${esc(it.text)}${it.badge ? ` <span class="ticker-badge">${esc(it.badge)}</span>` : ''}`;
+  const tag = it.house ? `button type="button" class="ticker-item ticker-link" data-house="${esc(it.house)}"` : 'span class="ticker-item"';
+  return `<${tag}>${body}</${tag.split(' ')[0]}><span class="ticker-sep" aria-hidden="true">✦</span>`;
+}
+
+function renderAnnouncement() {
+  const strip = document.getElementById('promoStrip');
+  if (!strip) return;
+  const isAr = currentLang === 'ar';
+  const items = tickerItems(isAr);
+  const run = items.map(tickerItemHtml).join('');
+  // The run is written twice so the loop has no gap; the copy is hidden from screen readers.
+  strip.innerHTML = `<div class="ticker" dir="${isAr ? 'rtl' : 'ltr'}"><div class="ticker-track">`
+    + `<div class="ticker-run">${run}</div><div class="ticker-run" aria-hidden="true">${run}</div></div></div>`;
+  strip.classList.add('promo-ticker');
+  const track = strip.querySelector('.ticker-track');
+  const width = strip.querySelector('.ticker-run').scrollWidth;
+  track.style.animationDuration = `${Math.max(20, Math.round(width / 45))}s`;
+  strip.querySelectorAll('.ticker-run[aria-hidden] .ticker-link').forEach(b => { b.tabIndex = -1; });
+}
+
+document.addEventListener('click', e => {
+  const link = e.target.closest && e.target.closest('.ticker-link');
+  if (!link || typeof selectHouse !== 'function') return;
+  selectHouse(link.dataset.house);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   siteConfigReady.then(() => { applyHiddenHouses(); renderAnnouncement(); });
