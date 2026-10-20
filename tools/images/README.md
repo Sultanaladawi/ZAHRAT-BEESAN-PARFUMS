@@ -32,6 +32,7 @@ Some photos need a hint in the catalog entry before rendering:
 - `cutoutKeepLargest: true` drops props lying next to the bottle (wood chips, petals).
 - `cutoutTrimBottom: 0.08` cuts off a stand or plinth the bottle was photographed on (fraction of the height).
 - `cutoutTrimTop: 0.035` cuts a sliver of backdrop the model kept on top of a flat cap.
+- `cutoutMirrorLeft: 0.3` trims a shadow on the left of a bottle with a charm, pompom or tassel on the right: from 30% of the height down, the left edge is mirrored from the body's right edge (Laverne's studio shots).
 - `cutoutStraightLeft: true` cuts a shadow bulging past the left side of a straight-sided bottle (charms on the right are kept).
 - `cutoutModel: "birefnet-general"` uses the full (slower, ~12 GB RAM) model, which separates soft cast shadows the lite model keeps; render such items one per process.
 - `cutoutCapClip: 0.12` keeps only the cap width above that fraction of the height (drops a card standing behind the cap).
