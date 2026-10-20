@@ -4,153 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>زهرة بيسان للعطور | Zahrat Beesan Parfums — المتجر الرسمي</title>
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=15">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
-  <!-- ── 1. شريط الخدمات والإعلانات العلوي (مطابق لموقع زهرة بيسان الأصلي) ── -->
-  <div class="top-bar">
-    <div class="top-bar-right">
-      <!-- 📍 محدد الدولة والعملة المستقل -->
-      <button type="button" class="currency-selector-btn" onclick="openCurrencyModal()" title="تغيير الدولة والعملة">
-        <img id="currencyFlag" src="https://flagcdn.com/24x18/jo.png" class="currency-flag-img" alt="الأردن">
-        <span id="currencyLabel">متجر الأردن (دينار أردني)</span>
-        <span style="font-size: 0.65rem; opacity: 0.7;">▼</span>
-      </button>
-
-      <span class="top-bar-divider">|</span>
-
-      <!-- 🌐 محول اللغات الصريح بالأعلام 🇸🇦 / 🇬🇧 -->
-      <div class="lang-selector-group">
-        <button type="button" class="lang-btn active-lang" id="langBtnAr" onclick="setLanguage('ar')">
-          <span>🇸🇦</span>
-          <span>العربية</span>
-        </button>
-        <button type="button" class="lang-btn" id="langBtnEn" onclick="setLanguage('en')">
-          <span>🇬🇧</span>
-          <span>English</span>
-        </button>
-      </div>
-
-      <span class="top-bar-divider">|</span>
-
-      <!-- ✉️ البريد الإلكتروني المعتمد -->
-      <a href="mailto:zahratbeesanshop@gmail.com" class="top-bar-link" style="direction: ltr;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>zahratbeesanshop@gmail.com</span>
-      </a>
-    </div>
-
-    <!-- رسالة ضمان النقاء في المنتصف -->
-    <div class="top-bar-msg">
-      <span data-i18n="topAssuranceText">عطور أصلية 100% من دور العطور العربية الرائدة مباشرة ليديك ✨</span>
-    </div>
-
-    <!-- الجانب الأيسر: متجر eBay وحسابات التواصل الرسمية -->
-    <div class="top-bar-actions">
-      <!-- زر إيباي الرسمي الموثق -->
-      <a href="https://www.ebay.com/usr/zahratbeesan" target="_blank" rel="noopener noreferrer" class="btn-ebay">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        <span data-i18n="ebayStore">eBay Store</span>
-      </a>
-
-      <!-- أيقونات شبكات التواصل الرسمية لزهرة بيسان -->
-      <div class="social-icons-bar">
-        <a href="https://www.instagram.com/zahratbeesanshop/" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Instagram">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@zahratbeesanshop" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="TikTok">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.04-8.35a8.2 8.2 0 0 0 4.8 1.54V5.01a4.85 4.85 0 0 1-1-.32z"/></svg>
-        </a>
-        <a href="https://web.facebook.com/profile.php?id=61592655440235" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Facebook">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://www.snapchat.com/add/zahratbeesan" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Snapchat">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg>
-        </a>
-      </div>
-    </div>
+  <!-- ── 1. شريط العرض الذهبي (نص الإعلان من لوحة التحكم إن وُجد) ── -->
+  <div class="promo-strip" id="promoStrip">
+    <span id="promoStripText" data-i18n="promoStripText">توصيل مجاني للطلبات فوق 100 د.أ · عطور أصلية 100% بختم المصنع</span>
   </div>
 
-  <!-- ── 2. الهيدر وشعار المتجر الرئيسي وتوزيعة الأزرار ── -->
-  <header class="header-main">
-    <div class="header-container">
-      
-      <!-- اللوجو وهوية المتجر المعتمدة (الخيار 2 المعتمد) -->
-      <a href="#" class="brand-identity" onclick="event.preventDefault(); goHome()">
-        <img src="images/logo_small.webp" alt="زهرة بيسان للعطور" class="brand-logo-img" width="54" height="54">
-        <div class="brand-text-block">
-          <h1 class="brand-title-ar"><span data-i18n="brandTitleAr">زهرة بيسان</span> <span data-i18n="brandTitleSuffix">للعطور</span></h1>
-          <span class="brand-title-en" data-i18n="brandTitleEn">ZAHRAT BEESAN PARFUMS</span>
-        </div>
+  <!-- ── 2. الهيدر: سطر واحد (الشعار، الأقسام، الأدوات) ── -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header-inner">
+      <a href="#" class="brand-identity" onclick="event.preventDefault(); goHome()" aria-label="زهرة بيسان للعطور">
+        <img src="images/logo_small.webp" alt="" class="brand-logo-img" width="46" height="46">
+        <span class="brand-text-block">
+          <span class="brand-title-ar" data-i18n="brandTitleAr">زهرة بيسان</span>
+          <span class="brand-title-en">ZAHRAT BEESAN</span>
+        </span>
       </a>
 
-      <!-- شريط البحث الفاخر -->
-      <div class="search-wrapper">
-        <input type="text" id="mainSearchInput" class="search-input" data-i18n="searchPlaceholder" placeholder="ابحث عن عطرك المفضل، دار العطور، أو المكونات...">
-        <span class="search-icon">🔍</span>
-        <div class="search-suggest" id="searchSuggest"></div>
-      </div>
-
-      <!-- الإجراءات السريعة (البحث، حسابي، السلة، وزر واتساب الملكي) -->
-      <div class="actions-area">
-        <button class="icon-btn" title="المفضلة" aria-label="المفضلة" onclick="openWishlist()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <span class="cart-count-badge is-empty" id="wishCountBadge">0</span>
-        </button>
-
-        <button class="icon-btn" title="حقيبة التسوق" aria-label="حقيبة التسوق" onclick="openCart()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span class="cart-count-badge" id="cartCountBadge">0</span>
-        </button>
-
-        <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" class="action-btn-whatsapp" aria-label="طلب خاص عبر واتساب">
-          <span>💬</span>
-          <span data-i18n="btnWhatsAppOrder">طلب خاص واتساب</span>
-        </a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- ── 3. شريط التنقل الرئيسي (توزيعة الأقسام كالموقع العادي) ── -->
-  <nav class="nav-bar">
-    <div class="nav-container">
+      <nav class="main-nav" aria-label="الأقسام">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="#" class="nav-link active" onclick="event.preventDefault(); goHome()" data-i18n="navHome">الرئيسية</a>
-        </li>
-        <li class="nav-item">
           <a href="#catalog" class="nav-link" id="navHousesLink" onclick="if(activeModalPerfume) closeProductModal();">
-            <span data-i18n="navHouses">العطور الملكية</span>
-            <span class="nav-chevron">▼</span>
+            <span data-i18n="navHousesShort">الدور</span>
+            <span class="nav-chevron">▾</span>
           </a>
           <div class="dropdown-menu mega-brand-dropdown" id="housesDropdownMenu">
             <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
           </div>
         </li>
-        <li class="nav-item">
-          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('men');" data-i18n="navMen">عطور رجالية</a>
-        </li>
-        <li class="nav-item">
-          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('women');" data-i18n="navWomen">عطور نسائية</a>
-        </li>
-        <li class="nav-item">
-          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('unisex');" data-i18n="navUnisex">للجنسين</a>
-        </li>
-        <li class="nav-item">
-          <a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('bundles');" data-i18n="navSets">أطقم ومجموعات الهدايا</a>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:void(0)" onclick="openShippingModal()" class="nav-link" data-i18n="navShipping">التوصيل والشحن</a>
-        </li>
-        <li class="nav-item">
-          <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" class="nav-link" data-i18n="navContact">اتصل بنا</a>
-        </li>
+        <li class="nav-item"><a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('men');" data-i18n="navMenShort">رجالي</a></li>
+        <li class="nav-item"><a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('women');" data-i18n="navWomenShort">نسائي</a></li>
+        <li class="nav-item"><a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('unisex');" data-i18n="navUnisex">للجنسين</a></li>
+        <li class="nav-item"><a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('bundles');" data-i18n="navGifts">الهدايا</a></li>
+        <li class="nav-item"><a href="#catalog" class="nav-link" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('bakhoor');" data-i18n="navBakhoor">البخور والعود</a></li>
+        <li class="nav-item"><a href="#catalog" class="nav-link nav-link-offers" onclick="if(activeModalPerfume) closeProductModal(); filterCatalog('offers');" data-i18n="navOffers">العروض</a></li>
       </ul>
+      </nav>
+
+      <div class="header-tools">
+        <button type="button" class="tool-btn" id="searchToggle" aria-label="بحث" onclick="toggleHeaderSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </button>
+        <button type="button" class="tool-btn" aria-label="المفضلة" onclick="openWishlist()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="cart-count-badge is-empty" id="wishCountBadge">0</span>
+        </button>
+        <button type="button" class="tool-btn" aria-label="حقيبة التسوق" onclick="openCart()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count-badge" id="cartCountBadge">0</span>
+        </button>
+        <div class="locale-pill">
+          <button type="button" class="lang-btn active-lang" id="langBtnAr" onclick="setLanguage('ar')">ع</button>
+          <button type="button" class="lang-btn" id="langBtnEn" onclick="setLanguage('en')">EN</button>
+          <span class="locale-sep"></span>
+          <button type="button" class="currency-selector-btn" onclick="openCurrencyModal()" title="الدولة والعملة">
+            <img id="currencyFlag" src="https://flagcdn.com/24x18/jo.png" class="currency-flag-img" alt="" width="18" height="13">
+            <span id="currencyLabel">د.أ</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </nav>
+
+    <!-- البحث: يفتح من أيقونة العدسة -->
+    <div class="header-search-panel" id="headerSearchPanel">
+      <div class="search-wrapper">
+        <input type="text" id="mainSearchInput" class="search-input" data-i18n="searchPlaceholder" placeholder="ابحث عن عطرك المفضل، دار العطور، أو المكونات...">
+        <span class="search-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </span>
+        <div class="search-suggest" id="searchSuggest"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- واتساب: زر عائم للطلب الخاص -->
+  <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="طلب خاص عبر واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.1 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6c1.8 1 3.8 1.5 5.7 1.5 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+  </a>
 
   <!-- ── 4. المحتوى الأساسي: واجهة العرض الفاخرة للكتالوج ── -->
   <main>
@@ -235,155 +169,50 @@
 
   </main>
 
-  <!-- ── 5. شريط الضمانات الملكية الأربعة (أعلى الفوتر مباشرة - نفس المتجر الأصلي) ── -->
-  <div class="top-assurance-banner">
-    <div class="assurance-inner">
-      <div class="assurance-item">
-        <div class="assurance-icon">👑</div>
-        <div>
-          <strong class="assurance-title" data-i18n="royalCraftsmanshipTitle">عطور أصلية ومختومة 100%</strong>
-          <p class="assurance-desc" data-i18n="royalCraftsmanshipDesc">استيراد مباشر من دور العطور العربية الرائدة مع أختام المصنع الرسمية</p>
-        </div>
-      </div>
-
-      <div class="assurance-item">
-        <div class="assurance-icon">🚚</div>
-        <div>
-          <strong class="assurance-title" data-i18n="globalShippingTitle">شحن سريع ومباشر</strong>
-          <p class="assurance-desc" data-i18n="globalShippingDesc">توصيل فوري 24-48 ساعة داخل الأردن، وشحن دولي سريع لدول الخليج والعالم</p>
-        </div>
-      </div>
-
-      <div class="assurance-item">
-        <div class="assurance-icon">✨</div>
-        <div>
-          <strong class="assurance-title" data-i18n="giftPackagingTitle">تغليف إهداء ملكي فاخر</strong>
-          <p class="assurance-desc" data-i18n="giftPackagingDesc">علب فاخرة مبطنة مضادة للصدمات مع كرت إهداء ذهبي مختوم ومميز</p>
-        </div>
-      </div>
-
-      <div class="assurance-item">
-        <div class="assurance-icon">🛡️</div>
-        <div>
-          <strong class="assurance-title" data-i18n="authenticityGuaranteeTitle">ضمان الجودة والترخيص</strong>
-          <p class="assurance-desc" data-i18n="authenticityGuaranteeDesc">علامة تجارية أردنية مرخصة ومسجلة رسمياً بسجل تجاري معتمد</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 6. الفوتر الملكي الفاخر (4 أعمدة متوازنة + بطاقة السجل التجاري والتوثيق الرسمي) ── -->
-  <footer class="footer-main">
-    <div class="footer-container">
-      
-      <!-- العمود 1: هوية المتجر + بطاقة السجل التجاري والضريبة الرسمية المعتمدة -->
-      <div class="brand-col">
-        <a href="#" class="brand-identity">
-          <img src="images/logo_small.webp" alt="زهرة بيسان للعطور" class="brand-logo-img" width="54" height="54">
-          <div class="brand-text-block">
-            <h3 class="brand-title-ar"><span data-i18n="brandTitleAr">زهرة بيسان</span> <span data-i18n="brandTitleSuffix">للعطور</span></h3>
-            <span class="brand-title-en" data-i18n="brandTitleEn">ZAHRAT BEESAN PARFUMS</span>
-          </div>
-        </a>
-
-        <p class="footer-col" data-i18n="footerBrandDesc">
-          زهرة بيسان — وجهتك الفاخرة لاقتناء أرقى العطور الأصلية 100% من أشهر الدور الخليجية والعربية المعتمدة. أصالة مضمونة وخدمة متميزة تليق بكم.
-        </p>
-
-        <div class="online-badge">
-          <span class="live-dot"></span>
-          <span data-i18n="globalOnlineStore">متجر إلكتروني رسمي ومتاح عالمياً</span>
-        </div>
-
-        <!-- 🏛️ بطاقة السجل التجاري والتوثيق الرسمي المعتمد (مطابقة لموقع زهرة بيسان 100%) -->
-        <div class="trust-seal-card">
-          <div class="trust-seal-header">
-            <div class="trust-badge-icon-wrap">🛡️</div>
-            <div class="trust-header-text">
-              <span class="trust-tag" data-i18n="trustTag">ترخيص وتوثيق رسمي معتمد</span>
-              <span class="trust-ministry" data-i18n="trustMinistry">وزارة الصناعة والتجارة & ضريبة الدخل</span>
-            </div>
-          </div>
-
-          <div class="trust-seal-body">
-            <div class="trust-row">
-              <span class="trust-label" data-i18n="trustTradeNameLabel">الاسم التجاري الرسمي:</span>
-              <strong class="trust-name" data-i18n="trustTradeName">زهرة بيسان للتسوق والمتاجرة الإلكترونية</strong>
-            </div>
-
-            <div class="trust-numbers-grid">
-              <div class="trust-num-box">
-                <span class="trust-num-label" data-i18n="trustCommercialReg">السجل التجاري</span>
-                <strong class="trust-num-value">617219</strong>
-              </div>
-              <div class="trust-num-box">
-                <span class="trust-num-label" data-i18n="trustTaxId">الرقم الضريبي</span>
-                <strong class="trust-num-value">81492545</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- العمود 2: خدمة العملاء والسياسات -->
-      <div class="footer-col">
-        <h4 data-i18n="footerCustomerCare">خدمة العملاء والسياسات</h4>
-        <ul class="footer-links">
-          <li><a href="javascript:void(0)" onclick="openShippingModal()" data-i18n="footerShippingPolicy">سياسة الشحن والتوصيل</a></li>
-          <li><a href="javascript:void(0)" onclick="openPolicyModal('guarantee')" data-i18n="footerGoldenGuarantee">شهادة الضمان والأصالة 100%</a></li>
-          <li><a href="javascript:void(0)" onclick="openPolicyModal('tracking')" data-i18n="footerOrderTracking">تتبع الشحنات والطلبات</a></li>
-          <li><a href="javascript:void(0)" onclick="openPolicyModal('returns')" data-i18n="footerReturnPolicy">سياسة الاستبدال والاسترجاع</a></li>
-          <li><a href="https://www.ebay.com/usr/zahratbeesan" target="_blank" rel="noopener noreferrer" data-i18n="footerEbay">متجرنا الرسمي على eBay</a></li>
-        </ul>
-      </div>
-
-      <!-- العمود 3: دور العطور المعتمدة -->
-      <div class="footer-col">
-        <h4 data-i18n="footerHousesTitle">دور العطور والشركات (8 دور)</h4>
-        <ul class="footer-links" id="footerHousesList">
-          <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
-        </ul>
-      </div>
-
-      <!-- العمود 4: النشرة البريدية والطلب السريع ووسائل الدفع -->
-      <div class="footer-col">
-        <h4 data-i18n="footerNewsletterTitle">النشرة الملكية والطلب السريع</h4>
-        <p data-i18n="footerNewsletterDesc">
-          اشترك بالنشرة البريدية لتصلك العروض الحصرية والإصدارات المحدودة فور إطلاقها.
-        </p>
-
-        <form class="newsletter-box" onsubmit="handleNewsletter(event)">
-          <input type="email" id="newsletterEmail" class="newsletter-input" data-i18n="newsletterPlaceholder" placeholder="أدخل بريدك الإلكتروني..." required>
-          <button type="submit" class="newsletter-btn" data-i18n="btnSubscribe">اشتراك</button>
-        </form>
-
-        <div style="margin-top: 14px;">
-          <span style="font-size: 0.8rem; color: var(--espresso-dim);" data-i18n="directWhatsAppOrder">طلب مباشر واستفسارات:</span>
-          <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" style="display: block; font-weight: 800; color: #25D366; direction: ltr; text-align: right; margin-top: 4px;">
-            📱 +962 7 9669 7413
-          </a>
-        </div>
-
-        <div class="payment-badges-row">
-          <span class="payment-pill">💳 Visa</span>
-          <span class="payment-pill">💳 MasterCard</span>
-          <span class="payment-pill">🍏 Apple Pay</span>
-          <span class="payment-pill">💵 الدفع عند الاستلام</span>
-        </div>
-      </div>
-
+  <!-- ── 5. الفوتر: شريط الثقة، الشعار، الروابط، التواصل، السجل التجاري ── -->
+  <footer class="site-footer">
+    <div class="footer-trust">
+      <div class="footer-trust-item"><strong data-i18n="trustOriginal">أصلي 100%</strong><span data-i18n="trustOriginalSub">بختم المصنع</span></div>
+      <div class="footer-trust-item"><strong data-i18n="trustDelivery">توصيل 24–48 ساعة</strong><span data-i18n="trustDeliverySub">لكل محافظات الأردن</span></div>
+      <div class="footer-trust-item"><strong data-i18n="trustInspect">افحص قبل ما تدفع</strong><span data-i18n="trustInspectSub">الدفع عند الاستلام</span></div>
+      <div class="footer-trust-item"><strong data-i18n="trustGift">تغليف هدايا فاخر</strong><span data-i18n="trustGiftSub">مع كرت إهداء</span></div>
     </div>
 
-    <!-- الشريط السفلي للحقوق وزر الصعود للأعلى -->
-    <div class="footer-bottom">
-      <div>
-        <span data-i18n="footerRights">جميع الحقوق محفوظة © دار زهرة بيسان للتسوق والمتاجرة الإلكترونية | 2026 Zahrat Beesan Haute Parfumerie</span>
+    <div class="footer-center">
+      <a href="#" class="footer-brand" onclick="event.preventDefault(); goHome(); scrollToTop()">
+        <img src="images/logo_small.webp" alt="" width="60" height="60" loading="lazy">
+        <span class="footer-brand-ar"><span data-i18n="brandTitleAr">زهرة بيسان</span> <span data-i18n="brandTitleSuffix">للعطور</span></span>
+      </a>
+
+      <ul class="footer-houses" id="footerHousesList">
+        <!-- Rendered dynamically by app.js from FRAGRANCE_HOUSES -->
+      </ul>
+
+      <nav class="footer-links-row" aria-label="روابط">
+        <a href="javascript:void(0)" onclick="openShippingModal()" data-i18n="footerShipping">الشحن والتوصيل</a>
+        <a href="javascript:void(0)" onclick="openPolicyModal('returns')" data-i18n="footerReturns">الاستبدال والاسترجاع</a>
+        <a href="javascript:void(0)" onclick="openPolicyModal('guarantee')" data-i18n="footerGuarantee">ضمان الأصالة</a>
+        <a href="javascript:void(0)" onclick="openPolicyModal('tracking')" data-i18n="footerTracking">تتبّع طلبك</a>
+        <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" data-i18n="footerContact">تواصل معنا</a>
+      </nav>
+
+      <div class="footer-contact-row">
+        <a href="https://wa.me/962796697413" target="_blank" rel="noopener noreferrer" class="footer-phone">+962 7 9669 7413</a>
+        <span class="footer-dot">◆</span>
+        <a href="https://www.instagram.com/zahratbeesanshop/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@zahratbeesanshop" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://web.facebook.com/profile.php?id=61592655440235" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.snapchat.com/add/zahratbeesan" target="_blank" rel="noopener noreferrer">Snapchat</a>
+        <span class="footer-dot">◆</span>
+        <a href="https://www.ebay.com/usr/zahratbeesan" target="_blank" rel="noopener noreferrer">eBay</a>
+        <span class="footer-dot">◆</span>
+        <a href="mailto:zahratbeesanshop@gmail.com" style="direction: ltr;">zahratbeesanshop@gmail.com</a>
       </div>
-      <div>
-        <button type="button" class="scroll-top-btn" onclick="scrollToTop()" title="العودة للأعلى">
-          ▲
-        </button>
-      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <span data-i18n="footerRights">جميع الحقوق محفوظة © دار زهرة بيسان للتسوق والمتاجرة الإلكترونية | 2026</span>
+      <span class="footer-legal"><span data-i18n="footerLegal">سجل تجاري 617219 · الرقم الضريبي 81492545</span> · Visa · Mastercard · <span data-i18n="trustInspectSub">الدفع عند الاستلام</span></span>
     </div>
   </footer>
 
@@ -458,15 +287,17 @@
     </div>
   </div>
 
-  <script src="js/translations.js?v=10"></script>
+  <script src="js/translations.js?v=11"></script>
   <script src="js/houses.js?v=12"></script>
-  <script src="js/site-config.js?v=2"></script>
+  <script src="js/site-config.js?v=3"></script>
   <script src="js/app.js?v=18"></script>
-  <script src="js/home.js?v=8"></script>
+  <script src="js/home.js?v=9"></script>
   <script src="js/cart.js?v=8"></script>
 
   <script src="js/features.js?v=3"></script>
   <script src="js/quiz.js?v=1"></script>
+  <script src="js/header.js?v=1"></script>
+  <script src="js/house-page.js?v=1"></script>
   <script src="js/reviews.js?v=1"></script>
 
   <!-- اختار عطرك -->

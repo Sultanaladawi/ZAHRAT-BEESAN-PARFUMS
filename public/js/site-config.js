@@ -49,18 +49,18 @@ async function applySiteOverrides(list) {
   });
 }
 
+// The gold strip above the header: the dashboard's announcement when set,
+// otherwise free delivery and authenticity.
 function renderAnnouncement() {
+  const el = document.getElementById('promoStripText');
+  if (!el) return;
+  const isAr = currentLang === 'ar';
   const a = SITE_CONFIG.announcement;
-  let bar = document.getElementById('siteAnnouncement');
-  const text = a ? (currentLang === 'ar' ? a.ar : (a.en || a.ar)) : '';
-  if (!text) { if (bar) bar.remove(); return; }
-  if (!bar) {
-    bar = document.createElement('div');
-    bar.id = 'siteAnnouncement';
-    bar.className = 'site-announcement';
-    document.body.prepend(bar);
-  }
-  bar.textContent = text;
+  const custom = a ? (isAr ? a.ar : (a.en || a.ar)) : '';
+  const free = Number(SITE_CONFIG.freeDeliveryJod) || 0;
+  el.textContent = custom || (isAr
+    ? `${free ? `توصيل مجاني للطلبات فوق ${free} د.أ · ` : ''}عطور أصلية 100% بختم المصنع`
+    : `${free ? `Free delivery on orders over ${free} JOD · ` : ''}100% authentic, factory sealed`);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
