@@ -109,7 +109,7 @@ function productHouseKey(p) {
   const id = String(p.id || '');
   if (p.house === 'assaf' || id.startsWith('assaf-')) return 'assaf';
   if (p.house === 'thunayan' || id.startsWith('thnyan-')) return 'thnyan';
-  if (id.startsWith('alrehab-') || id.startsWith('rasasi-') || id.startsWith('laverne-') || id.startsWith('deraah-') || id.startsWith('lebonheur-')) return id.split('-')[0];
+  if (id.startsWith('alrehab-') || id.startsWith('rasasi-') || id.startsWith('laverne-') || id.startsWith('deraah-') || id.startsWith('lebonheur-') || id.startsWith('oudelite-')) return id.split('-')[0];
   return 'ghalati';
 }
 
@@ -397,12 +397,12 @@ const POLICIES = {
     icon: '👑',
     ar: { title: 'ضمان الأصالة 100%', body: [
       ['عطور أصلية ومختومة', 'كل عطورنا أصلية 100% ومستوردة من الدور الرسمية مباشرة، وتصلك مختومة بختم المصنع.'],
-      ['من المصدر الرسمي', 'نتعامل فقط مع الدور المعتمدة (غلاتي، عساف، درعة، الرصاصي، الرحاب، ثنيان، لافيرن، لو بانهور).'],
+      ['من المصدر الرسمي', 'نتعامل فقط مع الدور المعتمدة (غلاتي، عساف، درعة، الرصاصي، الرحاب، ثنيان، لافيرن، لو بانهور، نخبة العود).'],
       ['أي استفسار', 'تواصل معنا على واتساب في أي وقت للتأكد من أي منتج قبل الطلب.'],
     ] },
     en: { title: '100% authenticity guarantee', body: [
       ['Genuine & sealed', 'All our perfumes are 100% genuine, imported directly from the official houses and delivered factory-sealed.'],
-      ['Official sources only', 'We only work with authorized houses (Ghalati, Assaf, Deraah, Rasasi, Al-Rehab, Thnyan, Laverne, Le Bonheur).'],
+      ['Official sources only', 'We only work with authorized houses (Ghalati, Assaf, Deraah, Rasasi, Al-Rehab, Thnyan, Laverne, Le Bonheur, Oud Elite).'],
       ['Questions', 'Message us on WhatsApp any time to check a product before you order.'],
     ] },
   },

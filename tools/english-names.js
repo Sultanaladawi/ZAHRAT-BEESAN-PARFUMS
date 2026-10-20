@@ -21,6 +21,7 @@ const SALLA = {
   'rasasi_perfumes.json': { storeId: '1903977862', origin: 'https://store.rasasi.com.sa' },
   'alrehab_perfumes.json': { storeId: '64344517', origin: 'https://alrehabstore.com' },
   'lebonheur_perfumes.json': { storeId: '673065613', origin: 'https://lebonheurperfumes.com' },
+  'oudelite_perfumes.json': { storeId: '1934736234', origin: 'https://sa.oudelite.com' },
 };
 const LAVERNE = { file: 'laverne_perfumes.json', storeId: '504871843', origin: 'https://laverne.com' };
 const ARABIC = /[؀-ۿ]/;

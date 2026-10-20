@@ -46,6 +46,7 @@ const LAVERNE_ARCHIVE_PATH = path.join(__dirname, 'data', 'laverne_master_archiv
 const LAVERNE_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'laverne_master_bg.jpg');
 
 const DERAAH_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'deraah_perfumes.json');
+const OUDELITE_PERFUMES_PATH = path.join(__dirname, 'public', 'data', 'oudelite_perfumes.json');
 const DERAAH_ARCHIVE_PATH = path.join(__dirname, 'data', 'deraah_master_archive.json');
 const DERAAH_MASTER_BG_PATH = path.join(__dirname, 'public', 'images', 'deraah_master_bg.jpg');
 
@@ -69,6 +70,19 @@ async function syncWithDeraahStore(force = false) {
     }
   }
   return cachedDeraahCatalog || [];
+}
+
+// Oud Elite is served from its catalog file; the hourly sync keeps it current.
+let cachedOudeliteCatalog = null;
+async function syncWithOudeliteStore(force = false) {
+  if (!cachedOudeliteCatalog || force) {
+    try {
+      cachedOudeliteCatalog = JSON.parse(fs.readFileSync(OUDELITE_PERFUMES_PATH, 'utf8'));
+    } catch (e) {
+      cachedOudeliteCatalog = cachedOudeliteCatalog || [];
+    }
+  }
+  return cachedOudeliteCatalog;
 }
 
 app.use(compression());
@@ -248,7 +262,9 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
               ? `laverne_${idSlug.replace(/^laverne-/, '')}`
               : (house === 'deraah'
                 ? `deraah_${idSlug.replace(/^deraah-/, '')}`
-                : `ghalati_${idSlug}`))))));
+                : (house === 'oudelite'
+                  ? `oudelite_${idSlug.replace(/^oudelite-/, '')}`
+                  : `ghalati_${idSlug}`)))))));
   const relImg = `images/${prefix}.jpg`;
   const absImg = path.join(__dirname, 'public', 'images', `${prefix}.jpg`);
   if (fs.existsSync(absImg)) return relImg;
@@ -1433,7 +1449,7 @@ async function syncWithLaverneStoreLive(force = false) {
   return cachedLaverneCatalog;
 }
 
-// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne, ?house=deraah)
+// Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne, ?house=deraah, ?house=oudelite)
 app.get('/api/catalog', async (req, res) => {
   // Forcing a fresh supplier fetch is for local work only; online every
   // visitor would otherwise hit the supplier on each refresh.
@@ -1453,14 +1469,16 @@ app.get('/api/catalog', async (req, res) => {
               ? await syncWithLaverneStore(force)
               : (house === 'deraah'
                 ? await syncWithDeraahStore(force)
-                : await syncWithGhalatiStore(force)));
+                : (house === 'oudelite' || house === 'oud-elite')
+                  ? await syncWithOudeliteStore(force)
+                  : await syncWithGhalatiStore(force)));
   res.setHeader('Cache-Control', 'no-store, max-age=0');
   res.json(applyOverrides(data, publicConfig(await getAdminState())));
 });
 
 // ── SEO: one shareable page per product, sitemap and robots ──
 const SEO_FILES = ['perfumes', 'assaf_perfumes', 'thnyan_perfumes', 'rasasi_perfumes', 'alrehab_perfumes',
-  'lebonheur_perfumes', 'laverne_perfumes', 'deraah_perfumes'];
+  'lebonheur_perfumes', 'laverne_perfumes', 'deraah_perfumes', 'oudelite_perfumes'];
 let seoIndex = null;
 function seoProducts() {
   if (!seoIndex) {
@@ -1506,7 +1524,7 @@ app.get('/', async (req, res) => {
   res.send(renderPage(req, {
     path: '/',
     title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
-    description: 'أكثر من 2,500 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور، بتوصيل لكل الأردن والخليج.',
+    description: 'أكثر من 2,600 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور ونخبة العود، بتوصيل لكل الأردن والخليج.',
     image: 'images/logo_small.jpg',
   }, cfg));
 });
@@ -1575,7 +1593,8 @@ app.get('/api/status', (req, res) => {
     totalLebonheurProducts: cachedLebonheurCatalog ? cachedLebonheurCatalog.length : null,
     lastLaverneSync: lastLaverneSyncTime ? new Date(lastLaverneSyncTime).toISOString() : null,
     totalLaverneProducts: cachedLaverneCatalog ? cachedLaverneCatalog.length : null,
-    totalDeraahProducts: cachedDeraahCatalog ? cachedDeraahCatalog.length : 346
+    totalDeraahProducts: cachedDeraahCatalog ? cachedDeraahCatalog.length : 346,
+    totalOudeliteProducts: cachedOudeliteCatalog ? cachedOudeliteCatalog.length : null
   });
 });
 
