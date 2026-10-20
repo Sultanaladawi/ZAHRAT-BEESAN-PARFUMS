@@ -99,6 +99,8 @@ const OFFER_RULES = [
   // Product lists are the suppliers' offer categories (Ghalati c1389534759
   // "اختر ٢ بـ 96 ريال", Thnyan c214031821 "اشتر اربع عطور بـ199 ريال").
   { key: 'ghalati-2', house: 'ghalati', sallaIds: ["1249911952", "1089182563", "1569128723", "113450693", "625338571", "25373017", "1942806396", "64193430", "214279369", "1757606131", "704485665", "1859126740", "1487856502", "133723763", "1781279602"], size: 2, groupSar: 96, profit: 10, ar: 'أي عطرين بسعر مميز', en: 'Any 2 for a special price' },
+  // Rasasi runs a store-wide "buy 2, get 1 free" (promotion title "اشتري 2+1 مجانًا").
+  { key: 'rasasi-2+1', house: 'rasasi', match: /2\s*\+\s*1/, size: 3, profit: 10, ar: 'اشترِ 2 والثالث مجاناً', en: 'Buy 2, get 1 free' },
   { key: 'thnyan-4', house: 'thnyan', sallaIds: ["144017218", "1373419763", "1978166384", "402320647", "1013392673", "1494531800", "1981620511", "604656001", "1303768509", "1072057445", "1812897358", "1253372737", "637775795", "732847010", "402914932"], size: 4, groupSar: 199, profit: 15, ar: 'أي 4 عطور بسعر مميز', en: 'Any 4 for a special price' },
 ];
 const OFFER_FEE_PER_BOTTLE = 4;

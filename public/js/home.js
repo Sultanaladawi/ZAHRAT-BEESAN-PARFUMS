@@ -15,7 +15,7 @@ const HOME_SLIDES = [
     titleAr: 'عطور أصلية من أعرق الدور الخليجية', titleEn: 'Authentic perfumes from the finest Gulf houses',
     textAr: 'أكثر من 1,800 عطر وبخور وتولة من 8 دور معتمدة، بضمان الأصالة وتوصيل لكل الأردن والخليج.',
     textEn: '1,800+ perfumes, bakhoor and oils from 8 authorized houses, delivered across Jordan and the Gulf.',
-    ctaAr: 'تسوّق الآن', ctaEn: 'Shop now', action: 'catalog',
+    ctaAr: 'تسوّق الآن', ctaEn: 'Shop now', action: 'house:al-rehab',
   },
   {
     productId: 'rasasi-604456049',
@@ -105,37 +105,41 @@ function homeShowCategory(filter) {
   homeBrowseCatalog();
 }
 
+// Hero: one line that sells the store, two ways in, and three bottles from
+// three houses in arched frames (the middle one larger).
 function renderHomeHero() {
-  const slides = HOME_SLIDES.map((s, i) => {
-    const p = homeFindProduct(s.productId);
-    const img = p ? p.image : 'images/logo_transparent_small.webp';
-    return `
-      <article class="home-slide ${i === homeSlideIndex ? 'is-active' : ''}" aria-hidden="${i !== homeSlideIndex}">
-        <div class="home-slide-copy">
-          <span class="home-eyebrow">${homeText(s, 'eyebrow')}</span>
-          <h1 class="home-slide-title">${homeText(s, 'title')}</h1>
-          <p class="home-slide-text">${homeText(s, 'text')}</p>
-          <button type="button" class="home-cta" onclick="homeGo('${s.action}')">${homeText(s, 'cta')}</button>
-        </div>
-        <div class="home-slide-media">
-          <img src="${img}" alt="${p ? (homeIsAr() ? p.title : p.titleEn) : ''}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
-        </div>
-      </article>`;
-  }).join('');
-  const dots = HOME_SLIDES.map((_, i) => `
-    <button type="button" class="home-dot ${i === homeSlideIndex ? 'is-active' : ''}" onclick="homeSetSlide(${i})" aria-label="${i + 1}"></button>`).join('');
-  return `<section class="home-hero" aria-roledescription="carousel">${slides}<div class="home-dots">${dots}</div></section>`;
+  const t = translations[currentLang] || translations.ar;
+  const picks = HOME_SLIDES.map(s => ({ s, p: homeFindProduct(s.productId) }));
+  const order = picks.length === 3 ? [picks[1], picks[0], picks[2]] : picks;
+  const quizOn = typeof SITE_CONFIG === 'undefined' || SITE_CONFIG.showQuiz !== false;
+  return `
+    <section class="hero-b">
+      <span class="hero-b-eyebrow">${t.heroEyebrow}</span>
+      <h1 class="hero-b-title">${t.heroTitle}</h1>
+      <p class="hero-b-sub">${t.heroSub}</p>
+      <div class="hero-b-ctas">
+        <button type="button" class="hero-b-btn is-solid" onclick="homeBrowseCatalog()">${t.heroShopAll}</button>
+        ${quizOn ? `<button type="button" class="hero-b-btn" onclick="openQuiz()">${t.heroQuiz}</button>` : ''}
+      </div>
+      <div class="hero-b-bottles">
+        ${order.map(({ s, p }, i) => {
+          const house = (s.action.match(/^house:(.+)$/) || [])[1];
+          const meta = house ? homeHouseMeta(house) : null;
+          const label = meta ? (homeIsAr() ? meta.nameAr : meta.nameEn) : (homeIsAr() ? 'زهرة بيسان' : 'Zahrat Beesan');
+          const img = p ? p.image : 'images/logo_transparent_small.webp';
+          return `
+          <button type="button" class="hero-b-bottle${i === 1 ? ' is-main' : ''}" onclick="${p ? `openProductModal('${p.id}')` : `homeGo('${s.action}')`}">
+            <img src="${img}" alt="${p ? (homeIsAr() ? p.title : (p.titleEn || p.title)) : ''}" ${i === 1 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+            <span>${label}</span>
+          </button>`;
+        }).join('')}
+      </div>
+    </section>`;
 }
 
-function homeSetSlide(i) {
-  homeSlideIndex = (i + HOME_SLIDES.length) % HOME_SLIDES.length;
-  document.querySelectorAll('.home-slide').forEach((el, idx) => {
-    el.classList.toggle('is-active', idx === homeSlideIndex);
-    el.setAttribute('aria-hidden', String(idx !== homeSlideIndex));
-  });
-  document.querySelectorAll('.home-dot').forEach((el, idx) => el.classList.toggle('is-active', idx === homeSlideIndex));
+// Kept for older callers; the hero no longer slides.
+function homeSetSlide() {
   clearInterval(homeSlideTimer);
-  homeSlideTimer = setInterval(() => homeSetSlide(homeSlideIndex + 1), 6000);
 }
 
 function renderHomeHouses() {

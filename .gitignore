@@ -38,3 +38,6 @@ tools/discover-report.json
 
 # Dashboard data when running locally (online it lives in a private data repo)
 data/admin-state.json
+
+# Local agent worktrees
+.claude/

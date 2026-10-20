@@ -316,9 +316,7 @@ function updateCurrencyUI() {
   }
 
   if (labelEl) {
-    labelEl.textContent = currentLang === 'ar' 
-      ? `متجر ${activeCurrency.nameAr}` 
-      : `Store: ${activeCurrency.nameEn}`;
+    labelEl.textContent = currentLang === 'ar' ? activeCurrency.symbol : activeCurrency.code;
   }
 
   // Update dynamic price displays
@@ -367,16 +365,9 @@ function renderHousesStrip() {
   container.innerHTML = FRAGRANCE_HOUSES.map(h => {
     const isActive = h.id === activeHouse;
     const name = isAr ? h.nameAr : h.nameEn;
-    const countTag = h.count ? ` (${h.count} ${isAr ? 'عطر' : 'Items'})` : '';
+    const label = h.id === 'all' ? (isAr ? 'كل الدور' : 'All houses') : name;
     return `
-      <button type="button" class="house-chip ${isActive ? 'active-house' : ''}" 
-        data-house-id="${h.id}" 
-        onclick="selectHouse('${h.id}')"
-        title="${name}">
-        <img src="${h.logo}?v=10" class="house-chip-logo" alt="${name}" loading="lazy">
-        <span>${name}${countTag}</span>
-      </button>
-    `;
+      <button type="button" class="house-chip ${isActive ? 'active-house' : ''}" data-house-id="${h.id}" onclick="selectHouse('${h.id}')">${label}</button>`;
   }).join('');
 }
 
@@ -385,27 +376,8 @@ function renderFooterHouses() {
   if (!container || typeof FRAGRANCE_HOUSES === 'undefined') return;
 
   const isAr = currentLang === 'ar';
-  const featured = FRAGRANCE_HOUSES.slice(0, 10);
-
-  container.innerHTML = `
-    ${featured.map(h => {
-      const name = isAr ? h.nameAr : h.nameEn;
-      return `
-        <li>
-          <a href="#catalog" onclick="selectHouse('${h.id}')" class="footer-brand-item">
-            <img src="${h.logo}?v=10" class="footer-brand-logo" alt="${name}" loading="lazy">
-            <span>${name}</span>
-          </a>
-        </li>
-      `;
-    }).join('')}
-    <li>
-      <a href="#catalog" onclick="selectHouse('ghalati')" class="footer-brand-all">
-        <img src="images/brands/ghalati.svg" class="footer-brand-logo" alt="Ghalati" loading="lazy">
-        <span>${isAr ? `عرض كافة الدور (${FRAGRANCE_HOUSES.length - 1})` : `Browse all ${FRAGRANCE_HOUSES.length - 1} houses`}</span>
-      </a>
-    </li>
-  `;
+  container.innerHTML = FRAGRANCE_HOUSES.filter(h => h.id !== 'all').map(h => `
+    <li><a href="#catalog" onclick="selectHouse('${h.id}')">${isAr ? h.nameAr : h.nameEn}</a></li>`).join('');
 }
 
 async function selectHouse(houseId) {

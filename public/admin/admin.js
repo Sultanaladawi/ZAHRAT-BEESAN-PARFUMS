@@ -476,7 +476,7 @@ PAGES.offers = async () => {
           <h4>${esc(o.ar)}</h4>
           <label class="switch"><input type="checkbox" data-on${o.enabled ? ' checked' : ''}><span></span></label>
         </div>
-        <p>${o.size} قطع بالمجموعة · ${o.key.startsWith('assaf') ? 'الأرخص بينهم هدية' : 'سعر ثابت للمجموعة من المورد'}</p>
+        <p>${o.size} قطع بالمجموعة · ${o.key.endsWith('+1') ? 'الأرخص بينهم هدية' : 'سعر ثابت للمجموعة من المورد'}</p>
         <div class="inline-field">ربحك على كل مجموعة:
           <input class="input" type="number" min="0" step="1" value="${o.profit}" data-profit> د.أ
           ${o.profit !== o.defaultProfit ? `<span class="muted">(الأصلي ${o.defaultProfit})</span>` : ''}
