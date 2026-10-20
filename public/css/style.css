@@ -3780,3 +3780,37 @@ body.house-view .catalog-header { display: none; }
   .house-card-text p { font-size: 0.85rem; }
   .house-card-btn { width: 100%; height: 42px; }
 }
+
+/* ── Checkout details, contact form, careers ── */
+.checkout-form { display: grid; gap: 10px; }
+.checkout-form h4 { margin: 0 0 2px; font-size: 1rem; }
+.checkout-form input, .checkout-form textarea, .contact-form input, .contact-form textarea {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; font: inherit; background: #fff; color: var(--espresso); box-sizing: border-box;
+}
+.checkout-form input:focus, .checkout-form textarea:focus, .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--gold); }
+.checkout-row, .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.checkout-delivery { display: flex; gap: 16px; font-size: 0.9rem; }
+.checkout-delivery label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.checkout-delivery input { width: auto; accent-color: var(--espresso); }
+.checkout-back { background: none; border: 0; color: var(--espresso-dim); font: inherit; font-size: 0.85rem; cursor: pointer; padding: 4px; }
+.contact-sheet { position: fixed; inset: 0; z-index: 2000; background: rgba(26, 26, 26, 0.45); display: none; align-items: center; justify-content: center; padding: 16px; }
+.contact-sheet.is-open { display: flex; }
+.contact-card { position: relative; background: #fff; border-radius: 22px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; padding: 28px 24px; box-shadow: var(--shadow-lg); }
+.contact-card h3 { font-family: 'Amiri', serif; font-size: 1.8rem; margin: 0 0 6px; color: var(--espresso); }
+.contact-sub { color: var(--espresso-mid); margin: 0 0 16px; font-size: 0.92rem; line-height: 1.7; }
+.contact-x { position: absolute; top: 14px; inset-inline-end: 16px; background: none; border: 0; font-size: 1.1rem; cursor: pointer; color: var(--espresso-dim); }
+.contact-form { display: grid; gap: 10px; }
+.contact-types { display: flex; flex-wrap: wrap; gap: 8px; }
+.contact-types label { cursor: pointer; }
+.contact-types input { display: none; }
+.contact-types span { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; }
+.contact-types input:checked + span { background: var(--espresso); color: #fff; border-color: var(--espresso); }
+.contact-submit { background: var(--espresso); color: #fff; border: 0; padding: 13px; border-radius: 10px; font: inherit; font-weight: 700; cursor: pointer; }
+.contact-submit:disabled { opacity: 0.6; }
+.job-item { border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+.job-item summary { cursor: pointer; display: flex; justify-content: space-between; gap: 10px; align-items: center; list-style: none; }
+.job-item summary span { color: var(--espresso-dim); font-size: 0.82rem; }
+.job-item p { color: var(--espresso-mid); line-height: 1.8; font-size: 0.9rem; }
+.spinner-sm { width: 26px; height: 26px; border: 3px solid var(--cream-dark); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 24px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 520px) { .checkout-row, .contact-row { grid-template-columns: 1fr; } }
