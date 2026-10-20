@@ -241,11 +241,15 @@ function getBottleCount(item) {
   return inferBottleCount(item?.title || '', item?.overview || '', item?.categoryType || 'perfume');
 }
 
-// Small oils sold by the tola (1, 1/2, 1/4 tola) carry 5 JOD instead of 12.
+// Small oils carry 5 JOD instead of 12: anything sold by the tola (1, 1/2,
+// 1/4 tola) and Al-Rehab's 6 ml roll-ons.
 const TOLA_FEE_JOD = 5;
 const TOLA_RE = /تول(?:ة|ه|ات)(?=$|[\s\/)\-،,])/;
 function isTolaItem(item) {
-  return TOLA_RE.test(`${item?.title || ''} ${item?.specs?.size || ''}`);
+  const text = `${item?.title || ''} ${item?.specs?.size || ''}`;
+  if (TOLA_RE.test(text)) return true;
+  const rehab = item?.house === 'al-rehab' || String(item?.id || '').startsWith('alrehab-');
+  return rehab && item?.categoryType === 'oil' && /(^|\s)6\s*مل/.test(text);
 }
 
 function getDeliveryFeeJod(item) {
