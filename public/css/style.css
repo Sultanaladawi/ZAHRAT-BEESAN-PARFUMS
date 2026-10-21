@@ -3467,26 +3467,24 @@ body.home-catalog-hidden #catalog { display: none; }
   line-height: 1.5;
 }
 
-/* Offers ticker: the strip scrolls; hover or focus pauses it */
-.promo-strip.promo-ticker { padding: 0; overflow: hidden; }
-.ticker { overflow: hidden; white-space: nowrap; }
-.ticker-track { display: inline-flex; width: max-content; animation: ticker-scroll 40s linear infinite; }
+/* Offers ticker: the strip keeps scrolling; only pointing at an offer pauses it */
+.promo-strip.promo-ticker { padding: 0; overflow: hidden; background: linear-gradient(90deg, #b8976a, var(--gold) 30%, #d9bf96 50%, var(--gold) 70%, #b8976a); }
+.ticker { overflow: hidden; white-space: nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ticker-track { display: inline-flex; width: max-content; animation: ticker-scroll 40s linear infinite; will-change: transform; }
 .ticker[dir="rtl"] .ticker-track { animation-name: ticker-scroll-rtl; }
-.ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
+@media (hover: hover) { .ticker-track:has(.ticker-link:hover) { animation-play-state: paused; } }
 .ticker-run { display: inline-flex; align-items: center; flex-shrink: 0; }
-.ticker-item { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; font: inherit; color: inherit; background: none; border: 0; }
+.ticker-item { display: inline-flex; align-items: center; gap: 7px; padding: 9px 0; font: inherit; color: inherit; background: none; border: 0; }
 .ticker-item strong { font-weight: 800; }
-.ticker-link { cursor: pointer; }
-.ticker-link:hover, .ticker-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; outline: none; }
-.ticker-badge { font-size: 0.7rem; font-weight: 800; padding: 1px 8px; border-radius: 999px; background: var(--espresso); color: var(--gold); }
-.ticker-sep { margin: 0 22px; opacity: 0.55; font-size: 0.7rem; }
+.ticker-link { cursor: pointer; transition: transform 0.2s; }
+.ticker-link:hover, .ticker-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; outline: none; transform: translateY(-1px); }
+.ticker-badge { font-size: 0.7rem; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: var(--espresso); color: var(--gold-light); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18); }
+.ticker-sep { margin: 0 26px; color: var(--espresso); opacity: 0.45; font-size: 0.7rem; }
 @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes ticker-scroll-rtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
+/* Reduced motion: the owner wants the strip moving, so it only slows down. */
 @media (prefers-reduced-motion: reduce) {
-  .ticker { white-space: normal; text-align: center; }
-  .ticker-track { animation: none; display: block; width: auto; }
-  .ticker-run[aria-hidden] { display: none; }
-  .ticker-run { flex-wrap: wrap; justify-content: center; }
+  .ticker-track { animation-duration: 90s !important; }
 }
 
 .site-header {

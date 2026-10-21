@@ -96,7 +96,7 @@ function renderAnnouncement() {
   strip.classList.add('promo-ticker');
   const track = strip.querySelector('.ticker-track');
   const width = strip.querySelector('.ticker-run').scrollWidth;
-  track.style.animationDuration = `${Math.max(20, Math.round(width / 45))}s`;
+  track.style.animationDuration = `${Math.max(18, Math.round(width / 70))}s`; // about 70px a second
   strip.querySelectorAll('.ticker-run[aria-hidden] .ticker-link').forEach(b => { b.tabIndex = -1; });
 }
 
