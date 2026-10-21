@@ -30,6 +30,17 @@ jobs:
       - name: Check suppliers and apply price, stock and offer changes
         run: node tools/sync-check.js --apply
 
+      # Photo galleries change rarely and cost one request per product, so
+      # they are refreshed once a day (the 03:xx UTC run) or on a manual run.
+      - name: Refresh supplier photo galleries
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%H)" = "03" ]; then
+            node tools/galleries.js
+          else
+            echo "Not the daily gallery run."
+          fi
+
       - name: Commit updated catalog
         run: |
           if git diff --quiet -- public/data; then
