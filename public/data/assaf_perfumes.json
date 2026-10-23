@@ -3907,10 +3907,10 @@
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
-    "sarPrice": 155,
+    "sarPrice": 159,
     "origSarPrice": 799,
-    "baseJod": 29,
-    "finalJod": 41,
+    "baseJod": 30,
+    "finalJod": 42,
     "origJod": 163,
     "isAvailable": true,
     "status": "sale",
@@ -3945,7 +3945,8 @@
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "promotionTitle": "2 + 1 مجانًا"
   },
   {
     "id": "assaf-1122310076",
