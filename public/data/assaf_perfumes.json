@@ -5844,11 +5844,11 @@
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 3,
     "feeJod": 22,
-    "sarPrice": 199,
-    "origSarPrice": 799,
-    "baseJod": 38,
-    "finalJod": 60,
-    "origJod": 173,
+    "sarPrice": 195,
+    "origSarPrice": 499,
+    "baseJod": 37,
+    "finalJod": 59,
+    "origJod": 116,
     "isAvailable": true,
     "status": "sale",
     "url": "https://3saf.com/ar/مجموعة-سمر-أروقيت/p1731158495",
@@ -5882,7 +5882,8 @@
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "promotionTitle": "2 + 1 مجانًا"
   },
   {
     "id": "assaf-2059790339",
@@ -5996,8 +5997,8 @@
     "baseJod": 33,
     "finalJod": 55,
     "origJod": 79,
-    "isAvailable": true,
-    "status": "sale",
+    "isAvailable": false,
+    "status": "out",
     "url": "https://3saf.com/ar/frankel-summer-gift-collection/p527229526",
     "bottleUrl": "https://cdn.salla.sa/yrlRO/JI6JSFOTVkp5ANVxQBmAYZHGbC1orf4hyXs2RXxA.png",
     "image": "images/assaf_527229526.jpg?v=8a092b45",
