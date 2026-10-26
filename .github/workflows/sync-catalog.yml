@@ -45,6 +45,11 @@ jobs:
       - name: Hide duplicate products
         run: node tools/dedupe.js
 
+      # Product details checked against the suppliers (sizes, set contents):
+      # the sync does not touch them, this just makes sure they stay.
+      - name: Keep checked product details
+        run: node tools/apply-fixes.js
+
       - name: Commit updated catalog
         run: |
           if git diff --quiet -- public/data; then

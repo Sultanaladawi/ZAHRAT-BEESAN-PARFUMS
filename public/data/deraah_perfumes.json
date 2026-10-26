@@ -38336,8 +38336,8 @@
     "id": "deraah-M-10111051012100-1003",
     "sallaId": "M-10111051012100-1003",
     "house": "deraah",
-    "title": "عطر أوبيزيت النسائي",
-    "titleEn": "Opposite Eau de Parfum",
+    "title": "عطر أوبيزيت النسائي 100مل",
+    "titleEn": "Opposite Eau de Parfum 100 ml 100 ml",
     "brand": "درعه (H2O)",
     "subBrand": "H2O",
     "bottleCount": 1,
@@ -38370,26 +38370,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة H2O"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — H2O"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10311111011075-1023",
     "sallaId": "M-10311111011075-1023",
     "house": "deraah",
-    "title": "عطر مخلط عود",
-    "titleEn": "Mukhallat Oud",
+    "title": "عطر مخلط عود 75مل",
+    "titleEn": "Mukhallat Oud 75 ml 75 ml",
     "brand": "درعه (DERAAH OUD)",
     "subBrand": "DERAAH OUD",
     "bottleCount": 1,
@@ -38422,26 +38423,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "75 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة DERAAH OUD"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "75 ml",
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10311111013070-1008",
     "sallaId": "M-10311111013070-1008",
     "house": "deraah",
-    "title": "عطر اصل الطيب",
-    "titleEn": "Asl Al-Teeb perfume",
+    "title": "عطر اصل الطيب 70مل",
+    "titleEn": "Asl Al-Teeb perfume 70 ml 70 ml",
     "brand": "درعه (DERAAH OUD)",
     "subBrand": "DERAAH OUD",
     "bottleCount": 1,
@@ -38474,26 +38476,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "70 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة DERAAH OUD"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "70 ml",
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10311111013100-1027",
     "sallaId": "M-10311111013100-1027",
     "house": "deraah",
-    "title": "عطر خواطر",
-    "titleEn": "Khawater perfume",
+    "title": "عطر خواطر 100مل",
+    "titleEn": "Khawater perfume 100 ml 100 ml",
     "brand": "درعه (DERAAH OUD)",
     "subBrand": "DERAAH OUD",
     "bottleCount": 1,
@@ -38526,26 +38529,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة DERAAH OUD"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10311111013120-1025",
     "sallaId": "M-10311111013120-1025",
     "house": "deraah",
-    "title": "عطر رسوخ",
-    "titleEn": "Rusukh perfume",
+    "title": "عطر رسوخ 120مل",
+    "titleEn": "Rusukh perfume 120 ml 120 ml",
     "brand": "درعه (DERAAH OUD)",
     "subBrand": "DERAAH OUD",
     "bottleCount": 1,
@@ -38578,26 +38582,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "120 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "شركة درعه للعطور — ماركة DERAAH OUD"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "120 ml",
       "type": "Eau de Parfum",
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10511121752150-1001",
     "sallaId": "M-10511121752150-1001",
     "house": "deraah",
-    "title": "معطر جسم فرنش جاسمين",
-    "titleEn": "French Jasmine Body Mist",
+    "title": "معطر جسم فرنش جاسمين 150 مل",
+    "titleEn": "French Jasmine Body Mist 150 ml 150 ml",
     "brand": "درعه (LABEAUTE)",
     "subBrand": "LABEAUTE",
     "bottleCount": 1,
@@ -38630,26 +38635,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "150 مل",
       "type": "معطر جسم وشعر",
       "perfumer": "شركة درعه للعطور — ماركة LABEAUTE"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "150 ml",
       "type": "Body & Hair Mist",
       "perfumer": "Deraah Perfumes — LABEAUTE"
     },
     "categoryType": "hair_mist",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10511121753150-1018",
     "sallaId": "M-10511121753150-1018",
     "house": "deraah",
-    "title": "معطر جسم فانيلا",
-    "titleEn": "Vanilla Body Mist",
+    "title": "معطر جسم فانيلا 150 مل",
+    "titleEn": "Vanilla Body Mist 150 ml 150 ml",
     "brand": "درعه (LABEAUTE)",
     "subBrand": "LABEAUTE",
     "bottleCount": 1,
@@ -38682,26 +38688,27 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "150 مل",
       "type": "معطر جسم وشعر",
       "perfumer": "شركة درعه للعطور — ماركة LABEAUTE"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "150 ml",
       "type": "Body & Hair Mist",
       "perfumer": "Deraah Perfumes — LABEAUTE"
     },
     "categoryType": "hair_mist",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "deraah-M-10511121753150-1021",
     "sallaId": "M-10511121753150-1021",
     "house": "deraah",
-    "title": "معطر جسم فانيلا أوركيد",
-    "titleEn": "Vanilla Orchid Body Mist",
+    "title": "معطر جسم فانيلا أوركيد 150 مل",
+    "titleEn": "Vanilla Orchid Body Mist 150 ml 150 ml",
     "brand": "درعه (LABEAUTE)",
     "subBrand": "LABEAUTE",
     "bottleCount": 1,
@@ -38734,18 +38741,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "150 مل",
       "type": "معطر جسم وشعر",
       "perfumer": "شركة درعه للعطور — ماركة LABEAUTE"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "150 ml",
       "type": "Body & Hair Mist",
       "perfumer": "Deraah Perfumes — LABEAUTE"
     },
     "categoryType": "hair_mist",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   }
 ]

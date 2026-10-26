@@ -842,21 +842,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-280055399",
@@ -1163,21 +1164,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-336754941",
@@ -1216,21 +1218,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-341841838",
@@ -1271,21 +1274,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-400251826",
@@ -1376,21 +1380,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-425836469",
@@ -1536,21 +1541,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-451658969",
@@ -1589,14 +1595,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -1604,7 +1610,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayout": "showcase",
-    "cutoutSource": "https://cdn.salla.sa/wWORaV/qkEFyqBac0JeKptGedvImVywN39qYHLBGH3ITAtE.jpg"
+    "cutoutSource": "https://cdn.salla.sa/wWORaV/qkEFyqBac0JeKptGedvImVywN39qYHLBGH3ITAtE.jpg",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-455270756",
@@ -1696,21 +1703,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-547721652",
@@ -1802,14 +1810,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -1817,7 +1825,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-558619442",
@@ -2229,21 +2238,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-698556421",
@@ -2496,14 +2506,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -2511,7 +2521,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-794605000",
@@ -2550,14 +2561,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -2565,7 +2576,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-799789579",
@@ -2764,14 +2776,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -2779,7 +2791,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-829770626",
@@ -3032,14 +3045,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -3047,7 +3060,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-928445508",
@@ -3407,14 +3421,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -3422,7 +3436,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-982279743",
@@ -3514,21 +3529,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1001374276",
@@ -3567,14 +3583,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -3582,7 +3598,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1032247214",
@@ -3672,14 +3689,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -3687,7 +3704,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1042660816",
@@ -4314,21 +4332,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1184695003",
@@ -4367,21 +4386,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1207405219",
@@ -4473,21 +4493,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1229308443",
@@ -4580,21 +4601,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1264390165",
@@ -4847,21 +4869,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1291655484",
@@ -5533,21 +5556,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1563986316",
@@ -5586,14 +5610,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -5601,7 +5625,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1575352351",
@@ -5692,14 +5717,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -5707,7 +5732,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1629130038",
@@ -5800,21 +5826,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "رجالي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Men",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1658227107",
@@ -6384,21 +6411,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1856964876",
@@ -6546,14 +6574,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -6561,7 +6589,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1926880752",
@@ -6600,21 +6629,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1948432988",
@@ -6653,14 +6683,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
@@ -6668,7 +6698,8 @@
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
     "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1963917413",
@@ -6813,21 +6844,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-2016836317",
@@ -7348,21 +7380,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-26294748",
@@ -7401,21 +7434,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "رجالي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Men",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-61437902",
@@ -8304,21 +8338,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1461166070",
@@ -9246,21 +9281,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "oudelite-1897442305",
@@ -9563,20 +9599,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "نخبة العود (Oud Elite)"
     },
     "specsEn": {
       "origin": "Saudi Arabia",
       "category": "Unisex",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "Oud Elite"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   }
 ]
