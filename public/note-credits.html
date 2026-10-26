@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صور المكونات | زهرة بيسان للعطور</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    body { margin: 0; font-family: 'Tajawal', system-ui, sans-serif; background: #faf7f1; color: #1a1a1a; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 16px 56px; }
+    h1 { font-family: 'Amiri', serif; font-size: 2rem; margin: 0 0 6px; }
+    p.lead { color: #4a4a4a; line-height: 1.7; margin: 0 0 24px; }
+    a { color: #8a6a3f; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .item { display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid #ecdfc9; border-radius: 14px; padding: 10px 12px; }
+    .item img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid #e5cda8; }
+    .item div { font-size: 0.82rem; line-height: 1.5; color: #4a4a4a; min-width: 0; overflow-wrap: anywhere; }
+    .item strong { display: block; font-size: 0.95rem; color: #1a1a1a; }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/">← زهرة بيسان للعطور</a>
+    <h1>صور المكونات</h1>
+    <p class="lead">صور المكونات في بطاقات العطور من <a href="https://commons.wikimedia.org" rel="noopener">Wikimedia Commons</a>، تحت رخص حرة. شكراً لأصحابها: اسم كل صورة وصاحبها ورخصتها تحت.<br>
+      Ingredient photos on our perfume cards come from Wikimedia Commons under free licences; each photo's author and licence are listed below.</p>
+    <div class="grid" id="credits"></div>
+  </main>
+  <script>
+    const esc = v => String(v || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    fetch('data/note-credits.json').then(r => r.json()).then(list => {
+      document.getElementById('credits').innerHTML = Object.entries(list).map(([key, c]) => `
+        <div class="item">
+          <img src="images/notes/${esc(key)}.webp" alt="${esc(c.note)}" loading="lazy">
+          <div><strong>${esc(c.note)}</strong>
+            <a href="${esc(c.source)}" rel="noopener" target="_blank">${esc(c.title.replace(/^File:/, ''))}</a><br>
+            ${esc(c.author)} · ${esc(c.license)}</div>
+        </div>`).join('');
+    });
+  </script>
+</body>
+</html>
