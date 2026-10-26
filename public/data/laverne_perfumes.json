@@ -54,8 +54,8 @@
     "id": "laverne-KjjRvDy",
     "sallaId": "KjjRvDy",
     "house": "laverne",
-    "title": "بلو لافيرن بخور",
-    "titleEn": "Blue Lavern Incense",
+    "title": "بلو لافيرن بخور 100 مل",
+    "titleEn": "Blue Lavern Incense 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -99,7 +99,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ZYrDDwx",
@@ -155,8 +156,8 @@
     "id": "laverne-DGVmpev",
     "sallaId": "DGVmpev",
     "house": "laverne",
-    "title": "بلو لافيرن إلكسير",
-    "titleEn": "Blue Laverne Elixir",
+    "title": "بلو لافيرن إلكسير 100 مل",
+    "titleEn": "Blue Laverne Elixir 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -199,14 +200,15 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-gyGEDea",
     "sallaId": "gyGEDea",
     "house": "laverne",
-    "title": "بلو لافيرن  - السابعة صباحاً",
-    "titleEn": "Blue Laverne - 7 AM",
+    "title": "بلو لافيرن  - السابعة صباحاً 100 مل",
+    "titleEn": "Blue Laverne - 7 AM 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -249,7 +251,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-oOKrVB",
@@ -406,8 +409,8 @@
     "id": "laverne-gZQqbXv",
     "sallaId": "gZQqbXv",
     "house": "laverne",
-    "title": "مس لافيرن",
-    "titleEn": "Miss Lavern",
+    "title": "مس لافيرن 100 مل",
+    "titleEn": "Miss Lavern 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -451,7 +454,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-PdzNOlV",
@@ -612,8 +616,8 @@
     "id": "laverne-BpwODQY",
     "sallaId": "BpwODQY",
     "house": "laverne",
-    "title": "مس لافيرن اكستريم",
-    "titleEn": "Miss Laverne Extreme",
+    "title": "مس لافيرن اكستريم 150 مل",
+    "titleEn": "Miss Laverne Extreme 150 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -644,19 +648,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "150 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "150 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-onQYNGp",
@@ -817,8 +822,8 @@
     "id": "laverne-dPKrvWo",
     "sallaId": "dPKrvWo",
     "house": "laverne",
-    "title": "دير - 7:00AM",
-    "titleEn": "Monastery - 7:00 AM",
+    "title": "دير - 7:00AM 100 مل",
+    "titleEn": "Monastery - 7:00 AM 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -861,7 +866,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-vAjbnqA",
@@ -917,8 +923,8 @@
     "id": "laverne-PdgOKDr",
     "sallaId": "PdgOKDr",
     "house": "laverne",
-    "title": "لادور بخور كلاسيك",
-    "titleEn": "Lador Incense Classic",
+    "title": "لادور بخور كلاسيك 200 مل",
+    "titleEn": "Lador Incense Classic 200 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -964,7 +970,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-rRaKYAy",
@@ -1324,8 +1331,8 @@
     "id": "laverne-QdgbKmV",
     "sallaId": "QdgbKmV",
     "house": "laverne",
-    "title": "لاست تشانس",
-    "titleEn": "Last Chance",
+    "title": "لاست تشانس 100 مل",
+    "titleEn": "Last Chance 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -1368,14 +1375,15 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-aeVapQX",
     "sallaId": "aeVapQX",
     "house": "laverne",
-    "title": "فيرليس",
-    "titleEn": "Fearless",
+    "title": "فيرليس 100 مل",
+    "titleEn": "Fearless 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -1418,7 +1426,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-KRNVZln",
@@ -1574,8 +1583,8 @@
     "id": "laverne-NKeOZGv",
     "sallaId": "NKeOZGv",
     "house": "laverne",
-    "title": "إن لوف",
-    "titleEn": "In love",
+    "title": "إن لوف 100 مل",
+    "titleEn": "In love 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -1618,14 +1627,15 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-aepDGeG",
     "sallaId": "aepDGeG",
     "house": "laverne",
-    "title": "إنتو ذا سي",
-    "titleEn": "Into The Sea",
+    "title": "إنتو ذا سي 100 مل",
+    "titleEn": "Into The Sea 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -1668,7 +1678,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-xvvZRnK",
@@ -2028,8 +2039,8 @@
     "id": "laverne-wWPzbKD",
     "sallaId": "wWPzbKD",
     "house": "laverne",
-    "title": "تشامبيون",
-    "titleEn": "Champion",
+    "title": "تشامبيون 100 مل",
+    "titleEn": "Champion 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -2073,7 +2084,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-bwrQaKw",
@@ -2112,19 +2124,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "150 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "150 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-WzxKnWA",
@@ -2163,19 +2176,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "150 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "150 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-EXGROmy",
@@ -2213,19 +2227,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "150 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "150 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-zoymrGp",
@@ -2263,19 +2278,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "150 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "150 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-nEVgBab",
@@ -2384,8 +2400,8 @@
     "id": "laverne-VDArBax",
     "sallaId": "VDArBax",
     "house": "laverne",
-    "title": "إتس أول أباوت مي",
-    "titleEn": "It's all about me",
+    "title": "إتس أول أباوت مي 100 مل",
+    "titleEn": "It's all about me 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -2429,7 +2445,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ngPAODa",
@@ -2682,19 +2699,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "125 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "125 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-EXKzNoQ",
@@ -3266,8 +3284,8 @@
     "id": "laverne-QdZPRPG",
     "sallaId": "QdZPRPG",
     "house": "laverne",
-    "title": "طاغي",
-    "titleEn": "Tyrant",
+    "title": "طاغي 100 مل",
+    "titleEn": "Tyrant 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -3311,7 +3329,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-lGVeDyg",
@@ -3417,8 +3436,8 @@
     "id": "laverne-AzYPoYp",
     "sallaId": "AzYPoYp",
     "house": "laverne",
-    "title": "اتلانتس",
-    "titleEn": "Atlantis",
+    "title": "اتلانتس 100 مل",
+    "titleEn": "Atlantis 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -3462,14 +3481,15 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-wWQVDvK",
     "sallaId": "wWQVDvK",
     "house": "laverne",
-    "title": "ميد نايت اوشن",
-    "titleEn": "Midnight Ocean",
+    "title": "ميد نايت اوشن 100 مل",
+    "titleEn": "Midnight Ocean 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -3512,7 +3532,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
-    "subCategory": "perfume"
+    "subCategory": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ePqPzxy",
@@ -4466,16 +4487,16 @@
     "id": "laverne-NANPyEr",
     "sallaId": "NANPyEr",
     "house": "laverne",
-    "title": "مجموعة بلو لافيرن بخور",
-    "titleEn": "Blue Laverne Incense Collection",
+    "title": "مجموعة بلو لافيرن بخور 100 مل مع حافظة",
+    "titleEn": "Blue Laverne Incense Set 100 ml with case",
     "brand": "عطور لافيرن (Laverne)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 199,
     "origSarPrice": 320,
     "baseJod": 38,
-    "finalJod": 56,
-    "origJod": 78,
+    "finalJod": 50,
+    "origJod": 72,
     "isAvailable": false,
     "status": "out",
     "url": "https://laverne.com/ar/NANPyEr",
@@ -4505,19 +4526,20 @@
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ABdnqEb",
     "sallaId": "ABdnqEb",
     "house": "laverne",
-    "title": "مجموعة بلو لافيرن بخور",
-    "titleEn": "Blue Laverne Incense Collection",
+    "title": "مجموعة بلو لافيرن بخور - هرتج بخور + بلو لافيرن بخور",
+    "titleEn": "Blue Laverne Incense Set - Heritage Incense + Blue Laverne Incense",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -4561,7 +4583,8 @@
       "perfumer": "House of Laverne"
     },
     "categoryType": "bundle",
-    "subCategory": "bundle"
+    "subCategory": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "laverne-RvadPmP",
@@ -6905,8 +6928,8 @@
     "id": "laverne-Dpzpvob",
     "sallaId": "Dpzpvob",
     "house": "laverne",
-    "title": "مجموعة جِنتل",
-    "titleEn": "Gentle Group",
+    "title": "مجموعة جنتل - عطر 100 مل + حقيبة يد رجالية",
+    "titleEn": "Gentle Set - 100 ml perfume + men's handbag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -6953,7 +6976,8 @@
     "subCategory": "bundle",
     "imageLayoutOverride": "original",
     "imageLayout": "original",
-    "cutoutSource": "https://cdn.salla.sa/XzOPD/50aAiq7ncJGi3t99MBaC6a3Qf0qaTOW4GdPHpaqo.jpg"
+    "cutoutSource": "https://cdn.salla.sa/XzOPD/50aAiq7ncJGi3t99MBaC6a3Qf0qaTOW4GdPHpaqo.jpg",
+    "detailsFixed": true
   },
   {
     "id": "laverne-bwDmOKP",
@@ -7154,19 +7178,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "25 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "25 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-vXdZNDy",
@@ -7254,19 +7279,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "25 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "25 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-qGDmVKK",
@@ -7304,19 +7330,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "25 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "25 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-aeYZvyD",
@@ -7354,19 +7381,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "25 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "25 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-XegqDeD",
@@ -7404,19 +7432,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "50 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "50 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-mQXEjej",
@@ -7454,19 +7483,20 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "100 مل",
+      "size": "25 مل",
       "type": "معطر شعر فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "100 مل",
+      "size": "25 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
-    "subCategory": "hair_mist"
+    "subCategory": "hair_mist",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ngyvwza",
@@ -8196,21 +8226,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "200 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "200 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-vAaPmjG",
@@ -8301,21 +8332,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-NAqYbln",
@@ -8769,21 +8801,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-xAOyKYe",
@@ -8927,21 +8960,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-RvxgXKj",
@@ -9084,20 +9118,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "laverne-rRXpOAX",
@@ -9363,8 +9398,8 @@
     "id": "laverne-gyNbaKv",
     "sallaId": "gyNbaKv",
     "house": "laverne",
-    "title": "ديفا بيوتي",
-    "titleEn": "Diva Beauty",
+    "title": "ديفا بيوتي - ديفا + ملمعا ويسبر بينك وهوت شوكليت + حقيبة",
+    "titleEn": "Diva Beauty - Diva + Whisper Pink & Hot Chocolate lip gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -9408,7 +9443,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ZqodmEx",
@@ -9548,21 +9584,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-GqdDlNW",
@@ -9620,8 +9657,8 @@
     "id": "laverne-Yzlzamq",
     "sallaId": "Yzlzamq",
     "house": "laverne",
-    "title": "مس لافيرن بيوتي",
-    "titleEn": "Miss Laverne Beauty",
+    "title": "مس لافيرن بيوتي - مس لافيرن 100 مل + ملمعا سعودي ليدي وريممبر مي",
+    "titleEn": "Miss Laverne Beauty - Miss Laverne 100 ml + Saudi Lady & Remember Me lip gloss",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -9668,7 +9705,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-xjojVg",
@@ -9706,21 +9744,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-dbZjXDp",
@@ -9761,28 +9800,29 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "20 مل",
       "type": "عطر ميني فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "20 ml",
       "type": "Mini Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "mini",
     "subCategory": "mini",
     "imageLayout": "original",
-    "imageLayoutOverride": "original"
+    "imageLayoutOverride": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-QzDqQlY",
     "sallaId": "QzDqQlY",
     "house": "laverne",
-    "title": "مس لافيرن بيوتي",
-    "titleEn": "Miss Laverne Beauty",
+    "title": "مس لافيرن بيوتي - مس لافيرن 100 مل + ملمعا آي آم هير وروز نود + حقيبة",
+    "titleEn": "Miss Laverne Beauty - Miss Laverne 100 ml + I Am Here & Rose Nude lip gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -9826,7 +9866,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-mZQKyZo",
@@ -9866,21 +9907,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-lGboNdB",
@@ -9919,28 +9961,29 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-oZgxoGp",
     "sallaId": "oZgxoGp",
     "house": "laverne",
-    "title": "مجموعة جنتل",
-    "titleEn": "Gentle Collection",
+    "title": "مجموعة جنتل - جنتل 100 مل + بلو لافيرن بخور 200 مل",
+    "titleEn": "Gentle Set - Gentle 100 ml + Blue Laverne Incense 200 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -9984,7 +10027,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-YzBmKmQ",
@@ -10074,21 +10118,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "50 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "50 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-dbjRgDz",
@@ -10198,8 +10243,8 @@
     "id": "laverne-dbVWEBP",
     "sallaId": "dbVWEBP",
     "house": "laverne",
-    "title": "قلامور",
-    "titleEn": "Glamour",
+    "title": "قلامور 75 مل",
+    "titleEn": "Glamour 75 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -10248,7 +10293,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-bwQgBKW",
@@ -10409,8 +10455,8 @@
     "id": "laverne-PDxpyvN",
     "sallaId": "PDxpyvN",
     "house": "laverne",
-    "title": "ذا ون بيوتي",
-    "titleEn": "The One Beauty",
+    "title": "ذا ون بيوتي - عطر ذا ون + مسكارا + ملمع شفاه",
+    "titleEn": "The One Beauty - The One perfume + mascara + lip gloss",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -10455,7 +10501,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-YgYpDrW",
@@ -10598,21 +10645,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "50 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "50 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-rRDOYdG",
@@ -10703,28 +10751,29 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-BpEQArz",
     "sallaId": "BpEQArz",
     "house": "laverne",
-    "title": "دير - 7:00AM - للصيف",
-    "titleEn": "Dare summer 7:00 AM",
+    "title": "دير - 7:00AM - للصيف 100 مل",
+    "titleEn": "Dare summer 7:00 AM 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -10769,7 +10818,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-wAmDOKy",
@@ -10982,8 +11032,8 @@
     "id": "laverne-RAbOvyO",
     "sallaId": "RAbOvyO",
     "house": "laverne",
-    "title": "مس لافيرن قاردن",
-    "titleEn": "Miss Laverne Garden",
+    "title": "مس لافيرن قاردن 100 مل",
+    "titleEn": "Miss Laverne Garden 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -11016,21 +11066,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-bwQpVEx",
@@ -11172,21 +11223,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-Rvneeao",
@@ -11953,21 +12005,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-VDAyVwO",
@@ -12211,21 +12264,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-qGVKYBN",
@@ -12316,21 +12370,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-zomQRqo",
@@ -12420,27 +12475,28 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "50 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "50 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-lvbvPyQ",
     "sallaId": "lvbvPyQ",
     "house": "laverne",
-    "title": "سيترس قاردن - دفيوزر",
+    "title": "سيترس قاردن - دفيوزر 1000 مل",
     "titleEn": "Citrus Garden - Diffuser 1000 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
@@ -12485,7 +12541,8 @@
     },
     "categoryType": "bakhoor",
     "subCategory": "bakhoor",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-lGqoVpD",
@@ -12734,21 +12791,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-Zqrmamy",
@@ -13224,8 +13282,8 @@
     "id": "laverne-WzqYqdw",
     "sallaId": "WzqYqdw",
     "house": "laverne",
-    "title": "مس لافيرن بيوتي",
-    "titleEn": "Miss Laverne Beauty",
+    "title": "مس لافيرن بيوتي - مس لافيرن بلوم 100 مل + ملمعا هوت شوكليت وبيج جلو + حقيبة",
+    "titleEn": "Miss Laverne Beauty - Miss Laverne Bloom 100 ml + Hot Chocolate & Beige Glow lip gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -13269,7 +13327,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-vXjyyNB",
@@ -13360,21 +13419,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-KRrljBV",
@@ -13485,8 +13545,8 @@
     "id": "laverne-VqGPZKv",
     "sallaId": "VqGPZKv",
     "house": "laverne",
-    "title": "توزيعات لافيرن - 5 عطور",
-    "titleEn": "Laverne Eid Gifts - 5 Perfumes",
+    "title": "توزيعات لافيرن - 5 عطور 10 مل (النسخة الجديدة)",
+    "titleEn": "Laverne Eid Gifts - 5 Perfumes 10 ml (new edition)",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -13517,20 +13577,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "مجموعة عطور وهدايا",
+      "size": "5 × 10 مل",
       "type": "مجموعة عطور ملكية فاخرة",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "Perfume & Gift Set",
+      "size": "5 × 10 ml",
       "type": "Luxury Perfume Gift Set",
       "perfumer": "House of Laverne"
     },
     "categoryType": "gift_set",
     "subCategory": "gift_set",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-VDmQAbq",
@@ -13639,8 +13700,8 @@
     "id": "laverne-xveNqyj",
     "sallaId": "xveNqyj",
     "house": "laverne",
-    "title": "ايكون",
-    "titleEn": "Icon",
+    "title": "ايكون 200 مل",
+    "titleEn": "Icon 200 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -13686,7 +13747,8 @@
     "subCategory": "perfume",
     "imageLayoutOverride": "showcase",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-zoXVojg",
@@ -13956,8 +14018,8 @@
     "id": "laverne-NAZAAKG",
     "sallaId": "NAZAAKG",
     "house": "laverne",
-    "title": "مس لافيرن بيوتي",
-    "titleEn": "Miss Laverne Beauty",
+    "title": "مس لافيرن بيوتي - مس لافيرن بلوم 100 مل + محدد شفاه وملمع هوت شوكليت + حقيبة",
+    "titleEn": "Miss Laverne Beauty - Miss Laverne Bloom 100 ml + lip liner & Hot Chocolate gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -14002,7 +14064,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ydVdlzx",
@@ -14300,21 +14363,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-VwYOxW",
@@ -14352,21 +14416,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-QzDzzYw",
@@ -14507,21 +14572,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "50 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "50 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-KROBRgy",
@@ -14893,8 +14959,8 @@
     "id": "laverne-ZqmdEny",
     "sallaId": "ZqmdEny",
     "house": "laverne",
-    "title": "ايكون",
-    "titleEn": "Icon",
+    "title": "ايكون 100 مل",
+    "titleEn": "Icon 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -14940,7 +15006,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-OyRXYPY",
@@ -15414,8 +15481,8 @@
     "id": "laverne-lGQQKqN",
     "sallaId": "lGQQKqN",
     "house": "laverne",
-    "title": "سيترس قاردن - دفيوزر",
-    "titleEn": "Citrus Garden - Diffuser",
+    "title": "سيترس قاردن - دفيوزر 200 مل",
+    "titleEn": "Citrus Garden - Diffuser 200 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -15460,7 +15527,8 @@
     },
     "categoryType": "bakhoor",
     "subCategory": "bakhoor",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-XzDOaRq",
@@ -15601,28 +15669,29 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "رجالي",
-      "size": "حسب المنتج",
+      "size": "200 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men",
-      "size": "See product",
+      "size": "200 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-vABoodp",
     "sallaId": "vABoodp",
     "house": "laverne",
-    "title": "ديفا بيوتي",
-    "titleEn": "Diva Beauty",
+    "title": "ديفا بيوتي - ديفا 100 مل + ملمعا سعودي ليدي + حقيبة",
+    "titleEn": "Diva Beauty - Diva 100 ml + 2 Saudi Lady lip gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -15666,7 +15735,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-azvvAZQ",
@@ -15965,21 +16035,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "10 مل",
       "type": "عطر ميني فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "10 ml",
       "type": "Mini Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "mini",
     "subCategory": "mini",
     "imageLayout": "showcase",
-    "cutoutMirrorLeft": 0.25
+    "cutoutMirrorLeft": 0.25,
+    "detailsFixed": true
   },
   {
     "id": "laverne-oZAWmQY",
@@ -16018,21 +16089,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "200 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "200 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-PDPmBXz",
@@ -16589,21 +16661,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-BpOGqVn",
@@ -16661,8 +16734,8 @@
     "id": "laverne-oZrzAlz",
     "sallaId": "oZrzAlz",
     "house": "laverne",
-    "title": "قلامور",
-    "titleEn": "Glamour",
+    "title": "قلامور - بكج مع مروحة",
+    "titleEn": "Glamour - set with fan",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -16698,14 +16771,14 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "بكج",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "Set",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
@@ -16714,7 +16787,8 @@
     "imageLayoutOverride": "showcase",
     "imageLayout": "showcase",
     "cutoutSource": "https://cdn.salla.sa/XzOPD/9xGajS4qESS1lsZPrt7bKPlbHzEarB19qqmhAyjf.png",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-ABqQnoO",
@@ -16908,21 +16982,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "25 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "25 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-WzqVKOW",
@@ -17014,21 +17089,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-WlblmOr",
@@ -17067,21 +17143,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-EXWXZmB",
@@ -17139,8 +17216,8 @@
     "id": "laverne-pAWbqxg",
     "sallaId": "pAWbqxg",
     "house": "laverne",
-    "title": "ذا ون بيوتي",
-    "titleEn": "The One Beauty",
+    "title": "ذا ون بيوتي - ذا ون 100 مل + ملمعا شفاه + محدد + حقيبة",
+    "titleEn": "The One Beauty - The One 100 ml + 2 lip gloss + liner + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -17188,7 +17265,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-pQDwGyr",
@@ -17300,8 +17378,8 @@
     "id": "laverne-QdBQjzq",
     "sallaId": "QdBQjzq",
     "house": "laverne",
-    "title": "بيلا",
-    "titleEn": "Bella",
+    "title": "بيلا 100 مل",
+    "titleEn": "Bella 100 ml",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -17346,7 +17424,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-dbbBexj",
@@ -17384,21 +17463,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "50 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "50 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-ABBogyn",
@@ -17696,21 +17776,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "معطر شعر وجسم فاخر",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Luxury Hair & Body Mist",
       "perfumer": "House of Laverne"
     },
     "categoryType": "hair_mist",
     "subCategory": "hair_mist",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-DpEObmV",
@@ -17801,21 +17882,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "75 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "75 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorLeft": 0.25
+    "cutoutMirrorLeft": 0.25,
+    "detailsFixed": true
   },
   {
     "id": "laverne-wWjRRKm",
@@ -18494,8 +18576,8 @@
     "id": "laverne-XzeRnrR",
     "sallaId": "XzeRnrR",
     "house": "laverne",
-    "title": "توزيعات لافيرن - 5 عطور",
-    "titleEn": "Laverne Distributions - 5 Perfumes - Previous",
+    "title": "توزيعات لافيرن - 5 عطور 10 مل (النسخة السابقة)",
+    "titleEn": "Laverne Eid Gifts - 5 Perfumes 10 ml (previous edition)",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -18526,20 +18608,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "مجموعة عطور وهدايا",
+      "size": "5 × 10 مل",
       "type": "مجموعة عطور ملكية فاخرة",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "Perfume & Gift Set",
+      "size": "5 × 10 ml",
       "type": "Luxury Perfume Gift Set",
       "perfumer": "House of Laverne"
     },
     "categoryType": "gift_set",
     "subCategory": "gift_set",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-azyROvv",
@@ -18579,20 +18662,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "detailsFixed": true
   },
   {
     "id": "laverne-ABavoQZ",
@@ -18754,8 +18838,8 @@
     "id": "laverne-dbjqwBo",
     "sallaId": "dbjqwBo",
     "house": "laverne",
-    "title": "مسك بيوتي",
-    "titleEn": "Musk Beauty",
+    "title": "مسك بيوتي - مسك باودر + مسك شوقر 100 مل + ملمعا شفاه + حقيبة",
+    "titleEn": "Musk Beauty - Musk Powder + Musk Sugar 100 ml + 2 lip gloss + bag",
     "brand": "عطور لافيرن (Laverne)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -18799,7 +18883,8 @@
     },
     "categoryType": "bundle",
     "subCategory": "bundle",
-    "imageLayout": "original"
+    "imageLayout": "original",
+    "detailsFixed": true
   },
   {
     "id": "laverne-OyGpqQq",
@@ -18888,21 +18973,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "200 مل",
       "type": "عطر أو دو بارفيوم (Eau de Parfum)",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "200 ml",
       "type": "Eau de Parfum",
       "perfumer": "House of Laverne"
     },
     "categoryType": "perfume",
     "subCategory": "perfume",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-YgdejKR",
@@ -18941,21 +19027,22 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "حسب المنتج",
+      "size": "100 مل",
       "type": "زيت عطري للجسم",
       "perfumer": "دار لافيرن للعطور (Laverne Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "See product",
+      "size": "100 ml",
       "type": "Scented Body Oil",
       "perfumer": "House of Laverne"
     },
     "categoryType": "oil",
     "subCategory": "oil",
     "imageLayout": "showcase",
-    "cutoutMirrorClip": true
+    "cutoutMirrorClip": true,
+    "detailsFixed": true
   },
   {
     "id": "laverne-eQBGZDP",

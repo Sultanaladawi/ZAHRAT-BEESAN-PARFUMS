@@ -2808,7 +2808,7 @@
     "sallaId": "1119733987",
     "house": "rasasi",
     "title": "جنون ليذر رجالي 50مل",
-    "titleEn": "Junoon Leather 50ml",
+    "titleEn": "Junoon Leather Pour Homme 50ml",
     "brand": "Rasasi",
     "bottleCount": 1,
     "feeJod": 12,
@@ -2851,7 +2851,8 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "rasasi-1804862877",
@@ -7251,18 +7252,19 @@
     "prominent": "الورد، المشمش، الأزهار، البرغموت",
     "prominentEn": "الورد، المشمش، الأزهار، البرغموت",
     "specs": {
-      "size": "100 جرام",
+      "size": "100 مل",
       "category": "للجنسين",
       "origin": "الإمارات العربية المتحدة (دبي)",
       "type": "بخور وعود معطر فاخر"
     },
     "specsEn": {
-      "size": "100 g",
+      "size": "100 ml",
       "category": "Unisex",
       "origin": "United Arab Emirates (Dubai)",
       "type": "Luxury Bakhoor & Oud"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "detailsFixed": true
   },
   {
     "id": "rasasi-557360127",
@@ -9041,8 +9043,8 @@
     "id": "rasasi-1294186643",
     "sallaId": "1294186643",
     "house": "rasasi",
-    "title": "جنون ليذر رجالي 50مل",
-    "titleEn": "Junoon Leather 50ml",
+    "title": "جنون ليذر نسائي 50مل",
+    "titleEn": "Junoon Leather Pour Femme 50ml",
     "brand": "Rasasi",
     "bottleCount": 1,
     "feeJod": 12,
@@ -9063,8 +9065,8 @@
       "https://cdn.salla.sa/lGDEen/6ZwjWYpEMiFhc7g06PEdtQFBEnyvp3D3GzQAkXMA.jpg",
       "https://cdn.salla.sa/lGDEen/P7x0lmNK0rDW2LE0xRytI0X9Xgy5QiD6jg1LowX0.jpg"
     ],
-    "overview": "جنون ليذر رجالي 50مل من دار الرصاصي للعطور — إصدار عطري فاخر يجسد إرث الرصاصي العريق في صناعة العطور الشرقية والفرنسية الراقية.",
-    "overviewEn": "جنون ليذر رجالي 50مل من دار الرصاصي للعطور — إصدار عطري فاخر يجسد إرث الرصاصي العريق في صناعة العطور الشرقية والفرنسية الراقية.",
+    "overview": "جنون ليذر نسائي 50مل من دار الرصاصي للعطور — إصدار عطري فاخر يجسد إرث الرصاصي العريق في صناعة العطور الشرقية والفرنسية الراقية.",
+    "overviewEn": "جنون ليذر نسائي 50مل من دار الرصاصي للعطور — إصدار عطري فاخر يجسد إرث الرصاصي العريق في صناعة العطور الشرقية والفرنسية الراقية.",
     "opening": "الزعفران والحمضيات. النوتة الوسطى للعطر : الباتشولي، الورد، الموجيت، خشب الأرز، الياسمين. النوتة القاعدية للعطر : العنبر، المسك، الجلد، خشب الصندل، التبغ، التونكا، العود.",
     "openingEn": "الزعفران والحمضيات. النوتة الوسطى للعطر : الباتشولي، الورد، الموجيت، خشب الأرز، الياسمين. النوتة القاعدية للعطر : العنبر، المسك، الجلد، خشب الصندل، التبغ، التونكا، العود.",
     "heart": "الباتشولي، الورد، الموجيت، خشب الأرز، الياسمين.",
@@ -9085,7 +9087,8 @@
       "origin": "United Arab Emirates (Dubai)",
       "type": "Eau de Parfum"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "rasasi-2010194441",

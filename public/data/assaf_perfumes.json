@@ -535,18 +535,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "125 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "125 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1692580195",
@@ -602,8 +603,8 @@
     "id": "assaf-1370701860",
     "sallaId": "1370701860",
     "house": "assaf",
-    "title": "عطر وايلد كولت",
-    "titleEn": "Wild Colt",
+    "title": "عطر وايلد كولت إليكسير 200 مل",
+    "titleEn": "Wild Colt Elixir 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -646,7 +647,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-932961910",
@@ -935,18 +937,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1730850081",
@@ -1035,18 +1038,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-79328031",
@@ -1675,18 +1679,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-792167827",
@@ -1725,18 +1730,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-886617226",
@@ -1925,18 +1931,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-872590220",
@@ -1975,18 +1982,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1079457432",
@@ -2075,18 +2083,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-2053844235",
@@ -2142,8 +2151,8 @@
     "id": "assaf-1362089002",
     "sallaId": "1362089002",
     "house": "assaf",
-    "title": "عطر نوبل",
-    "titleEn": "NOBLE",
+    "title": "عطر نوبل 200 مل",
+    "titleEn": "NOBLE 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -2186,7 +2195,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1400121315",
@@ -2379,18 +2389,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1465715507",
@@ -2496,8 +2507,8 @@
     "id": "assaf-1378257751",
     "sallaId": "1378257751",
     "house": "assaf",
-    "title": "عطر فرانكل بلو إلكسير",
-    "titleEn": "Frankel Blue Elixir",
+    "title": "عطر فرانكل بلو إلكسير 100 مل",
+    "titleEn": "Frankel Blue Elixir 100 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -2529,18 +2540,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-2026699827",
@@ -2629,18 +2641,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1811655799",
@@ -2729,18 +2742,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-304264724",
@@ -3031,18 +3045,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "50 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "50 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1955591861",
@@ -3428,18 +3443,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-928196953",
@@ -3732,18 +3748,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1546755819",
@@ -4937,8 +4954,8 @@
     "id": "assaf-2087989093",
     "sallaId": "2087989093",
     "house": "assaf",
-    "title": "عطر أروقيت كوميت",
-    "titleEn": "ARROGATE COMETE",
+    "title": "عطر أروقيت كوميت 200 مل",
+    "titleEn": "ARROGATE COMETE 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -4981,7 +4998,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1340478300",
@@ -5367,18 +5385,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-71799739",
@@ -5567,18 +5586,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "125 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "125 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1014260708",
@@ -5618,20 +5638,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "125 مل",
       "type": "عطر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ML",
+      "size": "125 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "namedAfterScent": true
+    "namedAfterScent": true,
+    "detailsFixed": true
   },
   {
     "id": "assaf-536799694",
@@ -5670,18 +5691,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-421143064",
@@ -5720,18 +5742,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "125 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "125 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-975628514",
@@ -5770,18 +5793,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "200 مل",
+      "size": "125 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "200 ml",
+      "size": "125 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1822349968",
@@ -5820,20 +5844,21 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "عطر",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ML",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "namedAfterScent": true
+    "namedAfterScent": true,
+    "detailsFixed": true
   },
   {
     "id": "assaf-1731158495",
@@ -5938,8 +5963,8 @@
     "id": "assaf-2035627978",
     "sallaId": "2035627978",
     "house": "assaf",
-    "title": "مجموعة ليدي 25 مل",
-    "titleEn": "Lady Collection - 25 ml",
+    "title": "مجموعة ليدي 25 مل - مورنينق قيرل · بينك ليدي · ميس ساكورا",
+    "titleEn": "Lady Collection 25 ml - Morning Girl · Pink Lady · Miss Sakura",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -5970,18 +5995,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "مجموعة ميني (25 مل)",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "Mini Collection (25 ml)",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-527229526",
@@ -6069,18 +6095,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "200 ml",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1015395748",
@@ -6136,8 +6163,8 @@
     "id": "assaf-2061938432",
     "sallaId": "2061938432",
     "house": "assaf",
-    "title": "عطر وايلد كولت توباكو",
-    "titleEn": "WILD COLT TOBACCO",
+    "title": "عطر وايلد كولت توباكو 200 مل",
+    "titleEn": "WILD COLT TOBACCO 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -6180,7 +6207,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1086955634",
@@ -6336,8 +6364,8 @@
     "id": "assaf-1676690935",
     "sallaId": "1676690935",
     "house": "assaf",
-    "title": "عطر مس أروقيت",
-    "titleEn": "MISS ARROGATE",
+    "title": "عطر مس أروقيت 200 مل",
+    "titleEn": "MISS ARROGATE 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -6380,7 +6408,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-113046880",
@@ -6469,18 +6498,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-810618592",
@@ -6586,8 +6616,8 @@
     "id": "assaf-598668494",
     "sallaId": "598668494",
     "house": "assaf",
-    "title": "عطر نوبل 200 مل",
-    "titleEn": "Noble",
+    "title": "عطر نوبل 100 مل",
+    "titleEn": "Noble 100 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -6619,18 +6649,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1739944149",
@@ -6669,18 +6700,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1250199587",
@@ -6818,18 +6850,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-519708762",
@@ -7041,8 +7074,8 @@
     "id": "assaf-284387871",
     "sallaId": "284387871",
     "house": "assaf",
-    "title": "عطر فرانكل تشيل",
-    "titleEn": "FRANKEL CHILL",
+    "title": "عطر فرانكل تشيل 200 مل",
+    "titleEn": "FRANKEL CHILL 200 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -7085,7 +7118,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1160440318",
@@ -7124,25 +7158,26 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-755661118",
     "sallaId": "755661118",
     "house": "assaf",
-    "title": "عطر وايلد كولت 200 مل",
-    "titleEn": "WILD COLT",
+    "title": "عطر وايلد كولت 100 مل",
+    "titleEn": "WILD COLT 100 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -7174,18 +7209,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-728764491",
@@ -7291,7 +7327,7 @@
     "id": "assaf-1844930091",
     "sallaId": "1844930091",
     "house": "assaf",
-    "title": "بخور بيقاسوس",
+    "title": "بخور بيقاسوس 150 مل",
     "titleEn": "Bakhur Pegasus 150 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
@@ -7337,7 +7373,8 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "namedAfterScent": true
+    "namedAfterScent": true,
+    "detailsFixed": true
   },
   {
     "id": "assaf-1839061432",
@@ -7444,8 +7481,8 @@
     "id": "assaf-1880252117",
     "sallaId": "1880252117",
     "house": "assaf",
-    "title": "فرانكل تشيل",
-    "titleEn": "Frankel Chill",
+    "title": "فرانكل تشيل 100 مل",
+    "titleEn": "Frankel Chill 100 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -7477,18 +7514,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين / رجالي",
-      "size": "200 مل",
+      "size": "100 مل",
       "type": "أو دو بارفيوم (Eau De Parfum)",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Men / Unisex",
-      "size": "200 ml",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1142435325",
@@ -8031,18 +8069,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "200 مل",
+      "size": "150 مل",
       "type": "فواحة منزلية فاخرة",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "200 ML",
+      "size": "150 ml",
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bakhoor"
+    "categoryType": "bakhoor",
+    "detailsFixed": true
   },
   {
     "id": "assaf-722797759",
@@ -8544,8 +8583,8 @@
     "id": "assaf-1608754458",
     "sallaId": "1608754458",
     "house": "assaf",
-    "title": "اونست",
-    "titleEn": "Onset",
+    "title": "اونست 100 مل",
+    "titleEn": "Onset 100 ml",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -8588,7 +8627,8 @@
       "type": "Eau De Parfum",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "perfume"
+    "categoryType": "perfume",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1247600206",
@@ -9313,8 +9353,8 @@
     "id": "assaf-2114896913",
     "sallaId": "2114896913",
     "house": "assaf",
-    "title": "مجموعة اروقيت 25 مل",
-    "titleEn": "Arrogate Collection 25 ml",
+    "title": "مجموعة اروقيت 25 مل - بينك · خطير · ميس",
+    "titleEn": "Arrogate Collection 25 ml - Pink · Dangerous · Miss",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 1,
     "feeJod": 12,
@@ -9345,18 +9385,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "مجموعة ميني (25 مل)",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء وعروض ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "Mini Collection (25 ml)",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift & Offer Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1586713770",
@@ -12481,16 +12522,16 @@
     "id": "assaf-6165769",
     "sallaId": "6165769",
     "house": "assaf",
-    "title": "مجموعة ليدي 25 مل",
-    "titleEn": "Lady Collection 25 ml",
+    "title": "مجموعة ليدي 25 مل - مورنينق قيرل · بينك ليدي · ميس ساكورا",
+    "titleEn": "Lady Collection 25 ml - Morning Girl · Pink Lady · Miss Sakura",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 75,
     "origSarPrice": 375,
     "baseJod": 14,
-    "finalJod": 32,
-    "origJod": 89,
+    "finalJod": 26,
+    "origJod": 83,
     "isAvailable": false,
     "status": "out",
     "url": "https://3saf.com/ar/lady-collection-25-ml/p6165769",
@@ -12513,33 +12554,34 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "نسائي",
-      "size": "25 مل",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Women",
-      "size": "25 ml",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-415811600",
     "sallaId": "415811600",
     "house": "assaf",
-    "title": "مجموعة فرانكل 25 مل",
-    "titleEn": "Frankel Collection 25 ml",
+    "title": "مجموعة فرانكل 25 مل - أفينتوس · إيماجينيشن · سيلفر",
+    "titleEn": "Frankel Collection 25 ml - Aventus · Imagination · Silver",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 75,
     "origSarPrice": 375,
     "baseJod": 14,
-    "finalJod": 32,
-    "origJod": 89,
+    "finalJod": 26,
+    "origJod": 83,
     "isAvailable": false,
     "status": "out",
     "url": "https://3saf.com/ar/frankel-collection-25-ml/p415811600",
@@ -12562,25 +12604,26 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "25 مل",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "25 ml",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-505077860",
     "sallaId": "505077860",
     "house": "assaf",
-    "title": "مجموعة بينك باودر",
-    "titleEn": "Pink Powder Collection",
+    "title": "مجموعة بينك باودر - عطر بينك كوين 200 مل + بودرتان",
+    "titleEn": "Pink Powder Collection - Pink Queen 200 ml + 2 body powders",
     "brand": "عطور عساف (Assaf)",
     "bottleCount": 2,
     "feeJod": 18,
@@ -12623,7 +12666,8 @@
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-648178010",
@@ -12679,16 +12723,16 @@
     "id": "assaf-1354027755",
     "sallaId": "1354027755",
     "house": "assaf",
-    "title": "مجموعة اروقيت 25 مل",
-    "titleEn": "Arrogate Collection 25 ml",
+    "title": "مجموعة اروقيت 25 مل - كوميت · ميس · خطير",
+    "titleEn": "Arrogate Collection 25 ml - Comet · Miss · Dangerous",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 75,
     "origSarPrice": 375,
     "baseJod": 14,
-    "finalJod": 32,
-    "origJod": 89,
+    "finalJod": 26,
+    "origJod": 83,
     "isAvailable": false,
     "status": "out",
     "url": "https://3saf.com/ar/arrogate-collection-25ml/p1354027755",
@@ -12713,33 +12757,34 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "25 مل",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "25 ml",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1403084485",
     "sallaId": "1403084485",
     "house": "assaf",
-    "title": "صندوق الديسكفري",
-    "titleEn": "Discovery box",
+    "title": "صندوق الديسكفري - 8 عطور 25 مل",
+    "titleEn": "Discovery Box - 8 Perfumes 25 ml",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 195,
     "origSarPrice": 559,
     "baseJod": 37,
-    "finalJod": 55,
-    "origJod": 124,
+    "finalJod": 49,
+    "origJod": 118,
     "isAvailable": false,
     "status": "out",
     "url": "https://3saf.com/ar/discovery-box-084485/p1403084485",
@@ -12763,33 +12808,34 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "مجموعة عطور وهدايا",
+      "size": "8 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "Perfume & Gift Set",
+      "size": "8 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1405771318",
     "sallaId": "1405771318",
     "house": "assaf",
-    "title": "مجموعة اروقيت 25 مل",
-    "titleEn": "Arrogate Collection 25 ml",
+    "title": "مجموعة اروقيت 25 مل - كوميت · ميس · بينك",
+    "titleEn": "Arrogate Collection 25 ml - Comet · Miss · Pink",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 75,
     "origSarPrice": 499,
     "baseJod": 14,
-    "finalJod": 32,
-    "origJod": 112,
+    "finalJod": 26,
+    "origJod": 106,
     "isAvailable": false,
     "status": "out",
     "url": "https://3saf.com/ar/arrogate-collection-25-ml-771318/p1405771318",
@@ -12812,18 +12858,19 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "25 مل",
+      "size": "3 × 25 مل",
       "type": "مجموعة إهداء ملكية",
       "perfumer": "دار عطور عساف (Assaf Perfumes)"
     },
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "25 ml",
+      "size": "3 × 25 ml",
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1517236607",
@@ -12832,13 +12879,13 @@
     "title": "مجموعة ليدي 25 مل",
     "titleEn": "Lady Collection 25 ml",
     "brand": "عطور عساف (Assaf)",
-    "bottleCount": 2,
-    "feeJod": 18,
+    "bottleCount": 1,
+    "feeJod": 12,
     "sarPrice": 79,
     "origSarPrice": 499,
     "baseJod": 15,
-    "finalJod": 33,
-    "origJod": 112,
+    "finalJod": 27,
+    "origJod": 106,
     "isAvailable": false,
     "status": "out",
     "promotionTitle": "عرض لمدة 24 ساعة",
@@ -12873,7 +12920,8 @@
       "type": "Luxury Gift Set",
       "perfumer": "House of Assaf"
     },
-    "categoryType": "bundle"
+    "categoryType": "bundle",
+    "detailsFixed": true
   },
   {
     "id": "assaf-1809319445",
