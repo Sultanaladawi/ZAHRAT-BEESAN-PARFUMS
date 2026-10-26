@@ -19661,7 +19661,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/link-m/10111321011100-1499.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5da2b632/images/10111321011100-1499-5.png?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-363.jpg?v=c5d6e918",
+    "image": "images/deraah_deraah-363.jpg?v=e81f797d",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5da2b632/images/10111321011100-1499-5.png?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw25f84434/images/10111321011100-1499-2.png?sw=800&sh=800&q=85",
@@ -19694,7 +19694,7 @@
     },
     "categoryType": "perfume",
     "imageLayout": "showcase",
-    "cutoutSource": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwc8defda9/images/10111321011100-1499-3.png?sw=800&sh=800&q=85"
+    "cutoutKeepLargest": true
   },
   {
     "id": "deraah-10211011021000-1005",
@@ -23637,7 +23637,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/oud/oriental-perfumes/10311111011100-1008.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-436.jpg?v=272c9e17",
+    "image": "images/deraah_deraah-436.jpg?v=086ba48d",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
@@ -23669,14 +23669,8 @@
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase",
-    "cutoutSource": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw98b70d47/images/10311111011100-1008-3.jpg?sw=800&sh=800&q=85",
-    "cutoutCrop": [
-      0.58,
-      0.2,
-      0.84,
-      0.92
-    ]
+    "imageLayout": "original",
+    "imageLayoutOverride": "original"
   },
   {
     "id": "deraah-10311111011100-1010",
