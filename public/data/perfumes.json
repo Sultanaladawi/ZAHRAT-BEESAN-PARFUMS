@@ -2125,7 +2125,7 @@
     "specs": {
       "origin": "المملكة العربية السعودية",
       "category": "للجنسين",
-      "size": "50 مل",
+      "size": "100 مل",
       "type": "عطر فرنسي",
       "perfumer": "جون لوي سيوزاك يمكنك إضافة عبوة محمولة فارغة قابلة للتعبئة"
     },
@@ -2142,7 +2142,7 @@
     "specsEn": {
       "origin": "Kingdom of Saudi Arabia",
       "category": "Unisex",
-      "size": "50 مل",
+      "size": "100 ml",
       "type": "Eau De Parfum",
       "perfumer": "جون لوي سيوزاك يمكنك إضافة عبوة محمولة فارغة قابلة للتعبئة"
     },
@@ -6569,7 +6569,8 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "duplicateOf": "iris-musk"
   },
   {
     "id": "ghalati-2105329808",

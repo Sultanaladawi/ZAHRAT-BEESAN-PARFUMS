@@ -2287,7 +2287,7 @@
     "status": "sale",
     "url": "https://alrehabstore.com/ar/cotton-candy/p1567678255",
     "bottleUrl": "https://cdn.salla.sa/pywvq/OVrOPjkNsVvrC3yqKdEHRTDFiflCIw62572C3Cxe.jpg",
-    "image": "images/alrehab_1567678255.jpg?v=4651a414",
+    "image": "images/alrehab_1567678255.jpg?v=8846209c",
     "originalImage": "https://cdn.salla.sa/pywvq/OVrOPjkNsVvrC3yqKdEHRTDFiflCIw62572C3Cxe.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/pywvq/OVrOPjkNsVvrC3yqKdEHRTDFiflCIw62572C3Cxe.jpg",
@@ -2322,7 +2322,8 @@
     "subCategoryEn": "Perfumes (60–125 ml)",
     "cutoutModel": "birefnet-general",
     "cutoutWhiteBackdrop": true,
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutTrimBottom": 0.1
   },
   {
     "id": "alrehab-2077466902",

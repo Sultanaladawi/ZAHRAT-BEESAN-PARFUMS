@@ -552,7 +552,7 @@
     "promotionTitle": "توقيع يختصر حضورك",
     "url": "https://sa.oudelite.com/ar/E0301010347-سجنتشر-100-مل",
     "bottleUrl": "https://cdn.files.salla.network/other/1934736234/3271689f-12fd-48f5-8f85-9d06a658c923-original.webp",
-    "image": "images/oudelite_195202059.jpg?v=e872e302",
+    "image": "images/oudelite_195202059.jpg?v=7f45bcef",
     "originalImage": "https://cdn.files.salla.network/other/1934736234/3271689f-12fd-48f5-8f85-9d06a658c923-original.webp",
     "galleryImages": [
       "https://cdn.files.salla.network/other/1934736234/3271689f-12fd-48f5-8f85-9d06a658c923-original.webp",
@@ -586,8 +586,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "showcase",
+    "cutoutSource": "https://cdn.files.salla.network/other/1934736234/14f7a162-839a-4986-aac3-6dbf40694056-original.webp"
   },
   {
     "id": "oudelite-212407735",
@@ -608,7 +608,7 @@
     "promotionTitle": "نفس الرائحة بعبوة جديدة",
     "url": "https://sa.oudelite.com/ar/E0301010291-maaly-100-ml",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/mUiR7yUj4fgNf4si3jgNBAVt6N7JSJDdq2hBo9cg.jpg",
-    "image": "images/oudelite_212407735.jpg?v=81817e07",
+    "image": "images/oudelite_212407735.jpg?v=323bb005",
     "originalImage": "https://cdn.salla.sa/wWORaV/mUiR7yUj4fgNf4si3jgNBAVt6N7JSJDdq2hBo9cg.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/mUiR7yUj4fgNf4si3jgNBAVt6N7JSJDdq2hBo9cg.jpg",
@@ -643,8 +643,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "showcase",
+    "cutoutSource": "https://cdn.salla.sa/wWORaV/sbwCwtaBb4edD0yxazMrsAH1w3SwF0ox41wAdanD.jpg"
   },
   {
     "id": "oudelite-234480187",
@@ -768,7 +768,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010166-ghaliah",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/cKyZZ6p7lS57iysNTV54FQMTHNCX3lMUboxoTSLZ.jpg",
-    "image": "images/oudelite_263853034.jpg?v=77034072",
+    "image": "images/oudelite_263853034.jpg?v=ccc2706a",
     "originalImage": "https://cdn.salla.sa/wWORaV/cKyZZ6p7lS57iysNTV54FQMTHNCX3lMUboxoTSLZ.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/cKyZZ6p7lS57iysNTV54FQMTHNCX3lMUboxoTSLZ.jpg",
@@ -802,8 +802,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "showcase",
+    "cutoutSource": "https://cdn.salla.sa/wWORaV/5M2XlXeY84tvCqEDRQx02IuLdg6a0DriGZVybusd.jpg"
   },
   {
     "id": "oudelite-276439332",
@@ -1570,7 +1570,7 @@
     "status": "sale",
     "url": "https://sa.oudelite.com/ar/E0301010144-soleil-gold",
     "bottleUrl": "https://cdn.salla.sa/wWORaV/NYvtJGqBLiT4berS1A9cQ7YARVKRYLDIlL7YZTOr.jpg",
-    "image": "images/oudelite_451658969.jpg?v=99dff9e6",
+    "image": "images/oudelite_451658969.jpg?v=0c71027b",
     "originalImage": "https://cdn.salla.sa/wWORaV/NYvtJGqBLiT4berS1A9cQ7YARVKRYLDIlL7YZTOr.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/wWORaV/NYvtJGqBLiT4berS1A9cQ7YARVKRYLDIlL7YZTOr.jpg",
@@ -1603,8 +1603,8 @@
     "categoryType": "perfume",
     "subCategory": "perfume",
     "saleEndsAt": "2026-10-31T20:59:59.000Z",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "showcase",
+    "cutoutSource": "https://cdn.salla.sa/wWORaV/qkEFyqBac0JeKptGedvImVywN39qYHLBGH3ITAtE.jpg"
   },
   {
     "id": "oudelite-455270756",
