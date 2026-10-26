@@ -1833,6 +1833,9 @@ function renderProductModalContent(p) {
 
     </div>
   `;
+
+  // The perfume card (notes with ingredient photos) joins the gallery once drawn.
+  if (typeof zbAttachPerfumeCard === 'function') zbAttachPerfumeCard(p);
 }
 
 function switchModalImage(src, isFlacon, label, btnEl, idx = 0) {
