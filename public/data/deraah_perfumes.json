@@ -19661,7 +19661,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/perfumes/men-perfumes/link-m/10111321011100-1499.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5da2b632/images/10111321011100-1499-5.png?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-363.jpg?v=20fe9173",
+    "image": "images/deraah_deraah-363.jpg?v=e81f797d",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw5da2b632/images/10111321011100-1499-5.png?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw25f84434/images/10111321011100-1499-2.png?sw=800&sh=800&q=85",
@@ -19693,7 +19693,8 @@
       "perfumer": "Deraah Perfumes — LINK"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "showcase",
+    "cutoutKeepLargest": true
   },
   {
     "id": "deraah-10211011021000-1005",
@@ -23636,7 +23637,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/oud/oriental-perfumes/10311111011100-1008.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-436.jpg?v=b86d5b4d",
+    "image": "images/deraah_deraah-436.jpg?v=086ba48d",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dw7c8e1c6e/images/10311111011100-1008-1.jpg?sw=800&sh=800&q=85",
@@ -23668,7 +23669,8 @@
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayout": "showcase"
+    "imageLayout": "original",
+    "imageLayoutOverride": "original"
   },
   {
     "id": "deraah-10311111011100-1010",
@@ -24810,7 +24812,7 @@
     "promotionTitle": "شركة درعه الرسمية",
     "url": "https://www.deraahstore.com/ar_sa/oud/oriental-perfumes/10311111013100-1032.html",
     "bottleUrl": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwe0fd2a2b/images/10311111013100-1032-1.jpg?sw=800&sh=800&q=85",
-    "image": "images/deraah_deraah-458.jpg?v=bd3108b6",
+    "image": "images/deraah_deraah-458.jpg?v=44702d11",
     "originalImage": "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwe0fd2a2b/images/10311111013100-1032-1.jpg?sw=800&sh=800&q=85",
     "galleryImages": [
       "https://www.deraahstore.com/dw/image/v2/BJFS_PRD/on/demandware.static/-/Sites-deraah-master/default/dwe0fd2a2b/images/10311111013100-1032-1.jpg?sw=800&sh=800&q=85"
@@ -24840,8 +24842,14 @@
       "perfumer": "Deraah Perfumes — DERAAH OUD"
     },
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayout": "showcase",
+    "cutoutCrop": [
+      0.3,
+      0.2,
+      1,
+      0.95
+    ],
+    "cutoutTrimBottom": 0.05
   },
   {
     "id": "deraah-10311111013100-1039",

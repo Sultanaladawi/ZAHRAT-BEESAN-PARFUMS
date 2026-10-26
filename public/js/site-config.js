@@ -34,7 +34,8 @@ async function applySiteOverrides(list) {
   if (!Array.isArray(list)) return list;
   const hidden = new Set(SITE_CONFIG.hidden);
   const featured = new Set(SITE_CONFIG.featured);
-  return list.filter(p => p && !hidden.has(String(p.id))).map(p => {
+  // Duplicates (tools/dedupe.js) stay in the data but never show.
+  return list.filter(p => p && !p.duplicateOf && !hidden.has(String(p.id))).map(p => {
     const id = String(p.id);
     const price = SITE_CONFIG.prices[id];
     if ((!price || p.priceOverridden) && (!featured.has(id) || p.featured)) return p;

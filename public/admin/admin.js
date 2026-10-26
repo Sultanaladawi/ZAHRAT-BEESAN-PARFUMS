@@ -508,7 +508,7 @@ PAGES.products = async () => {
       <input class="input grow" id="prodSearch" placeholder="ابحث بالاسم العربي أو الإنجليزي…" value="${esc(prodQuery.q)}">
       <select class="input" id="prodHouse"><option value="">كل الدور</option>${Object.entries(HOUSE_AR).map(([k, v]) => `<option value="${k}"${k === prodQuery.house ? ' selected' : ''}>${v}</option>`).join('')}</select>
       <select class="input" id="prodFilter">
-        ${[['', 'الكل'], ['available', 'المتوفر'], ['out', 'نفدت الكمية'], ['hidden', 'المخفي'], ['featured', 'المميز ⭐'], ['price', 'سعر معدّل']].map(([k, v]) => `<option value="${k}"${k === prodQuery.filter ? ' selected' : ''}>${v}</option>`).join('')}
+        ${[['', 'الكل'], ['available', 'المتوفر'], ['out', 'نفدت الكمية'], ['hidden', 'المخفي'], ['duplicate', 'مكرر'], ['featured', 'المميز ⭐'], ['price', 'سعر معدّل']].map(([k, v]) => `<option value="${k}"${k === prodQuery.filter ? ' selected' : ''}>${v}</option>`).join('')}
       </select>
       <span class="muted">${data.total.toLocaleString('en-US')} منتج</span>
     </div>
@@ -522,7 +522,7 @@ PAGES.products = async () => {
             <input type="number" min="1" step="0.5" value="${p.priceOverride || p.priceJod}" data-orig="${p.priceJod}" class="${p.priceOverride ? 'changed' : ''}" title="السعر الأصلي ${p.priceJod} د.أ">
             ${p.priceOverride ? `<button class="icon-btn" data-reset title="رجوع للسعر الأصلي (${p.priceJod})">↺</button>` : ''}
           </div></td>
-          <td class="hide-sm">${p.out ? '<span class="pill bad">نفد</span>' : '<span class="pill ok">متوفر</span>'}</td>
+          <td class="hide-sm">${p.out ? '<span class="pill bad">نفد</span>' : '<span class="pill ok">متوفر</span>'}${p.duplicateOf ? ` <span class="pill new" title="مخفي تلقائياً، يظهر بدله ${esc(p.duplicateOf)}">مكرر</span>` : ''}</td>
           <td><label class="switch"><input type="checkbox" data-visible${p.hidden ? '' : ' checked'}><span></span></label></td>
           <td><button class="star-btn${p.featured ? ' on' : ''}" data-star>★</button></td>
         </tr>`).join('')}</tbody>

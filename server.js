@@ -1550,6 +1550,7 @@ app.get('/', async (req, res) => {
 app.get('/p/:id', async (req, res, next) => {
   const cfg = publicConfig(await getAdminState());
   const p = seoProducts().get(String(req.params.id));
+  if (p && p.duplicateOf && seoProducts().has(p.duplicateOf)) return res.redirect(301, `/p/${encodeURIComponent(p.duplicateOf)}`);
   if (!p || cfg.hidden.includes(String(p.id))) return next();
   const price = Number(cfg.prices[String(p.id)] || p.finalJod) || 0;
   const available = p.isAvailable !== false && p.status !== 'out';
@@ -1576,7 +1577,7 @@ app.get('/p/:id', async (req, res, next) => {
 app.get('/sitemap.xml', async (req, res) => {
   const origin = siteOrigin(req);
   const hidden = new Set(publicConfig(await getAdminState()).hidden);
-  const urls = [`${origin}/`, ...[...seoProducts().keys()].filter(id => !hidden.has(id)).map(id => `${origin}/p/${encodeURIComponent(id)}`)];
+  const urls = [`${origin}/`, ...[...seoProducts()].filter(([id, p]) => !hidden.has(id) && !p.duplicateOf).map(([id]) => id).map(id => `${origin}/p/${encodeURIComponent(id)}`)];
   res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${escHtml(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
 });
 

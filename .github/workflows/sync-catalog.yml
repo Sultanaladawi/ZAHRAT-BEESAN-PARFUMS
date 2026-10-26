@@ -41,6 +41,10 @@ jobs:
             echo "Not the daily gallery run."
           fi
 
+      # Stock changes can swap which copy of a duplicate is shown.
+      - name: Hide duplicate products
+        run: node tools/dedupe.js
+
       - name: Commit updated catalog
         run: |
           if git diff --quiet -- public/data; then
