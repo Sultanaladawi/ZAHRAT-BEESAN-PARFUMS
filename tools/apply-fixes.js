@@ -28,8 +28,8 @@ const fixes = JSON.parse(fs.readFileSync(path.join(__dirname, 'product-fixes.jso
 const FILES = fs.readdirSync(DATA).filter(f => /_perfumes\.json$/.test(f) || f === 'perfumes.json');
 const SAR_PER_JOD = 5.29;
 
-// Same rule as the store: one bottle 12 JOD, more bottles 4 JOD each plus 10.
-const feeFor = count => (count > 1 ? count * 4 + 10 : 12);
+// Same rules as the store (lib/fees.js): sets, small oils, mini perfumes, the rest.
+const fees = require('../lib/fees');
 
 let changed = 0;
 const left = new Set(Object.keys(fixes));
@@ -56,7 +56,7 @@ for (const file of FILES) {
     }
     if (f.bottleCount && Number(p.bottleCount) !== f.bottleCount) {
       p.bottleCount = f.bottleCount;
-      const fee = feeFor(f.bottleCount);
+      const fee = fees.feeFor(p);
       p.feeJod = fee;
       p.finalJod = (Number(p.baseJod) || Math.round(p.sarPrice / SAR_PER_JOD)) + fee;
       p.origJod = p.origSarPrice > p.sarPrice ? Math.round(p.origSarPrice / SAR_PER_JOD) + fee : p.finalJod;

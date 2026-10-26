@@ -50,6 +50,11 @@ jobs:
       - name: Keep checked product details
         run: node tools/apply-fixes.js
 
+      # Fees follow lib/fees.js (mini perfumes, small oils, sets): new products
+      # and changed sizes get the right fee, finalJod/origJod follow it.
+      - name: Keep fees in line with the rules
+        run: node tools/recompute-fees.js
+
       - name: Commit updated catalog
         run: |
           if git diff --quiet -- public/data; then

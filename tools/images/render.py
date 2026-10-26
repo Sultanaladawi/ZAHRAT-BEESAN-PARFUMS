@@ -489,6 +489,9 @@ def remove_card_rect(img, top, bottom):
 
 
 def showcase(item, house):
+    if item.get("cutoutManual"):
+        # A hand-made transparent cutout kept in the repo, for photos no model separates cleanly.
+        return _compose(Image.open(ROOT / item["cutoutManual"]).convert("RGBA"), {"manual": True}, house)
     src = fetch(source_url(item))
     if item.get("cutoutCrop"):
         # Fractions [left, top, right, bottom]: keep only the bottle when the
@@ -499,7 +502,12 @@ def showcase(item, house):
         src = remove_card_rect(src, *item["cutoutRemoveCardRect"])
     if item.get("cutoutRemoveCard"):
         src = remove_card(src, *item["cutoutRemoveCard"])
-    cut, info = cutout(src, mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
+    cut, info = _auto_cutout(src, item, house)
+    return _compose(cut, info, house)
+
+
+def _auto_cutout(src, item, house):
+    return cutout(src, mirror=(house == "ghalati" and needs_mirror_clip(item)) or bool(item.get("cutoutMirrorClip")),
                        solid=bool(item.get("cutoutSolid")),
                        mirror_fill_=bool(item.get("cutoutMirrorFill")),
                        body_clip=item.get("cutoutClipBodyFrom"),
@@ -512,6 +520,9 @@ def showcase(item, house):
                        white_backdrop=bool(item.get("cutoutWhiteBackdrop")),
                        clear_glass=item.get("cutoutClearGlass") or False,
                        mirror_left_=item.get("cutoutMirrorLeft"))
+
+
+def _compose(cut, info, house):
     bg = Image.open(IMAGES / HOUSES[house][2]).convert("RGBA").resize((SIZE, SIZE), Image.LANCZOS)
     scale = min(BOTTLE_BOX[0] / cut.width, BOTTLE_BOX[1] / cut.height)
     cut = cut.resize((max(1, round(cut.width * scale)), max(1, round(cut.height * scale))), Image.LANCZOS)
