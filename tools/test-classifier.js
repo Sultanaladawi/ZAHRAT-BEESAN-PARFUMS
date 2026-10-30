@@ -15,6 +15,9 @@ const byId = new Map([
 ]);
 const group = (name, ids, o = {}) => P(name, { type: 'group_products', is_bundle: true, sku: 'PKG-1-ON-1', sub_products: ids.map(i => ({ sub_product_id: i, sub_product_quantity: 1 })), ...o });
 
+// Rows with a house follow the owner's filing conventions for that house.
+const H = (house, label, item, type, count = null, conf = null) => [label, item, type, count, conf, house];
+
 // [label, product, expected categoryType, expected bottleCount | null, expected confidence | null]
 const ROWS = [
   ['supplier bundle of two full perfumes', group('مجموعة غيم', [1, 2]), 'bundle', 2, 'high'],
@@ -36,11 +39,23 @@ const ROWS = [
   ['body mist', P('بلانكا - رذاذ للجسم', { description: 'رذاذ 75 مل' }), 'hair_mist', 1, null],
   ['hair perfume', P('عطر الشعر لا مدام 50 مل'), 'hair_mist', 1, null],
   ['pack words but a bakhoor product is low confidence', P('باكج بخور الصباح', { sku: 'PKG-LP1-ON-1' }), 'bundle', null, null],
+  H('alrehab', 'Al-Rehab "عطر الشعر" stays a perfume', P('عطر الشعر لا مدام 50 مل'), 'perfume', 1, null),
+  H('rasasi', 'Rasasi body & hair mist stays a perfume', P('سمو الرصاصي رينا معطر للجسم والشعر 100 مل'), 'perfume', 1, null),
+  H('laverne', 'Laverne body mist is a hair_mist', P('بلانكا - رذاذ للجسم', { description: 'رذاذ 75 مل' }), 'hair_mist', 1, null),
+  H('laverne', 'Laverne "عطر للشعر" is a hair_mist', P('سينس فور إيفر عطر للشعر — 75 مل'), 'hair_mist', 1, null),
+  H('laverne', 'Laverne bakhoor-named spray is a perfume', P('لادور بخور كلاسيك 10 مل', { sku: 'LDB-10-SF-1' }), 'perfume', 1, null),
+  H('rasasi', 'Rasasi "بخور" in ml stays bakhoor', P('بخور انسجام 100 مل', { description: 'بخور 100 مل' }), 'bakhoor', 1, null),
+  H('laverne', 'Laverne PKG code on a single travel bottle stays a perfume', P('مسك قاردن لحقيبتك', { sku: 'PKG-LP492-ON-1' }), 'perfume', 1, null),
+  H('rasasi', 'a spray with oud oil in its name (30 ml) is a perfume', P('دهن عود الكمبودي بخاخ 30مل'), 'perfume', 1, null),
+  H('rasasi', 'a concentrated perfume is a perfume', P('عطر العود عطر مركز 20مل'), 'perfume', 1, null),
+  H('oudelite', 'oud paste is bakhoor even if the text says oil', P('معجون فاخر', { description: 'معجون عود بدهن' }), 'bakhoor', 1, null),
+  H('oudelite', 'burner in a gift bag stays bakhoor', P('شنطة مبخرة صغيرة وولاعة', { category: { name: 'الهدايا والإكسسوارات' } }), 'bakhoor', 1, null),
+  H('oudelite', 'item in the gifts & accessories category is a set', P('اورينت ستيل اسود', { category: { name: 'الهدايا والإكسسوارات' } }), 'bundle', null, null),
 ];
 
 let bad = 0;
-for (const [label, item, type, count, conf] of ROWS) {
-  const r = classifyProduct(item, { byId });
+for (const [label, item, type, count, conf, house] of ROWS) {
+  const r = classifyProduct(item, { byId, house });
   const problems = [];
   if (r.categoryType !== type) problems.push(`type ${r.categoryType}, expected ${type}`);
   if (count != null && r.bottleCount !== count) problems.push(`bottles ${r.bottleCount}, expected ${count}`);
@@ -50,7 +65,7 @@ for (const [label, item, type, count, conf] of ROWS) {
 }
 
 // A low-confidence guess never lands in the perfumes section.
-const weak = classifyProduct(P('ديكلير 50', { sku: 'PKGDC-1-ON-1', description: 'عطر 50 مل' }), { byId });
+const weak = classifyProduct(P('الحديقة الكبرى - لهُ', { sku: 'DISHM-1-ON-1' }), { byId });
 const place = placement('assaf', weak);
 const gate = weak.confidence === 'low' && place.categoryType === 'bundle' && place.needsReview;
 console.log(`${gate ? 'ok  ' : 'FAIL'} low confidence is filed as a flagged bundle (${weak.confidence} -> ${place.categoryType}, needsReview ${place.needsReview})`);

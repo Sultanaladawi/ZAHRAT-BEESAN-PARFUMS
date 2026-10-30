@@ -142,6 +142,13 @@ browser and the tools):
 A result with low confidence is never filed under perfumes: it goes to the
 bundles section flagged `needsReview` and is listed in `tools/import-review.json`.
 
+The owner's filing conventions are rules too (hair/body mists have their own
+section only at Laverne and Deraah; a bakhoor-named spray is a perfume at Assaf
+and Laverne; a PKG- code on a single travel bottle does not make a set; paste,
+dokhoon and mabthooth are bakhoor even when the text mentions oil). Filings the
+owner approved one by one are in `tools/class-overrides.json`: the classifier,
+the importer and the audit never change or flag them.
+
 Tools: `node tools/test-classifier.js` (table of real examples),
 `node tools/sync-check.js --import --dry` (shows the decision and the reasons for
 every new product, changes nothing), `node tools/audit-classes.js` (compares the

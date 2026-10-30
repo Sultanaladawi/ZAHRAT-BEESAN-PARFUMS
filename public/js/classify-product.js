@@ -33,7 +33,7 @@ const strip = h => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, '
 const norm = t => String(t || '').replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').toLowerCase();
 
 // Words that name a pack in a title.
-const PACK_TITLE = /(?<![ء-ي])(مجموع[هة]|مجموعات|كولكشن|كوليكشن|بكج|باكج|باقه|باقة|بوكس|بوكسات|صندوق|طقم|ثنائيه|ثنائية|ثلاثيه|ثلاثية|رباعيه|رباعية|خماسيه|خماسية|تشكيله|تشكيلة|توزيعات|عروض|عرض|هديه|هدية|هدايا|ديسكفري|استكشاف|الاستكشاف|سيت)(?![ء-ي])|\b(set|collection|duo|trio|bundle|box|gift|discovery|pack)\b/i;
+const PACK_TITLE = /(?<![ء-ي])(مجموع[هة]|محموع[هة]|مجموعات|كولكشن|كوليكشن|بكج|باكج|باقه|باقة|بوكس|بوكسات|صندوق|طقم|ثنائيه|ثنائية|ثلاثيه|ثلاثية|رباعيه|رباعية|خماسيه|خماسية|تشكيله|تشكيلة|توزيعات|عروض|عرض|هديه|هدية|هدايا|ديسكفري|استكشاف|الاستكشاف|سيت)(?![ء-ي])|\b(set|collection|duo|trio|bundle|box|gift|discovery|pack)\b/i;
 // A gift bag / bag set that holds perfumes (Oud Elite's "شنطة ...").
 const BAG_SET = /(?<![ء-ي])(شنط[هة]|حقيب[هة])(?![ء-ي])/;
 // "من مجموعة X" / "of the X collection" names the product line of one bottle.
@@ -45,11 +45,20 @@ const EXTRAS = /(?<!ل)(?<![ء-ي])(?:حقيب(?!تك)|شنط(?!تك))|بودر|
 const SET_DESC = /(تتضمن|تحتوي|يحتوي|تتكون|تتألف|تضم|يضم|تشمل|يشمل|تجمع)\s+(?:ال)?(?:مجموعه|مجموعة|باقة|بوكس|صندوق|علبه|علبة)?[^.]{0,40}(عطر|عطور|زجاج|قطع|مل)|\b(includes|contains|consists of|comes with)\b/i;
 const SET_CATEGORY = /مجموع|بوكسات|هدايا|هديه|الاهداء|الإهداء|ثنائيات|ثنائيه|استكشاف|الاستكشاف|توزيعات|كولكشن|تويست|collection|gift|duo|bundle|box|twist/i;
 const OIL = /تول[هة]|زيت\s*عطري|دهن\s*(?:ال)?عود|دهن\s*عود|بودي\s*(?:اويل|زيت)|اويل|\boil\b|attar|دهن/i;
-const BAKHOOR = /بخور|معمول|دخون|مبثوث|مبسوس|مغموس|معجون|لبان|مبخر[هة]?|عود\s*(?:معطر|بخور)|bakhoor|bakhur|incense|burner|معطر\s*(?:لل|ال|ل)?(?:جو|منزل|غرف|بيت|سيار|مفارش)|فواح[هة]|ملطف|دفيوزر|ديفيوزر|diffuser|air\s*freshener|room\s*spray/i;
+const BAKHOOR = /بخور|معمول|دخون|مبثوث|مبسوس|مغموس|معجون|لبان|مبخر[هة]|عود\s*(?:معطر|بخور)|bakhoor|bakhur|incense|burner|معطر\s*(?:لل|ال|ل)?(?:جو|منزل|غرف|بيت|سيار|مفارش)|فواح[هة]|ملطف|دفيوزر|ديفيوزر|diffuser|air\s*freshener|room\s*spray/i;
 // A bakhoor-named product that is really a spray (EDP) - "بخور وايلد كولت 150 مل".
+// The owner's filing conventions by house (not what the words alone would say):
+//  - hair & body mists have their own section only at Laverne and Deraah; elsewhere
+//    ("عطر الشعر لا مدام" at Al-Rehab, "معطر للجسم والشعر" at Rasasi) they stay perfumes;
+//  - a bakhoor-named SPRAY ("بخور وايلد كولت", "لادور بخور كلاسيك") is a perfume at
+//    Assaf and Laverne; at the other houses a "بخور" product is bakhoor.
+const HAIR_SECTION_HOUSES = ['laverne', 'deraah'];
+const SCENT_NAMED_HOUSES = ['assaf', 'laverne'];
+// Strong bakhoor words in the NAME: these beat an oil hint from the description.
+const BAKHOOR_NAME = /معجون|دخون|مبثوث|معمول|مبخر[هة]|مغموس|مبسوس/;
 const SPRAY = /بخاخ|عطر|eau\s*de|parfum|edp|spray/i;
-const HOME = /معطر\s*(?:لل|ال|ل)?(?:جو|منزل|غرف|بيت|سيار|مفارش)|فواح[هة]|ملطف|دفيوزر|ديفيوزر|diffuser|air\s*freshener|room\s*spray|مبخر[هة]?|معجون|معمول|مبثوث|دخون|burner/i;
-const HAIR = /عطر\s*(?:ال)?شعر|معطر\s*(?:ال)?شعر|هير\s*مست|hair\s*mist|hair\s*perfume/i;
+const HOME = /معطر\s*(?:لل|ال|ل)?(?:جو|منزل|غرف|بيت|سيار|مفارش)|فواح[هة]|ملطف|دفيوزر|ديفيوزر|diffuser|air\s*freshener|room\s*spray|مبخر[هة]|معجون|معمول|مبثوث|دخون|burner/i;
+const HAIR = /عطر\s*(?:لل|ال|ل)?\s*شعر|معطر\s*(?:لل|ال|ل)?\s*شعر|هير\s*مست|hair\s*mist|hair\s*perfume/i;
 const BODY = /رذاذ\s*(?:لل|ال|ل)?\s*جسم|معطر\s*(?:ال)?جسم|عطر\s*(?:لل|ال)?جسم|بودي\s*(?:مست|سبراي)|body\s*(?:mist|spray)/i;
 
 const sizesOf = t => [...String(t).matchAll(/(?<![\d٠-٩.])(\d{1,4})\s*(?:مل|ml)(?![؀-ۿA-Za-z])/gi)].map(m => Number(m[1])).filter(n => n >= 3);
@@ -135,11 +144,20 @@ function classifyProduct(item, ctx = {}) {
   const isGroup = item.type === 'group_products' || item.is_bundle === true;
   const pkgSku = /^(PKG|DIS)/i.test(sku);
   if (isGroup) { strong += 10; reasons.push('the supplier lists it as a bundle (group of products)'); }
-  if (pkgSku) { strong += 3; reasons.push(`SKU ${sku.split('-')[0]}- is a package code`); }
+  // A PKG- code on a product that reads as a single bottle ("مسك قاردن لحقيبتك",
+  // "ديكلير 50") does not make it a pack unless something else says so.
+  const singleLooking = /لحقيبتك|لحقيبتكِ/.test(name) || (sizesOf(name).length === 1 && sizesOf(name)[0] >= 10) || /^\S+\s+\d{2,3}$/.test(name.trim());
+  const readsSingle = /^PKG/i.test(sku) && singleLooking && !isGroup && !PACK_TITLE.test(nTitleNoLine) && !TWIST.test(name)
+    && !/\s\+\s/.test(name) && !/\S\s+و\S+\s+\S/.test(name) && !SIZE_TIMES.test(`${name} ${desc.slice(0, 160)}`)
+    && !/مجموع[هة]|(?:ثلاث|اربع|خمس|ست)[هة]?\s*(?:عطور|روائح)|\d\s*عطور/.test(nDesc.slice(0, 300));
+  if (pkgSku && !readsSingle) { strong += 3; reasons.push(`SKU ${sku.split('-')[0]}- is a package code`); }
+  else if (pkgSku) reasons.push(`SKU ${sku.split('-')[0]}- is a package code, but the product reads as a single bottle`);
   if (PACK_TITLE.test(nTitleNoLine)) { strong += 4; reasons.push('title names a pack'); }
   if (TWIST.test(name)) { strong += 4; reasons.push('"- تويست": a twist-and-spray set'); }
   if (/^PWD/i.test(sku)) { strong += 3; reasons.push('SKU PWD-: perfume with body powder'); }
-  if (BAG_SET.test(nName) && cats.some(c => /هدايا|اكسسوار|الاهداء|gift/.test(norm(c)))) { strong += 4; reasons.push('gift bag in the gifts category'); }
+  const giftCat = cats.some(c => /هدايا|اكسسوار|الاهداء|gift/.test(norm(c)));
+  if (BAG_SET.test(nName) && giftCat && !/مبخر[هة]/.test(nName)) { strong += 4; reasons.push('gift bag in the gifts category'); }
+  else if (giftCat && !/مبخر[هة]/.test(nName) && cats.some(c => /هدايا\s*و\s*الاكسسوار|الهدايا\s*والإكسسوارات/.test(c.replace(/\s+/g, ' ')))) { strong += 4; reasons.push('listed in the gifts & accessories category'); }
   if (SIZE_TIMES.test(`${name} ${desc.slice(0, 160)}`)) { strong += /(?<![\d٠-٩])[2-9٢-٩]\s*(?:حبات|حبة)|\d{2,3}\s*حبة/.test(name) ? 4 : 3; reasons.push('a count in the text ("3 × 25 مل", "3 حبات")'); }
   if (new Set(titleSizes).size >= 2) { strong += 3; reasons.push(`several sizes in the title (${[...new Set(titleSizes)].join('/')})`); }
   if (/\s\+\s/.test(name)) { strong += 2; reasons.push('title joins items with +'); }
@@ -154,16 +172,33 @@ function classifyProduct(item, ctx = {}) {
   if (!pkgSku && !isGroup && titleSizes.length === 1 && titleSizes[0] >= 30 && !PACK_TITLE.test(nTitleNoLine)) { weak = 0; reasons.push('one size in the title, no pack word'); }
 
   // ── what a single product is ──
+  const house = String(ctx.house || '');
   let kind = 'perfume';
   let namedAfterScent = false;
   const gramSize = /(?<![\d٠-٩])\d+\s*(?:جرام|غرام|جم|g|قرص|اقراص|قطعه|قطعة)(?![ء-يA-Za-z])/i.test(`${name} ${desc.slice(0, 120)}`);
-  if (BODY.test(nName) || HAIR.test(nName)) kind = 'hair_mist';
-  else if (BAKHOOR.test(nName) && !HOME.test(nName) && !gramSize && ((titleSizes.concat(descSizes).some(n => n >= 75) && (SPRAY.test(nDesc.slice(0, 300)) || !nDesc || descSizes.some(n => n >= 75))))) {
+  const mlSizes = titleSizes.concat(descSizes);
+  const minMl = mlSizes.length ? Math.min(...mlSizes) : null;
+  if (BODY.test(nName) || HAIR.test(nName)) {
+    if (HAIR_SECTION_HOUSES.includes(house) || !house) kind = 'hair_mist';
+    else reasons.push('hair/body mist, filed with the perfumes at this house');
+  }
+  if (kind === 'perfume' && BAKHOOR.test(nName) && !HOME.test(nName) && !gramSize && !BAKHOOR_NAME.test(nName) && (SCENT_NAMED_HOUSES.includes(house) || !house && mlSizes.some(n => n >= 75))) {
     kind = 'perfume'; namedAfterScent = true; reasons.push('named after a scent (bakhoor/oud) but sold as a spray in ml');
-  } else if (gramSize && (BAKHOOR.test(nName) || !titleSizes.length)) kind = 'bakhoor';
-  else if ((OIL.test(nName) && !/بخاخ|spray/.test(nName)) || (OIL.test(nDesc.slice(0, 120)) && !/بخاخ|spray/.test(nName + nDesc.slice(0, 120))) || cats.some(c => /تول|زيوت|دهن/.test(norm(c)))) kind = 'oil';
-  else if (titleSizes.length === 1 && titleSizes[0] <= 8 && !/ميني|mini/.test(nName)) kind = 'oil';
-  else if (BAKHOOR.test(nName) || (gramSize && !titleSizes.length)) kind = 'bakhoor';
+  } else if (kind === 'perfume' && gramSize && (BAKHOOR.test(nName) || !titleSizes.length)) kind = 'bakhoor';
+  else if (kind === 'perfume' && BAKHOOR_NAME.test(nName) && !OIL.test(nName)) kind = 'bakhoor';
+  else if (kind === 'perfume') {
+    // Oil words: in the name (a spray with oil in its name, 30 ml or more, stays a perfume),
+    // in the description, or the supplier category (tolas / oils up to 20 ml).
+    const spray = /بخاخ|spray|عطر\s*مركز/.test(nName);
+    const withOil = /مع\s*دهن|بدهن|\bwith\s+oil/.test(nName); // the oil is an ingredient of a perfume
+    const oilName = OIL.test(nName) && !spray && !withOil;
+    const oilDesc = OIL.test(nDesc.slice(0, 120)) && !spray && !withOil && !/بخاخ|spray/.test(nDesc.slice(0, 120));
+    const oilCat = cats.some(c => /تول|زيوت|دهن/.test(norm(c))) && !spray && (minMl === null || minMl <= 20);
+    if (oilName || oilDesc || oilCat) kind = 'oil';
+    else if (titleSizes.length === 1 && titleSizes[0] <= 8 && !/ميني|mini/.test(nName)) kind = 'oil';
+    else if (/مخلط/.test(nName) && !spray && minMl !== null && minMl <= 30) kind = 'oil';
+    else if (BAKHOOR.test(nName) && !(/لبان/.test(nName) && !/بخور|معمول|دخون|مبثوث|مبخر|معجون/.test(nName) && minMl !== null && minMl >= 75)) kind = 'bakhoor';
+  }
 
   // ── decide ──
   let categoryType, confidence, bottleCount = 1, components = null;

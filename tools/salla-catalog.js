@@ -15,6 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const { classifyProduct, placement } = require('../public/js/classify-product');
+const { applyOverride } = require('./class-overrides');
 
 const ROOT = path.join(__dirname, '..');
 const DATA = path.join(ROOT, 'public', 'data');
@@ -152,7 +153,10 @@ const feeFor = rec => fees.feeFor(rec);
 // family, pack words in the title, what the description lists, the supplier
 // category and the components of a set.
 function classifyItem(house, it, ctx = {}) {
-  const cls = classifyProduct(it, { byId: ctx.byId, categoryNames: ctx.categoryNames, house });
+  let cls = classifyProduct(it, { byId: ctx.byId, categoryNames: ctx.categoryNames, house });
+  // A product the owner has already approved keeps that filing (tools/class-overrides.json).
+  const cfg = HOUSES[house];
+  if (cfg) cls = applyOverride(`${cfg.prefix}-${cfg.key === 'slug' ? slugOf(it.url) : String(it.id)}`, cls);
   return { cls, place: placement(house, cls) };
 }
 
