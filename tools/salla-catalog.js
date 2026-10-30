@@ -172,7 +172,7 @@ function feeFor(rec, small) {
   if (count > 1) return count * 4 + 10;
   if (small) return 5;
   const ml = (`${rec.specs && rec.specs.size} ${rec.title}`.match(/(\d+)\s*(?:مل|ml)(?![a-z\d])/i) || [])[1];
-  const mini = rec.categoryType === 'perfume' && (/ميني|mini/i.test(rec.title) || (ml && Number(ml) >= 8 && Number(ml) <= 30)) && !/دهن|زيت|شعر|معطر|hair/i.test(rec.title);
+  const mini = rec.categoryType === 'perfume' && (/ميني|mini/i.test(rec.title) || (ml && Number(ml) >= 8 && Number(ml) <= 50)) && !/دهن|زيت|شعر|معطر|hair/i.test(rec.title);
   return mini ? 5 : 12;
 }
 

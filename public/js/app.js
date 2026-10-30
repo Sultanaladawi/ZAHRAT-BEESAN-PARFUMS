@@ -633,6 +633,7 @@ function getClientBottleCount(item) {
 const BASE_FEE_JOD = 12;
 const SMALL_OIL_FEE_JOD = 5;
 const MINI_FEE_JOD = 5;
+const MINI_MAX_ML = 50;
 const TOLA_RE = /تول(?:ة|ه|ات)(?=$|[\s\/)\-،,])/;
 const NOT_MINI_RE = /دهن|زيت|شعر|hair|body\s*mist|معطر|فواحة|ملطف|diffuser/i;
 const MINI_WORD_RE = /ميني|mini/i;
@@ -651,8 +652,8 @@ function isTolaItem(item) {
   return rehab && (item?.categoryType === 'oil' || /دهن|زيت عطري/.test(item?.title || '')) && ml > 0 && ml <= 20;
 }
 
-// One small bottle of perfume: 30 ml or less, titled mini, or in a house's own
-// mini line. Plain 31-50 ml perfumes stay in the main list.
+// One small bottle of perfume: 50 ml or less (the owner's rule), titled mini, or
+// in a house's own mini line. Keep MINI_MAX_ML in step with lib/fees.js.
 function isMiniPerfume(item) {
   if (!item) return false;
   const count = Number(item.bottleCount);
@@ -665,7 +666,7 @@ function isMiniPerfume(item) {
   if (cat === 'mini' || item.subCategory === 'mini') return true;
   if (MINI_WORD_RE.test(title)) return true;
   const ml = itemSizeMl(item);
-  return ml !== null && ml >= 8 && ml <= 30;
+  return ml !== null && ml >= 8 && ml <= MINI_MAX_ML;
 }
 
 function getClientDeliveryFeeJod(item) {
@@ -1266,7 +1267,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
     {
       key: 'mini',
       icon: '🧴',
-      title: currentLang === 'ar' ? 'عطور ميني (حتى 30 مل)' : 'Mini Perfumes (up to 30 ml)',
+      title: currentLang === 'ar' ? 'عطور ميني (حتى 50 مل)' : 'Mini Perfumes (up to 50 ml)',
       desc: currentLang === 'ar' ? 'عبوات صغيرة مثالية للتجربة والسفر والجيب' : 'Compact bottles, perfect for trying, travelling and carrying',
       unitAr: 'عطراً',
       unitEn: 'minis',
