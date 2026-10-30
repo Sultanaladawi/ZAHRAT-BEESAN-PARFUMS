@@ -42,3 +42,4 @@ data/admin-state.json
 # Local agent worktrees
 .claude/
 .venv/
+tools/last-import.txt

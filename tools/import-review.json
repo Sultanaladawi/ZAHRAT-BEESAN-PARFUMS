@@ -1,0 +1,23 @@
+{
+  "assaf": {
+    "supplier": 598,
+    "unsure": [
+      {
+        "id": "829997380",
+        "name": "العرض العالمي",
+        "sku": "PKG-ASFP2-ON-10053",
+        "price": 149,
+        "url": "https://3saf.com/ar/global-offer/p829997380",
+        "why": "collection with a watch, glasses or no perfume text"
+      }
+    ],
+    "aborted": null,
+    "wouldAdd": null
+  },
+  "laverne": {
+    "supplier": 466,
+    "unsure": [],
+    "aborted": null,
+    "wouldAdd": null
+  }
+}

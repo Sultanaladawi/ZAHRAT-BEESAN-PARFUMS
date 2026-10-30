@@ -16,6 +16,7 @@
  * bag (public/data/offers.json) are refreshed.
  */
 const fs = require('fs');
+const catalog = require('./salla-catalog');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
@@ -283,11 +284,35 @@ async function discover(house, items) {
     .map(it => ({ id: String(it.id), name: it.name, price: amount(it.price), url: it.url }));
 }
 
+// What the import added or could not decide: tools/import-review.json (kept in
+// the repo, for a person to look at) and tools/last-import.txt (becomes the
+// commit message, not kept).
+function writeImportReport(summaries) {
+  const report = {};
+  const lines = [];
+  for (const s of summaries) {
+    report[s.house] = { supplier: s.supplier, unsure: s.unsure, aborted: s.aborted || null, wouldAdd: s.wouldAdd || null };
+    if (s.added.length) {
+      lines.push(`${s.house}: added ${s.added.length} new product(s)`);
+      for (const a of s.added) lines.push(`  + ${a.title} (${a.category}${a.available ? '' : ', sold out'})`);
+    }
+    if (s.aborted) lines.push(`${s.house}: ${s.aborted}`);
+    if (s.unsure.length) lines.push(`${s.house}: ${s.unsure.length} product(s) need a look, see tools/import-review.json`);
+  }
+  fs.writeFileSync(path.join(__dirname, 'import-review.json'), JSON.stringify(report, null, 2) + '\n');
+  fs.writeFileSync(path.join(__dirname, 'last-import.txt'), lines.join('\n') + (lines.length ? '\n' : ''));
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const apply = args.includes('--apply');
   const wantDiscover = args.includes('--discover');
   const found = {};
+  const wantImport = args.includes('--import');
+  // The category-by-category pass costs ~80 requests a house: once a day, or on request.
+  const exhaustive = args.includes('--exhaustive') || (wantImport && new Date().getUTCHours() === 3);
+  const importCap = Number((args.find(a => a.startsWith('--cap=')) || '').slice(6)) || 40;
+  const importSummaries = [];
   const wanted = args.filter(a => !a.startsWith('--'));
   const all = { ...SALLA_HOUSES, ...SALLA_LISTED_HOUSES, ...PAGE_HOUSES };
   const houses = wanted.length ? wanted : Object.keys(all);
@@ -315,8 +340,22 @@ async function main() {
         if (extra) { found[house] = extra; note += ` | not carried ${extra.length}`; }
       } catch (e) { note += ' | discovery failed'; }
     }
+    // Products the supplier added since the last run (new, sold out, or only
+    // reachable from a category): in-scope ones are added to the catalog,
+    // unsure ones go to the discover report. Never more than the cap per run.
+    if (wantImport && catalog.HOUSES[house]) {
+      try {
+        const fresh = JSON.parse(fs.readFileSync(file, 'utf8'));
+        const { items: supplier, extra } = await catalog.enumerate(catalog.HOUSES[house], { exhaustive });
+        const sum = await catalog.importMissing(house, fresh, supplier, { cap: importCap, write: apply });
+        sum.foundOnlyInCategories = extra.length;
+        importSummaries.push(sum);
+        note += ` | supplier ${sum.supplier} | added ${sum.added.length} | unsure ${sum.unsure.length}${sum.aborted ? ' | ABORTED (cap)' : ''}`;
+      } catch (e) { note += ` | import failed (${e.message})`; }
+    }
     console.log(`${house.padEnd(10)} products ${String(r.total).padStart(4)} | price changed ${r.priceChanged.length} | out of stock ${r.wentOut.length} | back in stock ${r.cameBack.length} | gone ${r.missing.length} | check failed ${r.errors.length}${note}`);
   }
+  if (wantImport) writeImportReport(importSummaries);
   if (apply && !wanted.length) await refreshOffers();
   fs.writeFileSync(path.join(__dirname, 'sync-report.json'), JSON.stringify(reports, null, 2));
   if (wantDiscover) fs.writeFileSync(path.join(__dirname, 'discover-report.json'), JSON.stringify(found, null, 2));
