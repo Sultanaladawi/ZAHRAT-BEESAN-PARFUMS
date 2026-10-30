@@ -749,15 +749,15 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
       const liveReg = Math.round(liveRegRaw);
       const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
       const cleanDesc = (live.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-      const catType = /باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية/i.test(live.name || '')
-        ? 'bundle'
-        : (/تولة|زيت عطري/i.test(live.name || '') ? 'oil' : (/بخور|معمول|معطر جو/i.test(live.name || '') ? 'bakhoor' : 'perfume'));
+      // Same classifier the server and the import tools use (js/classify-product.js).
+      const place = ProductClassifier.placement('ghalati', ProductClassifier.classifyProduct(live, { house: 'ghalati' }));
+      const catType = place.categoryType;
       const rawImg = live.image?.url || '';
       const origImg = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
       const tempItem = { id: `ghalati-${sid}`, title: live.name, overview: cleanDesc, categoryType: catType };
       const existingItem = (list || []).find(it => String(it.sallaId) === sid || it.id === `ghalati-${sid}`);
-      const bottleCount = getClientBottleCount(tempItem);
-      const feeJod = getClientDeliveryFeeJod(tempItem);
+      const bottleCount = place.bottleCount;
+      const feeJod = getClientDeliveryFeeJod({ ...tempItem, bottleCount });
       const baseJod = Math.round(livePrice / 5.29);
 
       return {
@@ -804,7 +804,9 @@ async function syncClientSideWithSalla(list, house = 'ghalati') {
           origin: 'Saudi Arabia',
           type: catType === 'bundle' ? 'Royal Perfume Bundle' : 'Eau de Parfum'
         },
-        categoryType: catType
+        categoryType: catType,
+        ...(place.namedAfterScent ? { namedAfterScent: true } : {}),
+        ...(place.needsReview ? { needsReview: true } : {})
       };
     });
 

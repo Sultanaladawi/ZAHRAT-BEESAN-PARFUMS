@@ -1,0 +1,2219 @@
+{
+ "generated": "2026-10-30T19:02:36.217Z",
+ "sections": [],
+ "bottles": [
+  {
+   "house": "ghalati",
+   "id": "bundle-exceptional-offer",
+   "title": "باقة العرض الإستثنائي",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-last-hours",
+   "title": "باقة الساعات الأخيرة",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-summer-pkg",
+   "title": "بكج الصيف",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-modern",
+   "title": "باقة مودرن",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-daraa",
+   "title": "باقة دراعة",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-tuwaiq",
+   "title": "باقة طويق",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-rawshan",
+   "title": "باقة الروشن",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-sadu",
+   "title": "باقة سدو",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "package-air-fresheners",
+   "title": "بكج معطرات الجو",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-musk-collection",
+   "title": "باقة عطور المسك الفاخرة",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "set-varna",
+   "title": "مجموعة فارنا الملكية الفاخرة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "set-alfakhamah",
+   "title": "مجموعة الفخامة الملكية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "package-cartage-noble",
+   "title": "بكج قرطاج نوبل",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "package-cartage-etoile",
+   "title": "بكج قرطاج ايتوال",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "package-cartage-velours",
+   "title": "بكج قرطاج فيلورز",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "ghalati",
+   "id": "bundle-heritage-collection",
+   "title": "باقة مجموعة التراث الفاخرة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-369088822",
+   "title": "مجموعة ريسك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-79328031",
+   "title": "مليونية اروجيت",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1668518142",
+   "title": "مجموعة أورا أتاك (هجوم الأورا)",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1131719368",
+   "title": "مجموعة ديفا ريسك",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1502527852",
+   "title": "مجموعة كولد هوك",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-88128890",
+   "title": "مجموعة فرانكل إليت",
+   "ours": 4,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-814804017",
+   "title": "مجموعة تريبل امباكت",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1755285826",
+   "title": "مجموعة اروقنت",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-615644271",
+   "title": "مجموعة أروقيت بينك ديفا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-780287822",
+   "title": "مجموعة بينك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1850175256",
+   "title": "مجموعة أحدث الإصدارات",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1968936567",
+   "title": "هير قرايس",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2091596128",
+   "title": "مجموعة سڤن سينس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1616970094",
+   "title": "مجموعة ليدي ساكورا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2053809509",
+   "title": "مجموعة أورا وريسك الملكية",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2056378606",
+   "title": "مجموعة أورا اتاكس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1262651335",
+   "title": "مجموعة كولد بريزنس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1340478300",
+   "title": "المجموعة الأكثر مبيعًا - الصيف",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1887833995",
+   "title": "مجموعة فرانكل تشالنج",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2135629044",
+   "title": "مجموعة فرانكل سعة 500 مل ونظارة هدية",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1691037198",
+   "title": "مجموعة سترايك اورا",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2140870208",
+   "title": "فرانكل بلو وساعة نيو شابتر",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1731158495",
+   "title": "مجموعة سمر أروقيت",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1839061432",
+   "title": "مجموعة فرانكل الحصرية",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-158079522",
+   "title": "مجموعة فرانكل مع صندوق عينات",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-915316704",
+   "title": "مجموعة وايلد وقريس مع صندوق العينات",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1065768549",
+   "title": "مجموعة فرانكل افنتوس وفرانكل ايمجنيشن",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-282780349",
+   "title": "مجموعة مس",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1704407016",
+   "title": "مجموعة الأكثر مبيعًا - اروقيت",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-597611948",
+   "title": "مجموعة لن تتكرر",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-601605710",
+   "title": "مجموعتين بخور عيد عساف - 12 عطر",
+   "ours": 6,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-432203624",
+   "title": "توزيعات عيد عساف",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1405768836",
+   "title": "مجموعة النساء الاكثر مبيعًا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1522550952",
+   "title": "المجموعة الفكتورية",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1236351736",
+   "title": "مجموعة الأكثر مبيعًا - صيف",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2053607813",
+   "title": "مجموعة الصيف الرجالية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-227203442",
+   "title": "مجموعة الضغط العالي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2023066823",
+   "title": "مجموعة بينك ديفا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-54426548",
+   "title": "عرض اليوم الراتب",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1178408748",
+   "title": "مجموعة كوين ليدي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-631445629",
+   "title": "وايلد بيقاسوس والكساندرا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1082263421",
+   "title": "المجموعة النسائية",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2103188368",
+   "title": "مجموعة فرانكل بلو وباتل",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1478178017",
+   "title": "مجموعة الزواج",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-297697690",
+   "title": "مجموعة أورا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-827283712",
+   "title": "ليدي سيكريت",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1508819280",
+   "title": "ليدي قريس",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1007812804",
+   "title": "ساعة بيقاسوس بلو وفرانكل ايماجنيشن",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1013525767",
+   "title": "ساعة فرانكل بلاك وفرانكل ايماجنيشن",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1911264232",
+   "title": "ساعة بيقاسوس اويل وفرانكل ايماجنيشن",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1873878326",
+   "title": "نظارة مس اروقيت 5 وعطر فيرست نايت",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-507291420",
+   "title": "نظارة بيقاسوس 40 وعطر فيرست نايت",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1890240144",
+   "title": "نظارة مس بيقاسوس 5 وعطر فيرست نايت",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-796362785",
+   "title": "مجموعة أورا مع هدية",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1584169439",
+   "title": "مجموعة فرانكل تشيل ونظارة بيقاسوس 20",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-739460377",
+   "title": "مجموعة صيف أروقيت",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1211183980",
+   "title": "مجموعة ال 500 مل فرانكل ونظارة",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-1465714971",
+   "title": "فرانكل سيلفر ونظارة BDR 20",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-505077860",
+   "title": "مجموعة بينك باودر - عطر بينك كوين 200 مل + بودرتان",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-2077147024",
+   "title": "محموعة فرانكل 25 مل",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-604366708",
+   "title": "مجموعة تشالنج + ستاند باي",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "assaf",
+   "id": "assaf-766210224",
+   "title": "نخبة جمعة عساف",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-689081081",
+   "title": "المجموعة السرية",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1768603326",
+   "title": "ديكتاتور ميدنايت مع هدية مجموعة الاستكشاف",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-606761636",
+   "title": "مجموعة الإهداء الرجالية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-672922291",
+   "title": "مجموعة العيد الحصرية",
+   "ours": 6,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1584823409",
+   "title": "عطر الحدائق السبع",
+   "ours": 7,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-553817948",
+   "title": "روشن مع هدية مجموعة الاستكشاف",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1297331656",
+   "title": "مجموعة سويت ليدي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-564688846",
+   "title": "Prestige Collection - مجموعة البرستيج",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1085864512",
+   "title": "مجموعة الحضور الصيفية - مع هدية",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-2025710622",
+   "title": "مجموعة الرجال الصيفية",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-80422785",
+   "title": "المجموعة الصيفية الحصرية",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1707788854",
+   "title": "مجموعة أوريجينز",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1886150485",
+   "title": "مجموعتك",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1628120054",
+   "title": "صباح ومساء وبخور",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1655170092",
+   "title": "مجموعة الذوق الرفيع",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1154465407",
+   "title": "المجموعة الرجالية الخاصة - مع هدية",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-419721341",
+   "title": "مجموعتك الصيفية - مع هدية",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-544630123",
+   "title": "مجموعة الإهداء الصيفية - مع هدية",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "thnyan",
+   "id": "thnyan-1315345717",
+   "title": "Sweet Lady - سويت ليدي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-666775809",
+   "title": "هوس ايس بوكس الهدايا",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-511280757",
+   "title": "هوس رجالي بوكس الهدايا",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-1249242694",
+   "title": "بكج هواك",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-1531373346",
+   "title": "رمز الرصاصي 9325 مجموعة الهدايا نسائي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-2107910455",
+   "title": "أمبيشين مع بخاخ مزيل رائحة العرق 70 مل رجالي صندوق الهديا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-622114828",
+   "title": "عشق - تخيل صندوق الهديا 100مل عطر للجسم",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-685465028",
+   "title": "رمز الرصاصي 9325 بور لوي مجموعة الهدايا رجالي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "rasasi",
+   "id": "rasasi-209082392",
+   "title": "مجموعة بلو ليدي عطر مع عطر للجسم 2 في 1",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-1166501932",
+   "title": "مجموعة شوكو سيكرت",
+   "ours": 4,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-1884953205",
+   "title": "الحياة حلوة 50 مل - 3 قطع",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")",
+    "one size in the title, no pack word"
+   ]
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-627592564",
+   "title": "عطر ذكرى 50 مل - 3 قطع",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")",
+    "one size in the title, no pack word"
+   ]
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-2118388528",
+   "title": "مجموعة الفخامة العطرية من لانسي",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-300003466",
+   "title": "مجموعة الاناقة العطرية للنساء من لانسي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-1447566078",
+   "title": "مجموعة الصيف للرجال من لانسي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-2130860904",
+   "title": "عطر فورمن 50 مل - 3 قطع",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")",
+    "one size in the title, no pack word"
+   ]
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-1929188066",
+   "title": "طقم ماريانا & روز بلانش ( 30 مل )",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-1464587488",
+   "title": "طقم لا بريمافيرا & روز بلانش ( 30 مل )",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "alrehab",
+   "id": "alrehab-91141607",
+   "title": "طقم ماريانا & ايسنس دي فلور ( 30 مل )",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "lebonheur",
+   "id": "lebonheur-1114097587",
+   "title": "باقة الملكة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "lebonheur",
+   "id": "lebonheur-1226767319",
+   "title": "باقة الأميرات",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "lebonheur",
+   "id": "lebonheur-1287009000",
+   "title": "باقة الزين",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-lvxbxle",
+   "title": "باكج بخور الصباح",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-xvrmPDz",
+   "title": "باكج البخور بالطريقة الفرنسية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ngXQPYD",
+   "title": "عرض اليوم - له",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABdnqEb",
+   "title": "مجموعة بلو لافيرن بخور - هرتج بخور + بلو لافيرن بخور",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzgPVvo",
+   "title": "مجموعة مس لافيرن قاردن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-mZoVqOj",
+   "title": "مجموعة مس لافيرن اكستريم",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-vXWowya",
+   "title": "مجموعة مس لافيرن وكينق",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-vAjVYqK",
+   "title": "مجموعة مس لافيرن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ZYrBDxW",
+   "title": "مجموعة دير 7AM وكينق",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-EXYPoKy",
+   "title": "مجموعة إن لوف",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qGzBmWY",
+   "title": "مجموعة مسك قاردن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-XzArYev",
+   "title": "مجموعة سينس فور ايفر",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-bREgdVw",
+   "title": "مجموعة الإهداء - لها",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-OywmzdD",
+   "title": "مجموعة الفوحان",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-PDEorQx",
+   "title": "مجموعة الإستكشاف - لهُ",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ngerPoN",
+   "title": "مجموعة الإستكشاف - لها",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ngGrPXN",
+   "title": "مجموعة لويارد",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-WzZwowr",
+   "title": "توزيعات لويارد 16 توزيعة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-wARGOrV",
+   "title": "مجموعة تايرنت - 5 عطور",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-QzyYDaq",
+   "title": "توزيعات العيد - لهما",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzyYejq",
+   "title": "توزيعات بخور لافيرن - 15",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzyYVER",
+   "title": "مجموعة تايرنت - 10 عطور",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qQnpbWK",
+   "title": "ليتل قاردن واتلانتس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YgBjdRa",
+   "title": "ليتل قاردن وبيلا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-DGWKBbz",
+   "title": "مجموعة الإهداء - لهُ",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-bRBGjvA",
+   "title": "مجموعة المتناقضات",
+   "ours": 2,
+   "classifier": 6,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-PdRXyjB",
+   "title": "مجموعة القمر والنجوم",
+   "ours": 2,
+   "classifier": 6,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-BrVnAdr",
+   "title": "مجموعة الليل والنهار",
+   "ours": 2,
+   "classifier": 6,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-zoaeoAR",
+   "title": "المجموعة الثلاثية",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-Dpzpvob",
+   "title": "مجموعة جنتل - عطر 100 مل + حقيبة يد رجالية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-bwDmOKP",
+   "title": "مجموعة ديفا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-vAjYYWK",
+   "title": "المجموعة الكاملة من بيلا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-BpEnnZn",
+   "title": "مجموعة سن سيت اند يو",
+   "ours": 2,
+   "classifier": 4,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-KRdPeBj",
+   "title": "مجموعة سوار",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-EXQbgeY",
+   "title": "سن سيت اند يو",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-NAqYbln",
+   "title": "مجموعة اليوم الوردي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-WzKmmGn",
+   "title": "حديقة مس لافيرن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-RvxgXKj",
+   "title": "جنتل والشاطئ",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-rRXpOAX",
+   "title": "مجموعة الرجل الصيفية",
+   "ours": 2,
+   "classifier": 4,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgQdwjg",
+   "title": "إيقاع البحر",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-gyNbaKv",
+   "title": "ديفا بيوتي - ديفا + ملمعا ويسبر بينك وهوت شوكليت + حقيبة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-dbKVvWK",
+   "title": "المجموعة الصيفية",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-Yzlzamq",
+   "title": "مس لافيرن بيوتي - مس لافيرن 100 مل + ملمعا سعودي ليدي وريممبر مي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-QzDqQlY",
+   "title": "مس لافيرن بيوتي - مس لافيرن 100 مل + ملمعا آي آم هير وروز نود + حقيبة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzBmKmQ",
+   "title": "مجموعة حدائق المسك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgQAQxz",
+   "title": "مجموعة بلوم آند بيوتي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-KjZYZWD",
+   "title": "مجموعة مس لافيرن لحقيبتك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABqPpNn",
+   "title": "النعومة الكاملة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-Rvneeao",
+   "title": "مجموعة ريفلكشن",
+   "ours": 2,
+   "classifier": 4,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-mZARelW",
+   "title": "الحديقة الصغيرة -لحقيبتك",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-VDZOPrW",
+   "title": "مجموعة سينس فور ايفر باودر",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-BpaWgZY",
+   "title": "مجموعة المسك الكاملة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-eQNPjbK",
+   "title": "الحديقة الصغيرة له",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgQdebD",
+   "title": "مجموعة الصيف الكاملة",
+   "ours": 2,
+   "classifier": 8,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgPyWBB",
+   "title": "الحديقة الصغيرة لهُ - 5 عطور",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-xvVxNge",
+   "title": "توزيعات اليوم الوطني ٩٦",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-WzqYqdw",
+   "title": "مس لافيرن بيوتي - مس لافيرن بلوم 100 مل + ملمعا هوت شوكليت وبيج جلو + حقيبة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-VqGPZKv",
+   "title": "توزيعات لافيرن - 5 عطور 10 مل (النسخة الجديدة)",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzBbKqq",
+   "title": "ثلاثية أتلانتس والانتعاش",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-Zqbryjl",
+   "title": "بخور الصباح والإنتعاش",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABERRZd",
+   "title": "مجموعة بلو هواريزن",
+   "ours": 2,
+   "classifier": 4,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-NAZAAKG",
+   "title": "مس لافيرن بيوتي - مس لافيرن بلوم 100 مل + محدد شفاه وملمع هوت شوكليت + حقيبة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-gybgRyz",
+   "title": "الحديقة الذهبية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-Oyznlna",
+   "title": "البخور والنعومة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-QzDzzYw",
+   "title": "صندوق الشاطئ",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-KROBRgy",
+   "title": "مجموعة المسك",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-EZoalGB",
+   "title": "مجموعة لحقيبتكِ - كلاسيك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-NARPvWb",
+   "title": "ثلاثية الانتعاش",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-dbRVgKK",
+   "title": "مجموعة كريزي مسك",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-WzKqBNq",
+   "title": "المجموعة اليومية",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-pAmpxWj",
+   "title": "مس ديفا",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-vABoodp",
+   "title": "ديفا بيوتي - ديفا 100 مل + ملمعا سعودي ليدي + حقيبة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-azvvAZQ",
+   "title": "مس لافيرن والحديقة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-OyznaqO",
+   "title": "مجموعة الرجل اليومية",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-GqXqPKE",
+   "title": "مجموعة لحقيبتكِ - لها",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-PDPmBXz",
+   "title": "حديقة لويارد",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-RvrGGYj",
+   "title": "ثلاثية الانتعاش والبخور",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-pAlQpZj",
+   "title": "سحر المسك والأنوثة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-yKdvGDl",
+   "title": "5 عطور - لها",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-PDjzwwN",
+   "title": "بيوتي مس لافيرن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-BpOGqVn",
+   "title": "بخور الصيف",
+   "ours": 2,
+   "classifier": 7,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABqQnoO",
+   "title": "ثلاثية ذا سي وفيرليس",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-gyDWXpo",
+   "title": "نعومه المسك",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-EXWXZmB",
+   "title": "مجموعة اللحظات الذهبية",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABBogyn",
+   "title": "مجموعة فيرليس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-azEbjvb",
+   "title": "مسك النعومة الكاملة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-DpgrdXV",
+   "title": "مجموعة الرجل المثالي",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-gyDoWAZ",
+   "title": "ليدي قاردن",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-XzaByWb",
+   "title": "البخور والأخشاب",
+   "ours": 2,
+   "classifier": 6,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-oZBQErE",
+   "title": "مجموعة الإطلالة المتكاملة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-VDvmdyP",
+   "title": "عرض الرجال السّري",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-vXEXjYo",
+   "title": "ليتل قاردن و تشامبيون",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-lvAegYB",
+   "title": "قلامور الوردي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-rRmyjdl",
+   "title": "ثمانية الإنتعاش",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-XzeRnrR",
+   "title": "توزيعات لافيرن - 5 عطور 10 مل (النسخة السابقة)",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ABavoQZ",
+   "title": "مجموعة بيلا الوردية",
+   "ours": 2,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-eQBGZDP",
+   "title": "صندوق الصيف لهُ - 5 عطور",
+   "ours": 2,
+   "classifier": 5,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-KRGxYxQ",
+   "title": "مجموعة ديفا لها",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-rRlnZdo",
+   "title": "تركواز وحديقة الاختيارات",
+   "ours": 5,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-BpgoqNa",
+   "title": "أتلانتس وفيرليس والاكتشاف",
+   "ours": 5,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qGlRYXN",
+   "title": "مجموعة البخور والشاي والصندل",
+   "ours": 5,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-oZlAWWV",
+   "title": "فيرليس وايكون والاختيارات",
+   "ours": 5,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-yKlRwYG",
+   "title": "ثلاثية أتلانتس والحديقة",
+   "ours": 5,
+   "classifier": 3,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-OyPvEyK",
+   "title": "أتلانتس والحديقة لهُ",
+   "ours": 5,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qGlyZjN",
+   "title": "بلوم وسيترس قاردن",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-GqxpgGP",
+   "title": "سينس وحديقة الزهور",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-XzNDbwB",
+   "title": "مس لافيرن بيوتي",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-mZljbKE",
+   "title": "المجموعة اليومية لهُ",
+   "ours": 5,
+   "classifier": 3,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ZqNoDmn",
+   "title": "مجموعة لهُ الكاملة",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jglpWgK",
+   "title": "عالم مس لافيرن",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-oZlNjVZ",
+   "title": "نيو ذا وان بيوتي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-DpnQnVD",
+   "title": "مجموعة سينس وهمسات القلوس",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qGlpKzV",
+   "title": "حديقة المسك البيضاء",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-DpnQBYD",
+   "title": "مجموعة مسك قاردن وصباح دير",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-mZlwEPG",
+   "title": "مجموعة الزهور ولمسات الجمال",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": [
+    "components: 1× unknown, 1× unknown, 1× unknown, 1× unknown, 1× unknown"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ZqNygom",
+   "title": "مس لافيرن وذا ون وحديقة الزهور",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-YzBnPrl",
+   "title": "حديقة بيلا والمسك",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ngjzQvv",
+   "title": "شوقر وسينس بيوتي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-wAOvGeK",
+   "title": "ذا وان مارشيملو",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgQemvm",
+   "title": "ذا ون ليدي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-oZBGYgB",
+   "title": "ذا ون فور إيفر",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-lvXqjBQ",
+   "title": "مجموعة طيف الجمال",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-VDXxzaP",
+   "title": "مجموعة المسك والجمال",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-eQnrbPK",
+   "title": "مجموعة أيكونيك لويارد",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-yKjOYQD",
+   "title": "البخور ومسك بيوتي",
+   "ours": 3,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-OyGZYWe",
+   "title": "مجموعة اتلانتس والحديقة له",
+   "ours": 7,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-dbXRvXP",
+   "title": "الحب والحديقة الصغيرة",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-qGwAgOA",
+   "title": "إن لوف وشوقر بيوتي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-eQnyrpY",
+   "title": "شوقر وليدي جاردن",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-oZBjYWG",
+   "title": "حديقة الحب والمسك",
+   "ours": 1,
+   "classifier": 5,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-jgQalwm",
+   "title": "انتعاش المساء والبخور",
+   "ours": 1,
+   "classifier": 6,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-bwmGKrN",
+   "title": "ثلاثية اتلانتس 300 مل والحديقة له",
+   "ours": 7,
+   "classifier": 3,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-EXoDmNB",
+   "title": "مجموعة أتلانتس والحديقة الصغيرة لهُ",
+   "ours": 7,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-pAgbKgz",
+   "title": "مجموعة بيلا والحديقة الصغيرة",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-ZqVeADx",
+   "title": "مجموعة اتلانتس وصندوق الصيف",
+   "ours": 7,
+   "classifier": 2,
+   "reasons": [
+    "a count in the text (\"3 × 25 مل\", \"3 حبات\")"
+   ]
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-PDVxABO",
+   "title": "مجموعة ذا ون بيوتي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "laverne",
+   "id": "laverne-QzVxPEW",
+   "title": "نيو ذا ون بيوتي",
+   "ours": 1,
+   "classifier": 2,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-307106703",
+   "title": "شنطة مراسم النخبة ذهبي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-425836469",
+   "title": "شنطة الرسالة ذهبي",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-547721652",
+   "title": "شنطة رؤيه",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-709031343",
+   "title": "شنطة ازرق عود ومبثوث",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-1079915402",
+   "title": "شنطة الجود",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-1282400182",
+   "title": "شنطة ليلتي بلس كلاسيك",
+   "ours": 3,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-61437902",
+   "title": "طقم كيوتي",
+   "ours": 5,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-375575338",
+   "title": "شنطة لوكس",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-1321093859",
+   "title": "شنطة مستطيلة بني صغيرة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-1615852075",
+   "title": "شنطة مستطيلة اسود صغيرة",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  },
+  {
+   "house": "oudelite",
+   "id": "oudelite-1637907123",
+   "title": "شنطة بني شعار ثمن وربعين",
+   "ours": 2,
+   "classifier": 1,
+   "reasons": []
+  }
+ ]
+}

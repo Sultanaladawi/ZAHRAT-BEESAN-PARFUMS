@@ -122,3 +122,35 @@ Locally the data is kept in `data/admin-state.json` (git-ignored).
 To change the mini fee: edit `MINI_FEE_JOD` in `lib/fees.js` **and** in `public/js/app.js`, then run `node tools/recompute-fees.js` (the hourly sync runs it too, so new products get the right fee). Plain 31–50 ml perfumes are not minis. `node tools/recompute-fees.js --dry` lists what would change.
 
 Mini perfumes also get their own "عطور ميني" section and filter chip on house pages (`isMiniPerfume` in `app.js`).
+
+## Where a new product goes (sets, minis, oils, bakhoor…)
+
+When the hourly sync (`tools/sync-check.js --import`) or the live Ghalati sync
+meets a product we do not carry, `public/js/classify-product.js` decides what
+it is and which section it belongs to (one file, used by the server, the
+browser and the tools):
+
+1. the supplier flags it as a bundle (`type: group_products`) → set, and its
+   bottles are counted from the components (`sub_products`);
+2. the SKU family `PKG-` / `DIS-` and the words of the title (مجموعة، بكج،
+   باقة، ثنائية، ثلاثية، "3 حبات"، "3 × 25 مل"، سيت، "- تويست" …) → set;
+3. oils / tolas, bakhoor, hair & body mists, perfumes named after a scent
+   ("بخور وايلد كولت" is a spray); "من مجموعة X" is a product line, not a pack;
+4. weak hints (the description lists what is inside, extras such as powder or
+   lip gloss, the supplier category) only confirm.
+
+A result with low confidence is never filed under perfumes: it goes to the
+bundles section flagged `needsReview` and is listed in `tools/import-review.json`.
+
+The owner's filing conventions are rules too (hair/body mists have their own
+section only at Laverne and Deraah; a bakhoor-named spray is a perfume at Assaf
+and Laverne; a PKG- code on a single travel bottle does not make a set; paste,
+dokhoon and mabthooth are bakhoor even when the text mentions oil). Filings the
+owner approved one by one are in `tools/class-overrides.json`: the classifier,
+the importer and the audit never change or flag them.
+
+Tools: `node tools/test-classifier.js` (table of real examples),
+`node tools/sync-check.js --import --dry` (shows the decision and the reasons for
+every new product, changes nothing), `node tools/audit-classes.js` (compares the
+classifier with how the catalog files today's products; writes
+`tools/class-audit.json`, changes nothing).
