@@ -27,8 +27,15 @@ jobs:
         with:
           node-version: 22
 
-      - name: Check suppliers and apply price, stock and offer changes
-        run: node tools/sync-check.js --apply
+      # sharp resizes the photos of products the import adds.
+      - name: Install image library
+        run: npm install --no-save --no-audit --no-fund sharp
+
+      # Also adds products the suppliers (Assaf, Laverne) newly list, sold out
+      # or not; unsure ones are listed in tools/import-review.json. At most 40
+      # new products a run, the daily 03:xx run also reads every category.
+      - name: Check suppliers, apply price, stock and offer changes, import new products
+        run: node tools/sync-check.js --apply --import
 
       # Photo galleries change rarely and cost one request per product, so
       # they are refreshed once a day (the 03:xx UTC run) or on a manual run.
@@ -52,13 +59,19 @@ jobs:
 
       - name: Commit updated catalog
         run: |
-          if git diff --quiet -- public/data; then
+          if [ -z "$(git status --porcelain -- public tools/import-review.json)" ]; then
             echo "No changes."
             exit 0
           fi
           git config user.name "catalog-sync-bot"
           git config user.email "catalog-sync-bot@users.noreply.github.com"
-          git add public/data
-          git commit -m "Sync supplier prices, stock and offers"
+          git add public/data public/images tools/import-review.json
+          MSG="Sync supplier prices, stock and offers"
+          if [ -s tools/last-import.txt ]; then
+            MSG="$MSG; new products
+
+$(cat tools/last-import.txt)"
+          fi
+          git commit -m "$MSG"
           git pull --rebase origin main
           git push

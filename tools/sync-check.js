@@ -284,8 +284,9 @@ async function discover(house, items) {
     .map(it => ({ id: String(it.id), name: it.name, price: amount(it.price), url: it.url }));
 }
 
-// What the import added or could not decide: tools/discover-report.json (for
-// a person to look at) and tools/last-import.txt (becomes the commit message).
+// What the import added or could not decide: tools/import-review.json (kept in
+// the repo, for a person to look at) and tools/last-import.txt (becomes the
+// commit message, not kept).
 function writeImportReport(summaries) {
   const report = {};
   const lines = [];
@@ -296,9 +297,9 @@ function writeImportReport(summaries) {
       for (const a of s.added) lines.push(`  + ${a.title} (${a.category}${a.available ? '' : ', sold out'})`);
     }
     if (s.aborted) lines.push(`${s.house}: ${s.aborted}`);
-    if (s.unsure.length) lines.push(`${s.house}: ${s.unsure.length} product(s) need a look, see tools/discover-report.json`);
+    if (s.unsure.length) lines.push(`${s.house}: ${s.unsure.length} product(s) need a look, see tools/import-review.json`);
   }
-  fs.writeFileSync(path.join(__dirname, 'discover-report.json'), JSON.stringify(report, null, 2) + '\n');
+  fs.writeFileSync(path.join(__dirname, 'import-review.json'), JSON.stringify(report, null, 2) + '\n');
   fs.writeFileSync(path.join(__dirname, 'last-import.txt'), lines.join('\n') + (lines.length ? '\n' : ''));
 }
 

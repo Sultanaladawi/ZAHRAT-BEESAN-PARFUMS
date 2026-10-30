@@ -118,11 +118,13 @@ function classify(it) {
   const isSet = /^(PKG|DIS)/i.test(sku) || /مجموعة|ثلاثية|ثنائية|عطور|باقة|بكج|صندوق|تشكيلة|collection|set/i.test(name);
   if (OUT_NAME.test(name) && !sizes.length) return { scope: 'out', why: `name ${name}` };
   if (/^PKG-ASFP/i.test(sku)) {
-    return /عطر|مل/.test(desc) && !/ساعة|نظارة/.test(`${name} ${desc}`) ? { scope: 'in', why: 'perfume collection' } : { scope: 'unsure', why: 'collection without perfume text' };
+    // "24 ساعة" in an offer text is hours, not a watch.
+    const noHours = `${name} ${desc}`.replace(/(لمدة|خلال|ال)?\s*[\d٠-٩]+\s*(?:ساعة|ساعات)/g, ' ');
+    return /عطر|مل/.test(desc) && !/ساعة|نظارة|watch/i.test(noHours) ? { scope: 'in', why: 'perfume collection' } : { scope: 'unsure', why: 'collection with a watch, glasses or no perfume text' };
   }
   if (isSet && beauty && !sizes.length) {
     return PERFUME_SIGNAL.test(desc) && /تجمع المجموعة بين عطر|عطر\s+\S+\s+(?:بطابعه|بحجم)/.test(desc)
-      ? { scope: 'unsure', why: 'set with a perfume and make-up, no size' } : { scope: 'out', why: 'make-up set' };
+      ? { scope: 'in', why: 'perfume with make-up, no size' } : { scope: 'out', why: 'make-up set' };
   }
   if (isSet && beauty && sizes.length && sizes.every(n => n < 30) && !/عطر\s*\S*\s*(?:بحجم|\d)/.test(desc)) {
     return { scope: 'unsure', why: 'make-up set with small sizes' };
@@ -308,8 +310,16 @@ async function importMissing(house, ours, supplierItems, { cap = 40, write = tru
   const summary = { house, supplier: supplierItems.size, ours: ours.length, missing: missing.length, outOfScope: skipped, unsure, added: [] };
   if (picked.length > cap) { summary.aborted = `${picked.length} new products is more than the cap of ${cap}; nothing added`; summary.wouldAdd = picked.map(i => i.name); return summary; }
   const names = await englishNames(cfg, picked.map(i => String(i.id)));
+  const norm = t => String(t || '').replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ').trim();
+  const titles = new Set(ours.map(p => norm(p.title)));
   for (const it of picked) {
     const rec = buildRecord(house, it, names.get(String(it.id)));
+    // A set that shares its name with a single perfume (e.g. "لويارد") says so.
+    if (titles.has(norm(rec.title))) {
+      rec.title += rec.categoryType === 'bundle' ? ' - مجموعة' : ' - إصدار آخر';
+      rec.titleEn += rec.categoryType === 'bundle' ? ' (set)' : ' (other edition)';
+    }
+    titles.add(norm(rec.title));
     try { await saveImages(rec); } catch (e) { /* the supplier photo is fetched again next run */ }
     ours.push(rec);
     summary.added.push({ id: rec.id, title: rec.title, available: rec.isAvailable, category: rec.categoryType });
