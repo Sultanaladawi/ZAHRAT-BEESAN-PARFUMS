@@ -628,23 +628,52 @@ function getClientBottleCount(item) {
   return 1;
 }
 
-// Small oils carry 5 JOD instead of 12: anything sold by the tola (1, 1/2,
-// 1/4 tola) and Al-Rehab's small oils (roll-ons and دهن bottles up to 20 ml).
-const TOLA_FEE_JOD = 5;
+// Fee rules, mirrored from lib/fees.js (keep the two in step). Change the mini
+// fee in both places: MINI_FEE_JOD here and in lib/fees.js.
+const BASE_FEE_JOD = 12;
+const SMALL_OIL_FEE_JOD = 5;
+const MINI_FEE_JOD = 5;
 const TOLA_RE = /تول(?:ة|ه|ات)(?=$|[\s\/)\-،,])/;
+const NOT_MINI_RE = /دهن|زيت|شعر|hair|body\s*mist|معطر|فواحة|ملطف|diffuser/i;
+const MINI_WORD_RE = /ميني|mini/i;
+
+function itemSizeMl(item) {
+  const text = `${item?.specs?.size || ''} ${item?.title || ''}`;
+  const m = text.match(/(\d+(?:[.,]\d+)?)\s*(?:مل|ml)(?![a-z\d])/i);
+  return m ? Number(m[1].replace(',', '.')) : null;
+}
+
 function isTolaItem(item) {
   const text = `${item?.title || ''} ${item?.specs?.size || ''}`;
   if (TOLA_RE.test(text)) return true;
   const rehab = item?.house === 'al-rehab' || String(item?.id || '').startsWith('alrehab-');
-  const ml = Number((text.match(/(\d+)\s*مل/) || [])[1]);
+  const ml = itemSizeMl(item);
   return rehab && (item?.categoryType === 'oil' || /دهن|زيت عطري/.test(item?.title || '')) && ml > 0 && ml <= 20;
+}
+
+// One small bottle of perfume: 30 ml or less, titled mini, or in a house's own
+// mini line. Plain 31-50 ml perfumes stay in the main list.
+function isMiniPerfume(item) {
+  if (!item) return false;
+  const count = Number(item.bottleCount);
+  if (count > 1) return false;
+  const cat = item.categoryType;
+  if (cat !== 'perfume' && cat !== 'mini') return false;
+  if (isTolaItem(item)) return false;
+  const title = item.title || '';
+  if (NOT_MINI_RE.test(title)) return false;
+  if (cat === 'mini' || item.subCategory === 'mini') return true;
+  if (MINI_WORD_RE.test(title)) return true;
+  const ml = itemSizeMl(item);
+  return ml !== null && ml >= 8 && ml <= 30;
 }
 
 function getClientDeliveryFeeJod(item) {
   const count = getClientBottleCount(item);
   if (count > 1) return (count * 4) + 10;
-  if (isTolaItem(item)) return TOLA_FEE_JOD;
-  return 12;
+  if (isTolaItem(item)) return SMALL_OIL_FEE_JOD;
+  if (isMiniPerfume({ ...item, bottleCount: count })) return MINI_FEE_JOD;
+  return BASE_FEE_JOD;
 }
 
 async function syncClientSideWithSalla(list, house = 'ghalati') {
@@ -1058,10 +1087,14 @@ function renderCatalogFilterBar() {
     bar.innerHTML = html;
   } else {
     // Restore default filter bar for other houses if needed
-    if (!bar.querySelector('[data-filter="perfumes"]') || bar.querySelector('[data-filter^="rehab:"]') || bar.querySelector('[data-filter^="laverne:"]')) {
+    const miniCount = perfumesData.filter(isMiniPerfume).length;
+    const miniChip = bar.querySelector('[data-filter="minis"]');
+    const miniStale = (miniChip ? Number(miniChip.dataset.count) : 0) !== miniCount;
+    if (miniStale || !bar.querySelector('[data-filter="perfumes"]') || bar.querySelector('[data-filter^="rehab:"]') || bar.querySelector('[data-filter^="laverne:"]')) {
       bar.innerHTML = `
         <button type="button" class="catalog-filter-btn ${currentFilter === 'all' ? 'active-filter' : ''}" data-filter="all" onclick="filterCatalog('all', this)" id="filterAllBtn" data-i18n="filterAll">✨ ${isAr ? 'كافة المنتجات' : 'All Products'} (${perfumesData.length})</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'perfumes' ? 'active-filter' : ''}" data-filter="perfumes" onclick="filterCatalog('perfumes', this)" data-i18n="filterPerfumes">💎 ${isAr ? 'العطور الفاخرة' : 'Luxury Perfumes'}</button>
+        ${miniCount ? `<button type="button" class="catalog-filter-btn ${currentFilter === 'minis' ? 'active-filter' : ''}" data-filter="minis" data-count="${miniCount}" onclick="filterCatalog('minis', this)">🧴 ${isAr ? 'عطور ميني' : 'Mini Perfumes'} (${miniCount})</button>` : ''}
         <button type="button" class="catalog-filter-btn ${currentFilter === 'bundles' ? 'active-filter' : ''}" data-filter="bundles" onclick="filterCatalog('bundles', this)" data-i18n="filterBundles">🎁 ${isAr ? 'باقات الإهداء والباكجات' : 'Gift Sets & Bundles'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'offers' ? 'active-filter' : ''}" data-filter="offers" onclick="filterCatalog('offers', this)" data-i18n="filterOffers">🔥 ${isAr ? 'العروض الخاصة' : 'Special Offers'}</button>
         <button type="button" class="catalog-filter-btn ${currentFilter === 'bakhoor' ? 'active-filter' : ''}" data-filter="bakhoor" onclick="filterCatalog('bakhoor', this)" data-i18n="filterBakhoor" style="${(activeHouse === 'assaf' || activeHouse === 'thunayan' || activeHouse === 'labonair' || activeHouse === 'laverne' || activeHouse === 'deraah') ? 'display:none;' : ''}">🪵 ${isAr ? 'البخور والمعمول' : 'Bakhoor & Maamoul'}</button>
@@ -1116,8 +1149,11 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       if (p.subCategory !== filter.slice(6)) return false;
     } else if (typeof filter === 'string' && filter.startsWith('laverne:')) {
       if (p.subCategory !== filter.slice(8)) return false;
+    } else if (filter === 'minis') {
+      if (!isMiniPerfume(p)) return false;
     } else if (filter === 'perfumes') {
       if (p.categoryType === 'bakhoor' || p.categoryType === 'bundle' || p.categoryType === 'oil') return false;
+      if (isMiniPerfume(p)) return false;
       if (!isScentNamedPerfume(p) && /باكج|بكج|بوكس|باقة|طقم|معطر|فواحة|بخور|بودرة|باودر|توزيعات/i.test(p.title || '')) return false;
       if ((p.title || '').includes('مجموعة') && !(p.title || '').includes('من مجموعة')) return false;
       if (/باقة|طقم|مجموعة|بخور|معطر|فواحة|بودرة/i.test(p.specs?.type || '')) return false;
@@ -1179,7 +1215,8 @@ function renderCatalog(filter = 'all', searchQuery = '') {
   const catPriority = { 'perfume': 1, 'bundle': 2, 'bakhoor': 3, 'oil': 4 };
   const isOutP = p => p.isAvailable === false || p.status === 'out';
   // Available perfumes first; out-of-stock ones move to the end of each list.
-  filtered.sort((a, b) => (isOutP(a) - isOutP(b)) || ((catPriority[a.categoryType] || 99) - (catPriority[b.categoryType] || 99)));
+  const catRank = p => (catPriority[p.categoryType] || 99) + (isMiniPerfume(p) ? 0.5 : 0);
+  filtered.sort((a, b) => (isOutP(a) - isOutP(b)) || (catRank(a) - catRank(b)));
   if (typeof applyCatalogPreferences === 'function') applyCatalogPreferences(filtered);
 
   const isRehab = activeHouse === 'al-rehab' && perfumesData.some(p => p.subCategory);
@@ -1224,7 +1261,16 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       desc: t.secPerfumesDesc || 'تشكيلة استثنائية من أرقى العطور الشرقية والفرنسية الملكية بفوحان آسر وثبات طويل',
       unitAr: 'عطراً',
       unitEn: 'perfumes',
-      match: (p) => (p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))) && (isScentNamedPerfume(p) || !/معطر|فواحة|^بخور\s|عود\s*بخور|بودرة|باودر|مجموعة|طقم|بكج|باكج/i.test(p.title || ''))
+      match: (p) => !isMiniPerfume(p) && (p.categoryType === 'perfume' || (!p.categoryType && !p.id.startsWith('bundle-') && !p.id.startsWith('package-') && !p.id.startsWith('bakhoor-') && !p.id.startsWith('oil-'))) && (isScentNamedPerfume(p) || !/معطر|فواحة|^بخور\s|عود\s*بخور|بودرة|باودر|مجموعة|طقم|بكج|باكج/i.test(p.title || ''))
+    },
+    {
+      key: 'mini',
+      icon: '🧴',
+      title: currentLang === 'ar' ? 'عطور ميني (حتى 30 مل)' : 'Mini Perfumes (up to 30 ml)',
+      desc: currentLang === 'ar' ? 'عبوات صغيرة مثالية للتجربة والسفر والجيب' : 'Compact bottles, perfect for trying, travelling and carrying',
+      unitAr: 'عطراً',
+      unitEn: 'minis',
+      match: (p) => isMiniPerfume(p) && p.categoryType !== 'mini'
     },
     {
       key: 'bundle',
@@ -1300,6 +1346,7 @@ function renderCatalog(filter = 'all', searchQuery = '') {
       (typeof filter === 'string' && filter.startsWith('laverne:') && s.key === filter.slice(8)) ||
       (filter === 'bundles' && s.key === 'bundle') ||
       (filter === 'perfumes' && s.key === 'perfume') ||
+      (filter === 'minis' && s.key === 'mini') ||
       (filter === 'oils' && s.key === 'oil') ||
       (filter === 'bakhoor' && s.key === 'bakhoor')
     );

@@ -6455,7 +6455,7 @@
     "promotionTitle": "عرض لفترة محدودة",
     "url": "https://ghalati.com/ar/عطر-1727/p921934657",
     "bottleUrl": "https://cdn.salla.sa/Dqvgy/jf5lOXuj41Ta0nje7kwVwiM3FtL7F33FKrLkSsoX.jpg",
-    "image": "images/ghalati_921934657.jpg?v=9af766f3",
+    "image": "images/ghalati_921934657.jpg?v=baf9099e",
     "originalImage": "https://cdn.salla.sa/Dqvgy/jf5lOXuj41Ta0nje7kwVwiM3FtL7F33FKrLkSsoX.jpg",
     "galleryImages": [
       "https://cdn.salla.sa/Dqvgy/jf5lOXuj41Ta0nje7kwVwiM3FtL7F33FKrLkSsoX.jpg",
@@ -6480,8 +6480,9 @@
     },
     "boxImage": null,
     "categoryType": "perfume",
-    "imageLayoutOverride": "original",
-    "imageLayout": "original"
+    "imageLayoutOverride": "showcase",
+    "imageLayout": "showcase",
+    "cutoutManual": "tools/images/manual/ghalati_921934657.png"
   },
   {
     "id": "ghalati-1205768081",

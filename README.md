@@ -107,3 +107,18 @@ and site settings. Set these in Vercel → Settings → Environment Variables:
 | `ADMIN_DATA_REPO` | Optional. The **private** repo that holds `admin-data.json` (default `Sultanaladawi/zahrat-beesan-data`). This store repo is public, so dashboard data (orders, coupon codes) is never saved here; a public data repo is refused. |
 
 Locally the data is kept in `data/admin-state.json` (git-ignored).
+
+## Fees on top of the supplier price
+
+`finalJod = baseJod + feeJod` (base = supplier SAR ÷ 5.29, rounded). The fee rules live in `lib/fees.js` (server, sync and tools) and are mirrored in `public/js/app.js` (`getClientDeliveryFeeJod`):
+
+| What | Fee (JOD) |
+|---|---|
+| one bottle (default) | 12 |
+| several bottles in one product | 4 × bottles + 10 |
+| small oils: tola, Al-Rehab dehn up to 20 ml | `SMALL_OIL_FEE_JOD` = 5 |
+| **mini perfumes**: one small bottle ≤ 30 ml, titled ميني/mini, or in a house's own mini line | `MINI_FEE_JOD` = 5 |
+
+To change the mini fee: edit `MINI_FEE_JOD` in `lib/fees.js` **and** in `public/js/app.js`, then run `node tools/recompute-fees.js` (the hourly sync runs it too, so new products get the right fee). Plain 31–50 ml perfumes are not minis. `node tools/recompute-fees.js --dry` lists what would change.
+
+Mini perfumes also get their own "عطور ميني" section and filter chip on house pages (`isMiniPerfume` in `app.js`).
