@@ -211,6 +211,12 @@ const BOTTLE_COUNTS_BY_SALLA_ID = {
   '1310869051': 6, '601605710': 6
 };
 
+// Shared with the browser and the import tools (public/js/classify-product.js).
+const productClassifier = require('./public/js/classify-product');
+function placeProduct(house, live) {
+  return productClassifier.placement(house, productClassifier.classifyProduct(live, { house }));
+}
+
 function detectCategoryType(name = '', desc = '') {
   const text = `${name} ${desc}`;
   if ((/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة|-\s*3\s*(?:حبات|قطع)|طقم/i.test(name)) && !/من مجموعة/i.test(name)) return 'bundle';
@@ -461,8 +467,11 @@ async function syncWithGhalatiStore(force = false) {
         const liveAvail = live.is_available !== false && live.status !== 'out' && !live.is_out_of_stock;
         const liveStatus = live.status || (liveAvail ? 'sale' : 'out');
         const cleanDesc = (live.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-        const catType = detectCategoryType(live.name, cleanDesc);
-        const bottleCount = inferBottleCount(live.name, cleanDesc, catType);
+        // What the product is (set, oil, bakhoor, hair mist, perfume) and how many
+        // bottles it holds comes from the shared classifier, not from the title only.
+        const place = placeProduct('ghalati', live);
+        const catType = place.categoryType;
+        const bottleCount = place.bottleCount;
         const feeJod = getDeliveryFeeJod({ id: idSlug, title: live.name, overview: cleanDesc, categoryType: catType, bottleCount });
         const rawImg = live.image?.url || '';
         const origImgUrl = rawImg.replace(/\/[a-f0-9-]+-\d+x[\d.]+-/, '/');
@@ -516,7 +525,9 @@ async function syncWithGhalatiStore(force = false) {
             origin: 'Saudi Arabia',
             type: catType === 'bundle' ? 'Royal Perfume Bundle' : 'Eau de Parfum'
           },
-          categoryType: catType
+          categoryType: catType,
+          ...(place.namedAfterScent ? { namedAfterScent: true } : {}),
+          ...(place.needsReview ? { needsReview: true } : {})
         });
         changesDetected = true;
       }
