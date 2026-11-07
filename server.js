@@ -144,19 +144,13 @@ const EXCLUDED_SALLA_IDS = new Set([
   '1180808215' // Duplicate old Liana
 ]);
 
+// Only non-perfume offers stay hidden. The former "duplicate" and "test" ids
+// (1403084485, 2077147024, 415811600, 1517236607, 6165769, 1354027755,
+// 1405771318, 505077860, 648178010, 1809319445) are real, different products
+// the owner reviewed and wants shown, so they are no longer excluded.
 const EXCLUDED_ASSAF_SALLA_IDS = new Set([
   '829997380',  // العرض العالمي (watch + sunglasses only)
-  '1610044117', // ساعة فرانكل بلاك و نظارة عساف (no perfume)
-  '1809319445', // منتج 3 (test item)
-  '648178010',  // عطر (test item)
-  '1403084485', // duplicate out-of-stock discovery box
-  '2077147024', // duplicate out-of-stock Frankel 25ml
-  '415811600',  // duplicate out-of-stock Frankel 25ml
-  '1517236607', // duplicate out-of-stock Lady 25ml
-  '6165769',    // duplicate out-of-stock Lady 25ml
-  '1354027755', // duplicate out-of-stock Arrogate 25ml
-  '1405771318', // duplicate out-of-stock Arrogate 25ml
-  '505077860'   // duplicate out-of-stock Pink Powder set
+  '1610044117'  // ساعة فرانكل بلاك و نظارة عساف (no perfume)
 ]);
 
 const EXCLUDED_THNYAN_SALLA_IDS = new Set([
