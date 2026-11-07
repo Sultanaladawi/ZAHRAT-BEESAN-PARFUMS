@@ -122,3 +122,35 @@ Locally the data is kept in `data/admin-state.json` (git-ignored).
 To change the mini fee: edit `MINI_FEE_JOD` in `lib/fees.js` **and** in `public/js/app.js`, then run `node tools/recompute-fees.js` (the hourly sync runs it too, so new products get the right fee). Plain 31–50 ml perfumes are not minis. `node tools/recompute-fees.js --dry` lists what would change.
 
 Mini perfumes also get their own "عطور ميني" section and filter chip on house pages (`isMiniPerfume` in `app.js`).
+
+## Low-CPU serving (static catalog mode)
+
+Vercel Hobby pauses a team that exceeds its *Fluid Active CPU* fair-use limit, so the Express server is built to spend almost no CPU per request.
+
+**How it works** (`lib/static-catalog.js`, `server.js`)
+- On Vercel, or with `NODE_ENV=production` / `CATALOG_MODE=static`, the server never asks the suppliers anything. The catalog is read once from `public/data/*.json` (kept current and redeployed by the scheduled GitHub Action `sync-catalog.yml`, now every 3 hours).
+- Each house answer, the home page, `/p/:id` pages and the sitemap are built once, kept in memory with a pre-made gzip copy and an ETag (`304` when unchanged). A request is a memory copy.
+- Heavy modules (`sharp`, background removal, the Anthropic SDK) load only when used.
+- Public pages carry `s-maxage` + `stale-while-revalidate`, so the CDN answers most visits without running the function. `/api/site-config` is cached 30 s (dashboard edits show within about 30 s).
+- `robots.txt` blocks AI-training crawlers and slows Bing/Yandex.
+- `CATALOG_MODE=live` restores the old behaviour (fetch suppliers on the server); a developer machine with nothing set still runs live.
+
+**Measured** (Node, `VERCEL=1 NODE_ENV=production`, CPU ms per request, sequential, gzip accepted)
+
+| Route | Before | After (first hit) | After (warm) |
+|---|---|---|---|
+| cold start until listening | ~4,300 (7 forced supplier syncs + heavy requires) | 82 | – |
+| memory (RSS) after start | 212 MB | 63 MB | – |
+| `/` | 168 (uncached load) | 7.6 | 0.4–0.7 |
+| `/p/:id` | 134 first, then ~1 | 5–17 | 0.5 |
+| `/api/catalog?house=assaf` | 202 | 31 | 0.5 |
+| `/api/catalog?house=al-rehab` | 169 | 33 | 0.5 |
+| `/api/catalog?house=rasasi` | 124 | 14 | 0.5 |
+| `/api/catalog?house=ghalati` | 72 | 8 | 0.5 |
+| `/sitemap.xml` | 7 | 96 (indexes every house once) | 0.5 |
+
+Before, every instance also re-synced the suppliers every 60 s. Orders, coupons, the dashboard login and settings were exercised locally and behave the same.
+
+**Known differences from the live behaviour**
+- Data is as fresh as the last Action run. The hourly run has been broken since 30 Oct (fixed by the workflow-YAML PR); until it is merged the data is stale.
+- Live sync discovered a few products the files do not yet have (5 Ghalati "إختيار…" items); the Action's `--import` step adds them.
