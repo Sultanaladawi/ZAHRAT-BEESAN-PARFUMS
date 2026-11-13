@@ -2,9 +2,9 @@ name: Sync supplier prices, stock and offers
 
 on:
   schedule:
-    # Hourly: GitHub drops some scheduled runs when busy, so a short interval
-    # keeps prices, stock and offers fresh even when a run is skipped.
-    - cron: "23 * * * *"
+    # Every 3 hours: each run that changes data redeploys the store, so a
+    # shorter interval only burns build minutes; GitHub may skip a run when busy.
+    - cron: "23 */3 * * *"
   workflow_dispatch:
 
 permissions:

@@ -3,16 +3,25 @@ const path = require('path');
 const fs = require('fs');
 const https = require('https');
 const compression = require('compression');
-let sharp = null;
-let removeBackground = null;
-let refineCutout = null;
-try {
-  sharp = require('sharp');
-  ({ removeBackground } = require('@imgly/background-removal-node'));
-  ({ refineCutout } = require('./scripts/lib/refine_cutout'));
-} catch (e) {
-  // Optional fallback if sharp/imgly is unavailable in a minimal environment
+// Heavy image libraries (sharp, background removal) are only needed to build
+// product photos for new items while developing locally. They are loaded on
+// first use, never at start-up, so a cold start on the server stays cheap.
+let imageTools = null;
+function getImageTools() {
+  if (imageTools) return imageTools;
+  imageTools = { sharp: null, removeBackground: null, refineCutout: null };
+  try {
+    imageTools.sharp = require('sharp');
+    ({ removeBackground: imageTools.removeBackground } = require('@imgly/background-removal-node'));
+    ({ refineCutout: imageTools.refineCutout } = require('./scripts/lib/refine_cutout'));
+  } catch (e) {
+    // Optional fallback if sharp/imgly is unavailable in a minimal environment
+  }
+  return imageTools;
 }
+
+const staticCatalog = require('./lib/static-catalog');
+const STATIC_CATALOGS = staticCatalog.STATIC_MODE;
 
 const app = express();
 const PORT = process.env.PORT || 5005;
@@ -135,19 +144,13 @@ const EXCLUDED_SALLA_IDS = new Set([
   '1180808215' // Duplicate old Liana
 ]);
 
+// Only non-perfume offers stay hidden. The former "duplicate" and "test" ids
+// (1403084485, 2077147024, 415811600, 1517236607, 6165769, 1354027755,
+// 1405771318, 505077860, 648178010, 1809319445) are real, different products
+// the owner reviewed and wants shown, so they are no longer excluded.
 const EXCLUDED_ASSAF_SALLA_IDS = new Set([
   '829997380',  // العرض العالمي (watch + sunglasses only)
-  '1610044117', // ساعة فرانكل بلاك و نظارة عساف (no perfume)
-  '1809319445', // منتج 3 (test item)
-  '648178010',  // عطر (test item)
-  '1403084485', // duplicate out-of-stock discovery box
-  '2077147024', // duplicate out-of-stock Frankel 25ml
-  '415811600',  // duplicate out-of-stock Frankel 25ml
-  '1517236607', // duplicate out-of-stock Lady 25ml
-  '6165769',    // duplicate out-of-stock Lady 25ml
-  '1354027755', // duplicate out-of-stock Arrogate 25ml
-  '1405771318', // duplicate out-of-stock Arrogate 25ml
-  '505077860'   // duplicate out-of-stock Pink Powder set
+  '1610044117'  // ساعة فرانكل بلاك و نظارة عساف (no perfume)
 ]);
 
 const EXCLUDED_THNYAN_SALLA_IDS = new Set([
@@ -250,6 +253,7 @@ function getDeliveryFeeJod(item) {
 }
 
 async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house = 'ghalati') {
+  const { sharp, removeBackground, refineCutout } = getImageTools();
   const prefix = house === 'assaf'
     ? `assaf_${idSlug.replace(/^assaf-/, '')}`
     : (house === 'thunayan'
@@ -370,6 +374,7 @@ async function generateAutoProductImage(idSlug, rawImgUrl, categoryType, house =
 }
 
 async function syncWithGhalatiStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(PERFUMES_PATH, EXCLUDED_SALLA_IDS).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedCatalog && (now - lastSyncTime < SYNC_TTL_MS)) {
     return cachedCatalog;
@@ -605,6 +610,7 @@ async function syncWithGhalatiStore(force = false) {
 }
 
 async function syncWithAssafStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(ASSAF_PERFUMES_PATH, EXCLUDED_ASSAF_SALLA_IDS).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedAssafCatalog && (now - lastAssafSyncTime < SYNC_TTL_MS)) {
     return cachedAssafCatalog;
@@ -753,6 +759,7 @@ async function syncWithAssafStore(force = false) {
 }
 
 async function syncWithThnyanStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(THNYAN_PERFUMES_PATH, EXCLUDED_THNYAN_SALLA_IDS).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedThnyanCatalog && (now - lastThnyanSyncTime < SYNC_TTL_MS)) {
     return cachedThnyanCatalog;
@@ -895,6 +902,7 @@ async function syncWithThnyanStore(force = false) {
 }
 
 async function syncWithRasasiStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(RASASI_PERFUMES_PATH, null).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedRasasiCatalog && (now - lastRasasiSyncTime < SYNC_TTL_MS)) {
     return cachedRasasiCatalog;
@@ -1027,6 +1035,7 @@ async function syncWithRasasiStore(force = false) {
 }
 
 async function syncWithAlrehabStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(ALREHAB_PERFUMES_PATH, EXCLUDED_ALREHAB_SALLA_IDS).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedAlrehabCatalog && (now - lastAlrehabSyncTime < SYNC_TTL_MS)) {
     return cachedAlrehabCatalog;
@@ -1160,6 +1169,7 @@ async function syncWithAlrehabStore(force = false) {
 }
 
 async function syncWithLebonheurStore(force = false) {
+  if (STATIC_CATALOGS) return staticCatalog.readCatalog(LEBONHEUR_PERFUMES_PATH, null).list; // the scheduled sync keeps this file current
   const now = Date.now();
   if (!force && cachedLebonheurCatalog && (now - lastLebonheurSyncTime < SYNC_TTL_MS)) {
     return cachedLebonheurCatalog;
@@ -1451,49 +1461,89 @@ async function syncWithLaverneStoreLive(force = false) {
   return cachedLaverneCatalog;
 }
 
+// Which catalog file (and hidden Salla ids) each house name in ?house= maps to.
+const CATALOG_SOURCES = {
+  ghalati: { file: PERFUMES_PATH, exclude: EXCLUDED_SALLA_IDS, live: f => syncWithGhalatiStore(f) },
+  assaf: { file: ASSAF_PERFUMES_PATH, exclude: EXCLUDED_ASSAF_SALLA_IDS, live: f => syncWithAssafStore(f) },
+  thunayan: { file: THNYAN_PERFUMES_PATH, exclude: EXCLUDED_THNYAN_SALLA_IDS, live: f => syncWithThnyanStore(f) },
+  rasasi: { file: RASASI_PERFUMES_PATH, exclude: null, live: f => syncWithRasasiStore(f) },
+  'al-rehab': { file: ALREHAB_PERFUMES_PATH, exclude: EXCLUDED_ALREHAB_SALLA_IDS, live: f => syncWithAlrehabStore(f) },
+  labonair: { file: LEBONHEUR_PERFUMES_PATH, exclude: null, live: f => syncWithLebonheurStore(f) },
+  laverne: { file: LAVERNE_PERFUMES_PATH, exclude: null, live: f => syncWithLaverneStore(f) },
+  deraah: { file: DERAAH_PERFUMES_PATH, exclude: null, live: f => syncWithDeraahStore(f) },
+  oudelite: { file: OUDELITE_PERFUMES_PATH, exclude: null, live: f => syncWithOudeliteStore(f) },
+};
+const CATALOG_ALIASES = { thnyan: 'thunayan', alrehab: 'al-rehab', lebonheur: 'labonair', 'le-bonheur': 'labonair', 'oud-elite': 'oudelite' };
+
+// What the dashboard changes in a catalog (hidden products, prices, featured):
+// a short text that changes only when one of those does.
+function overridesKey(cfg) {
+  return staticCatalog.stableHash(JSON.stringify([cfg.hidden, cfg.featured, cfg.prices]));
+}
+
+// Built answers, one per house: replaced when the catalog file or the
+// dashboard overrides change. Memory stays bounded (nine entries).
+const catalogAnswers = new Map();
+function catalogAnswer(houseKey, cfg) {
+  const src = CATALOG_SOURCES[houseKey];
+  const { list, version } = staticCatalog.readCatalog(src.file, src.exclude);
+  const key = `${version}|${overridesKey(cfg)}`;
+  const hit = catalogAnswers.get(houseKey);
+  if (hit && hit.key === key) return hit.entry;
+  const entry = staticCatalog.makeEntry(JSON.stringify(applyOverrides(list, cfg)), 'application/json; charset=utf-8');
+  catalogAnswers.set(houseKey, { key, entry });
+  return entry;
+}
+
 // Live Catalog API Endpoint (supports ?house=ghalati, ?house=assaf, ?house=thunayan, ?house=rasasi, ?house=al-rehab, ?house=labonair, ?house=laverne, ?house=deraah, ?house=oudelite)
 app.get('/api/catalog', async (req, res) => {
   // Forcing a fresh supplier fetch is for local work only; online every
   // visitor would otherwise hit the supplier on each refresh.
-  const force = req.query.force === '1' && !process.env.VERCEL;
-  const house = (req.query.house || 'ghalati').toLowerCase();
-  const data = house === 'assaf'
-    ? await syncWithAssafStore(force)
-    : (house === 'thunayan' || house === 'thnyan')
-      ? await syncWithThnyanStore(force)
-      : house === 'rasasi'
-        ? await syncWithRasasiStore(force)
-        : (house === 'al-rehab' || house === 'alrehab')
-          ? await syncWithAlrehabStore(force)
-          : (house === 'labonair' || house === 'lebonheur' || house === 'le-bonheur')
-            ? await syncWithLebonheurStore(force)
-            : (house === 'laverne'
-              ? await syncWithLaverneStore(force)
-              : (house === 'deraah'
-                ? await syncWithDeraahStore(force)
-                : (house === 'oudelite' || house === 'oud-elite')
-                  ? await syncWithOudeliteStore(force)
-                  : await syncWithGhalatiStore(force)));
+  const force = req.query.force === '1' && !process.env.VERCEL && !STATIC_CATALOGS;
+  const asked = String(req.query.house || 'ghalati').toLowerCase();
+  const houseKey = CATALOG_SOURCES[asked] ? asked : (CATALOG_ALIASES[asked] || 'ghalati');
+  const cfg = publicConfig(await getAdminState());
+  if (STATIC_CATALOGS) return staticCatalog.sendEntry(req, res, catalogAnswer(houseKey, cfg), CATALOG_CACHE);
+  const data = await CATALOG_SOURCES[houseKey].live(force);
   res.setHeader('Cache-Control', CATALOG_CACHE);
-  res.json(applyOverrides(data, publicConfig(await getAdminState())));
+  res.json(applyOverrides(data, cfg));
 });
 
 // ── SEO: one shareable page per product, sitemap and robots ──
 const SEO_FILES = ['perfumes', 'assaf_perfumes', 'thnyan_perfumes', 'rasasi_perfumes', 'alrehab_perfumes',
   'lebonheur_perfumes', 'laverne_perfumes', 'deraah_perfumes', 'oudelite_perfumes'];
-let seoIndex = null;
-function seoProducts() {
-  if (!seoIndex) {
-    seoIndex = new Map();
-    for (const f of SEO_FILES) {
-      try {
-        for (const p of JSON.parse(fs.readFileSync(path.join(__dirname, 'public', 'data', `${f}.json`), 'utf8'))) {
-          if (p && p.id) seoIndex.set(String(p.id), p);
-        }
-      } catch (e) { /* skip a missing file */ }
-    }
+// Product ids start with their house, so a product page only needs its own
+// house's file (parsed once and shared with /api/catalog), not all nine.
+const SEO_PREFIX = {
+  'assaf-': 'assaf_perfumes', 'thnyan-': 'thnyan_perfumes', 'rasasi-': 'rasasi_perfumes', 'alrehab-': 'alrehab_perfumes',
+  'lebonheur-': 'lebonheur_perfumes', 'laverne-': 'laverne_perfumes', 'deraah-': 'deraah_perfumes', 'oudelite-': 'oudelite_perfumes',
+};
+const seoFileIndex = new Map(); // file name -> { version, map: id -> product }
+function seoFileMap(name) {
+  const { list, version } = staticCatalog.readCatalog(path.join(staticCatalog.DATA_DIR, `${name}.json`), null);
+  let hit = seoFileIndex.get(name);
+  if (!hit || hit.version !== version) {
+    hit = { version, map: new Map(list.filter(p => p && p.id).map(p => [String(p.id), p])) };
+    seoFileIndex.set(name, hit);
   }
-  return seoIndex;
+  return hit.map;
+}
+function seoProduct(id) {
+  id = String(id);
+  const prefix = Object.keys(SEO_PREFIX).find(k => id.startsWith(k));
+  const first = seoFileMap(prefix ? SEO_PREFIX[prefix] : 'perfumes').get(id);
+  if (first) return first;
+  for (const name of SEO_FILES) { // an unusual id: look everywhere
+    const p = seoFileMap(name).get(id);
+    if (p) return p;
+  }
+  return undefined;
+}
+// Every product (the sitemap only): later files win, as before.
+function seoProducts() {
+  const all = new Map();
+  for (const name of SEO_FILES) for (const [id, p] of seoFileMap(name)) all.set(id, p);
+  return all;
 }
 const escHtml = s => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const siteOrigin = req => `${req.headers['x-forwarded-proto'] || req.protocol}://${req.headers['x-forwarded-host'] || req.get('host')}`;
@@ -1522,56 +1572,104 @@ function renderPage(req, meta, siteConfig) {
 
 // The CDN keeps pages and catalogs for a minute or two (and serves a stale
 // copy while it refreshes), so visitors don't wait on the server each time.
-const PAGE_CACHE = 'public, max-age=0, s-maxage=60, stale-while-revalidate=600';
+const PAGE_CACHE = 'public, max-age=0, s-maxage=120, stale-while-revalidate=1800';
+const PRODUCT_CACHE = 'public, max-age=300, s-maxage=900, stale-while-revalidate=86400';
 const CATALOG_CACHE = 'public, max-age=60, s-maxage=120, stale-while-revalidate=3600';
+
+// Built pages are kept in memory so the same page is not rebuilt (and
+// compressed) for every request; they are replaced when the dashboard data or
+// the catalog file changes.
+const pageAnswers = staticCatalog.makeCache(400);
+const cfgHash = cfg => staticCatalog.stableHash(JSON.stringify(cfg));
 
 app.get('/', async (req, res) => {
   const cfg = publicConfig(await getAdminState());
-  res.setHeader('Cache-Control', PAGE_CACHE);
-  res.send(renderPage(req, {
-    path: '/',
-    title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
-    description: 'أكثر من 2,600 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور ونخبة العود، بتوصيل لكل الأردن والخليج.',
-    image: 'images/logo_small.jpg',
-  }, cfg));
+  const key = `home|${siteOrigin(req)}|${cfgHash(cfg)}`;
+  let entry = pageAnswers.get(key);
+  if (!entry) {
+    entry = staticCatalog.makeEntry(renderPage(req, {
+      path: '/',
+      title: 'زهرة بيسان للعطور | Zahrat Beesan Parfums — عطور أصلية في الأردن',
+      description: 'أكثر من 2,600 عطر وبخور وتولة أصلية من غلاتي وعساف ودرعة والرصاصي والرحاب وثنيان ولافيرن ولو بانهور ونخبة العود، بتوصيل لكل الأردن والخليج.',
+      image: 'images/logo_small.jpg',
+    }, cfg), 'text/html; charset=utf-8');
+    pageAnswers.set(key, entry);
+  }
+  staticCatalog.sendEntry(req, res, entry, PAGE_CACHE);
 });
 
 app.get('/p/:id', async (req, res, next) => {
   const cfg = publicConfig(await getAdminState());
-  const p = seoProducts().get(String(req.params.id));
-  if (p && p.duplicateOf && seoProducts().has(p.duplicateOf)) return res.redirect(301, `/p/${encodeURIComponent(p.duplicateOf)}`);
+  const p = seoProduct(req.params.id);
+  if (p && p.duplicateOf && seoProduct(p.duplicateOf)) return res.redirect(301, `/p/${encodeURIComponent(p.duplicateOf)}`);
   if (!p || cfg.hidden.includes(String(p.id))) return next();
-  const price = Number(cfg.prices[String(p.id)] || p.finalJod) || 0;
-  const available = p.isAvailable !== false && p.status !== 'out';
-  const name = p.title || p.titleEn;
-  const desc = `${name}${p.titleEn && p.titleEn !== name ? ` (${p.titleEn})` : ''} — ${price} د.أ. ${String(p.overview || '').replace(/\s+/g, ' ').slice(0, 150)}`;
-  res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600');
-  res.send(renderPage(req, {
-    path: `/p/${encodeURIComponent(p.id)}`,
-    type: 'product',
-    title: `${name} | زهرة بيسان للعطور`,
-    description: desc,
-    image: String(p.image || '').split('?')[0],
-    productId: String(p.id),
-    jsonLd: {
-      '@context': 'https://schema.org', '@type': 'Product', name, alternateName: p.titleEn || undefined,
-      image: `${siteOrigin(req)}/${String(p.image || '').split('?')[0]}`, description: String(p.overview || '').slice(0, 500),
-      brand: { '@type': 'Brand', name: p.brand || 'Zahrat Beesan' },
-      offers: { '@type': 'Offer', priceCurrency: 'JOD', price, availability: available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-        url: `${siteOrigin(req)}/p/${encodeURIComponent(p.id)}` },
-    },
-  }, cfg));
+  const key = `p|${siteOrigin(req)}|${p.id}|${cfgHash(cfg)}`;
+  let entry = pageAnswers.get(key);
+  if (!entry || entry.src !== p) {
+    const price = Number(cfg.prices[String(p.id)] || p.finalJod) || 0;
+    const available = p.isAvailable !== false && p.status !== 'out';
+    const name = p.title || p.titleEn;
+    const desc = `${name}${p.titleEn && p.titleEn !== name ? ` (${p.titleEn})` : ''} — ${price} د.أ. ${String(p.overview || '').replace(/\s+/g, ' ').slice(0, 150)}`;
+    entry = staticCatalog.makeEntry(renderPage(req, {
+      path: `/p/${encodeURIComponent(p.id)}`,
+      type: 'product',
+      title: `${name} | زهرة بيسان للعطور`,
+      description: desc,
+      image: String(p.image || '').split('?')[0],
+      productId: String(p.id),
+      jsonLd: {
+        '@context': 'https://schema.org', '@type': 'Product', name, alternateName: p.titleEn || undefined,
+        image: `${siteOrigin(req)}/${String(p.image || '').split('?')[0]}`, description: String(p.overview || '').slice(0, 500),
+        brand: { '@type': 'Brand', name: p.brand || 'Zahrat Beesan' },
+        offers: { '@type': 'Offer', priceCurrency: 'JOD', price, availability: available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+          url: `${siteOrigin(req)}/p/${encodeURIComponent(p.id)}` },
+      },
+    }, cfg), 'text/html; charset=utf-8');
+    entry.src = p;
+    pageAnswers.set(key, entry);
+  }
+  staticCatalog.sendEntry(req, res, entry, PRODUCT_CACHE);
 });
 
 app.get('/sitemap.xml', async (req, res) => {
   const origin = siteOrigin(req);
   const hidden = new Set(publicConfig(await getAdminState()).hidden);
-  const urls = [`${origin}/`, ...[...seoProducts()].filter(([id, p]) => !hidden.has(id) && !p.duplicateOf).map(([id]) => id).map(id => `${origin}/p/${encodeURIComponent(id)}`)];
-  res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${escHtml(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
+  const key = `sitemap|${origin}|${staticCatalog.stableHash([...hidden].sort().join(','))}|${SEO_FILES.map(n => staticCatalog.readCatalog(path.join(staticCatalog.DATA_DIR, `${n}.json`), null).version).join('.')}`;
+  let entry = pageAnswers.get(key);
+  if (!entry) {
+    const urls = [`${origin}/`, ...[...seoProducts()].filter(([id, p]) => !hidden.has(id) && !p.duplicateOf).map(([id]) => id).map(id => `${origin}/p/${encodeURIComponent(id)}`)];
+    entry = staticCatalog.makeEntry(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${escHtml(u)}</loc></url>`).join('\n')}\n</urlset>\n`, 'application/xml; charset=utf-8');
+    pageAnswers.set(key, entry);
+  }
+  staticCatalog.sendEntry(req, res, entry, 'public, max-age=3600, s-maxage=21600, stale-while-revalidate=86400');
 });
 
+// Crawlers: the big search engines are welcome (slowly); SEO tools and AI
+// scrapers are kept out, because every crawled product page is a server
+// request. Customers' browsers are not affected.
+const BLOCKED_BOTS = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Claude-Web', 'anthropic-ai', 'CCBot', 'Google-Extended',
+  'PerplexityBot', 'Bytespider', 'Amazonbot', 'Applebot-Extended', 'Meta-ExternalAgent', 'FacebookBot', 'cohere-ai', 'Diffbot',
+  'AhrefsBot', 'SemrushBot', 'MJ12bot', 'DotBot', 'PetalBot', 'DataForSeoBot', 'BLEXBot', 'serpstatbot', 'ImagesiftBot', 'Omgilibot'];
+const ROBOTS_TXT = `${BLOCKED_BOTS.map(b => `User-agent: ${b}\nDisallow: /\n`).join('\n')}
+User-agent: bingbot
+Crawl-delay: 10
+Disallow: /api/
+Disallow: /admin
+
+User-agent: Yandex
+Crawl-delay: 10
+Disallow: /api/
+Disallow: /admin
+
+User-agent: *
+Crawl-delay: 5
+Allow: /
+Disallow: /api/
+Disallow: /admin
+`;
 app.get('/robots.txt', (req, res) => {
-  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\nSitemap: ${siteOrigin(req)}/sitemap.xml\n`);
+  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400');
+  res.type('text/plain').send(`${ROBOTS_TXT}\nSitemap: ${siteOrigin(req)}/sitemap.xml\n`);
 });
 
 app.get(['/admin', '/admin/'], (req, res) => {
@@ -1597,6 +1695,25 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 
 app.get('/api/status', (req, res) => {
+  if (STATIC_CATALOGS) {
+    const n = (f, ex) => staticCatalog.readCatalog(f, ex).list.length;
+    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300');
+    return res.json({
+      status: 'online',
+      store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
+      version: '0.8.0-multi-house-static',
+      mode: 'static',
+      totalGhalatiProducts: n(PERFUMES_PATH, EXCLUDED_SALLA_IDS),
+      totalAssafProducts: n(ASSAF_PERFUMES_PATH, EXCLUDED_ASSAF_SALLA_IDS),
+      totalThnyanProducts: n(THNYAN_PERFUMES_PATH, EXCLUDED_THNYAN_SALLA_IDS),
+      totalRasasiProducts: n(RASASI_PERFUMES_PATH, null),
+      totalAlrehabProducts: n(ALREHAB_PERFUMES_PATH, EXCLUDED_ALREHAB_SALLA_IDS),
+      totalLebonheurProducts: n(LEBONHEUR_PERFUMES_PATH, null),
+      totalLaverneProducts: n(LAVERNE_PERFUMES_PATH, null),
+      totalDeraahProducts: n(DERAAH_PERFUMES_PATH, null),
+      totalOudeliteProducts: n(OUDELITE_PERFUMES_PATH, null),
+    });
+  }
   res.json({
     status: 'online',
     store: 'زهرة بيسان للعطور | Zahrat Beesan Parfums',
@@ -1622,7 +1739,7 @@ app.get('/api/status', (req, res) => {
 
 // Background auto-sync every 2 minutes (a long-running server only; on Vercel
 // the scheduled GitHub Action keeps the catalog files current).
-if (!process.env.VERCEL) setInterval(() => {
+if (!process.env.VERCEL && !STATIC_CATALOGS) setInterval(() => {
   syncWithGhalatiStore(true).catch(() => {});
   syncWithAssafStore(true).catch(() => {});
   syncWithThnyanStore(true).catch(() => {});
@@ -1635,6 +1752,8 @@ if (!process.env.VERCEL) setInterval(() => {
 
 app.listen(PORT, () => {
   console.log(`✨ Zahrat Beesan Parfums running at: http://localhost:${PORT}`);
+  // Static catalog mode: the catalog files are the source of truth, nothing to fetch.
+  if (STATIC_CATALOGS) return;
   syncWithGhalatiStore(true).then(list => {
     console.log(`🔄 Initial Live Ghalati Sync Complete: ${list.length} active products.`);
   });
