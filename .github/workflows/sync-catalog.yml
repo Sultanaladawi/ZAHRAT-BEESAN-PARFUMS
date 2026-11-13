@@ -71,12 +71,18 @@ jobs:
           git config user.name "catalog-sync-bot"
           git config user.email "catalog-sync-bot@users.noreply.github.com"
           git add public/data public/images tools/import-review.json
-          MSG="Sync supplier prices, stock and offers"
+          # The message goes through a file so no line starts at column 0
+          # (a bare line would end this YAML block and break the whole workflow).
+          MSGFILE="$(mktemp)"
           if [ -s tools/last-import.txt ]; then
-            MSG="$MSG; new products
-
-$(cat tools/last-import.txt)"
+            {
+              echo "Sync supplier prices, stock and offers; new products"
+              echo
+              cat tools/last-import.txt
+            } > "$MSGFILE"
+          else
+            echo "Sync supplier prices, stock and offers" > "$MSGFILE"
           fi
-          git commit -m "$MSG"
+          git commit -F "$MSGFILE"
           git pull --rebase origin main
           git push
