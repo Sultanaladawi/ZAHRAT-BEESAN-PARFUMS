@@ -1,6 +1,6 @@
 {
   "assaf": {
-    "supplier": 610,
+    "supplier": 614,
     "unsure": [
       {
         "id": "915808090",
@@ -31,7 +31,7 @@
     "wouldAdd": null
   },
   "laverne": {
-    "supplier": 373,
+    "supplier": 350,
     "unsure": [],
     "aborted": null,
     "wouldAdd": null
