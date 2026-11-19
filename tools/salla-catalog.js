@@ -14,6 +14,8 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { classifyProduct, placement } = require('../public/js/classify-product');
+const { applyOverride } = require('./class-overrides');
 
 const ROOT = path.join(__dirname, '..');
 const DATA = path.join(ROOT, 'public', 'data');
@@ -84,16 +86,21 @@ const flatten = (cats, out = []) => {
 async function enumerate(cfg, { exhaustive = false } = {}) {
   const items = await listing(cfg, '');
   const extra = [];
+  const categoriesOf = new Map(); // product id -> names of the supplier categories it is in
   if (exhaustive) {
     const cats = flatten((await getJson('https://api.salla.dev/store/v1/categories', headers(cfg))).data)
       .filter(c => c.id && !['offers', 'blog'].includes(c.id));
     for (const c of cats) {
       let part;
       try { part = await listing(cfg, `source=categories&source_value[]=${c.id}`); } catch (e) { continue; } // a category the API refuses
-      for (const [id, it] of part) if (!items.has(id)) { items.set(id, it); extra.push(id); }
+      for (const [id, it] of part) {
+        if (!items.has(id)) { items.set(id, it); extra.push(id); }
+        if (!categoriesOf.has(id)) categoriesOf.set(id, []);
+        categoriesOf.get(id).push(c.name);
+      }
     }
   }
-  return { items, extra };
+  return { items, extra, categoriesOf };
 }
 
 // ── Scope ──────────────────────────────────────────────────────────────
@@ -137,44 +144,26 @@ function classify(it) {
 
 // ── Records ────────────────────────────────────────────────────────────
 
-function detectCategoryType(name = '', desc = '', sku = '') {
-  const t = `${name} ${desc}`;
-  if (/^(PKG|DIS)/i.test(sku)) return 'bundle';
-  if (/باقة|مجموعة|بكج|صندوق|عرض|ثلاثية|ثنائية|تشكيلة|طقم/i.test(name) && !/من مجموعة/i.test(name)) return 'bundle';
-  if (/تولة|زيت عطري|دهن عود|دهن العود|\b6\s*مل|\b3\s*مل/i.test(t) && !/بخاخ/i.test(t)) return 'oil';
-  if (/بخور|معمول|معطر جو|معطر للمنزل|معطر الغرف|عود معطر|دخون|مبثوث|مبسوس|مغموس|لبان|مبخرة/i.test(name)) return 'bakhoor';
-  if (/عطر الشعر|عطر شعر|هير|hair/i.test(name)) return 'hair_mist';
-  return 'perfume';
+// Fee rules (minis, tolas, sets by bottle count) live in lib/fees.js.
+const fees = require('../lib/fees');
+const feeFor = rec => fees.feeFor(rec);
+
+// What a product is, and where it goes, comes from the shared classifier
+// (public/js/classify-product.js): the supplier's own bundle flag, the SKU
+// family, pack words in the title, what the description lists, the supplier
+// category and the components of a set.
+function classifyItem(house, it, ctx = {}) {
+  let cls = classifyProduct(it, { byId: ctx.byId, categoryNames: ctx.categoryNames, house });
+  // A product the owner has already approved keeps that filing (tools/class-overrides.json).
+  const cfg = HOUSES[house];
+  if (cfg) cls = applyOverride(`${cfg.prefix}-${cfg.key === 'slug' ? slugOf(it.url) : String(it.id)}`, cls);
+  return { cls, place: placement(house, cls) };
 }
 
-// Same rule as server.js inferBottleCount: packs of mini sizes count as one bottle.
-function inferBottleCount(name = '', desc = '', catType = 'perfume') {
-  if (catType !== 'bundle') return 1;
-  const t = `${name} ${desc}`;
-  if (/15\s*مل|25\s*مل|30\s*مل|10\s*مل|ميني|ديسكفري|عينات|مجموعة السفر|2\s*مل/i.test(t)) return 1;
-  if (/8\s*عطور|ثمانية\s*عطور/.test(t)) return 8;
-  if (/7\s*عطور|سبع\s*عطور/.test(t)) return 7;
-  if (/6\s*عطور|ستة\s*عطور/.test(t)) return 6;
-  if (/5\s*عطور|خمسة\s*عطور/.test(t)) return 5;
-  if (/4\s*عطور|أربع\s*عطور|اربع\s*عطور/.test(t)) return 4;
-  if (/عطرين|عطران|ثنائية|لك ولها|قطعتين|ثنائي/.test(t)) return 2;
-  if (/ثلاث|3\s*عطور|باقة|بكج/.test(t)) return 3;
-  return 1;
-}
-
-// The fee rules live in lib/fees.js once that exists (minis, tolas, sets); until
-// then the same rules are applied here.
-let fees = null;
-try { fees = require('../lib/fees'); } catch (e) { /* not in this tree yet */ }
-function feeFor(rec, small) {
-  if (fees && typeof fees.feeFor === 'function') return fees.feeFor(rec);
-  const count = Number(rec.bottleCount) || 1;
-  if (count > 1) return count * 4 + 10;
-  if (small) return 5;
-  const ml = (`${rec.specs && rec.specs.size} ${rec.title}`.match(/(\d+)\s*(?:مل|ml)(?![a-z\d])/i) || [])[1];
-  const mini = rec.categoryType === 'perfume' && (/ميني|mini/i.test(rec.title) || (ml && Number(ml) >= 8 && Number(ml) <= 50)) && !/دهن|زيت|شعر|معطر|hair/i.test(rec.title);
-  return mini ? 5 : 12;
-}
+// The "type" line of the spec table; the storefront also reads it to place a
+// product (words like بخور or مجموعة move it out of the perfumes section).
+const typeAr = c => ({ bundle: 'مجموعة إهداء', oil: 'دهن عود / زيت عطري', bakhoor: 'بخور', hair_mist: 'عطر شعر وجسم' }[c] || 'عطر أو دو بارفيوم (Eau de Parfum)');
+const typeEn = c => ({ bundle: 'Gift Set', oil: 'Perfume Oil', bakhoor: 'Bakhoor', hair_mist: 'Hair & Body Mist' }[c] || 'Eau De Parfum');
 
 function sizeOf(name, desc, catType) {
   const hit = `${name} ${desc}`.match(/(?<![\d٠-٩])(\d{1,4})\s*(?:مل|ml)(?![\u0600-\u06FFA-Za-z])/i);
@@ -188,15 +177,15 @@ function filler(name) {
   };
 }
 
-function buildRecord(house, it, titleEn) {
+function buildRecord(house, it, titleEn, ctx = {}) {
   const cfg = HOUSES[house];
+  const { cls, place } = ctx.classified || classifyItem(house, it, ctx);
   const slug = slugOf(it.url);
   const id = cfg.key === 'slug' ? slug : String(it.id);
   const name = String(it.name || '').trim();
   const desc = text(it.description);
-  const catType = detectCategoryType(name, desc, it.sku);
-  const small = /تولة|زيت عطري|\b(?:3|6|8|10|12|15|20)\s*مل/.test(`${name} ${desc}`.slice(0, 200)) && catType === 'oil';
-  const count = inferBottleCount(name, desc, catType);
+  const catType = place.categoryType === 'mini' ? 'perfume' : place.categoryType; // Laverne's own mini line keeps categoryType 'mini' below
+  const count = place.bottleCount;
   const sar = amount(it.price);
   const regular = amount(it.regular_price);
   const orig = Number.isFinite(regular) && regular > sar ? regular : sar;
@@ -206,9 +195,7 @@ function buildRecord(house, it, titleEn) {
   const en = titleEn || name;
   const f = filler(name);
   const single = catType !== 'bundle' && catType !== 'bakhoor';
-  const sub = house === 'laverne'
-    ? (catType === 'bundle' ? (count >= 3 || /^(PKG|DIS)/i.test(it.sku || '') ? 'gift_set' : 'bundle') : catType)
-    : undefined;
+  const sub = place.subCategory;
   const rec = {
     id: `${cfg.prefix}-${id}`,
     sallaId: id,
@@ -238,16 +225,18 @@ function buildRecord(house, it, titleEn) {
     prominent: f.prominent, prominentEn: f.prominent,
     specs: {
       origin: 'المملكة العربية السعودية', category: 'للجنسين', size: sizeAr,
-      type: catType === 'bundle' ? 'مجموعة إهداء' : 'عطر أو دو بارفيوم (Eau de Parfum)', perfumer: cfg.perfumer,
+      type: typeAr(catType), perfumer: cfg.perfumer,
     },
     specsEn: {
       origin: 'Kingdom of Saudi Arabia', category: 'Unisex', size: sizeAr.replace('مل', 'ml').replace('مجموعة عطور فاخرة', 'Gift set'),
-      type: catType === 'bundle' ? 'Gift Set' : 'Eau De Parfum', perfumer: cfg.perfumerEn,
+      type: typeEn(catType), perfumer: cfg.perfumerEn,
     },
-    categoryType: catType,
+    categoryType: place.categoryType === 'mini' ? 'mini' : catType,
     imageLayout: 'original',
   };
-  const fee = feeFor(rec, small);
+  if (place.namedAfterScent) rec.namedAfterScent = true;
+  if (place.needsReview) rec.needsReview = true;
+  const fee = feeFor(rec);
   rec.feeJod = fee;
   rec.finalJod = base + fee;
   rec.origJod = orig > sar ? Math.round(orig / SAR_PER_JOD) + fee : base + fee;
@@ -296,7 +285,7 @@ async function englishNames(cfg, ids) {
  * Adds the in-scope products the store does not carry. Returns a summary and
  * the unsure ones. Stops (adds nothing) when more than `cap` would be added.
  */
-async function importMissing(house, ours, supplierItems, { cap = 40, write = true } = {}) {
+async function importMissing(house, ours, supplierItems, { cap = 40, write = true, dry = false, categoriesOf = new Map() } = {}) {
   const cfg = HOUSES[house];
   const have = new Set(ours.map(p => (cfg.key === 'slug' ? slugOf(p.url) : String(p.sallaId))));
   const missing = [...supplierItems.values()].filter(it => !have.has(cfg.key === 'slug' ? slugOf(it.url) : String(it.id)));
@@ -307,20 +296,33 @@ async function importMissing(house, ours, supplierItems, { cap = 40, write = tru
     else if (c.scope === 'unsure') unsure.push({ id: String(it.id), name: it.name, sku: it.sku, price: amount(it.price), url: it.url, why: c.why });
     else skipped++;
   }
-  const summary = { house, supplier: supplierItems.size, ours: ours.length, missing: missing.length, outOfScope: skipped, unsure, added: [] };
+  const summary = { house, supplier: supplierItems.size, ours: ours.length, missing: missing.length, outOfScope: skipped, unsure, added: [], review: [] };
+  const ctxFor = it => ({ byId: supplierItems, categoryNames: categoriesOf.get(String(it.id)) || [] });
+  if (dry) {
+    // --dry: print what the classifier decides for each candidate, change nothing.
+    summary.dry = picked.map(it => {
+      const { cls, place } = classifyItem(house, it, ctxFor(it));
+      return { id: String(it.id), name: it.name, sku: it.sku, goesTo: place.categoryType + (place.subCategory ? `/${place.subCategory}` : ''), bottles: place.bottleCount, confidence: cls.confidence, needsReview: place.needsReview, reasons: cls.reasons };
+    });
+    return summary;
+  }
   if (picked.length > cap) { summary.aborted = `${picked.length} new products is more than the cap of ${cap}; nothing added`; summary.wouldAdd = picked.map(i => i.name); return summary; }
   const names = await englishNames(cfg, picked.map(i => String(i.id)));
   const norm = t => String(t || '').replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ').trim();
   const titles = new Set(ours.map(p => norm(p.title)));
   for (const it of picked) {
-    const rec = buildRecord(house, it, names.get(String(it.id)));
+    const classified = classifyItem(house, it, ctxFor(it));
+    const rec = buildRecord(house, it, names.get(String(it.id)), { classified });
+    if (classified.cls.confidence !== 'high') {
+      summary.review.push({ id: rec.id, title: rec.title, filedAs: rec.categoryType + (rec.subCategory ? `/${rec.subCategory}` : ''), confidence: classified.cls.confidence, bottles: rec.bottleCount, reasons: classified.cls.reasons, url: rec.url });
+    }
     // A set that shares its name with a single perfume (e.g. "لويارد") says so.
     if (titles.has(norm(rec.title))) {
       rec.title += rec.categoryType === 'bundle' ? ' - مجموعة' : ' - إصدار آخر';
       rec.titleEn += rec.categoryType === 'bundle' ? ' (set)' : ' (other edition)';
     }
     titles.add(norm(rec.title));
-    try { await saveImages(rec); } catch (e) { /* the supplier photo is fetched again next run */ }
+    if (write) { try { await saveImages(rec); } catch (e) { /* the supplier photo is fetched again next run */ } }
     ours.push(rec);
     summary.added.push({ id: rec.id, title: rec.title, available: rec.isAvailable, category: rec.categoryType });
   }
@@ -331,4 +333,4 @@ async function importMissing(house, ours, supplierItems, { cap = 40, write = tru
   return summary;
 }
 
-module.exports = { HOUSES, enumerate, listing, classify, buildRecord, importMissing, saveImages, slugOf, text, headers, getJson };
+module.exports = { HOUSES, enumerate, listing, classify, classifyItem, buildRecord, importMissing, saveImages, slugOf, text, headers, getJson };

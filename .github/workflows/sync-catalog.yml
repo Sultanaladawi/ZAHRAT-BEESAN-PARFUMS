@@ -34,6 +34,9 @@ jobs:
       # Also adds products the suppliers (Assaf, Laverne) newly list, sold out
       # or not; unsure ones are listed in tools/import-review.json. At most 40
       # new products a run, the daily 03:xx run also reads every category.
+      - name: Product classifier self-test
+        run: node tools/test-classifier.js
+
       - name: Check suppliers, apply price, stock and offer changes, import new products
         run: node tools/sync-check.js --apply --import
 

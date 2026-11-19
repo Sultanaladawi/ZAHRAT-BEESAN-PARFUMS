@@ -291,13 +291,14 @@ function writeImportReport(summaries) {
   const report = {};
   const lines = [];
   for (const s of summaries) {
-    report[s.house] = { supplier: s.supplier, unsure: s.unsure, aborted: s.aborted || null, wouldAdd: s.wouldAdd || null };
+    report[s.house] = { supplier: s.supplier, unsure: s.unsure, review: s.review || [], aborted: s.aborted || null, wouldAdd: s.wouldAdd || null };
     if (s.added.length) {
       lines.push(`${s.house}: added ${s.added.length} new product(s)`);
       for (const a of s.added) lines.push(`  + ${a.title} (${a.category}${a.available ? '' : ', sold out'})`);
     }
     if (s.aborted) lines.push(`${s.house}: ${s.aborted}`);
     if (s.unsure.length) lines.push(`${s.house}: ${s.unsure.length} product(s) need a look, see tools/import-review.json`);
+    for (const r of s.review || []) lines.push(`  ? ${r.title}: filed as ${r.filedAs} (${r.confidence} confidence), please check`);
   }
   fs.writeFileSync(path.join(__dirname, 'import-review.json'), JSON.stringify(report, null, 2) + '\n');
   fs.writeFileSync(path.join(__dirname, 'last-import.txt'), lines.join('\n') + (lines.length ? '\n' : ''));
@@ -309,6 +310,7 @@ async function main() {
   const wantDiscover = args.includes('--discover');
   const found = {};
   const wantImport = args.includes('--import');
+  const dry = args.includes('--dry'); // with --import: print how new products would be classified, change nothing
   // The category-by-category pass costs ~80 requests a house: once a day, or on request.
   const exhaustive = args.includes('--exhaustive') || (wantImport && new Date().getUTCHours() === 3);
   const importCap = Number((args.find(a => a.startsWith('--cap=')) || '').slice(6)) || 40;
@@ -346,8 +348,12 @@ async function main() {
     if (wantImport && catalog.HOUSES[house]) {
       try {
         const fresh = JSON.parse(fs.readFileSync(file, 'utf8'));
-        const { items: supplier, extra } = await catalog.enumerate(catalog.HOUSES[house], { exhaustive });
-        const sum = await catalog.importMissing(house, fresh, supplier, { cap: importCap, write: apply });
+        const { items: supplier, extra, categoriesOf } = await catalog.enumerate(catalog.HOUSES[house], { exhaustive });
+        const sum = await catalog.importMissing(house, fresh, supplier, { cap: importCap, write: apply && !dry, dry, categoriesOf });
+        if (dry) {
+          console.log(`\n${house}: ${sum.dry.length} new product(s) would be imported`);
+          for (const d of sum.dry) console.log(`  ${d.goesTo.padEnd(16)} ${d.confidence.padEnd(6)} ${d.bottles} bottle(s)  ${d.name}  [${d.sku}]\n      ${d.reasons.join('; ')}`);
+        }
         sum.foundOnlyInCategories = extra.length;
         importSummaries.push(sum);
         note += ` | supplier ${sum.supplier} | added ${sum.added.length} | unsure ${sum.unsure.length}${sum.aborted ? ' | ABORTED (cap)' : ''}`;
@@ -355,7 +361,7 @@ async function main() {
     }
     console.log(`${house.padEnd(10)} products ${String(r.total).padStart(4)} | price changed ${r.priceChanged.length} | out of stock ${r.wentOut.length} | back in stock ${r.cameBack.length} | gone ${r.missing.length} | check failed ${r.errors.length}${note}`);
   }
-  if (wantImport) writeImportReport(importSummaries);
+  if (wantImport && !dry) writeImportReport(importSummaries);
   if (apply && !wanted.length) await refreshOffers();
   fs.writeFileSync(path.join(__dirname, 'sync-report.json'), JSON.stringify(reports, null, 2));
   if (wantDiscover) fs.writeFileSync(path.join(__dirname, 'discover-report.json'), JSON.stringify(found, null, 2));

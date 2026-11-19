@@ -1,0 +1,292 @@
+{
+ "_about": "Owner-approved filings that the classifier (public/js/classify-product.js) must not change or flag. Keyed by catalog id; categoryType/bottleCount are what the catalog has and the owner confirmed on 2026-10-30. tools/audit-classes.js, the importer and any re-classification honour this file.",
+ "overrides": {
+  "bundle-varna-montdor": {
+   "house": "ghalati",
+   "title": "فارنا و مون دو",
+   "categoryType": "bundle",
+   "bottleCount": 2,
+   "classifierSaid": "perfume"
+  },
+  "luxury-edition": {
+   "house": "ghalati",
+   "title": "لاكجري ايديشن",
+   "categoryType": "bundle",
+   "bottleCount": 1,
+   "classifierSaid": "perfume"
+  },
+  "oud-aldar": {
+   "house": "ghalati",
+   "title": "بخور عود الدار الطبيعي",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "perfume"
+  },
+  "assaf-314554267": {
+   "house": "assaf",
+   "title": "كنق انيبل - ملك البخور",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "thnyan-896782966": {
+   "house": "thnyan",
+   "title": "عطر ذا كراون",
+   "categoryType": "bundle",
+   "bottleCount": 2,
+   "classifierSaid": "perfume"
+  },
+  "rasasi-749268399": {
+   "house": "rasasi",
+   "title": "مخلط عود المبخر للجنسين 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "rasasi-1067281077": {
+   "house": "rasasi",
+   "title": "سمو الرصاصي رينا معطر للجسم والشعر 100 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-1993303585": {
+   "house": "rasasi",
+   "title": "بخور انسجام 100 مل",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "perfume"
+  },
+  "rasasi-525171569": {
+   "house": "rasasi",
+   "title": "4 وردات عطر مركز 30مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-971765415": {
+   "house": "rasasi",
+   "title": "دهن عود الكمبودي بخاخ 30مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-903273235": {
+   "house": "rasasi",
+   "title": "عطر مبخر 20مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "rasasi-83307984": {
+   "house": "rasasi",
+   "title": "دهن نبراس العشق نور دهن هود 6مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-753880194": {
+   "house": "rasasi",
+   "title": "عطر العود عطر مركز 20مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-757709674": {
+   "house": "rasasi",
+   "title": "ابداع من مجموعة توليفة 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-965813801": {
+   "house": "rasasi",
+   "title": "عطر توهج 100مل عطر للجسم",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-1758532688": {
+   "house": "rasasi",
+   "title": "عود المبخر للجنسين 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "rasasi-648841367": {
+   "house": "rasasi",
+   "title": "سمو الرصاصي بيلا معطر للجسم والشعر 100 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-906373103": {
+   "house": "rasasi",
+   "title": "الوان عطر للجسم 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-597357746": {
+   "house": "rasasi",
+   "title": "مراقي عطر للجسم 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-1593535954": {
+   "house": "rasasi",
+   "title": "عطر تخيل 100مل عطر للجسم",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-624623193": {
+   "house": "rasasi",
+   "title": "عشق 100مل معطر للجسم",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "rasasi-119405428": {
+   "house": "rasasi",
+   "title": "اوزنور من مجموعة توليفة 100مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "rasasi-1367027237": {
+   "house": "rasasi",
+   "title": "الخلطة الخاصة مع دهن العود 50 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "alrehab-950562111": {
+   "house": "alrehab",
+   "title": "عطر الشعر لا مدام 50 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "alrehab-484847421": {
+   "house": "alrehab",
+   "title": "عطر الشعر سواريه 50 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "alrehab-1125711932": {
+   "house": "alrehab",
+   "title": "عطر الشعر شيري 50 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "hair_mist"
+  },
+  "laverne-WzABDqy": {
+   "house": "laverne",
+   "title": "لادور بخور كلاسيك - إنتنس",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "laverne-mZKonyb": {
+   "house": "laverne",
+   "title": "ديكلير 50",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bundle"
+  },
+  "laverne-wAAYpej": {
+   "house": "laverne",
+   "title": "مجموعة بلو لافيرن 7:00AM",
+   "categoryType": "perfume",
+   "bottleCount": 2,
+   "classifierSaid": "bundle"
+  },
+  "laverne-ydQwGKq": {
+   "house": "laverne",
+   "title": "لادور بخور كلاسيك 10 مل",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bakhoor"
+  },
+  "laverne-wAOxbBD": {
+   "house": "laverne",
+   "title": "سينس فور إيفر عطر للشعر — 75 مل",
+   "categoryType": "hair_mist",
+   "bottleCount": 1,
+   "classifierSaid": "perfume"
+  },
+  "laverne-eQxDzBa": {
+   "house": "laverne",
+   "title": "مسك قاردن لحقيبتك",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bundle"
+  },
+  "laverne-oZrzAlz": {
+   "house": "laverne",
+   "title": "قلامور - بكج مع مروحة",
+   "categoryType": "perfume",
+   "bottleCount": 1,
+   "classifierSaid": "bundle"
+  },
+  "oudelite-258209455": {
+   "house": "oudelite",
+   "title": "معجون فاخر",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "oudelite-400251826": {
+   "house": "oudelite",
+   "title": "ليلتي بلس رومانس",
+   "categoryType": "bundle",
+   "bottleCount": 3,
+   "classifierSaid": "perfume"
+  },
+  "oudelite-359981381": {
+   "house": "oudelite",
+   "title": "اورينت ستيل اسود",
+   "categoryType": "bundle",
+   "bottleCount": 2,
+   "classifierSaid": "perfume"
+  },
+  "oudelite-586419425": {
+   "house": "oudelite",
+   "title": "شنطة مبخرة صغيرة وولاعة",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "bundle"
+  },
+  "oudelite-895856614": {
+   "house": "oudelite",
+   "title": "دخون المجلس",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "oudelite-1507745590": {
+   "house": "oudelite",
+   "title": "اورينت ستيل ابيض",
+   "categoryType": "bundle",
+   "bottleCount": 2,
+   "classifierSaid": "bakhoor"
+  },
+  "oudelite-1568118479": {
+   "house": "oudelite",
+   "title": "عود الخاص",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  },
+  "oudelite-1987122313": {
+   "house": "oudelite",
+   "title": "مبثوث خلطة الملوك المطور",
+   "categoryType": "bakhoor",
+   "bottleCount": 1,
+   "classifierSaid": "oil"
+  }
+ }
+}
